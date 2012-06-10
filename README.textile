@@ -1,0 +1,11 @@
+h1. LocomotiveCMS Mounter
+
+The "LocomotiveCMS Mounter" is a simple module to store in memory a LocomotiveCMS site whatever the source is:
+
+* a site template built with the editor and on the local filesystem
+* a zip file of a site template on the local filesystem
+* a zip file of a site template but online through an url
+* a LocomotiveCMS engine
+
+It also includes a mechanism which could save the site from the memory to any targets (filesystem, another LocomotiveCMS engine, ...etc).
+This saving mechanism has to be implemented in the application using that module.

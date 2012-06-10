@@ -1,0 +1,11 @@
+<li>
+  <h3>{{ song.title }}</h3>
+  <div class="cover">{{ song.cover.url | image_tag }}</div>
+  <div class="info">
+    {{ song.short_description }}
+    <p class="listen">
+      <a href="{{ song.audio_url }}">&rarr; Listen ({{ song.duration }} min)</a>
+    </p>
+  </div>
+  <div class="clear"></div>
+</li>

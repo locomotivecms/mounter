@@ -1,0 +1,21 @@
+site:
+  name: Sample website
+
+  locales: [en]
+
+  seo_title: A simple LocomotiveCMS website
+  meta_keywords: some meta keywords
+  meta_description: some meta description
+
+  pages:
+  - index:
+      title: Home page
+  - about_us:
+      title: About us
+  - music:
+  - store:
+      redirect_url: http://www.apple.com/fr/itunes/
+  - contact:
+      title: Contact us
+  - "404":
+      title: Page not found
