@@ -23,16 +23,14 @@ module Locomotive
          site = self.config['site']
 
          self.mounting_point.site = Locomotive::Mounter::Models::Site.new(site)
+
+         puts self.mounting_point.site.inspect
        end
 
        def fetch_site_config
          config_path = File.join(self.path, 'config', 'site.yml')
 
          self.config = YAML::load(File.open(config_path).read).tap { |c| puts c.inspect }
-
-         # puts config.inspect
-         #
-         # config
        end
 
      end

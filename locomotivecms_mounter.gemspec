@@ -31,6 +31,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'json',                            '~> 1.6.5'
   s.add_dependency 'zip',                             '~> 2.0.2'
   s.add_dependency 'colorize',                        '~> 0.5.8'
+  s.add_dependency 'logger'
 
   s.add_development_dependency 'rake',                '0.9.2'
   s.add_development_dependency 'rspec',               '~> 2.6.0'
