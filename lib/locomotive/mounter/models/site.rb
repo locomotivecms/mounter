@@ -2,9 +2,14 @@ module Locomotive
   module Mounter
     module Models
 
-     class Site
+     class Site < Base
 
-       attr_accessor :name
+       ## fields ##
+       field :name
+       field :locales
+       field :seo_title,        localized: true
+       field :meta_keywords,    localized: true
+       field :meta_description, localized: true
 
      end
 

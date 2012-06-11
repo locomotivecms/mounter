@@ -4,7 +4,7 @@ require 'active_support'
 
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/config'
-require 'locomotive/mounter/mount_point'
+require 'locomotive/mounter/mounting_point'
 require 'locomotive/mounter/models/site'
 require 'locomotive/mounter/models/page'
 require 'locomotive/mounter/reader/file_system'
