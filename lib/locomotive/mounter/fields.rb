@@ -10,13 +10,20 @@ module Locomotive
         self._fields = {}
       end
 
+      # Set or replace the attributes of the current instance by the ones
+      # passed as parameter.
+      # It raises an exception if one of the keys is not included in the list of fields.
+      #
+      # @param [ Hash ] attributes The new attributes
+      #
       def write_attributes(attributes)
         return if attributes.blank?
 
         attributes.each do |name, value|
           unless self.class._fields.key?(name.to_sym)
-            Locomotive::Mounter.logger.warn "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
-            raise FieldDoesNotExistException.new "The '#{name}' field does not exist"
+            message = "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
+            Locomotive::Mounter.logger.warn message
+            raise FieldDoesNotExistException.new message
           end
 
           if self.localized?(name) && value.is_a?(Hash)
@@ -27,6 +34,12 @@ module Locomotive
         end
       end
 
+      # Check if the field specified by the argument is localized
+      #
+      # @param [ String ] name Name of the field
+      #
+      # @return [ Boolean ] True if the field is localized
+      #
       def localized?(name)
         self.send :"#{name}_localized?"
       end
@@ -53,6 +66,12 @@ module Locomotive
 
       module ClassMethods
 
+        # Add a field to the current instance. It creates getter/setter methods related to that field.
+        # A field can have translations if the option named localized is set to true.
+        #
+        # @param [ String ] name The name of the field
+        # @param [ Hash ] options The options related to the field.
+        #
         def field(name, options = {})
           options = { localized: false }.merge(options)
 

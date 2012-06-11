@@ -9,28 +9,35 @@ module Locomotive
        def run!(options = {})
          self.path = options.delete(:path)
 
-         return nil unless File.exists?(self.path)
-
-         self.mounting_point = Locomotive::Mounter::MountingPoint.new
+         return nil if self.path.blank? || !File.exists?(self.path)
 
          self.fetch_site_config
 
-         self.fetch_site
+         self.build_mounting_point
+       end
+
+       def build_mounting_point
+         Locomotive::Mounter::MountingPoint.new.tap do |mounting_point|
+           self.mounting_point = mounting_point
+
+           self.fetch_site
+         end
        end
 
        def fetch_site
-         # puts "Feed site !!!"
-         site = self.config['site']
+         site = self.config['site'].dup
 
-         self.mounting_point.site = Locomotive::Mounter::Models::Site.new(site)
+         site.delete('pages') # we do not need pages at this step
 
-         puts self.mounting_point.site.inspect
+         self.mounting_point.site = Locomotive::Mounter::Models::Site.new(site).tap do |site|
+           site.mounting_point = self.mounting_point
+         end
        end
 
        def fetch_site_config
          config_path = File.join(self.path, 'config', 'site.yml')
 
-         self.config = YAML::load(File.open(config_path).read).tap { |c| puts c.inspect }
+         self.config = YAML::load(File.open(config_path).read) #.tap { |c| puts c.inspect }
        end
 
      end

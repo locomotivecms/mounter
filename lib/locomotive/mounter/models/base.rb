@@ -6,6 +6,8 @@ module Locomotive
 
         include Locomotive::Mounter::Fields
 
+        attr_accessor :mounting_point
+
         def initialize(attributes = {})
           self.write_attributes(attributes)
         end
