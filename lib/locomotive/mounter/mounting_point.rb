@@ -1,7 +1,7 @@
 module Locomotive
   module Mounter
 
-    class MountPoint
+    class MountingPoint
 
      attr_accessor :site, :pages
 
