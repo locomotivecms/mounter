@@ -16,8 +16,6 @@ Gem::Specification.new do |s|
   s.summary     = 'LocomotiveCMS Mounter'
   s.description = 'Mount any LocomotiveCMS site, from a template on the filesystem, a zip file or even an online engine'
 
-  # s.executables = ['locomotive_editor']
-
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'locomotivecms_mounter'
 
@@ -43,10 +41,5 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   s.files        = Dir.glob('lib/**/*')
-                    # +
-                   # Dir.glob('bin/**/*') +
-                   # Dir.glob('config/**/*') +
-                   # Dir.glob('site_templates/**/*') +
-                   # %w(Gemfile Gemfile.lock config.ru locomotive_editor.gemspec)
 end
 
