@@ -3,7 +3,7 @@ module Locomotive
 
     class MountingPoint
 
-     attr_accessor :site, :pages
+     attr_accessor :site, :root_page, :pages
 
      ## methods ##
 
