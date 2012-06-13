@@ -37,7 +37,7 @@ module Locomotive
        def fetch_site_config
          config_path = File.join(self.path, 'config', 'site.yml')
 
-         self.config = YAML::load(File.open(config_path).read) #.tap { |c| puts c.inspect }
+         self.config = YAML::load(File.open(config_path).read)
        end
 
      end
