@@ -5,7 +5,7 @@ module Locomotive
 
        # Build a singleton instance of the Runner class.
        #
-       # @return [ Object ] A singleont instance of the Runner class
+       # @return [ Object ] A singleton instance of the Runner class
        #
        def self.instance
          @@instance ||= Runner.new

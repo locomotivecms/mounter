@@ -56,6 +56,37 @@ describe Locomotive::Mounter::Models::Page do
 
   end
 
+  describe 'depth' do
+
+    before(:each) do
+      @page = build_page
+    end
+
+    %w(index 404).each do |fullpath|
+      it "is 0 for the '#{fullpath}' page" do
+        @page.fullpath = fullpath
+        @page.depth.should == 0
+      end
+    end
+
+    it 'is 1 for the pages right under index' do
+      @page.fullpath = 'contact_us'
+      @page.depth.should == 1
+    end
+
+    it 'based on the number of sub levels' do
+      @page.fullpath = 'about_us/team'
+      @page.depth.should == 2
+
+      @page.fullpath = 'about_us/index'
+      @page.depth.should == 2
+
+      @page.fullpath = 'about_us/team/john'
+      @page.depth.should == 3
+    end
+
+  end
+
   def build_page(attributes = {})
     Locomotive::Mounter::Models::Page.new(attributes)
   end
