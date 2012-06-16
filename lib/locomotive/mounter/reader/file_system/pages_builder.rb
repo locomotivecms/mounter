@@ -47,13 +47,20 @@ module Locomotive
          end
 
          def fetch_children(page)
-           list = []
+           pages = {}
 
            # from config
-           self.pages_from_config.each do |fullpath, attributes|
-
-
+           self.pages_from_config.to_a.each_with_index do |attributes, position|
+             if self.is_subpage_of?(attributes.first, page.fullpath)
+               pages[attributes.first] = attributes.last.merge({
+                 fullpath: attributes.first,
+                 position: position
+               })
+             end
            end
+
+           # from filesystem
+           # File.dir(File.dirname(fullpath))
          end
 
          protected

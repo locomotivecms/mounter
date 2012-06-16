@@ -14,6 +14,7 @@ module Locomotive
        field :published
        field :cache_strategy
        field :response_type
+       field :position
 
        ## other accessors ##
        attr_accessor :template_filepath, :children
