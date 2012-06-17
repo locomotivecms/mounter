@@ -1,7 +1,7 @@
 site:
   name: Sample website
 
-  locales: [en]
+  locales: ['en', 'fr', 'no']
 
   seo_title: A simple LocomotiveCMS website
   meta_keywords: some meta keywords
@@ -9,12 +9,18 @@ site:
 
   pages:
   - index:
-      title: Home page
+      title:
+        en: Home page
+        fr: Accueil
   - about_us:
       title: About us
+      slug:
+        fr: a-notre-sujet
   - music:
   - store:
-      redirect_url: http://www.apple.com/fr/itunes/
+      redirect_url:
+        en: http://www.apple.com/en/itunes/
+        fr: http://www.apple.com/fr/itunes/
   - contact:
       title: Contact us
   - "404":

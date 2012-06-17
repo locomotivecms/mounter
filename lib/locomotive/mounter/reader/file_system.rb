@@ -52,7 +52,7 @@ module Locomotive
 
          def fetch_pages
            self.mounting_point.pages = PagesBuilder.new(self).build.tap do |pages|
-             pages.each { |page| page.mounting_point = self.mounting_point }
+             pages.each { |fullpath, page| page.mounting_point = self.mounting_point }
            end
          end
 

@@ -19,6 +19,10 @@ module Locomotive
            self.runner.mounting_point
          end
 
+         def locales
+           self.mounting_point.locales
+         end
+
        end
 
      end

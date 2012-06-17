@@ -5,126 +5,124 @@ module Locomotive
 
        class PagesBuilder < Base
 
-         attr_accessor :list, :pages_from_config
+         attr_accessor :pages
 
          def initialize(runner)
-           self.list, self.pages_from_config = [], {}
+           self.pages = {}
            super
          end
 
          # Build the tree of pages based on the data specified by the config/site.yml file
          # of the template but also with the filesystem structure
          #
-         # @return [ Array ] List of pages. The index page is the first element and the 404 one is the last element.
+         # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
          #
          def build
-           (self.config['site']['pages'] || []).each do |_page|
-             self.pages_from_config[_page.keys.first] = _page.values.first
-           end
+           # puts self.config['site']['pages'].inspect
 
-           puts self.pages_from_config.inspect
+           self.fetch_pages_from_config
 
-           self.fetch_element 'index'
+           self.fetch_pages_from_filesystem
 
-           self.list
-         end
+           puts self.pages_to_list.map(&:fullpath).inspect
 
-         def fetch_element(fullpath, parent = nil)
-           # does the page exist in the site.yml file
-           attributes = self.pages_from_config.delete(fullpath)
-
-           # look for a template in the filesystem
-           template_filepath = self.fetch_template_filepath(fullpath)
-
-           if attributes || template_filepath
-             # the page does exist
-             page = self.build(fullpath, parent, attributes)
-
-             self.list << page
-
-             self.fetch_children(page)
-           end
-         end
-
-         def fetch_children(page)
-           pages = {}
-
-           # from config
-           self.pages_from_config.to_a.each_with_index do |attributes, position|
-             if self.is_subpage_of?(attributes.first, page.fullpath)
-               pages[attributes.first] = attributes.last.merge({
-                 fullpath: attributes.first,
-                 position: position
-               })
-             end
-           end
-
-           # from filesystem
-           # File.dir(File.dirname(fullpath))
+           self.pages
          end
 
          protected
 
-         def is_subpage_of?(fullpath, parent_fullpath)
-           return false if %w(index 404).include?(fullpath)
-
-           if parent_fullpath == 'index' && fullpath.split('/') == 0
-             return true
-           end
-
-           File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
+         # Create a ordered list of pages from the Hash
+         #
+         # @return [ Array ] An ordered list of pages
+         #
+         def pages_to_list
+           # sort by fullpath first
+           list = self.pages.values.sort { |a, b| a.fullpath <=> b.fullpath }
+           # sort finally by depth
+           list.sort { |a, b| a.depth <=> b.depth }
          end
 
-         # Build a new page object. It also looks for other localized
-         # version of the template in the filesystem.
-         #
-         # @param [ String ] fullpath The full path of the page
-         # @param [ Object ] parent The page parent (nil for the index page)
-         #
-         # @return [ Object ] The new page instance
-         #
-         def build_page(fullpath, parent, attributes)
-           (attributes ||= {}).merge! parent: parent, fullpath: fullpath
+         # Record pages found in the config file
+         def fetch_pages_from_config
+           self.pages_from_config.each_with_index do |_page, position|
+             fullpath, attributes = _page.keys.first.dasherize, _page.values.first.try(:symbolize_keys) || {}
 
-           Locomotive::Mounter::Models::Page.new(attributes) do |page|
-             self.mounting_point.locales.each do |locale|
-               next if locale == self.mounting_point.default_locale
+             self.add_page(fullpath, attributes.merge(position: position))
+           end
+         end
 
-               if template_filepath = self.fetch_template_filepath(fullpath, locale)
-                 I18n.with_locale(locale) do
-                   page.template_filepath = template_filepath
-                 end
-               end
+         # Record pages found in file system
+         def fetch_pages_from_filesystem
+           Dir.glob(File.join(self.pages_root_dir, '**/*.{liquid,haml}')).each do |filepath|
+             fullpath = self.filepath_to_fullpath(filepath)
+
+             page = self.add_page(fullpath)
+
+             I18n.with_locale(self.filepath_locale(filepath)) do
+               page.template_filepath = filepath
              end
            end
          end
 
-         # Check if there is a template on the filesystem corresponding to the fullpath.
-         # 2 different names are checked: one with the simple .liquid extension,
-         # the other one with the .liquid.haml extensions.
-         # If no files are found, it returns nil.
+         # Add a new page in the global hash of pages.
+         # If the page exists, then do nothing.
          #
-         # Note: during the search, if there are dashes in the fullpath given in parameter,
-         # they will be replaced by underscores in the filepath
+         # @param [ String ] fullpath The fullpath used as the key for the hash
+         # @param [ Hash ] attributes The attributes of the new page
          #
-         # @param [ String ] fullpath The fullpath of the page
+         # @return [ Object ] A newly created page or the existing one
          #
-         # @return [ String ] The complete file path to the template. Nil if not found
-         #
-         def fetch_template_filepath(fullpath, locale = nil)
-           path = File.join(self.runner.path, 'app', 'views', 'pages', fullpath.underscore)
-
-           ['liquid', 'liquid.haml'].each do |extension|
-             filepath = locale ? "#{path}.#{locale}" : path
-
-             filepath += "#{filepath}.#{extension}"
-
-             puts "Testing filepath = #{filepath.inspect}"
-
-             return filepath if File.exists?(filepath)
+         def add_page(fullpath, attributes = {})
+           unless self.pages.key?(fullpath)
+             attributes[:fullpath] = fullpath
+             self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
            end
 
-           nil
+           self.pages[fullpath]
+         end
+
+         # Shortcut to get the pages from the config fule
+         #
+         # @return [ Array ] The list of the pages described in the config file
+         #
+         def pages_from_config
+           self.config['site']['pages'] || []
+         end
+
+         # Return the directory where all the templates of
+         # pages are stored in the filesystem.
+         #
+         # @return [ String ] The root directory
+         #
+         def pages_root_dir
+           File.join(self.runner.path, 'app', 'views', 'pages')
+         end
+
+         # Take the path to a file on the filesystem
+         # and return its matching value for a Page.
+         #
+         # @param [ String ] filepath The path to the file
+         #
+         # @return [ String ] The fullpath of the page
+         #
+         def filepath_to_fullpath(filepath)
+           fullpath = filepath.gsub(File.join(self.pages_root_dir, '/'), '')
+
+           fullpath.gsub!(/^\.\//, '')
+
+           fullpath.split('.').first.dasherize
+         end
+
+         # Return the locale of a file based on its extension.
+         #
+         # Ex: about_us/john_doe.fr.liquid => 'fr'
+         #
+         # @return [ String ] The locale (ex: fr, en, ...etc) or nil if it has no information about the locale
+         #
+         def filepath_locale(filepath)
+           locale = File.basename(filepath).split('.')[1]
+
+           locale && self.locales.include?(locale) ? locale : nil
          end
 
        end

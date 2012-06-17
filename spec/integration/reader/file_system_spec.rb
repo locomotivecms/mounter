@@ -14,6 +14,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'site' do
 
     before(:each) do
+      @reader.stubs(:fetch_pages).returns(true)
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -22,7 +23,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     end
 
     it 'has locales' do
-      @mounting_point.site.locales.should == %w(en)
+      @mounting_point.site.locales.should == %w(en fr no)
     end
 
     it 'has a seo title' do
@@ -42,12 +43,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'page' do
 
     before(:each) do
-      puts "---------"
       @mounting_point = @reader.run!(:path => @path)
     end
 
-    it 'has 6 pages' do
-      @mounting_point.pages.size.should == 6
+    it 'has 9 pages' do
+      @mounting_point.pages.size.should == 9
     end
 
   end
