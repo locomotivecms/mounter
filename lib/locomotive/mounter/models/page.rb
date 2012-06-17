@@ -35,11 +35,17 @@ module Locomotive
         def depth
           return 0 if %w(index 404).include?(self.fullpath)
 
-          self.fullpath.split('/').size + 1
+          self.fullpath.split('/').size #+ 1
         end
 
         def add_child(page)
+          page.parent = self
+
           (self.children ||= []) << page
+
+          self.children.sort! { |a, b| (a.position || 999) <=> (b.position || 999) }
+
+          page
         end
 
       end

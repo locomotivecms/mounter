@@ -34,26 +34,26 @@ describe Locomotive::Mounter::Reader::FileSystem::PagesBuilder do
 
   end
 
-  # describe '#is_subpage_of?' do
-  #
-  #   %w(index 404).each do |page|
-  #     it "returns false for the '#{page}'" do
-  #       @builder.send(:is_subpage_of?, page, 'index').should be_false
-  #     end
-  #   end
-  #
-  #   it 'returns true for pages under index' do
-  #     @builder.send(:is_subpage_of?, 'about_us', 'index').should be_true
-  #   end
-  #
-  #   it "returns true for pages under 'about_us'" do
-  #     @builder.send(:is_subpage_of?, 'about_us/my_team', 'about_us').should be_true
-  #   end
-  #
-  #   it "returns true for pages under 'about-us'" do
-  #     @builder.send(:is_subpage_of?, 'about-us/my_team', 'about_us').should be_true
-  #   end
-  #
-  # end
+  describe '#is_subpage_of?' do
+
+    %w(index 404).each do |page|
+      it "returns false for the '#{page}'" do
+        @builder.send(:is_subpage_of?, page, 'index').should be_false
+      end
+    end
+
+    it 'returns true for pages under index' do
+      @builder.send(:is_subpage_of?, 'about_us', 'index').should be_true
+    end
+
+    it "returns true for pages under 'about_us'" do
+      @builder.send(:is_subpage_of?, 'about_us/my_team', 'about_us').should be_true
+    end
+
+    it "returns true for pages under 'about-us'" do
+      @builder.send(:is_subpage_of?, 'about-us/my_team', 'about_us').should be_true
+    end
+
+  end
 
 end

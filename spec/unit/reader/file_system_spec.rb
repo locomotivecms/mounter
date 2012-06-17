@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Locomotive::Mounter::Reader::FileSystem do
 
   before(:each) do
-    @reader = Locomotive::Mounter::Reader::FileSystem.new
+    @reader = Locomotive::Mounter::Reader::FileSystem.instance
   end
 
   it 'returns nil if the path does not exist' do

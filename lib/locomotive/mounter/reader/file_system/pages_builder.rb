@@ -18,13 +18,11 @@ module Locomotive
          # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
          #
          def build
-           # puts self.config['site']['pages'].inspect
-
            self.fetch_pages_from_config
 
            self.fetch_pages_from_filesystem
 
-           puts self.pages_to_list.map(&:fullpath).inspect
+           self.build_relationships(self.pages['index'], self.pages_to_list)
 
            self.pages
          end
@@ -40,6 +38,21 @@ module Locomotive
            list = self.pages.values.sort { |a, b| a.fullpath <=> b.fullpath }
            # sort finally by depth
            list.sort { |a, b| a.depth <=> b.depth }
+         end
+
+         def build_relationships(parent, list)
+           list.dup.each do |page|
+             next unless self.is_subpage_of?(page.fullpath, parent.fullpath)
+
+             # attach the page to the parent (order by position), also set the parent
+             parent.add_child(page)
+
+             # remove the page from the list
+             list.delete(page)
+
+             # go under
+             self.build_relationships(page, list)
+           end
          end
 
          # Record pages found in the config file
@@ -123,6 +136,33 @@ module Locomotive
            locale = File.basename(filepath).split('.')[1]
 
            locale && self.locales.include?(locale) ? locale : nil
+         end
+
+         # Tell is a page described by its fullpath is a sub page of a parent page
+         # also described by its fullpath
+         #
+         # @param [ String ] fullpath The full path of the page to test
+         # @param [ String ] parent_fullpath The full path of the parent page
+         #
+         # @return [ Boolean] True if the page is a sub page of the parent one
+         #
+         def is_subpage_of?(fullpath, parent_fullpath)
+           return false if %w(index 404).include?(fullpath)
+
+           if parent_fullpath == 'index' && fullpath.split('/').size == 1
+             return true
+           end
+
+           File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
+         end
+
+         # Output simply the tree structure of pages
+         def to_s(page = nil)
+           page ||= self.pages['index']
+
+           puts "#{"  " * (page.depth + 1)} #{page.fullpath}"
+
+           (page.children || []).each { |child| self.to_s(child) }
          end
 
        end

@@ -40,14 +40,32 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
   end
 
-  describe 'page' do
+  describe 'pages' do
 
     before(:each) do
       @mounting_point = @reader.run!(:path => @path)
+      @index = @mounting_point.pages['index']
     end
 
     it 'has 9 pages' do
       @mounting_point.pages.size.should == 9
+    end
+
+    describe '#tree' do
+
+      it 'puts pages under the index page' do
+        @index.children.size.should == 5
+      end
+
+      it 'keeps the ordering of the config' do
+        @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events']
+      end
+
+      it 'also includes nested children' do
+        @index.children.first.children.size.should == 2
+        @index.children.first.children.map(&:fullpath).should == ['about-us/jane-doe', 'about-us/john-doe']
+      end
+
     end
 
   end
