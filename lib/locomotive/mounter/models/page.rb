@@ -54,8 +54,6 @@ module Locomotive
         def depth
           return 0 if %w(index 404).include?(self.fullpath)
 
-          puts "depth #{self.title} / #{self.slug}"
-
           self.fullpath.split('/').size
         end
 
@@ -73,33 +71,25 @@ module Locomotive
           page
         end
 
-        def prepare_fullpath(locales)
-          puts "prepare_fullpath #{self.fullpath.inspect}, #{locales.inspect}"
-          if self.fullpath == 'index'
-            locales.each do |locale|
-              I18n.with_locale(locale) { self.fullpath = 'index' }
-            end
-          else
-            default_slug        = self.slug
-            default_parent_path = self.parent.fullpath
+        # Localize the fullpath based on the parent fullpath
+        #
+        # @param [ Array ] locales The list of locales the fullpath will be translated to
+        #
+        def localize_fullpath(locales)
+          _parent_fullpath  = self.parent.try(:fullpath)
+          _fullpath, _slug  = self.fullpath, self.slug
 
-            puts "prepare_fullpath #{default_slug.inspect}, #{default_parent_path.inspect}"
-
-            if self.parent.fullpath == 'index'
-              locales.each do |locale|
-                I18n.with_locale(locale) do
-                  self.fullpath = self.slug || default_slug
-                end
-              end
-            else
-              locales.each do |locale|
-                I18n.with_locale(locale) do
-                  self.fullpath = File.join(parent.fullpath || default_parent_path, self.slug || default_slug)
-                end
+          locales.each do |locale|
+            I18n.with_locale(locale) do
+              if _fullpath == 'index'
+                self.fullpath = 'index'
+              elsif _parent_fullpath == 'index'
+                self.fullpath = self.slug || _slug
+              else
+                self.fullpath = File.join(parent.fullpath || _parent_fullpath, self.slug || _slug)
               end
             end
           end
-          puts "-================="
         end
 
       end

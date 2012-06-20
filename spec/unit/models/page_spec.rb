@@ -139,7 +139,7 @@ describe Locomotive::Mounter::Models::Page do
 
     before(:each) do
       @page = build_page(:fullpath => 'index')
-      @child = build_page(:title => 'Child')
+      @child = build_page(:title => 'Child', :slug => 'child')
       @page.add_child(@child)
     end
 
@@ -152,7 +152,41 @@ describe Locomotive::Mounter::Models::Page do
       @child.parent.should == @page
     end
 
+    describe 'localizing the fullpath' do
+
+      before(:each) do
+        @sub_child = build_page(:title => 'Child', :slug => { :en => 'sub-child', :fr => 'sous-enfant' })
+        @child.add_child(@sub_child)
+      end
+
+      it 'localizes the index page for all the locales' do
+        @page.localize_fullpath([:en, :fr, :de])
+        [:fr, :de].each do |locale|
+          I18n.with_locale(locale) { @page.fullpath.should == 'index' }
+        end
+      end
+
+      it 'takes the slug as the fullpath for first level pages' do
+        @child.localize_fullpath([:en, :fr])
+        @child.fullpath.should == 'child'
+      end
+
+      it 'takes the default locale to fill the fullpath' do
+        @child.localize_fullpath([:en, :fr])
+        I18n.with_locale(:fr) { @child.fullpath.should == 'child' }
+      end
+
+      it 'takes the parent fullpath to localize the fullpath of a child' do
+        [@page, @child].each { |p| p.localize_fullpath([:en, :fr]) }
+        @sub_child.localize_fullpath([:en, :fr])
+        I18n.with_locale(:fr) { @sub_child.fullpath.should == 'child/sous-enfant' }
+      end
+
+    end
+
   end
+
+
 
   def build_page(attributes = {})
     Locomotive::Mounter::Models::Page.new(attributes)

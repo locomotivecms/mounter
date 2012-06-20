@@ -24,11 +24,11 @@ module Locomotive
 
            index = self.pages['index']
 
-           index.prepare_fullpath(self.locales)
+           index.localize_fullpath(self.locales)
 
            self.build_relationships(index, self.pages_to_list)
 
-           I18n.with_locale(:fr) { self.to_s }
+           # I18n.with_locale(:fr) { self.to_s }
 
            self.pages
          end
@@ -54,7 +54,7 @@ module Locomotive
              parent.add_child(page)
 
              # localize the fullpath in all the locales
-             page.prepare_fullpath(self.locales)
+             page.localize_fullpath(self.locales)
 
              # remove the page from the list
              list.delete(page)
@@ -165,7 +165,7 @@ module Locomotive
            File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
          end
 
-         # Output simply the tree structure of pages
+         # Output simply the tree structure of the pages
          def to_s(page = nil)
            page ||= self.pages['index']
 
