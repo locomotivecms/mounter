@@ -8,6 +8,8 @@ module Locomotive
       included do
         cattr_accessor :_fields
         self._fields = {}
+
+        attr_accessor :_locales
       end
 
       # Set or replace the attributes of the current instance by the ones
@@ -44,6 +46,14 @@ module Locomotive
         self.send :"#{name}_localized?"
       end
 
+      # List all the translations done on that model
+      #
+      # @return [ List ] List of locales
+      #
+      def translated_in
+        self._locales
+      end
+
       protected
 
       def getter(name, localized = false)
@@ -57,11 +67,19 @@ module Locomotive
 
       def setter(name, value, localized = false)
         if localized
+          # keep track of the current locale
+          self.add_locale(I18n.locale)
+
           translations = self.instance_variable_get(:"@#{name}") || {}
           translations[I18n.locale] = value
           value = translations
         end
         self.instance_variable_set(:"@#{name}", value)
+      end
+
+      def add_locale(locale)
+        self._locales ||= []
+        self._locales << locale.to_sym unless self._locales.include?(locale.to_sym)
       end
 
       module ClassMethods
@@ -98,7 +116,8 @@ module Locomotive
               end
 
               def #{name}_translations=(translations)
-                @#{name} = translations
+                translations.each { |locale, value| self.add_locale(locale) }
+                @#{name} = translations.symbolize_keys
               end
             EOV
           end

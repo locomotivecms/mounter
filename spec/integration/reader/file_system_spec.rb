@@ -63,7 +63,13 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       it 'also includes nested children' do
         @index.children.first.children.size.should == 2
-        @index.children.first.children.map(&:fullpath).should == ['about-us/jane-doe', 'about-us/john-doe']
+        @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
+      end
+
+      it 'localizes the fullpath' do
+        I18n.with_locale(:fr) do
+          @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', 'a-notre-sujet/jane-doe']
+        end
       end
 
     end

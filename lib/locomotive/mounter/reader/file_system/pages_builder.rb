@@ -22,7 +22,13 @@ module Locomotive
 
            self.fetch_pages_from_filesystem
 
-           self.build_relationships(self.pages['index'], self.pages_to_list)
+           index = self.pages['index']
+
+           index.prepare_fullpath(self.locales)
+
+           self.build_relationships(index, self.pages_to_list)
+
+           I18n.with_locale(:fr) { self.to_s }
 
            self.pages
          end
@@ -46,6 +52,9 @@ module Locomotive
 
              # attach the page to the parent (order by position), also set the parent
              parent.add_child(page)
+
+             # localize the fullpath in all the locales
+             page.prepare_fullpath(self.locales)
 
              # remove the page from the list
              list.delete(page)
@@ -160,7 +169,7 @@ module Locomotive
          def to_s(page = nil)
            page ||= self.pages['index']
 
-           puts "#{"  " * (page.depth + 1)} #{page.fullpath}"
+           puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect}"
 
            (page.children || []).each { |child| self.to_s(child) }
          end
