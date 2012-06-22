@@ -38,7 +38,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       @mounting_point.site.meta_description.should == 'some meta description'
     end
 
-  end
+  end # site
 
   describe 'pages' do
 
@@ -74,6 +74,27 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
     end
 
-  end
+  end # pages
+
+  describe 'snippets' do
+
+    before(:each) do
+      @reader.stubs(:fetch_pages).returns(true)
+      @mounting_point = @reader.run!(:path => @path)
+    end
+
+    it 'has 2 snippets' do
+      @mounting_point.snippets.size.should == 2
+      @mounting_point.snippets.map(&:slug).should == %w(song header)
+    end
+
+    it 'localizes the file path' do
+      @mounting_point.snippets.first.template_filepath.should match /song\.liquid$/
+      I18n.with_locale(:fr) do
+        @mounting_point.snippets.first.template_filepath.should match /song\.fr\.liquid\.haml$/
+      end
+    end
+
+  end # snippets
 
 end

@@ -135,18 +135,6 @@ module Locomotive
             fullpath.split('.').first.dasherize
           end
 
-          # Return the locale of a file based on its extension.
-          #
-          # Ex: about_us/john_doe.fr.liquid => 'fr'
-          #
-          # @return [ String ] The locale (ex: fr, en, ...etc) or nil if it has no information about the locale
-          #
-          def filepath_locale(filepath)
-            locale = File.basename(filepath).split('.')[1]
-
-            locale && self.locales.include?(locale) ? locale : nil
-          end
-
           # Tell is a page described by its fullpath is a sub page of a parent page
           # also described by its fullpath
           #

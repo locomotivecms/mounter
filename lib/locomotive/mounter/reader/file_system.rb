@@ -41,6 +41,8 @@ module Locomotive
              self.fetch_site
 
              self.fetch_pages
+
+             self.fetch_snippets
            end
          end
 
@@ -53,6 +55,12 @@ module Locomotive
          def fetch_pages
            self.mounting_point.pages = PagesBuilder.new(self).build.tap do |pages|
              pages.each { |fullpath, page| page.mounting_point = self.mounting_point }
+           end
+         end
+
+         def fetch_snippets
+           self.mounting_point.snippets = SnippetsBuilder.new(self).build.tap do |snippets|
+             snippets.each { |snippet| snippet.mounting_point = self.mounting_point }
            end
          end
 
