@@ -53,7 +53,6 @@ module Locomotive
         #
         def depth
           return 0 if %w(index 404).include?(self.fullpath)
-
           self.fullpath.split('/').size
         end
 
