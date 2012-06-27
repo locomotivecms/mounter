@@ -80,7 +80,7 @@ module Locomotive
       def getter(name, options = {})
         value = self.instance_variable_get(:"@#{name}")
         if options[:localized]
-          (value || {})[I18n.locale]
+          (value || {})[Locomotive::Mounter.locale]
         else
           value
         end
@@ -89,10 +89,10 @@ module Locomotive
       def setter(name, value, options = {})
         if options[:localized]
           # keep track of the current locale
-          self.add_locale(I18n.locale)
+          self.add_locale(Locomotive::Mounter.locale)
 
           translations = self.instance_variable_get(:"@#{name}") || {}
-          translations[I18n.locale] = value
+          translations[Locomotive::Mounter.locale] = value
           value = translations
         end
 

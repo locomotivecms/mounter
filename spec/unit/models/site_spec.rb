@@ -25,14 +25,14 @@ describe Locomotive::Mounter::Models::Site do
     it 'sets a localized attribute' do
       site = build_site(seo_title: 'Hello world')
       site.seo_title.should == 'Hello world'
-      I18n.with_locale(:fr) { site.seo_title.should be_nil }
+      Locomotive::Mounter.with_locale(:fr) { site.seo_title.should be_nil }
 
     end
 
     it 'sets a complete translation of a localized attribute' do
       site = build_site(seo_title: { en: 'Hello world', fr: 'Salut le monde' })
       site.seo_title.should == 'Hello world'
-      I18n.with_locale(:fr) { site.seo_title.should == 'Salut le monde' }
+      Locomotive::Mounter.with_locale(:fr) { site.seo_title.should == 'Salut le monde' }
     end
 
   end

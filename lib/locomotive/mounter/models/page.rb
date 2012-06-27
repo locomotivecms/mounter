@@ -79,7 +79,7 @@ module Locomotive
           _fullpath, _slug  = self.fullpath, self.slug
 
           locales.each do |locale|
-            I18n.with_locale(locale) do
+            Locomotive::Mounter.with_locale(locale) do
               if _fullpath == 'index'
                 self.fullpath = 'index'
               elsif _parent_fullpath == 'index'

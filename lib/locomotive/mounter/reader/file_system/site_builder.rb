@@ -10,7 +10,9 @@ module Locomotive
 
            site.delete('pages') # we do not need pages at this step
 
-           Locomotive::Mounter::Models::Site.new(site)
+           Locomotive::Mounter::Models::Site.new(site).tap do |site|
+             Locomotive::Mounter.locale = site.locales.first || Locomotive::Mounter.locale
+           end
          end
 
         end

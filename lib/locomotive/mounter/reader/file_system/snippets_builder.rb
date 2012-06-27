@@ -24,7 +24,7 @@ module Locomotive
 
               snippet = self.add_snippet(filepath)
 
-              I18n.with_locale(self.filepath_locale(filepath)) do
+              Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 snippet.template_filepath = filepath
               end
             end

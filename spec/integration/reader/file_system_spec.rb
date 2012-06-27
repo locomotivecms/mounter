@@ -8,6 +8,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   end
 
   it 'runs it' do
+    @reader.stubs(:build_mounting_point).returns(true)
     @reader.run!(:path => @path).should_not be_nil
   end
 
@@ -68,7 +69,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       end
 
       it 'localizes the fullpath' do
-        I18n.with_locale(:fr) do
+        Locomotive::Mounter.with_locale(:fr) do
           @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', 'a-notre-sujet/jane-doe']
         end
       end
@@ -92,7 +93,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
     it 'localizes the file path' do
       @mounting_point.snippets.values.first.template_filepath.should match /song\.liquid$/
-      I18n.with_locale(:fr) do
+      Locomotive::Mounter.with_locale(:fr) do
         @mounting_point.snippets.values.first.template_filepath.should match /song\.fr\.liquid\.haml$/
       end
     end

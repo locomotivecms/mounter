@@ -26,14 +26,14 @@ describe Locomotive::Mounter::Models::Page do
       page = build_page(title: 'Hello world')
       page.localized?(:title).should be_true
       page.title.should == 'Hello world'
-      I18n.with_locale(:fr) { page.title.should be_nil }
+      Locomotive::Mounter.with_locale(:fr) { page.title.should be_nil }
 
     end
 
     it 'sets a complete translation of a localized attribute' do
       page = build_page(title: { en: 'Hello world', fr: 'Salut le monde' })
       page.title.should == 'Hello world'
-      I18n.with_locale(:fr) { page.title.should == 'Salut le monde' }
+      Locomotive::Mounter.with_locale(:fr) { page.title.should == 'Salut le monde' }
     end
 
   end
@@ -52,7 +52,7 @@ describe Locomotive::Mounter::Models::Page do
 
     it 'is translated if we use the direct attribute setter' do
       page = build_page(title: 'Hello world')
-      I18n.with_locale(:fr) { page.title = 'Salut le monde' }
+      Locomotive::Mounter.with_locale(:fr) { page.title = 'Salut le monde' }
       page.translated_in.should == [:en, :fr]
     end
 
@@ -126,7 +126,7 @@ describe Locomotive::Mounter::Models::Page do
 
     it 'uses the localization' do
       @page.fullpath = 'about-us/john-doe'
-      I18n.with_locale(:fr) do
+      Locomotive::Mounter.with_locale(:fr) do
         @page.fullpath = 'a-notre-sujet/jean-personne'
         @page.slug.should == 'jean-personne'
       end
@@ -162,7 +162,7 @@ describe Locomotive::Mounter::Models::Page do
       it 'localizes the index page for all the locales' do
         @page.localize_fullpath([:en, :fr, :de])
         [:fr, :de].each do |locale|
-          I18n.with_locale(locale) { @page.fullpath.should == 'index' }
+          Locomotive::Mounter.with_locale(locale) { @page.fullpath.should == 'index' }
         end
       end
 
@@ -173,13 +173,13 @@ describe Locomotive::Mounter::Models::Page do
 
       it 'takes the default locale to fill the fullpath' do
         @child.localize_fullpath([:en, :fr])
-        I18n.with_locale(:fr) { @child.fullpath.should == 'child' }
+        Locomotive::Mounter.with_locale(:fr) { @child.fullpath.should == 'child' }
       end
 
       it 'takes the parent fullpath to localize the fullpath of a child' do
         [@page, @child].each { |p| p.localize_fullpath([:en, :fr]) }
         @sub_child.localize_fullpath([:en, :fr])
-        I18n.with_locale(:fr) { @sub_child.fullpath.should == 'child/sous-enfant' }
+        Locomotive::Mounter.with_locale(:fr) { @sub_child.fullpath.should == 'child/sous-enfant' }
       end
 
     end

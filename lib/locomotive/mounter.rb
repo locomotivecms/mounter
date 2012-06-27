@@ -56,7 +56,7 @@ module Locomotive
     end
 
     def self.with_locale(locale, &block)
-      tmp, @@locale = @@locale, locale
+      tmp, @@locale = @@locale, locale.try(:to_sym) || @@locale
       yield
       @@locale = tmp
     end

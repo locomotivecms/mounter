@@ -28,7 +28,7 @@ module Locomotive
 
             self.build_relationships(index, self.pages_to_list)
 
-            # I18n.with_locale(:fr) { self.to_s } # DEBUG
+            # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
 
             self.pages
           end
@@ -80,8 +80,8 @@ module Locomotive
 
               page = self.add_page(fullpath)
 
-              I18n.with_locale(self.filepath_locale(filepath)) do
-                page.template_filepath = filepath
+              Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
+                page.template_filepath = filepath if Locomotive::Mounter.locale
               end
             end
           end

@@ -21,14 +21,14 @@ describe Locomotive::Mounter::Models::Snippet do
     it 'sets a localized attribute' do
       snippet = build_snippet(template_filepath: 'header.liquid.haml')
       snippet.template_filepath.should == 'header.liquid.haml'
-      I18n.with_locale(:fr) { snippet.template_filepath.should be_nil }
+      Locomotive::Mounter.with_locale(:fr) { snippet.template_filepath.should be_nil }
 
     end
 
     it 'sets a complete translation of a localized attribute' do
       snippet = build_snippet(template_filepath: { en: 'header.liquid.haml', fr: 'header.fr.liquid.haml' })
       snippet.template_filepath.should == 'header.liquid.haml'
-      I18n.with_locale(:fr) { snippet.template_filepath.should == 'header.fr.liquid.haml' }
+      Locomotive::Mounter.with_locale(:fr) { snippet.template_filepath.should == 'header.fr.liquid.haml' }
     end
 
   end

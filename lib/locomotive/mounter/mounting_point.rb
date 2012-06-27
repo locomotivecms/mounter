@@ -20,7 +20,7 @@ module Locomotive
       # @return [ Symbol ] The default locale
       #
       def default_locale
-        self.locales.first || I18n.locale
+        self.locales.first || Locomotive::Mounter.locale
       end
 
       # Register a resource (pages, content types, ...etc) and its elements.
