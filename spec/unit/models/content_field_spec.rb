@@ -40,6 +40,21 @@ describe Locomotive::Mounter::Models::ContentField do
 
   end
 
+  describe '#is_relationship?' do
+
+    it 'is false for types other than belongs_to, has_many, many_to_many' do
+      build_content_field(type: 'date').is_relationship?.should == false
+    end
+
+    %w(belongs_to has_many many_to_many).each do |type|
+      it "is true for #{type}" do
+        build_content_field(type: type).is_relationship?.should == true
+      end
+    end
+
+  end
+
+
   def build_content_field(attributes = {})
     Locomotive::Mounter::Models::ContentField.new(attributes)
   end

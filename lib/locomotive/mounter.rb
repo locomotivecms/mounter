@@ -16,6 +16,7 @@ require 'locomotive/mounter/models/page'
 require 'locomotive/mounter/models/snippet'
 require 'locomotive/mounter/models/content_type'
 require 'locomotive/mounter/models/content_field'
+require 'locomotive/mounter/models/content_entry'
 require 'locomotive/mounter/reader/file_system'
 require 'locomotive/mounter/reader/file_system/base'
 require 'locomotive/mounter/reader/file_system/site_builder'
@@ -31,6 +32,9 @@ module Locomotive
 
     @@mount_point = nil
 
+    # default locale
+    @@locale = I18n.locale
+
     def self.mount(options)
       @@mount_point = Locomotive::Mounter::Config[:reader].run!(options)
     end
@@ -41,6 +45,20 @@ module Locomotive
 
     def self.logger=(logger)
       @@logger = logger
+    end
+
+    def self.locale
+      @@locale
+    end
+
+    def self.locale=(locale)
+      @@locale = locale
+    end
+
+    def self.with_locale(locale, &block)
+      tmp, @@locale = @@locale, locale
+      yield
+      @@locale = tmp
     end
 
   end

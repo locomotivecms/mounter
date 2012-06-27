@@ -45,9 +45,7 @@ module Locomotive
 
         attributes.each do |name, value|
           unless self.class._fields.key?(name.to_sym)
-            message = "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
-            Locomotive::Mounter.logger.warn message
-            raise FieldDoesNotExistException.new message
+            raise FieldDoesNotExistException.new "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
           end
 
           if self.localized?(name) && value.is_a?(Hash)
