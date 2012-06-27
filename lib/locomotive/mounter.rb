@@ -14,11 +14,14 @@ require 'locomotive/mounter/models/base'
 require 'locomotive/mounter/models/site'
 require 'locomotive/mounter/models/page'
 require 'locomotive/mounter/models/snippet'
+require 'locomotive/mounter/models/content_type'
+require 'locomotive/mounter/models/content_field'
 require 'locomotive/mounter/reader/file_system'
 require 'locomotive/mounter/reader/file_system/base'
 require 'locomotive/mounter/reader/file_system/site_builder'
 require 'locomotive/mounter/reader/file_system/pages_builder'
 require 'locomotive/mounter/reader/file_system/snippets_builder'
+require 'locomotive/mounter/reader/file_system/content_types_builder'
 
 module Locomotive
 

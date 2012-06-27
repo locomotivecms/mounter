@@ -30,6 +30,8 @@ module Locomotive
          #
          # Ex: about_us/john_doe.fr.liquid.haml => 'fr'
          #
+         # @param [ String ] filepath The path to the file
+         #
          # @return [ String ] The locale (ex: fr, en, ...etc) or nil if it has no information about the locale
          #
          def filepath_locale(filepath)
@@ -38,6 +40,15 @@ module Locomotive
            locale && self.locales.include?(locale) ? locale : nil
          end
 
+         # Open a YAML file and returns the content of the file
+         #
+         # @param [ String ] filepath The path to the file
+         #
+         # @return [ Object ] The content of the file
+         #
+         def read_yaml(filepath)
+           YAML::load(File.open(filepath).read)
+         end
 
        end
 

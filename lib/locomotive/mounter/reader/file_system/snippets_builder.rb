@@ -12,7 +12,7 @@ module Locomotive
           def build
             self.fetch_snippets_from_filesystem
 
-            self.items.values
+            self.items
           end
 
           protected
@@ -33,7 +33,7 @@ module Locomotive
           # Return the directory where all the templates of
           # snippets are stored in the filesystem.
           #
-          # @return [ String ] The root directory
+          # @return [ String ] The snippets directory
           #
           def snippets_dir
             File.join(self.runner.path, 'app', 'views', 'snippets')

@@ -186,8 +186,6 @@ describe Locomotive::Mounter::Models::Page do
 
   end
 
-
-
   def build_page(attributes = {})
     Locomotive::Mounter::Models::Page.new(attributes)
   end

@@ -14,7 +14,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'site' do
 
     before(:each) do
-      @reader.stubs(:fetch_pages).returns(true)
+      stub_reader_builders(@reader)
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -43,6 +43,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'pages' do
 
     before(:each) do
+      stub_reader_builders(@reader, %w(pages))
       @mounting_point = @reader.run!(:path => @path)
       @index = @mounting_point.pages['index']
     end
@@ -79,22 +80,65 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'snippets' do
 
     before(:each) do
-      @reader.stubs(:fetch_pages).returns(true)
+      stub_reader_builders(@reader, %w(snippets))
       @mounting_point = @reader.run!(:path => @path)
     end
 
     it 'has 2 snippets' do
       @mounting_point.snippets.size.should == 2
-      @mounting_point.snippets.map(&:slug).should == %w(song header)
+      @mounting_point.snippets.keys.should == %w(song header)
+      @mounting_point.snippets.values.map(&:slug).should == %w(song header)
     end
 
     it 'localizes the file path' do
-      @mounting_point.snippets.first.template_filepath.should match /song\.liquid$/
+      @mounting_point.snippets.values.first.template_filepath.should match /song\.liquid$/
       I18n.with_locale(:fr) do
-        @mounting_point.snippets.first.template_filepath.should match /song\.fr\.liquid\.haml$/
+        @mounting_point.snippets.values.first.template_filepath.should match /song\.fr\.liquid\.haml$/
       end
     end
 
   end # snippets
+
+  describe 'content types' do
+
+    before(:each) do
+      stub_reader_builders(@reader, %w(content_types))
+      @mounting_point = @reader.run!(:path => @path)
+    end
+
+    it 'has 4 content types' do
+      @mounting_point.content_types.size.should == 4
+      @mounting_point.content_types.keys.should == %w(events messages songs updates)
+      @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
+    end
+
+    describe 'a single content type' do
+
+      before(:each) do
+        @content_type = @mounting_point.content_types.values.first
+      end
+
+      it 'has basic properties: name, slug' do
+        @content_type.name.should == 'Events'
+        @content_type.slug.should == 'events'
+      end
+
+      it 'has fields' do
+        @content_type.fields.size.should == 4
+        @content_type.fields.map(&:name).should == %w(place date city state)
+        @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
+      end
+
+    end
+
+  end
+
+  def stub_reader_builders(reader, builders = nil)
+    klasses = (builders ||= []).insert(0, 'site').map do |name|
+      "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Builder".constantize
+    end
+
+    reader.stubs(:builders).returns(klasses)
+  end
 
 end

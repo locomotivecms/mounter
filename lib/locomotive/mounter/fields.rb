@@ -6,10 +6,32 @@ module Locomotive
       extend ActiveSupport::Concern
 
       included do
-        cattr_accessor :_fields
-        self._fields = {}
+        include ActiveSupport::Callbacks
+
+        define_callbacks :initialize
+
+        class << self; attr_accessor :_fields end
 
         attr_accessor :_locales
+      end
+
+      # Default constructor
+      #
+      # @param [ Hash ] attributes The new attributes
+      #
+      def initialize(attributes = {})
+        run_callbacks :initialize do
+          _attributes = attributes.symbolize_keys
+
+          # set default values
+          self.class._fields.each do |name, options|
+            next if !options.key?(:default) || _attributes.key?(name)
+
+            _attributes[name] = options[:default]
+          end
+
+          self.write_attributes(_attributes)
+        end
       end
 
       # Set or replace the attributes of the current instance by the ones
@@ -43,7 +65,8 @@ module Locomotive
       # @return [ Boolean ] True if the field is localized
       #
       def localized?(name)
-        self.send :"#{name}_localized?"
+        method_name = :"#{name}_localized?"
+        self.respond_to?(method_name) && self.send(method_name)
       end
 
       # List all the translations done on that model
@@ -56,17 +79,17 @@ module Locomotive
 
       protected
 
-      def getter(name, localized = false)
+      def getter(name, options = {})
         value = self.instance_variable_get(:"@#{name}")
-        if localized
+        if options[:localized]
           (value || {})[I18n.locale]
         else
           value
         end
       end
 
-      def setter(name, value, localized = false)
-        if localized
+      def setter(name, value, options = {})
+        if options[:localized]
           # keep track of the current locale
           self.add_locale(I18n.locale)
 
@@ -74,6 +97,12 @@ module Locomotive
           translations[I18n.locale] = value
           value = translations
         end
+
+        if options[:type] == :array
+          klass = options[:class_name].constantize
+          value = value.map { |object| object.is_a?(Hash) ? klass.new(object) : object }
+        end
+
         self.instance_variable_set(:"@#{name}", value)
       end
 
@@ -93,15 +122,17 @@ module Locomotive
         def field(name, options = {})
           options = { localized: false }.merge(options)
 
-          self._fields[name] = options
+          @_fields ||= {} # initialize the list of fields if nil
+
+          self._fields[name.to_sym] = options
 
           class_eval <<-EOV
             def #{name}
-              self.getter '#{name}', #{options[:localized]}
+              self.getter '#{name}', self.class._fields[:#{name}]
             end
 
             def #{name}=(value)
-              self.setter '#{name}', value, #{options[:localized]}
+              self.setter '#{name}', value, self.class._fields[:#{name}] #, #{options[:localized]}
             end
 
             def #{name}_localized?

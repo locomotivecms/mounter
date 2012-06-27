@@ -32,35 +32,25 @@ module Locomotive
            self.build_mounting_point
          end
 
+         # Ordered list of builders
+         #
+         # @return [ Array ] List of classes
+         #
+         def builders
+           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder]
+         end
+
          protected
 
          def build_mounting_point
            Locomotive::Mounter::MountingPoint.new.tap do |mounting_point|
              self.mounting_point = mounting_point
 
-             self.fetch_site
+             self.builders.each do |builder|
+               name = builder.name.gsub(/Builder$/, '').demodulize.underscore
 
-             self.fetch_pages
-
-             self.fetch_snippets
-           end
-         end
-
-         def fetch_site
-           self.mounting_point.site = SiteBuilder.new(self).build.tap do |site|
-             site.mounting_point = self.mounting_point
-           end
-         end
-
-         def fetch_pages
-           self.mounting_point.pages = PagesBuilder.new(self).build.tap do |pages|
-             pages.each { |fullpath, page| page.mounting_point = self.mounting_point }
-           end
-         end
-
-         def fetch_snippets
-           self.mounting_point.snippets = SnippetsBuilder.new(self).build.tap do |snippets|
-             snippets.each { |snippet| snippet.mounting_point = self.mounting_point }
+               self.mounting_point.register_resource(name, builder.new(self).build)
+             end
            end
          end
 

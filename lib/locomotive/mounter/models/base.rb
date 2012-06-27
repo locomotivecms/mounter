@@ -8,10 +8,6 @@ module Locomotive
 
         attr_accessor :mounting_point
 
-        def initialize(attributes = {})
-          self.write_attributes(attributes)
-        end
-
       end
 
     end
