@@ -5,23 +5,23 @@ module Locomotive
 
         class ContentTypesBuilder < Base
 
-          # Build the list of content types from the folder on the file system.
+          # Build the list of content types from the folder in the file system.
           #
           # @return [ Array ] The un-ordered list of content types
           #
           def build
-            self.fetch_content_types_from_filesystem
+            self.fetch_from_filesystem
 
             self.items
           end
 
           protected
 
-          def fetch_content_types_from_filesystem
-            Dir.glob(File.join(self.content_types_dir, '*.yml')).each do |filepath|
+          def fetch_from_filesystem
+            Dir.glob(File.join(self.root_dir, '*.yml')).each do |filepath|
               attributes = self.read_yaml(filepath)
 
-              self.add_content_type(attributes)
+              self.add(attributes)
             end
           end
 
@@ -32,7 +32,7 @@ module Locomotive
           #
           # @return [ Object ] A newly created content type or the existing one
           #
-          def add_content_type(attributes)
+          def add(attributes)
             slug = attributes['slug']
 
             attributes.delete('fields').each_with_index do |_attributes, index|
@@ -48,11 +48,11 @@ module Locomotive
           end
 
           # Return the directory where all the definition of
-          # the conten types are stored.
+          # the content types are stored.
           #
           # @return [ String ] The content types directory
           #
-          def content_types_dir
+          def root_dir
             File.join(self.runner.path, 'app', 'content_types')
           end
 

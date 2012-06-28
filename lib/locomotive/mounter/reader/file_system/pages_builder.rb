@@ -18,9 +18,9 @@ module Locomotive
           # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
           #
           def build
-            self.fetch_pages_from_config
+            self.fetch_from_config
 
-            self.fetch_pages_from_filesystem
+            self.fetch_from_filesystem
 
             index = self.pages['index']
 
@@ -65,20 +65,20 @@ module Locomotive
           end
 
           # Record pages found in the config file
-          def fetch_pages_from_config
+          def fetch_from_config
             self.pages_from_config.each_with_index do |_page, position|
               fullpath, attributes = _page.keys.first.dasherize, _page.values.first.try(:symbolize_keys) || {}
 
-              self.add_page(fullpath, attributes.merge(position: position))
+              self.add(fullpath, attributes.merge(position: position))
             end
           end
 
           # Record pages found in file system
-          def fetch_pages_from_filesystem
-            Dir.glob(File.join(self.pages_root_dir, '**/*.{liquid,haml}')).each do |filepath|
+          def fetch_from_filesystem
+            Dir.glob(File.join(self.root_dir, '**/*.{liquid,haml}')).each do |filepath|
               fullpath = self.filepath_to_fullpath(filepath)
 
-              page = self.add_page(fullpath)
+              page = self.add(fullpath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 page.template_filepath = filepath if Locomotive::Mounter.locale
@@ -94,7 +94,7 @@ module Locomotive
           #
           # @return [ Object ] A newly created page or the existing one
           #
-          def add_page(fullpath, attributes = {})
+          def add(fullpath, attributes = {})
             unless self.pages.key?(fullpath)
               attributes[:fullpath] = fullpath
               self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
@@ -116,7 +116,7 @@ module Locomotive
           #
           # @return [ String ] The root directory
           #
-          def pages_root_dir
+          def root_dir
             File.join(self.runner.path, 'app', 'views', 'pages')
           end
 
@@ -128,7 +128,7 @@ module Locomotive
           # @return [ String ] The fullpath of the page
           #
           def filepath_to_fullpath(filepath)
-            fullpath = filepath.gsub(File.join(self.pages_root_dir, '/'), '')
+            fullpath = filepath.gsub(File.join(self.root_dir, '/'), '')
 
             fullpath.gsub!(/^\.\//, '')
 

@@ -10,7 +10,7 @@ module Locomotive
           # @return [ Array ] The un-ordered list of snippets
           #
           def build
-            self.fetch_snippets_from_filesystem
+            self.fetch_from_filesystem
 
             self.items
           end
@@ -18,11 +18,11 @@ module Locomotive
           protected
 
           # Record snippets found in file system
-          def fetch_snippets_from_filesystem
-            Dir.glob(File.join(self.snippets_dir, '*.{liquid,haml}')).each do |filepath|
+          def fetch_from_filesystem
+            Dir.glob(File.join(self.root_dir, '*.{liquid,haml}')).each do |filepath|
               fullpath = File.basename(filepath)
 
-              snippet = self.add_snippet(filepath)
+              snippet = self.add(filepath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 snippet.template_filepath = filepath
@@ -35,7 +35,7 @@ module Locomotive
           #
           # @return [ String ] The snippets directory
           #
-          def snippets_dir
+          def root_dir
             File.join(self.runner.path, 'app', 'views', 'snippets')
           end
 
@@ -46,7 +46,7 @@ module Locomotive
           #
           # @return [ Object ] A newly created snippet or the existing one
           #
-          def add_snippet(filepath)
+          def add(filepath)
             slug = self.filepath_to_slug(filepath)
 
             unless self.items.key?(slug)
