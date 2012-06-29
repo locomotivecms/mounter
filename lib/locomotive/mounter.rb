@@ -23,6 +23,7 @@ require 'locomotive/mounter/reader/file_system/site_builder'
 require 'locomotive/mounter/reader/file_system/pages_builder'
 require 'locomotive/mounter/reader/file_system/snippets_builder'
 require 'locomotive/mounter/reader/file_system/content_types_builder'
+require 'locomotive/mounter/reader/file_system/content_entries_builder'
 
 module Locomotive
 

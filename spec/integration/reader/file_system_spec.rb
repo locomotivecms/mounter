@@ -132,7 +132,44 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
     end
 
-  end
+  end # content types
+
+  describe 'content entries' do
+
+    before(:each) do
+      stub_reader_builders(@reader, %w(content_types content_entries))
+      @mounting_point = @reader.run!(:path => @path)
+    end
+
+    it 'has 26 entries for the 4 content types' do
+      @mounting_point.content_entries.size.should == 26
+    end
+
+    describe 'a single content entry' do
+
+      before(:each) do
+        @content_entry = @mounting_point.content_entries.values.first
+      end
+
+      it 'has a label' do
+        @content_entry._label.should == "Avogadro's Number"
+      end
+
+      it 'has a slug' do
+        @content_entry._slug.should == "avogadro-s-number"
+      end
+
+      it 'can access dynamic field' do
+        @content_entry.city = 'Fort Collins'
+      end
+
+      it 'can access casted value of a dynamic field' do
+        @content_entry.date = Date.parse('2012/06/11')
+      end
+
+    end
+
+  end # content types
 
   def stub_reader_builders(reader, builders = nil)
     klasses = (builders ||= []).insert(0, 'site').map do |name|

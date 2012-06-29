@@ -6,7 +6,6 @@ module Locomotive
 
         ## fields ##
         field :_slug,               localized: true
-        # field :_label_field_name
         field :_position,           default: 0
         field :_visible,            default: true
         field :seo_title,           localized: true

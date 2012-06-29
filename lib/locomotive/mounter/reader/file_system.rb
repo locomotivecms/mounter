@@ -37,7 +37,7 @@ module Locomotive
          # @return [ Array ] List of classes
          #
          def builders
-           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder]
+           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder, ContentEntriesBuilder]
          end
 
          protected

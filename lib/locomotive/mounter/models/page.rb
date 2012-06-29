@@ -60,6 +60,8 @@ module Locomotive
         #
         # @param [ Object ] page The child page
         #
+        # @return [ Object ] The child page
+        #
         def add_child(page)
           page.parent = self
 
