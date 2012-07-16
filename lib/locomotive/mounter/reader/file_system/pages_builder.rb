@@ -29,7 +29,7 @@ module Locomotive
             self.build_relationships(index, self.pages_to_list)
 
             # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
-            puts self.to_s
+            # puts self.to_s
 
             self.pages
           end
@@ -76,14 +76,25 @@ module Locomotive
 
           # Record pages found in file system
           def fetch_from_filesystem
-            Dir.glob(File.join(self.root_dir, '**/*.{liquid,haml}')).each do |filepath|
+            folders = []
+
+            Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
               fullpath = self.filepath_to_fullpath(filepath)
+
+              folders.push(fullpath) && next if File.directory?(filepath)
+
+              next unless filepath =~ /\.(haml|liquid)$/
 
               page = self.add(fullpath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 page.template_filepath = filepath if Locomotive::Mounter.locale
               end
+            end
+
+            folders.each do |fullpath|
+              next if self.pages.key?(fullpath)
+              self.add(fullpath, title: File.basename(fullpath).humanize)
             end
           end
 
