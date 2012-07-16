@@ -49,8 +49,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
       @index = @mounting_point.pages['index']
     end
 
-    it 'has 9 pages' do
-      @mounting_point.pages.size.should == 9
+    it 'has 11 pages' do
+      @mounting_point.pages.size.should == 11
     end
 
     describe '#tree' do

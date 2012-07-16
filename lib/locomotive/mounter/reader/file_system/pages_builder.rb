@@ -29,6 +29,7 @@ module Locomotive
             self.build_relationships(index, self.pages_to_list)
 
             # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
+            puts self.to_s
 
             self.pages
           end
