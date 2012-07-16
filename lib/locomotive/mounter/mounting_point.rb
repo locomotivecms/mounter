@@ -3,7 +3,6 @@ module Locomotive
 
     class MountingPoint
 
-      # attr_accessor :site, :root_page, :pages, :snippets, :content_types
       attr_accessor :resources, :root_page
 
       # Return all the locales defined by the site related to that mounting point.
