@@ -56,11 +56,15 @@ describe Locomotive::Mounter::Reader::FileSystem do
     describe '#tree' do
 
       it 'puts pages under the index page' do
-        @index.children.size.should == 5
+        @index.children.size.should == 6
       end
 
       it 'keeps the ordering of the config' do
-        @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events']
+        @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
+      end
+
+      it 'assigns titles for all the pages' do
+        @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
       end
 
       it 'also includes nested children' do
@@ -73,6 +77,13 @@ describe Locomotive::Mounter::Reader::FileSystem do
           @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', 'a-notre-sujet/jane-doe']
         end
       end
+
+      it 'localizes titles' do
+        Locomotive::Mounter.with_locale(:fr) do
+          @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
+        end
+      end
+
 
     end
 

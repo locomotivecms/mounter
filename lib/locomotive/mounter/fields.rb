@@ -56,6 +56,8 @@ module Locomotive
         end
       end
 
+      alias :attributes= :write_attributes
+
       # Check if the field specified by the argument is localized
       #
       # @param [ String ] name Name of the field

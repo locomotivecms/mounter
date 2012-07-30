@@ -12,15 +12,12 @@ module Locomotive
             super
           end
 
-          # Build the tree of pages based on the data specified by the config/site.yml file
-          # of the template but also with the filesystem structure
+          # Build the tree of pages based on the filesystem structure
           #
           # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
           #
           def build
-            self.fetch_from_config
-
-            self.fetch_from_filesystem
+            self.fetch
 
             index = self.pages['index']
 
@@ -65,17 +62,8 @@ module Locomotive
             end
           end
 
-          # Record pages found in the config file
-          def fetch_from_config
-            self.pages_from_config.each_with_index do |_page, position|
-              fullpath, attributes = _page.keys.first.dasherize, _page.values.first.try(:symbolize_keys) || {}
-
-              self.add(fullpath, attributes.merge(position: position))
-            end
-          end
-
           # Record pages found in file system
-          def fetch_from_filesystem
+          def fetch
             folders = []
 
             Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
@@ -88,13 +76,15 @@ module Locomotive
               page = self.add(fullpath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                page.template_filepath = filepath if Locomotive::Mounter.locale
+                if Locomotive::Mounter.locale
+                  page.attributes = self.read_page_attributes(filepath).merge(template_filepath: filepath)
+                end
               end
             end
 
             folders.each do |fullpath|
               next if self.pages.key?(fullpath)
-              self.add(fullpath, title: File.basename(fullpath).humanize)
+              self.add(fullpath)
             end
           end
 
@@ -108,19 +98,12 @@ module Locomotive
           #
           def add(fullpath, attributes = {})
             unless self.pages.key?(fullpath)
+              attributes[:title]    = File.basename(fullpath).humanize
               attributes[:fullpath] = fullpath
               self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
             end
 
             self.pages[fullpath]
-          end
-
-          # Shortcut to get the pages from the config fule
-          #
-          # @return [ Array ] The list of the pages described in the config file
-          #
-          def pages_from_config
-            self.config['site']['pages'] || []
           end
 
           # Return the directory where all the templates of
@@ -165,6 +148,23 @@ module Locomotive
             File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
           end
 
+          # Get the information about a page from the YAML located at the
+          # head of the file between the two '---' delimiters.
+          #
+          # @param [ String ] filepath Path to the file
+          #
+          # @return[ Hash ] The attributes decoded from the YAML header. An empty hash is returned if no such header.
+          #
+          def read_page_attributes(filepath)
+            content = File.read(filepath)
+
+            if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
+              YAML.load($1)
+            else
+              {}
+            end
+          end
+
           # Output simply the tree structure of the pages.
           #
           # Note: only for debug purpose
@@ -172,7 +172,7 @@ module Locomotive
           def to_s(page = nil)
             page ||= self.pages['index']
 
-            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect}"
+            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position})"
 
             (page.children || []).each { |child| self.to_s(child) }
           end
