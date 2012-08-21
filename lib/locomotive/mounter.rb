@@ -5,6 +5,8 @@ require 'logger'
 require 'active_support'
 require 'active_support/core_ext'
 
+require 'haml'
+
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/exceptions'
 require 'locomotive/mounter/config'
@@ -17,6 +19,9 @@ require 'locomotive/mounter/models/snippet'
 require 'locomotive/mounter/models/content_type'
 require 'locomotive/mounter/models/content_field'
 require 'locomotive/mounter/models/content_entry'
+
+require 'locomotive/mounter/utils/haml'
+
 require 'locomotive/mounter/reader/file_system'
 require 'locomotive/mounter/reader/file_system/base'
 require 'locomotive/mounter/reader/file_system/site_builder'

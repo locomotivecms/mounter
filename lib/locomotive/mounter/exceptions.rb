@@ -19,5 +19,8 @@ module Locomotive
     class DuplicateContentEntryException < DefaultException
     end
 
+    class UnknownTemplateException < DefaultException
+    end
+
   end
 end

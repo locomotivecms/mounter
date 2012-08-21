@@ -100,7 +100,8 @@ module Locomotive
             unless self.pages.key?(fullpath)
               attributes[:title]    = File.basename(fullpath).humanize
               attributes[:fullpath] = fullpath
-              self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
+
+              self.pages[fullpath]  = Locomotive::Mounter::Models::Page.new(attributes)
             end
 
             self.pages[fullpath]
