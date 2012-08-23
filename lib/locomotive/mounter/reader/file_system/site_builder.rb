@@ -6,12 +6,12 @@ module Locomotive
        class SiteBuilder < Base
 
          def build
-           site = self.config['site'].dup
+           config_path = File.join(self.runner.path, 'config', 'site.yml')
 
-           site.delete('pages') # we do not need pages at this step
+           site = YAML::load(File.open(config_path).read)
 
            Locomotive::Mounter::Models::Site.new(site).tap do |site|
-             Locomotive::Mounter.locale = site.locales.first || Locomotive::Mounter.locale
+             Locomotive::Mounter.locale = (site.locales.first || Locomotive::Mounter.locale).to_sym
            end
          end
 

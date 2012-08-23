@@ -12,10 +12,6 @@ module Locomotive
            self.items   = {}
          end
 
-         def config
-           self.runner.config
-         end
-
          def mounting_point
            self.runner.mounting_point
          end

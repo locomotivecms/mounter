@@ -13,7 +13,7 @@ module Locomotive
 
        class Runner
 
-         attr_accessor :path, :config, :mounting_point
+         attr_accessor :path, :mounting_point
 
          # Read / parse the content of a folder and build
          # all the related data of the site.
@@ -26,8 +26,6 @@ module Locomotive
            self.path = parameters.delete(:path)
 
            return nil if self.path.blank? || !File.exists?(self.path)
-
-           self.fetch_site_config
 
            self.build_mounting_point
          end
@@ -52,11 +50,6 @@ module Locomotive
                self.mounting_point.register_resource(name, builder.new(self).build)
              end
            end
-         end
-
-         def fetch_site_config
-           config_path = File.join(self.path, 'config', 'site.yml')
-           self.config = YAML::load(File.open(config_path).read)
          end
 
        end

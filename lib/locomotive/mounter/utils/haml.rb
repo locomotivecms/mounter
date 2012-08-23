@@ -12,7 +12,7 @@ module Locomotive
         def self.read(filepath)
           return nil unless File.exists?(filepath)
 
-          template = File.read(filepath)
+          template = File.read(filepath).gsub(/---.*---/m, '')
           template = template.force_encoding('UTF-8') if RUBY_VERSION =~ /1\.9/
 
           engine = ::Haml::Engine.new(template)

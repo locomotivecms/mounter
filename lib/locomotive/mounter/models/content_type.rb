@@ -21,12 +21,20 @@ module Locomotive
 
         ## methods ##
 
+        # Return the label field (always the first field)
+        #
+        # @return [ Object ] The label field
+        #
+        def label_field
+          self.fields.first
+        end
+
         # Return the name of the label_field which by convention is the first field.
         #
         # @return [ String ] Name of the label field
         #
         def label_field_name
-          self.fields.first.name
+          self.label_field.name
         end
 
         # Build a content entry and add it to the list of entries of the content type.

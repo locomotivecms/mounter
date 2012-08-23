@@ -58,6 +58,42 @@ module Locomotive
 
       alias :attributes= :write_attributes
 
+      # Return the fields with their values
+      #
+      # @return [ Hash ] The attributes
+      #
+      def attributes
+        {}.tap do |_attributes|
+          self.class._fields.each do |name, options|
+            _attributes[name] = self.send(name.to_sym)
+          end
+        end
+      end
+
+      # Return the fields with their values and their translations
+      #
+      # @return [ Hash ] The attributes
+      #
+      def attributes_with_translations
+        {}.tap do |_attributes|
+          self.class._fields.each do |name, options|
+            next if options[:association]
+
+            if options[:localized]
+              value = self.send(:"#{name}_translations")
+
+              value = value.values.first if value.size == 1
+
+              value = nil if value.empty?
+
+              _attributes[name] = value
+            else
+              _attributes[name] = self.send(name.to_sym)
+            end
+          end
+        end
+      end
+
       # Check if the field specified by the argument is localized
       #
       # @param [ String ] name Name of the field
@@ -75,6 +111,43 @@ module Locomotive
       #
       def translated_in
         self._locales
+      end
+
+      # Return a Hash of all the non blank attributes of the object.
+      # It also performs a couple of modifications: stringify keys and
+      # convert Symbol to String.
+      #
+      # @return [ Hash ] The non blank attributes
+      #
+      def to_hash
+        hash = self.attributes_with_translations
+
+        hash.delete_if { |k, v| v.blank? }
+
+        hash.each { |k, v| hash[k] = v.to_s if v.is_a?(Symbol) }
+
+        hash.deep_stringify_keys
+      end
+
+      # Provide a better output of the default to_yaml method
+      #
+      # @return [ String ] The YAML version of the object
+      #
+      def to_yaml
+        # get the attributes with their translations and get rid of all the symbols
+        object = self.to_hash
+
+        object.each do |key, value|
+          if value.is_a?(Array)
+            object[key] = if value.first.is_a?(String)
+              StyledYAML.inline(value) # inline array
+            else
+              value.map(&:to_hash)
+            end
+          end
+        end
+
+        StyledYAML.dump object
       end
 
       protected

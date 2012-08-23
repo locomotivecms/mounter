@@ -22,7 +22,7 @@ module Locomotive
         self.locales.first || Locomotive::Mounter.locale
       end
 
-      # Register a resource (pages, content types, ...etc) and its elements.
+      # Register a resource (site, pages, content types, ...etc) and its elements.
       # It makes sure that all the elements get a pointer to that mounting point.
       # The elements can be either an array, hash or even a single object (ex: site).
       # For instance, for a page, it will be a hash whose key is the fullpath.

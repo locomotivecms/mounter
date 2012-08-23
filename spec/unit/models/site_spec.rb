@@ -56,6 +56,28 @@ describe Locomotive::Mounter::Models::Site do
 
   end
 
+  describe 'retrieving attributes' do
+
+    before(:each) do
+      @site = build_site(name: 'Hello world', seo_title: 'A title', meta_description: { en: 'Hello world', fr: 'Salut le monde' })
+    end
+
+    it 'returns all of them' do
+      @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: 'Hello world' }
+    end
+
+    it 'returns a localized version' do
+      Locomotive::Mounter.with_locale(:fr) do
+        @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: nil, meta_keywords: nil, meta_description: 'Salut le monde' }
+      end
+    end
+
+    it 'returns all of them and their translations' do
+      @site.attributes_with_translations.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: { en: 'Hello world', fr: 'Salut le monde' } }
+    end
+
+  end
+
   def build_site(attributes = {})
     Locomotive::Mounter::Models::Site.new(attributes)
   end

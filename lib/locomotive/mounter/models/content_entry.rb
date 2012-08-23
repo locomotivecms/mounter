@@ -63,7 +63,7 @@ module Locomotive
 
           value = (self.dynamic_attributes || {})[name.to_sym]
 
-          value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship?
+          value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
 
           case field.type
           when :string, :text, :select, :boolean, :category
@@ -96,7 +96,7 @@ module Locomotive
           if value.is_a?(Hash) # already localized
             self.dynamic_attributes[name.to_sym].merge!(value)
           else
-            if field.is_relationship?
+            if field.is_relationship? || !field.localized
               self.dynamic_attributes[name.to_sym] = value
             else
               self.dynamic_attributes[name.to_sym][Locomotive::Mounter.locale] = value
@@ -117,6 +117,29 @@ module Locomotive
           else
             super
           end
+        end
+
+        # Returns a hash with the label_field value as the key and the other fields as the value
+        #
+        # @return [ Hash ] A hash of hash
+        #
+        def to_hash
+          # no need of _position and _visible (unless it's false)
+          hash = super.delete_if { |k, v| k == '_position' || (k == '_visible' && v == true) }
+
+          # dynamic attributes
+          hash.merge!(self.dynamic_attributes.deep_stringify_keys)
+
+          # no need of the translation of the field name in the current locale
+          label_field = self.content_type.label_field
+
+          if label_field.localized && !hash[label_field.name].empty?
+            hash[label_field.name].delete(Locomotive::Mounter.locale.to_s)
+
+            hash.delete(label_field.name) if hash[label_field.name].empty?
+          end
+
+          { self._label => hash }
         end
 
       end

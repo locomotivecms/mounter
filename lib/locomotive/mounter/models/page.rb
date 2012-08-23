@@ -1,3 +1,4 @@
+# encoding: UTF-8
 module Locomotive
   module Mounter
     module Models
@@ -94,17 +95,27 @@ module Locomotive
         end
 
         # Return the Liquid template based on the template_filepath property
-        # of the page. If the template is HAML, then a pre-rendering is done.
+        # of the page. If the template is HAML, then a pre-rendering to Liquid is done.
         #
         # @return [ String ] The liquid template
         #
         def template
           case File.extname(self.template_filepath)
           when '.haml'    then Locomotive::Mounter::Utils::Haml.read(self.template_filepath)
-          when '.liquid'  then File.read(self.template_path)
+          when '.liquid'  then File.read(self.template_filepath)
           else
             raise UnknownTemplateException.new("#{self.template_filapth} is not a valid template file")
           end
+        end
+
+        def to_yaml
+          fields = %w(title slug redirect_url handle published cache_strategy response_type position)
+
+          _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
+
+          _attributes.delete('slug') if self.depth == 0
+
+          "#{_attributes.to_yaml}---\n#{self.template}"
         end
 
       end

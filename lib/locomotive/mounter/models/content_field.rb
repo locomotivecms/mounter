@@ -52,6 +52,16 @@ module Locomotive
           end
         end
 
+        # Instead of returning a simple hash, it returns a hash with name as the key and
+        # the remaining attributes as the value.
+        #
+        # @return [ Hash ] A hash of hash
+        #
+        def to_hash
+          hash = super.delete_if { |k, v| %w(name position).include?(k) }
+          { self.name => hash }
+        end
+
       end
 
     end

@@ -24,7 +24,7 @@ module Locomotive
               content_type = self.get_content_type(File.basename(filepath, '.yml'))
 
               attributes.each_with_index do |_attributes, index|
-                self.add(content_type, _attributes.merge(position: index))
+                self.add(content_type, _attributes, index)
               end
             end
           end
@@ -49,11 +49,21 @@ module Locomotive
           #
           # @param [ Object ] content_type The content type
           # @param [ Hash ] attributes The attributes of the content entry
+          # @param [ Integer ] position The position of the entry in the list
           #
-          def add(content_type, attributes)
+          def add(content_type, attributes, position)
             label, _attributes = attributes.keys.first, attributes.values.first
 
-            _attributes[content_type.label_field_name] = label
+            # check if the label_field is localized or not
+            label_field_name = content_type.label_field_name
+
+            if content_type.label_field.localized && _attributes.key?(label_field_name) && _attributes[label_field_name].is_a?(Hash)
+              _attributes[label_field_name].merge!(Locomotive::Mounter.locale => label).symbolize_keys!
+            else
+              _attributes[label_field_name] = label
+            end
+
+            _attributes[:_position] = position
 
             entry = content_type.build_entry(_attributes)
 
