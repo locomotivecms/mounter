@@ -16,6 +16,13 @@ module Locomotive
 
           attr_accessor :target_path, :mounting_point
 
+          def initialize
+           # avoid to load all the ruby files at the startup, only when we need it
+            base_dir = File.join(File.dirname(__FILE__), 'file_system')
+            require File.join(base_dir, 'base.rb')
+            Dir[File.join(base_dir, '*.rb')].each { |lib| require lib }
+          end
+
           # Write the data of a mounting point instance to a target folder
           #
           # @param [ Hash ] parameters The parameters. It should contain the mounting_point and target_path keys.
@@ -40,7 +47,7 @@ module Locomotive
           # @return [ Array ] List of the writer classes
           #
           def writers
-            [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ThemeAssetsWriter]
+            [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, ThemeAssetsWriter]
           end
 
           # Execute all the writers

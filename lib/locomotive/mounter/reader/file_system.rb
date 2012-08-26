@@ -15,6 +15,13 @@ module Locomotive
 
          attr_accessor :path, :mounting_point
 
+         def initialize
+           # avoid to load all the ruby files at the startup, only when we need it
+           base_dir = File.join(File.dirname(__FILE__), 'file_system')
+           require File.join(base_dir, 'base.rb')
+           Dir[File.join(base_dir, '*.rb')].each { |lib| require lib }
+         end
+
          # Read / parse the content of a folder and build
          # all the related data of the site.
          #
@@ -43,7 +50,7 @@ module Locomotive
          # @return [ Array ] List of classes
          #
          def builders
-           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder, ContentEntriesBuilder, ThemeAssetsBuilder]
+           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder, ContentEntriesBuilder, ContentAssetsBuilder, ThemeAssetsBuilder]
          end
 
          protected
