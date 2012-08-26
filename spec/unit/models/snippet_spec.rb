@@ -10,7 +10,7 @@ describe Locomotive::Mounter::Models::Snippet do
 
     it 'raises an exception of the field does not exist' do
       lambda {
-        build_snippet(template: 'Hello world')
+        build_snippet(template_filepath: 'Hello world')
       }.should raise_exception
     end
 
@@ -19,16 +19,16 @@ describe Locomotive::Mounter::Models::Snippet do
     end
 
     it 'sets a localized attribute' do
-      snippet = build_snippet(template_filepath: 'header.liquid.haml')
-      snippet.template_filepath.should == 'header.liquid.haml'
-      Locomotive::Mounter.with_locale(:fr) { snippet.template_filepath.should be_nil }
+      snippet = build_snippet(template: 'header.liquid.haml')
+      snippet.template.should == 'header.liquid.haml'
+      Locomotive::Mounter.with_locale(:fr) { snippet.template.should be_nil }
 
     end
 
     it 'sets a complete translation of a localized attribute' do
-      snippet = build_snippet(template_filepath: { en: 'header.liquid.haml', fr: 'header.fr.liquid.haml' })
-      snippet.template_filepath.should == 'header.liquid.haml'
-      Locomotive::Mounter.with_locale(:fr) { snippet.template_filepath.should == 'header.fr.liquid.haml' }
+      snippet = build_snippet(template: { en: 'header.liquid.haml', fr: 'header.fr.liquid.haml' })
+      snippet.template.should == 'header.liquid.haml'
+      Locomotive::Mounter.with_locale(:fr) { snippet.template.should == 'header.fr.liquid.haml' }
     end
 
   end
@@ -45,9 +45,9 @@ describe Locomotive::Mounter::Models::Snippet do
     end
 
     it 'sets a localized attribute' do
-      @snippet.template_filepath = 'header.liquid.haml'
-      @snippet.template_filepath.should == 'header.liquid.haml'
-      @snippet.template_filepath_translations[:en].should == 'header.liquid.haml'
+      @snippet.template = 'header.liquid.haml'
+      @snippet.template.should == 'header.liquid.haml'
+      @snippet.template_translations[:en].should == 'header.liquid.haml'
     end
 
   end

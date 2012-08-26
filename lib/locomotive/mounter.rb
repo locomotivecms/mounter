@@ -1,5 +1,8 @@
 $:.unshift File.expand_path(File.dirname(__FILE__))
 
+# Force encoding to UTF-8
+Encoding.default_internal = Encoding.default_external = 'UTF-8'
+
 require 'logger'
 
 require 'active_support'
@@ -30,7 +33,6 @@ require 'locomotive/mounter/extensions/tilt/css'
 require 'locomotive/mounter/extensions/tilt/haml'
 require 'locomotive/mounter/extensions/tilt/liquid'
 
-require 'locomotive/mounter/utils/template'
 require 'locomotive/mounter/utils/hash'
 require 'locomotive/mounter/utils/yaml'
 
@@ -52,9 +54,6 @@ require 'locomotive/mounter/writer/file_system/snippets_writer'
 require 'locomotive/mounter/writer/file_system/content_types_writer'
 require 'locomotive/mounter/writer/file_system/content_entries_writer'
 require 'locomotive/mounter/writer/file_system/theme_assets_writer'
-
-# Force encoding to UTF-8
-Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
 module Locomotive
 

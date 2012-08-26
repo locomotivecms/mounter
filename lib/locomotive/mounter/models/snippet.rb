@@ -19,7 +19,8 @@ module Locomotive
         # @return [ String ] The liquid template
         #
         def source
-          @source ||= self.template.need_for_prerendering? ? self.template.render : self.template.data
+          @source ||= {}
+          @source[Locomotive::Mounter.locale] ||= self.template.need_for_prerendering? ? self.template.render : self.template.data
         end
 
       end

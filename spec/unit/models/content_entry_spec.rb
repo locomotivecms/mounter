@@ -56,6 +56,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
       before(:each) do
         (@content_field = mock).stubs(:is_relationship?).returns(false)
+        @content_field.stubs(:localized).returns(true)
         @content_type.stubs(:find_field).with(:title).returns(@content_field)
       end
 

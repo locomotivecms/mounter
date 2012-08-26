@@ -15,6 +15,7 @@ module Tilt
         @attributes = YAML.load($1)
         @data = $3
       end
+      @data = @data.force_encoding('utf-8')
       super
     end
 

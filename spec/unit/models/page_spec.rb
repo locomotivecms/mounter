@@ -10,7 +10,7 @@ describe Locomotive::Mounter::Models::Page do
 
     it 'raises an exception of the field does not exist' do
       lambda {
-        build_page(template: 'Hello world')
+        build_page(template_filepath: 'Hello world')
       }.should raise_exception
     end
 

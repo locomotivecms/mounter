@@ -22,12 +22,9 @@ module Locomotive
             Dir.glob(File.join(self.root_dir, "*.{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}")).each do |filepath|
               fullpath = File.basename(filepath)
 
-              puts "snippet filepath = #{filepath}"
-
               snippet = self.add(filepath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                # snippet.template_filepath = filepath
                 snippet.template = Tilt.new(filepath)
               end
             end
@@ -57,7 +54,6 @@ module Locomotive
                 name:     slug.humanize,
                 slug:     slug,
                 template: Tilt.new(filepath)
-                # template_filepath: filepath
               })
             end
 

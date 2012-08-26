@@ -1,3 +1,4 @@
+# encoding: UTF-8
 require 'spec_helper'
 
 describe Locomotive::Mounter::Reader::FileSystem do
@@ -102,10 +103,10 @@ describe Locomotive::Mounter::Reader::FileSystem do
       @mounting_point.snippets.values.map(&:slug).should == %w(song header)
     end
 
-    it 'localizes the file path' do
-      @mounting_point.snippets.values.first.template_filepath.should match /song\.liquid$/
+    it 'localizes the template' do
+      @mounting_point.snippets.values.first.source.should match /&rarr; Listen/
       Locomotive::Mounter.with_locale(:fr) do
-        @mounting_point.snippets.values.first.template_filepath.should match /song\.fr\.liquid\.haml$/
+        @mounting_point.snippets.values.first.source.should match /&rarr; écouter/
       end
     end
 
