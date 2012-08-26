@@ -5,7 +5,7 @@ module Locomotive
 
         class SnippetsWriter < Base
 
-          # It creates the config folder
+          # It creates the snippets folder
           def prepare
             self.create_folder 'app/views/snippets'
           end
@@ -33,16 +33,15 @@ module Locomotive
           # @param [ String ] filepath The path to the file
           # @param [ Locale ] locale The locale, nil if default locale
           #
-          #
           def write_snippet_to_fs(snippet, filepath, locale)
             _filepath = "#{filepath}.liquid"
             _filepath.gsub!(/.liquid$/, ".#{locale}.liquid") if locale
 
-            unless snippet.template_filepath.blank?
+            unless snippet.template.blank?
               _filepath = File.join('app', 'views', 'snippets', _filepath)
 
               self.open_file(_filepath) do |file|
-                file.write(snippet.template)
+                file.write(snippet.source)
               end
             end
           end

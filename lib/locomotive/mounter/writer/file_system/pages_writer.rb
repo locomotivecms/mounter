@@ -5,7 +5,7 @@ module Locomotive
 
         class PagesWriter < Base
 
-          # It creates the config folder
+          # It creates the pages folder
           def prepare
             self.create_folder 'app/views/pages'
           end
@@ -56,7 +56,7 @@ module Locomotive
             _filepath = "#{filepath}.liquid"
             _filepath.gsub!(/.liquid$/, ".#{locale}.liquid") if locale
 
-            unless page.template_filepath.blank?
+            unless page.template.nil?
               _filepath = File.join('app', 'views', 'pages', _filepath)
 
               self.open_file(_filepath) do |file|

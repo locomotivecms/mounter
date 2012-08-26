@@ -5,7 +5,7 @@ module Locomotive
 
         class ContentTypesWriter < Base
 
-          # It creates the config folder
+          # It creates the content types folder
           def prepare
             self.create_folder 'app/content_types'
           end

@@ -5,13 +5,17 @@ module Locomotive
 
       class Page < Base
 
+        PRECOMPILED_EXTENSIONS = %w(.haml .slim)
+
         ## fields ##
         field :parent,            association: true
         field :title,             localized: true
         field :slug,              localized: true
         field :fullpath,          localized: true
         field :redirect_url,      localized: true
-        field :template_filepath, localized: true
+        # field :template_type,     localized: true, default: :liquid
+        # field :raw_template,      localized: true
+        field :template,          localized: true
         field :handle
         field :published
         field :cache_strategy
@@ -94,19 +98,38 @@ module Locomotive
           end
         end
 
-        # Return the Liquid template based on the template_filepath property
-        # of the page. If the template is HAML, then a pre-rendering to Liquid is done.
+
+        # Return the Liquid template based on the raw_template property
+        # of the page. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
         #
         # @return [ String ] The liquid template
         #
-        def template
-          case File.extname(self.template_filepath)
-          when '.haml'    then Locomotive::Mounter::Utils::Haml.read(self.template_filepath)
-          when '.liquid'  then File.read(self.template_filepath)
-          else
-            raise UnknownTemplateException.new("#{self.template_filapth} is not a valid template file")
-          end
+        def source
+          @source ||= self.template.need_for_prerendering? ? self.template.render : self.template.data
         end
+
+        # # Return the Liquid template based on the raw_template property
+        # # of the page. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
+        # #
+        # # @return [ String ] The liquid template
+        # #
+        # def template
+        #   @template ||= Locomotive::Mounter::Utils::Template.precompile(self.raw_template, self.template_type)
+        #
+        #   # case self.template_type.to_sym
+        #   # when :liquid  then self.raw_template
+        #   # when :haml
+        #   #   template = Tilt.new(filepath)
+        #   #   template.render
+        #
+        #   # @template ||= Locomotive::Mounter::Utils::Template.read(self.template_filepath)
+        #   # case File.extname(self.template_filepath)
+        #   # when PRECOMPILED_EXTENSIONS then Locomotive::Mounter::Utils::Template.read(self.template_filepath)
+        #   # when '.liquid'              then File.read(self.template_filepath)
+        #   # else
+        #   #   raise UnknownTemplateException.new("#{self.template_filapth} is not a valid template file")
+        #   # end
+        # end
 
         def to_yaml
           fields = %w(title slug redirect_url handle published cache_strategy response_type position)
@@ -115,7 +138,7 @@ module Locomotive
 
           _attributes.delete('slug') if self.depth == 0
 
-          "#{_attributes.to_yaml}---\n#{self.template}"
+          "#{_attributes.to_yaml}---\n#{self.source}"
         end
 
       end

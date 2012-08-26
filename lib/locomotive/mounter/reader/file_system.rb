@@ -27,7 +27,15 @@ module Locomotive
 
            return nil if self.path.blank? || !File.exists?(self.path)
 
+           self.prepare
+
            self.build_mounting_point
+         end
+
+         # Before build the mounting point, set some env variables
+         # like for instance for Compass
+         def prepare
+           Locomotive::Mounter::Extensions::Compass.configure(self.path)
          end
 
          # Ordered list of builders
@@ -35,7 +43,7 @@ module Locomotive
          # @return [ Array ] List of classes
          #
          def builders
-           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder, ContentEntriesBuilder]
+           [SiteBuilder, PagesBuilder, SnippetsBuilder, ContentTypesBuilder, ContentEntriesBuilder, ThemeAssetsBuilder]
          end
 
          protected

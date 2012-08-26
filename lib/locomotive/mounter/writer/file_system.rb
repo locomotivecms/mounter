@@ -40,7 +40,7 @@ module Locomotive
           # @return [ Array ] List of the writer classes
           #
           def writers
-            [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter]
+            [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ThemeAssetsWriter]
           end
 
           # Execute all the writers

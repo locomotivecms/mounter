@@ -1,31 +1,29 @@
-x pages
-  x localized fullpath (rebuild the fullpath for localized pages based on the slug / parent slug)
-
-x snippets
-
-x content types
-
-x content entries
-
-x yaml front matter
-
-- haml -> liquid
-
-- theme_assets
-
-- content_assets
+- readers
+  - API
+    - site
+  - filesystem
+    x pages
+      x localized fullpath (rebuild the fullpath for localized pages based on the slug / parent slug)
+    x snippets
+    x content types
+    x content entries
+    x yaml front matter
+    - haml -> liquid
+    x theme_assets
+    - content_assets
 
 - writers
   - API
+    - site
   - FileSystem
     x site
     x pages
     x snippets
     x content types
     x content entries
-    - assets
-    - convert in HAML, SASS, Coffeescript
-
+    x theme assets
+    x convert in HAML, SASS, Coffeescript
+    - content assets
 
 ====== use case =====
 

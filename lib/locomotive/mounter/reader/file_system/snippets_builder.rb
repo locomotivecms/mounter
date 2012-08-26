@@ -19,13 +19,16 @@ module Locomotive
 
           # Record snippets found in file system
           def fetch_from_filesystem
-            Dir.glob(File.join(self.root_dir, '*.{liquid,haml}')).each do |filepath|
+            Dir.glob(File.join(self.root_dir, "*.{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}")).each do |filepath|
               fullpath = File.basename(filepath)
+
+              puts "snippet filepath = #{filepath}"
 
               snippet = self.add(filepath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                snippet.template_filepath = filepath
+                # snippet.template_filepath = filepath
+                snippet.template = Tilt.new(filepath)
               end
             end
           end
@@ -51,9 +54,10 @@ module Locomotive
 
             unless self.items.key?(slug)
               self.items[slug] = Locomotive::Mounter::Models::Snippet.new({
-                name: slug.humanize,
-                slug: slug,
-                template_filepath: filepath
+                name:     slug.humanize,
+                slug:     slug,
+                template: Tilt.new(filepath)
+                # template_filepath: filepath
               })
             end
 

@@ -5,7 +5,7 @@ module Locomotive
 
         class ContentEntriesWriter < Base
 
-          # It creates the config folder
+          # It creates the data folder
           def prepare
             self.create_folder 'data'
           end

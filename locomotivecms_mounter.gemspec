@@ -19,16 +19,22 @@ Gem::Specification.new do |s|
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'locomotivecms_mounter'
 
-  s.add_dependency 'haml',                            '3.1.6'
-  s.add_dependency 'coffee-script',                   '~> 2.2.0'
-  s.add_dependency 'therubyracer',                    '~> 0.9.9'
+  s.add_dependency 'tilt',                            '1.3.3'
+  s.add_dependency 'haml',                            '3.2.0.beta.3'
+  s.add_dependency 'sass',                            '~> 3.2.1'
   s.add_dependency 'compass',                         '~> 0.12.1'
+  s.add_dependency 'coffee-script',                   '~> 2.2.0'
+  s.add_dependency 'less',                            '~> 2.2.1'
+  s.add_dependency 'RedCloth',                        '~> 4.2.3'
+  s.add_dependency 'therubyracer',                    '~> 0.10.2'
+
   s.add_dependency 'activesupport',                   '~> 3.2.5'
   s.add_dependency 'i18n',                            '~> 0.6.0'
-  s.add_dependency 'RedCloth',                        '~> 4.2.3'
+
   s.add_dependency 'multi_json',                      '~> 1.2.0'
   s.add_dependency 'httmultiparty',                   '0.3.8'
   s.add_dependency 'json',                            '~> 1.6.5'
+
   s.add_dependency 'zip',                             '~> 2.0.2'
   s.add_dependency 'colorize',                        '~> 0.5.8'
   s.add_dependency 'logger'

@@ -66,18 +66,27 @@ module Locomotive
           def fetch
             folders = []
 
-            Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
+            Dir.glob(File.join(self.root_dir, "**/*.{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}")).each do |filepath|
               fullpath = self.filepath_to_fullpath(filepath)
 
               folders.push(fullpath) && next if File.directory?(filepath)
 
-              next unless filepath =~ /\.(haml|liquid)$/
+              # next unless filepath =~ /\.(#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join('|')})$/
 
               page = self.add(fullpath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 if Locomotive::Mounter.locale
-                  page.attributes = self.read_page_attributes(filepath).merge(template_filepath: filepath)
+                  template = Tilt.new(filepath)
+
+                  if template.respond_to?(:attributes)
+                    page.attributes = template.attributes
+                  end
+
+                  page.template = template
+
+                  # page.attributes = self.read_page_attributes(filepath) #.merge(template_filepath: filepath)
+                  # page.attributes = self.read_page_attributes(filepath).merge(template_filepath: filepath)
                 end
               end
             end
@@ -151,20 +160,22 @@ module Locomotive
 
           # Get the information about a page from the YAML located at the
           # head of the file between the two '---' delimiters.
+          # Also store the template of the page and its type (liquid, haml or slim)
           #
           # @param [ String ] filepath Path to the file
           #
-          # @return[ Hash ] The attributes decoded from the YAML header. An empty hash is returned if no such header.
+          # @return[ Hash ] The attributes decoded from the YAML header + the raw template
           #
-          def read_page_attributes(filepath)
-            content = File.read(filepath)
-
-            if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)/m
-              YAML.load($1)
-            else
-              {}
-            end
-          end
+          # def read_page_attributes(filepath)
+          #   content = File.read(filepath)
+          #
+          #   { raw_template: content, template_type: File.extname(filepath)[1..-1].to_sym }.tap do |attributes|
+          #     if content =~ /^(---\s*\n.*?\n?)^(---\s*$\n?)(.*)/m
+          #       attributes.merge!(YAML.load($1))
+          #       attributes.merge!(raw_template: $3)
+          #     end
+          #   end
+          # end
 
           # Output simply the tree structure of the pages.
           #
