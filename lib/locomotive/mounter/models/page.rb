@@ -5,8 +5,6 @@ module Locomotive
 
       class Page < Base
 
-        PRECOMPILED_EXTENSIONS = %w(.haml .slim)
-
         ## fields ##
         field :parent,            association: true
         field :title,             localized: true

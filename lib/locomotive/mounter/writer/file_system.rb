@@ -30,8 +30,6 @@ module Locomotive
           # @return [ String ] The target path
           #
           def run!(parameters = {})
-            puts "[FileSystem::Writer] starting...  #{parameters.keys.inspect}"
-
             self.mounting_point = parameters[:mounting_point]
             self.target_path    = parameters[:target_path]
 

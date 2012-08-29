@@ -3,13 +3,13 @@ module Locomotive
     module Reader
       module FileSystem
 
-        class ThemeAssetsBuilder < Base
+        class ThemeAssetsReader < Base
 
           # Build the list of theme assets from the public folder with eager loading.
           #
           # @return [ Array ] The cached list of theme assets
           #
-          def build
+          def read
             ThemeAssetsArray.new(self.root_dir)
           end
 

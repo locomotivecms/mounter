@@ -3,13 +3,13 @@ module Locomotive
     module Reader
       module FileSystem
 
-        class ContentTypesBuilder < Base
+        class ContentTypesReader < Base
 
           # Build the list of content types from the folder in the file system.
           #
           # @return [ Array ] The un-ordered list of content types
           #
-          def build
+          def read
             self.fetch_from_filesystem
 
             self.items

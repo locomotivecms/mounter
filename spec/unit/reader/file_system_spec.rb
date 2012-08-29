@@ -7,7 +7,9 @@ describe Locomotive::Mounter::Reader::FileSystem do
   end
 
   it 'returns nil if the path does not exist' do
-    @reader.run!.should be_nil
+    lambda {
+      @reader.run!
+    }.should raise_exception(Locomotive::Mounter::ReaderException, 'path is required and must exist')
   end
 
 end

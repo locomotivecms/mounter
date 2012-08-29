@@ -3,20 +3,20 @@ module Locomotive
     module Reader
       module FileSystem
 
-        class ContentAssetsBuilder < Base
+        class ContentAssetsReader < Base
 
           # Build the list of contents assets
           #
           # @return [ Array ] The list of content assets
           #
-          def build
+          def read
             self.items = [] # prefer an array over a hash
 
             self.fetch_from_pages
 
             self.fetch_from_content_entries
 
-            self.items.tap { |l| puts l.inspect }
+            self.items
           end
 
           protected

@@ -10,6 +10,12 @@ module Locomotive
 
     end
 
+    class ReaderException < DefaultException
+    end
+
+    class ImplementationIsMissingException < DefaultException
+    end
+
     class FieldDoesNotExistException < DefaultException
     end
 
@@ -21,6 +27,7 @@ module Locomotive
 
     class UnknownTemplateException < DefaultException
     end
+
 
   end
 end

@@ -3,13 +3,13 @@ module Locomotive
     module Reader
       module FileSystem
 
-        class SnippetsBuilder < Base
+        class SnippetsReader < Base
 
           # Build the list of snippets from the folder on the file system.
           #
           # @return [ Array ] The un-ordered list of snippets
           #
-          def build
+          def read
             self.fetch_from_filesystem
 
             self.items

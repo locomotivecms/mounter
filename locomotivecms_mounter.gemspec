@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'i18n',                            '~> 0.6.0'
 
   s.add_dependency 'multi_json',                      '~> 1.2.0'
-  s.add_dependency 'httmultiparty',                   '0.3.8'
+  s.add_dependency 'httmultiparty',                   '~> 0.3.8'
   s.add_dependency 'json',                            '~> 1.6.5'
 
   s.add_dependency 'zip',                             '~> 2.0.2'

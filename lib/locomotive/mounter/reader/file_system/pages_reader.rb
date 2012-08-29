@@ -3,7 +3,7 @@ module Locomotive
     module Reader
       module FileSystem
 
-        class PagesBuilder < Base
+        class PagesReader < Base
 
           attr_accessor :pages
 
@@ -16,7 +16,7 @@ module Locomotive
           #
           # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
           #
-          def build
+          def read
             self.fetch
 
             index = self.pages['index']

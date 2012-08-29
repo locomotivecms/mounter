@@ -16,7 +16,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'site' do
 
     before(:each) do
-      stub_reader_builders(@reader)
+      stub_readers(@reader)
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -45,7 +45,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'pages' do
 
     before(:each) do
-      stub_reader_builders(@reader, %w(pages))
+      stub_readers(@reader, %w(pages))
       @mounting_point = @reader.run!(:path => @path)
       @index = @mounting_point.pages['index']
     end
@@ -93,7 +93,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'snippets' do
 
     before(:each) do
-      stub_reader_builders(@reader, %w(snippets))
+      stub_readers(@reader, %w(snippets))
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -115,7 +115,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'content types' do
 
     before(:each) do
-      stub_reader_builders(@reader, %w(content_types))
+      stub_readers(@reader, %w(content_types))
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -149,7 +149,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
   describe 'content entries' do
 
     before(:each) do
-      stub_reader_builders(@reader, %w(content_types content_entries))
+      stub_readers(@reader, %w(content_types content_entries))
       @mounting_point = @reader.run!(:path => @path)
     end
 
@@ -183,12 +183,12 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
   end # content types
 
-  def stub_reader_builders(reader, builders = nil)
-    klasses = (builders ||= []).insert(0, 'site').map do |name|
-      "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Builder".constantize
+  def stub_readers(reader, readers = nil)
+    klasses = (readers ||= []).insert(0, 'site').map do |name|
+      "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Reader".constantize
     end
 
-    reader.stubs(:builders).returns(klasses)
+    reader.stubs(:readers).returns(klasses)
   end
 
 end

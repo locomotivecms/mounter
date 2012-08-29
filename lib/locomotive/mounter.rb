@@ -12,11 +12,14 @@ require 'tilt'
 require 'haml'
 require 'compass'
 
+require 'httparty'
+
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/exceptions'
 require 'locomotive/mounter/config'
 require 'locomotive/mounter/fields'
 require 'locomotive/mounter/mounting_point'
+require 'locomotive/mounter/engine_api'
 
 # Extensions
 require 'locomotive/mounter/extensions/compass'
@@ -33,8 +36,10 @@ require 'locomotive/mounter/utils/yaml'
 require 'locomotive/mounter/models/base'
 Dir[File.join(File.dirname(__FILE__), 'mounter/models', '*.rb')].each { |lib| require lib }
 
-# Reader: Filesystem
+# Readers: Filesystem / API
+require 'locomotive/mounter/reader/runner'
 require 'locomotive/mounter/reader/file_system'
+require 'locomotive/mounter/reader/api'
 
 # Writer: Filesystem
 # require 'locomotive/mounter/writer/base/runner'
