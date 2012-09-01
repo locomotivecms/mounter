@@ -60,17 +60,17 @@ describe Locomotive::Mounter::Reader::Api do
 
   end # site
 
-  # describe 'pages' do
-  #
-  #   before(:each) do
-  #     stub_reader_builders(@reader, %w(pages))
-  #     @mounting_point = @reader.run!(:path => @path)
-  #     @index = @mounting_point.pages['index']
-  #   end
-  #
-  #   it 'has 11 pages' do
-  #     @mounting_point.pages.size.should == 11
-  #   end
+  describe 'pages' do
+
+    before(:each) do
+      stub_readers(@reader, %w(pages))
+      @mounting_point = @reader.run!(@credentials)
+      @index = @mounting_point.pages['index']
+    end
+
+    it 'has 11 pages' do
+      @mounting_point.pages.size.should == 11
+    end
   #
   #   describe '#tree' do
   #
@@ -106,7 +106,7 @@ describe Locomotive::Mounter::Reader::Api do
   #
   #   end
   #
-  # end # pages
+  end # pages
   #
   # describe 'snippets' do
   #
@@ -202,7 +202,7 @@ describe Locomotive::Mounter::Reader::Api do
   # end # content types
 
   def stub_readers(reader, readers = nil)
-    klasses = (builders ||= []).insert(0, 'site').map do |name|
+    klasses = (readers ||= []).insert(0, 'site').uniq.map do |name|
       "Locomotive::Mounter::Reader::Api::#{name.camelize}Reader".constantize
     end
 

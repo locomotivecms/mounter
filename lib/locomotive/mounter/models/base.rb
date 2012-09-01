@@ -6,7 +6,7 @@ module Locomotive
 
         include Locomotive::Mounter::Fields
 
-        attr_accessor :mounting_point
+        attr_accessor :_id, :mounting_point
 
       end
 

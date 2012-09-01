@@ -94,6 +94,9 @@ module Locomotive
           end
         end
 
+        def raw_template=(content)
+          @source = content
+        end
 
         # Return the Liquid template based on the raw_template property
         # of the page. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
