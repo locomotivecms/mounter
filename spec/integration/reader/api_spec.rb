@@ -129,77 +129,77 @@ describe Locomotive::Mounter::Reader::Api do
     end
 
   end # snippets
-  #
-  # describe 'content types' do
-  #
-  #   before(:each) do
-  #     stub_reader_builders(@reader, %w(content_types))
-  #     @mounting_point = @reader.run!(:path => @path)
-  #   end
-  #
-  #   it 'has 4 content types' do
-  #     @mounting_point.content_types.size.should == 4
-  #     @mounting_point.content_types.keys.should == %w(events messages songs updates)
-  #     @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
-  #   end
-  #
-  #   describe 'a single content type' do
-  #
-  #     before(:each) do
-  #       @content_type = @mounting_point.content_types.values.first
-  #     end
-  #
-  #     it 'has basic properties: name, slug' do
-  #       @content_type.name.should == 'Events'
-  #       @content_type.slug.should == 'events'
-  #     end
-  #
-  #     it 'has fields' do
-  #       @content_type.fields.size.should == 4
-  #       @content_type.fields.map(&:name).should == %w(place date city state)
-  #       @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
-  #     end
-  #
-  #   end
-  #
-  # end # content types
-  #
-  # describe 'content entries' do
-  #
-  #   before(:each) do
-  #     stub_reader_builders(@reader, %w(content_types content_entries))
-  #     @mounting_point = @reader.run!(:path => @path)
-  #   end
-  #
-  #   it 'has 26 entries for the 4 content types' do
-  #     @mounting_point.content_entries.size.should == 26
-  #   end
-  #
-  #   describe 'a single content entry' do
-  #
-  #     before(:each) do
-  #       @content_entry = @mounting_point.content_entries.values.first
-  #     end
-  #
-  #     it 'has a label' do
-  #       @content_entry._label.should == "Avogadro's Number"
-  #     end
-  #
-  #     it 'has a slug' do
-  #       @content_entry._slug.should == "avogadro-s-number"
-  #     end
-  #
-  #     it 'can access dynamic field' do
-  #       @content_entry.city = 'Fort Collins'
-  #     end
-  #
-  #     it 'can access casted value of a dynamic field' do
-  #       @content_entry.date = Date.parse('2012/06/11')
-  #     end
-  #
-  #   end
-  #
-  # end # content types
+
+  describe 'content types' do
+
+    before(:each) do
+      stub_readers(@reader, %w(content_types))
+      @mounting_point = @reader.run!(@credentials)
+    end
+
+    it 'has 4 content types' do
+      @mounting_point.content_types.size.should == 4
+      @mounting_point.content_types.keys.should == %w(events messages songs updates)
+      @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
+    end
+
+    describe 'a single content type' do
+
+      before(:each) do
+        @content_type = @mounting_point.content_types['events']
+      end
+
+      it 'has basic properties: name, slug' do
+        @content_type.name.should == 'Events'
+        @content_type.slug.should == 'events'
+      end
+
+      it 'has fields' do
+        @content_type.fields.size.should == 4
+        @content_type.fields.map(&:name).should == %w(place date city state)
+        @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
+      end
+
+    end
+
+  end # content types
+
+  describe 'content entries' do
+
+    before(:each) do
+      stub_readers(@reader, %w(content_types content_entries))
+      @mounting_point = @reader.run!(@credentials)
+    end
+
+    it 'has 26 entries for the 4 content types' do
+      @mounting_point.content_entries.size.should == 26
+    end
+
+    describe 'a single content entry' do
+
+      before(:each) do
+        @content_entry = @mounting_point.content_entries.values.first
+      end
+
+      it 'has a label' do
+        @content_entry._label.should == "Avogadro's Number"
+      end
+
+      it 'has a slug' do
+        @content_entry._slug.should == "avogadro-s-number"
+      end
+
+      it 'can access dynamic field' do
+        @content_entry.city = 'Fort Collins'
+      end
+
+      it 'can access casted value of a dynamic field' do
+        @content_entry.date = Date.parse('2012/06/11')
+      end
+
+    end
+
+  end # content types
 
   def stub_readers(reader, readers = nil)
     klasses = (readers ||= []).insert(0, 'site').uniq.map do |name|

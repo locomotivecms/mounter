@@ -20,25 +20,25 @@ module Locomotive
            self.mounting_point.locales
          end
 
-         def get(resource_name, locale = nil)
+         def get(resource_name, locale = nil, raw = false)
            params = { query: {} }
 
            params[:query][:locale] = locale if locale
 
            response = Locomotive::Mounter::EngineApi.get("/#{resource_name}.json", params).parsed_response
 
+           return response if raw
+
            case response
            when Hash then response.to_hash.delete_if { |k, _| !self.safe_attributes.include?(k) }
            when Array
-             response.map { |row| row.delete_if { |k, _| !self.safe_attributes.include?(k) } }
+             response.map do |row|
+               # puts "#{row.inspect}\n---" # DEBUG
+               row.delete_if { |k, _| !self.safe_attributes.include?(k) }
+             end
            else
              response
            end
-
-           # puts response.parsed_response.inspect
-           #
-           # hash = response.to_hash
-           # hash
          end
 
        end

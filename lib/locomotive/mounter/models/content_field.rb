@@ -18,6 +18,7 @@ module Locomotive
         field :class_name
         field :inverse_of
         field :order_by
+        field :ui_enabled
 
         alias :target :class_name
         alias :target= :class_name=
@@ -30,6 +31,7 @@ module Locomotive
         def prepare_attributes
           self.label ||= self.name.try(:humanize)
           self.type = self.type.to_sym
+          self.sanitize
         end
 
         # Tell if it describes a relationship (belongs_to, many_to_many, has_many) or not.
@@ -60,6 +62,17 @@ module Locomotive
         def to_hash
           hash = super.delete_if { |k, v| %w(name position).include?(k) }
           { self.name => hash }
+        end
+
+        protected
+
+        # Clean up useless properties depending on its type
+        def sanitize
+          # ui_enabled only for the belongs_to, has_many and many_to_many types
+          self.ui_enabled = nil unless self.is_relationship?
+
+          # text_formatting only for the text type
+          self.text_formatting = nil unless self.type == :text
         end
 
       end
