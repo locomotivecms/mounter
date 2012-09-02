@@ -1,6 +1,15 @@
 - readers
   - API
-    - site
+    x site
+    - pages
+      x fetch all (+ translations)
+      - content assets
+      - content type
+    x snippets
+    - content types
+    - content entries
+    - theme assets
+    - content assets
   - filesystem
     x pages
       x localized fullpath (rebuild the fullpath for localized pages based on the slug / parent slug)

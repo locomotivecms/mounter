@@ -71,64 +71,64 @@ describe Locomotive::Mounter::Reader::Api do
     it 'has 11 pages' do
       @mounting_point.pages.size.should == 11
     end
-  #
-  #   describe '#tree' do
-  #
-  #     it 'puts pages under the index page' do
-  #       @index.children.size.should == 6
-  #     end
-  #
-  #     it 'keeps the ordering of the config' do
-  #       @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
-  #     end
-  #
-  #     it 'assigns titles for all the pages' do
-  #       @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
-  #     end
-  #
-  #     it 'also includes nested children' do
-  #       @index.children.first.children.size.should == 2
-  #       @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
-  #     end
-  #
-  #     it 'localizes the fullpath' do
-  #       Locomotive::Mounter.with_locale(:fr) do
-  #         @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', 'a-notre-sujet/jane-doe']
-  #       end
-  #     end
-  #
-  #     it 'localizes titles' do
-  #       Locomotive::Mounter.with_locale(:fr) do
-  #         @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
-  #       end
-  #     end
-  #
-  #
-  #   end
-  #
+
+    describe '#tree' do
+
+      it 'puts pages under the index page' do
+        @index.children.size.should == 6
+      end
+
+      it 'keeps the ordering of the config' do
+        @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
+      end
+
+      it 'assigns titles for all the pages' do
+        @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
+      end
+
+      it 'also includes nested children' do
+        @index.children.first.children.size.should == 2
+        @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
+      end
+
+      it 'localizes the fullpath' do
+        Locomotive::Mounter.with_locale(:fr) do
+          @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
+        end
+      end
+
+      it 'localizes titles' do
+        Locomotive::Mounter.with_locale(:fr) do
+          @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
+        end
+      end
+
+
+    end
+
   end # pages
-  #
-  # describe 'snippets' do
-  #
-  #   before(:each) do
-  #     stub_reader_builders(@reader, %w(snippets))
-  #     @mounting_point = @reader.run!(:path => @path)
-  #   end
-  #
-  #   it 'has 2 snippets' do
-  #     @mounting_point.snippets.size.should == 2
-  #     @mounting_point.snippets.keys.should == %w(song header)
-  #     @mounting_point.snippets.values.map(&:slug).should == %w(song header)
-  #   end
-  #
-  #   it 'localizes the template' do
-  #     @mounting_point.snippets.values.first.source.should match /&rarr; Listen/
-  #     Locomotive::Mounter.with_locale(:fr) do
-  #       @mounting_point.snippets.values.first.source.should match /&rarr; écouter/
-  #     end
-  #   end
-  #
-  # end # snippets
+
+  describe 'snippets' do
+
+    before(:each) do
+      stub_readers(@reader, %w(snippets))
+      @mounting_point = @reader.run!(@credentials)
+    end
+
+    it 'has 2 snippets' do
+      @mounting_point.snippets.size.should == 2
+      @mounting_point.snippets.keys.sort.should == %w(header song)
+      @mounting_point.snippets.values.map(&:slug).sort.should == %w(header song)
+    end
+
+    it 'localizes the template' do
+      @mounting_point.snippets['song'].source.should match /&rarr; Listen/
+      Locomotive::Mounter.with_locale(:fr) do
+        @mounting_point.snippets['song'].source.should match /&rarr; écouter/
+      end
+    end
+
+  end # snippets
   #
   # describe 'content types' do
   #

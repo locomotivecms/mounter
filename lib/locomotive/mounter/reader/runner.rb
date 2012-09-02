@@ -49,7 +49,6 @@ module Locomotive
            self.mounting_point = mounting_point
 
            self.readers.each do |reader|
-             puts "READER #{reader.inspect}"
              name = reader.name.gsub(/(Reader)$/, '').demodulize.underscore
 
              self.mounting_point.register_resource(name, reader.new(self).read)

@@ -13,6 +13,15 @@ module Locomotive
 
         ## methods ##
 
+        # Set the source of the snippet without any pre-rendering. Used by the API reader.
+        #
+        # @param [ String ] content The HTML raw template
+        #
+        def template=(content)
+          @source ||= {}
+          @source[Locomotive::Mounter.locale] = content
+        end
+
         # Return the Liquid template based on the template_filepath property
         # of the snippet. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
         #

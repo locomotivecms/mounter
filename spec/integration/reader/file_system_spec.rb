@@ -75,7 +75,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       it 'localizes the fullpath' do
         Locomotive::Mounter.with_locale(:fr) do
-          @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', 'a-notre-sujet/jane-doe']
+          @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
         end
       end
 

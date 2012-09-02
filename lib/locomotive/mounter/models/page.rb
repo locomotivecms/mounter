@@ -13,13 +13,16 @@ module Locomotive
         field :redirect_url,      localized: true
         field :template,          localized: true
         field :handle
+        field :listed
+        field :templatized
+        field :content_type
         field :published
         field :cache_strategy
         field :response_type
         field :position
 
         ## other accessors ##
-        attr_accessor :children
+        attr_accessor :content_type_id, :parent_id, :children
 
         ## methods ##
 
@@ -31,6 +34,14 @@ module Locomotive
         #
         def safe_fullpath
           self.fullpath.try(:underscore)
+        end
+
+        # Force the translations of a page
+        #
+        # @param [ Array ] locales List of locales (Symbol or String)
+        #
+        def translated_in=(locales)
+          self._locales = locales.map(&:to_sym)
         end
 
         # Modified setter in order to set correctly the slug
@@ -94,8 +105,13 @@ module Locomotive
           end
         end
 
+        # Set the source of the page without any pre-rendering. Used by the API reader.
+        #
+        # @param [ String ] content The HTML raw template
+        #
         def raw_template=(content)
-          @source = content
+          @source ||= {}
+          @source[Locomotive::Mounter.locale] = content
         end
 
         # Return the Liquid template based on the raw_template property

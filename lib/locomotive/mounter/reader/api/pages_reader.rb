@@ -19,53 +19,59 @@ module Locomotive
           def read
             self.fetch
 
-            # index = self.pages['index']
-            #
-            # index.localize_fullpath(self.locales)
-            #
-            # self.build_relationships(index, self.pages_to_list)
+            index = self.pages['index']
+
+            self.build_relationships(index, self.pages_to_list)
 
             # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
-            # puts self.to_s
+            # self.to_s
 
             self.pages
           end
 
           protected
 
+          # Create a ordered list of pages from the Hash
+          #
+          # @return [ Array ] An ordered list of pages
+          #
+          def pages_to_list
+            # sort by fullpath first
+            list = self.pages.values.sort { |a, b| a.fullpath <=> b.fullpath }
+            # sort finally by depth
+            list.sort { |a, b| a.depth <=> b.depth }
+          end
+
+          def build_relationships(parent, list)
+            list.dup.each do |page|
+              next unless self.is_subpage_of?(page.fullpath, parent.fullpath)
+
+              # attach the page to the parent (order by position), also set the parent
+              parent.add_child(page)
+
+              # remove the page from the list
+              list.delete(page)
+
+              # go under
+              self.build_relationships(page, list)
+            end
+          end
 
           # Record pages found in file system
           def fetch
-            puts self.get(:pages).to_a.inspect
+            self.get(:pages).each do |attributes|
+              page = self.add(attributes['fullpath'], attributes)
 
-            # folders = []
-            #
-            # Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
-            #   fullpath = self.filepath_to_fullpath(filepath)
-            #
-            #   folders.push(fullpath) && next if File.directory?(filepath)
-            #
-            #   next unless filepath =~ /\.(#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join('|')})$/
-            #
-            #   page = self.add(fullpath)
-            #
-            #   Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-            #     if Locomotive::Mounter.locale
-            #       template = Tilt.new(filepath)
-            #
-            #       if template.respond_to?(:attributes)
-            #         page.attributes = template.attributes
-            #       end
-            #
-            #       page.template = template
-            #     end
-            #   end
-            # end
-            #
-            # folders.each do |fullpath|
-            #   next if self.pages.key?(fullpath)
-            #   self.add(fullpath)
-            # end
+              self.mounting_point.locales[1..-1].each do |locale|
+                # if not translated, no need to make an api call for that locale
+                next unless page.translated_in?(locale)
+
+                Locomotive::Mounter.with_locale(locale) do
+                  localized_attributes = self.get("pages/#{page._id}", locale)
+                  page.attributes = localized_attributes
+                end
+              end
+            end
           end
 
           # Add a new page in the global hash of pages.
@@ -78,9 +84,6 @@ module Locomotive
           #
           def add(fullpath, attributes = {})
             unless self.pages.key?(fullpath)
-              attributes[:title]    = File.basename(fullpath).humanize
-              attributes[:fullpath] = fullpath
-
               self.pages[fullpath]  = Locomotive::Mounter::Models::Page.new(attributes)
             end
 
@@ -106,7 +109,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(_id title slug handle fullpath
+            %w(_id title slug handle fullpath translated_in
             published listed templatized
             redirect_url cache_strategy response_type position
             seo_title meta_keywords meta_description)
@@ -118,6 +121,8 @@ module Locomotive
           #
           def to_s(page = nil)
             page ||= self.pages['index']
+
+            return unless page.translated_in?(Locomotive::Mounter.locale)
 
             puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position})"
 

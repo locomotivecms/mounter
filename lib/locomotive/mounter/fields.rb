@@ -44,7 +44,7 @@ module Locomotive
         return if attributes.blank?
 
         attributes.each do |name, value|
-          unless self.class._fields.key?(name.to_sym)
+          unless self.class._fields.key?(name.to_sym) || self.respond_to?(:"#{name}=")
             raise FieldDoesNotExistException.new "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
           end
 
@@ -111,6 +111,17 @@ module Locomotive
       #
       def translated_in
         self._locales
+      end
+
+      # Tell if the object has been translated in the locale
+      # passed in parameter.
+      #
+      # @param [ String/Symbol ] locale
+      #
+      # @return [ Boolean ] True if one of the fields has been translated.
+      #
+      def translated_in?(locale)
+        self.translated_in.include?(locale.to_sym)
       end
 
       # Return a Hash of all the non blank attributes of the object.
