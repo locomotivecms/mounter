@@ -13,8 +13,13 @@ module Locomotive
         field :required,  default: false
         field :localized, default: false
 
+        # text
         field :text_formatting
 
+        # select
+        field :select_options
+
+        # relationships: belongs_to, has_many, many_to_many
         field :class_name
         field :inverse_of
         field :order_by
@@ -54,6 +59,19 @@ module Locomotive
           end
         end
 
+        # Return the name of the select option described by its id AND
+        # for the current locale.
+        # Works only for the select type.
+        #
+        # @param [ String ] id Identifier of the option (BSON::ObjectId)
+        #
+        # @return [ String ] The value of the select option. Nil if not found
+        #
+        def name_for_select_option(id)
+          translations = (self.select_options || []).find { |hash| hash['_id'] == id }
+          (translations || {})[Locomotive::Mounter.locale.to_s]
+        end
+
         # Instead of returning a simple hash, it returns a hash with name as the key and
         # the remaining attributes as the value.
         #
@@ -73,6 +91,9 @@ module Locomotive
 
           # text_formatting only for the text type
           self.text_formatting = nil unless self.type == :text
+
+          # select_options only for the select type
+          self.select_options = nil unless self.type == :select
         end
 
       end

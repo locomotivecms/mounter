@@ -5,12 +5,21 @@ module Locomotive
 
         class ContentEntriesReader < Base
 
+          attr_accessor :ids, :relationships
+
+          def initialize(runner)
+            self.ids, self.relationships = {}, []
+            super
+          end
+
           # Build the list of content types from the folder on the file system.
           #
           # @return [ Array ] The un-ordered list of content types
           #
           def read
             self.fetch
+
+            self.resolve_relationships
 
             self.items
           end
@@ -19,14 +28,24 @@ module Locomotive
 
           def fetch
             self.mounting_point.content_types.each do |slug, content_type|
-              entries = [{"id"=>"5043da7c02c9a41325000003", "_id"=>"5043da7c02c9a41325000003", "created_at"=>"2012-09-03T00:15:24+02:00", "updated_at"=>"2012-09-03T00:15:24+02:00", "place"=>"Avogadro's Number", "formatted_date"=>"06/01/2012", "city"=>"Fort Collins", "state"=>"Colorado", "_label"=>"Avogadro's Number", "_slug"=>"avogadros-number", "_position"=>1, "content_type_slug"=>"events", "select_custom_fields"=>[], "file_custom_fields"=>[], "has_many_custom_fields"=>[], "many_to_many_custom_fields"=>[], "safe_attributes"=>["place", "formatted_date", "city", "state", "_slug", "seo_title", "meta_keywords", "meta_description", "_destroy"]}]
-              # entries = self.get("content_types/#{slug}/entries", nil, true)
+              entries = self.get("content_types/#{slug}/entries", nil, true)
 
-              puts entries.inspect
+              entries.each do |attributes|
+                locales = attributes.delete('translated_in') || []
 
-              # self.add(content_type, _attributes, index)
+                entry = self.add(content_type, attributes)
 
-              raise 'STOP'
+                # get all the translated versions
+                locales.each do |locale|
+                  _attributes = self.get("content_types/#{slug}/entries/#{entry._id}", locale, true)
+
+                  Locomotive::Mounter.with_locale(locale) do
+                    self.filter_attributes(content_type, _attributes).each do |key, value|
+                      entry.send(:"#{key}=", value)
+                    end
+                  end
+                end
+              end
             end
           end
 
@@ -34,27 +53,68 @@ module Locomotive
           #
           # @param [ Object ] content_type The content type
           # @param [ Hash ] attributes The attributes of the content entry
-          # @param [ Integer ] position The position of the entry in the list
           #
-          def add(content_type, attributes, position)
-            # label, _attributes = attributes.keys.first, attributes.values.first
-            #
-            # # check if the label_field is localized or not
-            # label_field_name = content_type.label_field_name
-            #
-            # if content_type.label_field.localized && _attributes.key?(label_field_name) && _attributes[label_field_name].is_a?(Hash)
-            #   _attributes[label_field_name].merge!(Locomotive::Mounter.locale => label).symbolize_keys!
-            # else
-            #   _attributes[label_field_name] = label
-            # end
-            #
-            # _attributes[:_position] = position
-            #
-            # entry = content_type.build_entry(_attributes)
-            #
-            # key = File.join(content_type.slug, entry._slug)
-            #
-            # self.items[key] = entry
+          # @return [ Object] The newly created content entry
+          #
+          def add(content_type, attributes)
+            _attributes = self.filter_attributes(content_type, attributes)
+
+            # puts "_attributes = #{_attributes.inspect}" # DEBUG
+
+            entry = content_type.build_entry(_attributes)
+
+            key = File.join(content_type.slug, entry._slug)
+
+            self.items[key] = self.ids[entry._id] = entry
+          end
+
+          # Filter the attributes coming directly from an API call.
+          #
+          # @param [ Object ] content_type The content type
+          # @param [ Hash ] attributes The attributes of the content entry
+          #
+          # @return [ Object] The attributes understandable by the content entry
+          #
+          def filter_attributes(content_type, original_attributes)
+            attributes = original_attributes.clone.keep_if { |k, v| %w(_id _slug seo_title meta_keywords meta_description _position).include?(k) }
+
+            content_type.fields.each do |field|
+              value = (case field.type
+              when :string, :text, :boolean
+                original_attributes[field.name]
+              when :select
+                field.name_for_select_option(original_attributes[field.name])
+              when :date
+                original_attributes["formatted_#{field.name}"]
+              when :belongs_to, :many_to_many
+                # push a relationship in the waiting line in order to be resolved at last
+                target_field_name = field.type == :belongs_to ? "#{field.name}_id" : "#{field.name}_ids"
+                self.relationships << { id: attributes['_id'], field: field.name, target_ids: original_attributes[target_field_name] }
+                nil
+              else
+                nil
+              end)
+
+              attributes[field.name] = value unless value.nil?
+            end
+
+            attributes
+          end
+
+          # Some entries have what it is called "relationships" field
+          # which can be only resolved once all the entries have been fetched
+          #
+          def resolve_relationships
+            self.relationships.each do |relationship|
+              source_entry, target_ids = self.ids[relationship[:id]], relationship[:target_ids]
+
+              target_entries = self.ids.select { |k, _| [*target_ids].include?(k) }.values
+
+              # single entry (belongs_to) or an array (many_to_many) ?
+              target_entries = target_entries.first unless target_ids.is_a?(Array)
+
+              source_entry.send(:"#{relationship[:field]}=", target_entries)
+            end
           end
 
         end
