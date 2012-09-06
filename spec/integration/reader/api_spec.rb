@@ -201,6 +201,19 @@ describe Locomotive::Mounter::Reader::Api do
 
   end # content types
 
+  describe 'theme assets' do
+
+    before(:each) do
+      stub_readers(@reader, %w(theme_assets))
+      @mounting_point = @reader.run!(@credentials)
+    end
+
+    it 'has 2 assets' do
+      @mounting_point.theme_assets.size.should == 2
+    end
+
+  end # content types
+
   def stub_readers(reader, readers = nil)
     klasses = (readers ||= []).insert(0, 'site').uniq.map do |name|
       "Locomotive::Mounter::Reader::Api::#{name.camelize}Reader".constantize

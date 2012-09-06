@@ -10,6 +10,9 @@ module Locomotive
         field :folder
         field :filepath
 
+        ## other accessors ##
+        attr_accessor :url
+
         ## methods ##
 
         # Name of the file without any precompiled extensions (.sass, .scss, ...etc)
