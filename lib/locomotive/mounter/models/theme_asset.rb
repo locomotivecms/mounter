@@ -8,10 +8,9 @@ module Locomotive
 
         ## fields ##
         field :folder
-        field :filepath
 
         ## other accessors ##
-        attr_accessor :uri
+        attr_accessor :filepath, :uri
 
         ## methods ##
 
@@ -22,9 +21,13 @@ module Locomotive
         def filename
           return @filename if @filename
 
-          regexps   = PRECOMPILED_FILE_TYPES.map { |ext| "\.#{ext}" }.join('|')
+          if self.uri
+            @filename = File.basename(self.uri.path)
+          else
+            regexps   = PRECOMPILED_FILE_TYPES.map { |ext| "\.#{ext}" }.join('|')
 
-          @filename = File.basename(self.filepath).gsub(/#{regexps}/, '')
+            @filename = File.basename(self.filepath).gsub(/#{regexps}/, '')
+          end
         end
 
         # Tell if the asset can be precompiled. For instance, less, sass, scss and

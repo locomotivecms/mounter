@@ -52,7 +52,7 @@ module Locomotive
               parent.add_child(page)
 
               # localize the fullpath in all the locales
-              page.localize_fullpath(self.locales)
+              page.localize_fullpath
 
               # remove the page from the list
               list.delete(page)

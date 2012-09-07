@@ -84,11 +84,13 @@ module Locomotive
           page
         end
 
-        # Localize the fullpath based on the parent fullpath
+        # Localize the fullpath based on the parent fullpath in the locales
+        # passed in parameter.
         #
-        # @param [ Array ] locales The list of locales the fullpath will be translated to
+        # @param [ Array ] locales The list of locales the fullpath will be translated to. Can be nil (will use the locales returned by translated_in)
         #
-        def localize_fullpath(locales)
+        def localize_fullpath(locales = nil)
+          locales ||= self.translated_in
           _parent_fullpath  = self.parent.try(:fullpath)
           _fullpath, _slug  = self.fullpath, self.slug
 
