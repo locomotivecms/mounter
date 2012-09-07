@@ -212,7 +212,20 @@ describe Locomotive::Mounter::Reader::Api do
       @mounting_point.theme_assets.size.should == 2
     end
 
-  end # content types
+  end # theme assets
+
+  describe 'content assets' do
+
+    before(:each) do
+      stub_readers(@reader, %w(content_assets))
+      @mounting_point = @reader.run!(@credentials)
+    end
+
+    it 'has 1 asset' do
+      @mounting_point.content_assets.size.should == 1
+    end
+
+  end # theme assets
 
   def stub_readers(reader, readers = nil)
     klasses = (readers ||= []).insert(0, 'site').uniq.map do |name|
