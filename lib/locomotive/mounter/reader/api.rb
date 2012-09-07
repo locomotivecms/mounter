@@ -14,10 +14,12 @@ module Locomotive
 
         class Runner < Locomotive::Mounter::Reader::Runner
 
+          attr_accessor :uri
+
           # Call the LocomotiveCMS engine to get a token for
           # the next API calls
           def prepare
-            uri       = self.parameters.delete(:uri)
+            self.uri  = self.parameters.delete(:uri)
             email     = self.parameters.delete(:email)
             password  = self.parameters.delete(:password)
 

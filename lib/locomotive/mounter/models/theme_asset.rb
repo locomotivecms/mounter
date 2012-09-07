@@ -11,7 +11,7 @@ module Locomotive
         field :filepath
 
         ## other accessors ##
-        attr_accessor :url
+        attr_accessor :uri
 
         ## methods ##
 
@@ -44,7 +44,9 @@ module Locomotive
         def content
           return @raw if @raw
 
-          if self.precompiled?
+          if self.uri
+            @raw = Net::HTTP.get(self.uri)
+          elsif self.precompiled?
             template = Tilt.new(self.filepath)
             @raw = template.render
           else
