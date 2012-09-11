@@ -77,13 +77,7 @@ module Locomotive
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
                 if Locomotive::Mounter.locale
-                  template = Tilt.new(filepath)
-
-                  if template.respond_to?(:attributes)
-                    page.attributes = template.attributes
-                  end
-
-                  page.template = template
+                  self.set_attributes_from_header(page, filepath)
                 end
               end
             end
@@ -111,6 +105,35 @@ module Locomotive
             end
 
             self.pages[fullpath]
+          end
+
+          # Set attributes of a page from the information
+          # stored in the header of the template (YAML matters).
+          # It also stores the template.
+          #
+          # @param [ Object ] page The page
+          # @param [ String ] filepath The path of the template
+          #
+          def set_attributes_from_header(page, filepath)
+            template = Tilt.new(filepath)
+
+            if template.respond_to?(:attributes)
+              return if template.attributes.blank?
+
+              attributes = template.attributes.clone
+
+              # set the editable elements
+              page.set_editable_elements(attributes.delete('editable_elements'))
+
+              # set the content type
+              if content_type_slug = attributes.delete('content_type')
+                attributes['content_type'] = self.mounting_point.content_types.values.find { |ct| ct.slug == content_type_slug }
+              end
+
+              page.attributes = attributes
+            end
+
+            page.template = template
           end
 
           # Return the directory where all the templates of

@@ -21,6 +21,8 @@ module Locomotive
         field :response_type
         field :position
 
+        field :editable_elements, type: :array, class_name: 'Locomotive::Mounter::Models::EditableElement'
+
         ## other accessors ##
         attr_accessor :content_type_id, :parent_id, :children
 
@@ -82,6 +84,43 @@ module Locomotive
           self.children.sort! { |a, b| (a.position || 999) <=> (b.position || 999) }
 
           page
+        end
+
+        # Build or update the list of editable elements from a hash whose
+        # keys are the couple "[block]/[slug]" and the values the content
+        # of the editable elements OR an array of attributes
+        #
+        # @param [ Hash / Array ] attributes The attributes of the editable elements
+        #
+        def set_editable_elements(attributes)
+          return if attributes.blank?
+
+          self.editable_elements ||= []
+
+          attributes.to_a.each do |_attributes|
+            if _attributes.is_a?(Array) # attributes is maybe a Hash
+              block, slug = _attributes.first.split('/')
+              _attributes = { 'block' => block, 'slug' => slug, 'content' => _attributes.last }
+            end
+
+            # does an editable element exist with the same couple block/slug ?
+            if editable_element = self.find_editable_element(_attributes['block'], _attributes['slug'])
+              editable_element.content = _attributes['content']
+            else
+              self.editable_elements << Locomotive::Mounter::Models::EditableElement.new(_attributes)
+            end
+          end
+        end
+
+        # Find an editable element from its block and slug (the couple is unique)
+        #
+        # @param [ String ] block The name of the block
+        # @param [ String ] slug The slug of the element
+        #
+        # @return [ Object ] The editable element or nil if not found
+        #
+        def find_editable_element(block, slug)
+          self.editable_elements.detect { |el| el.block.to_s == block.to_s && el.slug.to_s == slug.to_s }
         end
 
         # Localize the fullpath based on the parent fullpath in the locales

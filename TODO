@@ -3,17 +3,20 @@
     x site
     - pages
       x fetch all (+ translations)
-      - content assets
-      - content types
+      x editable elements
+        x content assets
+      - content type (engine does not return the content_type_id)
     x snippets
     x content types
     x content entries
       - content assets
     x theme assets
-    - content assets
+    x content assets
   - filesystem
     x pages
       x localized fullpath (rebuild the fullpath for localized pages based on the slug / parent slug)
+      x editable elements
+      x content type
     x snippets
     x content types
     x content entries
@@ -27,9 +30,14 @@
 - writers
   - API
     - site
+    - pages
+    - snippets
+    - content types
+    - content entries
   - FileSystem
     x site
-    x pages
+    - pages
+      - page elements (YAML matters)
     x snippets
     x content types
     x content entries

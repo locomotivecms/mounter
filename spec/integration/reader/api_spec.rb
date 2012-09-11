@@ -60,53 +60,106 @@ describe Locomotive::Mounter::Reader::Api do
 
   end # site
 
-  describe 'pages' do
+  describe 'content_assets, content_types and pages' do
 
     before(:each) do
-      stub_readers(@reader, %w(pages))
+      stub_readers(@reader, %w(content_assets content_types pages))
       @mounting_point = @reader.run!(@credentials)
-      @index = @mounting_point.pages['index']
     end
 
-    it 'has 11 pages' do
-      @mounting_point.pages.size.should == 11
-    end
+    describe 'pages' do
 
-    describe '#tree' do
-
-      it 'puts pages under the index page' do
-        @index.children.size.should == 6
+      before(:each) do
+        @index          = @mounting_point.pages['index']
+        @song_template  = @mounting_point.pages['songs/content_type_template']
       end
 
-      it 'keeps the ordering of the config' do
-        @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
+      it 'has 11 pages' do
+        @mounting_point.pages.size.should == 11
       end
 
-      it 'assigns titles for all the pages' do
-        @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
-      end
+      describe '#tree' do
 
-      it 'also includes nested children' do
-        @index.children.first.children.size.should == 2
-        @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
-      end
-
-      it 'localizes the fullpath' do
-        Locomotive::Mounter.with_locale(:fr) do
-          @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
+        it 'puts pages under the index page' do
+          @index.children.size.should == 6
         end
-      end
 
-      it 'localizes titles' do
-        Locomotive::Mounter.with_locale(:fr) do
-          @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
+        it 'keeps the ordering of the config' do
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
         end
+
+        it 'assigns titles for all the pages' do
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
+        end
+
+        it 'also includes nested children' do
+          @index.children.first.children.size.should == 2
+          @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
+        end
+
+        it 'localizes the fullpath' do
+          Locomotive::Mounter.with_locale(:fr) do
+            @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
+          end
+        end
+
+        it 'localizes titles' do
+          Locomotive::Mounter.with_locale(:fr) do
+            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
+          end
+        end
+
       end
 
+      describe '#content_type' do
 
-    end
+        it 'assigns it' do
+          @song_template.content_type.should_not be_nil
+          @song_template.content_type.slug.should == 'songs'
+        end
 
-  end # pages
+      end
+
+    end # pages
+
+    describe 'content types' do
+
+      it 'has 4 content types' do
+        @mounting_point.content_types.size.should == 4
+        @mounting_point.content_types.keys.should == %w(events messages songs updates)
+        @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
+      end
+
+      describe 'a single content type' do
+
+        before(:each) do
+          @content_type = @mounting_point.content_types['events']
+        end
+
+        it 'has basic properties: name, slug' do
+          @content_type.name.should == 'Events'
+          @content_type.slug.should == 'events'
+        end
+
+        it 'has fields' do
+          @content_type.fields.size.should == 4
+          @content_type.fields.map(&:name).should == %w(place date city state)
+          @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
+        end
+
+      end
+
+    end # content types
+
+    describe 'content assets' do
+
+      it 'has 1 asset' do
+        @mounting_point.content_assets.size.should == 1
+      end
+
+    end # content assets
+
+  end
 
   describe 'snippets' do
 
@@ -129,40 +182,6 @@ describe Locomotive::Mounter::Reader::Api do
     end
 
   end # snippets
-
-  describe 'content types' do
-
-    before(:each) do
-      stub_readers(@reader, %w(content_types))
-      @mounting_point = @reader.run!(@credentials)
-    end
-
-    it 'has 4 content types' do
-      @mounting_point.content_types.size.should == 4
-      @mounting_point.content_types.keys.should == %w(events messages songs updates)
-      @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
-    end
-
-    describe 'a single content type' do
-
-      before(:each) do
-        @content_type = @mounting_point.content_types['events']
-      end
-
-      it 'has basic properties: name, slug' do
-        @content_type.name.should == 'Events'
-        @content_type.slug.should == 'events'
-      end
-
-      it 'has fields' do
-        @content_type.fields.size.should == 4
-        @content_type.fields.map(&:name).should == %w(place date city state)
-        @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
-      end
-
-    end
-
-  end # content types
 
   describe 'content entries' do
 
@@ -199,7 +218,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     end
 
-  end # content types
+  end # content entries
 
   describe 'theme assets' do
 
@@ -210,19 +229,6 @@ describe Locomotive::Mounter::Reader::Api do
 
     it 'has 2 assets' do
       @mounting_point.theme_assets.size.should == 2
-    end
-
-  end # theme assets
-
-  describe 'content assets' do
-
-    before(:each) do
-      stub_readers(@reader, %w(content_assets))
-      @mounting_point = @reader.run!(@credentials)
-    end
-
-    it 'has 1 asset' do
-      @mounting_point.content_assets.size.should == 1
     end
 
   end # theme assets

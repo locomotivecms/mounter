@@ -59,6 +59,8 @@ module Locomotive
 
           # Record pages found in file system
           def fetch
+            puts self.get(:pages, nil, false).join("============\n")
+
             self.get(:pages).each do |attributes|
               page = self.add(attributes['fullpath'], attributes)
 
@@ -68,7 +70,13 @@ module Locomotive
 
                 Locomotive::Mounter.with_locale(locale) do
                   localized_attributes = self.get("pages/#{page._id}", locale)
+
+                  # isolate the editable elements
+                  editable_elements = self.filter_editable_elements(localized_attributes.delete('editable_elements'))
+
                   page.attributes = localized_attributes
+
+                  page.set_editable_elements(editable_elements)
                 end
               end
             end
@@ -84,7 +92,19 @@ module Locomotive
           #
           def add(fullpath, attributes = {})
             unless self.pages.key?(fullpath)
-              self.pages[fullpath]  = Locomotive::Mounter::Models::Page.new(attributes)
+              # editable elements
+              editable_elements = self.filter_editable_elements(attributes.delete('editable_elements'))
+
+              puts "content_type_id = #{attributes['content_type_id']}"
+
+              # content type
+              if content_type_id = attributes.delete('content_type_id')
+                attributes['content_type'] = self.mounting_point.content_types.values.find { |ct| ct._id == content_type_id }
+              end
+
+              self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
+
+              self.pages[fullpath].set_editable_elements(editable_elements)
             end
 
             self.pages[fullpath]
@@ -108,11 +128,28 @@ module Locomotive
             File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
           end
 
+          # Only keep the minimal attributes from a list of
+          # editable elements hashes
+          #
+          # @param [ Array ] list The list of the editable elements with all the attributes
+          #
+          # @return [ Array ] The list of editable elements with the right attributes
+          #
+          def filter_editable_elements(list)
+            list.map do |attributes|
+              attributes.keep_if { |k, _| %w(_id block slug content).include?(k) }.tap do |hash|
+                self.mounting_point.content_assets.each do |path, asset|
+                  hash['content'].gsub!(path, asset.local_filepath)
+                end
+              end
+            end
+          end
+
           def safe_attributes
-            %w(_id title slug handle fullpath translated_in
-            published listed templatized
+            %w(_id title slug handle fullpath translated_in content_type_id
+            published listed templatized editable_elements
             redirect_url cache_strategy response_type position
-            seo_title meta_keywords meta_description)
+            seo_title meta_keywords meta_description raw_template)
           end
 
           # Output simply the tree structure of the pages.

@@ -39,7 +39,7 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def readers
-            [SiteReader, SnippetsReader, ContentAssetsReader, PagesReader, ContentTypesReader, ContentEntriesReader, ThemeAssetsReader]
+            [SiteReader, SnippetsReader, ContentTypesReader, ContentEntriesReader, ContentAssetsReader, PagesReader, ThemeAssetsReader]
           end
 
         end

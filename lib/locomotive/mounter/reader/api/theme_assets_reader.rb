@@ -19,7 +19,9 @@ module Locomotive
             base_uri = "http://#{base_uri}" unless base_uri =~ /^http:\/\//
 
             self.items = self.get(:theme_assets).map do |attributes|
-              attributes['uri'] = URI("#{base_uri}#{attributes.delete('url')}")
+              url = attributes.delete('url')
+
+              attributes['uri'] = URI(url =~ /http:\/\// ? url : "#{base_uri}#{url}")
 
               Locomotive::Mounter::Models::ThemeAsset.new(attributes)
             end
