@@ -154,9 +154,9 @@ describe Locomotive::Mounter::Reader::FileSystem do
         end
 
         it 'has fields' do
-          @content_type.fields.size.should == 4
-          @content_type.fields.map(&:name).should == %w(place date city state)
-          @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
+          @content_type.fields.size.should == 5
+          @content_type.fields.map(&:name).should == %w(place date city state notes)
+          @content_type.fields.map(&:type).should == [:string, :date, :string, :string, :text]
         end
 
       end

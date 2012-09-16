@@ -10,6 +10,12 @@ module Locomotive
         ## other accessors
         attr_accessor :block, :slug
 
+        ## methods ##
+
+        def to_yaml
+          { "#{block}/#{slug}" => content }
+        end
+
       end
 
     end

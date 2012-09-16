@@ -4,7 +4,8 @@ require 'spec_helper'
 describe Locomotive::Mounter::Reader::Api do
 
   before(:each) do
-    @credentials  = { uri: 'sample.engine.dev/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
+    # @credentials  = { uri: 'sample.engine.dev/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
+    @credentials  = { uri: 'sample.example.com:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
     @reader       = Locomotive::Mounter::Reader::Api.instance
   end
 
@@ -142,9 +143,9 @@ describe Locomotive::Mounter::Reader::Api do
         end
 
         it 'has fields' do
-          @content_type.fields.size.should == 4
-          @content_type.fields.map(&:name).should == %w(place date city state)
-          @content_type.fields.map(&:type).should == [:string, :date, :string, :string]
+          @content_type.fields.size.should == 5
+          @content_type.fields.map(&:name).should == %w(place date city state notes)
+          @content_type.fields.map(&:type).should == [:string, :date, :string, :string, :text]
         end
 
       end
@@ -153,8 +154,8 @@ describe Locomotive::Mounter::Reader::Api do
 
     describe 'content assets' do
 
-      it 'has 1 asset' do
-        @mounting_point.content_assets.size.should == 1
+      it 'has 1 asset' do      
+        @mounting_point.content_assets.size.should == 1        
       end
 
     end # content assets
@@ -186,7 +187,7 @@ describe Locomotive::Mounter::Reader::Api do
   describe 'content entries' do
 
     before(:each) do
-      stub_readers(@reader, %w(content_types content_entries))
+      stub_readers(@reader, %w(content_assets content_types content_entries))
       @mounting_point = @reader.run!(@credentials)
     end
 
@@ -197,7 +198,8 @@ describe Locomotive::Mounter::Reader::Api do
     describe 'a single content entry' do
 
       before(:each) do
-        @content_entry = @mounting_point.content_entries.values.first
+        content_type    = @mounting_point.content_types['events']
+        @content_entry  = content_type.entries.first      
       end
 
       it 'has a label' do
@@ -214,6 +216,10 @@ describe Locomotive::Mounter::Reader::Api do
 
       it 'can access casted value of a dynamic field' do
         @content_entry.date = Date.parse('2012/06/11')
+      end
+
+      it 'has a text' do
+        @content_entry.notes.should match /<p>Lorem ipsum<img src="\/samples\/assets\/.*" alt="" \/><\/p>/
       end
 
     end
