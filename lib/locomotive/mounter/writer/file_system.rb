@@ -9,35 +9,38 @@ module Locomotive
         # @return [ Object ] A singleton instance of the Runner class
         #
         def self.instance
-          @@instance ||= Runner.new
+          @@instance ||= Runner.new(:file_system)
         end
 
-        class Runner
+        class Runner < Locomotive::Mounter::Writer::Runner
 
-          attr_accessor :target_path, :mounting_point
+          attr_accessor :target_path
 
-          def initialize
-           # avoid to load all the ruby files at the startup, only when we need it
-            base_dir = File.join(File.dirname(__FILE__), 'file_system')
-            require File.join(base_dir, 'base.rb')
-            Dir[File.join(base_dir, '*.rb')].each { |lib| require lib }
-          end
+          # # Write the data of a mounting point instance to a target folder
+          # #
+          # # @param [ Hash ] parameters The parameters. It should contain the mounting_point and target_path keys.
+          # #
+          # # @return [ String ] The target path
+          # #
+          # def run!(parameters = {})
+          #   self.mounting_point = parameters[:mounting_point]
+            
 
-          # Write the data of a mounting point instance to a target folder
+          #   return nil if self.target_path.blank? || self.mounting_point.nil?
+
+          #   self.write_all
+
+          #   self.target_path
+          # end
+
+          # Check the existence of the target_path parameter
           #
-          # @param [ Hash ] parameters The parameters. It should contain the mounting_point and target_path keys.
-          #
-          # @return [ String ] The target path
-          #
-          def run!(parameters = {})
-            self.mounting_point = parameters[:mounting_point]
-            self.target_path    = parameters[:target_path]
+          def prepare
+            self.target_path = parameters[:target_path]
 
-            return nil if self.target_path.blank? || self.mounting_point.nil?
-
-            self.write_all
-
-            self.target_path
+            if self.target_path.blank?
+             raise Locomotive::Mounter::WriteException.new('target_path is required')
+           end
           end
 
           # List of all the writers
@@ -48,14 +51,14 @@ module Locomotive
             [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, ThemeAssetsWriter]
           end
 
-          # Execute all the writers
-          def write_all
-            self.writers.each do |klass|
-              writer = klass.new(self.mounting_point, self.target_path)
-              writer.prepare
-              writer.write
-            end
-          end
+          # # Execute all the writers
+          # def write_all
+          #   self.writers.each do |klass|
+          #     writer = klass.new(self.mounting_point, self.target_path)
+          #     writer.prepare
+          #     writer.write
+          #   end
+          # end
 
         end
 

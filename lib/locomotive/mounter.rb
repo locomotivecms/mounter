@@ -42,8 +42,9 @@ require 'locomotive/mounter/reader/file_system'
 require 'locomotive/mounter/reader/api'
 
 # Writer: Filesystem
-# require 'locomotive/mounter/writer/base/runner'
+require 'locomotive/mounter/writer/runner'
 require 'locomotive/mounter/writer/file_system'
+require 'locomotive/mounter/writer/api'
 
 module Locomotive
 

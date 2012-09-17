@@ -1,6 +1,6 @@
 module Locomotive
   module Mounter
-    module Reader
+    module Writer
       module Api
 
         # Build a singleton instance of the Runner class.
@@ -11,7 +11,7 @@ module Locomotive
           @@instance ||= Runner.new(:api)
         end
 
-        class Runner < Locomotive::Mounter::Reader::Runner
+        class Runner < Locomotive::Mounter::Writer::Runner
 
           attr_accessor :uri
 
@@ -23,13 +23,13 @@ module Locomotive
             password  = self.parameters.delete(:password)
 
             if uri.blank? || email.blank? || password.blank?
-              raise Locomotive::Mounter::ReaderException.new("one or many API credentials (uri, email, password) are missing")
+              raise Locomotive::Mounter::WriterException.new("one or many API credentials (uri, email, password) are missing")
             end
 
             begin
               Locomotive::Mounter::EngineApi.set_token(uri, email, password)
             rescue Exception => e
-              raise Locomotive::Mounter::ReaderException.new("unable to get an API token: #{e.message}")
+              raise Locomotive::Mounter::WriterException.new("unable to get an API token: #{e.message}")
             end
           end
 
@@ -38,7 +38,7 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def readers
-            [SiteReader, SnippetsReader, ContentTypesReader, ContentEntriesReader, ContentAssetsReader, PagesReader, ThemeAssetsReader]
+            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, PagesWriter, ThemeAssetsWriter]
           end
 
         end

@@ -13,6 +13,9 @@ module Locomotive
     class ReaderException < DefaultException
     end
 
+    class WriterException < DefaultException
+    end
+
     class ImplementationIsMissingException < DefaultException
     end
 

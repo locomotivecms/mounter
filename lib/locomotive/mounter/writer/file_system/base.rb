@@ -5,11 +5,11 @@ module Locomotive
 
         class Base
 
-          attr_accessor :mounting_point, :target_path
+          attr_accessor :mounting_point, :runner
 
-          def initialize(mounting_point, target_path)
+          def initialize(mounting_point, runner)
             self.mounting_point = mounting_point
-            self.target_path    = target_path
+            self.runner         = runner
           end
 
           # It should always be called before executing the write method.
@@ -47,6 +47,10 @@ module Locomotive
             fullpath = File.join(self.target_path, path)
 
             File.open(fullpath, mode, &block)
+          end
+
+          def target_path
+            self.runner.target_path
           end
 
         end
