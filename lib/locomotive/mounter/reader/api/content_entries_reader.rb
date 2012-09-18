@@ -80,8 +80,10 @@ module Locomotive
 
             content_type.fields.each do |field|
               value = (case field.type
-              when :string, :text, :boolean
+              when :string, :boolean
                 original_attributes[field.name]
+              when :text
+                self.replace_urls_by_content_assets(original_attributes[field.name])
               when :select
                 field.name_for_select_option(original_attributes[field.name])
               when :date
@@ -99,7 +101,7 @@ module Locomotive
             end
 
             attributes
-          end
+          end        
 
           # Some entries have what it is called "relationships" field
           # which can be only resolved once all the entries have been fetched
@@ -115,6 +117,20 @@ module Locomotive
 
               source_entry.send(:"#{relationship[:field]}=", target_entries)
             end
+          end
+
+          # For a given content, parse it and replace all the urls from content assets
+          # by their corresponding locale ones.
+          #
+          # @param [ String ] content The content to parse
+          #
+          # @return [ String ] The content with local urls
+          #
+          def replace_urls_by_content_assets(content)
+            self.mounting_point.content_assets.each do |path, asset|
+              content.gsub!(path, asset.local_filepath)
+            end
+            content
           end
 
         end

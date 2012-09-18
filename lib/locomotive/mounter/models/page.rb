@@ -170,6 +170,14 @@ module Locomotive
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
+          _attributes['editable_elements'] = {}
+
+          (self.editable_elements || []).each do |editable_element|
+            _attributes['editable_elements'].merge!(editable_element.to_yaml)
+          end
+
+          _attributes.delete('editable_elements') if _attributes['editable_elements'].empty?
+
           _attributes.delete('slug') if self.depth == 0
 
           "#{_attributes.to_yaml}---\n#{self.source}"

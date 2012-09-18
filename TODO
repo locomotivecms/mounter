@@ -1,14 +1,14 @@
 - readers
   - API
     x site
-    - pages
+    x pages
       x fetch all (+ translations)
       x editable elements
         x content assets
-      - content type (engine does not return the content_type_id)
+      x content type (engine does not return the content_type_id)
     x snippets
     x content types
-    x content entries
+    x xontent entries
       - content assets
     x theme assets
     x content assets
@@ -36,8 +36,8 @@
     - content entries
   - FileSystem
     x site
-    - pages
-      - page elements (YAML matters)
+    x pages
+      x page elements (YAML matters)
     x snippets
     x content types
     x content entries
@@ -46,6 +46,11 @@
     x convert in HAML, SASS, Coffeescript
     x content assets
     - tests
+
+
+=== case not handled for now ===
+
+- a content type gets changed: new fields, renamed ones or deleted.
 
 ====== use case =====
 
