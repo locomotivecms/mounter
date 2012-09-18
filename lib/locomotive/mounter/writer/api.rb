@@ -33,12 +33,13 @@ module Locomotive
             end
           end
 
-          # Ordered list of atomic readers
+          # Ordered list of atomic writers
           #
           # @return [ Array ] List of classes
           #
-          def readers
-            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, PagesWriter, ThemeAssetsWriter]
+          def writers
+            [SiteWriter]
+            #, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, PagesWriter, ThemeAssetsWriter]
           end
 
         end

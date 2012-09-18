@@ -59,8 +59,6 @@ module Locomotive
 
           # Record pages found in file system
           def fetch
-            puts self.get(:pages, nil, false).join("============\n")
-
             self.get(:pages).each do |attributes|
               page = self.add(attributes['fullpath'], attributes)
 

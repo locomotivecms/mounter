@@ -39,7 +39,7 @@ module Locomotive
             self.target_path = parameters[:target_path]
 
             if self.target_path.blank?
-             raise Locomotive::Mounter::WriteException.new('target_path is required')
+             raise Locomotive::Mounter::WriterException.new('target_path is required')
            end
           end
 
