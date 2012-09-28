@@ -128,10 +128,12 @@ module Locomotive
       # It also performs a couple of modifications: stringify keys and
       # convert Symbol to String.
       #
+      # @param [ Boolean ] translation Flag (by default true) to get the translations too.
+      #
       # @return [ Hash ] The non blank attributes
       #
-      def to_hash
-        hash = self.attributes_with_translations
+      def to_hash(translations = true)
+        hash = translations ? self.attributes_with_translations : self.attributes
 
         hash.delete_if { |k, v| v.blank? }
 

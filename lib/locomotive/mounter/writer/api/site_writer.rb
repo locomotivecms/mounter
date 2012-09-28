@@ -5,19 +5,76 @@ module Locomotive
 
         class SiteWriter < Base
 
-          # It creates the config folder
-          def prepare
-            # self.create_folder 'config'
-            puts self.get('my_account', nil, true).inspect
+          attr_accessor :remote_site
 
-            raise 'STOP'
+          # Check if the site has to be created before.
+          def prepare
+            if self.fetch_site.nil?
+              Mounter.logger.warn 'The site does not exist. Trying to create it.'
+
+              unless self.has_admin_rights?
+                raise Mounter::WriterException.new('Your account does not own admin rights.')
+              end
+            else
+              self.check_locales
+            end
           end
 
-          # It fills the config/site.yml file
+          # Create the site if it does not exist
           def write
-            # self.open_file('config/site.yml') do |file|
-            #   file.write(self.mounting_point.site.to_yaml)
-            # end
+            unless self.site.persisted?
+              # create it in the default locale
+              Mounter.with_locale(self.mounting_point.default_locale) do
+                if (site = self.post(:sites, self.site.to_hash(false), Mounter.locale)).nil?
+                  raise Mounter::WriterException.new('Sorry, we are unable to create the site.')
+                else
+                  self.site._id = site['_id']
+                end
+              end
+
+              # update it in other locales
+              self.site.translated_in.each do |locale|
+                Mounter.with_locale(locale) do
+                  self.put(:sites, self.site._id, self.site.to_hash(false), Mounter.locale)
+                end
+              end
+            end
+          end
+
+          protected
+
+          def safe_attributes
+            %w(_id locales)
+          end
+
+          def fetch_site
+            self.get(:current_site).tap do |_site|
+              if _site
+                self.remote_site  = _site
+                self.site._id     = _site['_id']
+              end
+            end
+          end
+
+          def check_locales
+            default_locale  = self.mounting_point.default_locale
+            locales         = self.site.locales
+            remote_locales  = self.remote_site['locales']
+            message         = nil
+
+            unless locales.all? { |l| remote_locales.include?(l) }
+              message = "Your site locales (#{locales.join(', ')}) do not match exactly the ones of your target (#{remote_locales.join(', ')})"
+            end
+
+            if default_locale != remote_locales.first
+              message = "Your default site locale (#{default_locale}) is not the same as the one of your target (#{remote_locales.first})"
+            end
+
+            raise Mounter::WriterException.new(message) if message
+          end
+
+          def has_admin_rights?
+            self.get(:my_account, nil, true)['admin']
           end
 
         end

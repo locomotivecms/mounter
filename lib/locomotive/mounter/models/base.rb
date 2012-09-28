@@ -8,6 +8,12 @@ module Locomotive
 
         attr_accessor :_id, :mounting_point
 
+        ## methods ##
+
+        def persisted?
+        	!self._id.blank?
+        end
+
       end
 
     end

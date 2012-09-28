@@ -4,7 +4,7 @@ module Locomotive
     class DefaultException < ::Exception
 
       def initialize(message = nil)
-        Locomotive::Mounter.logger.warn message
+        Locomotive::Mounter.logger.error message
         super
       end
 
