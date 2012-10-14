@@ -18,10 +18,6 @@ module Locomotive
             self.runner.mounting_point
           end
 
-          # def locales
-          #   self.mounting_point.locales
-          # end
-
           protected
 
           # Return the locale of a file based on its extension.
@@ -49,12 +45,6 @@ module Locomotive
             else
               self.default_locale
             end
-
-            # if locale && locale.size == 2 && !self.locales.include?(locale)
-            #   Locomotive::Mounter.logger.warn "The locale #{locale} within the #{File.basename(filepath)} file is not part of the site locales."
-            # end
-
-            # locale && self.locales.include?(locale) ? locale : nil
           end
 
           # Open a YAML file and returns the content of the file

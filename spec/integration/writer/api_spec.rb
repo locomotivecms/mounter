@@ -32,7 +32,7 @@ describe Locomotive::Mounter::Writer::Api do
 
     before(:each) do
       stub_writers(@writer, %w(pages))
-      @writer.run!({ mounting_point: @mounting_point, console: true }.merge(@credentials))
+      @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
     end
 
     it 'creates all the pages' do

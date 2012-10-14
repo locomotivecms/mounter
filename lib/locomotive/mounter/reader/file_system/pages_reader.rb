@@ -45,6 +45,9 @@ module Locomotive
           end
 
           def build_relationships(parent, list)
+            # do not use an empty template for other locales than the default one
+            parent.set_default_template_for_each_locale(self.default_locale)
+
             list.dup.each do |page|
               next unless self.is_subpage_of?(page.fullpath, parent.fullpath)
 

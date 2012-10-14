@@ -21,6 +21,13 @@ module Locomotive
             self.output_title
           end
 
+          # By setting the force option to true, some resources (Site, Page, Snippet)
+          # may overide the content of the remote engine during the push operation.
+          #
+          def force?
+            self.runner.parameters[:force] || false
+          end
+
           # Get remote resource(s) by the API
           #
           # @param [ String ] resource_name The path to the resource (usually, the resource name)
@@ -34,13 +41,11 @@ module Locomotive
 
             params[:query][:locale] = locale if locale
 
-            response = Locomotive::Mounter::EngineApi.get("/#{resource_name}.json", params)
+            response  = Locomotive::Mounter::EngineApi.get("/#{resource_name}.json", params)
+            data      = response.parsed_response
 
             if response.success?
-              data = response.parsed_response
-
               return data if raw
-
               self.raw_data_to_object(data)
             else
               nil
@@ -52,10 +57,11 @@ module Locomotive
           # @param [ String ] resource_name The path to the resource (usually, the resource name)
           # @param [ Hash ] params The attributes of the resource
           # @param [ String ] locale The locale for the request
+          # @param [ Boolean ] raw True if the result has to be converted into object.
           #
           # @return [ Object] The response of the API or nil if an error occurs
           #
-          def post(resource_name, params, locale = nil)
+          def post(resource_name, params, locale = nil, raw = false)
             body = { body: { resource_name.to_s.singularize => params } }
 
             body[:body][:locale] = locale if locale
@@ -64,11 +70,13 @@ module Locomotive
             data      = response.parsed_response
 
             if response.success?
+              return data if raw
               self.raw_data_to_object(data)
             else
               # puts response.inspect
+              self.log "\n"
               data.each do |attribute, errors|
-                self.log "    #{attribute} => #{[*errors].join(', ')}".colorize(color: :red)
+                self.log "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
               end if data.respond_to?(:keys)
               nil
             end

@@ -91,7 +91,7 @@ module Locomotive
         # @return [ Integer ] An unique id corresponding to the depth and position
         #
         def depth_and_position
-          self.depth * 100 + self.position || 0
+          self.depth * 100 + (self.position || 100)
         end
 
         # A layout is a page which the template does
@@ -192,6 +192,32 @@ module Locomotive
           end
         end
 
+        # Assign a default template for each locale which
+        # has an empty template. This default template
+        # is the one defined in the default locale.
+        #
+        # @param [ Symbol / String ] default_locale The default locale
+        #
+        def set_default_template_for_each_locale(default_locale)
+          default_template = self.template_translations[default_locale.to_sym]
+
+          return if default_template.nil? || default_template.data.strip.blank?
+
+          self.translated_in.each do |locale|
+            next if locale.to_s == default_locale.to_s
+
+            # current template
+            _template = self.template_translations[locale]
+
+            # is it blank ?
+            if _template.nil? || _template.data.strip.blank?
+              # puts "YOUPI #{self.fullpath} / #{locale} / #{default_template.data}"
+              self.template_translations[locale] = default_template
+              # raise 'STOP'
+            end
+          end
+        end
+
         # Set the source of the page without any pre-rendering. Used by the API reader.
         #
         # @param [ String ] content The HTML raw template
@@ -211,12 +237,18 @@ module Locomotive
           @source[Locomotive::Mounter.locale] ||= self.template.need_for_prerendering? ? self.template.render : self.template.data
         end
 
+        # Return the YAML front matters of the page
+        #
+        # @return [ String ] The YAML version of the page
+        #
         def to_yaml
-          fields = %w(title slug redirect_url handle published cache_strategy response_type position)
+          fields = %w(title slug redirect_url handle published listed cache_strategy response_type position)
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
           _attributes['editable_elements'] = {}
+
+          # TODO: templatized / content_type
 
           (self.editable_elements || []).each do |editable_element|
             _attributes['editable_elements'].merge!(editable_element.to_yaml)
@@ -227,6 +259,52 @@ module Locomotive
           _attributes.delete('slug') if self.depth == 0
 
           "#{_attributes.to_yaml}---\n#{self.source}"
+        end
+
+        # Return the params used for the API
+        #
+        # @return [ Hash ] Params
+        #
+        def to_params
+          fields = %w(title parent_id slug redirect_url handle listed published cache_strategy response_type position templatized content_type_id)
+
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+
+          # slug
+          params.delete(:slug) if self.depth == 0
+
+          # redirect_url
+          params[:redirect] = true unless self.redirect_url.blank?
+
+          # parent_id
+          params[:parent_id] = self.parent_id unless self.parent_id.blank?
+
+          # TODO: editable_elements ????
+
+          # raw_template
+          params[:raw_template] = self.source rescue nil
+
+          params
+        end
+
+        # Return the params used for the API but without all the params.
+        # This can be explained by the fact that for instance the update should preserve
+        # the content.
+        #
+        # @return [ Hash ] Params
+        #
+        def to_safe_params
+          fields = %w(listed published handle cache_strategy redirect_url response_type templatized content_type_id)
+
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+
+          # redirect_url
+          params[:redirect] = true unless self.redirect_url.blank?
+
+          # raw_template
+          params[:raw_template] = self.source rescue nil
+
+          params
         end
 
         def to_s
