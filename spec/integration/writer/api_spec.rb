@@ -36,7 +36,20 @@ describe Locomotive::Mounter::Writer::Api do
     end
 
     it 'creates all the pages' do
-      # Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 11
+      Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 13
+    end
+
+  end
+
+  describe 'snippets' do
+
+    before(:each) do
+      stub_writers(@writer, %w(snippets))
+      @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
+    end
+
+    it 'creates all the snippets' do
+      Locomotive::Mounter::EngineApi.get('/snippets.json').to_a.size.should == 2
     end
 
   end

@@ -160,10 +160,10 @@ module Locomotive
           # Print the message about the creation / update of a resource.
           #
           # @param [ Object ] resource The resource (Site, Page, ...etc).
-          # @param [ Symbol ] status :ok for success
+          # @param [ Boolean ] success True if everything went okay
           #
-          def output_resource_op_status(resource, status = :ok)
-            status_label  = status == :ok ? 'done'.colorize(color: :green) : 'error'.colorize(color: :red)
+          def output_resource_op_status(resource, success = true)
+            status_label  = success ? 'done'.colorize(color: :green) : 'error'.colorize(color: :red)
             spaces        = ' ' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
           end

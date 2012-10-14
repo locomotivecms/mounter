@@ -31,6 +31,25 @@ module Locomotive
           @source[Locomotive::Mounter.locale] = source
         end
 
+        # Return the params used for the API
+        #
+        # @return [ Hash ] Params
+        #
+        def to_params
+          fields = %w(name slug)
+
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+
+          # raw_template
+          params[:template] = self.source rescue nil
+
+          params
+        end
+
+        def to_s
+          self.name
+        end
+
       end
 
     end

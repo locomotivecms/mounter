@@ -58,28 +58,51 @@ module Locomotive
 
             # TODO: replace assets
 
-            if page.persisted?
-              # All the attributes of the page or just some of them
-              params = self.force? || !self.already_translated?(page) ? page.to_params : page.to_safe_params
+            success = page.persisted? ? self.update_page(page) : self.create_page(page)
 
-              # make a call to the API for the update
-              self.put :pages, page._id, params, locale
-            else
-              if !page.index_or_404? && page.parent_id.nil?
-                raise Mounter::WriterException.new("We are unable to find the parent page for #{page.fullpath}")
-              end
-
-              # make a call to the API to create the page, no need to set
-              # the locale since it only happens for the default locale.
-              object = self.post :pages, page.to_params, nil, true
-
-              page._id = object['_id']
-            end
-
-            self.output_resource_op_status page
+            self.output_resource_op_status page, success
           end
 
-          # Shortcut to get pages
+          # Persist a page by calling the API. The returned _id
+          # is then set to the page itself.
+          #
+          # @param [ Object ] page The page to update
+          #
+          # @return [ Boolean ] True if the call to the API succeeded
+          #
+          def create_page(page)
+            if !page.index_or_404? && page.parent_id.nil?
+              raise Mounter::WriterException.new("We are unable to find the parent page for #{page.fullpath}")
+            end
+
+            # make a call to the API to create the page, no need to set
+            # the locale since it first happens for the default locale.
+            object = self.post :pages, page.to_params, nil, true
+
+            page._id = object['_id'] if object
+
+            !object.nil?
+          end
+
+          # Update a page by calling the API.
+          #
+          # @param [ Object ] page The page to persist
+          #
+          # @return [ Boolean ] True if the call to the API succeeded
+          #
+          def update_page(page)
+            locale  = Locomotive::Mounter.locale
+
+            # All the attributes of the page or just some of them
+            params = self.force? || !self.already_translated?(page) ? page.to_params : page.to_safe_params
+
+            # make a call to the API for the update
+            object = self.put :pages, page._id, params, locale
+
+            !object.nil?
+          end
+
+          # Shortcut to get pages.
           #
           # @return [ Hash ] The hash whose key is the fullpath and the value is the page itself
           #
