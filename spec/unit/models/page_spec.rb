@@ -108,6 +108,37 @@ describe Locomotive::Mounter::Models::Page do
 
   end
 
+  describe 'layout' do
+
+    it 'is a layout if it includes the extends keyword' do
+      page = build_page(raw_template: 'Lorem ipsum')
+      page.is_layout?.should be_true
+    end
+
+    it 'is not a layout because it does not include the extends keyword' do
+      page = build_page(raw_template: "   \n\t{% extends index %} Lorem ipsum")
+      page.is_layout?.should be_false
+    end
+
+    it 'is not a layout if the template is nil' do
+      build_page.is_layout?.should be_false
+    end
+
+    it 'is not a layout if the template is empty' do
+      template = Tilt.new(File.join(File.dirname(__FILE__), '../..', 'fixtures', 'empty.liquid.haml'))
+      build_page(template: template).is_layout?.should be_false
+    end
+
+    it 'returns the fullpath to the layout' do
+      page = build_page(raw_template: "   \n\t{% extends index %} Lorem ipsum")
+      page.layout.should == 'index'
+
+      page = build_page(raw_template: "   \n\t{% extends 'parent' %} Lorem ipsum")
+      page.layout.should == 'parent'
+    end
+
+  end
+
   describe 'slug' do
 
     before(:each) do

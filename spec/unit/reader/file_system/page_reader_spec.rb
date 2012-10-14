@@ -11,23 +11,24 @@ describe 'Locomotive::Mounter::Reader::FileSystem::PagesReader' do
 
     before(:each) do
       @reader.stubs(:locales).returns(['en', 'fr'])
+      @reader.stubs(:default_locale).returns('en')
     end
 
-    it 'returns false if no locale information in the filepath' do
-      @reader.send(:filepath_locale, 'app/views/pages/index.liquid.haml').should be_nil
+    it 'returns the default locale if no locale information in the filepath' do
+      @reader.send(:filepath_locale, 'app/views/pages/index.liquid.haml').should == 'en'
     end
 
-    it 'returns false if the locale in the filepath is not registered' do
+    it 'returns nil if the locale in the filepath is not registered' do
       @reader.send(:filepath_locale, 'app/views/pages/index.de.liquid.haml').should be_nil
     end
 
     context 'the locale in the filepath is registered' do
 
-      it 'returns true' do
+      it 'returns the locale' do
         @reader.send(:filepath_locale, 'app/views/pages/index.fr.liquid.haml').should == 'fr'
       end
 
-      it 'returns true even if the filepath contains multiple dots' do
+      it 'returns the locale even if the filepath contains multiple dots' do
         @reader.send(:filepath_locale, 'app/./views/../views/pages/index.fr.liquid.haml').should == 'fr'
       end
 

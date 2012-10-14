@@ -75,10 +75,12 @@ module Locomotive
 
               page = self.add(fullpath)
 
-              Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                if Locomotive::Mounter.locale
+              if locale = self.filepath_locale(filepath)
+                Locomotive::Mounter.with_locale(locale) do
                   self.set_attributes_from_header(page, filepath)
                 end
+              else
+                Locomotive::Mounter.logger.warn "Unknown locale in the '#{File.basename(filepath)}' file."
               end
             end
 

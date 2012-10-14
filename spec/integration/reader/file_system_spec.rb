@@ -25,7 +25,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     end
 
     it 'has locales' do
-      @mounting_point.site.locales.should == %w(en fr no)
+      @mounting_point.site.locales.should == %w(en fr nb)
     end
 
     it 'has a seo title' do
@@ -89,6 +89,10 @@ describe Locomotive::Mounter::Reader::FileSystem do
         it 'localizes titles' do
           Locomotive::Mounter.with_locale(:fr) do
             @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil]
+          end
+
+          Locomotive::Mounter.with_locale(:nb) do
+            @index.children.map(&:title).should == ['Om oss', nil, nil, nil, nil, nil, nil]
           end
         end
 

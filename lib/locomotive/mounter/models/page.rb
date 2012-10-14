@@ -28,6 +28,14 @@ module Locomotive
 
         ## methods ##
 
+        # Tell if the page is either the index or the 404 page.
+        #
+        # @return [ Boolean ] True if index or 404 page.
+        #
+        def index_or_404?
+          self.depth == 0 && %w(index 404).include?(self.slug)
+        end
+
         # Return the version of the full path ready to
         # be used to look for template files in the file system.
         # Basically, it underscores the fullpath.
@@ -36,6 +44,14 @@ module Locomotive
         #
         def safe_fullpath
           self.fullpath.try(:underscore)
+        end
+
+        # Get the id of the parent page.
+        #
+        # @return [ String ] The _id attribute of the parent page
+        #
+        def parent_id
+          @parent_id || self.parent.try(:_id)
         end
 
         # Force the translations of a page
@@ -68,6 +84,36 @@ module Locomotive
         def depth
           return 0 if %w(index 404).include?(self.fullpath)
           self.fullpath.split('/').size
+        end
+
+        # Depth and position in the site tree
+        #
+        # @return [ Integer ] An unique id corresponding to the depth and position
+        #
+        def depth_and_position
+          self.depth * 100 + self.position || 0
+        end
+
+        # A layout is a page which the template does
+        # not include the extend keyword.
+        # If the template is blank then, it is not considered as a layout
+        #
+        # @return [ Boolean ] True if the template can be a layout.
+        #
+        def is_layout?
+          self.layout.nil?
+        end
+
+        # Return the fullpath of the page which is used
+        # as a layout for the current page.
+        #
+        # @return [ String ] The fullpath to the layout
+        #
+        def layout
+          return false if self.template.nil? || self.source.strip.blank?
+
+          self.source =~ /\{%\s*extends\s+\'?([[\w|\-|\_]|\/]+)\'?\s*%\}/
+          $1
         end
 
         # Add a child to the page. It also sets the parent of the child
@@ -181,6 +227,10 @@ module Locomotive
           _attributes.delete('slug') if self.depth == 0
 
           "#{_attributes.to_yaml}---\n#{self.source}"
+        end
+
+        def to_s
+          "#{self.fullpath}"
         end
 
       end

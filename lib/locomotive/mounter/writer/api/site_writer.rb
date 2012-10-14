@@ -9,6 +9,8 @@ module Locomotive
 
           # Check if the site has to be created before.
           def prepare
+            super
+
             if self.fetch_site.nil?
               Mounter.logger.warn 'The site does not exist. Trying to create it.'
 
@@ -24,7 +26,9 @@ module Locomotive
           def write
             unless self.site.persisted?
               # create it in the default locale
-              Mounter.with_locale(self.mounting_point.default_locale) do
+              Mounter.with_locale(self.default_locale) do
+                self.output_locale
+
                 if (site = self.post(:sites, self.site.to_hash(false), Mounter.locale)).nil?
                   raise Mounter::WriterException.new('Sorry, we are unable to create the site.')
                 else
@@ -34,7 +38,9 @@ module Locomotive
 
               # update it in other locales
               self.site.translated_in.each do |locale|
+                next if locale.to_s == self.default_locale.to_s
                 Mounter.with_locale(locale) do
+                  self.output_locale
                   self.put(:sites, self.site._id, self.site.to_hash(false), Mounter.locale)
                 end
               end

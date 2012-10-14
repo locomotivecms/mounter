@@ -4,6 +4,7 @@ $:.unshift File.expand_path(File.dirname(__FILE__))
 Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
 require 'logger'
+require 'colorize'
 
 require 'active_support'
 require 'active_support/core_ext'
@@ -81,8 +82,9 @@ module Locomotive
 
     def self.with_locale(locale, &block)
       tmp, @@locale = @@locale, locale.try(:to_sym) || @@locale
-      yield
-      @@locale = tmp
+      yield.tap do
+        @@locale = tmp
+      end
     end
 
   end
