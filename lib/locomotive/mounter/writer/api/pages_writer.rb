@@ -50,7 +50,8 @@ module Locomotive
             self.output_resource_op page
 
             if page.persisted?
-              # TODO
+              # make a call to the API for the update
+              self.put :page, page._id, page.site.to_hash(false), locale
             else
               if !page.index_or_404? && page.parent_id.nil?
                 raise Mounter::WriterException.new("We are unable to find the parent page for #{page.fullpath}")
