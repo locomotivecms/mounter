@@ -8,12 +8,14 @@ require 'colorize'
 
 require 'active_support'
 require 'active_support/core_ext'
+require 'tempfile'
 
 require 'tilt'
 require 'haml'
 require 'compass'
 
-require 'httparty'
+require 'httmultiparty'
+require 'mime/types'
 
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/exceptions'
@@ -23,6 +25,7 @@ require 'locomotive/mounter/mounting_point'
 require 'locomotive/mounter/engine_api'
 
 # Extensions
+require 'locomotive/mounter/extensions/httmultiparty'
 require 'locomotive/mounter/extensions/compass'
 require 'locomotive/mounter/extensions/tilt/template'
 require 'locomotive/mounter/extensions/tilt/css'

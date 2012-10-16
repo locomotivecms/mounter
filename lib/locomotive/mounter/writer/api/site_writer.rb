@@ -29,10 +29,14 @@ module Locomotive
               Mounter.with_locale(self.default_locale) do
                 self.output_locale
 
+                self.output_resource_op self.site
+
                 if (site = self.post(:sites, self.site.to_hash(false), Mounter.locale)).nil?
                   raise Mounter::WriterException.new('Sorry, we are unable to create the site.')
                 else
                   self.site._id = site['_id']
+
+                  self.output_resource_op_status self.site
                 end
               end
 
@@ -41,9 +45,17 @@ module Locomotive
                 next if locale.to_s == self.default_locale.to_s
                 Mounter.with_locale(locale) do
                   self.output_locale
+
+                  self.output_resource_op self.site
+
                   self.put(:sites, self.site._id, self.site.to_hash(false), Mounter.locale)
+
+                  self.output_resource_op_status self.site
                 end
               end
+            else
+              self.output_resource_op self.site
+              self.output_resource_op_status self.site, :skipped
             end
           end
 

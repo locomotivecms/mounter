@@ -5,12 +5,14 @@ module Locomotive
 
         class ThemeAssetsWriter < Base
 
-          # It creates the theme assets folders
+          # Create the theme assets folders
+          #
           def prepare
             self.create_folder 'public'
           end
 
-          # It writes all the snippets into files
+          # Write all the snippets into files
+          #
           def write
             self.mounting_point.theme_assets.each do |asset|
               self.open_file(self.target_asset_path(asset)) do |file|

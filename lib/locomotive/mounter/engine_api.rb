@@ -3,7 +3,7 @@ module Locomotive
 
     class EngineApi
 
-      include HTTParty
+      include HTTMultiParty
 
       # Get a new token from the Engine API and set it for
       # this class. It raises an exception if the operation fails

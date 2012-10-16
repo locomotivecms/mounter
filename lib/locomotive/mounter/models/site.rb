@@ -13,6 +13,12 @@ module Locomotive
         field :meta_keywords,     localized: true
         field :meta_description,  localized: true
 
+        ## methods ##
+
+        def to_s
+          self.name
+        end
+
       end
 
     end

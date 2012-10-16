@@ -2,6 +2,11 @@ module Locomotive
   module Mounter
     module Writer
       module Api
+
+        # Push snippets to a remote LocomotiveCMS engine.
+        #
+        # The force option is not used.
+        #
         class SnippetsWriter < Base
 
           def prepare
@@ -43,7 +48,7 @@ module Locomotive
 
             success = snippet.persisted? ? self.update_snippet(snippet) : self.create_snippet(snippet)
 
-            self.output_resource_op_status snippet, success
+            self.output_resource_op_status snippet, success ? :success : :error
           end
 
           # Persist a snippet by calling the API. The returned _id

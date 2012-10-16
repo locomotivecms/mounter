@@ -62,11 +62,11 @@ module Locomotive
           # @return [ Object] The response of the API or nil if an error occurs
           #
           def post(resource_name, params, locale = nil, raw = false)
-            body = { body: { resource_name.to_s.singularize => params } }
+            query = { query: { resource_name.to_s.singularize => params } }
 
-            body[:body][:locale] = locale if locale
+            query[:query][:locale] = locale if locale
 
-            response  = Locomotive::Mounter::EngineApi.post("/#{resource_name}.json", body)
+            response  = Locomotive::Mounter::EngineApi.post("/#{resource_name}.json", query)
             data      = response.parsed_response
 
             if response.success?
@@ -92,11 +92,11 @@ module Locomotive
           # @return [ Object] The response of the API or nil if an error occurs
           #
           def put(resource_name, id, params, locale = nil)
-            body = { body: { resource_name.to_s.singularize => params } }
+            query = { query: { resource_name.to_s.singularize => params } }
 
-            body[:body][:locale] = locale if locale
+            query[:query][:locale] = locale if locale
 
-            response  = Locomotive::Mounter::EngineApi.put("/#{resource_name}/#{id}.json", body)
+            response  = Locomotive::Mounter::EngineApi.put("/#{resource_name}/#{id}.json", query)
             data      = response.parsed_response
 
             if response.success?
@@ -115,6 +115,10 @@ module Locomotive
           end
 
           protected
+
+          def response_to_status(response)
+            response ? :success : :error
+          end
 
           # Convert raw data into the corresponding object (Page, Site, ...etc)
           #
@@ -160,10 +164,17 @@ module Locomotive
           # Print the message about the creation / update of a resource.
           #
           # @param [ Object ] resource The resource (Site, Page, ...etc).
-          # @param [ Boolean ] success True if everything went okay
+          # @param [ Symbol ] status :success, :error, :skipped
           #
-          def output_resource_op_status(resource, success = true)
-            status_label  = success ? 'done'.colorize(color: :green) : 'error'.colorize(color: :red)
+          def output_resource_op_status(resource, status = :success)
+            status_label = case status
+            when :success then 'done'.colorize(color: :green)
+            when :error   then 'error'.colorize(color: :red)
+            when :skipped then 'skipped'.colorize(color: :blue)
+            end
+
+            # status_label  = success ?  : 'error'.colorize(color: :red)
+
             spaces        = ' ' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
           end

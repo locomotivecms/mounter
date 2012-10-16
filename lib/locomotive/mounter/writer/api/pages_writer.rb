@@ -2,6 +2,14 @@ module Locomotive
   module Mounter
     module Writer
       module Api
+
+        # Push pages to a remote LocomotiveCMS engine.
+        #
+        # New pages are created and existing ones are partially updated.
+        # If the :force option is passed, the existing pages are fully updated (title, ...etc).
+        # But in any cases, the content of the page will be destroyed, unless the layout of the page
+        # changes.
+        #
         class PagesWriter < Base
 
           attr_accessor :remote_translations
@@ -60,7 +68,7 @@ module Locomotive
 
             success = page.persisted? ? self.update_page(page) : self.create_page(page)
 
-            self.output_resource_op_status page, success
+            self.output_resource_op_status page, success ? :success : :error
           end
 
           # Persist a page by calling the API. The returned _id

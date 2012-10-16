@@ -54,6 +54,19 @@ describe Locomotive::Mounter::Writer::Api do
 
   end
 
+  describe 'theme assets' do
+
+    before(:each) do
+      stub_writers(@writer, %w(theme_assets))
+      @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
+    end
+
+    it 'creates all the theme assets' do
+      Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 16
+    end
+
+  end
+
   def delete_current_site
     Locomotive::Mounter::EngineApi.set_token @credentials[:uri], @credentials[:email], @credentials[:password]
     Locomotive::Mounter::EngineApi.delete('/current_site.json')
