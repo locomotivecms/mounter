@@ -1,0 +1,15 @@
+name: Bands
+description: List of bands
+slug: bands
+order_by: name
+fields:
+- name:
+    hint: Name of the band
+- leader:
+    type: string
+    label: Fullname of the leader
+- songs:
+    type: has_many
+    class_name: songs
+    inverse_of: band
+    ui_enabled: true

@@ -20,7 +20,7 @@ module Locomotive
             # prepare the place where the assets will be stored temporarily.
             self.create_tmp_folder
 
-            # get all the _id
+            # assign an _id to a local content type if possible
             self.get(:theme_assets, nil, true).each do |attributes|
               remote_path = File.join('/', attributes['folder'], File.basename(attributes['local_path']))
 

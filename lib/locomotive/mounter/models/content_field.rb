@@ -31,6 +31,9 @@ module Locomotive
         ## callbacks ##
         set_callback :initialize, :after, :prepare_attributes
 
+        ## other accessors ##
+        attr_accessor :_destroy
+
         ## methods ##
 
         def prepare_attributes
@@ -80,6 +83,33 @@ module Locomotive
         def to_hash
           hash = super.delete_if { |k, v| %w(name position).include?(k) }
           { self.name => hash }
+        end
+
+        # Return the params used for the API.
+        #
+        # @return [ Hash ] The params
+        #
+        def to_params
+          fields = %w(label name type hint position required localized)
+
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+
+          # we set the _id / _destroy attributes for embedded documents
+          params[:_id]      = self._id if self.persisted?
+          params[:_destroy] = self._destroy if self._destroy
+
+          case self.type
+          when :text
+            params[:text_formatting] = self.text_formatting
+          when :belongs_to
+            params[:class_name] = self.class_name
+          when :has_many, :many_to_many
+            %w(class_name inverse_of order_by ui_enabled).each do |name|
+              params[name.to_sym] = self.send(name.to_sym)
+            end
+          end
+
+          params
         end
 
         protected

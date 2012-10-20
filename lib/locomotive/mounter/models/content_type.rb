@@ -9,11 +9,12 @@ module Locomotive
         field :description
         field :slug
         field :label_field_name
-        field :group_by_field
+        field :group_by
         field :order_by
         field :order_direction
         field :public_submission_enabled
         field :public_submission_accounts
+        field :raw_item_template
 
         field :fields, type: :array, class_name: 'Locomotive::Mounter::Models::ContentField'
 
@@ -25,22 +26,26 @@ module Locomotive
         ## other accessors ##
         attr_accessor :klass_name, :group_by_field_id
 
+        ## aliases ##
+        alias_method :group_by_field_name, :group_by
+        alias_method :group_by_field_name=, :group_by=
+
         ## methods ##
 
-        # Return the label field (always the first field)
+        # Return the label field (by the default the first field)
         #
         # @return [ Object ] The label field
         #
         def label_field
-          self.fields.first
+          self.find_field(self.label_field_name) || self.fields.first
         end
 
-        # Return the name of the label_field which by convention is the first field.
+        # Return the group_by field
         #
-        # @return [ String ] Name of the label field
+        # @return [ Object ] The group_by field
         #
-        def label_field_name
-          self.label_field.name
+        def group_by_field
+          self.fields.find_field(self.group_by_field_name)
         end
 
         # Build a content entry and add it to the list of entries of the content type.
@@ -59,6 +64,24 @@ module Locomotive
 
             (self.entries ||= []) << entry
           end
+        end
+
+        # Tell if the content type owns a field which defines
+        # a relationship to another content type.
+        #
+        # @return [ Boolean ] True if a relationship field exists
+        #
+        def with_relationships?
+          self.fields.any? { |field| field.is_relationship? }
+        end
+
+        # Return the list of fields which do not describe
+        # a relationship.
+        #
+        # @return [ Array ] The list of fields.
+        #
+        def non_relationship_fields
+          self.fields.select { |field| !field.is_relationship? }
         end
 
         # Find a field by its name (string or symbol) or its id (API)
@@ -103,6 +126,35 @@ module Locomotive
           (self.entries || []).find_all { |entry| [*value].include?(entry.send(name.to_sym)) }
         end
 
+        # Return the params used for the API.
+        # The options parameter can be used to get all the fields even
+        # the ones describing a relationship with another content type.
+        #
+        # @param [ Hash ] options Default values: { all_fields: false }
+        #
+        # @return [ Hash ] The params
+        #
+        def to_params(options = nil)
+          options = { all_fields: false }.merge(options || {})
+
+          fields = %w(name slug description label_field_name group_by_field_name order_by order_by_direction public_submission_enabled raw_item_template)
+
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+
+          # order by
+          params[:order_by] = '_position' if self.order_by == 'manually'
+
+          # fields
+          _fields = options[:all_fields] ? self.fields : self.non_relationship_fields
+          params[:entries_custom_fields_attributes] = _fields.map(&:to_params)
+
+          params
+        end
+
+        def to_s
+          self.name
+        end
+
         protected
 
         # Give an unique slug based on a label and within the scope of the content type.
@@ -126,9 +178,14 @@ module Locomotive
         # Method used to clean up the content and its fields.
         # Besides, it also sets the values defined by other attributes.
         def sanitize
+          # if no label_field_name provided, take the first field
+          unless self.label_field_name
+            self.label_field_name = (self.fields || []).first.try(:name)
+          end
+
           # define group_by_field from group_by_field_id
           if self.group_by_field_id
-            self.group_by_field = self.find_field(self.group_by_field_id)
+            self.group_by_field_name = self.find_field(self.group_by_field_id)
           end
 
           # public_submission_accounts means public_submission_enabled set to true

@@ -74,7 +74,7 @@ module Locomotive
           # Persist a page by calling the API. The returned _id
           # is then set to the page itself.
           #
-          # @param [ Object ] page The page to update
+          # @param [ Object ] page The page to create
           #
           # @return [ Boolean ] True if the call to the API succeeded
           #
@@ -85,11 +85,11 @@ module Locomotive
 
             # make a call to the API to create the page, no need to set
             # the locale since it first happens for the default locale.
-            object = self.post :pages, page.to_params, nil, true
+            response = self.post :pages, page.to_params, nil, true
 
-            page._id = object['_id'] if object
+            page._id = response['_id'] if response
 
-            !object.nil?
+            !response.nil?
           end
 
           # Update a page by calling the API.
@@ -105,9 +105,9 @@ module Locomotive
             params = self.force? || !self.already_translated?(page) ? page.to_params : page.to_safe_params
 
             # make a call to the API for the update
-            object = self.put :pages, page._id, params, locale
+            response = self.put :pages, page._id, params, locale
 
-            !object.nil?
+            !response.nil?
           end
 
           # Shortcut to get pages.

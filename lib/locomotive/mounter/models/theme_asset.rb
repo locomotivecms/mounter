@@ -107,9 +107,9 @@ module Locomotive
           end
         end
 
-        # Return the params used for the API
+        # Return the params used for the API.
         #
-        # @return [ Hash ] Params
+        # @return [ Hash ] The params
         #
         def to_params
           { folder: self.folder }

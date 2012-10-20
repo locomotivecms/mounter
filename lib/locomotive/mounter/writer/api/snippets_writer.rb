@@ -54,18 +54,18 @@ module Locomotive
           # Persist a snippet by calling the API. The returned _id
           # is then set to the snippet itself.
           #
-          # @param [ Object ] snippet The snippet to update
+          # @param [ Object ] snippet The snippet to create
           #
           # @return [ Boolean ] True if the call to the API succeeded
           #
           def create_snippet(snippet)
             # make a call to the API to create the snippet, no need to set
             # the locale since it first happens for the default locale.
-            object = self.post :snippets, snippet.to_params, nil, true
+            response = self.post :snippets, snippet.to_params, nil, true
 
-            snippet._id = object['_id'] if object
+            snippet._id = response['_id'] if response
 
-            !object.nil?
+            !response.nil?
           end
 
           # Update a snippet by calling the API.
@@ -78,9 +78,9 @@ module Locomotive
             locale = Locomotive::Mounter.locale
 
             # make a call to the API for the update
-            object = self.put :snippets, snippet._id, snippet.to_params, locale
+            response = self.put :snippets, snippet._id, snippet.to_params, locale
 
-            !object.nil?
+            !response.nil?
           end
 
           # Shortcut to get all the local snippets.

@@ -31,9 +31,9 @@ module Locomotive
           @source[Locomotive::Mounter.locale] = source
         end
 
-        # Return the params used for the API
+        # Return the params used for the API.
         #
-        # @return [ Hash ] Params
+        # @return [ Hash ] The params
         #
         def to_params
           fields = %w(name slug)

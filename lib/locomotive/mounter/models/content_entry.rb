@@ -20,14 +20,8 @@ module Locomotive
         alias :_permalink= :_slug=
 
         ## callbacks ##
-        # set_callback :initialize, :after, :prepare_attributes
 
         ## methods ##
-
-        # Set the default attributes
-        # def prepare_attributes
-        #   # self._label_field_name = self.content_type.fields.first.name
-        # end
 
         # Return the internal label used to identify a content entry
         # in a YAML file for instance. It is based on the first field

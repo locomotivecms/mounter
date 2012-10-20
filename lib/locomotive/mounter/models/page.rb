@@ -110,7 +110,7 @@ module Locomotive
         # @return [ String ] The fullpath to the layout
         #
         def layout
-          return false if self.template.nil? || self.source.strip.blank?
+          return false if self.source.nil? || self.source.strip.blank?
 
           self.source =~ /\{%\s*extends\s+\'?([[\w|\-|\_]|\/]+)\'?\s*%\}/
           $1
@@ -230,11 +230,19 @@ module Locomotive
         # Return the Liquid template based on the raw_template property
         # of the page. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
         #
-        # @return [ String ] The liquid template
+        # @return [ String ] The liquid template or nil if not template has been provided
         #
         def source
           @source ||= {}
-          @source[Locomotive::Mounter.locale] ||= self.template.need_for_prerendering? ? self.template.render : self.template.data
+
+          if @source[Locomotive::Mounter.locale]
+            @source[Locomotive::Mounter.locale] # memoization
+          elsif self.template
+            source = self.template.need_for_prerendering? ? self.template.render : self.template.data
+            @source[Locomotive::Mounter.locale] = source
+          else
+            nil
+          end
         end
 
         # Return the YAML front matters of the page
@@ -263,7 +271,7 @@ module Locomotive
 
         # Return the params used for the API
         #
-        # @return [ Hash ] Params
+        # @return [ Hash ] The params
         #
         def to_params
           fields = %w(title parent_id slug redirect_url handle listed published cache_strategy response_type position templatized content_type_id)
@@ -291,7 +299,7 @@ module Locomotive
         # This can be explained by the fact that for instance the update should preserve
         # the content.
         #
-        # @return [ Hash ] Params
+        # @return [ Hash ] The safe params
         #
         def to_safe_params
           fields = %w(listed published handle cache_strategy redirect_url response_type templatized content_type_id)
