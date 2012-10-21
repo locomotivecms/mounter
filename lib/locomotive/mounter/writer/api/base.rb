@@ -114,6 +114,14 @@ module Locomotive
             %w(_id)
           end
 
+          def each_locale(&block)
+            self.mounting_point.locales.each do |locale|
+              Locomotive::Mounter.with_locale(locale) do
+                block.call(locale)
+              end
+            end
+          end
+
           protected
 
           def response_to_status(response)

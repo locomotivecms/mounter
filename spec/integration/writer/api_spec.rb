@@ -28,15 +28,19 @@ describe Locomotive::Mounter::Writer::Api do
 
   end
 
-  describe 'content_types' do
+  describe 'content_types & content_entries' do
 
     before(:each) do
-      stub_writers(@writer, %w(content_types))
+      stub_writers(@writer, %w(content_types content_entries))
       @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
     end
 
     it 'creates all the content types' do
       Locomotive::Mounter::EngineApi.get('/content_types.json').to_a.size.should == 5
+    end
+
+    it 'creates all the content entries' do
+      Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
     end
 
   end

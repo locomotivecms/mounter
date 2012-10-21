@@ -8,6 +8,7 @@ require 'colorize'
 
 require 'active_support'
 require 'active_support/core_ext'
+require 'stringex'
 require 'tempfile'
 
 require 'tilt'
@@ -35,6 +36,7 @@ require 'locomotive/mounter/extensions/tilt/liquid'
 # Utils
 require 'locomotive/mounter/utils/hash'
 require 'locomotive/mounter/utils/yaml'
+require 'locomotive/mounter/utils/string'
 
 # Models
 require 'locomotive/mounter/models/base'

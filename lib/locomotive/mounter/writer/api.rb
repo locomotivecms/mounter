@@ -38,7 +38,7 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def writers
-            [SiteWriter, SnippetsWriter, ContentTypes, PagesWriter, ThemeAssetsWriter]
+            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter]
             #, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, PagesWriter, ThemeAssetsWriter]
           end
 

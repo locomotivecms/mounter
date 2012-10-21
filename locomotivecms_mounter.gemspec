@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'activesupport',                   '~> 3.2.5'
   s.add_dependency 'i18n',                            '~> 0.6.0'
+  s.add_dependency 'stringex',                        '~> 1.4.0'
 
   s.add_dependency 'multi_json',                      '~> 1.2.0'
   s.add_dependency 'httmultiparty',                   '~> 0.3.8'

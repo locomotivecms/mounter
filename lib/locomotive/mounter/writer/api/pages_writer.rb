@@ -25,8 +25,6 @@ module Locomotive
 
               self.remote_translations[attributes['fullpath']] = attributes['translated_in']
 
-              # puts "setting _id (#{attributes['_id']} and parent_id (#{attributes['parent_id']}) to #{page.fullpath}"
-
               page._id = attributes['_id'] if page
             end
 
