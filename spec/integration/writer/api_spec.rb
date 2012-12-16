@@ -31,7 +31,7 @@ describe Locomotive::Mounter::Writer::Api do
   describe 'content_types, content_entries & pages' do
 
     before(:each) do
-      stub_writers(@writer, %w(content_types pages))
+      stub_writers(@writer, %w(content_types pages content_entries))
       @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
     end
 

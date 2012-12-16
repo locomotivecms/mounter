@@ -55,7 +55,7 @@ module Locomotive
           return unless block_given?
 
           self.dynamic_fields.each do |field|
-            value = (entry.dynamic_attributes || {})[field.name.to_sym]
+            value = (self.dynamic_attributes || {})[field.name.to_sym]
 
             value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
 
@@ -181,6 +181,10 @@ module Locomotive
           params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
 
           params
+        end
+
+        def to_s
+          "#{self.content_type.slug} / #{self._slug}"
         end
 
         protected

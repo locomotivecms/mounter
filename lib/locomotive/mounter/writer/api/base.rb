@@ -62,7 +62,9 @@ module Locomotive
           # @return [ Object] The response of the API or nil if an error occurs
           #
           def post(resource_name, params, locale = nil, raw = false)
-            query = { query: { resource_name.to_s.singularize => params } }
+            params_name = resource_name.to_s.split('/').last.singularize
+
+            query = { query: { params_name => params } }
 
             query[:query][:locale] = locale if locale
 
@@ -73,7 +75,6 @@ module Locomotive
               return data if raw
               self.raw_data_to_object(data)
             else
-              # puts response.inspect
               self.log "\n"
               data.each do |attribute, errors|
                 self.log "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
@@ -92,7 +93,9 @@ module Locomotive
           # @return [ Object] The response of the API or nil if an error occurs
           #
           def put(resource_name, id, params, locale = nil)
-            query = { query: { resource_name.to_s.singularize => params } }
+            params_name = resource_name.to_s.split('/').last.singularize
+
+            query = { query: { params_name => params } }
 
             query[:query][:locale] = locale if locale
 
@@ -102,7 +105,6 @@ module Locomotive
             if response.success?
               self.raw_data_to_object(data)
             else
-              # puts response.inspect
               data.each do |attribute, errors|
                 self.log "\t\t #{attribute} => #{[*errors].join(', ')}".colorize(color: :red)
               end if data.respond_to?(:keys)
