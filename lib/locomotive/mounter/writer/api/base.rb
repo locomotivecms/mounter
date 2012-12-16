@@ -114,12 +114,25 @@ module Locomotive
             %w(_id)
           end
 
+          # Loop on each locale of the mounting point and
+          # change the current locale at the same time.
           def each_locale(&block)
             self.mounting_point.locales.each do |locale|
               Locomotive::Mounter.with_locale(locale) do
                 block.call(locale)
               end
             end
+          end
+
+          # Take a path and convert it to a File object if possible
+          #
+          # @param [ String ] path The path to the file within the public folder
+          #
+          # @return [ Object ] The file
+          #
+          def path_to_file(path)
+            _path = File.join(self.mounting_point.path, 'public', path)
+            File.new(path)
           end
 
           protected

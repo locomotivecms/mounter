@@ -37,6 +37,9 @@ module Locomotive
 
             attributes.delete('entries_custom_fields').each do |_attributes|
               _attributes = _attributes.delete_if { |k, v| v.blank? || %w(id updated_at created_at).include?(k) }
+
+              # TODO: select options
+
               (attributes['fields'] ||= []) << _attributes
             end
 

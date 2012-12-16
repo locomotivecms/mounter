@@ -10,7 +10,7 @@ describe Locomotive::Mounter::Writer::Api do
 
   before(:each) do
     # @credentials  = { uri: 'sample.engine.dev/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
-    @credentials  = { uri: 'test.engine.dev:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
+    @credentials  = { uri: 'sample.example.com:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
     delete_current_site
     @writer       = Locomotive::Mounter::Writer::Api.instance
   end
@@ -28,32 +28,35 @@ describe Locomotive::Mounter::Writer::Api do
 
   end
 
-  describe 'content_types & content_entries' do
+  describe 'content_types, content_entries & pages' do
 
     before(:each) do
-      stub_writers(@writer, %w(content_types content_entries))
+      stub_writers(@writer, %w(content_types pages))
       @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
     end
 
-    it 'creates all the content types' do
-      Locomotive::Mounter::EngineApi.get('/content_types.json').to_a.size.should == 5
+    describe 'content types' do
+
+      it 'creates all the content types' do
+        Locomotive::Mounter::EngineApi.get('/content_types.json').to_a.size.should == 5
+      end
+
     end
 
-    it 'creates all the content entries' do
-      Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
+    describe 'content entries' do
+
+      it 'creates all the content entries' do
+        Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
+      end
+
     end
 
-  end
+    describe 'pages' do
 
-  describe 'pages' do
+      it 'creates all the pages' do
+        Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 13
+      end
 
-    before(:each) do
-      stub_writers(@writer, %w(pages))
-      @writer.run!({ mounting_point: @mounting_point, console: true, force: false }.merge(@credentials))
-    end
-
-    it 'creates all the pages' do
-      Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 13
     end
 
   end

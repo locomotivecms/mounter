@@ -17,7 +17,7 @@ module Locomotive
         field :text_formatting
 
         # select
-        field :select_options
+        field :select_options, type: :array, class_name: 'Locomotive::Mounter::Models::ContentSelectOption'
 
         # relationships: belongs_to, has_many, many_to_many
         field :class_name
@@ -62,17 +62,31 @@ module Locomotive
           end
         end
 
-        # Return the name of the select option described by its id AND
-        # for the current locale.
-        # Works only for the select type.
+        # # Return the name of the select option described by its id AND
+        # # for the current locale.
+        # # Works only for the select type.
+        # #
+        # # @param [ String ] id Identifier of the option (BSON::ObjectId)
+        # #
+        # # @return [ String ] The value of the select option. Nil if not found
+        # #
+        # def name_for_select_option(id)
+        #   if attributes = (self.select_options || []).find { |hash| hash['_id'] == id }
+        #     (attributes['name'] ||= {})[Locomotive::Mounter.locale.to_s]
+        #   else
+        #     nil
+        #   end
+        # end
+
+        # Find a select option by its name IN the current locale.
         #
-        # @param [ String ] id Identifier of the option (BSON::ObjectId)
+        # @param [ String / Symbol] name_or_id Name or Id of the option
         #
-        # @return [ String ] The value of the select option. Nil if not found
+        # @return [ Object ] The select option or nil if not found
         #
-        def name_for_select_option(id)
-          translations = (self.select_options || []).find { |hash| hash['_id'] == id }
-          (translations || {})[Locomotive::Mounter.locale.to_s]
+        def find_select_option(name_or_id)
+          return nil if self.select_options.blank?
+          self.select_options.detect { |option| option.name.to_s == name_or_id.to_s || option._id == name_or_id }
         end
 
         # Instead of returning a simple hash, it returns a hash with name as the key and
@@ -101,6 +115,8 @@ module Locomotive
           case self.type
           when :text
             params[:text_formatting] = self.text_formatting
+          when :select
+            params[:raw_select_options] = self.select_options.map(&:to_params)
           when :belongs_to
             params[:class_name] = self.class_name
           when :has_many, :many_to_many
@@ -123,7 +139,7 @@ module Locomotive
           self.text_formatting = nil unless self.type == :text
 
           # select_options only for the select type
-          self.select_options = nil unless self.type == :select
+          # self.select_options = nil unless self.type == :select
         end
 
       end

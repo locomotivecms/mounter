@@ -16,7 +16,7 @@ module Locomotive
         field :listed
         field :templatized
         field :content_type
-        field :published
+        field :published,         default: true
         field :cache_strategy
         field :response_type
         field :position
@@ -274,7 +274,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          fields = %w(title parent_id slug redirect_url handle listed published cache_strategy response_type position templatized content_type_id)
+          fields = %w(title parent_id slug redirect_url handle listed published cache_strategy response_type position templatized)
 
           params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
 
@@ -287,7 +287,11 @@ module Locomotive
           # parent_id
           params[:parent_id] = self.parent_id unless self.parent_id.blank?
 
-          # TODO: editable_elements ????
+          # content_type
+          params[:target_klass_slug] = self.content_type.slug if self.templatized && self.content_type
+
+          # editable_elements
+          params[:editable_elements] = (self.editable_elements || []).map(&:to_params)
 
           # raw_template
           params[:raw_template] = self.source rescue nil

@@ -12,22 +12,20 @@ module Locomotive
           def prepare
             super
 
-            # get all the _id
+            # set the unique identifier to each local snippet
             self.get(:snippets, nil, true).each do |attributes|
               snippet = self.snippets[attributes['slug']]
 
-              snippet._id = attributes['_id'] if snippet
+              snippet._id = attributes['id'] if snippet
             end
           end
 
           # Write all the snippets to the remote destination
           def write
-            self.mounting_point.locales.each do |locale|
-              Locomotive::Mounter.with_locale(locale) do
-                self.output_locale
+            self.each_locale do |locale|
+              self.output_locale
 
-                self.snippets.values.each { |snippet| self.write_snippet(snippet) }
-              end
+              self.snippets.values.each { |snippet| self.write_snippet(snippet) }
             end
           end
 
@@ -51,7 +49,7 @@ module Locomotive
             self.output_resource_op_status snippet, success ? :success : :error
           end
 
-          # Persist a snippet by calling the API. The returned _id
+          # Persist a snippet by calling the API. The returned id
           # is then set to the snippet itself.
           #
           # @param [ Object ] snippet The snippet to create
@@ -63,7 +61,7 @@ module Locomotive
             # the locale since it first happens for the default locale.
             response = self.post :snippets, snippet.to_params, nil, true
 
-            snippet._id = response['_id'] if response
+            snippet._id = response['id'] if response
 
             !response.nil?
           end

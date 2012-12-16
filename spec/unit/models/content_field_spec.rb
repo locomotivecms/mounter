@@ -54,7 +54,6 @@ describe Locomotive::Mounter::Models::ContentField do
 
   end
 
-
   def build_content_field(attributes = {})
     Locomotive::Mounter::Models::ContentField.new(attributes)
   end

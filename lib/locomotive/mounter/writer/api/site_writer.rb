@@ -34,7 +34,7 @@ module Locomotive
                 if (site = self.post(:sites, self.site.to_hash(false), Mounter.locale)).nil?
                   raise Mounter::WriterException.new('Sorry, we are unable to create the site.')
                 else
-                  self.site._id = site['_id']
+                  self.site._id = site['id']
 
                   self.output_resource_op_status self.site
                 end
@@ -62,14 +62,14 @@ module Locomotive
           protected
 
           def safe_attributes
-            %w(_id locales)
+            %w(id locales)
           end
 
           def fetch_site
             self.get(:current_site).tap do |_site|
               if _site
                 self.remote_site  = _site
-                self.site._id     = _site['_id']
+                self.site._id     = _site['id']
               end
             end
           end

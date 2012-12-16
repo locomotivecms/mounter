@@ -53,6 +53,10 @@ module Locomotive
 
               self.mounting_point.register_resource(name, reader.new(self).read)
             end
+
+            if self.respond_to?(:path)
+              self.mounting_point.path = self.path
+            end
           end
         end
 

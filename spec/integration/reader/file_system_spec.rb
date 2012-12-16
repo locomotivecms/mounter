@@ -165,6 +165,39 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       end
 
+      describe 'a content type with a select field' do
+
+        before(:each) do
+          @content_type = @mounting_point.content_types['updates']
+          @field = @content_type.find_field('category')
+        end
+
+        it 'has a select field' do
+          @field.should_not be_nil
+        end
+
+        it 'stores the options' do
+          @field.select_options.size.should == 4
+        end
+
+        it 'has a name for each option' do
+          @field.select_options.map(&:name).should == ['General', 'Gigs', 'Bands', 'Albums']
+        end
+
+        it 'has a translated name for each option' do
+          Locomotive::Mounter.with_locale(:fr) do
+            @field.select_options.map(&:name).should == ['Général', 'Concerts', 'Groupes', nil]
+          end
+        end
+
+        it 'also allows to set options in an inline style' do
+          content_type = @mounting_point.content_types['bands']
+          field = content_type.find_field('kind')
+          field.select_options.map(&:name).should == ['grunge', 'rock', 'country']
+        end
+
+      end
+
     end # content types
 
   end
@@ -199,13 +232,13 @@ describe Locomotive::Mounter::Reader::FileSystem do
     end
 
     it 'has 26 entries for the 4 content types' do
-      @mounting_point.content_entries.size.should == 26
+      @mounting_point.content_entries.size.should == 29
     end
 
     describe 'a single content entry' do
 
       before(:each) do
-        @content_entry = @mounting_point.content_entries.values.first
+        @content_entry = @mounting_point.content_entries['events/avogadro-s-number']
       end
 
       it 'has a label' do

@@ -146,7 +146,7 @@ module Locomotive
 
           # fields
           _fields = options[:all_fields] ? self.fields : self.non_relationship_fields
-          params[:entries_custom_fields_attributes] = _fields.map(&:to_params)
+          params[:entries_custom_fields] = _fields.map(&:to_params)
 
           params
         end

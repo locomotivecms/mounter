@@ -35,8 +35,15 @@ module Locomotive
           def add(attributes)
             slug = attributes['slug']
 
+            # TODO: raise an error if no fields
+
             attributes.delete('fields').each_with_index do |_attributes, index|
               hash = { name: _attributes.keys.first, position: index }.merge(_attributes.values.first)
+
+              if options = hash.delete('select_options')
+                hash['select_options'] = self.sanitize_select_options(options)
+              end
+
               (attributes['fields'] ||= []) << hash
             end
 
@@ -45,6 +52,21 @@ module Locomotive
             end
 
             self.items[slug]
+          end
+
+          # Take the list of options described in the YAML file
+          # and convert it into a nice array of hashes
+          #
+          # @params [ Array ] options The list of raw options
+          #
+          # @return [ Array ] The sanitized list of options
+          #
+          def sanitize_select_options(options)
+            [].tap do |array|
+              options.each_with_index do |object, position|
+                array << { name: object, position: position }
+              end
+            end
           end
 
           # Return the directory where all the definition of

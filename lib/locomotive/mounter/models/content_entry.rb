@@ -35,6 +35,34 @@ module Locomotive
           self.dynamic_getter(name)
         end
 
+        # Return the list of the fields defined in the content type
+        # for which there is a value assigned.
+        #
+        # @return [ Array ] The list of fields
+        #
+        def dynamic_fields
+          self.dynamic_attributes.keys.map do |name|
+            self.content_type.find_field(name)
+          end
+        end
+
+        # Loop through the list of dynamic fields defined in
+        # the content type for which there is a value assigned.
+        #
+        # @example: each_dynamic_field { |field, value| .... }
+        #
+        def each_dynamic_field(&block)
+          return unless block_given?
+
+          self.dynamic_fields.each do |field|
+            value = (entry.dynamic_attributes || {})[field.name.to_sym]
+
+            value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
+
+            block.call(field, value)
+          end
+        end
+
         # Determine if field passed in parameter is one of the dynamic fields.
         #
         # @param [ String/Symbol ] name Name of the dynamic field
@@ -139,7 +167,8 @@ module Locomotive
           { self._label => hash }
         end
 
-        # Return the params used for the API.
+        # Return the main default params used for the API, meaning all except
+        # the dynamic fields which have to be defined outside the model.
         #
         # @return [ Hash ] The params
         #
@@ -150,8 +179,6 @@ module Locomotive
           self.set_slug
 
           params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
-
-          # TODO
 
           params
         end

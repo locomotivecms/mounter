@@ -25,7 +25,7 @@ module Locomotive
               remote_path = File.join('/', attributes['folder'], File.basename(attributes['local_path']))
 
               if theme_asset = self.theme_assets[remote_path]
-                theme_asset._id   = attributes['_id']
+                theme_asset._id   = attributes['id']
                 theme_asset.size  = attributes['raw_size'].to_i
               end
             end

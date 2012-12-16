@@ -12,6 +12,7 @@ module Locomotive
         field :seo_title,         localized: true
         field :meta_keywords,     localized: true
         field :meta_description,  localized: true
+        field :robots_txt
 
         ## methods ##
 

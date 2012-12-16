@@ -8,6 +8,11 @@ module Locomotive
         # In a first time, create the content types without any relationships fields.
         # Then, add the relationships one by one.
         #
+        # If the :force option is passed, the remote fields not defined in the mounter version
+        # of the content type will be destroyed when pushed. The options of
+        # a select field will be pushed as well, otherwise they won't unless if
+        # it is a brand new content type.
+        #
         # The force option is not used.
         #
         class ContentTypesWriter < Base
@@ -71,7 +76,7 @@ module Locomotive
 
           # Update a content type by calling the API.
           #
-          # @param [ Object ] content_type The content type to create
+          # @param [ Object ] content_type The content type to update
           #
           def update_content_type(content_type)
             self.output_resource_op content_type
@@ -83,7 +88,7 @@ module Locomotive
 
             status = self.response_to_status(response)
 
-            raise 'STOP' if status != :success
+            raise 'STOP' if status != :success # TODO ?????
 
             self.output_resource_op_status content_type, status
           end
@@ -108,24 +113,25 @@ module Locomotive
           def apply_response(content_type, response)
             return if content_type.nil? || response.nil?
 
-            content_type._id = response['_id']
+            content_type._id = response['id']
             content_type.klass_name = response['klass_name']
 
             response['entries_custom_fields'].each do |remote_field|
               field = content_type.find_field(remote_field['name'])
-              _id   = remote_field['_id']
+              _id   = remote_field['id']
 
               if field.nil?
-                content_type.fields << Locomotive::Mounter::Models::ContentField.new(_id: _id, _destroy: true)
+                if self.force?
+                  content_type.fields << Locomotive::Mounter::Models::ContentField.new(_id: _id, _destroy: true)
+                end
               else
                 field._id = _id
               end
             end
           end
 
-          # Get the params of a content type and set
-          # the appropriate klass_name taken from the remote side
-          # in all the relationship fields.
+          # Get the params of a content type for an update.
+          # Delete the select_options unless the force flag is true.
           #
           # @param [ Object ] content_type The ContentType
           #
@@ -133,11 +139,8 @@ module Locomotive
           #
           def content_type_to_params(content_type)
             content_type.to_params(all_fields: true).tap do |params|
-              params[:entries_custom_fields_attributes].each do |attributes|
-                if attributes[:class_name]
-                  target_content_type = self.content_types[attributes[:class_name]]
-                  attributes[:class_name] = target_content_type.klass_name
-                end
+              params[:entries_custom_fields].each do |attributes|
+                attributes.delete(:select_options) unless self.force?
               end
             end
           end

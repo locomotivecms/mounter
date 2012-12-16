@@ -6,6 +6,7 @@ module Locomotive
         # Push pages to a remote LocomotiveCMS engine.
         #
         # New pages are created and existing ones are partially updated.
+        #
         # If the :force option is passed, the existing pages are fully updated (title, ...etc).
         # But in any cases, the content of the page will be destroyed, unless the layout of the page
         # changes.
@@ -19,13 +20,13 @@ module Locomotive
 
             self.remote_translations = {}
 
-            # get all the _id and parent_id
+            # set the unique identifier to each local page
             self.get(:pages, nil, true).each do |attributes|
               page = self.pages[attributes['fullpath']]
 
               self.remote_translations[attributes['fullpath']] = attributes['translated_in']
 
-              page._id = attributes['_id'] if page
+              page._id = attributes['id'] if page
             end
 
             # assign the parent_id and the content_type_id to all the pages
@@ -33,23 +34,19 @@ module Locomotive
               next if page.index_or_404?
 
               page.parent_id = page.parent._id
-
-              # TODO: set content type for templatized page
             end
           end
 
           # Write all the pages to the remote destination
           def write
-            self.mounting_point.locales.each do |locale|
-              Locomotive::Mounter.with_locale(locale) do
-                self.output_locale
+            self.each_locale do |locale|
+              self.output_locale
 
-                # first write the pages which are layouts for others
-                self.layouts.each { |page| self.write_page(page) }
+              # first write the pages which are layouts for others
+              self.layouts.each { |page| self.write_page(page) }
 
-                # and proceed the others
-                self.other_than_layouts.each { |page| self.write_page(page) }
-              end
+              # and proceed the others
+              self.other_than_layouts.each { |page| self.write_page(page) }
             end
           end
 
@@ -85,7 +82,9 @@ module Locomotive
             # the locale since it first happens for the default locale.
             response = self.post :pages, page.to_params, nil, true
 
-            page._id = response['_id'] if response
+            raise page.inspect if response.nil?
+
+            page._id = response['id'] if response
 
             !response.nil?
           end
@@ -153,6 +152,25 @@ module Locomotive
             locale ||= Locomotive::Mounter.locale
 
             (@remote_translations[page.fullpath] || []).include?(locale.to_s)
+          end
+
+          # Return the parameters of a page sent by the API. It includes the editable_elements.
+          #
+          # @param [ Object ] page The page
+          #
+          # @return [ Hash ] The parameters of the page
+          #
+          def page_to_params(page)
+            page.to_params.tap do |params|
+              # editable elements
+              (params[:editable_elements] || []).each do |element|
+                if element[:content] =~ /$\/samples\//
+                  element[:source] = self.path_to_file(element.delete(:content))
+                elsif element[:content] =~ %r($http://)
+                  element[:source_url] = element.delete(:content)
+                end
+              end
+            end
           end
 
         end
