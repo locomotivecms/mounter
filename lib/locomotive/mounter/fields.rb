@@ -30,6 +30,9 @@ module Locomotive
             _attributes[name] = options[:default]
           end
 
+          # set default translation
+          self.add_locale(Locomotive::Mounter.locale)
+
           self.write_attributes(_attributes)
         end
       end

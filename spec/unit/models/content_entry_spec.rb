@@ -7,6 +7,8 @@ describe Locomotive::Mounter::Models::ContentEntry do
     content_field = stub('TitleField', name: :title, type: :string, is_relationship?: false, localized: false)
     content_type.stubs(:label_field_name).returns(:title)
     content_type.stubs(:find_field).with(:title).returns(content_field)
+    content_type.stubs(:label_to_slug).returns('base')
+    content_type.stubs(:find_entry).returns(nil)
 
     content_type
   end
@@ -110,6 +112,34 @@ describe Locomotive::Mounter::Models::ContentEntry do
           Locomotive::Mounter.with_locale(:fr) do
             content_entry.author.should == 'john-doe'
           end
+        end
+
+        describe 'getters / setters' do
+
+          before(:each) do
+            content_entry.title = 'Hello world'
+            content_entry.text  = 'Lorem ipsum'
+
+            Locomotive::Mounter.with_locale(:fr) do
+              content_entry.text  = 'Lorem ipsum (FR)'
+            end
+          end
+
+          it 'stores the list of dynamic fields' do
+            content_entry.dynamic_fields.count.should == 2
+          end
+
+          it 'can loop over the dynamic fields' do
+            attributes = {}
+            content_entry.each_dynamic_field { |f, v| attributes[f.name.to_s] = v }
+            attributes.should == { 'title' => 'Hello world', 'text' => 'Lorem ipsum' }
+
+            Locomotive::Mounter.with_locale(:fr) do
+              content_entry.each_dynamic_field { |f, v| attributes[f.name.to_s] = v }
+              attributes.should == { 'title' => 'Hello world', 'text' => 'Lorem ipsum (FR)' }
+            end
+          end
+
         end
 
       end

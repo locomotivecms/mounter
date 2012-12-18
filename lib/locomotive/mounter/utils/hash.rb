@@ -1,5 +1,4 @@
 unless Hash.instance_methods.include?(:deep_stringify_keys)
-
   class Hash
 
     # Return a new hash with all keys converted to strings.
@@ -14,5 +13,19 @@ unless Hash.instance_methods.include?(:deep_stringify_keys)
     end
 
   end
+end
 
+unless Hash.instance_methods.include?(:deep_symbolize_keys)
+  class Hash
+
+    # See http://iain.nl/writing-yaml-files
+    def deep_symbolize_keys
+      {}.tap do |new_hash|
+        self.each do |key, value|
+          new_hash.merge!(key.to_sym => (value.is_a?(Hash) ? value.deep_symbolize_keys : value))
+        end
+      end
+    end
+
+  end
 end

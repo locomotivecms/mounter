@@ -46,24 +46,18 @@ module Locomotive
                 (content_type.entries || []).each do |entry|
                   next unless entry.translated_in?(locale)
 
-                  # DEBUG
-                  # puts entry.dynamic_attributes.inspect
-                  puts "content_entry = #{content_entry_to_params(entry).inspect}"
-
-                  raise 'STOP' if locale.to_s == 'fr'
-
                   if entry.persisted?
                     self.update_content_entry(slug, entry)
                   else
                     self.create_content_entry(slug, entry)
                   end
 
-                  self.register_relationships(entry)
+                  self.register_relationships(slug, entry)
                 end # content entries
               end # content type
             end # locale
 
-            self.persist_content_entry_with_relationships
+            self.persist_content_entries_with_relationships
           end
 
           protected
@@ -117,25 +111,45 @@ module Locomotive
           # a relationship field. This can be done once ALL the
           # the content entries have been first created.
           #
-          def persist_content_entry_with_relationships
-            puts "self.with_relationships = #{self.with_relationships.inspect}"
+          def persist_content_entries_with_relationships
+            unless self.with_relationships.empty?
+              self.log "\n    setting relationships"
 
-            self.with_relationships.each do |content_entry|
-              params = { _id: content_entry._id }
+              updates = self.content_entries_with_relationships_to_hash
 
-              content_entry.content_type.fields.each do |field|
-                case field.type.to_sym
-                when :belongs_to
-                  target_id = content_entry.dynamic_getter(field.name).try(:_id)
-                  params["#{field.name}_id"] = target_id
-                when :many_to_many
-                  target_ids = content_entry.dynamic_getter(field.name).map(&:_id)
-                  params["#{field.name}_ids"] = target_ids
-                end
+              updates.each do |params|
+                _id, slug = params.delete(:_id), params.delete(:slug)
+                self.put "content_types/#{slug}/entries", _id, params
               end
+            end
+          end
 
-              puts "content entry to save: #{params.inspect}"
-              # TODO: PERSIST
+          # Build hash storing the values of the relationships (belongs_to and has_many).
+          # The key is the id of the content entry
+          #
+          # @return [ Hash ] The updates to process
+          #
+          def content_entries_with_relationships_to_hash
+            [].tap do |updates|
+              self.with_relationships.each do |(slug, content_entry)|
+                changes = {}
+
+                content_entry.content_type.fields.each do |field|
+                  case field.type.to_sym
+                  when :belongs_to
+                    if target_id = content_entry.dynamic_getter(field.name).try(:_id)
+                      changes["#{field.name}_id"] = target_id
+                    end
+                  when :many_to_many
+                    target_ids = content_entry.dynamic_getter(field.name).map(&:_id).compact
+                    unless target_ids.empty?
+                      changes["#{field.name}_ids"] = target_ids
+                    end
+                  end
+                end
+
+                updates << { _id: content_entry._id, slug: slug }.merge(changes)
+              end
             end
           end
 
@@ -177,12 +191,13 @@ module Locomotive
           # includes a relationship field and also
           # the selection options.
           #
+          # @param [ String ] slug The slug of the content type
           # @param [ Object ] entry The content entry
           #
-          def register_relationships(entry)
+          def register_relationships(slug, entry)
             entry.each_dynamic_field do |field, value|
               if %w(belongs_to many_to_many).include?(field.type.to_s)
-                self.with_relationships << entry
+                self.with_relationships << [slug, entry]
                 return # no need to go further and avoid duplicate entries
               end
             end

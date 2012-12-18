@@ -10,6 +10,11 @@ module Locomotive
 
         ## methods ##
 
+        def initialize(attributes = {})
+          self.mounting_point = attributes.delete(:mounting_point)
+          super
+        end
+
         def persisted?
         	!self._id.blank?
         end

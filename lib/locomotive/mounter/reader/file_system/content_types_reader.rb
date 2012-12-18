@@ -47,6 +47,8 @@ module Locomotive
               (attributes['fields'] ||= []) << hash
             end
 
+            attributes[:mounting_point] = self.mounting_point
+
             unless self.items.key?(slug)
               self.items[slug] = Locomotive::Mounter::Models::ContentType.new(attributes)
             end

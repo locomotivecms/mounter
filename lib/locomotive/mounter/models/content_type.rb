@@ -22,6 +22,7 @@ module Locomotive
 
         ## callbacks ##
         set_callback :initialize, :after, :sanitize
+        set_callback :initialize, :after, :assign_mounting_point_to_fields
 
         ## other accessors ##
         attr_accessor :klass_name, :group_by_field_id
@@ -60,7 +61,8 @@ module Locomotive
             # do not forget that we are manipulating dynamic fields
             attributes.each { |k, v| entry.send(:"#{k}=", v) }
 
-            entry._slug ||= self.label_to_slug(entry._label)
+            # force the slug to be defined from its label and in all the locales
+            entry.send :set_slug
 
             (self.entries ||= []) << entry
           end
@@ -159,11 +161,12 @@ module Locomotive
 
         # Give an unique slug based on a label and within the scope of the content type.
         #
-        # @param [ String ] label The label
+        # @param [ String ] label The label. If nil, we take the singularized version of the content type slug.
         #
         # @return [ String ] An unique slug
         #
-        def label_to_slug(label)
+        def label_to_slug(label = nil)
+          label ||= self.slug.singularize
           base, index = label.parameterize('-'), 1
           unique_slug = base
 
@@ -190,6 +193,14 @@ module Locomotive
 
           # public_submission_accounts means public_submission_enabled set to true
           self.public_submission_enabled = true if self.public_submission_accounts.is_a?(Array)
+        end
+
+        # Each field should have a reference to the mounting point
+        #
+        def assign_mounting_point_to_fields
+          self.fields.each do |field|
+            field.mounting_point = self.mounting_point
+          end
         end
 
       end

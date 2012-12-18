@@ -47,7 +47,7 @@ module Locomotive
           end
         end
 
-        # Loop through the list of dynamic fields defined in
+        # Loop over the list of dynamic fields defined in
         # the content type for which there is a value assigned.
         #
         # @example: each_dynamic_field { |field, value| .... }
@@ -57,8 +57,8 @@ module Locomotive
 
           self.dynamic_fields.each do |field|
             value = self.localized_dynamic_attribute_value(field)
-            # value = (self.dynamic_attributes || {})[field.name.to_sym]
 
+            # value = (self.dynamic_attributes || {})[field.name.to_sym]
             # value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
 
             block.call(field, value)
@@ -118,7 +118,7 @@ module Locomotive
 
           if value.is_a?(Hash) # already localized
             value.keys.each { |locale| self.add_locale(locale) }
-            self.dynamic_attributes[name.to_sym].merge!(value)
+            self.dynamic_attributes[name.to_sym].merge!(value.symbolize_keys)
           else
             if field.is_relationship? || !field.localized
               self.dynamic_attributes[name.to_sym] = value
@@ -175,10 +175,11 @@ module Locomotive
         def to_params
           fields = %w(_slug _position _visible seo_title meta_keywords meta_description)
 
-          # make sure get set, especially, we are using a different locale than the main one.
-          self.set_slug
+          # make sure the slug gets set, especially, we are using a different locale than the main one.
+          # self.set_slug
+          # TODO: move it
 
-          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
           params
         end
@@ -191,13 +192,20 @@ module Locomotive
 
         # Sets the slug of the instance by using the value of the highlighted field
         # (if available). If a sibling content instance has the same permalink then a
-        # unique one will be generated
+        # unique one will be generated.
+        # It applies that to every translated version of the content entry.
         def set_slug
-          self._slug = self._label.dup if self._slug.blank? && self._label.present?
+          self.translated_in.each do |locale|
+            Locomotive::Mounter.with_locale(locale) do
+              self._slug = self._label.dup if self._label.present?
 
-          if self._slug.present?
-            self._slug.permalink!
-            self._slug = self.next_unique_slug if self.slug_already_taken?
+              if self._slug.blank?
+                self._slug = self.content_type.send(:label_to_slug)
+              end
+
+              self._slug.permalink!
+              self._slug = self.next_unique_slug if self.slug_already_taken?
+            end
           end
         end
 
@@ -241,13 +249,13 @@ module Locomotive
         def localized_dynamic_attribute_value(field)
           value = (self.dynamic_attributes || {})[field.name.to_sym]
 
-          # puts "[#{field.name.inspect}] #{value.inspect}"
+          # puts "[#{field.name.inspect}] #{value.inspect} / #{field.localized.inspect} / #{value.is_a?(Hash).inspect}"
 
           if !field.is_relationship? && field.localized && value.is_a?(Hash)
             # get the localized value for the current locale
             _value = value[Locomotive::Mounter.locale]
 
-            # puts "_value = #{value.inspect} / current #{Locomotive::Mounter.locale.inspect} / main #{self.main_locale.inspect}"
+            # puts "[#{field.name}] _value = #{value.inspect} / current #{Locomotive::Mounter.locale.inspect} / main #{self.main_locale.inspect}"
 
             # no value for the current locale, give a try to the main one
             if _value.nil? && Locomotive::Mounter.locale != self.main_locale
@@ -257,7 +265,7 @@ module Locomotive
             value = _value
           end
 
-          value
+          value #.tap { |v| puts "[#{field.name}] returning #{v.inspect}" }
         end
 
       end

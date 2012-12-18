@@ -137,9 +137,6 @@ module Locomotive
 
           # text_formatting only for the text type
           self.text_formatting = nil unless self.type == :text
-
-          # select_options only for the select type
-          # self.select_options = nil unless self.type == :select
         end
 
       end
