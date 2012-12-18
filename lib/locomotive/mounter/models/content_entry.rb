@@ -14,13 +14,14 @@ module Locomotive
 
         field :content_type,        association: true
 
-        attr_accessor :dynamic_attributes
+        attr_accessor :dynamic_attributes, :main_locale
 
         alias :_permalink :_slug
         alias :_permalink= :_slug=
 
         ## callbacks ##
         set_callback :initialize, :after, :set_slug
+        set_callback :initialize, :after, :set_default_main_locale
 
         ## methods ##
 
@@ -55,9 +56,10 @@ module Locomotive
           return unless block_given?
 
           self.dynamic_fields.each do |field|
-            value = (self.dynamic_attributes || {})[field.name.to_sym]
+            value = self.localized_dynamic_attribute_value(field)
+            # value = (self.dynamic_attributes || {})[field.name.to_sym]
 
-            value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
+            # value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
 
             block.call(field, value)
           end
@@ -84,9 +86,7 @@ module Locomotive
         def dynamic_getter(name)
           field = self.content_type.find_field(name)
 
-          value = (self.dynamic_attributes || {})[name.to_sym]
-
-          value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
+          value = self.localized_dynamic_attribute_value(field)
 
           case field.type
           when :string, :text, :select, :boolean, :category
@@ -201,6 +201,12 @@ module Locomotive
           end
         end
 
+        # Once the entry has been initialized, we keep track of the current locale
+        #
+        def set_default_main_locale
+          self.main_locale = Locomotive::Mounter.locale
+        end
+
         # Return the next available unique slug as a string
         #
         # @return [ String] An unique permalink (or slug)
@@ -221,6 +227,37 @@ module Locomotive
         def slug_already_taken?
           entry = self.content_type.find_entry(self._slug)
           !entry.nil? && entry._slug != self._slug
+        end
+
+        # Return the value of a dynamic attribute specified by its
+        # corresponding content field.
+        # If that attribute is localized and in the current locale
+        # its value is nil, it returns the value in the main locale.
+        #
+        # @param [ Object ] The content field
+        #
+        # @return [ Object ] The value
+        #
+        def localized_dynamic_attribute_value(field)
+          value = (self.dynamic_attributes || {})[field.name.to_sym]
+
+          # puts "[#{field.name.inspect}] #{value.inspect}"
+
+          if !field.is_relationship? && field.localized && value.is_a?(Hash)
+            # get the localized value for the current locale
+            _value = value[Locomotive::Mounter.locale]
+
+            # puts "_value = #{value.inspect} / current #{Locomotive::Mounter.locale.inspect} / main #{self.main_locale.inspect}"
+
+            # no value for the current locale, give a try to the main one
+            if _value.nil? && Locomotive::Mounter.locale != self.main_locale
+              _value = value[self.main_locale]
+            end
+
+            value = _value
+          end
+
+          value
         end
 
       end

@@ -48,7 +48,9 @@ module Locomotive
 
                   # DEBUG
                   # puts entry.dynamic_attributes.inspect
-                  # puts "content_entry = #{content_entry_to_params(entry).inspect}"
+                  puts "content_entry = #{content_entry_to_params(entry).inspect}"
+
+                  raise 'STOP' if locale.to_s == 'fr'
 
                   if entry.persisted?
                     self.update_content_entry(slug, entry)
