@@ -56,13 +56,13 @@ module Locomotive
             _filepath = "#{filepath}.liquid"
             _filepath.gsub!(/.liquid$/, ".#{locale}.liquid") if locale
 
-            unless page.template.nil?
+            # unless page.template.nil?
               _filepath = File.join('app', 'views', 'pages', _filepath)
 
               self.open_file(_filepath) do |file|
                 file.write(page.to_yaml)
               end
-            end
+            # end
           end
 
         end

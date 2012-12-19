@@ -204,6 +204,7 @@ module Locomotive
               end
 
               self._slug.permalink!
+
               self._slug = self.next_unique_slug if self.slug_already_taken?
             end
           end
@@ -225,7 +226,7 @@ module Locomotive
 
           self.content_type.entries.each do |entry|
             if entry._permalink =~ /^#{slug}-?(\d*)$/i
-              next_number = $1 if $1 > next_number
+              next_number = $1.to_i if $1.to_i > next_number
             end
           end
 
@@ -234,7 +235,7 @@ module Locomotive
 
         def slug_already_taken?
           entry = self.content_type.find_entry(self._slug)
-          !entry.nil? && entry._slug != self._slug
+          entry.try(:_slug) == self._slug
         end
 
         # Return the value of a dynamic attribute specified by its

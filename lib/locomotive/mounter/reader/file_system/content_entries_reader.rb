@@ -67,6 +67,7 @@ module Locomotive
 
             entry = content_type.build_entry(_attributes)
 
+            # puts "entry._slug = #{entry._slug.inspect}"
             # entry.main_locale = Locomotive::Mounter.locale
             # puts entry.to_hash.inspect
             # puts entry.dynamic_attributes.inspect
