@@ -8,7 +8,7 @@
       x content type (engine does not return the content_type_id)
     x snippets
     x content types
-    x xontent entries
+    x content entries
       - content assets
     x theme assets
     x content assets
@@ -43,10 +43,11 @@
     x content types
       x replace klass_name by the real class name of the content type
       x select type: options
-    - content entries
-      - create
-      - update in another locale (only the translated and non blank fields)
-      - update with relationships
+    x content entries
+      x create
+      x update in another locale (only the translated and non blank fields)
+      x update with relationships
+      - content_entries flag
     - content assets
       - do not try to replace them every time (in other words, only when they got changed)
   - FileSystem

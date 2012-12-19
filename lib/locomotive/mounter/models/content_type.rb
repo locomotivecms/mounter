@@ -198,6 +198,8 @@ module Locomotive
         # Each field should have a reference to the mounting point
         #
         def assign_mounting_point_to_fields
+          return if self.fields.blank?
+
           self.fields.each do |field|
             field.mounting_point = self.mounting_point
           end

@@ -63,17 +63,17 @@ describe Locomotive::Mounter::Models::Site do
     end
 
     it 'returns all of them' do
-      @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: 'Hello world', subdomain: nil, domains: nil }
+      @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: 'Hello world', subdomain: nil, domains: nil, robots_txt: nil }
     end
 
     it 'returns a localized version' do
       Locomotive::Mounter.with_locale(:fr) do
-        @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: nil, meta_keywords: nil, meta_description: 'Salut le monde', subdomain: nil, domains: nil }
+        @site.attributes.should == { name: 'Hello world', locales: nil, seo_title: nil, meta_keywords: nil, meta_description: 'Salut le monde', subdomain: nil, domains: nil, robots_txt: nil }
       end
     end
 
     it 'returns all of them and their translations' do
-      @site.attributes_with_translations.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: { en: 'Hello world', fr: 'Salut le monde' }, subdomain: nil, domains: nil }
+      @site.attributes_with_translations.should == { name: 'Hello world', locales: nil, seo_title: 'A title', meta_keywords: nil, meta_description: { en: 'Hello world', fr: 'Salut le monde' }, subdomain: nil, domains: nil, robots_txt: nil }
     end
 
   end
