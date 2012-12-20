@@ -31,6 +31,8 @@ module Locomotive
     class UnknownTemplateException < DefaultException
     end
 
+    class WrongCredentials < DefaultException
+    end
 
   end
 end

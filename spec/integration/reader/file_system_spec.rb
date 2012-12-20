@@ -25,11 +25,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
         end
 
         it 'has 3 pages' do
-          @mounting_point.pages.size.should == 3
+          @mounting_point.pages.size.should == 5
         end
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 1
+          @index.children.size.should == 2
         end
 
         it 'sets the fullpath to all the pages' do
@@ -39,11 +39,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
         end
 
-        it 'sets the localized fullpath to all the pages' do
-          Locomotive::Mounter.with_locale(:en) do
+        it 'has localized pages with non-nil depth' do
+          Locomotive::Mounter.with_locale(:es) do
             @mounting_point.pages.each do |_, page|
+              page.fullpath_or_default.should_not be_nil
               page.depth.should_not be_nil
-              page.fullpath.should_not be_nil
             end
           end
         end

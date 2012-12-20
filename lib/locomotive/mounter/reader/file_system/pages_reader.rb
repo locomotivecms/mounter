@@ -19,14 +19,16 @@ module Locomotive
           def read
             self.fetch
 
-            index = self.pages['index']
+            index, not_found = self.pages['index'], self.pages['404']
 
-            index.localize_fullpath(self.locales)
+            # localize the fullpath for the 2 core pages: index and 404
+            [index, not_found].each { |p| p.localize_fullpath(self.locales) }
 
             self.build_relationships(index, self.pages_to_list)
 
+            # Locomotive::Mounter.with_locale(:en) { self.to_s } # DEBUG
+
             # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
-            # puts self.to_s
 
             self.pages
           end

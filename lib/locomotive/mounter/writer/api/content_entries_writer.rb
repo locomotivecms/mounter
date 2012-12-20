@@ -113,7 +113,7 @@ module Locomotive
           #
           def persist_content_entries_with_relationships
             unless self.with_relationships.empty?
-              self.log "\n    setting relationships"
+              self.log "\n    setting relationships for all the content entries\n"
 
               updates = self.content_entries_with_relationships_to_hash
 

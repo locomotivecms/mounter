@@ -46,6 +46,15 @@ module Locomotive
           self.fullpath.try(:underscore)
         end
 
+        # Return the fullpath in the current locale. If it does not exist,
+        # return the one of the main locale.
+        #
+        # @return [ String ] A non-blank fullpath
+        #
+        def fullpath_or_default
+          self.fullpath || self.fullpath_translations[self.mounting_point.default_locale]
+        end
+
         # Get the id of the parent page.
         #
         # @return [ String ] The _id attribute of the parent page
@@ -83,7 +92,7 @@ module Locomotive
         #
         def depth
           return 0 if %w(index 404).include?(self.fullpath)
-          self.fullpath.split('/').size
+          self.fullpath_or_default.split('/').size
         end
 
         # Depth and position in the site tree
@@ -181,8 +190,8 @@ module Locomotive
 
           locales.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
-              if _fullpath == 'index'
-                self.fullpath = 'index'
+              if %w(index 404).include?(_fullpath)
+                self.fullpath = _fullpath
               elsif _parent_fullpath == 'index'
                 self.fullpath = self.slug || _slug
               else
@@ -213,7 +222,6 @@ module Locomotive
             if _template.nil? || _template.data.strip.blank?
               # puts "YOUPI #{self.fullpath} / #{locale} / #{default_template.data}"
               self.template_translations[locale] = default_template
-              # raise 'STOP'
             end
           end
         end
@@ -320,7 +328,12 @@ module Locomotive
         end
 
         def to_s
-          "#{self.fullpath}"
+          self.fullpath_or_default
+          # if self.fullpath.blank?
+          #   self.fullpath_translations[self.mounting_point.default_locale]
+          # else
+          #   self.fullpath
+          # end
         end
 
       end

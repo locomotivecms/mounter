@@ -121,7 +121,9 @@ module Locomotive
           # @return [ Array ] The list of layouts
           #
           def layouts
-            self.pages.values.find_all { |p| p.is_layout? }.sort { |a, b| a.depth <=> b.depth }
+            self.pages.values.find_all do |page|
+              self.safely_translated?(page) && page.is_layout?
+            end.sort { |a, b| a.depth <=> b.depth }
           end
 
           # Return the pages wich are not layouts for others.
@@ -133,7 +135,15 @@ module Locomotive
             list = (self.pages.values - self.layouts)
 
             # get only the translated ones in the current locale
-            list.delete_if { |page| !page.translated_in?(Locomotive::Mounter.locale) }
+            list.delete_if do |page|
+              # if (!page.parent.nil? && !page.translated_in?(self.mounting_point.default_locale)) ||
+              #   !page.translated_in?(Locomotive::Mounter.locale)
+              if !self.safely_translated?(page)
+                self.output_resource_op page
+                self.output_resource_op_status page, :not_translated
+                true
+              end
+            end
 
             # sort them
             list.sort { |a, b| a.depth_and_position <=> b.depth_and_position }
@@ -152,6 +162,22 @@ module Locomotive
             locale ||= Locomotive::Mounter.locale
 
             (@remote_translations[page.fullpath] || []).include?(locale.to_s)
+          end
+
+          # Tell if the page is correctly localized, meaning it is localized itself
+          # as well as its parent.
+          #
+          # @param [ Object ] page The page
+          #
+          # @return [ Boolean] True if safely translated.
+          #
+          def safely_translated?(page)
+            if page.parent.nil?
+              page.translated_in?(Locomotive::Mounter.locale)
+            else
+              page.parent.translated_in?(Locomotive::Mounter.locale) &&
+              page.translated_in?(Locomotive::Mounter.locale)
+            end
           end
 
           # Return the parameters of a page sent by the API. It includes the editable_elements.

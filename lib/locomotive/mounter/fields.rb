@@ -113,7 +113,7 @@ module Locomotive
       # @return [ List ] List of locales
       #
       def translated_in
-        self._locales
+        self._locales.map(&:to_sym)
       end
 
       # Tell if the object has been translated in the locale

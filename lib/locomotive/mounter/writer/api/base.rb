@@ -191,12 +191,11 @@ module Locomotive
           #
           def output_resource_op_status(resource, status = :success)
             status_label = case status
-            when :success then 'done'.colorize(color: :green)
-            when :error   then 'error'.colorize(color: :red)
-            when :skipped then 'skipped'.colorize(color: :blue)
+            when :success         then 'done'.colorize(color: :green)
+            when :error           then 'error'.colorize(color: :red)
+            when :skipped         then 'skipped'.colorize(color: :magenta)
+            when :not_translated  then 'not translated (itself or parent)'.colorize(color: :yellow)
             end
-
-            # status_label  = success ?  : 'error'.colorize(color: :red)
 
             spaces        = ' ' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
