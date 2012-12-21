@@ -73,7 +73,7 @@ module Locomotive
             self.output_resource_op content_entry
 
             # get the params
-            params = self.content_entry_to_params(content_entry)
+            params = self.buffer_log { self.content_entry_to_params(content_entry) }
 
             # send the request
             response = self.post "content_types/#{content_type}/entries", params, nil, true
@@ -84,6 +84,7 @@ module Locomotive
 
             # log after
             self.output_resource_op_status content_entry, status
+            self.flush_log_buffer
           end
 
           # Update a content entry by calling the API.
@@ -96,7 +97,7 @@ module Locomotive
             self.output_resource_op content_entry
 
             # get the params
-            params = self.content_entry_to_params(content_entry)
+            params = self.buffer_log { self.content_entry_to_params(content_entry) }
 
             # send the request
             response = self.put "content_types/#{content_type}/entries", content_entry._id, params
@@ -105,6 +106,7 @@ module Locomotive
 
             # log after
             self.output_resource_op_status content_entry, status
+            self.flush_log_buffer
           end
 
           # Save to the remote engine the content entries owning
@@ -172,7 +174,9 @@ module Locomotive
 
             entry.each_dynamic_field do |field, value|
               case field.type.to_sym
-              when :string, :text, :date, :select, :boolean
+              when :string, :text
+                params[field.name] = self.replace_content_assets!(value)
+              when :date, :select, :boolean
                 params[field.name] = value
               when :file
                 if value =~ %r($http://)

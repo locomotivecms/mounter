@@ -329,11 +329,6 @@ module Locomotive
 
         def to_s
           self.fullpath_or_default
-          # if self.fullpath.blank?
-          #   self.fullpath_translations[self.mounting_point.default_locale]
-          # else
-          #   self.fullpath
-          # end
         end
 
       end

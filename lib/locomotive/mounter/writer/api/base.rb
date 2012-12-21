@@ -5,6 +5,9 @@ module Locomotive
 
         class Base
 
+          @@buffer_enabled  = false
+          @@buffer_log      = ''
+
           attr_accessor :mounting_point, :runner
 
           delegate :default_locale, :locales, :site, to: :mounting_point
@@ -126,6 +129,17 @@ module Locomotive
             end
           end
 
+          # Return the absolute path from a relative path
+          # pointing to an asset within the public folder
+          #
+          # @param [ String ] path The path to the file within the public folder
+          #
+          # @return [ String ] The absolute path
+          #
+          def absolute_path(path)
+            File.join(self.mounting_point.path, 'public', path)
+          end
+
           # Take a path and convert it to a File object if possible
           #
           # @param [ String ] path The path to the file within the public folder
@@ -133,8 +147,21 @@ module Locomotive
           # @return [ Object ] The file
           #
           def path_to_file(path)
-            _path = File.join(self.mounting_point.path, 'public', path)
-            File.new(path)
+            File.new(self.absolute_path(path))
+          end
+
+          # Take in the source the assets whose url begins by "/samples",
+          # upload them to the engine and replace them by their remote url.
+          #
+          # @param [ String ] source The source text
+          #
+          # @return [ String ] The source with remote urls
+          #
+          def replace_content_assets!(source)
+            source.gsub(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
+              url = self.runner.content_assets_writer.write(match)
+              url || match
+            end
           end
 
           protected
@@ -197,7 +224,7 @@ module Locomotive
             when :not_translated  then 'not translated (itself or parent)'.colorize(color: :yellow)
             end
 
-            spaces        = ' ' * (80 - self.resource_message(resource).size)
+            spaces        = '.' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
           end
 
@@ -218,11 +245,30 @@ module Locomotive
           # @param [ String ] message The message to log.
           #
           def log(message)
-            if self.runner.parameters[:console]
-              print message
+            # puts "buffer ? #{@@buffer_enabled.inspect}"
+            if @@buffer_enabled
+              @@buffer_log << message
             else
-              Mounter.logger.info message.gsub(/\n$/, '')
+              if self.runner.parameters[:console]
+                print message
+              else
+                Mounter.logger.info message #.gsub(/\n$/, '')
+              end
             end
+          end
+
+          def buffer_log(&block)
+            @@buffer_log = ''
+            @@buffer_enabled = true
+            if block_given?
+              block.call.tap { @@buffer_enabled = false }
+            end
+          end
+
+          def flush_log_buffer
+            @@buffer_enabled = false
+            self.log(@@buffer_log)
+            @@buffer_log = ''
           end
 
         end

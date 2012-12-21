@@ -40,12 +40,41 @@ module Locomotive
           end
         end
 
+        def size
+          if self.uri
+            Net::HTTP.get(self.uri).body.size
+          else
+            File.size(self.filepath)
+          end
+        end
+
+        # Return true if the uri or the file exists.
+        #
+        # @return [ Boolean ] True if it exists
+        #
+        def exists?
+          self.size
+          true
+        rescue
+          false
+        end
+
         def local_filepath
           File.join('/', self.folder, self.filename)
         end
 
+        # Return the params used for the API.
+        #
+        # @return [ Hash ] The params
+        #
+        def to_params
+          return {} if self.uri
+
+          { source: File.new(self.filepath) }
+        end
+
         def to_s
-          self.uri ? self.uri.path : self.filepath
+          self.uri ? self.uri.path : self.filename
         end
 
       end

@@ -7,121 +7,66 @@ module Locomotive
         #
         # The assets come from content blocks, for instance, in a
         # the template of a page or the text fields of content entries.
-        # If an asset with the same filename exists in the engine,
-        # the local version will not pushed unless the :force option is passed
-        #
-        #
-        # Alt: push all the assets at the root level of the samples folder.
-        # Remove the "samples" prefix.
-        # implement a middleware on the engine side to map content assets
-        # with their real url
+        # If an asset with the same filename already exists in the engine,
+        # the local version will not pushed unless the :force_assets option is passed
         #
         class ContentAssetsWriter < Base
 
-          def prepare
-            super
+          attr_accessor :remote_assets
 
-            # prepare the place where the assets will be stored temporarily.
-            self.create_tmp_folder
+          def prepare
+            self.remote_assets = {}
 
             # assign an _id to a local content type if possible
-            self.get(:theme_assets, nil, true).each do |attributes|
-              remote_path = File.join('/', attributes['folder'], File.basename(attributes['local_path']))
+            self.get(:content_assets, nil, true).each do |attributes|
+              puts attributes.inspect
 
-              if theme_asset = self.theme_assets[remote_path]
-                theme_asset._id   = attributes['id']
-                theme_asset.size  = attributes['raw_size'].to_i
-              end
+              self.remote_assets[attributes['full_filename']] = attributes
             end
           end
 
-          def write
-            self.theme_assets_by_priority.each do |theme_asset|
-              # track it in the logs
-              self.output_resource_op theme_asset
+          def write(local_path)
+            status    = :skipped
+            asset     = self.build_asset(local_path)
+            response  = self.remote_assets[asset.filename]
 
-              status  = :skipped
-              file    = self.build_temp_file(theme_asset)
-              params  = theme_asset.to_params.merge(source: file)
+            asset._id = response['_id'] if response
 
-              if theme_asset.persisted?
-                # we only update it if the size has changed or if the force option has been set.
-                if self.force? || (!theme_asset.stylesheet_or_javascript? && File.size(file) != theme_asset.size)
-                  response = self.put :theme_assets, theme_asset._id, params
+            self.output_resource_op asset
 
-                  status = self.response_to_status(response)
-                end
-              else
-                response = self.post :theme_assets, params, nil, true
-
+            if !asset.exists?
+              status = :error
+            elsif asset.persisted?
+              if asset.size != response['size'].to_i && self.force_assets?
+                # update it
+                response = self.put :content_assets, asset._id, asset.to_params
                 status = self.response_to_status(response)
               end
+            else
+              # create it
+              response = self.post :content_assets, asset.to_params, nil, true
+              status = self.response_to_status(response)
 
-              # very important. we do not want a huge number of non-closed file descriptor.
-              file.close
-
-              # track the status
-              self.output_resource_op_status theme_asset, status
+              self.remote_assets[response['full_filename']] = response
             end
 
-            # make the stuff like they were before
-            self.remove_tmp_folder
+            self.output_resource_op_status asset, status
+
+            [:success, :skipped].include?(status) ? response['url'] : nil
           end
 
           protected
 
-          # Create the folder to store temporarily the files.
-          #
-          def create_tmp_folder
-            self.tmp_folder = self.runner.parameters[:tmp_dir] || File.join(Dir.getwd, '.push-tmp')
-
-            FileUtils.mkdir_p(self.tmp_folder)
+          def build_asset(local_path)
+            Locomotive::Mounter::Models::ContentAsset.new(filepath: self.absolute_path(local_path))
           end
 
-          # Clean the folder which had stored temporarily the files.
-          #
-          def remove_tmp_folder
-            FileUtils.rm_rf(self.tmp_folder) if self.tmp_folder
+          def force_assets?
+            self.runner.parameters[:force_assets] || false
           end
 
-          # Build a temp file from a theme asset.
-          #
-          # @param [ Object ] theme_asset The theme asset
-          #
-          # @return [ File ] The file descriptor
-          #
-          def build_temp_file(theme_asset)
-            path = File.join(self.tmp_folder, theme_asset.path)
-
-            FileUtils.mkdir_p(File.dirname(path))
-
-            File.open(path, 'w') do |file|
-              file.write(theme_asset.content)
-            end
-
-            File.new(path)
-          end
-
-          # Shortcut to get all the local snippets.
-          #
-          # @return [ Hash ] The hash whose key is the slug and the value is the snippet itself
-          #
-          def theme_assets
-            return @theme_assets if @theme_assets
-
-            @theme_assets = {}.tap do |hash|
-              self.mounting_point.theme_assets.each do |theme_asset|
-                hash[theme_asset.path] = theme_asset
-              end
-            end
-          end
-
-          # List of theme assets sorted by their priority.
-          #
-          # @return [ Array ] Sorted list of the theme assets
-          #
-          def theme_assets_by_priority
-            self.theme_assets.values.sort { |a, b| a.priority <=> b.priority }
+          def resource_message(resource)
+            "  #{super}"
           end
 
         end

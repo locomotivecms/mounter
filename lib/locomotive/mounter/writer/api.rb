@@ -39,7 +39,16 @@ module Locomotive
           #
           def writers
             [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter]
-            #, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, PagesWriter, ThemeAssetsWriter]
+          end
+
+          # Get the writer to push content assets
+          #
+          # @return [ Object ] A memoized instance of the content assets writer
+          #
+          def content_assets_writer
+            @content_assets_writer ||= ContentAssetsWriter.new(self.mounting_point, self).tap do |writer|
+              writer.prepare
+            end
           end
 
         end
