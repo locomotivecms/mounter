@@ -155,6 +155,7 @@ module Locomotive
           attributes.to_a.each do |_attributes|
             if _attributes.is_a?(Array) # attributes is maybe a Hash
               block, slug = _attributes.first.split('/')
+              block, slug = nil, block if slug.nil?
               _attributes = { 'block' => block, 'slug' => slug, 'content' => _attributes.last }
             end
 

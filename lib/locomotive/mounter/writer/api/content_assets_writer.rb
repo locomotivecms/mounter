@@ -5,8 +5,8 @@ module Locomotive
 
         # Push content assets to a remote LocomotiveCMS engine.
         #
-        # The assets come from content blocks, for instance, in a
-        # the template of a page or the text fields of content entries.
+        # The assets come from editable content blocks, for instance, in a
+        # the text fields of content entries or within editable_***_text.
         # If an asset with the same filename already exists in the engine,
         # the local version will not pushed unless the :force_assets option is passed
         #

@@ -59,11 +59,10 @@ module Locomotive
 
             self.output_resource_op page
 
-            # TODO: replace assets
-
             success = page.persisted? ? self.update_page(page) : self.create_page(page)
 
             self.output_resource_op_status page, success ? :success : :error
+            self.flush_log_buffer
           end
 
           # Persist a page by calling the API. The returned _id
@@ -78,9 +77,11 @@ module Locomotive
               raise Mounter::WriterException.new("We are unable to find the parent page for #{page.fullpath}")
             end
 
+            params = self.buffer_log { page_to_params(page) }
+
             # make a call to the API to create the page, no need to set
             # the locale since it first happens for the default locale.
-            response = self.post :pages, page.to_params, nil, true
+            response = self.post :pages, params, nil, true
 
             raise page.inspect if response.nil?
 
@@ -99,7 +100,9 @@ module Locomotive
             locale  = Locomotive::Mounter.locale
 
             # All the attributes of the page or just some of them
-            params = self.force? || !self.already_translated?(page) ? page.to_params : page.to_safe_params
+            params = self.buffer_log do
+              self.page_to_params(page, self.force? || !self.already_translated?(page))
+            end
 
             # make a call to the API for the update
             response = self.put :pages, page._id, params, locale
@@ -183,17 +186,24 @@ module Locomotive
           # Return the parameters of a page sent by the API. It includes the editable_elements.
           #
           # @param [ Object ] page The page
+          # @param [ Boolean ] safe If true the to_safe_params is called, otherwise to_params is applied.
           #
           # @return [ Hash ] The parameters of the page
           #
-          def page_to_params(page)
-            page.to_params.tap do |params|
+          def page_to_params(page, safe = false)
+            (safe ? page.to_safe_params : page.to_params).tap do |params|
+              # raw template
+              params[:raw_template] = self.replace_content_assets!(params[:raw_template])
+
               # editable elements
               (params[:editable_elements] || []).each do |element|
                 if element[:content] =~ /$\/samples\//
                   element[:source] = self.path_to_file(element.delete(:content))
                 elsif element[:content] =~ %r($http://)
                   element[:source_url] = element.delete(:content)
+                else
+                  # string / text elements
+                  element[:content] = self.replace_content_assets!(element[:content])
                 end
               end
             end

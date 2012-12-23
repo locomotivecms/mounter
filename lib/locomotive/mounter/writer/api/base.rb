@@ -158,6 +158,8 @@ module Locomotive
           # @return [ String ] The source with remote urls
           #
           def replace_content_assets!(source)
+            return source if source.blank?
+
             source.gsub(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
               url = self.runner.content_assets_writer.write(match)
               url || match
@@ -257,6 +259,12 @@ module Locomotive
             end
           end
 
+          # Put in a buffer the logs generated when executing the block.
+          # It means that they will not output unless the flush_log_buffer
+          # method is called.
+          #
+          # @return [ Object ] Thee value returned by the call of the block
+          #
           def buffer_log(&block)
             @@buffer_log = ''
             @@buffer_enabled = true
@@ -265,6 +273,8 @@ module Locomotive
             end
           end
 
+          # Flush the logs put in a buffer.
+          #
           def flush_log_buffer
             @@buffer_enabled = false
             self.log(@@buffer_log)

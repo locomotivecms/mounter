@@ -42,11 +42,10 @@ module Locomotive
 
             self.output_resource_op snippet
 
-            # TODO: replace assets
-
             success = snippet.persisted? ? self.update_snippet(snippet) : self.create_snippet(snippet)
 
             self.output_resource_op_status snippet, success ? :success : :error
+            self.flush_log_buffer
           end
 
           # Persist a snippet by calling the API. The returned id
@@ -57,9 +56,11 @@ module Locomotive
           # @return [ Boolean ] True if the call to the API succeeded
           #
           def create_snippet(snippet)
+            params = self.buffer_log { snippet_to_params(snippet) }
+
             # make a call to the API to create the snippet, no need to set
             # the locale since it first happens for the default locale.
-            response = self.post :snippets, snippet.to_params, nil, true
+            response = self.post :snippets, params, nil, true
 
             snippet._id = response['id'] if response
 
@@ -73,10 +74,12 @@ module Locomotive
           # @return [ Boolean ] True if the call to the API succeeded
           #
           def update_snippet(snippet)
+            params = self.buffer_log { snippet_to_params(snippet) }
+
             locale = Locomotive::Mounter.locale
 
             # make a call to the API for the update
-            response = self.put :snippets, snippet._id, snippet.to_params, locale
+            response = self.put :snippets, snippet._id, params, locale
 
             !response.nil?
           end
@@ -87,6 +90,18 @@ module Locomotive
           #
           def snippets
             self.mounting_point.snippets
+          end
+
+          # Return the parameters of a snippet sent by the API.
+          #
+          # @param [ Object ] snippet The snippet
+          #
+          # @return [ Hash ] The parameters of the page
+          #
+          def snippet_to_params(snippet)
+            snippet.to_params.tap do |params|
+              params[:template] = self.replace_content_assets!(params[:template])
+            end
           end
 
         end

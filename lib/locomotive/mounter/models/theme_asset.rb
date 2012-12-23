@@ -74,10 +74,10 @@ module Locomotive
         # Give the priority of the asset depending of its type.
         # Javascripts and stylesheets are low priority.
         #
-        # @return [ Integer ] The priority (0 -> low, 100 -> high)
+        # @return [ Integer ] The priority (0 -> high, 100 -> lower)
         #
         def priority
-          self.stylesheet_or_javascript? ? 0 : 100
+          self.stylesheet_or_javascript? ? 100 : 0
         end
 
         # Tell if the asset can be precompiled. For instance, less, sass, scss and

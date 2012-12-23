@@ -5,16 +5,8 @@ module Locomotive
 
         # Push content entries to a remote LocomotiveCMS engine.
         #
-        # They get created or changed only if the
+        # TODO: They get created or changed only if the
         # :content_entries option has been passed.
-        #
-        # TODO:
-        #   - steps:
-        #     1/ insert entries without relationships
-        #     2/ do 1/ for each locales
-        #     3/ update each entry with relationships
-        #     4/ update options (in each locale)
-        #
         #
         class ContentEntriesWriter < Base
 
