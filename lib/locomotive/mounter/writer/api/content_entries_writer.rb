@@ -85,6 +85,8 @@ module Locomotive
           # @param [ Object ] content_entry The content entry to update
           #
           def update_content_entry(content_type, content_entry)
+            locale  = Locomotive::Mounter.locale
+
             # log before
             self.output_resource_op content_entry
 
@@ -92,7 +94,7 @@ module Locomotive
             params = self.buffer_log { self.content_entry_to_params(content_entry) }
 
             # send the request
-            response = self.put "content_types/#{content_type}/entries", content_entry._id, params
+            response = self.put "content_types/#{content_type}/entries", content_entry._id, params, locale
 
             status = self.response_to_status(response)
 

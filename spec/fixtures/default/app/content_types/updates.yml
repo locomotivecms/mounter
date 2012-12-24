@@ -1,7 +1,7 @@
 name: Updates
 description: List of updates
 slug: updates
-order_by: created_at
+order_by: date
 label_field_name: title
 public_submission_enabled: false
 fields:
@@ -12,6 +12,7 @@ fields:
     type: text
     hint: Text displayed in the home page
     localized: true
+    text_formatting: html
 - category:
     type: select
     hint: Pick a category

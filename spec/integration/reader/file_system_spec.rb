@@ -312,6 +312,24 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       end
 
+      describe 'a localized content entry' do
+
+        before(:each) do
+          @content_entry = @mounting_point.content_entries['updates/update-1']
+        end
+
+        it 'has a label' do
+          @content_entry._label.should == "Update #1"
+        end
+
+        it 'has a different label in another locale' do
+          Locomotive::Mounter.with_locale(:fr) do
+            @content_entry._label.should == "Mise a jour #1"
+          end
+        end
+
+      end
+
     end # content entries
 
   end
