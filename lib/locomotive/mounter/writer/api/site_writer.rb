@@ -75,8 +75,8 @@ module Locomotive
           end
 
           def check_locales
-            default_locale  = self.mounting_point.default_locale
-            locales         = self.site.locales
+            default_locale  = self.mounting_point.default_locale.to_s
+            locales         = self.site.locales.map(&:to_s)
             remote_locales  = self.remote_site['locales']
             message         = nil
 
@@ -85,7 +85,7 @@ module Locomotive
             end
 
             if default_locale != remote_locales.first
-              message = "Your default site locale (#{default_locale}) is not the same as the one of your target (#{remote_locales.first})"
+              message = "Your default site locale (#{default_locale.inspect}) is not the same as the one of your target (#{remote_locales.first.inspect})"
             end
 
             raise Mounter::WriterException.new(message) if message

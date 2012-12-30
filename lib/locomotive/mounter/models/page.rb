@@ -11,6 +11,7 @@ module Locomotive
         field :slug,              localized: true
         field :fullpath,          localized: true
         field :redirect_url,      localized: true
+        field :redirect_type,     default: 301
         field :template,          localized: true
         field :handle
         field :listed
@@ -26,6 +27,11 @@ module Locomotive
         ## other accessors ##
         attr_accessor :content_type_id, :parent_id, :children
 
+        ## aliases ##
+        alias :listed?      :listed
+        alias :published?   :published
+        alias :templatized? :templatized
+
         ## methods ##
 
         # Tell if the page is either the index or the 404 page.
@@ -36,14 +42,21 @@ module Locomotive
           self.depth == 0 && %w(index 404).include?(self.slug)
         end
 
-        # Return the version of the full path ready to
-        # be used to look for template files in the file system.
-        # Basically, it underscores the fullpath.
+        # Return the fullpath dasherized and with the "*" character
+        # for the slug of templatized page.
         #
-        # @return [ String ] The safe full path ("underscored"). Nil if no fullpath
+        # @return [ String ] The safe full path or nil if the page is not translated in the current locale
         #
         def safe_fullpath
-          self.fullpath.try(:underscore)
+          return nil unless self.translated_in?(Locomotive::Mounter.locale)
+
+          if self.index_or_404?
+            self.slug
+          else
+            base  = self.parent.safe_fullpath
+            _slug = self.templatized? ? '*' : self.slug
+            (base == 'index' ? _slug : File.join(base, _slug)).dasherize
+          end
         end
 
         # Return the fullpath in the current locale. If it does not exist,
@@ -123,6 +136,14 @@ module Locomotive
 
           self.source =~ /\{%\s*extends\s+\'?([[\w|\-|\_]|\/]+)\'?\s*%\}/
           $1
+        end
+
+        # Is it a redirect page ?
+        #
+        # @return [ Boolean ] True if the redirect_url property is set
+        #
+        def redirect?
+          !self.redirect_url.blank?
         end
 
         # Add a child to the page. It also sets the parent of the child
@@ -259,7 +280,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url handle published listed cache_strategy response_type position)
+          fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position)
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
@@ -283,7 +304,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          fields = %w(title parent_id slug redirect_url handle listed published cache_strategy response_type position templatized)
+          fields = %w(title parent_id slug redirect_url redirect_type handle listed published cache_strategy response_type position templatized)
 
           params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
 

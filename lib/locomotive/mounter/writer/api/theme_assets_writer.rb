@@ -38,11 +38,11 @@ module Locomotive
 
               status  = :skipped
               file    = self.build_temp_file(theme_asset)
-              params  = theme_asset.to_params.merge(source: file)
+              params  = theme_asset.to_params.merge(source: file, performing_plain_text: false)
 
               if theme_asset.persisted?
                 # we only update it if the size has changed or if the force option has been set.
-                if self.force? || (!theme_asset.stylesheet_or_javascript? && File.size(file) != theme_asset.size)
+                if self.force? || self.theme_asset_changed?(theme_asset, file)
                   response = self.put :theme_assets, theme_asset._id, params
 
                   status = self.response_to_status(response)
@@ -118,6 +118,29 @@ module Locomotive
           #
           def theme_assets_by_priority
             self.theme_assets.values.sort { |a, b| a.priority <=> b.priority }
+          end
+
+          # Tell if the theme_asset has changed in order to update it
+          # if so or simply skip it.
+          #
+          # @param [ Object ] theme_asset The theme asset
+          # @param [ Object ] tmp_file The size of the file (after precompilation if required)
+          #
+          def theme_asset_changed?(theme_asset, tmp_file)
+            if theme_asset.stylesheet_or_javascript?
+              if theme_asset.precompiled?
+                # puts "[#{theme_asset.filename} PRECOMPILED] local size #{File.size(tmp_file)} / remote size #{theme_asset.size}"
+                File.size(tmp_file) != theme_asset.size
+              else
+                # puts "[#{theme_asset.filename}] local size #{File.size(tmp_file)} / remote size #{theme_asset.size}"
+                File.size(tmp_file) != theme_asset.size
+              end
+            else
+              File.size(tmp_file) != theme_asset.size
+            end
+
+            # (!theme_asset.stylesheet_or_javascript? && File.size(file) != theme_asset.size) ||
+            # (theme_asset.stylesheet_or_javascript? && theme_asset.content.size != theme_asset.size)
           end
 
         end
