@@ -29,6 +29,26 @@ module Locomotive
           self.build_mounting_point
         end
 
+        # Reload with the same origin parameters a part of a site from a list of
+        # resources each described by a simple name (site, pages, ...etc) taken from
+        # the corresponding reader class name.
+        #
+        # @param [ Array/ String ] list An array of resource(s) or just the resource
+        #
+        def reload(list)
+          [*list].tap { |l| puts l.inspect }.each do |name|
+            reader_name = "#{name.to_s.camelize}Reader"
+
+            reader = self.readers.detect do |_reader|
+              _reader.name.demodulize == reader_name
+            end
+
+            if reader
+              self.mounting_point.register_resource(name, reader.new(self).read)
+            end
+          end
+        end
+
         # Before building the mounting point.
         # Can be defined by reader runners
         def prepare
