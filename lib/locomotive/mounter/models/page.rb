@@ -58,7 +58,7 @@ module Locomotive
         def safe_fullpath
           return nil unless self.translated_in?(Locomotive::Mounter.locale)
 
-          puts "[safe_fullpath] page = #{self.slug.inspect} / #{self.fullpath.inspect} / #{self.parent.inspect}"
+          # puts "[safe_fullpath] page = #{self.slug.inspect} / #{self.fullpath.inspect} / #{self.parent.inspect}"
 
           if self.index_or_404?
             self.slug

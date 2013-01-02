@@ -23,6 +23,8 @@ module Locomotive
 
               content_type = self.get_content_type(File.basename(filepath, '.yml'))
 
+              content_type.entries.try(:clear)
+
               attributes.each_with_index do |_attributes, index|
                 self.add(content_type, _attributes, index)
               end

@@ -37,7 +37,7 @@ module Locomotive
         #
         def reload(*list)
           Locomotive::Mounter.with_locale(self.mounting_point.default_locale) do
-            [*list].each do |name|
+            [*list].flatten.each do |name|
               reader_name = "#{name.to_s.camelize}Reader"
 
               reader = self.readers.detect do |_reader|
