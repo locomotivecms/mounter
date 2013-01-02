@@ -78,7 +78,7 @@ title: Home page
             %li
               %em {{ update.date | localized_date: '%B %d' }}
               &nbsp;-&nbsp;
-              {{ update.text }}
+              {{ update.title }}
             {% endfor %}
 
         {% endblock %}
@@ -86,6 +86,8 @@ title: Home page
         .clear
 
       #footer
+        %p {% locale_switcher %}
+
         %p
           Powered by <a href="http://www.locomotivecms.com">LocomotiveCMS</a>. Designed by <a href="http://www.sachagreif.com">Sacha Greif</a>.
         %p

@@ -34,6 +34,14 @@ module Locomotive
 
         ## methods ##
 
+        # Tell if the page is either the index page.
+        #
+        # @return [ Boolean ] True if index page.
+        #
+        def index?
+          self.depth == 0 && 'index' == self.slug
+        end
+
         # Tell if the page is either the index or the 404 page.
         #
         # @return [ Boolean ] True if index or 404 page.
@@ -49,6 +57,8 @@ module Locomotive
         #
         def safe_fullpath
           return nil unless self.translated_in?(Locomotive::Mounter.locale)
+
+          puts "[safe_fullpath] page = #{self.slug.inspect} / #{self.fullpath.inspect} / #{self.parent.inspect}"
 
           if self.index_or_404?
             self.slug
@@ -197,7 +207,9 @@ module Locomotive
         # @return [ Object ] The editable element or nil if not found
         #
         def find_editable_element(block, slug)
-          self.editable_elements.detect { |el| el.block.to_s == block.to_s && el.slug.to_s == slug.to_s }
+          (self.editable_elements || []).detect do |el|
+            el.block.to_s == block.to_s && el.slug.to_s == slug.to_s
+          end
         end
 
         # Localize the fullpath based on the parent fullpath in the locales
@@ -208,12 +220,13 @@ module Locomotive
         def localize_fullpath(locales = nil)
           locales ||= self.translated_in
           _parent_fullpath  = self.parent.try(:fullpath)
-          _fullpath, _slug  = self.fullpath, self.slug
+          _fullpath, _slug  = self.fullpath.clone, self.slug.clone
 
           locales.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
               if %w(index 404).include?(_fullpath)
                 self.fullpath = _fullpath
+                self.slug     = _fullpath
               elsif _parent_fullpath == 'index'
                 self.fullpath = self.slug || _slug
               else

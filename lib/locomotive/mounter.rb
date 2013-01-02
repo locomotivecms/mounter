@@ -82,7 +82,7 @@ module Locomotive
     end
 
     def self.locale=(locale)
-      @@locale = locale
+      @@locale = locale.to_sym
     end
 
     def self.with_locale(locale, &block)

@@ -35,16 +35,18 @@ module Locomotive
         #
         # @param [ Array/ String ] list An array of resource(s) or just the resource
         #
-        def reload(list)
-          [*list].tap { |l| puts l.inspect }.each do |name|
-            reader_name = "#{name.to_s.camelize}Reader"
+        def reload(*list)
+          Locomotive::Mounter.with_locale(self.mounting_point.default_locale) do
+            [*list].each do |name|
+              reader_name = "#{name.to_s.camelize}Reader"
 
-            reader = self.readers.detect do |_reader|
-              _reader.name.demodulize == reader_name
-            end
+              reader = self.readers.detect do |_reader|
+                _reader.name.demodulize == reader_name
+              end
 
-            if reader
-              self.mounting_point.register_resource(name, reader.new(self).read)
+              if reader
+                self.mounting_point.register_resource(name, reader.new(self).read)
+              end
             end
           end
         end
