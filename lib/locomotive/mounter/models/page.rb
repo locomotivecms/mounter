@@ -22,6 +22,10 @@ module Locomotive
         field :response_type
         field :position
 
+        field :seo_title,         localized: true
+        field :meta_keywords,     localized: true
+        field :meta_description,  localized: true
+
         field :editable_elements, type: :array, class_name: 'Locomotive::Mounter::Models::EditableElement'
 
         ## other accessors ##
