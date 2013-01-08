@@ -54,8 +54,9 @@ describe Locomotive::Mounter::Models::ContentEntry do
     describe 'when defined' do
 
       before(:each) do
-        content_field = stub(name: :text, type: :text, is_relationship?: false, localized: true)
+        content_field = stub(name: :text, type: :text, is_relationship?: false, localized: true, required: true)
         content_type.stubs(:find_field).with(:text).returns(content_field)
+        content_type.stubs(:fields).returns([content_field])
       end
 
       it 'returns nil if not set' do
@@ -140,6 +141,19 @@ describe Locomotive::Mounter::Models::ContentEntry do
             end
           end
 
+        end
+
+      end
+
+      describe '#valid?' do
+
+        it 'returns false if the required fields are empty' do
+          content_entry.valid?.should be_false
+        end
+
+        it 'returns true if the required fields are present' do
+          content_entry.text = 'Hello world'
+          content_entry.valid?.should be_true
         end
 
       end

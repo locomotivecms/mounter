@@ -14,7 +14,7 @@ module Locomotive
 
         field :content_type,        association: true
 
-        attr_accessor :dynamic_attributes, :main_locale
+        attr_accessor :dynamic_attributes, :main_locale, :errors
 
         alias :_permalink :_slug
         alias :_permalink= :_slug=
@@ -34,6 +34,23 @@ module Locomotive
         def _label
           name = self.content_type.label_field_name
           self.dynamic_getter(name)
+        end
+
+        # Process a minimal validation by checking if the required fields
+        # are filled in or not.
+        #
+        # @return [ Boolean ] False if one of the required fields is missing.
+        #
+        def valid?
+          self.errors = []
+          self.content_type.fields.each do |field|
+            if field.required
+              if self.dynamic_getter(field.name).blank?
+                self.errors << field.name
+              end
+            end
+          end
+          self.errors.blank?
         end
 
         # Return the list of the fields defined in the content type
@@ -146,11 +163,16 @@ module Locomotive
 
         # Returns a hash with the label_field value as the key and the other fields as the value
         #
-        # @return [ Hash ] A hash of hash
+        # @param [ Boolean ] nested True to have a hash of hash (whose key is the label)
         #
-        def to_hash
+        # @return [ Hash ] A simple hash (nested to false) or a hash of hash
+        #
+        def to_hash(nested = true)
           # no need of _position and _visible (unless it's false)
           hash = super.delete_if { |k, v| k == '_position' || (k == '_visible' && v == true) }
+
+          # also no need of the content type
+          hash.delete('content_type')
 
           # dynamic attributes
           hash.merge!(self.dynamic_attributes.deep_stringify_keys)
@@ -164,7 +186,7 @@ module Locomotive
             hash.delete(label_field.name) if hash[label_field.name].empty?
           end
 
-          { self._label => hash }
+          nested ? { self._label => hash } : hash
         end
 
         # Return the main default params used for the API, meaning all except
@@ -179,7 +201,7 @@ module Locomotive
           # self.set_slug
           # TODO: move it
 
-          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
+          params = self.attributes.clone.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
           params
         end

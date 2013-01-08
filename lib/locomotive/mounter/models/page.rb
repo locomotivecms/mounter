@@ -224,13 +224,13 @@ module Locomotive
         def localize_fullpath(locales = nil)
           locales ||= self.translated_in
           _parent_fullpath  = self.parent.try(:fullpath)
-          _fullpath, _slug  = self.fullpath.clone, self.slug.clone
+          _fullpath, _slug  = self.fullpath.try(:clone), self.slug.clone
 
           locales.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
-              if %w(index 404).include?(_fullpath)
-                self.fullpath = _fullpath
-                self.slug     = _fullpath
+              if %w(index 404).include?(_slug) && (_fullpath.nil? || _fullpath == _slug)
+                self.fullpath = _slug
+                self.slug     = _slug
               elsif _parent_fullpath == 'index'
                 self.fullpath = self.slug || _slug
               else
