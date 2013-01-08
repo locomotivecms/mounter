@@ -107,6 +107,15 @@ module Locomotive
           end
         end
 
+        # Get a fresh version of the content of the asset. Pre-compile it if needed.
+        #
+        # @return [ String ] The content of the asset
+        #
+        def content!
+          @raw = nil # force to reload it
+          self.content
+        end
+
         # Return the params used for the API.
         #
         # @return [ Hash ] The params
