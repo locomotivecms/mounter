@@ -13,12 +13,13 @@ module Locomotive
         #
         class PagesWriter < Base
 
+          attr_accessor :new_pages
           attr_accessor :remote_translations
 
           def prepare
             super
 
-            self.remote_translations = {}
+            self.new_pages, self.remote_translations = [], {}
 
             # set the unique identifier to each local page
             self.get(:pages, nil, true).each do |attributes|
@@ -83,9 +84,10 @@ module Locomotive
             # the locale since it first happens for the default locale.
             response = self.post :pages, params, nil, true
 
-            raise page.inspect if response.nil?
-
-            page._id = response['id'] if response
+            if response
+              page._id = response['id']
+              self.new_pages << page._id
+            end
 
             !response.nil?
           end
@@ -101,7 +103,7 @@ module Locomotive
 
             # All the attributes of the page or just some of them
             params = self.buffer_log do
-              self.page_to_params(page, self.force? || !self.already_translated?(page))
+              self.page_to_params(page, self.data? || !self.already_translated?(page))
             end
 
             # make a call to the API for the update
@@ -183,7 +185,9 @@ module Locomotive
             end
           end
 
-          # Return the parameters of a page sent by the API. It includes the editable_elements.
+          # Return the parameters of a page sent by the API.
+          # It includes the editable_elements if the data option is enabled or
+          # if the page is a new one.
           #
           # @param [ Object ] page The page
           # @param [ Boolean ] safe If true the to_safe_params is called, otherwise to_params is applied.
@@ -194,6 +198,10 @@ module Locomotive
             (safe ? page.to_safe_params : page.to_params).tap do |params|
               # raw template
               params[:raw_template] = self.replace_content_assets!(params[:raw_template])
+
+              if self.data? || self.new_pages.include?(page._id)
+                params[:editable_elements] = (page.editable_elements || []).map(&:to_params)
+              end
 
               # editable elements
               (params[:editable_elements] || []).each do |element|

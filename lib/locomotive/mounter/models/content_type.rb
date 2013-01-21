@@ -59,7 +59,14 @@ module Locomotive
         def build_entry(attributes)
           ContentEntry.new(content_type: self).tap do |entry|
             # do not forget that we are manipulating dynamic fields
-            attributes.each { |k, v| entry.send(:"#{k}=", v) }
+            attributes.each do |k, v|
+              begin
+                entry.send(:"#{k}=", v)
+              rescue NoMethodError => e
+                Mounter.logger.error e.backtrace
+                raise FieldDoesNotExistException.new("The '#{self.slug}' content type does not have a field named '#{k}'.")
+              end
+            end
 
             # force the slug to be defined from its label and in all the locales
             entry.send :set_slug

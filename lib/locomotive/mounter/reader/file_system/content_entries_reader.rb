@@ -54,7 +54,11 @@ module Locomotive
           # @param [ Integer ] position The position of the entry in the list
           #
           def add(content_type, attributes, position)
-            label, _attributes = attributes.keys.first, attributes.values.first
+            if attributes.is_a?(String)
+              label, _attributes = attributes, {}
+            else
+              label, _attributes = attributes.keys.first, attributes.values.first
+            end
 
             # check if the label_field is localized or not
             label_field_name = content_type.label_field_name

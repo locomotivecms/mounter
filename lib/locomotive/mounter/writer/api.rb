@@ -18,6 +18,9 @@ module Locomotive
           # Call the LocomotiveCMS engine to get a token for
           # the next API calls
           def prepare
+            # by default, do not push data (content entries and editable elements)
+            self.parameters[:data] ||= false
+
             self.uri  = self.parameters.delete(:uri)
             email     = self.parameters.delete(:email)
             password  = self.parameters.delete(:password)
@@ -38,7 +41,6 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def writers
-            # [SiteWriter, PagesWriter]
             [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter]
           end
 

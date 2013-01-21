@@ -13,8 +13,6 @@ module Locomotive
         # a select field will be pushed as well, otherwise they won't unless if
         # it is a brand new content type.
         #
-        # The force option is not used.
-        #
         class ContentTypesWriter < Base
 
           def prepare
@@ -69,9 +67,11 @@ module Locomotive
 
             self.apply_response(content_type, response)
 
-            status = self.response_to_status(response)
+            # status = self.response_to_status(response)
 
-            self.output_resource_op_status content_type, status
+            self.output_resource_op_status content_type, :success
+          rescue Exception => e
+            self.output_resource_op_status content_type, :error, e.message
           end
 
           # Update a content type by calling the API.
@@ -84,13 +84,11 @@ module Locomotive
             params = self.content_type_to_params(content_type)
 
             # make a call to the API for the update
-            response = self.put :content_types, content_type._id, params
+            self.put :content_types, content_type._id, params
 
-            status = self.response_to_status(response)
-
-            raise 'STOP' if status != :success # TODO ?????
-
-            self.output_resource_op_status content_type, status
+            self.output_resource_op_status content_type, :success
+          rescue Exception => e
+            self.output_resource_op_status content_type, :error, e.message
           end
 
           def content_types

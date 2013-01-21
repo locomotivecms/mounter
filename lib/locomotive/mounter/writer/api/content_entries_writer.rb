@@ -6,13 +6,15 @@ module Locomotive
         # Push content entries to a remote LocomotiveCMS engine.
         #
         # TODO: They get created or changed only if the
-        # :content_entries option has been passed.
+        # :data option has been passed.
         #
         class ContentEntriesWriter < Base
 
           attr_accessor :with_relationships
 
           def prepare
+            return unless self.data?
+
             super
 
             # initialize the list storing all the entries including relationships
@@ -31,6 +33,8 @@ module Locomotive
           end
 
           def write
+            return unless self.data?
+
             self.each_locale do |locale|
               self.output_locale
 
@@ -175,7 +179,7 @@ module Locomotive
               when :file
                 if value =~ %r($http://)
                   params[field.name] = value
-                elsif self.mounting_point.path
+                elsif value && self.mounting_point.path
                   path = File.join(self.mounting_point.path, 'public', value)
                   params[field.name] = File.new(path)
                 end

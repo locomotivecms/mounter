@@ -24,11 +24,24 @@ module Locomotive
             self.output_title
           end
 
-          # By setting the force option to true, some resources (Site, Page, Snippet)
+          # By setting the force option to true, some resources (site, content assets, ...etc)
           # may overide the content of the remote engine during the push operation.
+          # By default, its value is false.
+          #
+          # @return [ Boolean ] True if the force option has been set to true
           #
           def force?
             self.runner.parameters[:force] || false
+          end
+
+          # By setting the data option to true, user content (content entries and
+          # editable elements from page) can be pushed too.
+          # By default, its value is false.
+          #
+          # @return [ Boolean ] True if the data option has been set to true
+          #
+          def data?
+            self.runner.parameters[:data] || false
           end
 
           # Get remote resource(s) by the API
@@ -78,11 +91,19 @@ module Locomotive
               return data if raw
               self.raw_data_to_object(data)
             else
-              self.log "\n"
-              data.each do |attribute, errors|
-                self.log "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
-              end if data.respond_to?(:keys)
-              nil
+              message = data
+
+              message = data.map do |attribute, errors|
+                "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
+              end.join("\n") if data.respond_to?(:keys)
+
+              raise WriterException.new(message)
+
+              # self.log "\n"
+              # data.each do |attribute, errors|
+              #   self.log "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
+              # end if data.respond_to?(:keys)
+              # nil
             end
           end
 
@@ -108,10 +129,18 @@ module Locomotive
             if response.success?
               self.raw_data_to_object(data)
             else
-              data.each do |attribute, errors|
-                self.log "\t\t #{attribute} => #{[*errors].join(', ')}".colorize(color: :red)
-              end if data.respond_to?(:keys)
-              nil
+              message = data
+
+              message = data.map do |attribute, errors|
+                "      #{attribute} => #{[*errors].join(', ')}" #.colorize(color: :red)
+              end.join("\n") if data.respond_to?(:keys)
+
+              raise WriterException.new(message)
+
+              # data.each do |attribute, errors|
+              #   self.log "\t\t #{attribute} => #{[*errors].join(', ')}".colorize(color: :red)
+              # end if data.respond_to?(:keys)
+              # nil
             end
           end
 
@@ -217,8 +246,9 @@ module Locomotive
           #
           # @param [ Object ] resource The resource (Site, Page, ...etc).
           # @param [ Symbol ] status :success, :error, :skipped
+          # @param [ String ] errors The error messages
           #
-          def output_resource_op_status(resource, status = :success)
+          def output_resource_op_status(resource, status = :success, errors = nil)
             status_label = case status
             when :success         then 'done'.colorize(color: :green)
             when :error           then 'error'.colorize(color: :red)
@@ -226,8 +256,12 @@ module Locomotive
             when :not_translated  then 'not translated (itself or parent)'.colorize(color: :yellow)
             end
 
-            spaces        = '.' * (80 - self.resource_message(resource).size)
+            spaces = '.' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
+
+            if errors && status == :error
+              self.log "#{errors.colorize(color: :red)}\n"
+            end
           end
 
           # Return the message about the creation / update of a resource.

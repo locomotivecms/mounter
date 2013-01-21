@@ -18,9 +18,9 @@ module Locomotive
         # Write the data of a mounting point instance to a target folder
         #
         # @param [ Hash ] parameters The parameters. It should contain the mounting_point and target_path keys.
-        #      
+        #
         def run!(parameters = {})
-          self.parameters = parameters
+          self.parameters = parameters.symbolize_keys
 
           self.mounting_point = self.parameters.delete(:mounting_point)
 
@@ -32,7 +32,7 @@ module Locomotive
         # Before starting to write anything
         # Can be defined by writer runners
         def prepare
-        end        
+        end
 
         # List of all the writers
         #
@@ -44,12 +44,22 @@ module Locomotive
 
         # Execute all the writers
         def write_all
-          self.writers.each do |klass|
-            writer = klass.new(self.mounting_point, self)
-            writer.prepare
-            writer.write
+          only = parameters[:only].try(:map) do |name|
+            "#{name}_writer".camelize
+          end.try(:insert, 0, 'SiteWriter')
+
+          begin
+            self.writers.each do |klass|
+              next if only && !only.include?(klass.name.demodulize)
+              writer = klass.new(self.mounting_point, self)
+              writer.prepare
+              writer.write
+            end
+          rescue Exception => e
+            Locomotive::Mounter.logger.error e.backtrace
+            puts "\n\nBlocking Error: #{e.message.colorize(:red)}"
           end
-        end    
+        end
 
       end
 

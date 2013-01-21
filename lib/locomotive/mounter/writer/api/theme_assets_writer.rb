@@ -126,6 +126,8 @@ module Locomotive
           # @param [ Object ] theme_asset The theme asset
           # @param [ Object ] tmp_file The size of the file (after precompilation if required)
           #
+          # @return [ Boolean ] True if the source of the 2 assets (local and remote) is different.
+          #
           def theme_asset_changed?(theme_asset, tmp_file)
             if theme_asset.stylesheet_or_javascript?
               if theme_asset.precompiled?
