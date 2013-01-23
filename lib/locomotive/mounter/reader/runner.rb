@@ -22,7 +22,7 @@ module Locomotive
         # @return [ Object ] The mounting point object storing all the information about the site
         #
         def run!(parameters = {})
-          self.parameters = parameters
+          self.parameters = parameters.symbolize_keys
 
           self.prepare
 
