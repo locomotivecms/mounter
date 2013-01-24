@@ -19,6 +19,21 @@ module Locomotive
         	!self._id.blank?
         end
 
+        protected
+
+        # Take a list of field names and return a hash with
+        # their values only if they are not nil.
+        #
+        # @param [ Array ] fields List of field names (string)
+        #
+        # @return [ Hash ] A hash with symbolize keys
+        #
+        def filter_attributes(fields)
+          self.attributes.clone.delete_if do |k, v|
+            !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
+          end.deep_symbolize_keys
+        end
+
       end
 
     end

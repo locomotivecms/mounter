@@ -62,22 +62,6 @@ module Locomotive
           end
         end
 
-        # # Return the name of the select option described by its id AND
-        # # for the current locale.
-        # # Works only for the select type.
-        # #
-        # # @param [ String ] id Identifier of the option (BSON::ObjectId)
-        # #
-        # # @return [ String ] The value of the select option. Nil if not found
-        # #
-        # def name_for_select_option(id)
-        #   if attributes = (self.select_options || []).find { |hash| hash['_id'] == id }
-        #     (attributes['name'] ||= {})[Locomotive::Mounter.locale.to_s]
-        #   else
-        #     nil
-        #   end
-        # end
-
         # Find a select option by its name IN the current locale.
         #
         # @param [ String / Symbol] name_or_id Name or Id of the option
@@ -104,9 +88,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          fields = %w(label name type hint position required localized)
-
-          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+          params = self.filter_attributes %w(label name type hint position required localized)
 
           # we set the _id / _destroy attributes for embedded documents
           params[:_id]      = self._id if self.persisted?

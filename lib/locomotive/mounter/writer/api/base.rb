@@ -189,7 +189,7 @@ module Locomotive
           def replace_content_assets!(source)
             return source if source.blank?
 
-            source.gsub(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
+            source.to_s.gsub(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
               url = self.runner.content_assets_writer.write(match)
               url || match
             end

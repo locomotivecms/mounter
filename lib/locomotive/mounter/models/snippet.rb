@@ -36,9 +36,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          fields = %w(name slug)
-
-          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+          params = self.filter_attributes %w(name slug)
 
           # raw_template
           params[:template] = self.source rescue nil

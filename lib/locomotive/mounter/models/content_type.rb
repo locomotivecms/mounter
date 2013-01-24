@@ -146,9 +146,7 @@ module Locomotive
         def to_params(options = nil)
           options = { all_fields: false }.merge(options || {})
 
-          fields = %w(name slug description label_field_name group_by_field_name order_by order_by_direction public_submission_enabled raw_item_template)
-
-          params = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_symbolize_keys
+          params = self.filter_attributes %w(name slug description label_field_name group_by_field_name order_by order_by_direction public_submission_enabled raw_item_template)
 
           # order by
           params[:order_by] = '_position' if self.order_by == 'manually'

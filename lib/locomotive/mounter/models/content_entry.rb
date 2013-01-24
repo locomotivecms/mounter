@@ -195,15 +195,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          fields = %w(_slug _position _visible seo_title meta_keywords meta_description)
-
-          # make sure the slug gets set, especially, we are using a different locale than the main one.
-          # self.set_slug
-          # TODO: move it
-
-          params = self.attributes.clone.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
-
-          params
+          self.filter_attributes %w(_slug _position _visible seo_title meta_keywords meta_description)
         end
 
         def to_s
