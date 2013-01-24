@@ -41,7 +41,7 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def writers
-            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter]
+            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter, TranslationsWriter]
           end
 
           # Get the writer to push content assets
