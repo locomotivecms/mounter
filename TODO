@@ -12,6 +12,7 @@
       - content assets
     x theme assets
     x content assets
+    x translations
   - filesystem
     x pages
       x localized fullpath (rebuild the fullpath for localized pages based on the slug / parent slug)
@@ -26,6 +27,8 @@
       - tests
     - content_assets
       - tests
+    - translations
+      - test
 
 - writers
   - API
@@ -49,6 +52,7 @@
       x update with relationships
     x content assets
       x do not try to replace them every time (in other words, only when they got changed)
+    x translations
   - FileSystem
     x site
     x pages
@@ -60,6 +64,7 @@
       x use url instead of source
     x convert in HAML, SASS, Coffeescript
     x content assets
+    - translations
     - tests
 
 

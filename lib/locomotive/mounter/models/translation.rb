@@ -7,10 +7,21 @@ module Locomotive
         ## fields ##
         field :key
         field :values
-        
-        def to_params
-          {_id: self._id, key: self.key, values: self.values}
+
+        ## methods ##
+
+        def get(locale)
+          self.values[locale.to_s]
         end
+
+        def to_params
+          { key: self.key, values: self.values }
+        end
+
+        def to_s
+          self.key
+        end
+
       end
     end
   end

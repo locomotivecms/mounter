@@ -54,7 +54,7 @@ module Locomotive
           # @return [ Object ] The content of the file
           #
           def read_yaml(filepath)
-            YAML::load(File.open(filepath).read)
+            YAML::load(File.open(filepath).read.force_encoding('utf-8'))
           end
 
         end
