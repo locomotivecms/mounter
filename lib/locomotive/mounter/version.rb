@@ -2,7 +2,7 @@
 module Locomotive
   module Mounter #:nodoc
 
-    VERSION = '1.0.0.rc1'
+    VERSION = '1.0.0.alpha1'
 
   end
 end
