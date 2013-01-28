@@ -14,7 +14,7 @@ module Locomotive
 
             {}.tap do |translations|
               if File.exists?(config_path)
-                self.read_yaml(config_path).each do |translation|
+                (self.read_yaml(config_path) || []).each do |translation|
                   key, values = translation
 
                   entry = Locomotive::Mounter::Models::Translation.new({

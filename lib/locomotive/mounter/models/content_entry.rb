@@ -32,8 +32,17 @@ module Locomotive
         # @return [ String ] The internal label
         #
         def _label
-          name = self.content_type.label_field_name
-          self.dynamic_getter(name)
+          field = self.content_type.label_field
+          value = self.dynamic_getter(field.name)
+
+          if field.type == :belongs_to
+            value.try(:_label)
+          else
+            value
+          end
+
+          # name = self.content_type.label_field_name
+          # self.dynamic_getter(name)
         end
 
         # Process a minimal validation by checking if the required fields
@@ -211,8 +220,12 @@ module Locomotive
         def set_slug
           self.translated_in.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
-              self._slug = self._label.dup if self._label.present?
+              # first attempt from the label
+              if self._slug.blank?
+                self._slug = self._label.try(:dup)
+              end
 
+              # from the content type itself
               if self._slug.blank?
                 self._slug = self.content_type.send(:label_to_slug)
               end
