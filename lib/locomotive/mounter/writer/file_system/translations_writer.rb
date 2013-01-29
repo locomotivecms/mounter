@@ -11,7 +11,7 @@ module Locomotive
 
           def write
             self.open_file('config/translations.yml') do |file|
-              file.write self.mounting_point.translations.map(&:to_params).to_yaml
+              file.write self.mounting_point.translations.inject({}) { |memo,translation| memo.merge!(translation.key => translation.values) }.to_yaml
             end
           end
         end
