@@ -5,6 +5,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
   let(:content_type) do
     content_type = mock
     content_field = stub('TitleField', name: :title, type: :string, is_relationship?: false, localized: false)
+    content_type.stubs(:label_field).returns(content_field)
     content_type.stubs(:label_field_name).returns(:title)
     content_type.stubs(:find_field).with(:title).returns(content_field)
     content_type.stubs(:label_to_slug).returns('base')
