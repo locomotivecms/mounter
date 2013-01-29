@@ -40,9 +40,6 @@ module Locomotive
           else
             value
           end
-
-          # name = self.content_type.label_field_name
-          # self.dynamic_getter(name)
         end
 
         # Process a minimal validation by checking if the required fields
