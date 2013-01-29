@@ -20,7 +20,7 @@ module Locomotive
         alias :_permalink= :_slug=
 
         ## callbacks ##
-        set_callback :initialize, :after, :set_slug
+        # set_callback :initialize, :after, :set_slug
         set_callback :initialize, :after, :set_default_main_locale
 
         ## methods ##
@@ -108,7 +108,6 @@ module Locomotive
         #
         def dynamic_getter(name)
           field = self.content_type.find_field(name)
-
           value = self.localized_dynamic_attribute_value(field)
 
           case field.type
@@ -267,11 +266,15 @@ module Locomotive
         # If that attribute is localized and in the current locale
         # its value is nil, it returns the value in the main locale.
         #
-        # @param [ Object ] The content field
+        # @param [ String / Object ] The content field or the name of the field
         #
         # @return [ Object ] The value
         #
         def localized_dynamic_attribute_value(field)
+          if field.is_a?(String)
+            field = self.content_type.find_field(field)
+          end
+
           value = (self.dynamic_attributes || {})[field.name.to_sym]
 
           # puts "[#{field.name.inspect}] #{value.inspect} / #{field.localized.inspect} / #{value.is_a?(Hash).inspect}"

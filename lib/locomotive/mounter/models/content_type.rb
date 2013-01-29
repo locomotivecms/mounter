@@ -127,12 +127,16 @@ module Locomotive
         # Find all the entries by a field and its value.
         #
         # @param [ String ] name Name of the field
-        # @param [ String / Array ] value The different value of the field to test
+        # @param [ String / Array ] value The different values of the field to test
         #
         # @return [ Array ] List of content entries or [] if none
         #
         def find_entries_by(name, value)
-          (self.entries || []).find_all { |entry| [*value].include?(entry.send(name.to_sym)) }
+          values = [*value]
+          (self.entries || []).find_all do |entry|
+            raw_value = entry.send(:localized_dynamic_attribute_value, name)
+            values.include?(raw_value)
+          end
         end
 
         # Return the params used for the API.
