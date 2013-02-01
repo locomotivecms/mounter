@@ -16,7 +16,13 @@ module Tilt
         @data = $3
       end
       @data = @data.force_encoding('utf-8')
-      super
+      begin
+        super
+      rescue Haml::SyntaxError => e
+        # invalid haml so re-throw the exception but with keeping track of the attributes
+        e.attributes = @attributes
+        raise e
+      end
     end
 
   end
@@ -24,4 +30,8 @@ module Tilt
   Tilt.register 'haml', YamlFrontMattersHamlTemplate
   Tilt.prefer YamlFrontMattersHamlTemplate
 
+end
+
+class ::Haml::SyntaxError
+  attr_accessor :attributes
 end

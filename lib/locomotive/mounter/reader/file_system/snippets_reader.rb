@@ -12,6 +12,8 @@ module Locomotive
           def read
             self.fetch_from_filesystem
 
+            self.set_default_template_for_each_locale
+
             self.items
           end
 
@@ -25,7 +27,29 @@ module Locomotive
               snippet = self.add(filepath)
 
               Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                snippet.template = Tilt.new(filepath)
+                snippet.template = self.fetch_template(filepath)
+              end
+            end
+          end
+
+          # Set a default template (coming from the default locale)
+          # for each snippet which does not have a translated version
+          # of the template in each locale.
+          #
+          def set_default_template_for_each_locale
+            self.items.values.each do |snippet|
+              default_template = snippet.template
+
+              next if !default_template.is_a?(Exception) && default_template.blank?
+
+              self.locales.map(&:to_sym).each do |locale|
+                next if locale == self.default_locale
+
+                _template = snippet.template_translations[locale]
+
+                if !_template.is_a?(Exception) && _template.blank?
+                  snippet.template_translations[locale] = default_template
+                end
               end
             end
           end
@@ -53,7 +77,7 @@ module Locomotive
               self.items[slug] = Locomotive::Mounter::Models::Snippet.new({
                 name:     slug.humanize,
                 slug:     slug,
-                template: Tilt.new(filepath)
+                template: self.fetch_template(filepath)
               })
             end
 
@@ -68,6 +92,23 @@ module Locomotive
           #
           def filepath_to_slug(filepath)
             File.basename(filepath).split('.').first
+          end
+
+          # From a filepath, parse the template inside.
+          # and return the related Tilt instance.
+          # It may return the exception if the template is invalid
+          # (only for HAML templates).
+          #
+          # @param [ String ] filepath The path to the file
+          #
+          # @return [ Object ] The Tilt template or the exception itself if the template is invalid
+          #
+          def fetch_template(filepath)
+            begin
+              Tilt.new(filepath)
+            rescue Haml::SyntaxError => e
+              e
+            end
           end
 
         end

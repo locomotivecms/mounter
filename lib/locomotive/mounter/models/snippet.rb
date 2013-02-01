@@ -20,9 +20,12 @@ module Locomotive
         def source
           @source ||= {}
 
-          source = if template.respond_to?(:need_for_prerendering?)
+          source = if self.template.respond_to?(:need_for_prerendering?)
             # must be a tilt template with or without prerendering
             self.template.need_for_prerendering? ? self.template.render : self.template.data
+          elsif self.template.is_a?(Exception) # comes from the parsing
+            # we do not know how to render the page so rethrow the exception
+            raise self.template
           else
             # simple string
             self.template

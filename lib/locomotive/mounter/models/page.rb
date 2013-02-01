@@ -249,7 +249,7 @@ module Locomotive
         def set_default_template_for_each_locale(default_locale)
           default_template = self.template_translations[default_locale.to_sym]
 
-          return if default_template.nil? || default_template.data.strip.blank?
+          return if self.template_blank?(default_template)
 
           self.translated_in.each do |locale|
             next if locale.to_s == default_locale.to_s
@@ -258,8 +258,7 @@ module Locomotive
             _template = self.template_translations[locale]
 
             # is it blank ?
-            if _template.nil? || _template.data.strip.blank?
-              # puts "YOUPI #{self.fullpath} / #{locale} / #{default_template.data}"
+            if self.template_blank?(_template)
               self.template_translations[locale] = default_template
             end
           end
@@ -285,6 +284,10 @@ module Locomotive
           if @source[Locomotive::Mounter.locale]
             @source[Locomotive::Mounter.locale] # memoization
           elsif self.template
+            if self.template.is_a?(Exception) # comes from the parsing
+              # we do not know how to render the page so rethrow the exception
+              raise self.template
+            end
             source = self.template.need_for_prerendering? ? self.template.render : self.template.data
             @source[Locomotive::Mounter.locale] = source
           else
@@ -368,6 +371,20 @@ module Locomotive
 
         def to_s
           self.fullpath_or_default
+        end
+
+        protected
+
+        # Tell if a template is strictly blank (nil or empty).
+        # If a template is invalid, it is not considered as a
+        # blank one.
+        #
+        # @param [ Object ] template The template to test (Tilt)
+        #
+        # @return [ Boolean ] True if the template is strictly blank
+        #
+        def template_blank?(template)
+          template.nil? || (!template.is_a?(Exception) && template.data.strip.blank?)
         end
 
       end

@@ -122,7 +122,12 @@ module Locomotive
           # @param [ String ] filepath The path of the template
           #
           def set_attributes_from_header(page, filepath)
-            template = Tilt.new(filepath)
+            begin
+              template = Tilt.new(filepath)
+            rescue Haml::SyntaxError => e
+              Locomotive::Mounter.logger.warn "Invalid page template (#{filepath}): #{e.message}"
+              template = e
+            end
 
             if template.respond_to?(:attributes)
               return if template.attributes.blank?
