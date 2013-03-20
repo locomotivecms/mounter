@@ -1,18 +1,29 @@
 # encoding: UTF-8
 require 'spec_helper'
 
-describe Locomotive::Mounter::Reader::Api do
+describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
+  
+  let(:reader) { Locomotive::Mounter::Reader::FileSystem.instance }
+  
+  let(:writer) { Locomotive::Mounter::Writer::Api.instance }
+  
+  let(:mounting_point) { reader.run!(path: site_path) }
+  
+  before(:all) do
+    VCR.use_cassette "Writer::Api" do
+      delete_current_site
+      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: true }.merge(credentials))
+    end
+  end
 
   before(:each) do
-    # @credentials  = { uri: 'sample.engine.dev/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
-    @credentials  = { uri: 'sample.example.com:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' }
     @reader       = Locomotive::Mounter::Reader::Api.instance
   end
 
   it 'runs it' do
     @reader.stubs(:prepare).returns(true)
     @reader.stubs(:build_mounting_point).returns(true)
-    @reader.run!(@credentials).should_not be_nil
+    @reader.run!(credentials).should_not be_nil
   end
 
   %w(uri email password).each do |name|
@@ -20,6 +31,7 @@ describe Locomotive::Mounter::Reader::Api do
       Locomotive::Mounter::EngineApi.stubs(:set_token).returns(true)
       @reader.stubs(:build_mounting_point).returns(true)
       lambda {
+        @credentials = credentials
         @credentials.delete(name.to_sym)
         @reader.run!(@credentials)
       }.should raise_exception(Locomotive::Mounter::ReaderException, 'one or many API credentials (uri, email, password) are missing')
@@ -30,7 +42,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     before(:each) do
       stub_readers(@reader)
-      @mounting_point = @reader.run!(@credentials)
+      @mounting_point = @reader.run!(credentials)
     end
 
     it 'has a name' do
@@ -38,7 +50,7 @@ describe Locomotive::Mounter::Reader::Api do
     end
 
     it 'has locales' do
-      @mounting_point.site.locales.should == %w(en fr)
+      @mounting_point.site.locales.should == %w(en fr nb)
     end
 
     it 'has a seo title' do
@@ -65,7 +77,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     before(:each) do
       stub_readers(@reader, %w(content_assets content_types pages))
-      @mounting_point = @reader.run!(@credentials)
+      @mounting_point = @reader.run!(credentials)
     end
 
     describe 'pages' do
@@ -166,7 +178,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     before(:each) do
       stub_readers(@reader, %w(snippets))
-      @mounting_point = @reader.run!(@credentials)
+      @mounting_point = @reader.run!(credentials)
     end
 
     it 'has 2 snippets' do
@@ -188,7 +200,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     before(:each) do
       stub_readers(@reader, %w(content_assets content_types content_entries))
-      @mounting_point = @reader.run!(@credentials)
+      @mounting_point = @reader.run!(credentials)
     end
 
     it 'has 26 entries for the 4 content types' do
@@ -230,7 +242,7 @@ describe Locomotive::Mounter::Reader::Api do
 
     before(:each) do
       stub_readers(@reader, %w(theme_assets))
-      @mounting_point = @reader.run!(@credentials)
+      @mounting_point = @reader.run!(credentials)
     end
 
     it 'has 2 assets' do

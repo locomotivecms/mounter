@@ -46,6 +46,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha',               '0.9.12'
   s.add_development_dependency 'rack-test',           '~> 0.6.1'
   s.add_development_dependency 'ruby-debug-wrapper',  '~> 0.0.1'
+  s.add_development_dependency 'vcr'
+  s.add_development_dependency 'fakeweb'
 
   s.require_path = 'lib'
 

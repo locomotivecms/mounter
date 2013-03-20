@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe Locomotive::Mounter::EngineApi do
+describe Locomotive::Mounter::EngineApi, :vcr do
 
-  let(:credentials) { { uri: 'sample.example.com:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' } }
+  let(:credentials) { { uri: 'locomotive.engine.dev:3000/locomotive/api', email: 'admin@locomotivecms.com', password: 'locomotive' } }
 
   it 'handles smoothly wrong credentials' do
     lambda do

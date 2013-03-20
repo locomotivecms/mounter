@@ -1,10 +1,6 @@
 require 'spec_helper'
 
-describe Locomotive::Mounter::Writer::Api do
-
-  let(:site_path) { File.join(File.dirname(__FILE__), '..', '..', 'fixtures', 'default') }
-
-  let(:credentials) { { uri: 'sample.example.com:8080/locomotive/api', email: 'did@nocoffee.fr', password: 'test31' } }
+describe Locomotive::Mounter::Writer::Api, :vcr do
 
   let(:reader) { Locomotive::Mounter::Reader::FileSystem.instance }
 
@@ -13,8 +9,10 @@ describe Locomotive::Mounter::Writer::Api do
   let(:writer) { Locomotive::Mounter::Writer::Api.instance }
 
   before(:all) do
-    delete_current_site
-    writer.run!({ mounting_point: mounting_point, console: true, force: false }.merge(credentials))
+    VCR.use_cassette "Writer::Api" do
+      delete_current_site
+      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: false }.merge(credentials))
+    end
   end
 
   describe 'site' do
@@ -64,11 +62,6 @@ describe Locomotive::Mounter::Writer::Api do
       Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 16
     end
 
-  end
-
-  def delete_current_site
-    Locomotive::Mounter::EngineApi.set_token credentials
-    Locomotive::Mounter::EngineApi.delete('/current_site.json')
   end
 
 end

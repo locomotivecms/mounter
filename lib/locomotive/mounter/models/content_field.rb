@@ -12,6 +12,7 @@ module Locomotive
         field :position,  default: 0
         field :required,  default: false
         field :localized, default: false
+        field :class_slug
 
         # text
         field :text_formatting
@@ -27,6 +28,7 @@ module Locomotive
 
         alias :target :class_name
         alias :target= :class_name=
+        alias :raw_select_options= :select_options=
 
         ## callbacks ##
         set_callback :initialize, :after, :prepare_attributes
