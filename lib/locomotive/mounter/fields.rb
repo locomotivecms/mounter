@@ -48,6 +48,7 @@ module Locomotive
 
         attributes.each do |name, value|
           unless self.class._fields.key?(name.to_sym) || self.respond_to?(:"#{name}=")
+            next if name.to_s == 'id'
             raise FieldDoesNotExistException.new "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
           end
 

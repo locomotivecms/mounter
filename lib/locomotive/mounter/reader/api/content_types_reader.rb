@@ -55,9 +55,9 @@ module Locomotive
           def enable_relationships
             self.items.each do |_, content_type|
               content_type.fields.find_all(&:is_relationship?).each do |field|
-                # look for the target content type from its class name
-                target = self.items.values.find { |_content_type| _content_type.klass_name == field.class_name }
-                field.class_name = target.slug
+                # look for the target content type from its slug
+                target = self.items.keys.find { |k| k == field.class_slug }
+                field.class_name = target
               end
             end
           end
