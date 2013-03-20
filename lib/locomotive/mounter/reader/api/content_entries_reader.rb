@@ -85,7 +85,7 @@ module Locomotive
               when :text
                 self.replace_urls_by_content_assets(original_attributes[field.name])
               when :select
-                field.name_for_select_option(original_attributes[field.name])
+                field.find_select_option(original_attributes[field.name]).try(:name)
               when :date
                 original_attributes["formatted_#{field.name}"]
               when :belongs_to, :many_to_many
@@ -127,6 +127,7 @@ module Locomotive
           # @return [ String ] The content with local urls
           #
           def replace_urls_by_content_assets(content)
+            return "" unless content
             self.mounting_point.content_assets.each do |path, asset|
               content.gsub!(path, asset.local_filepath)
             end

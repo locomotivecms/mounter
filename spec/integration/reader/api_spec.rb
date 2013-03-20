@@ -87,32 +87,32 @@ describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
         @song_template  = @mounting_point.pages['songs/content_type_template']
       end
 
-      it 'has 11 pages' do
-        @mounting_point.pages.size.should == 11
+      it 'has 13 pages' do
+        @mounting_point.pages.size.should == 13
       end
 
       describe '#tree' do
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 6
+          @index.children.size.should == 7
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'archives']
+          @index.children.map(&:fullpath).should == ["music", "about-us", "contact", "store", "events", "songs", "archives"]
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Archives']
+          @index.children.map(&:title).should == ['Music', 'About Us', 'Contact Us', 'Store', 'Events', 'Songs', 'Archives']
         end
 
         it 'also includes nested children' do
-          @index.children.first.children.size.should == 2
-          @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
+          @index.children[1].children.size.should == 2
+          @index.children[1].children.map(&:fullpath).should == ['about-us/jane-doe', 'about-us/john-doe']
         end
 
         it 'localizes the fullpath' do
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children.first.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
+            @index.children[1].children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
           end
         end
 
@@ -137,10 +137,10 @@ describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
 
     describe 'content types' do
 
-      it 'has 4 content types' do
-        @mounting_point.content_types.size.should == 4
-        @mounting_point.content_types.keys.should == %w(events messages songs updates)
-        @mounting_point.content_types.values.map(&:slug).should == %w(events messages songs updates)
+      it 'has 5 content types' do
+        @mounting_point.content_types.size.should == 5
+        @mounting_point.content_types.keys.should == %w(bands events messages songs updates)
+        @mounting_point.content_types.values.map(&:slug).should == %w(bands events messages songs updates)
       end
 
       describe 'a single content type' do
@@ -166,8 +166,8 @@ describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
 
     describe 'content assets' do
 
-      it 'has 1 asset' do      
-        @mounting_point.content_assets.size.should == 1        
+      it 'has 2 assets' do      
+        @mounting_point.content_assets.size.should == 2
       end
 
     end # content assets
@@ -203,8 +203,8 @@ describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
       @mounting_point = @reader.run!(credentials)
     end
 
-    it 'has 26 entries for the 4 content types' do
-      @mounting_point.content_entries.size.should == 26
+    it 'has 29 entries for the 4 content types' do
+      @mounting_point.content_entries.size.should == 29
     end
 
     describe 'a single content entry' do
@@ -245,8 +245,8 @@ describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
       @mounting_point = @reader.run!(credentials)
     end
 
-    it 'has 2 assets' do
-      @mounting_point.theme_assets.size.should == 2
+    it 'has 16 assets' do
+      @mounting_point.theme_assets.size.should == 16
     end
 
   end # theme assets
