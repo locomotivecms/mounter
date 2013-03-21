@@ -2,17 +2,12 @@ require 'spec_helper'
 
 describe Locomotive::Mounter::Writer::Api, :vcr do
 
-  let(:reader) { Locomotive::Mounter::Reader::FileSystem.instance }
-
-  let(:mounting_point) { reader.run!(path: site_path) }
-
-  let(:writer) { Locomotive::Mounter::Writer::Api.instance }
-
   before(:all) do
-    VCR.use_cassette "Writer::Api" do
-      delete_current_site
-      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: false }.merge(credentials))
-    end
+    setup "writer_api_setup"
+  end
+  
+  after(:all) do
+    teardown
   end
 
   describe 'site' do

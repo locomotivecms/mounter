@@ -33,6 +33,11 @@ module Locomotive
           raise WrongCredentials.new("#{response['message']} (#{response.code})")
         end
       end
+      
+      def self.teardown
+        Locomotive::Mounter::EngineApi.default_options[:base_uri] = nil
+        Locomotive::Mounter::EngineApi.default_options[:default_params] = {}
+      end
 
     end
 

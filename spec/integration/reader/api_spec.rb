@@ -1,19 +1,14 @@
 # encoding: UTF-8
 require 'spec_helper'
 
-describe Locomotive::Mounter::Reader::Api, vcr: {match_requests_on: [:host]} do
-  
-  let(:reader) { Locomotive::Mounter::Reader::FileSystem.instance }
-  
-  let(:writer) { Locomotive::Mounter::Writer::Api.instance }
-  
-  let(:mounting_point) { reader.run!(path: site_path) }
+describe Locomotive::Mounter::Reader::Api, :vcr do
   
   before(:all) do
-    VCR.use_cassette "Writer::Api" do
-      delete_current_site
-      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: true }.merge(credentials))
-    end
+    setup "reader_api_setup"
+  end
+  
+  after(:all) do
+    teardown
   end
 
   before(:each) do
