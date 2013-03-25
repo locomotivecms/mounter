@@ -16,6 +16,7 @@ class FakeUploadIO
     io.rewind # ...we don't mess up with the io
   end
 
+  # FIXME: not used
   def to_io
     file = Tempfile.new(self.original_filename)
     file.write(self.body)
@@ -76,7 +77,8 @@ module HTTMultiParty::Multipartable::Webmock
       @_body = value.dup # save it for later
       super(value)
     else
-      puts "[httmultiparty] not an array !!! #{value.class}"
+      # does this case exist for real ? Never observed so far
+      puts "[httmultiparty] not an array !!! #{value.class}."
       raise 'STOP'
     end
   end

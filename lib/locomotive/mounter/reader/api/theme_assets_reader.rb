@@ -30,7 +30,7 @@ module Locomotive
           protected
 
           def safe_attributes
-            %w(_id folder url)
+            %w(_id folder url created_at updated_at)
           end
 
         end

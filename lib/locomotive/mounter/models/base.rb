@@ -6,11 +6,12 @@ module Locomotive
 
         include Locomotive::Mounter::Fields
 
-        attr_accessor :_id, :mounting_point
+        attr_accessor :_id, :mounting_point, :created_at, :updated_at
 
         ## methods ##
 
         def initialize(attributes = {})
+          self.created_at = self.updated_at = Time.now
           self.mounting_point = attributes.delete(:mounting_point)
           super
         end

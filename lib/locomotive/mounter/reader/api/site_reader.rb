@@ -26,7 +26,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(name locales seo_title meta_keywords meta_description domains subdomain)
+            %w(name locales seo_title meta_keywords meta_description domains subdomain created_at updated_at)
           end
 
         end

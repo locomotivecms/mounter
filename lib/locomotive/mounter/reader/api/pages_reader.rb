@@ -98,7 +98,7 @@ module Locomotive
 
               # content type
               if content_type_slug = attributes.delete('target_klass_slug')
-                attributes['content_type'] = self.mounting_point.content_types[content_type_slug] #.values.find { |ct| ct._id == content_type_id }              
+                attributes['content_type'] = self.mounting_point.content_types[content_type_slug] #.values.find { |ct| ct._id == content_type_id }
               end
 
               self.pages[fullpath] = Locomotive::Mounter::Models::Page.new(attributes)
@@ -128,7 +128,7 @@ module Locomotive
           end
 
           # Only keep the minimal attributes from a list of
-          # editable elements hashes. It also replaces the url to 
+          # editable elements hashes. It also replaces the url to
           # content assets by their corresponding local ones.
           #
           # @param [ Array ] list The list of the editable elements with all the attributes
@@ -149,7 +149,8 @@ module Locomotive
             %w(_id title slug handle fullpath translated_in target_klass_slug
             published listed templatized editable_elements
             redirect_url cache_strategy response_type position
-            seo_title meta_keywords meta_description raw_template)
+            seo_title meta_keywords meta_description raw_template
+            created_at updated_at)
           end
 
           # Output simply the tree structure of the pages.

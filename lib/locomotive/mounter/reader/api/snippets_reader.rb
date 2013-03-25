@@ -48,7 +48,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(_id name slug template)
+            %w(_id name slug template created_at updated_at)
           end
 
         end

@@ -14,10 +14,10 @@ module Locomotive
               Locomotive::Mounter::Models::Translation.new(attributes)
             end
           end
-          
+
           protected
           def safe_attributes
-            %w[_id key values]
+            %w[_id key values created_at updated_at]
           end
         end
 

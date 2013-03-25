@@ -159,6 +159,24 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
       end
 
+      describe 'timestamps' do
+
+        it 'has a not nil created_at field' do
+          content_entry.created_at.should_not be_nil
+        end
+
+        it 'has a not nil updated_at field' do
+          content_entry.created_at.should_not be_nil
+        end
+
+        it 'can be set' do
+          date = Time.parse('2013-03-24')
+          another_entry = build_content_entry(created_at: date)
+          another_entry.created_at.should == date
+        end
+
+      end
+
     end
 
   end

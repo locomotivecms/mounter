@@ -66,6 +66,11 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       @mounting_point.site.meta_description.should == 'some meta description'
     end
 
+    it 'has timestamps' do
+      @mounting_point.site.created_at.should_not be_nil
+      @mounting_point.site.updated_at.should_not be_nil
+    end
+
   end # site
 
   describe 'content_assets, content_types and pages' do
@@ -229,6 +234,11 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
       it 'has a text' do
         @content_entry.notes.should match /<p>Lorem ipsum<img src="\/samples\/assets\/.*" alt="" \/><\/p>/
+      end
+
+      it 'has timestamps' do
+        @content_entry.created_at.should_not be_nil
+        @content_entry.updated_at.should_not be_nil
       end
 
     end
