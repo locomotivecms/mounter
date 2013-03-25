@@ -46,8 +46,13 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha',               '0.9.12'
   s.add_development_dependency 'rack-test',           '~> 0.6.1'
   s.add_development_dependency 'ruby-debug-wrapper',  '~> 0.0.1'
-  s.add_development_dependency 'vcr'
-  s.add_development_dependency 'fakeweb'
+  s.add_development_dependency 'vcr', '2.4.0'
+  # s.add_development_dependency 'fakeweb'
+  s.add_development_dependency 'webmock',             '1.9.3'
+  # s.add_development_dependency 'bson'
+  # s.add_development_dependency 'bson_ext'
+  # s.add_development_dependency 'typhoeus', '0.5.0'
+  # s.add_development_dependency 'faraday' #,             '1.9.3'
 
   s.require_path = 'lib'
 

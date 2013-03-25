@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=EFAyaR7zE7hxt2zqPEFx
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=YieN5LB8Rp6oG6ivsGp5
     body:
       encoding: US-ASCII
       string: email=admin%40locomotivecms.com&password=locomotive
@@ -10,41 +10,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
-      location:
-      - http://sample.example.com:3000/locomotive/
-      content-type:
-      - application/json; charset=utf-8
-      x-ua-compatible:
-      - IE=Edge
-      etag:
-      - ! '"176fa4c92b6d330ce66330bf379fe178"'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - 24a4d72579a931850b740e550b9ec4e9
-      x-runtime:
-      - '0.021249'
-      server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      date:
-      - Thu, 21 Mar 2013 11:38:39 GMT
-      content-length:
-      - '32'
-      connection:
+      Date:
+      - Mon, 25 Mar 2013 00:37:30 GMT
+      Status:
+      - 200 OK
+      Connection:
       - close
-      set-cookie:
-      - _dummy_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJWE3MzFiM2Y4YWUwMzk5MTExZDg2ZTg4NWMzMjk5NzFkBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpTmkBpWkBx2kByGkxaQHRaQ5pXmkAaQBpBkkiGXlONGhiZW1aWEtaYXNIcHp2Zng0BjsAVEkiCmZsYXNoBjsARm86JUFjdGlvbkRpc3BhdGNoOjpGbGFzaDo6Rmxhc2hIYXNoCToKQHVzZWRvOghTZXQGOgpAaGFzaHsAOgxAY2xvc2VkRjoNQGZsYXNoZXN7BjoLbm90aWNlSUM6HkFjdGl2ZVN1cHBvcnQ6OlNhZmVCdWZmZXIiI0hhc2ggd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVkLgc7AFQ6D0BodG1sX3NhZmVUOglAbm93MA%3D%3D--cb2d6b090b57c85df2e7d325ef9c8959742dd715;
+      Location:
+      - http://sample.example.com:3000/locomotive/
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"5cefef0dac111431d00835adad522a72"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIzOWIxZTU5Y2Y5MTFjYTFmZjhjNThiNmRkZGZhM2ZjBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpVGkBnGkdaQGHaQH2aUhpOWkB12kAaQBpBkkiGXUzMTZScEVjZW9hTTFtSEVHRmltBjsAVA%3D%3D--e835f6768e320c81c050921b15e0d7bc1a52e26a;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 4b4e99893bf1126de132173385929b62
+      X-Runtime:
+      - '0.020526'
     body:
       encoding: US-ASCII
-      string: ! '{"token":"EFAyaR7zE7hxt2zqPEFx"}'
-    http_version: '1.1'
-  recorded_at: Thu, 21 Mar 2013 11:38:39 GMT
+      string: ! '{"token":"YieN5LB8Rp6oG6ivsGp5"}'
+    http_version: 
+  recorded_at: Mon, 25 Mar 2013 00:37:30 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=EFAyaR7zE7hxt2zqPEFx
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=YieN5LB8Rp6oG6ivsGp5
     body:
       encoding: US-ASCII
       string: ''
@@ -52,42 +50,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
-      content-type:
-      - application/json; charset=utf-8
-      x-ua-compatible:
-      - IE=Edge
-      etag:
-      - ! '"c593e610788338d0ec494e08a763b8fe"'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - 7535d156d5ad8480b21856ce58697d40
-      x-runtime:
-      - '0.019530'
-      server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      date:
-      - Thu, 21 Mar 2013 11:38:39 GMT
-      content-length:
-      - '690'
-      connection:
+      Date:
+      - Mon, 25 Mar 2013 00:37:30 GMT
+      Status:
+      - 200 OK
+      Connection:
       - close
-      set-cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFkNzM0MjUxOWMxZjA4NTc2MzAzMGI5OGQ0MzVlYTRiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpTmkBpWkBx2kByGkxaQHRaQ5pXmkAaQBpBkkiGXlONGhiZW1aWEtaYXNIcHp2Zng0BjsAVA%3D%3D--919e6e435d1aa0acaeefc8e3f7f9f787f3f0a395;
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"76620971730799e70eeb4602c151e75c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWExNzI1NWYyYTI0MGVmZTlmOWRiZjE0YjQ4ZjVhYmEyBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpVGkBnGkdaQGHaQH2aUhpOWkB12kAaQBpBkkiGXUzMTZScEVjZW9hTTFtSEVHRmltBjsAVA%3D%3D--13485002469da7e240569debaffe2e7278f5118e;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 1edfb9c7f44f8e5587a24648f860cd7c
+      X-Runtime:
+      - '0.022660'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"514af129c82cd10792001d94","_id":"514af129c82cd10792001d94","created_at":"2013-03-21T12:38:17+01:00","updated_at":"2013-03-21T12:38:17+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514af129c82cd10792001d96","_id":"514af129c82cd10792001d96","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5149a5c7c82cd10959000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"514f9c3787f64336ef00007c","_id":"514f9c3787f64336ef00007c","created_at":"2013-03-25T01:37:11+01:00","updated_at":"2013-03-25T01:37:11+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514f9c3787f64336ef00007e","_id":"514f9c3787f64336ef00007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"514f9c1887f64334d7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
-    http_version: '1.1'
-  recorded_at: Thu, 21 Mar 2013 11:38:39 GMT
+    http_version: 
+  recorded_at: Mon, 25 Mar 2013 00:37:30 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=EFAyaR7zE7hxt2zqPEFx&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=YieN5LB8Rp6oG6ivsGp5&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -95,42 +91,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
-      content-type:
-      - application/json; charset=utf-8
-      x-ua-compatible:
-      - IE=Edge
-      etag:
-      - ! '"95c4a7755ea7354632033825cb769451"'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - 386aebd4c96779877eb23ddc53970f69
-      x-runtime:
-      - '0.018580'
-      server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      date:
-      - Thu, 21 Mar 2013 11:38:39 GMT
-      content-length:
-      - '693'
-      connection:
+      Date:
+      - Mon, 25 Mar 2013 00:37:30 GMT
+      Status:
+      - 200 OK
+      Connection:
       - close
-      set-cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFjNWE0NDMzYjc0NDQ2MDZiNDEyNmFjNGJlMGVkYTkyBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpTmkBpWkBx2kByGkxaQHRaQ5pXmkAaQBpBkkiGXlONGhiZW1aWEtaYXNIcHp2Zng0BjsAVA%3D%3D--a89561a75c972e3338c2772f9c76f6ba30006d2e;
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"6cffa57a9ece6ce7174f91b7366408dd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJjZGQ3NTUzODMyOWMwNmIzOWYwZTUzMTRkODVlZDMxBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpVGkBnGkdaQGHaQH2aUhpOWkB12kAaQBpBkkiGXUzMTZScEVjZW9hTTFtSEVHRmltBjsAVA%3D%3D--4137f224450deed2bdb25df407a79cf1138c868c;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 21bae96f720168e435bc2ba86873111c
+      X-Runtime:
+      - '0.019760'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"514af129c82cd10792001d94","_id":"514af129c82cd10792001d94","created_at":"2013-03-21T12:38:17+01:00","updated_at":"2013-03-21T12:38:17+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514af129c82cd10792001d96","_id":"514af129c82cd10792001d96","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"5149a5c7c82cd10959000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: ! '{"id":"514f9c3787f64336ef00007c","_id":"514f9c3787f64336ef00007c","created_at":"2013-03-25T01:37:11+01:00","updated_at":"2013-03-25T01:37:11+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514f9c3787f64336ef00007e","_id":"514f9c3787f64336ef00007e","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"514f9c1887f64334d7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
-    http_version: '1.1'
-  recorded_at: Thu, 21 Mar 2013 11:38:39 GMT
+    http_version: 
+  recorded_at: Mon, 25 Mar 2013 00:37:30 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=EFAyaR7zE7hxt2zqPEFx&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=YieN5LB8Rp6oG6ivsGp5&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -138,42 +132,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
-      content-type:
-      - application/json; charset=utf-8
-      x-ua-compatible:
-      - IE=Edge
-      etag:
-      - ! '"c593e610788338d0ec494e08a763b8fe"'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - e39a16e355f4b5d1fd010e3ec7b7c36c
-      x-runtime:
-      - '0.019656'
-      server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      date:
-      - Thu, 21 Mar 2013 11:38:39 GMT
-      content-length:
-      - '690'
-      connection:
+      Date:
+      - Mon, 25 Mar 2013 00:37:30 GMT
+      Status:
+      - 200 OK
+      Connection:
       - close
-      set-cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTA5YWQ3Yjk2ZGZjOTU2NjBjN2U2ZTI0YjI4NzY4MjQxBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpTmkBpWkBx2kByGkxaQHRaQ5pXmkAaQBpBkkiGXlONGhiZW1aWEtaYXNIcHp2Zng0BjsAVA%3D%3D--99d71fb3932d10b535f32b4e2ef7c40391d8e886;
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"76620971730799e70eeb4602c151e75c"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTkxOTY4MmVhNjAwZWNjZTBjMjM0OGNkZGVmN2U1NDlhBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpVGkBnGkdaQGHaQH2aUhpOWkB12kAaQBpBkkiGXUzMTZScEVjZW9hTTFtSEVHRmltBjsAVA%3D%3D--96828eacb758f7ba5315dbb41c7bcdd0bdf0fe82;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 038c706a22f59c9a5115eb9c203d44bd
+      X-Runtime:
+      - '0.021311'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"514af129c82cd10792001d94","_id":"514af129c82cd10792001d94","created_at":"2013-03-21T12:38:17+01:00","updated_at":"2013-03-21T12:38:17+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514af129c82cd10792001d96","_id":"514af129c82cd10792001d96","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5149a5c7c82cd10959000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"514f9c3787f64336ef00007c","_id":"514f9c3787f64336ef00007c","created_at":"2013-03-25T01:37:11+01:00","updated_at":"2013-03-25T01:37:11+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"514f9c3787f64336ef00007e","_id":"514f9c3787f64336ef00007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"514f9c1887f64334d7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
-    http_version: '1.1'
-  recorded_at: Thu, 21 Mar 2013 11:38:39 GMT
+    http_version: 
+  recorded_at: Mon, 25 Mar 2013 00:37:30 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/theme_assets.json?auth_token=EFAyaR7zE7hxt2zqPEFx
+    uri: http://sample.example.com:3000/locomotive/api/theme_assets.json?auth_token=YieN5LB8Rp6oG6ivsGp5
     body:
       encoding: US-ASCII
       string: ''
@@ -181,66 +173,64 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
-      content-type:
-      - application/json; charset=utf-8
-      x-ua-compatible:
-      - IE=Edge
-      etag:
-      - ! '"fb5e665a1fc1cab171877e8ec2a70228"'
-      cache-control:
-      - max-age=0, private, must-revalidate
-      x-request-id:
-      - c32ce486b1846c303b342d165c6bc7bb
-      x-runtime:
-      - '0.045209'
-      server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      date:
-      - Thu, 21 Mar 2013 11:38:39 GMT
-      content-length:
-      - '5499'
-      connection:
+      Date:
+      - Mon, 25 Mar 2013 00:37:30 GMT
+      Status:
+      - 200 OK
+      Connection:
       - close
-      set-cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgyNzM3YTI0YWFiN2QwZmY5N2RhZDA2ZGMxNDZjNzcxBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpTmkBpWkBx2kByGkxaQHRaQ5pXmkAaQBpBkkiGXlONGhiZW1aWEtaYXNIcHp2Zng0BjsAVA%3D%3D--be39c344eddfcd76e8f8036cf1e42467a4d01ff8;
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"aeebb4bb33b7db4ccfafae39d971aa05"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI2Yzc3Zjc4M2ExNWYxNjkzYTdjYzA2OWE4OTNkNDgyBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwhJIhhMb2NvbW90aXZlOjpBY2NvdW50BjsARlsGbzoTQlNPTjo6T2JqZWN0SWQGOgpAZGF0YVsRaVZpVGkBnGkdaQGHaQH2aUhpOWkB12kAaQBpBkkiGXUzMTZScEVjZW9hTTFtSEVHRmltBjsAVA%3D%3D--8d35da04a1bd64104fc27d226c2dc201a9463691;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 49651cfb3616e75fc3a720d0e872971d
+      X-Runtime:
+      - '0.036373'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"514af12fc82cd10792001dff","_id":"514af12fc82cd10792001dff","created_at":"2013-03-21T12:38:23+01:00","updated_at":"21
-        Apr 12:38","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.eot","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive-webfont.eot","size":"37.5
-        KB","raw_size":38434,"can_be_deleted":true},{"id":"514af12fc82cd10792001e00","_id":"514af12fc82cd10792001e00","created_at":"2013-03-21T12:38:23+01:00","updated_at":"21
-        Apr 12:38","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.svg","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive-webfont.svg","size":"49.4
-        KB","raw_size":50602,"can_be_deleted":true},{"id":"514af12fc82cd10792001e01","_id":"514af12fc82cd10792001e01","created_at":"2013-03-21T12:38:23+01:00","updated_at":"21
-        Apr 12:38","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.ttf","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive-webfont.ttf","size":"37.3
-        KB","raw_size":38156,"can_be_deleted":true},{"id":"514af12fc82cd10792001e02","_id":"514af12fc82cd10792001e02","created_at":"2013-03-21T12:38:23+01:00","updated_at":"21
-        Apr 12:38","content_type":"other","folder":"fonts","local_path":"chunkfive-webfont.woff","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive-webfont.woff","size":"21.9
-        KB","raw_size":22384,"can_be_deleted":true},{"id":"514af12fc82cd10792001e03","_id":"514af12fc82cd10792001e03","created_at":"2013-03-21T12:38:23+01:00","updated_at":"21
-        Apr 12:38","content_type":"image","folder":"images","local_path":"top.jpg","url":"/sites/514af129c82cd10792001d94/theme/images/top.jpg","size":"12.4
-        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"514af130c82cd10792001e04","_id":"514af130c82cd10792001e04","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"other","folder":"fonts","local_path":"chunkfive.otf","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive.otf","size":"10.7
-        KB","raw_size":10916,"can_be_deleted":true},{"id":"514af130c82cd10792001e05","_id":"514af130c82cd10792001e05","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"image","folder":"images","local_path":"nav_on.png","url":"/sites/514af129c82cd10792001d94/theme/images/nav_on.png","size":"115
-        Bytes","raw_size":115,"dimensions":"1px x 40px","can_be_deleted":true},{"id":"514af130c82cd10792001e06","_id":"514af130c82cd10792001e06","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"image","folder":"images","local_path":"photo_frame.png","url":"/sites/514af129c82cd10792001d94/theme/images/photo_frame.png","size":"7.6
-        KB","raw_size":7780,"dimensions":"668px x 462px","can_be_deleted":true},{"id":"514af130c82cd10792001e07","_id":"514af130c82cd10792001e07","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"image","folder":"images","local_path":"sep.png","url":"/sites/514af129c82cd10792001d94/theme/images/sep.png","size":"1.18
-        KB","raw_size":1213,"dimensions":"950px x 1px","can_be_deleted":true},{"id":"514af130c82cd10792001e08","_id":"514af130c82cd10792001e08","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"stylesheet","folder":"fonts","local_path":"chunkfive.css","url":"/sites/514af129c82cd10792001d94/theme/fonts/chunkfive.css","size":"307
-        Bytes","raw_size":307,"can_be_deleted":true},{"id":"514af130c82cd10792001e09","_id":"514af130c82cd10792001e09","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"javascript","folder":"javascripts","local_path":"application.js","url":"/sites/514af129c82cd10792001d94/theme/javascripts/application.js","size":"103
-        Bytes","raw_size":103,"can_be_deleted":true},{"id":"514af130c82cd10792001e0a","_id":"514af130c82cd10792001e0a","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"javascript","folder":"javascripts","local_path":"common.js","url":"/sites/514af129c82cd10792001d94/theme/javascripts/common.js","size":"26
-        Bytes","raw_size":26,"can_be_deleted":true},{"id":"514af130c82cd10792001e0b","_id":"514af130c82cd10792001e0b","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"stylesheet","folder":"stylesheets","local_path":"application.css","url":"/sites/514af129c82cd10792001d94/theme/stylesheets/application.css","size":"2.98
-        KB","raw_size":3051,"can_be_deleted":true},{"id":"514af130c82cd10792001e0c","_id":"514af130c82cd10792001e0c","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"stylesheet","folder":"stylesheets/other","local_path":"other/extra.css","url":"/sites/514af129c82cd10792001d94/theme/stylesheets/other/extra.css","size":"55
-        Bytes","raw_size":55,"can_be_deleted":true},{"id":"514af130c82cd10792001e0d","_id":"514af130c82cd10792001e0d","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"stylesheet","folder":"stylesheets/other","local_path":"other/style.css","url":"/sites/514af129c82cd10792001d94/theme/stylesheets/other/style.css","size":"1.64
-        KB","raw_size":1678,"can_be_deleted":true},{"id":"514af130c82cd10792001e0e","_id":"514af130c82cd10792001e0e","created_at":"2013-03-21T12:38:24+01:00","updated_at":"21
-        Apr 12:38","content_type":"stylesheet","folder":"stylesheets","local_path":"reboot.css","url":"/sites/514af129c82cd10792001d94/theme/stylesheets/reboot.css","size":"2.49
+      string: ! '[{"id":"514f9c3c87f64336ef0000e7","_id":"514f9c3c87f64336ef0000e7","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.eot","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive-webfont.eot","size":"37.5
+        KB","raw_size":38434,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000e8","_id":"514f9c3c87f64336ef0000e8","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.svg","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive-webfont.svg","size":"49.4
+        KB","raw_size":50602,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000e9","_id":"514f9c3c87f64336ef0000e9","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"font","folder":"fonts","local_path":"chunkfive-webfont.ttf","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive-webfont.ttf","size":"37.3
+        KB","raw_size":38156,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000ea","_id":"514f9c3c87f64336ef0000ea","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"other","folder":"fonts","local_path":"chunkfive-webfont.woff","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive-webfont.woff","size":"21.9
+        KB","raw_size":22384,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000eb","_id":"514f9c3c87f64336ef0000eb","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"image","folder":"images","local_path":"top.jpg","url":"/sites/514f9c3787f64336ef00007c/theme/images/top.jpg","size":"12.4
+        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"514f9c3c87f64336ef0000ec","_id":"514f9c3c87f64336ef0000ec","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"other","folder":"fonts","local_path":"chunkfive.otf","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive.otf","size":"10.7
+        KB","raw_size":10916,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000ed","_id":"514f9c3c87f64336ef0000ed","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"image","folder":"images","local_path":"nav_on.png","url":"/sites/514f9c3787f64336ef00007c/theme/images/nav_on.png","size":"115
+        Bytes","raw_size":115,"dimensions":"1px x 40px","can_be_deleted":true},{"id":"514f9c3c87f64336ef0000ee","_id":"514f9c3c87f64336ef0000ee","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"image","folder":"images","local_path":"photo_frame.png","url":"/sites/514f9c3787f64336ef00007c/theme/images/photo_frame.png","size":"7.6
+        KB","raw_size":7780,"dimensions":"668px x 462px","can_be_deleted":true},{"id":"514f9c3c87f64336ef0000ef","_id":"514f9c3c87f64336ef0000ef","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"image","folder":"images","local_path":"sep.png","url":"/sites/514f9c3787f64336ef00007c/theme/images/sep.png","size":"1.18
+        KB","raw_size":1213,"dimensions":"950px x 1px","can_be_deleted":true},{"id":"514f9c3c87f64336ef0000f0","_id":"514f9c3c87f64336ef0000f0","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"stylesheet","folder":"fonts","local_path":"chunkfive.css","url":"/sites/514f9c3787f64336ef00007c/theme/fonts/chunkfive.css","size":"307
+        Bytes","raw_size":307,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000f1","_id":"514f9c3c87f64336ef0000f1","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"javascript","folder":"javascripts","local_path":"application.js","url":"/sites/514f9c3787f64336ef00007c/theme/javascripts/application.js","size":"103
+        Bytes","raw_size":103,"can_be_deleted":true},{"id":"514f9c3c87f64336ef0000f2","_id":"514f9c3c87f64336ef0000f2","created_at":"2013-03-25T01:37:16+01:00","updated_at":"25
+        Mar 01:37","content_type":"javascript","folder":"javascripts","local_path":"common.js","url":"/sites/514f9c3787f64336ef00007c/theme/javascripts/common.js","size":"26
+        Bytes","raw_size":26,"can_be_deleted":true},{"id":"514f9c3d87f64336ef0000f3","_id":"514f9c3d87f64336ef0000f3","created_at":"2013-03-25T01:37:17+01:00","updated_at":"25
+        Mar 01:37","content_type":"stylesheet","folder":"stylesheets","local_path":"application.css","url":"/sites/514f9c3787f64336ef00007c/theme/stylesheets/application.css","size":"2.98
+        KB","raw_size":3051,"can_be_deleted":true},{"id":"514f9c3d87f64336ef0000f4","_id":"514f9c3d87f64336ef0000f4","created_at":"2013-03-25T01:37:17+01:00","updated_at":"25
+        Mar 01:37","content_type":"stylesheet","folder":"stylesheets/other","local_path":"other/extra.css","url":"/sites/514f9c3787f64336ef00007c/theme/stylesheets/other/extra.css","size":"55
+        Bytes","raw_size":55,"can_be_deleted":true},{"id":"514f9c3d87f64336ef0000f5","_id":"514f9c3d87f64336ef0000f5","created_at":"2013-03-25T01:37:17+01:00","updated_at":"25
+        Mar 01:37","content_type":"stylesheet","folder":"stylesheets/other","local_path":"other/style.css","url":"/sites/514f9c3787f64336ef00007c/theme/stylesheets/other/style.css","size":"1.64
+        KB","raw_size":1678,"can_be_deleted":true},{"id":"514f9c3d87f64336ef0000f6","_id":"514f9c3d87f64336ef0000f6","created_at":"2013-03-25T01:37:17+01:00","updated_at":"25
+        Mar 01:37","content_type":"stylesheet","folder":"stylesheets","local_path":"reboot.css","url":"/sites/514f9c3787f64336ef00007c/theme/stylesheets/reboot.css","size":"2.49
         KB","raw_size":2547,"can_be_deleted":true}]'
-    http_version: '1.1'
-  recorded_at: Thu, 21 Mar 2013 11:38:39 GMT
+    http_version: 
+  recorded_at: Mon, 25 Mar 2013 00:37:30 GMT
 recorded_with: VCR 2.4.0

@@ -5,7 +5,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
   before(:all) do
     setup "writer_api_setup"
   end
-  
+
   after(:all) do
     teardown
   end
@@ -30,7 +30,6 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
 
     it 'creates all the content entries' do
       Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
-      # Locomotive::Mounter::EngineApi.get('/content_types/products/entries.json').to_a.size.should == 1
     end
 
   end

@@ -354,7 +354,7 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(listed published handle cache_strategy redirect_url response_type templatized content_type_id position)
+          fields = %w(title slug listed published handle cache_strategy redirect_url response_type templatized content_type_id position)
 
           params = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)

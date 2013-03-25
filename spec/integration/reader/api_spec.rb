@@ -2,11 +2,11 @@
 require 'spec_helper'
 
 describe Locomotive::Mounter::Reader::Api, :vcr do
-  
+
   before(:all) do
     setup "reader_api_setup"
   end
-  
+
   after(:all) do
     teardown
   end
@@ -93,27 +93,29 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ["music", "about-us", "contact", "store", "events", "songs", "archives"]
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'archives']
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['Music', 'About Us', 'Contact Us', 'Store', 'Events', 'Songs', 'Archives']
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', 'Archives']
         end
 
         it 'also includes nested children' do
-          @index.children[1].children.size.should == 2
-          @index.children[1].children.map(&:fullpath).should == ['about-us/jane-doe', 'about-us/john-doe']
+          page = @mounting_point.pages['about-us']
+          page.children.size.should == 2
+          page.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
         end
 
         it 'localizes the fullpath' do
+          page = @mounting_point.pages['about-us']
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children[1].children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
+            page.children.map(&:fullpath).should == ['a-notre-sujet/jean-personne', nil]
           end
         end
 
         it 'localizes titles' do
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil]
+            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil]
           end
         end
 
@@ -161,7 +163,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
     describe 'content assets' do
 
-      it 'has 2 assets' do      
+      it 'has 2 assets' do
         @mounting_point.content_assets.size.should == 2
       end
 
@@ -206,7 +208,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
       before(:each) do
         content_type    = @mounting_point.content_types['events']
-        @content_entry  = content_type.entries.first      
+        @content_entry  = content_type.entries.first
       end
 
       it 'has a label' do

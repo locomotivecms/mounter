@@ -10,7 +10,7 @@ module Locomotive
         def self.instance
           @@instance ||= Runner.new(:api)
         end
-        
+
         def self.teardown
           @@instance = nil
         end

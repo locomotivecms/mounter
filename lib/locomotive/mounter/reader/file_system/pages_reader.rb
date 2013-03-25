@@ -108,7 +108,10 @@ module Locomotive
               attributes[:title]    = File.basename(fullpath).humanize
               attributes[:fullpath] = fullpath
 
-              self.pages[fullpath]  = Locomotive::Mounter::Models::Page.new(attributes)
+              page = Locomotive::Mounter::Models::Page.new(attributes)
+              page.mounting_point = self.mounting_point
+
+              self.pages[fullpath] = page
             end
 
             self.pages[fullpath]
