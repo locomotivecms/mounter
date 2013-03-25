@@ -98,6 +98,17 @@ module Locomotive
           self._locales = locales.map(&:to_sym)
         end
 
+        # Set the content type, attribute required for templatized page.
+        # @deprecated. Use content_type= instead.
+        #
+        # @param [ Object ] content_type The content type
+        #
+        def model=(content_type)
+          Locomotive::Mounter.logger.warn 'The model attribute is deprecated. Use content_type instead.'
+          self.content_type = content_type
+        end
+
+
         # Modified setter in order to set correctly the slug
         #
         # @param [ String ] fullpath The fullpath

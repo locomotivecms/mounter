@@ -217,6 +217,16 @@ describe Locomotive::Mounter::Models::Page do
 
   end
 
+  describe 'deprecated methods' do
+
+    it 'responds to the model setter' do
+      Locomotive::Mounter.logger.expects(:warn).with('The model attribute is deprecated. Use content_type instead.')
+      page = build_page(model: 'something')
+      page.content_type.should == 'something'
+    end
+
+  end
+
   def build_page(attributes = {})
     Locomotive::Mounter::Models::Page.new(attributes)
   end
