@@ -37,27 +37,36 @@ module Locomotive
               self.output_resource_op theme_asset
 
               status  = :skipped
+              errors  = []
               file    = self.build_temp_file(theme_asset)
               params  = theme_asset.to_params.merge(source: file, performing_plain_text: false)
 
-              if theme_asset.persisted?
-                # we only update it if the size has changed or if the force option has been set.
-                if self.force? || self.theme_asset_changed?(theme_asset, file)
-                  response = self.put :theme_assets, theme_asset._id, params
-
-                  status = self.response_to_status(response)
+              begin
+                if theme_asset.persisted?
+                  # we only update it if the size has changed or if the force option has been set.
+                  if self.force? || self.theme_asset_changed?(theme_asset, file)
+                    response  = self.put :theme_assets, theme_asset._id, params
+                    status    = self.response_to_status(response)
+                  else
+                    status = :same
+                  end
+                else
+                  response  = self.post :theme_assets, params, nil, true
+                  status    = self.response_to_status(response)
                 end
-              else
-                response = self.post :theme_assets, params, nil, true
-
-                status = self.response_to_status(response)
+              rescue Exception => e
+                if self.force?
+                  status, errors = :error, e.message
+                else
+                  raise e
+                end
               end
 
               # very important. we do not want a huge number of non-closed file descriptor.
               file.close
 
               # track the status
-              self.output_resource_op_status theme_asset, status
+              self.output_resource_op_status theme_asset, status, errors
             end
 
             # make the stuff like they were before

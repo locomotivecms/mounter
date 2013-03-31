@@ -63,6 +63,7 @@ module Locomotive
             success = page.persisted? ? self.update_page(page) : self.create_page(page)
 
             self.output_resource_op_status page, success ? :success : :error
+
             self.flush_log_buffer
           end
 

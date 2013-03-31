@@ -48,17 +48,27 @@ module Locomotive
             "#{name}_writer".camelize
           end.try(:insert, 0, 'SiteWriter')
 
-          begin
-            self.writers.each do |klass|
-              next if only && !only.include?(klass.name.demodulize)
-              writer = klass.new(self.mounting_point, self)
-              writer.prepare
+          self.writers.each do |klass|
+            next if only && !only.include?(klass.name.demodulize)
+            writer = klass.new(self.mounting_point, self)
+            writer.prepare
+            begin
               writer.write
+            rescue Exception => e
+              Locomotive::Mounter.logger.error e.backtrace
+              puts "\n\nBlocking Error: #{e.message.colorize(:red)}"
             end
-          rescue Exception => e
-            Locomotive::Mounter.logger.error e.backtrace
-            puts "\n\nBlocking Error: #{e.message.colorize(:red)}"
           end
+        end
+
+        # By setting the force option to true, some resources (site, content assets, ...etc)
+        # may overide the content of the remote engine during the push operation.
+        # By default, its value is false.
+        #
+        # @return [ Boolean ] True if the force option has been set to true
+        #
+        def force?
+          self.parameters[:force] || false
         end
 
       end

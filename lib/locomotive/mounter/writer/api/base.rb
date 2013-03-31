@@ -12,6 +12,8 @@ module Locomotive
 
           delegate :default_locale, :locales, :site, to: :mounting_point
 
+          delegate :force?, to: :runner
+
           def initialize(mounting_point, runner)
             self.mounting_point = mounting_point
             self.runner         = runner
@@ -22,16 +24,6 @@ module Locomotive
           #
           def prepare
             self.output_title
-          end
-
-          # By setting the force option to true, some resources (site, content assets, ...etc)
-          # may overide the content of the remote engine during the push operation.
-          # By default, its value is false.
-          #
-          # @return [ Boolean ] True if the force option has been set to true
-          #
-          def force?
-            self.runner.parameters[:force] || false
           end
 
           # By setting the data option to true, user content (content entries and
@@ -253,6 +245,7 @@ module Locomotive
             when :success         then 'done'.colorize(color: :green)
             when :error           then 'error'.colorize(color: :red)
             when :skipped         then 'skipped'.colorize(color: :magenta)
+            when :same            then 'same'.colorize(color: :magenta)
             when :not_translated  then 'not translated (itself or parent)'.colorize(color: :yellow)
             end
 
