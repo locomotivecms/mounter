@@ -24,7 +24,7 @@ describe Locomotive::Mounter::Models::Page do
 
     it 'sets a localized attribute' do
       page = build_page(title: 'Hello world')
-      page.localized?(:title).should be_true
+      page.localized_field?(:title).should be_true
       page.title.should == 'Hello world'
       Locomotive::Mounter.with_locale(:fr) { page.title.should be_nil }
 

@@ -10,11 +10,14 @@ describe Locomotive::Mounter::Models::ContentEntry do
     content_type.stubs(:find_field).with(:title).returns(content_field)
     content_type.stubs(:label_to_slug).returns('base')
     content_type.stubs(:find_entry).returns(nil)
+    content_type.stubs(:mounting_point).returns(mounting_point)
 
     content_type
   end
 
   let(:content_entry) { build_content_entry }
+
+  let(:mounting_point) { stub('MountingPoint', default_locale: :en, locales: [:en, :fr]) }
 
   describe 'setting default attributes' do
 
@@ -66,7 +69,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
       it 'can be set' do
         content_entry.text = 'Hello world'
-        content_entry.dynamic_attributes[:text].should == { :en => 'Hello world' }
+        content_entry.dynamic_attributes[:text].should == { en: 'Hello world' }
       end
 
       it 'can be retrieved' do
@@ -88,6 +91,12 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
         it 'keeps track of the locale used at first' do
           content_entry.main_locale.should == :en
+        end
+
+        it 'can return the slug in the default locale if it is nil in the current one' do
+          Locomotive::Mounter.with_locale(:fr) do
+            content_entry._slug.should == 'base'
+          end
         end
 
         it 'uses the value of the main locale' do
@@ -182,7 +191,10 @@ describe Locomotive::Mounter::Models::ContentEntry do
   end
 
   def build_content_entry(attributes = {})
-    Locomotive::Mounter::Models::ContentEntry.new(attributes.merge(content_type: content_type))
+    Locomotive::Mounter::Models::ContentEntry.new(attributes.merge(content_type: content_type)).tap do |entry|
+      entry.mounting_point = content_type.mounting_point
+      entry.send(:set_slug)
+    end
   end
 
 end

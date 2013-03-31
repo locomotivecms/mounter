@@ -52,7 +52,7 @@ module Locomotive
             raise FieldDoesNotExistException.new "[#{self.class.inspect}] setting an unknown attribute '#{name}' with the value '#{value.inspect}'"
           end
 
-          if self.localized?(name) && value.is_a?(Hash)
+          if self.localized_field?(name) && value.is_a?(Hash)
             self.send(:"#{name}_translations=", value)
           else
             self.send(:"#{name}=", value)
@@ -104,7 +104,7 @@ module Locomotive
       #
       # @return [ Boolean ] True if the field is localized
       #
-      def localized?(name)
+      def localized_field?(name)
         method_name = :"#{name}_localized?"
         self.respond_to?(method_name) && self.send(method_name)
       end
@@ -172,10 +172,9 @@ module Locomotive
       def getter(name, options = {})
         value = self.instance_variable_get(:"@#{name}")
         if options[:localized]
-          (value || {})[Locomotive::Mounter.locale]
-        else
-          value
+          value = (value || {})[Locomotive::Mounter.locale]
         end
+        value
       end
 
       def setter(name, value, options = {})

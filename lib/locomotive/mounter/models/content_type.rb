@@ -58,6 +58,9 @@ module Locomotive
         #
         def build_entry(attributes)
           ContentEntry.new(content_type: self).tap do |entry|
+            # set the link to the mounting point
+            entry.mounting_point = self.mounting_point
+
             # do not forget that we are manipulating dynamic fields
             attributes.each do |k, v|
               begin

@@ -20,10 +20,19 @@ module Locomotive
         alias :_permalink= :_slug=
 
         ## callbacks ##
-        # set_callback :initialize, :after, :set_slug
         set_callback :initialize, :after, :set_default_main_locale
 
         ## methods ##
+
+        # By definition, if the label field defined in the content type is
+        # localized, then the content entry will be considered as localized.
+        #
+        # @return [ Boolean ] True if the label field is localized.
+        #
+        def localized?
+          field = self.content_type.label_field
+          !!field.try(:localized)
+        end
 
         # Return the internal label used to identify a content entry
         # in a YAML file for instance. It is based on the first field
@@ -80,10 +89,6 @@ module Locomotive
 
           self.dynamic_fields.each do |field|
             value = self.localized_dynamic_attribute_value(field)
-
-            # value = (self.dynamic_attributes || {})[field.name.to_sym]
-            # value = value.try(:[], Locomotive::Mounter.locale) unless field.is_relationship? || !field.localized
-
             block.call(field, value)
           end
         end
@@ -231,12 +236,35 @@ module Locomotive
               self._slug = self.next_unique_slug if self.slug_already_taken?
             end
           end
+
+          self.fill_with_default_slug
+        end
+
+        # In case the content entry is not localized, we need to make sure
+        # it has an non empty slug for each locale of the site.
+        #
+        def fill_with_default_slug
+          return if self.localized?
+
+          # we do not want to add a new translation because the content entry
+          # is not truly "localized".
+          __locales = self._locales.dup
+
+          default_slug = self._slug_translations[self.mounting_point.default_locale]
+
+          self.mounting_point.locales.each do |locale|
+            Locomotive::Mounter.with_locale(locale) do
+              self._slug = default_slug if self._slug.blank?
+            end
+          end
+
+          self._locales = __locales
         end
 
         # Once the entry has been initialized, we keep track of the current locale
         #
         def set_default_main_locale
-          self.main_locale = Locomotive::Mounter.locale
+          self.main_locale = self.content_type.mounting_point.default_locale
         end
 
         # Return the next available unique slug as a string
