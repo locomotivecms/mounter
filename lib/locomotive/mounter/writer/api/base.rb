@@ -56,7 +56,7 @@ module Locomotive
               return data if raw
               self.raw_data_to_object(data)
             else
-              nil
+              raise WriterException.new(data['error'])
             end
           end
 

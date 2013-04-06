@@ -21,6 +21,7 @@ module Locomotive
 
         ## callbacks ##
         set_callback :initialize, :after, :set_default_main_locale
+        set_callback :initialize, :after, :set_default_dynamic_attributes
 
         ## methods ##
 
@@ -265,6 +266,10 @@ module Locomotive
         #
         def set_default_main_locale
           self.main_locale = self.content_type.mounting_point.default_locale
+        end
+
+        def set_default_dynamic_attributes
+          self.dynamic_attributes ||= {}
         end
 
         # Return the next available unique slug as a string

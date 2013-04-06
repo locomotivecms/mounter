@@ -33,41 +33,6 @@ module Locomotive
             else
               self.create_site
             end
-
-
-            # unless self.site.persisted?
-            #   # create it in the default locale
-            #   Mounter.with_locale(self.default_locale) do
-            #     self.output_locale
-
-            #     self.output_resource_op self.site
-
-            #     if (site = self.post(:sites, self.site.to_hash(false), Mounter.locale)).nil?
-            #       raise Mounter::WriterException.new('Sorry, we are unable to create the site.')
-            #     else
-            #       self.site._id = site['id']
-
-            #       self.output_resource_op_status self.site
-            #     end
-            #   end
-
-            #   # update it in other locales
-            #   self.site.translated_in.each do |locale|
-            #     next if locale.to_s == self.default_locale.to_s
-            #     Mounter.with_locale(locale) do
-            #       self.output_locale
-
-            #       self.output_resource_op self.site
-
-            #       self.put(:sites, self.site._id, self.site.to_hash(false), Mounter.locale)
-
-            #       self.output_resource_op_status self.site
-            #     end
-            #   end
-            # else
-            #   self.output_resource_op self.site
-            #   self.output_resource_op_status self.site, :skipped
-            # end
           end
 
           protected
@@ -120,11 +85,15 @@ module Locomotive
           end
 
           def fetch_site
-            self.get(:current_site).tap do |_site|
-              if _site
-                self.remote_site  = _site
-                self.site._id     = _site['id']
+            begin
+              self.get(:current_site).tap do |_site|
+                if _site
+                  self.remote_site  = _site
+                  self.site._id     = _site['id']
+                end
               end
+            rescue WriterException => e
+              nil
             end
           end
 
