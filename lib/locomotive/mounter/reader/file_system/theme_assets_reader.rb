@@ -52,6 +52,8 @@ module Locomotive
           end
         end
 
+        alias :values :list
+
         # Tell if the file has to be excluded from the array
         # of theme assets. It does not have to be a folder
         # or be in the samples folder or owns a name starting with
