@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'stringex',                        '~> 1.4.0'
 
   s.add_dependency 'multi_json',                      '~> 1.2.0'
-  s.add_dependency 'httmultiparty',                   '~> 0.3.8'
+  s.add_dependency 'httmultiparty',                   '0.3.8'
   s.add_dependency 'json',                            '~> 1.6.5'
   s.add_dependency 'mime-types',                      '~> 1.19'
 
@@ -45,7 +45,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'mocha',               '0.9.12'
   s.add_development_dependency 'rack-test',           '~> 0.6.1'
   s.add_development_dependency 'ruby-debug-wrapper',  '~> 0.0.1'
-  s.add_development_dependency 'vcr', '2.4.0'
+  s.add_development_dependency 'vcr',                 '2.4.0'
+  s.add_development_dependency 'therubyracer',        '~> 0.10.2'
   # s.add_development_dependency 'fakeweb'
   s.add_development_dependency 'webmock',             '1.9.3'
   # s.add_development_dependency 'bson'
