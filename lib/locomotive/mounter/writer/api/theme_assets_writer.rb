@@ -107,7 +107,7 @@ module Locomotive
             File.new(path)
           end
 
-          # Shortcut to get all the local snippets.
+          # Shortcut to get all the theme assets.
           #
           # @return [ Hash ] The hash whose key is the slug and the value is the snippet itself
           #

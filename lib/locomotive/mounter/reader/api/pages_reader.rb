@@ -23,7 +23,8 @@ module Locomotive
 
             self.build_relationships(index, self.pages_to_list)
 
-            # Locomotive::Mounter.with_locale(:fr) { self.to_s } # DEBUG
+            # Locomotive::Mounter.with_locale(:en) { self.to_s } # DEBUG
+
             # self.to_s
 
             self.pages
@@ -44,10 +45,13 @@ module Locomotive
 
           def build_relationships(parent, list)
             list.dup.each do |page|
-              next unless self.is_subpage_of?(page.fullpath, parent.fullpath)
+              next unless self.is_subpage_of?(page, parent)
 
               # attach the page to the parent (order by position), also set the parent
               parent.add_child(page)
+
+              # localize the fullpath in all the locales
+              page.localize_fullpath
 
               # remove the page from the list
               list.delete(page)
@@ -60,6 +64,9 @@ module Locomotive
           # Record pages found in file system
           def fetch
             self.get(:pages).each do |attributes|
+              # remove useless non localized attributes
+              attributes.delete('target_klass_slug')
+
               page = self.add(attributes['fullpath'], attributes)
 
               self.mounting_point.locales[1..-1].each do |locale|
@@ -68,9 +75,6 @@ module Locomotive
 
                 Locomotive::Mounter.with_locale(locale) do
                   localized_attributes = self.get("pages/#{page._id}", locale)
-
-                  # delete useless attributes
-                  localized_attributes.delete('target_klass_slug')
 
                   # isolate the editable elements
                   editable_elements = self.filter_editable_elements(localized_attributes.delete('editable_elements'))
@@ -109,22 +113,25 @@ module Locomotive
             self.pages[fullpath]
           end
 
-          # Tell is a page described by its fullpath is a sub page of a parent page
-          # also described by its fullpath
+          # Tell is a page described is a sub page of a parent page
           #
-          # @param [ String ] fullpath The full path of the page to test
-          # @param [ String ] parent_fullpath The full path of the parent page
+          # @param [ Object ] page The full path of the page to test
+          # @param [ Object ] parent The full path of the parent page
           #
           # @return [ Boolean] True if the page is a sub page of the parent one
           #
-          def is_subpage_of?(fullpath, parent_fullpath)
-            return false if %w(index 404).include?(fullpath)
+          def is_subpage_of?(page, parent)
+            return false if page.index_or_404?
 
-            if parent_fullpath == 'index' && fullpath.split('/').size == 1
+            if page.parent_id # only in the new version of the engine
+              return page.parent_id == parent._id
+            end
+
+            if parent.fullpath == 'index' && page.fullpath.split('/').size == 1
               return true
             end
 
-            File.dirname(fullpath.dasherize) == parent_fullpath.dasherize
+            File.dirname(page.fullpath.dasherize) == parent.fullpath.dasherize
           end
 
           # Only keep the minimal attributes from a list of
@@ -146,7 +153,8 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(_id title slug handle fullpath translated_in target_klass_slug
+            %w(_id title slug handle fullpath translated_in
+            parent_id target_klass_slug
             published listed templatized editable_elements
             redirect_url cache_strategy response_type position
             seo_title meta_keywords meta_description raw_template

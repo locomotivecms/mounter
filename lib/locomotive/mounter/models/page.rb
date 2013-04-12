@@ -108,7 +108,6 @@ module Locomotive
           self.content_type = content_type
         end
 
-
         # Modified setter in order to set correctly the slug
         #
         # @param [ String ] fullpath The fullpath
@@ -315,10 +314,14 @@ module Locomotive
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 
+          # useless attributes
+          _attributes.delete('redirect_type') if self.redirect_url.blank?
+
+          # templatized page
+          _attributes['content_type'] = self.content_type.slug if self.templatized?
+
+          # editable elements
           _attributes['editable_elements'] = {}
-
-          # TODO: templatized / content_type
-
           (self.editable_elements || []).each do |editable_element|
             _attributes['editable_elements'].merge!(editable_element.to_yaml)
           end

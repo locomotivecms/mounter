@@ -16,23 +16,6 @@ module Locomotive
 
           attr_accessor :target_path
 
-          # # Write the data of a mounting point instance to a target folder
-          # #
-          # # @param [ Hash ] parameters The parameters. It should contain the mounting_point and target_path keys.
-          # #
-          # # @return [ String ] The target path
-          # #
-          # def run!(parameters = {})
-          #   self.mounting_point = parameters[:mounting_point]
-            
-
-          #   return nil if self.target_path.blank? || self.mounting_point.nil?
-
-          #   self.write_all
-
-          #   self.target_path
-          # end
-
           # Check the existence of the target_path parameter
           #
           def prepare
@@ -48,17 +31,9 @@ module Locomotive
           # @return [ Array ] List of the writer classes
           #
           def writers
-            [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, ThemeAssetsWriter, TranslationsWriter]
+            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter, TranslationsWriter]
+            # [SiteWriter, PagesWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, ContentAssetsWriter, ThemeAssetsWriter, TranslationsWriter]
           end
-
-          # # Execute all the writers
-          # def write_all
-          #   self.writers.each do |klass|
-          #     writer = klass.new(self.mounting_point, self.target_path)
-          #     writer.prepare
-          #     writer.write
-          #   end
-          # end
 
         end
 

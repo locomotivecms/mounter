@@ -30,9 +30,11 @@ module Locomotive
             page.translated_in.each do |locale|
               default_locale = locale.to_sym == self.mounting_point.default_locale.to_sym
 
-              filepath = (path.blank? ? page.slug : File.join(path, page.slug)).underscore
+              # we do not need the localized version of the filepath
+              filepath = page.fullpath.dasherize
 
               Locomotive::Mounter.with_locale(locale) do
+                # we assume the filepath is already localized
                 self.write_page_to_fs(page, filepath, default_locale ? nil : locale)
               end
             end
@@ -53,16 +55,28 @@ module Locomotive
           #
           #
           def write_page_to_fs(page, filepath, locale)
+            # puts filepath.inspect
             _filepath = "#{filepath}.liquid"
             _filepath.gsub!(/.liquid$/, ".#{locale}.liquid") if locale
 
-            # unless page.template.nil?
-              _filepath = File.join('app', 'views', 'pages', _filepath)
+            _filepath = File.join('app', 'views', 'pages', _filepath)
 
-              self.open_file(_filepath) do |file|
-                file.write(page.to_yaml)
-              end
-            # end
+            self.replace_content_asset_urls(page.source)
+
+            self.open_file(_filepath) do |file|
+              file.write(page.to_yaml)
+            end
+          end
+
+          # The content assets on the remote engine follows the format: /sites/<id>/assets/<type>/<file>
+          # This method replaces these urls by their local representation. <type>/<file>
+          #
+          # @param [ String ] content
+          #
+          def replace_content_asset_urls(content)
+            content.force_encoding('utf-8').gsub!(/[("']\/sites\/[0-9a-f]{24}\/assets\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3}[)"']/) do |path|
+              "/#{$3}"
+            end
           end
 
         end

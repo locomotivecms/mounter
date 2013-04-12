@@ -52,12 +52,7 @@ module Locomotive
             next if only && !only.include?(klass.name.demodulize)
             writer = klass.new(self.mounting_point, self)
             writer.prepare
-            begin
-              writer.write
-            rescue Exception => e
-              Locomotive::Mounter.logger.error e.backtrace
-              puts "\n\nBlocking Error: #{e.message.colorize(:red)}"
-            end
+            writer.write
           end
         end
 

@@ -12,8 +12,8 @@ module Locomotive
 
           # It writes all the snippets into files
           def write
-            self.mounting_point.content_assets.each do |asset|
-              self.open_file(self.target_asset_path(asset)) do |file|
+            self.mounting_point.content_assets.each do |_, asset|
+              self.open_file(self.target_asset_path(asset), 'wb') do |file|
                 file.write(asset.content)
               end
             end
