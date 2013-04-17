@@ -128,7 +128,7 @@ module Locomotive
           #
           def layouts
             self.pages.values.find_all do |page|
-              self.safely_translated?(page) && page.is_layout?
+              self.safely_translated?(page) && self.is_layout?(page)
             end.sort { |a, b| a.depth <=> b.depth }
           end
 
@@ -183,6 +183,27 @@ module Locomotive
             else
               page.parent.translated_in?(Locomotive::Mounter.locale) &&
               page.translated_in?(Locomotive::Mounter.locale)
+            end
+          end
+
+          # Tell if the page is a real layout, which means no extends tag inside
+          # and that at least one of the other pages reference it as a parent template.
+          #
+          # @param [ Object ] page The page
+          #
+          # @return [ Boolean] True if it is a real layout.
+          #
+          def is_layout?(page)
+            if page.is_layout?
+              # has child(ren) extending the page itself ?
+              return true if (page.children || []).any? { |child| child.layout == 'parent' }
+
+              fullpath = page.fullpath_in_default_locale
+
+              # among all the pages, is there a page extending the page itself ?
+              self.pages.values.any? { |_page| _page.fullpath_in_default_locale != fullpath && _page.layout == fullpath }
+            else
+              false # extends not present
             end
           end
 

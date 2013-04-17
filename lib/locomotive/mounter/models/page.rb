@@ -79,7 +79,15 @@ module Locomotive
         # @return [ String ] A non-blank fullpath
         #
         def fullpath_or_default
-          self.fullpath || self.fullpath_translations[self.mounting_point.default_locale]
+          self.fullpath || self.fullpath_in_default_locale
+        end
+
+        # Return the fullpath in the default locale no matter the current locale is.
+        #
+        # @return [ String ] The fullpath
+        #
+        def fullpath_in_default_locale
+          self.fullpath_translations[self.mounting_point.default_locale]
         end
 
         # Get the id of the parent page.
