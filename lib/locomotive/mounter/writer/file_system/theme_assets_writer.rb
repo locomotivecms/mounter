@@ -35,8 +35,9 @@ module Locomotive
           # @param [ String ] content
           #
           def replace_asset_urls(content)
-            content.force_encoding('utf-8').gsub!(/[("']\/sites\/[0-9a-f]{24}\/theme\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+\.[a-z]{2,3})[)"']/) do |path|
-              "#{path.first}/#{$1 + $3}#{path.last}"
+            return if content.blank?
+            content.force_encoding('utf-8').gsub!(/[("']([^)"']*)\/sites\/[0-9a-f]{24}\/theme\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+\.[a-z]{2,3})[)"']/) do |path|
+              "#{path.first}/#{$2 + $4}#{path.last}"
             end
           end
 

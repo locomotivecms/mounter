@@ -139,19 +139,26 @@ module Locomotive
           #
           def theme_asset_changed?(theme_asset, tmp_file)
             if theme_asset.stylesheet_or_javascript?
-              if theme_asset.precompiled?
-                # puts "[#{theme_asset.filename} PRECOMPILED] local size #{File.size(tmp_file)} / remote size #{theme_asset.size}"
-                File.size(tmp_file) != theme_asset.size
-              else
-                # puts "[#{theme_asset.filename}] local size #{File.size(tmp_file)} / remote size #{theme_asset.size}"
-                File.size(tmp_file) != theme_asset.size
-              end
-            else
-              File.size(tmp_file) != theme_asset.size
-            end
+              # we need to compare compiled contents (sass, coffeescript) with the right urls
+              tmp_content = ''
 
-            # (!theme_asset.stylesheet_or_javascript? && File.size(file) != theme_asset.size) ||
-            # (theme_asset.stylesheet_or_javascript? && theme_asset.content.size != theme_asset.size)
+              begin
+                File.open(tmp_file, 'rb') do |file|
+                  tmp_content = file.read.encode('utf-8', replace: nil)
+                end
+              rescue Encoding::UndefinedConversionError => e
+                # in the doubt, we prefer to return true
+                return true
+              end
+
+              tmp_content = tmp_content.gsub(/[("']([^)"']*)\/sites\/[0-9a-f]{24}\/theme\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+\.[a-z]{2,3})[)"']/) do |path|
+                "#{path.first}/#{$2 + $4}#{path.last}"
+              end
+
+              tmp_content != theme_asset.content
+            else
+              Digest::SHA1.file(tmp_file).hexdigest != Digest::SHA1.file(theme_asset.filepath).hexdigest
+            end
           end
 
         end
