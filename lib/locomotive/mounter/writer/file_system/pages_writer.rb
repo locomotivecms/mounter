@@ -71,9 +71,10 @@ module Locomotive
           # The content assets on the remote engine follows the format: /sites/<id>/assets/<type>/<file>
           # This method replaces these urls by their local representation. <type>/<file>
           #
-          # @param [ String ] content
+          # @param [ String ] content The text where the assets will be replaced.
           #
           def replace_content_asset_urls(content)
+            return if content.blank?
             content.force_encoding('utf-8').gsub!(/[("']\/sites\/[0-9a-f]{24}\/assets\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3}[)"']/) do |path|
               "/#{$3}"
             end

@@ -64,9 +64,6 @@ module Locomotive
           # Record pages found in file system
           def fetch
             self.get(:pages).each do |attributes|
-              # remove useless non localized attributes
-              attributes.delete('target_klass_slug')
-
               page = self.add(attributes['fullpath'], attributes)
 
               self.mounting_point.locales[1..-1].each do |locale|
@@ -75,6 +72,9 @@ module Locomotive
 
                 Locomotive::Mounter.with_locale(locale) do
                   localized_attributes = self.get("pages/#{page._id}", locale)
+
+                  # remove useless non localized attributes
+                  localized_attributes.delete('target_klass_slug')
 
                   # isolate the editable elements
                   editable_elements = self.filter_editable_elements(localized_attributes.delete('editable_elements'))
