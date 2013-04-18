@@ -64,7 +64,13 @@ module Locomotive
             # do not forget that we are manipulating dynamic fields
             attributes.each do |k, v|
               begin
-                entry.send(:"#{k}=", v)
+                field = self.find_field(k)
+
+                if field.nil? && v.is_a?(Hash) # not a dynamic field but localized (permalink ?)
+                  entry.send(:"#{k}_translations=", v)
+                else
+                  entry.send(:"#{k}=", v)
+                end
               rescue NoMethodError => e
                 Mounter.logger.error e.backtrace
                 raise FieldDoesNotExistException.new("The '#{self.slug}' content type does not have a field named '#{k}'.")

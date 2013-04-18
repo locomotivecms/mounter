@@ -71,14 +71,10 @@ module Locomotive
 
             _attributes[:_position] = position
 
+            # build the content entry
             entry = content_type.build_entry(_attributes)
 
-            # puts "entry._slug = #{entry._slug.inspect}"
-            # entry.main_locale = Locomotive::Mounter.locale
-            # puts entry.to_hash.inspect
-            # puts entry.dynamic_attributes.inspect
-            # puts entry.send(:sync_translations)
-
+            # and store it
             key = File.join(content_type.slug, entry._slug)
 
             self.items[key] = entry
