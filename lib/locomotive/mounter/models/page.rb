@@ -346,7 +346,8 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published cache_strategy response_type position templatized)
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published cache_strategy
+            response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
           params.delete(:slug) if self.depth == 0
@@ -376,7 +377,9 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(title slug listed published handle cache_strategy redirect_url response_type templatized content_type_id position)
+          fields = %w(title slug listed published handle cache_strategy
+            redirect_url response_type templatized content_type_id position
+            seo_title meta_description meta_keywords)
 
           params = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
