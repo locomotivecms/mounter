@@ -14,8 +14,16 @@ module Locomotive
           # Other local attributes
           attr_accessor :tmp_folder
 
+          # store checksums of remote assets. needed to check if an asset has to be updated or not
+          attr_accessor :checksums
+
+          # the assets stored in the engine have the same base url
+          attr_accessor :remote_base_url
+
           def prepare
             super
+
+            self.checksums = {}
 
             # prepare the place where the assets will be stored temporarily.
             self.create_tmp_folder
@@ -25,8 +33,13 @@ module Locomotive
               remote_path = File.join('/', attributes['folder'], File.basename(attributes['local_path']))
 
               if theme_asset = self.theme_assets[remote_path]
-                theme_asset._id   = attributes['id']
-                theme_asset.size  = attributes['raw_size'].to_i
+                theme_asset._id                 = attributes['id']
+                self.checksums[theme_asset._id] = attributes['checksum']
+              end
+
+              if remote_base_url.nil?
+                attributes['url'] =~ /(.*\/sites\/[0-9a-f]+\/theme)/
+                self.remote_base_url = $1
               end
             end
           end
@@ -44,7 +57,7 @@ module Locomotive
               begin
                 if theme_asset.persisted?
                   # we only update it if the size has changed or if the force option has been set.
-                  if self.force? || self.theme_asset_changed?(theme_asset, file)
+                  if self.force? || self.theme_asset_changed?(theme_asset)
                     response  = self.put :theme_assets, theme_asset._id, params
                     status    = self.response_to_status(response)
                   else
@@ -129,36 +142,28 @@ module Locomotive
             self.theme_assets.values.sort { |a, b| a.priority <=> b.priority }
           end
 
-          # Tell if the theme_asset has changed in order to update it
+          # Tell if the theme_asset has been changed in order to update it
           # if so or simply skip it.
           #
           # @param [ Object ] theme_asset The theme asset
-          # @param [ Object ] tmp_file The size of the file (after precompilation if required)
           #
-          # @return [ Boolean ] True if the source of the 2 assets (local and remote) is different.
+          # @return [ Boolean ] True if the checksums of the local and remote files are different.
           #
-          def theme_asset_changed?(theme_asset, tmp_file)
+          def theme_asset_changed?(theme_asset)
+            content = theme_asset.content
+
             if theme_asset.stylesheet_or_javascript?
-              # we need to compare compiled contents (sass, coffeescript) with the right urls
-              tmp_content = ''
+              # we need to compare compiled contents (sass, coffeescript) with the right urls inside
+              content = content.gsub(/[("'](\/(stylesheets|javascripts|images|media|others)\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3})[)"']/) do |path|
+                sanitized_path = path.gsub(/[("')]/, '').gsub(/^\//, '')
+                sanitized_path = File.join(self.remote_base_url, sanitized_path)
 
-              begin
-                File.open(tmp_file, 'rb') do |file|
-                  tmp_content = file.read.encode('utf-8', replace: nil)
-                end
-              rescue Encoding::UndefinedConversionError => e
-                # in the doubt, we prefer to return true
-                return true
+                "#{path.first}#{sanitized_path}#{path.last}"
               end
-
-              tmp_content = tmp_content.gsub(/[("']([^)"']*)\/sites\/[0-9a-f]{24}\/theme\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+\.[a-z]{2,3})[)"']/) do |path|
-                "#{path.first}/#{$2 + $4}#{path.last}"
-              end
-
-              tmp_content != theme_asset.content
-            else
-              Digest::SHA1.file(tmp_file).hexdigest != Digest::SHA1.file(theme_asset.filepath).hexdigest
             end
+
+            # compare local checksum with the remote one
+            Digest::MD5.hexdigest(content) != self.checksums[theme_asset._id]
           end
 
         end
