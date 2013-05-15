@@ -14,14 +14,15 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     context 'an image' do
 
       let(:filepath) { full_asset_path('images/nav_on.png') }
-      let(:another_filepath) { full_asset_path('images/photo_frame.png') }
 
       it 'returns false if same file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(filepath)).should be_false
+        writer.checksums[theme_asset._id] = 'edb293028f9c07f2d692d066cd8a458a'
+        writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
       it 'returns true if different file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(another_filepath)).should be_true
+        writer.checksums[theme_asset._id] = 42
+        writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
 
     end
@@ -29,14 +30,15 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     context 'a non compiled javascript file' do
 
       let(:filepath) { full_asset_path('javascripts/common.js') }
-      let(:another_filepath) { full_asset_path('images/photo_frame.png') }
 
       it 'returns false if same file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(filepath)).should be_false
+        writer.checksums[theme_asset._id] = 'a3dd9f80d4e861ef29613b9f456175e5'
+        writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
       it 'returns true if different file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(another_filepath)).should be_true
+        writer.checksums[theme_asset._id] = 42
+        writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
 
     end
@@ -44,15 +46,15 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     context 'a compiled javascript file' do
 
       let(:filepath) { full_asset_path('javascripts/application.js.coffee') }
-      let(:another_filepath) { full_asset_path('javascripts/common.js') }
 
       it 'returns false if same file' do
-        _filepath = File.expand_path('../../../../fixtures/application.js', __FILE__)
-        writer.send(:theme_asset_changed?, theme_asset, File.open(_filepath)).should be_false
+        writer.checksums[theme_asset._id] = 'c9c70afc24b19736b0969182f2d04dd3'
+        writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
       it 'returns true if different file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(another_filepath)).should be_true
+        writer.checksums[theme_asset._id] = 42
+        writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
 
     end
@@ -60,15 +62,15 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     context 'a stylesheet file' do
 
       let(:filepath) { full_asset_path('stylesheets/application.css') }
-      let(:another_filepath) { full_asset_path('stylesheets/reboot.css') }
 
       it 'returns false if same file' do
-        _filepath = File.expand_path('../../../../fixtures/application.css', __FILE__)
-        writer.send(:theme_asset_changed?, theme_asset, File.open(_filepath)).should be_false
+        writer.checksums[theme_asset._id] = '1b68068d7097d5c2ebf2a2e41f076efb'
+        writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
       it 'returns true if different file' do
-        writer.send(:theme_asset_changed?, theme_asset, File.open(another_filepath)).should be_true
+        writer.checksums[theme_asset._id] = 42
+        writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
 
     end
@@ -76,7 +78,10 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
   end
 
   def build_theme_asset_writer
-    Locomotive::Mounter::Writer::Api::ThemeAssetsWriter.new(nil, nil)
+    Locomotive::Mounter::Writer::Api::ThemeAssetsWriter.new(nil, nil).tap do |writer|
+      writer.remote_base_url = 'http://cdn.locomotivehosting.com/sites/4c2330706f40d50ae2000005/theme'
+      writer.checksums = {}
+    end
   end
 
   def build_theme_asset(attributes = {})
