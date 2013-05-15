@@ -9,7 +9,7 @@ module SpecHelpers
   end
 
   def credentials
-    { uri: 'sample.example.com:3000/locomotive/api', email: 'admin@locomotivecms.com', password: 'locomotive' }
+    { uri: 'sample.engine.dev:3000/locomotive/api', email: 'admin@locomotivecms.com', password: 'locomotive' }
   end
 
   def reader
@@ -30,11 +30,11 @@ module SpecHelpers
     Locomotive::Mounter::EngineApi.teardown
   end
 
-  def setup(cassette_name)
+  def setup(cassette_name, console = false)
     VCR.use_cassette cassette_name do
       teardown
       delete_current_site
-      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: true }.merge(credentials))
+      writer.run!({ mounting_point: mounting_point, console: console, data: true, force: true }.merge!(credentials))
     end
   end
 end

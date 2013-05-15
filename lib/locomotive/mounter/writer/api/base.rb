@@ -188,6 +188,14 @@ module Locomotive
           end
 
           protected
+          
+          def truncate(string, length = 50, separator = '[...]')
+            if string.length > length
+              string[0..(length - separator.length)] + separator
+            else
+              string
+            end
+          end
 
           def response_to_status(response)
             response ? :success : :error
@@ -248,7 +256,7 @@ module Locomotive
             when :same            then 'same'.colorize(color: :magenta)
             when :not_translated  then 'not translated (itself or parent)'.colorize(color: :yellow)
             end
-
+            
             spaces = '.' * (80 - self.resource_message(resource).size)
             self.log "#{spaces}[#{status_label}]\n"
 
@@ -265,7 +273,7 @@ module Locomotive
           #
           def resource_message(resource)
             op_label = resource.persisted? ? 'updating': 'creating'
-            "    #{op_label} #{resource.to_s}"
+            "    #{op_label} #{truncate(resource.to_s)}"
           end
 
           # Log a message to the console or the logger depending on the options

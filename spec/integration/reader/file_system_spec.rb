@@ -24,12 +24,10 @@ describe Locomotive::Mounter::Reader::FileSystem do
           @template = @mounting_point.pages['latest_product']
         end
 
-        it 'has 3 pages' do
-          @mounting_point.pages.size.should == 5
-        end
+        it { @mounting_point.pages.size.should == 6 }
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 2
+          @index.children.size.should == 3
         end
 
         it 'sets the fullpath to all the pages' do
