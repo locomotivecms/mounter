@@ -58,6 +58,12 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
 
     end
     
+    describe 'translations' do
+      it 'creates all the translations' do
+        Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 1
+      end
+    end
+    
   end
   
   context "with console output" do

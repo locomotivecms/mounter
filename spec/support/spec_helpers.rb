@@ -9,7 +9,7 @@ module SpecHelpers
   end
 
   def credentials
-    { uri: 'sample.engine.dev:3000/locomotive/api', email: 'admin@locomotivecms.com', password: 'locomotive' }
+    { uri: 'sample.example.com:3000/locomotive/api', email: 'admin@locomotivecms.com', password: 'locomotive' }
   end
 
   def reader
