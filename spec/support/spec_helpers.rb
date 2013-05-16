@@ -30,11 +30,11 @@ module SpecHelpers
     Locomotive::Mounter::EngineApi.teardown
   end
 
-  def setup(cassette_name, console = false)
+  def setup(cassette_name, options = {})
     VCR.use_cassette cassette_name do
       teardown
       delete_current_site
-      writer.run!({ mounting_point: mounting_point, console: console, data: true, force: true }.merge!(credentials))
+      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: true }.merge!(options).merge!(credentials))
     end
   end
 end

@@ -59,16 +59,28 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     end
     
     describe 'translations' do
-      it 'creates all the translations' do
-        Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 1
+      it 'does not push translations' do
+        Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 0
       end
     end
     
   end
   
+  context "forcing translations" do
+    before do
+      setup "writer_api_setup_forcing_translations", force_translations: true 
+    end
+    
+    describe 'translations' do
+      it 'creates all the translations' do
+        Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 1
+      end
+    end
+  end
+  
   context "with console output" do
     before do
-      setup "writer_api_setup", true 
+      setup "writer_api_setup", console: true 
     end
     
     it "does not raise an exception due to a very long page title" do
