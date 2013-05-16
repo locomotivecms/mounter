@@ -88,21 +88,21 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       end
 
       it 'has 13 pages' do
-        @mounting_point.pages.size.should == 13
+        @mounting_point.pages.size.should == 14
       end
 
       describe '#tree' do
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 7
+          @index.children.size.should == 8
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'archives']
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives']
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', 'Archives']
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives']
         end
 
         it 'also includes nested children' do
@@ -120,7 +120,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
         it 'localizes titles' do
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil]
+            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil]
           end
         end
 
