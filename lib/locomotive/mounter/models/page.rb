@@ -14,8 +14,8 @@ module Locomotive
         field :redirect_type,     default: 301
         field :template,          localized: true
         field :handle
-        field :listed
-        field :templatized
+        field :listed,            default: true
+        field :templatized,       default: false
         field :content_type
         field :published,         default: true
         field :cache_strategy
