@@ -318,7 +318,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position)
+          fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position seo_title meta_description meta_keywords)
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 

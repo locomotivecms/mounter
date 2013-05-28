@@ -10,8 +10,8 @@ module Locomotive
           end
 
           def write
-            content = self.mounting_point.translations.each_with_object({}) do |(key,translation), hash|
-              hash[key] = translation.values
+            content = self.mounting_point.translations.each_with_object({}) do |translation, hash|
+              hash[translation.key] = translation.values
             end
 
             content = content.empty? ? '' : content.to_yaml

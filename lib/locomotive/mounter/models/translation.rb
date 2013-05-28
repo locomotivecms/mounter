@@ -19,7 +19,7 @@ module Locomotive
         end
 
         def to_s
-          self.key
+          "Translation {#{self.key}: #{self.values}}"
         end
 
       end
