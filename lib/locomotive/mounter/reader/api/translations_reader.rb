@@ -10,8 +10,8 @@ module Locomotive
           # @return [ Array ] The cached list of theme assets
           #
           def read
-            self.items = get(:translations).map do |attributes|
-              Locomotive::Mounter::Models::Translation.new(attributes)
+            self.items = get(:translations).each_with_object({}) do |attributes,hash|
+              hash[attributes['key']] = Locomotive::Mounter::Models::Translation.new(attributes)
             end
           end
 
