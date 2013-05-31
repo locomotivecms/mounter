@@ -80,7 +80,7 @@ module Locomotive
 
             content_type.fields.each do |field|
               value = (case field.type
-              when :string, :boolean
+              when
                 original_attributes[field.name]
               when :text
                 self.replace_urls_by_content_assets(original_attributes[field.name])
@@ -94,7 +94,8 @@ module Locomotive
                 self.relationships << { id: attributes['_id'], field: field.name, target_ids: original_attributes[target_field_name] }
                 nil
               else
-                nil
+                # :string, :boolean, :email, :integer, :float, :tags
+                original_attributes[field.name]
               end)
 
               attributes[field.name] = value unless value.nil?
