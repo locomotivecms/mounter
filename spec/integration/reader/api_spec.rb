@@ -156,8 +156,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
     describe 'content assets' do
 
-      it 'has 2 assets' do
-        @mounting_point.content_assets.size.should == 2
+      it 'has 3 assets' do
+        @mounting_point.content_assets.size.should == 3
       end
 
     end # content assets

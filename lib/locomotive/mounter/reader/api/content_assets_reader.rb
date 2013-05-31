@@ -5,7 +5,7 @@ module Locomotive
 
         class ContentAssetsReader < Base
 
-          # Build the list of theme assets from the public folder with eager loading.
+          # Build the list of content assets from the public folder with eager loading.
           #
           # @return [ Array ] The cached list of theme assets
           #
@@ -17,7 +17,7 @@ module Locomotive
               url = attributes.delete('url')
 
               attributes['folder']  = 'samples/assets'
-              attributes['uri']     = URI(url =~ /http:\/\// ? url : "#{base_uri}#{url}")
+              attributes['uri']     = URI(url =~ /https+:\/\// ? url : "#{base_uri}#{url}")
 
               self.items[url] = Locomotive::Mounter::Models::ContentAsset.new(attributes)
             end

@@ -144,9 +144,15 @@ module Locomotive
           #
           def filter_editable_elements(list)
             list.map do |attributes|
+              type = attributes['type']
               attributes.keep_if { |k, _| %w(_id block slug content).include?(k) }.tap do |hash|
-                self.mounting_point.content_assets.each do |path, asset|
-                  hash['content'].gsub!(path, asset.local_filepath)
+                if type == 'EditableFile'
+                  asset = self.add_content_asset(hash['content'], '/samples/pages')
+                  hash['content'] = asset.local_filepath
+                else
+                  self.mounting_point.content_assets.each do |path, asset|
+                    hash['content'].gsub!(path, asset.local_filepath)
+                  end
                 end
               end
             end

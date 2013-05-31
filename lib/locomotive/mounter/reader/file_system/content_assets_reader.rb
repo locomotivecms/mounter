@@ -10,7 +10,7 @@ module Locomotive
           # @return [ Array ] The list of content assets
           #
           def read
-            self.items = [] # prefer an array over a hash
+            self.items = {} # prefer an array over a hash
 
             self.fetch_from_pages
 
@@ -66,7 +66,7 @@ module Locomotive
             source.to_s.match(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
               filepath  = File.join(self.root_dir, match.to_s)
               folder    = File.dirname(match.to_s)
-              self.items << Locomotive::Mounter::Models::ContentAsset.new(filepath: filepath, folder: folder)
+              self.items[source] = Locomotive::Mounter::Models::ContentAsset.new(filepath: filepath, folder: folder)
             end
           end
 

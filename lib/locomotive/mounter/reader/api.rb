@@ -40,6 +40,14 @@ module Locomotive
             [SiteReader, ContentAssetsReader, SnippetsReader, ContentTypesReader, ContentEntriesReader, PagesReader, ThemeAssetsReader, TranslationsReader]
           end
 
+          # Return the uri with the scheme (http://)
+          #
+          # @return [ String ] The uri starting by http://
+          #
+          def uri_with_scheme
+            self.uri =~ /^http/ ? self.uri : "http://#{self.uri}"
+          end
+
         end
 
       end
