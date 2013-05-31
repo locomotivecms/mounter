@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -10,8 +10,14 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:24:08 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
@@ -20,24 +26,16 @@ http_interactions:
       - ! '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 649ebce5d0b9aab98a334d546dfc5f57
-      X-Runtime:
-      - '0.016496'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:47 GMT
-      Content-Length:
-      - '2'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZhZjQ4YjA4Y2M1MGU3Y2QwNWY2ODU5MzNkMmM4NjQwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--6bce71a09a7c7ec8da26c4b7e46b88d2acf63a7d;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYzMjI5ZTVmMzQyOWYwZGVlNWZmOTc2ZTBhZTk0ZTVmBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--e1930cc9670ffd4bbb076c3a4135e215ccc7e8b5;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - d4c8525e4eacd24930d04d5d771b2eb8
+      X-Runtime:
+      - '0.027141'
     body:
       encoding: US-ASCII
       string: ! '[]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:47 GMT
+  recorded_at: Fri, 31 May 2013 10:24:08 GMT
 recorded_with: VCR 2.4.0

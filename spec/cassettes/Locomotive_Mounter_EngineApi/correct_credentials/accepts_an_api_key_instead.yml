@@ -5,7 +5,7 @@ http_interactions:
     uri: http://www.example.com:3000/locomotive/api/tokens.json
     body:
       encoding: US-ASCII
-      string: email=admin%40locomotivecms.com&password=locomotive
+      string: api_key=d49cd50f6f0d2b163f48fc73cb249f0244c37074
     headers: {}
   response:
     status:
@@ -29,12 +29,12 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcxYTFjMTM4YTRmOWUxNTE0MmVmZWY5YzdmMGVmNzQyBjsAVEkiCmZsYXNoBjsARm86JUFjdGlvbkRpc3BhdGNoOjpGbGFzaDo6Rmxhc2hIYXNoCToKQHVzZWRvOghTZXQGOgpAaGFzaHsAOgxAY2xvc2VkRjoNQGZsYXNoZXN7BjoLbm90aWNlSUM6HkFjdGl2ZVN1cHBvcnQ6OlNhZmVCdWZmZXIiI0hhc2ggd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVkLgc7AFQ6D0BodG1sX3NhZmVUOglAbm93MA%3D%3D--ba3da1f1e6154397be8f4565fe564e83b2bef6db;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY0OTU5ZDVhMmNlMjQzZDE2MTVjODY5OTg2MWViYjhlBjsAVEkiCmZsYXNoBjsARm86JUFjdGlvbkRpc3BhdGNoOjpGbGFzaDo6Rmxhc2hIYXNoCToKQHVzZWRvOghTZXQGOgpAaGFzaHsAOgxAY2xvc2VkRjoNQGZsYXNoZXN7BjoLbm90aWNlSUM6HkFjdGl2ZVN1cHBvcnQ6OlNhZmVCdWZmZXIiI0hhc2ggd2FzIHN1Y2Nlc3NmdWxseSBjcmVhdGVkLgc7AFQ6D0BodG1sX3NhZmVUOglAbm93MA%3D%3D--b8e5774e252d22bbba9d83427502f9dc0de97705;
         domain=.example.com; path=/; HttpOnly
       X-Request-Id:
-      - 1249828820a2f4b6d537c1fcba43686c
+      - c17f392df5fd5ef7b9c789a5e0dc07ed
       X-Runtime:
-      - '0.019260'
+      - '0.023466'
     body:
       encoding: US-ASCII
       string: ! '{"token":"65n6d74zSvmKzhkhXTUp"}'

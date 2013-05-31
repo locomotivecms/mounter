@@ -10,7 +10,7 @@ module Locomotive
         def self.instance
           @@instance ||= Runner.new(:api)
         end
-        
+
         def self.teardown
           @@instance = nil
         end
@@ -22,16 +22,11 @@ module Locomotive
           # Call the LocomotiveCMS engine to get a token for
           # the next API calls
           def prepare
-            self.uri  = self.parameters.delete(:uri)
-            email     = self.parameters.delete(:email)
-            password  = self.parameters.delete(:password)
-
-            if uri.blank? || email.blank? || password.blank?
-              raise Locomotive::Mounter::ReaderException.new("one or many API credentials (uri, email, password) are missing")
-            end
+            credentials = self.parameters.select { |k, _| %w(uri email password api_key).include?(k.to_s) }
+            self.uri    = credentials[:uri]
 
             begin
-              Locomotive::Mounter::EngineApi.set_token(uri, email, password)
+              Locomotive::Mounter::EngineApi.set_token(credentials) #uri, email, password)
             rescue Exception => e
               raise Locomotive::Mounter::ReaderException.new("unable to get an API token: #{e.message}")
             end

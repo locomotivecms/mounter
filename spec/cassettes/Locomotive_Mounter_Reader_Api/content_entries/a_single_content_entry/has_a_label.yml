@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: email=admin%40locomotivecms.com&password=locomotive
@@ -10,8 +10,14 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Location:
       - http://sample.example.com:3000/locomotive/
       Content-Type:
@@ -19,32 +25,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5ebee552fa27435adee37f9f1bc20706"'
+      - ! '"e579cf1c6808c5f0c772ea8df53c7f8b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - f773f24ba46b9d0399a8a61a879bf8c3
-      X-Runtime:
-      - '0.015717'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '32'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7CEkiD3Nlc3Npb25faWQGOgZFRkkiJTA1ZTQ1MzNlZGQ4Y2I2Y2NlMWMwMjhjMjZlNjlkY2FjBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBUSSIKZmxhc2gGOwBGbzolQWN0aW9uRGlzcGF0Y2g6OkZsYXNoOjpGbGFzaEhhc2gJOgpAdXNlZG86CFNldAY6CkBoYXNoewA6DEBjbG9zZWRGOg1AZmxhc2hlc3sGOgtub3RpY2VJQzoeQWN0aXZlU3VwcG9ydDo6U2FmZUJ1ZmZlciIjSGFzaCB3YXMgc3VjY2Vzc2Z1bGx5IGNyZWF0ZWQuBzsAVDoPQGh0bWxfc2FmZVQ6CUBub3cw--188bda8872645147ac1046e644af0e714361d2b6;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM4YmY2OTJhNGExN2MxMDUwNDY3ZWJhMWE1OWRjMmRmBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--fe3058b979e9f042f22b7ba6d158aee65de019de;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 61e3702874f8b144b32361b8139552ac
+      X-Runtime:
+      - '0.025035'
     body:
       encoding: US-ASCII
-      string: ! '{"token":"sqNuhpNxPhaKxN6z1qDs"}'
+      string: ! '{"token":"65n6d74zSvmKzhkhXTUp"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -52,42 +50,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"c6bf3226e7b54e963fee277127db2869"'
+      - ! '"ce6f341e84248171edf370ffa8015708"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 18a90585f04c68ff6fa82f24c46eee52
-      X-Runtime:
-      - '0.016319'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '680'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJThlYzRkOGRlMzMyN2M1YzMzNWQxZjIzMDM2ZDQ2Mzk4BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--e2bb1e9921e4fc10261151a48143bd931016ec07;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTcxNjgwYTYwYzQ3YmEyMzZhOWI5OTNiNWFkZWRmMTdiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--bd4a5992b487aec0cc7b4aa0a34c5038259d3d28;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 44b0f2ffa80dc70e3bf36e9a8973eaf2
+      X-Runtime:
+      - '0.026031'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5d91e66cf1d140043aa","_id":"51a5a5d91e66cf1d140043aa","created_at":"2013-05-29T06:53:13Z","updated_at":"2013-05-29T06:53:13Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a5a5d91e66cf1d140043ab","_id":"51a5a5d91e66cf1d140043ab","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a496de1e66cfe6f7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"51a87a2487f6438c81000269","_id":"51a87a2487f6438c81000269","created_at":"2013-05-31T10:23:32Z","updated_at":"2013-05-31T10:23:32Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a87a2487f6438c8100026a","_id":"51a87a2487f6438c8100026a","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a879e887f643d1d5000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -95,42 +91,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"668692690b434ccabf6d30f280a8c1da"'
+      - ! '"b27cc96d8db72e7852c20537e3314ac7"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 5ea433bd1d4b5a6b905b2414015b456e
-      X-Runtime:
-      - '0.015985'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '683'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTExOGIwY2Y1NDUxMWU2MGEyYjA0NmFmYTc2MDI5ZTQwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--3e42bf710a40b45530028a81483a4b20bb227f18;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTMxMWZlZDk0OTliM2IxOGM1YjAyODBhOTY5YTYyMTMwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--56a8f3c0359780540aa3633cbc44d57fb1a4fe24;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 827a06c659d8a017c848d2fd53bfce7a
+      X-Runtime:
+      - '0.025101'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5d91e66cf1d140043aa","_id":"51a5a5d91e66cf1d140043aa","created_at":"2013-05-29T06:53:13Z","updated_at":"2013-05-29T06:53:13Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a5a5d91e66cf1d140043ab","_id":"51a5a5d91e66cf1d140043ab","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"51a496de1e66cfe6f7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: ! '{"id":"51a87a2487f6438c81000269","_id":"51a87a2487f6438c81000269","created_at":"2013-05-31T10:23:32Z","updated_at":"2013-05-31T10:23:32Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a87a2487f6438c8100026a","_id":"51a87a2487f6438c8100026a","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"51a879e887f643d1d5000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -138,42 +132,40 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"c6bf3226e7b54e963fee277127db2869"'
+      - ! '"ce6f341e84248171edf370ffa8015708"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - dfc93bd2396195b07842bb5e1bcde4f3
-      X-Runtime:
-      - '0.015846'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '680'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZjMTg5MTE4MzkxMDgxOTY3NzllNGNkYjY1NDkxMGI1BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--0579b76cd25f87e5888ec4c12eb2c4ebb6ea88bb;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTE0ODU1NTg5YTM1ZTNlZDlkOGQxYzFjZDlkMWZiZmY1BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--9b2675171ecf1263cebf27a807eba13f2227ab97;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - bea19ff92b252e1b4fde1541d45a94a3
+      X-Runtime:
+      - '0.025797'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5d91e66cf1d140043aa","_id":"51a5a5d91e66cf1d140043aa","created_at":"2013-05-29T06:53:13Z","updated_at":"2013-05-29T06:53:13Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a5a5d91e66cf1d140043ab","_id":"51a5a5d91e66cf1d140043ab","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a496de1e66cfe6f7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"51a87a2487f6438c81000269","_id":"51a87a2487f6438c81000269","created_at":"2013-05-31T10:23:32Z","updated_at":"2013-05-31T10:23:32Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a87a2487f6438c8100026a","_id":"51a87a2487f6438c8100026a","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a879e887f643d1d5000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -181,39 +173,37 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"0ca83c844b7a1e4f08b197889310e3f5"'
+      - ! '"8bbcc982f0742f278be3db100662cd90"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - d37ba5d0df321b228b3189de829daf88
-      X-Runtime:
-      - '0.020362'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '1356'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTU3MDdjYzJlNGY0M2Q0YjMwYjk5MjYwYzFkZmZkNDdiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--667510dce681af73a168d868021d4fe3f20bc6ef;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWYzZmU3MmJlZTI1MDU0MGI3NjkyMWE0NjQzZWQ3NmVhBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--73f89309ca0e92a7b436ba4bb4db341924b8f829;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - cd38d5863bc7ec92d188bc7e074948d8
+      X-Runtime:
+      - '0.029756'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a5a5dc1e66cfbbf90043ef","_id":"51a5a5dc1e66cfbbf90043ef","created_at":"2013-05-29T06:53:17Z","updated_at":"2013-05-29T06:53:17Z","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvUGFwaXBvL1Byb2plY3RzL2xvY29tb3RpdmUvZW5naW5lL3NwZWMvZHVtbXkvcHVibGljL3NpdGVzLzUxYTVhNWQ5MWU2NmNmMWQxNDAwNDNhYS9hc3NldHMvNTFhNWE1ZGMxZTY2Y2ZiYmY5MDA0M2VmL3Bob3RvLmpwZyJdLFsicCIsInRodW1iIiwiODV4ODUjIl1d/photo.jpg","url":"/sites/51a5a5d91e66cf1d140043aa/assets/51a5a5dc1e66cfbbf90043ef/photo.jpg","content_type_text":"image"},{"id":"51a5a5dd1e66cf67270043f4","_id":"51a5a5dd1e66cf67270043f4","created_at":"2013-05-29T06:53:17Z","updated_at":"2013-05-29T06:53:17Z","content_type":"image","width":602,"height":393,"filename":"photo_2.jpg","full_filename":"photo_2.jpg","short_name":"photo_2.jpg","extname":"jpg","raw_size":165883,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvUGFwaXBvL1Byb2plY3RzL2xvY29tb3RpdmUvZW5naW5lL3NwZWMvZHVtbXkvcHVibGljL3NpdGVzLzUxYTVhNWQ5MWU2NmNmMWQxNDAwNDNhYS9hc3NldHMvNTFhNWE1ZGQxZTY2Y2Y2NzI3MDA0M2Y0L3Bob3RvXzIuanBnIl0sWyJwIiwidGh1bWIiLCI4NXg4NSMiXV0/photo_2.jpg","url":"/sites/51a5a5d91e66cf1d140043aa/assets/51a5a5dd1e66cf67270043f4/photo_2.jpg","content_type_text":"image"}]'
+      string: ! '[{"id":"51a87a2787f6438c810002ae","_id":"51a87a2787f6438c810002ae","created_at":"2013-05-31T10:23:36Z","updated_at":"2013-05-31T10:23:36Z","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWE4N2EyNDg3ZjY0MzhjODEwMDAyNjkvYXNzZXRzLzUxYTg3YTI3ODdmNjQzOGM4MTAwMDJhZS9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/51a87a2487f6438c81000269/assets/51a87a2787f6438c810002ae/photo.jpg","content_type_text":"image"},{"id":"51a87a2887f6438c810002b3","_id":"51a87a2887f6438c810002b3","created_at":"2013-05-31T10:23:36Z","updated_at":"2013-05-31T10:23:36Z","content_type":"image","width":602,"height":393,"filename":"photo_2.jpg","full_filename":"photo_2.jpg","short_name":"photo_2.jpg","extname":"jpg","raw_size":165883,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWE4N2EyNDg3ZjY0MzhjODEwMDAyNjkvYXNzZXRzLzUxYTg3YTI4ODdmNjQzOGM4MTAwMDJiMy9waG90b18yLmpwZyJdLFsicCIsInRodW1iIiwiODV4ODUjIl1d/photo_2.jpg","url":"/sites/51a87a2487f6438c81000269/assets/51a87a2887f6438c810002b3/photo_2.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -222,8 +212,17 @@ http_interactions:
     status:
       code: 200
       message: !binary |-
-        T0sg
+        T0s=
     headers:
+      !binary "RGF0ZQ==":
+      - !binary |-
+        RnJpLCAzMSBNYXkgMjAxMyAxMDoyMzo1MCBHTVQ=
+      !binary "U3RhdHVz":
+      - !binary |-
+        MjAwIE9L
+      !binary "Q29ubmVjdGlvbg==":
+      - !binary |-
+        Y2xvc2U=
       !binary "Q29udGVudC1UeXBl":
       - !binary |-
         YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
@@ -232,106 +231,94 @@ http_interactions:
         SUU9RWRnZQ==
       !binary "RXRhZw==":
       - !binary |-
-        ImMyNGIyMGQ4OGFiNGU4ZTIyYzQ5NzAzOTE2OGY4NzU3Ig==
+        IjQ1NzMyMTMxNDhiZDBmZjQ1MWY2MGE0NjFmMmE5MGY4Ig==
       !binary "Q2FjaGUtQ29udHJvbA==":
       - !binary |-
         bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        ZDZjZjQyMjQ2MzExNDRlYTMxY2VhYjM5NzIzMzk4NTY=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wNDkyMzY=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        ODAzOQ==
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
       !binary "U2V0LUNvb2tpZQ==":
       - !binary |-
         X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVFZpTVRjMk9HUmxZemt6TVdJMk1UWXpOMkV5TldWak56UXdabU5sTkRJ
-        NEJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
+        a2lKVFk1WVdJMVptUm1ZbVE0TkRsbFptSXlOMk5oWW1Wa01EQTJPR1ZtT1Rn
+        eEJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
         YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLWNkNWJhZjQxNDgzNTA2OTUyYmVjM2Ez
-        NDI4Y2Q4OTJmYTVmZTQ1MzY7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
+        bXBsWTNSSlpDSVJVYWg1NklmMlE5SFZBQUFCU1NJWlFWWk1kVXhOTm5FemR6
+        RlJTbUpXY1hONmMxSUdPd0JVLS1hZDBmYzg3NDY4ODFhZjhjMmFhOWI1ZjU0
+        Zjk2OTAyZDRhZGVkOWM2OyBkb21haW49LmV4YW1wbGUuY29tOyBwYXRoPS87
+        IEh0dHBPbmx5
+      !binary "WC1SZXF1ZXN0LUlk":
+      - !binary |-
+        M2EwZTVmZGI4ZTE0YTkzMzhkNzQxMzNkOTkxNmEyNzU=
+      !binary "WC1SdW50aW1l":
+      - !binary |-
+        MC4wNjY5OTU=
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        W3siaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjAiLCJfaWQiOiI1MWE1
-        YTVkYTFlNjZjZjJjZmMwMDQzYjAiLCJjcmVhdGVkX2F0IjoiMjAxMy0wNS0y
-        OVQwNjo1MzoxNFoiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wNS0yOVQwNjo1Mzox
-        NFoiLCJuYW1lIjoiQmFuZHMiLCJzbHVnIjoiYmFuZHMiLCJlbnRyaWVzX2N1
-        c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFhNWE1ZGExZTY2Y2YyY2ZjMDA0M2Ix
-        IiwiX2lkIjoiNTFhNWE1ZGExZTY2Y2YyY2ZjMDA0M2IxIiwibmFtZSI6Im5h
+        W3siaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNmYiLCJfaWQiOiI1MWE4
+        N2EyNTg3ZjY0MzhjODEwMDAyNmYiLCJjcmVhdGVkX2F0IjoiMjAxMy0wNS0z
+        MVQxMDoyMzozM1oiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wNS0zMVQxMDoyMzoz
+        M1oiLCJuYW1lIjoiQmFuZHMiLCJzbHVnIjoiYmFuZHMiLCJlbnRyaWVzX2N1
+        c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjcw
+        IiwiX2lkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjcwIiwibmFtZSI6Im5h
         bWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQi
         OnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQi
-        OiJOYW1lIG9mIHRoZSBiYW5kIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE1
-        YTVkYTFlNjZjZjJjZmMwMDQzYjIiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZjJj
-        ZmMwMDQzYjIiLCJuYW1lIjoibGVhZGVyIiwibGFiZWwiOiJGdWxsbmFtZSBv
+        OiJOYW1lIG9mIHRoZSBiYW5kIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE4
+        N2EyNTg3ZjY0MzhjODEwMDAyNzEiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0Mzhj
+        ODEwMDAyNzEiLCJuYW1lIjoibGVhZGVyIiwibGFiZWwiOiJGdWxsbmFtZSBv
         ZiB0aGUgbGVhZGVyIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxz
         ZSwibG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24i
-        OjF9LHsiaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjMiLCJfaWQiOiI1
-        MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjMiLCJuYW1lIjoia2luZCIsImxhYmVs
+        OjF9LHsiaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzIiLCJfaWQiOiI1
+        MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzIiLCJuYW1lIjoia2luZCIsImxhYmVs
         IjoiTXVzaWMga2luZCAoZ3J1bmdlLCByb2NrLCBwb3AsIGNvdW50cnkpIiwi
         dHlwZSI6InNlbGVjdCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpm
         YWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjIsInNlbGVjdF9vcHRp
-        b25zIjpbeyJfaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjQiLCJuYW1l
-        IjoiZ3J1bmdlIiwicG9zaXRpb24iOjAsImlkIjoiNTFhNWE1ZGExZTY2Y2Yy
-        Y2ZjMDA0M2I0In0seyJfaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjUi
-        LCJuYW1lIjoicm9jayIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTVhNWRhMWU2
-        NmNmMmNmYzAwNDNiNSJ9LHsiX2lkIjoiNTFhNWE1ZGExZTY2Y2YyY2ZjMDA0
-        M2I2IiwibmFtZSI6ImNvdW50cnkiLCJwb3NpdGlvbiI6MiwiaWQiOiI1MWE1
-        YTVkYTFlNjZjZjJjZmMwMDQzYjYifV0sInJhd19zZWxlY3Rfb3B0aW9ucyI6
-        W3siaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjQiLCJuYW1lIjp7ImVu
-        IjoiZ3J1bmdlIn0sInBvc2l0aW9uIjoyfSx7ImlkIjoiNTFhNWE1ZGExZTY2
-        Y2YyY2ZjMDA0M2I1IiwibmFtZSI6eyJlbiI6InJvY2sifSwicG9zaXRpb24i
-        OjJ9LHsiaWQiOiI1MWE1YTVkYTFlNjZjZjJjZmMwMDQzYjYiLCJuYW1lIjp7
-        ImVuIjoiY291bnRyeSJ9LCJwb3NpdGlvbiI6Mn1dfSx7ImlkIjoiNTFhNWE1
-        ZGExZTY2Y2Y4MjZmMDA0M2QwIiwiX2lkIjoiNTFhNWE1ZGExZTY2Y2Y4MjZm
-        MDA0M2QwIiwibmFtZSI6InNvbmdzIiwibGFiZWwiOiJTb25ncyIsInR5cGUi
+        b25zIjpbeyJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzMiLCJuYW1l
+        IjoiZ3J1bmdlIiwicG9zaXRpb24iOjAsImlkIjoiNTFhODdhMjU4N2Y2NDM4
+        YzgxMDAwMjczIn0seyJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzQi
+        LCJuYW1lIjoicm9jayIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTg3YTI1ODdm
+        NjQzOGM4MTAwMDI3NCJ9LHsiX2lkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAw
+        Mjc1IiwibmFtZSI6ImNvdW50cnkiLCJwb3NpdGlvbiI6MiwiaWQiOiI1MWE4
+        N2EyNTg3ZjY0MzhjODEwMDAyNzUifV0sInJhd19zZWxlY3Rfb3B0aW9ucyI6
+        W3siaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzMiLCJuYW1lIjp7ImVu
+        IjoiZ3J1bmdlIn0sInBvc2l0aW9uIjoyfSx7ImlkIjoiNTFhODdhMjU4N2Y2
+        NDM4YzgxMDAwMjc0IiwibmFtZSI6eyJlbiI6InJvY2sifSwicG9zaXRpb24i
+        OjJ9LHsiaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyNzUiLCJuYW1lIjp7
+        ImVuIjoiY291bnRyeSJ9LCJwb3NpdGlvbiI6Mn1dfSx7ImlkIjoiNTFhODdh
+        MjU4N2Y2NDM4YzgxMDAwMjhmIiwiX2lkIjoiNTFhODdhMjU4N2Y2NDM4Yzgx
+        MDAwMjhmIiwibmFtZSI6InNvbmdzIiwibGFiZWwiOiJTb25ncyIsInR5cGUi
         OiJoYXNfbWFueSIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpmYWxz
         ZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjMsImNsYXNzX25hbWUiOiJM
-        b2NvbW90aXZlOjpDb250ZW50RW50cnk1MWE1YTVkYTFlNjZjZjU1NmMwMDQz
-        YzEiLCJpbnZlcnNlX29mIjoiYmFuZCIsInVpX2VuYWJsZWQiOnRydWUsImNs
+        b2NvbW90aXZlOjpDb250ZW50RW50cnk1MWE4N2EyNTg3ZjY0MzhjODEwMDAy
+        ODAiLCJpbnZlcnNlX29mIjoiYmFuZCIsInVpX2VuYWJsZWQiOnRydWUsImNs
         YXNzX3NsdWciOiJzb25ncyJ9XSwiZGVzY3JpcHRpb24iOiJMaXN0IG9mIGJh
         bmRzIiwibGFiZWxfZmllbGRfbmFtZSI6Im5hbWUiLCJvcmRlcl9ieSI6IjUx
-        YTVhNWRhMWU2NmNmMmNmYzAwNDNiMSIsIm9yZGVyX2RpcmVjdGlvbiI6ImFz
+        YTg3YTI1ODdmNjQzOGM4MTAwMDI3MCIsIm9yZGVyX2RpcmVjdGlvbiI6ImFz
         YyIsIm9yZGVyX2J5X2ZpZWxkX25hbWUiOiJuYW1lIiwicHVibGljX3N1Ym1p
         c3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNzaW9uX2FjY291
-        bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTVhNWRhMWU2NmNmMTM4ODAwNDNi
-        NyIsIl9pZCI6IjUxYTVhNWRhMWU2NmNmMTM4ODAwNDNiNyIsImNyZWF0ZWRf
-        YXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE0WiIsInVwZGF0ZWRfYXQiOiIyMDEz
-        LTA1LTI5VDA2OjUzOjE0WiIsIm5hbWUiOiJFdmVudHMiLCJzbHVnIjoiZXZl
-        bnRzIiwiZW50cmllc19jdXN0b21fZmllbGRzIjpbeyJpZCI6IjUxYTVhNWRh
-        MWU2NmNmMTM4ODAwNDNiOCIsIl9pZCI6IjUxYTVhNWRhMWU2NmNmMTM4ODAw
-        NDNiOCIsIm5hbWUiOiJwbGFjZSIsImxhYmVsIjoiUGxhY2UiLCJ0eXBlIjoi
+        bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI3
+        NiIsIl9pZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI3NiIsImNyZWF0ZWRf
+        YXQiOiIyMDEzLTA1LTMxVDEwOjIzOjMzWiIsInVwZGF0ZWRfYXQiOiIyMDEz
+        LTA1LTMxVDEwOjIzOjMzWiIsIm5hbWUiOiJFdmVudHMiLCJzbHVnIjoiZXZl
+        bnRzIiwiZW50cmllc19jdXN0b21fZmllbGRzIjpbeyJpZCI6IjUxYTg3YTI1
+        ODdmNjQzOGM4MTAwMDI3NyIsIl9pZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAw
+        MDI3NyIsIm5hbWUiOiJwbGFjZSIsImxhYmVsIjoiUGxhY2UiLCJ0eXBlIjoi
         c3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVu
         aXF1ZSI6ZmFsc2UsImhpbnQiOiJOYW1lIG9mIHRoZSBwbGFjZSIsInBvc2l0
-        aW9uIjowfSx7ImlkIjoiNTFhNWE1ZGExZTY2Y2YxMzg4MDA0M2I5IiwiX2lk
-        IjoiNTFhNWE1ZGExZTY2Y2YxMzg4MDA0M2I5IiwibmFtZSI6ImRhdGUiLCJs
+        aW9uIjowfSx7ImlkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjc4IiwiX2lk
+        IjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjc4IiwibmFtZSI6ImRhdGUiLCJs
         YWJlbCI6IkRhdGUiLCJ0eXBlIjoiZGF0ZSIsInJlcXVpcmVkIjpmYWxzZSwi
         bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwiaGludCI6IkRhdGUg
-        b2YgdGhlIGV2ZW50IiwicG9zaXRpb24iOjF9LHsiaWQiOiI1MWE1YTVkYTFl
-        NjZjZjEzODgwMDQzYmEiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZjEzODgwMDQz
-        YmEiLCJuYW1lIjoiY2l0eSIsImxhYmVsIjoiQ2l0eSBvZiB0aGUgZXZlbnQi
+        b2YgdGhlIGV2ZW50IiwicG9zaXRpb24iOjF9LHsiaWQiOiI1MWE4N2EyNTg3
+        ZjY0MzhjODEwMDAyNzkiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAy
+        NzkiLCJuYW1lIjoiY2l0eSIsImxhYmVsIjoiQ2l0eSBvZiB0aGUgZXZlbnQi
         LCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQi
         OmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUx
-        YTVhNWRhMWU2NmNmMTM4ODAwNDNiYiIsIl9pZCI6IjUxYTVhNWRhMWU2NmNm
-        MTM4ODAwNDNiYiIsIm5hbWUiOiJzdGF0ZSIsImxhYmVsIjoiU3RhdGUgb2Yg
+        YTg3YTI1ODdmNjQzOGM4MTAwMDI3YSIsIl9pZCI6IjUxYTg3YTI1ODdmNjQz
+        OGM4MTAwMDI3YSIsIm5hbWUiOiJzdGF0ZSIsImxhYmVsIjoiU3RhdGUgb2Yg
         dGhlIGV2ZW50IiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxzZSwi
         bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjN9
-        LHsiaWQiOiI1MWE1YTVkYTFlNjZjZjEzODgwMDQzYmMiLCJfaWQiOiI1MWE1
-        YTVkYTFlNjZjZjEzODgwMDQzYmMiLCJuYW1lIjoibm90ZXMiLCJsYWJlbCI6
+        LHsiaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyN2IiLCJfaWQiOiI1MWE4
+        N2EyNTg3ZjY0MzhjODEwMDAyN2IiLCJuYW1lIjoibm90ZXMiLCJsYWJlbCI6
         Ik5vdGVzIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2Fs
         aXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjo0LCJ0ZXh0
         X2Zvcm1hdHRpbmciOiIifV0sImRlc2NyaXB0aW9uIjoiTGlzdCBvZiB1cGNv
@@ -339,21 +326,21 @@ http_interactions:
         cl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJlY3Rpb24iOiJhc2MiLCJv
         cmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9hdCIsInB1YmxpY19zdWJt
         aXNzaW9uX2VuYWJsZWQiOmZhbHNlLCJwdWJsaWNfc3VibWlzc2lvbl9hY2Nv
-        dW50X2VtYWlscyI6W119LHsiaWQiOiI1MWE1YTVkYTFlNjZjZjdiMmYwMDQz
-        YmQiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZjdiMmYwMDQzYmQiLCJjcmVhdGVk
-        X2F0IjoiMjAxMy0wNS0yOVQwNjo1MzoxNFoiLCJ1cGRhdGVkX2F0IjoiMjAx
-        My0wNS0yOVQwNjo1MzoxNFoiLCJuYW1lIjoiTWVzc2FnZXMiLCJzbHVnIjoi
+        dW50X2VtYWlscyI6W119LHsiaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAy
+        N2MiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyN2MiLCJjcmVhdGVk
+        X2F0IjoiMjAxMy0wNS0zMVQxMDoyMzozM1oiLCJ1cGRhdGVkX2F0IjoiMjAx
+        My0wNS0zMVQxMDoyMzozM1oiLCJuYW1lIjoiTWVzc2FnZXMiLCJzbHVnIjoi
         bWVzc2FnZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFh
-        NWE1ZGExZTY2Y2Y3YjJmMDA0M2JlIiwiX2lkIjoiNTFhNWE1ZGExZTY2Y2Y3
-        YjJmMDA0M2JlIiwibmFtZSI6Im5hbWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBl
+        ODdhMjU4N2Y2NDM4YzgxMDAwMjdkIiwiX2lkIjoiNTFhODdhMjU4N2Y2NDM4
+        YzgxMDAwMjdkIiwibmFtZSI6Im5hbWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBl
         Ijoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2Us
         InVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJGdWxsIG5hbWUiLCJwb3NpdGlvbiI6
-        MH0seyJpZCI6IjUxYTVhNWRhMWU2NmNmN2IyZjAwNDNiZiIsIl9pZCI6IjUx
-        YTVhNWRhMWU2NmNmN2IyZjAwNDNiZiIsIm5hbWUiOiJlbWFpbCIsImxhYmVs
+        MH0seyJpZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI3ZSIsIl9pZCI6IjUx
+        YTg3YTI1ODdmNjQzOGM4MTAwMDI3ZSIsIm5hbWUiOiJlbWFpbCIsImxhYmVs
         IjoiRW1haWwiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxv
         Y2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJFbWFpbCIs
-        InBvc2l0aW9uIjoxfSx7ImlkIjoiNTFhNWE1ZGExZTY2Y2Y3YjJmMDA0M2Mw
-        IiwiX2lkIjoiNTFhNWE1ZGExZTY2Y2Y3YjJmMDA0M2MwIiwibmFtZSI6Im1l
+        InBvc2l0aW9uIjoxfSx7ImlkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjdm
+        IiwiX2lkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjdmIiwibmFtZSI6Im1l
         c3NhZ2UiLCJsYWJlbCI6Ik1lc3NhZ2UiLCJ0eXBlIjoidGV4dCIsInJlcXVp
         cmVkIjp0cnVlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJo
         aW50IjoiQ3VzdG9tZXIgbWVzc2FnZSIsInBvc2l0aW9uIjoyLCJ0ZXh0X2Zv
@@ -362,95 +349,95 @@ http_interactions:
         ZSI6Im5hbWUiLCJvcmRlcl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJl
         Y3Rpb24iOiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9h
         dCIsInB1YmxpY19zdWJtaXNzaW9uX2VuYWJsZWQiOnRydWUsInB1YmxpY19z
-        dWJtaXNzaW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTVhNWRh
-        MWU2NmNmNTU2YzAwNDNjMSIsIl9pZCI6IjUxYTVhNWRhMWU2NmNmNTU2YzAw
-        NDNjMSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE0WiIsInVw
-        ZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE0WiIsIm5hbWUiOiJTb25n
+        dWJtaXNzaW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTg3YTI1
+        ODdmNjQzOGM4MTAwMDI4MCIsIl9pZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAw
+        MDI4MCIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTMxVDEwOjIzOjMzWiIsInVw
+        ZGF0ZWRfYXQiOiIyMDEzLTA1LTMxVDEwOjIzOjMzWiIsIm5hbWUiOiJTb25n
         cyIsInNsdWciOiJzb25ncyIsImVudHJpZXNfY3VzdG9tX2ZpZWxkcyI6W3si
-        aWQiOiI1MWE1YTVkYTFlNjZjZjU1NmMwMDQzYzIiLCJfaWQiOiI1MWE1YTVk
-        YTFlNjZjZjU1NmMwMDQzYzIiLCJuYW1lIjoidGl0bGUiLCJsYWJlbCI6IlRp
+        aWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyODEiLCJfaWQiOiI1MWE4N2Ey
+        NTg3ZjY0MzhjODEwMDAyODEiLCJuYW1lIjoidGl0bGUiLCJsYWJlbCI6IlRp
         dGxlIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjp0cnVlLCJsb2NhbGl6
         ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiVGl0bGUgb2YgeW91
-        ciBzb25nIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE1YTVkYTFlNjZjZmM0
-        ZmQwMDQzZDEiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZmM0ZmQwMDQzZDEiLCJu
+        ciBzb25nIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE4N2EyNTg3ZjY0Mzhj
+        ODEwMDAyOTAiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyOTAiLCJu
         YW1lIjoiYmFuZCIsImxhYmVsIjoiQmFuZCIsInR5cGUiOiJiZWxvbmdzX3Rv
         IiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUi
         OmZhbHNlLCJwb3NpdGlvbiI6MSwiY2xhc3NfbmFtZSI6IkxvY29tb3RpdmU6
-        OkNvbnRlbnRFbnRyeTUxYTVhNWRhMWU2NmNmMmNmYzAwNDNiMCIsInVpX2Vu
-        YWJsZWQiOnRydWUsImNsYXNzX3NsdWciOiJiYW5kcyJ9LHsiaWQiOiI1MWE1
-        YTVkYTFlNjZjZjU1NmMwMDQzYzMiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZjU1
-        NmMwMDQzYzMiLCJuYW1lIjoiY292ZXIiLCJsYWJlbCI6IkNvdmVyIiwidHlw
+        OkNvbnRlbnRFbnRyeTUxYTg3YTI1ODdmNjQzOGM4MTAwMDI2ZiIsInVpX2Vu
+        YWJsZWQiOnRydWUsImNsYXNzX3NsdWciOiJiYW5kcyJ9LHsiaWQiOiI1MWE4
+        N2EyNTg3ZjY0MzhjODEwMDAyODIiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0Mzhj
+        ODEwMDAyODIiLCJuYW1lIjoiY292ZXIiLCJsYWJlbCI6IkNvdmVyIiwidHlw
         ZSI6ImZpbGUiLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVkIjpmYWxzZSwi
-        dW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjJ9LHsiaWQiOiI1MWE1YTVkYTFl
-        NjZjZjU1NmMwMDQzYzQiLCJfaWQiOiI1MWE1YTVkYTFlNjZjZjU1NmMwMDQz
-        YzQiLCJuYW1lIjoic2hvcnRfZGVzY3JpcHRpb24iLCJsYWJlbCI6IlNob3J0
+        dW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjJ9LHsiaWQiOiI1MWE4N2EyNTg3
+        ZjY0MzhjODEwMDAyODMiLCJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAy
+        ODMiLCJuYW1lIjoic2hvcnRfZGVzY3JpcHRpb24iLCJsYWJlbCI6IlNob3J0
         IGRlc2NyaXB0aW9uIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2Us
         ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjoz
-        LCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJpZCI6IjUxYTVhNWRhMWU2
-        NmNmNTU2YzAwNDNjNSIsIl9pZCI6IjUxYTVhNWRhMWU2NmNmNTU2YzAwNDNj
-        NSIsIm5hbWUiOiJhdWRpb191cmwiLCJsYWJlbCI6IkF1ZGlvIHVybCIsInR5
+        LCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJpZCI6IjUxYTg3YTI1ODdm
+        NjQzOGM4MTAwMDI4NCIsIl9pZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4
+        NCIsIm5hbWUiOiJhdWRpb191cmwiLCJsYWJlbCI6IkF1ZGlvIHVybCIsInR5
         cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2FsaXplZCI6ZmFs
         c2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJVcmwgdG8gYSBzZXJ2aWNlIGxp
         a2UgQmxpcCBmb3IgaW5zdGFuY2UiLCJwb3NpdGlvbiI6NH0seyJpZCI6IjUx
-        YTVhNWRhMWU2NmNmNTU2YzAwNDNjNiIsIl9pZCI6IjUxYTVhNWRhMWU2NmNm
-        NTU2YzAwNDNjNiIsIm5hbWUiOiJkdXJhdGlvbiIsImxhYmVsIjoiRHVyYXRp
+        YTg3YTI1ODdmNjQzOGM4MTAwMDI4NSIsIl9pZCI6IjUxYTg3YTI1ODdmNjQz
+        OGM4MTAwMDI4NSIsIm5hbWUiOiJkdXJhdGlvbiIsImxhYmVsIjoiRHVyYXRp
         b24iLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6
         ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiZm9ybWF0IGxpa2U6
         IG1tOnNzIiwicG9zaXRpb24iOjV9XSwibGFiZWxfZmllbGRfbmFtZSI6InRp
         dGxlIiwib3JkZXJfYnkiOiJfcG9zaXRpb24iLCJvcmRlcl9kaXJlY3Rpb24i
         OiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiX3Bvc2l0aW9uIiwicHVi
         bGljX3N1Ym1pc3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNz
-        aW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTVhNWRhMWU2NmNm
-        Y2QzMTAwNDNjNyIsIl9pZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjNyIs
-        ImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE0WiIsInVwZGF0ZWRf
-        YXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE0WiIsIm5hbWUiOiJVcGRhdGVzIiwi
+        aW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTg3YTI1ODdmNjQz
+        OGM4MTAwMDI4NiIsIl9pZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4NiIs
+        ImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTMxVDEwOjIzOjMzWiIsInVwZGF0ZWRf
+        YXQiOiIyMDEzLTA1LTMxVDEwOjIzOjMzWiIsIm5hbWUiOiJVcGRhdGVzIiwi
         c2x1ZyI6InVwZGF0ZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7Imlk
-        IjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0M2M4IiwiX2lkIjoiNTFhNWE1ZGEx
-        ZTY2Y2ZjZDMxMDA0M2M4IiwibmFtZSI6InRpdGxlIiwibGFiZWwiOiJUaXRs
+        IjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjg3IiwiX2lkIjoiNTFhODdhMjU4
+        N2Y2NDM4YzgxMDAwMjg3IiwibmFtZSI6InRpdGxlIiwibGFiZWwiOiJUaXRs
         ZSIsInR5cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVk
         Ijp0cnVlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiTm90IGRpc3BsYXllZCBp
-        biB0aGUgd2Vic2l0ZSIsInBvc2l0aW9uIjowfSx7ImlkIjoiNTFhNWE1ZGEx
-        ZTY2Y2ZjZDMxMDA0M2M5IiwiX2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0
-        M2M5IiwibmFtZSI6InRleHQiLCJsYWJlbCI6IlRleHQiLCJ0eXBlIjoidGV4
+        biB0aGUgd2Vic2l0ZSIsInBvc2l0aW9uIjowfSx7ImlkIjoiNTFhODdhMjU4
+        N2Y2NDM4YzgxMDAwMjg4IiwiX2lkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAw
+        Mjg4IiwibmFtZSI6InRleHQiLCJsYWJlbCI6IlRleHQiLCJ0eXBlIjoidGV4
         dCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjp0cnVlLCJ1bmlxdWUi
         OmZhbHNlLCJoaW50IjoiVGV4dCBkaXNwbGF5ZWQgaW4gdGhlIGhvbWUgcGFn
         ZSIsInBvc2l0aW9uIjoxLCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJp
-        ZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjYSIsIl9pZCI6IjUxYTVhNWRh
-        MWU2NmNmY2QzMTAwNDNjYSIsIm5hbWUiOiJjYXRlZ29yeSIsImxhYmVsIjoi
+        ZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4OSIsIl9pZCI6IjUxYTg3YTI1
+        ODdmNjQzOGM4MTAwMDI4OSIsIm5hbWUiOiJjYXRlZ29yeSIsImxhYmVsIjoi
         Q2F0ZWdvcnkiLCJ0eXBlIjoic2VsZWN0IiwicmVxdWlyZWQiOmZhbHNlLCJs
         b2NhbGl6ZWQiOnRydWUsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJQaWNrIGEg
         Y2F0ZWdvcnkiLCJwb3NpdGlvbiI6Miwic2VsZWN0X29wdGlvbnMiOlt7Il9p
-        ZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjYyIsIm5hbWUiOiJHZW5lcmFs
-        IiwicG9zaXRpb24iOjAsImlkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0M2Nj
-        In0seyJfaWQiOiI1MWE1YTVkYTFlNjZjZmNkMzEwMDQzY2QiLCJuYW1lIjoi
-        R2lncyIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAw
-        NDNjZCJ9LHsiX2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0M2NlIiwibmFt
-        ZSI6IkJhbmRzIiwicG9zaXRpb24iOjIsImlkIjoiNTFhNWE1ZGExZTY2Y2Zj
-        ZDMxMDA0M2NlIn0seyJfaWQiOiI1MWE1YTVkYTFlNjZjZmNkMzEwMDQzY2Yi
-        LCJuYW1lIjoiQWxidW1zIiwicG9zaXRpb24iOjMsImlkIjoiNTFhNWE1ZGEx
-        ZTY2Y2ZjZDMxMDA0M2NmIn1dLCJyYXdfc2VsZWN0X29wdGlvbnMiOlt7Imlk
-        IjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0M2NjIiwibmFtZSI6eyJlbiI6Ikdl
+        ZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4YiIsIm5hbWUiOiJHZW5lcmFs
+        IiwicG9zaXRpb24iOjAsImlkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjhi
+        In0seyJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyOGMiLCJuYW1lIjoi
+        R2lncyIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAw
+        MDI4YyJ9LHsiX2lkIjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjhkIiwibmFt
+        ZSI6IkJhbmRzIiwicG9zaXRpb24iOjIsImlkIjoiNTFhODdhMjU4N2Y2NDM4
+        YzgxMDAwMjhkIn0seyJfaWQiOiI1MWE4N2EyNTg3ZjY0MzhjODEwMDAyOGUi
+        LCJuYW1lIjoiQWxidW1zIiwicG9zaXRpb24iOjMsImlkIjoiNTFhODdhMjU4
+        N2Y2NDM4YzgxMDAwMjhlIn1dLCJyYXdfc2VsZWN0X29wdGlvbnMiOlt7Imlk
+        IjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjhiIiwibmFtZSI6eyJlbiI6Ikdl
         bmVyYWwiLCJmciI6IkfDqW7DqXJhbCJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6
-        IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjZCIsIm5hbWUiOnsiZW4iOiJHaWdz
-        IiwiZnIiOiJDb25jZXJ0cyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTVh
-        NWRhMWU2NmNmY2QzMTAwNDNjZSIsIm5hbWUiOnsiZW4iOiJCYW5kcyIsImZy
-        IjoiR3JvdXBlcyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTVhNWRhMWU2
-        NmNmY2QzMTAwNDNjZiIsIm5hbWUiOnsiZW4iOiJBbGJ1bXMifSwicG9zaXRp
-        b24iOjJ9XX0seyJpZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjYiIsIl9p
-        ZCI6IjUxYTVhNWRhMWU2NmNmY2QzMTAwNDNjYiIsIm5hbWUiOiJkYXRlIiwi
+        IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4YyIsIm5hbWUiOnsiZW4iOiJHaWdz
+        IiwiZnIiOiJDb25jZXJ0cyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTg3
+        YTI1ODdmNjQzOGM4MTAwMDI4ZCIsIm5hbWUiOnsiZW4iOiJCYW5kcyIsImZy
+        IjoiR3JvdXBlcyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTg3YTI1ODdm
+        NjQzOGM4MTAwMDI4ZSIsIm5hbWUiOnsiZW4iOiJBbGJ1bXMifSwicG9zaXRp
+        b24iOjJ9XX0seyJpZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4YSIsIl9p
+        ZCI6IjUxYTg3YTI1ODdmNjQzOGM4MTAwMDI4YSIsIm5hbWUiOiJkYXRlIiwi
         bGFiZWwiOiJEYXRlIiwidHlwZSI6ImRhdGUiLCJyZXF1aXJlZCI6ZmFsc2Us
         ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJEYXRl
         IG9mIHRoZSB1cGRhdGUiLCJwb3NpdGlvbiI6M31dLCJkZXNjcmlwdGlvbiI6
         Ikxpc3Qgb2YgdXBkYXRlcyIsImxhYmVsX2ZpZWxkX25hbWUiOiJ0aXRsZSIs
-        Im9yZGVyX2J5IjoiNTFhNWE1ZGExZTY2Y2ZjZDMxMDA0M2NiIiwib3JkZXJf
+        Im9yZGVyX2J5IjoiNTFhODdhMjU4N2Y2NDM4YzgxMDAwMjhhIiwib3JkZXJf
         ZGlyZWN0aW9uIjoiYXNjIiwib3JkZXJfYnlfZmllbGRfbmFtZSI6ImRhdGUi
         LCJwdWJsaWNfc3VibWlzc2lvbl9lbmFibGVkIjpmYWxzZSwicHVibGljX3N1
         Ym1pc3Npb25fYWNjb3VudF9lbWFpbHMiOltdfV0=
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -458,45 +445,43 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"245651d2c9817a511c4185bf747a8327"'
+      - ! '"8151fbb5bb5e1f00a685b464539cb5d8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - c5ceb2be802f310b0a952efc55d4e7cf
-      X-Runtime:
-      - '0.031710'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '1029'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTJmYTc5OTc4Yzk4ZDVjNjlhMzYwYmRmYTNkOWM5ZmVhBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--7d979d82196e1e95e1b180345754a1cde7007269;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWZlNzA2NWY4ZDYzYzhiNTRjYjA2ZTYxMmM5ZTYwOTk5BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--fef672ba38d6ec0803a93f463576b052906578a4;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 3f95dccab21eb047330a5ca03e766617
+      X-Runtime:
+      - '0.043382'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a5a5da1e66cf7b690043d3","_id":"51a5a5da1e66cf7b690043d3","created_at":"2013-05-29T06:53:14Z","updated_at":"2013-05-29T06:53:14Z","_label":"Alice
-        in Chains","_slug":"alice-in-chains","_position":2,"content_type_slug":"bands","name":"Alice
-        in Chains","leader":"Layne","kind":"grunge","kind_id":"51a5a5da1e66cf2cfc0043b4","songs":[]},{"id":"51a5a5da1e66cf7c2d0043d2","_id":"51a5a5da1e66cf7c2d0043d2","created_at":"2013-05-29T06:53:14Z","updated_at":"2013-05-29T06:53:14Z","_label":"Pearl
-        Jam","_slug":"pearl-jam","_position":1,"content_type_slug":"bands","name":"Pearl
-        Jam","leader":"Eddie","kind":"grunge","kind_id":"51a5a5da1e66cf2cfc0043b4","songs":["song-1","song-2","song-3","song-4"]},{"id":"51a5a5da1e66cf90a80043d4","_id":"51a5a5da1e66cf90a80043d4","created_at":"2013-05-29T06:53:14Z","updated_at":"2013-05-29T06:53:14Z","_label":"The
-        who","_slug":"the-who","_position":3,"content_type_slug":"bands","name":"The
-        who","leader":"Peter","kind":"rock","kind_id":"51a5a5da1e66cf2cfc0043b5","songs":["song-5","song-6"]}]'
+      string: ! '[{"id":"51a87a2587f6438c81000292","_id":"51a87a2587f6438c81000292","created_at":"2013-05-31T10:23:33Z","updated_at":"2013-05-31T10:23:33Z","_label":"Alice
+        in Chains","_slug":"alice-in-chains","_position":2,"_visible":true,"content_type_slug":"bands","name":"Alice
+        in Chains","leader":"Layne","kind":"grunge","kind_id":"51a87a2587f6438c81000273","songs":[]},{"id":"51a87a2587f6438c81000291","_id":"51a87a2587f6438c81000291","created_at":"2013-05-31T10:23:33Z","updated_at":"2013-05-31T10:23:33Z","_label":"Pearl
+        Jam","_slug":"pearl-jam","_position":1,"_visible":true,"content_type_slug":"bands","name":"Pearl
+        Jam","leader":"Eddie","kind":"grunge","kind_id":"51a87a2587f6438c81000273","songs":["song-1","song-2","song-3","song-4"]},{"id":"51a87a2587f6438c81000293","_id":"51a87a2587f6438c81000293","created_at":"2013-05-31T10:23:33Z","updated_at":"2013-05-31T10:23:33Z","_label":"The
+        who","_slug":"the-who","_position":3,"_visible":true,"content_type_slug":"bands","name":"The
+        who","leader":"Peter","kind":"rock","kind_id":"51a87a2587f6438c81000274","songs":["song-5","song-6"]}]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -504,62 +489,60 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"f5411bfd2b50b3b0124d3c07a01179f6"'
+      - ! '"d555b83272cc4dfaf9a9ca61338223cd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a641e52bc7a915423ca7ca9f39a9e285
-      X-Runtime:
-      - '0.035165'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '4298'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTljZDVmNmRmYTJiMmE0YTNhODdkZWQ5MjdkOWRlNWU2BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--07dafb548eb53d09cdbec5f3a8ef76179a3feed5;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTk0M2MwNmQ0Yzk3MmIwN2VmNTZjY2QzNmMyNGYyY2ZiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--ddfe93f5cbc1a747275b24e0dd3aa03cf875c165;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 9af77f8ef9b2835bd67c8cb8caf41a1d
+      X-Runtime:
+      - '0.047843'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a5a5da1e66cf85c90043d5","_id":"51a5a5da1e66cf85c90043d5","created_at":"2013-05-29T06:53:14Z","updated_at":"2013-05-29T06:53:14Z","_label":"Avogadro''s
-        Number","_slug":"avogadro-s-number","_position":1,"content_type_slug":"events","place":"Avogadro''s
+      string: ! '[{"id":"51a87a2587f6438c81000294","_id":"51a87a2587f6438c81000294","created_at":"2013-05-31T10:23:33Z","updated_at":"2013-05-31T10:23:33Z","_label":"Avogadro''s
+        Number","_slug":"avogadro-s-number","_position":1,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
         Number","date":"06/11/2012","formatted_date":"06/11/2012","city":"Fort Collins","state":"Colorado","notes":"<p>Lorem
-        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"51a5a5da1e66cf8c900043d6","_id":"51a5a5da1e66cf8c900043d6","created_at":"2013-05-29T06:53:14Z","updated_at":"2013-05-29T06:53:14Z","_label":"Quixote''s
-        True Blue","_slug":"quixote-s-true-blue","_position":2,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"51a5a5db1e66cf2f780043d7","_id":"51a5a5db1e66cf2f780043d7","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Kelly''s
-        Westport Inn","_slug":"kelly-s-westport-inn","_position":3,"content_type_slug":"events","place":"Kelly''s
+        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"51a87a2587f6438c81000295","_id":"51a87a2587f6438c81000295","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Quixote''s
+        True Blue","_slug":"quixote-s-true-blue","_position":2,"_visible":true,"content_type_slug":"events","place":"Quixote''s
+        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"51a87a2687f6438c81000296","_id":"51a87a2687f6438c81000296","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Kelly''s
+        Westport Inn","_slug":"kelly-s-westport-inn","_position":3,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas
-        City","state":"Missouri"},{"id":"51a5a5db1e66cf9ab80043d8","_id":"51a5a5db1e66cf9ab80043d8","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Browne''s
-        Market","_slug":"browne-s-market","_position":4,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"51a5a5db1e66cfeb810043d9","_id":"51a5a5db1e66cfeb810043d9","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":5,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"51a5a5db1e66cf05150043da","_id":"51a5a5db1e66cf05150043da","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"The
-        Belmont","_slug":"the-belmont","_position":6,"content_type_slug":"events","place":"The
-        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"51a5a5db1e66cffb170043db","_id":"51a5a5db1e66cffb170043db","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Avogadro''s
-        Number","_slug":"avogadro-s-number-1","_position":7,"content_type_slug":"events","place":"Avogadro''s
-        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"51a5a5db1e66cfa2180043dc","_id":"51a5a5db1e66cfa2180043dc","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Quixote''s
-        True Blue","_slug":"quixote-s-true-blue-1","_position":8,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"51a5a5db1e66cf06830043dd","_id":"51a5a5db1e66cf06830043dd","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Kelly''s
-        Westport Inn","_slug":"kelly-s-westport-inn-1","_position":9,"content_type_slug":"events","place":"Kelly''s
+        City","state":"Missouri"},{"id":"51a87a2687f6438c81000297","_id":"51a87a2687f6438c81000297","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Browne''s
+        Market","_slug":"browne-s-market","_position":4,"_visible":true,"content_type_slug":"events","place":"Browne''s
+        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"51a87a2687f6438c81000298","_id":"51a87a2687f6438c81000298","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":5,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"51a87a2687f6438c81000299","_id":"51a87a2687f6438c81000299","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"The
+        Belmont","_slug":"the-belmont","_position":6,"_visible":true,"content_type_slug":"events","place":"The
+        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"51a87a2687f6438c8100029a","_id":"51a87a2687f6438c8100029a","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Avogadro''s
+        Number","_slug":"avogadro-s-number-1","_position":7,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
+        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"51a87a2687f6438c8100029b","_id":"51a87a2687f6438c8100029b","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Quixote''s
+        True Blue","_slug":"quixote-s-true-blue-1","_position":8,"_visible":true,"content_type_slug":"events","place":"Quixote''s
+        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"51a87a2687f6438c8100029c","_id":"51a87a2687f6438c8100029c","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Kelly''s
+        Westport Inn","_slug":"kelly-s-westport-inn-1","_position":9,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas
-        City","state":"Missouri"},{"id":"51a5a5db1e66cf3b7e0043de","_id":"51a5a5db1e66cf3b7e0043de","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Browne''s
-        Market","_slug":"browne-s-market-1","_position":10,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"51a5a5db1e66cfab8d0043df","_id":"51a5a5db1e66cfab8d0043df","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":11,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"51a5a5db1e66cf2ab30043e0","_id":"51a5a5db1e66cf2ab30043e0","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"The
-        Belmont","_slug":"the-belmont-1","_position":12,"content_type_slug":"events","place":"The
+        City","state":"Missouri"},{"id":"51a87a2687f6438c8100029d","_id":"51a87a2687f6438c8100029d","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Browne''s
+        Market","_slug":"browne-s-market-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Browne''s
+        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"51a87a2687f6438c8100029e","_id":"51a87a2687f6438c8100029e","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":11,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"51a87a2687f6438c8100029f","_id":"51a87a2687f6438c8100029f","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"The
+        Belmont","_slug":"the-belmont-1","_position":12,"_visible":true,"content_type_slug":"events","place":"The
         Belmont","date":"06/04/2011","formatted_date":"06/04/2011","city":"Hamtramk","state":"Michigan"}]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -567,8 +550,14 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
@@ -577,29 +566,21 @@ http_interactions:
       - ! '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 4538bde22865455b53cbbb875f3eff7e
-      X-Runtime:
-      - '0.020326'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '2'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVhYzNkYzhlNGQyZDFhYTE0YWYxMjc1NjQzNGI0MGYwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--1c231898ecce2a5e6faa8f69310c9dcb167ddcfe;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM4NGM5NDcwYWEyZWQ1MjA4MjBmMTA1ZDIzNGQ1OWY3BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--7dcb9d84a8b9ed19f25c4c48e0fe3a0f0147274d;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 365dadeefabb17d01da2e4493adeaa06
+      X-Runtime:
+      - '0.029423'
     body:
       encoding: US-ASCII
       string: ! '[]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -607,87 +588,85 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"17d7acde60bcf0f8547068c67ea15003"'
+      - ! '"8a49990be2324fa0fa460f7ffec9bd64"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - a033c775ddd0571d7de738fbd6b9e3d2
-      X-Runtime:
-      - '0.037355'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '6479'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFiMjUxYmEzZjY4ZDMxNGZjZTg0NjlkNDU4ZGZjNzk3BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--5089539842e170ff059b27deaf30e0478d975c69;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM5ZGUzYmRjY2I1MWFhMWY5YzJjNzQxYmRjZDcxODY5BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--33c0ee0a7ce67f0762e9effcc278cba90373eb4f;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 94b61ce22e4817640cf004ac8dfc2c99
+      X-Runtime:
+      - '0.051125'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a5a5db1e66cf6a4a0043e1","_id":"51a5a5db1e66cf6a4a0043e1","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #1","_slug":"song-1","_position":1,"content_type_slug":"songs","title":"Song
-        #1","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf6a4a0043e1/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf6a4a0043e1/files/cover.jpg","short_description":"Lorem
+      string: ! '[{"id":"51a87a2687f6438c810002a0","_id":"51a87a2687f6438c810002a0","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #1","_slug":"song-1","_position":1,"_visible":true,"content_type_slug":"songs","title":"Song
+        #1","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a0/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a0/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a5a5db1e66cf5ce20043e2","_id":"51a5a5db1e66cf5ce20043e2","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #2","_slug":"song-2","_position":2,"content_type_slug":"songs","title":"Song
-        #2","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf5ce20043e2/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf5ce20043e2/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a87a2687f6438c810002a1","_id":"51a87a2687f6438c810002a1","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #2","_slug":"song-2","_position":2,"_visible":true,"content_type_slug":"songs","title":"Song
+        #2","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a1/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a1/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a5a5db1e66cf411e0043e3","_id":"51a5a5db1e66cf411e0043e3","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #3","_slug":"song-3","_position":3,"content_type_slug":"songs","title":"Song
-        #3","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf411e0043e3/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf411e0043e3/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a87a2687f6438c810002a2","_id":"51a87a2687f6438c810002a2","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #3","_slug":"song-3","_position":3,"_visible":true,"content_type_slug":"songs","title":"Song
+        #3","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a2/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a2/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a5a5db1e66cf0ab50043e4","_id":"51a5a5db1e66cf0ab50043e4","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #4","_slug":"song-4","_position":4,"content_type_slug":"songs","title":"Song
-        #4","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf0ab50043e4/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf0ab50043e4/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a87a2687f6438c810002a3","_id":"51a87a2687f6438c810002a3","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #4","_slug":"song-4","_position":4,"_visible":true,"content_type_slug":"songs","title":"Song
+        #4","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a3/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a3/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a5a5db1e66cf640e0043e5","_id":"51a5a5db1e66cf640e0043e5","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #5","_slug":"song-5","_position":5,"content_type_slug":"songs","title":"Song
-        #5","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf640e0043e5/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf640e0043e5/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"51a87a2687f6438c810002a4","_id":"51a87a2687f6438c810002a4","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #5","_slug":"song-5","_position":5,"_visible":true,"content_type_slug":"songs","title":"Song
+        #5","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a4/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a4/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"51a5a5db1e66cf7fca0043e6","_id":"51a5a5db1e66cf7fca0043e6","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #6","_slug":"song-6","_position":6,"content_type_slug":"songs","title":"Song
-        #6","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf7fca0043e6/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf7fca0043e6/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"51a87a2687f6438c810002a5","_id":"51a87a2687f6438c810002a5","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Song
+        #6","_slug":"song-6","_position":6,"_visible":true,"content_type_slug":"songs","title":"Song
+        #6","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a5/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a5/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"51a5a5db1e66cf41860043e7","_id":"51a5a5db1e66cf41860043e7","created_at":"2013-05-29T06:53:15Z","updated_at":"2013-05-29T06:53:15Z","_label":"Song
-        #7","_slug":"song-7","_position":7,"content_type_slug":"songs","title":"Song
-        #7","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf41860043e7/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5db1e66cf41860043e7/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"51a87a2687f6438c810002a6","_id":"51a87a2687f6438c810002a6","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Song
+        #7","_slug":"song-7","_position":7,"_visible":true,"content_type_slug":"songs","title":"Song
+        #7","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a6/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a6/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"51a5a5dc1e66cfc3ce0043e8","_id":"51a5a5dc1e66cfc3ce0043e8","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Song
-        #8","_slug":"song-8","_position":8,"content_type_slug":"songs","title":"Song
-        #8","cover":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5dc1e66cfc3ce0043e8/files/cover.jpg","cover_url":"/sites/51a5a5d91e66cf1d140043aa/content_entry/51a5a5dc1e66cfc3ce0043e8/files/cover.jpg","short_description":"Lorem
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"51a87a2687f6438c810002a7","_id":"51a87a2687f6438c810002a7","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:34Z","_label":"Song
+        #8","_slug":"song-8","_position":8,"_visible":true,"content_type_slug":"songs","title":"Song
+        #8","cover":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a7/files/cover.jpg","cover_url":"/sites/51a87a2487f6438c81000269/content_entry/51a87a2687f6438c810002a7/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"}]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=sqNuhpNxPhaKxN6z1qDs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=65n6d74zSvmKzhkhXTUp
     body:
       encoding: US-ASCII
       string: ''
@@ -695,51 +674,49 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b1e4101395b8e74e4255974def332961"'
+      - ! '"5a88bd06ad9003fb3fd62d2ab06f004a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 1e2e90a7e3fc84f376f40a45eeba772f
-      X-Runtime:
-      - '0.029797'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '2512'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTkyMWEzODI1ODAyYTA0ODRmYzZkZDMwYmE5YzdhYjQxBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--3e7da5ecdbc0e462638dd8344a02b79d88ea54b5;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTNiNTc2ZDJmNGM3NWRiMzMwNDgxMjcwZjNhZjZiOGY0BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--b12db6c0614f1500bd5de9eb935d4a35b57e4dba;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - d2d3bcefe1f909de8db7714e9fedea64
+      X-Runtime:
+      - '0.041628'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a5a5dc1e66cf85320043ee","_id":"51a5a5dc1e66cf85320043ee","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #1","_slug":"mise-a-jour-1","_position":5,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"51a5a5dc1e66cfb9d60043ed","_id":"51a5a5dc1e66cfb9d60043ed","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #2","_slug":"mise-a-jour-2","_position":4,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"51a5a5dc1e66cf66ad0043ec","_id":"51a5a5dc1e66cf66ad0043ec","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #3","_slug":"mise-a-jour-3","_position":3,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"51a5a5dc1e66cfb3b00043eb","_id":"51a5a5dc1e66cfb3b00043eb","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #4","_slug":"mise-a-jour-4","_position":2,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"51a5a5dc1e66cf81170043ea","_id":"51a5a5dc1e66cf81170043ea","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #5","_slug":"mise-a-jour-5","_position":1,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"51a5a5dc1e66cfbcaf0043e9","_id":"51a5a5dc1e66cfbcaf0043e9","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #6","_slug":"geniale-mise-a-jour-6","_position":0,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"11/16/2009","formatted_date":"11/16/2009"}]'
+      string: ! '[{"id":"51a87a2787f6438c810002ad","_id":"51a87a2787f6438c810002ad","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #1","_slug":"mise-a-jour-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #1","text":"added some free stuff","category":"General","category_id":"51a87a2587f6438c8100028b","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"51a87a2787f6438c810002ac","_id":"51a87a2787f6438c810002ac","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #2","_slug":"mise-a-jour-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #2","text":"added a chatroom","category":"General","category_id":"51a87a2587f6438c8100028b","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"51a87a2787f6438c810002ab","_id":"51a87a2787f6438c810002ab","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #3","_slug":"mise-a-jour-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #3","text":"site redesign","category":"General","category_id":"51a87a2587f6438c8100028b","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"51a87a2787f6438c810002aa","_id":"51a87a2787f6438c810002aa","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #4","_slug":"mise-a-jour-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"51a87a2587f6438c8100028b","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"51a87a2787f6438c810002a9","_id":"51a87a2787f6438c810002a9","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #5","_slug":"mise-a-jour-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #5","text":"brian posted a new post","category":"General","category_id":"51a87a2587f6438c8100028b","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"51a87a2687f6438c810002a8","_id":"51a87a2687f6438c810002a8","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #6","_slug":"geniale-mise-a-jour-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #6","text":"john posted a new post","category":"General","category_id":"51a87a2587f6438c8100028b","date":"11/16/2009","formatted_date":"11/16/2009"}]'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf85320043ee.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ad.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -747,41 +724,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: ! 'OK '
+      message: OK
     headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"14a4c4226a3fea4f58b97c733fb0209d"'
+      - ! '"034d32a0d57f1eaa0137a8956627b91a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - af5a80f2bbe7490ae97a550c38f09d57
-      X-Runtime:
-      - '0.022086'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '418'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTQyOThmYWE5Yjc2MzFhNTY0MjI5NjJiZTkyNjIwNTI1BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--c138847868ea99c5dcb8d2bc3a833093cbab0e46;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTAwZjY5ZTZkY2I2NTVjZDI1MzM1NWE1MjdlOGMxNTQ2BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--321efb0ffc666c730281ed49800b8b86bcf37479;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 74b913eb53ec2ce8f584dfff62f338c8
+      X-Runtime:
+      - '0.036415'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cf85320043ee","_id":"51a5a5dc1e66cf85320043ee","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #1","_slug":"mise-a-jour-1","_position":5,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"05/12/2009","formatted_date":"05/12/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ad","_id":"51a87a2787f6438c810002ad","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #1","_slug":"mise-a-jour-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #1","text":"added some free stuff","category":"General","category_id":"51a87a2587f6438c8100028b","date":"05/12/2009","formatted_date":"05/12/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf85320043ee.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ad.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -789,109 +764,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        IjQ5YjA1YWYxYzcxZjBmZmFmNDI0OWYwOGYwNTJhM2M2Ig==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        ODgzZTgyNjEwNzMxNzBjZWU3YTE4OTkwZmU3YzdiNGY=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjIxOTU=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDE4
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVFV4WlRRd09URTRNVGhtTXpnNE9EWTJPVEEwT1dFM1pUUmpPVGRrTURj
-        MkJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLTAyMzIwMzk0Njc3YmY2Y2NhNWI1ZmIx
-        ZDYzZTI5YTk5YjVmNGQyYTU7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmODUzMjAwNDNlZSIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmODUzMjAwNDNlZSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICMxIiwiX3NsdWciOiJtaXNlLWEt
-        am91ci0xIiwiX3Bvc2l0aW9uIjo1LCJjb250ZW50X3R5cGVfc2x1ZyI6InVw
-        ZGF0ZXMiLCJ0cmFuc2xhdGVkX2luIjpbImVuIiwiZnIiXSwidGl0bGUiOiJN
-        aXNlIGEgam91ciAjMSIsInRleHQiOiJwaHJhc2UgRlIiLCJjYXRlZ29yeSI6
-        IkfDqW7DqXJhbCIsImNhdGVnb3J5X2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMx
-        MDA0M2NjIiwiZGF0ZSI6IjEyLzA1LzIwMDkiLCJmb3JtYXR0ZWRfZGF0ZSI6
-        IjEyLzA1LzIwMDkifQ==
-    http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfb9d60043ed.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"6826b5f8882e9c2d4d8cfa36877fd49c"'
+      - ! '"39709b6d23570be04daaaf6601fcc09a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - fa90df938093a3f148e9a522421301f1
-      X-Runtime:
-      - '0.021515'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '413'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM2ZmI2OWJkZDhhOTI2MDg4MWU0ZTQ2MzgwZjFhOGJkBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--8460118c19761cc6c24b13bf1e844fa514c11465;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWUxZjI3N2ZmOWQ1MWM4YjM5MzkzM2U1NDFhNmRkYzQ5BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--29b51ebe7ebdfe84c979675454ac8c658ef4e128;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 0b8e55e65e3592b3f20246024400fa69
+      X-Runtime:
+      - '0.032416'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cfb9d60043ed","_id":"51a5a5dc1e66cfb9d60043ed","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #2","_slug":"mise-a-jour-2","_position":4,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"05/23/2009","formatted_date":"05/23/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ad","_id":"51a87a2787f6438c810002ad","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #1","_slug":"mise-a-jour-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #1","text":"phrase FR","date":"12/05/2009","formatted_date":"12/05/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfb9d60043ed.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ac.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -899,109 +804,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        ImJjNDliNDIwYjExN2JiZTlmNDYxMzZiYjU1Yjk1ZjVjIg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        ZTFmMWFlZDdkNzliYWU2YzVlY2E1NzI4NWJjZjZiNTA=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjE3NTc=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDE4
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKV1F5TWpZM1pqZGlPV0poTURJNE16STBOamhrT0ROa1l6azBNVFJqWkRR
-        ekJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLTg2ZDQ5YzRhZTlmNGE3ZWY0ZmM5MmIw
-        YjQwZjRkOTEwMzliNmNkMzI7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmYjlkNjAwNDNlZCIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmYjlkNjAwNDNlZCIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICMyIiwiX3NsdWciOiJtaXNlLWEt
-        am91ci0yIiwiX3Bvc2l0aW9uIjo0LCJjb250ZW50X3R5cGVfc2x1ZyI6InVw
-        ZGF0ZXMiLCJ0cmFuc2xhdGVkX2luIjpbImVuIiwiZnIiXSwidGl0bGUiOiJN
-        aXNlIGEgam91ciAjMiIsInRleHQiOiJwaHJhc2UgRlIiLCJjYXRlZ29yeSI6
-        IkfDqW7DqXJhbCIsImNhdGVnb3J5X2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMx
-        MDA0M2NjIiwiZGF0ZSI6IjIzLzA1LzIwMDkiLCJmb3JtYXR0ZWRfZGF0ZSI6
-        IjIzLzA1LzIwMDkifQ==
-    http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf66ad0043ec.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"06a6dd3f26084f6936102f6a2e16915d"'
+      - ! '"b2baed316a29d9e1a7e5e8aa87aa95ca"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - d4e1b205761ed53767cb8123566096c6
-      X-Runtime:
-      - '0.024119'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '410'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI0OGU2ODJkYzJkMmU0OTM4ZDIzZGEwNTFiNTA3OWY1BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--d9ce82d90014ec754b0acdf6c99971536a229a26;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWY2YzQ3MzkyNDk0MzE5ZDc1ZjJkYTcxNmVjOTQ2YzEwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--eaab740982c26504792e25fcc983a3a7bb41998d;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 9d538b220087027d0e064d30f1f66d64
+      X-Runtime:
+      - '0.031958'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cf66ad0043ec","_id":"51a5a5dc1e66cf66ad0043ec","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #3","_slug":"mise-a-jour-3","_position":3,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"06/29/2009","formatted_date":"06/29/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ac","_id":"51a87a2787f6438c810002ac","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #2","_slug":"mise-a-jour-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #2","text":"added a chatroom","category":"General","category_id":"51a87a2587f6438c8100028b","date":"05/23/2009","formatted_date":"05/23/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf66ad0043ec.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ac.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1009,109 +844,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        IjE5YWU3NDM2NDhhMzVlMjU3YjhlMmQ5ZmFiYWQ4ZTVmIg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        ZTZkM2Q4MWExZjY5NzE0ZDU1YWQ1YzMzZDRiZmFlMGQ=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjIwNjA=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDE4
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVE14TW1WallqWTVaRFF6TlRJMFltUmhNemxtTkdZek5ERTRPVGc0WkRW
-        a0Jqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLWI5OWZmNTY2MTljNzE3OTY5MTQ1NWE3
-        NDU5ZjNhNTc1MzZjYmFiMjY7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmNjZhZDAwNDNlYyIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmNjZhZDAwNDNlYyIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICMzIiwiX3NsdWciOiJtaXNlLWEt
-        am91ci0zIiwiX3Bvc2l0aW9uIjozLCJjb250ZW50X3R5cGVfc2x1ZyI6InVw
-        ZGF0ZXMiLCJ0cmFuc2xhdGVkX2luIjpbImVuIiwiZnIiXSwidGl0bGUiOiJN
-        aXNlIGEgam91ciAjMyIsInRleHQiOiJwaHJhc2UgRlIiLCJjYXRlZ29yeSI6
-        IkfDqW7DqXJhbCIsImNhdGVnb3J5X2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMx
-        MDA0M2NjIiwiZGF0ZSI6IjI5LzA2LzIwMDkiLCJmb3JtYXR0ZWRfZGF0ZSI6
-        IjI5LzA2LzIwMDkifQ==
-    http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfb3b00043eb.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"76dcd1bde98aa05b1cf7452e16d1fa54"'
+      - ! '"abbce4da058a018d56f603e99a780838"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 210d27d1e6d8f3d9db7e77a706e67241
-      X-Runtime:
-      - '0.022758'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '417'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTgyZTJlMTE1OGU0NWZmMTFjYWZkZWRhNGRiYTljNjc4BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--4cdbeaf7dd4cfffaf1241be405c323e47e750658;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFjZDRlNTIwYmZhYzNjYTNmNTIzYTI5NWJhOWZiNmJiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--d2f374d30396f47b55cc6a99b0ea2e4a89c874c6;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - e886674e0dc5b9a4ad265624bb524a1b
+      X-Runtime:
+      - '0.032248'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cfb3b00043eb","_id":"51a5a5dc1e66cfb3b00043eb","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #4","_slug":"mise-a-jour-4","_position":2,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"10/09/2009","formatted_date":"10/09/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ac","_id":"51a87a2787f6438c810002ac","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #2","_slug":"mise-a-jour-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #2","text":"phrase FR","date":"23/05/2009","formatted_date":"23/05/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfb3b00043eb.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ab.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -1119,109 +884,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        ImFjMDZiOGQ4MTEzZmQ1Mjg1MTk2ZDNlZTRkODAxYTEyIg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        ZGZmNzY2ZDE1MzdhODFhZDI2YzQ3ZTViZTVkMjA0NDg=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjI4NTA=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDE4
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKV1ptWlRZMk5UY3habVkxTnpSbE5EVTNPRGxpT0RJME4yRXdNalV6TTJO
-        bUJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLWU4OWU3ZDEyYmNjNDk4ZTIxMDA3MmJm
-        ZTZmMWI5ZmJmMzQyZjNhYTQ7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmYjNiMDAwNDNlYiIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmYjNiMDAwNDNlYiIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICM0IiwiX3NsdWciOiJtaXNlLWEt
-        am91ci00IiwiX3Bvc2l0aW9uIjoyLCJjb250ZW50X3R5cGVfc2x1ZyI6InVw
-        ZGF0ZXMiLCJ0cmFuc2xhdGVkX2luIjpbImVuIiwiZnIiXSwidGl0bGUiOiJN
-        aXNlIGEgam91ciAjNCIsInRleHQiOiJwaHJhc2UgRlIiLCJjYXRlZ29yeSI6
-        IkfDqW7DqXJhbCIsImNhdGVnb3J5X2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMx
-        MDA0M2NjIiwiZGF0ZSI6IjA5LzEwLzIwMDkiLCJmb3JtYXR0ZWRfZGF0ZSI6
-        IjA5LzEwLzIwMDkifQ==
-    http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf81170043ea.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"8ce7b7665bc0382e6db6dbbd654964e5"'
+      - ! '"c2cf07561d46fa1c811bdf6555e86b87"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 26c33c80d93bd472bc13af1325128f25
-      X-Runtime:
-      - '0.022207'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '420'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTczNjk2MzQzODc1YTM1NmNhOGMzYjkyMjQ5NmE1NTk4BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--d0dae40809a817dabc5c08cb698fdc4e40d27177;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWNjYTIzY2FkMzg4OTgzZDM4YzQyMzU1MWZjOWUwZDUzBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--1805c8ee11fa34c94936474786c0cd7a71b5e924;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 97308f7a411b53674dd5b2b792c509f7
+      X-Runtime:
+      - '0.032200'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cf81170043ea","_id":"51a5a5dc1e66cf81170043ea","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #5","_slug":"mise-a-jour-5","_position":1,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"11/02/2009","formatted_date":"11/02/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ab","_id":"51a87a2787f6438c810002ab","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #3","_slug":"mise-a-jour-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #3","text":"site redesign","category":"General","category_id":"51a87a2587f6438c8100028b","date":"06/29/2009","formatted_date":"06/29/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cf81170043ea.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002ab.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1229,109 +924,39 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        IjY1YWQzZjMxNjRmY2VkYTg1ZDRiMTljNDU2NGI5YmM3Ig==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        NjQ5YTg5ZjY0N2U2Y2UyNDNjN2FkMWQ3MjRlNDQxYmI=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjIyMTQ=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDE4
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKV05tT0RRek1USmlOV1E1WVRZNFlURTBPREl6TkRnMU5ERm1PVFJoTkRr
-        eEJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLWZjMTliMWU2ZTNlZGFhNDc5ZDVhMzMx
-        NGQ5YmE2NWI0OTc3MGJmNGE7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmODExNzAwNDNlYSIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmODExNzAwNDNlYSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICM1IiwiX3NsdWciOiJtaXNlLWEt
-        am91ci01IiwiX3Bvc2l0aW9uIjoxLCJjb250ZW50X3R5cGVfc2x1ZyI6InVw
-        ZGF0ZXMiLCJ0cmFuc2xhdGVkX2luIjpbImVuIiwiZnIiXSwidGl0bGUiOiJN
-        aXNlIGEgam91ciAjNSIsInRleHQiOiJwaHJhc2UgRlIiLCJjYXRlZ29yeSI6
-        IkfDqW7DqXJhbCIsImNhdGVnb3J5X2lkIjoiNTFhNWE1ZGExZTY2Y2ZjZDMx
-        MDA0M2NjIiwiZGF0ZSI6IjAyLzExLzIwMDkiLCJmb3JtYXR0ZWRfZGF0ZSI6
-        IjAyLzExLzIwMDkifQ==
-    http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfbcaf0043e9.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=en
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: ! 'OK '
-    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
       Content-Type:
       - text/html; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5bdc4f0358e62de0d8f513ca63f35f64"'
+      - ! '"1282f36fcf54f1d933dc06571ab9e526"'
       Cache-Control:
       - max-age=0, private, must-revalidate
-      X-Request-Id:
-      - 93b09eb6c99fd90664f284433929193f
-      X-Runtime:
-      - '0.024463'
-      Server:
-      - WEBrick/1.3.1 (Ruby/1.9.3/2013-02-22)
-      Date:
-      - Wed, 29 May 2013 06:53:29 GMT
-      Content-Length:
-      - '427'
-      Connection:
-      - Keep-Alive
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTdjYWRkZTgzZmM0MGFhZjU5MWM5NTU3MzNhMWY2ZjI2BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUaSW3h5mz%2Bb3AAABSSIZc0FaeVhzRHhyN1d6cnU1MzJLUEgGOwBU--c23c381ac80a6407531e5611da3fdf1e4fe66c19;
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTdkMDQxNzQyMzgyZWQwYjIxMzllYzRkY2YwYjRmOTMwBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--4f96a40ee95fc4a0fd9e11a876860e6f65a0e474;
         domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - a821c32a3b9f676ed62a26267e18ae77
+      X-Runtime:
+      - '0.034987'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a5a5dc1e66cfbcaf0043e9","_id":"51a5a5dc1e66cfbcaf0043e9","created_at":"2013-05-29T06:53:16Z","updated_at":"2013-05-29T06:53:16Z","_label":"Update
-        #6","_slug":"geniale-mise-a-jour-6","_position":0,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"51a5a5da1e66cfcd310043cc","date":"11/16/2009","formatted_date":"11/16/2009"}'
+      string: ! '{"id":"51a87a2787f6438c810002ab","_id":"51a87a2787f6438c810002ab","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #3","_slug":"mise-a-jour-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #3","text":"phrase FR","date":"29/06/2009","formatted_date":"29/06/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a5a5dc1e66cfbcaf0043e9.json?auth_token=sqNuhpNxPhaKxN6z1qDs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002aa.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -1339,62 +964,234 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0sg
+      message: OK
     headers:
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        dGV4dC9odG1sOyBjaGFyc2V0PXV0Zi04
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        ImUzNjEzZmVlN2QyZWZiNjJjNmM0ZTQ1YmY2NjM0YmU0Ig==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        MDQxZDA3MzdjN2Q5NTlkNjU3ZGVhZGI3YzJjZDMwM2E=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wMjI1NDI=
-      !binary "U2VydmVy":
-      - !binary |-
-        V0VCcmljay8xLjMuMSAoUnVieS8xLjkuMy8yMDEzLTAyLTIyKQ==
-      !binary "RGF0ZQ==":
-      - !binary |-
-        V2VkLCAyOSBNYXkgMjAxMyAwNjo1MzoyOSBHTVQ=
-      !binary "Q29udGVudC1MZW5ndGg=":
-      - !binary |-
-        NDI2
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        S2VlcC1BbGl2ZQ==
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVFE0TldOaFl6WTBZbVU0TlRFNFptVmxZamswTmpOak5ETTVPREJsTnpN
-        NUJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYVNXM2g1bXolMkJiM0FBQUJTU0laYzBGYWVWaHpSSGh5
-        TjFkNmNuVTFNekpMVUVnR093QlUtLWE3YzFiOGE0ODBjYjAxMmJiODdhNWI1
-        MGNjNjA3NDAzZDA1Yzk3MzM7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9
-        LzsgSHR0cE9ubHk=
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"c64582f0d0f946a6e3005d886843d655"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRmY2ZjMGUwODlkMDgxOTMwOTJhYmVkNzE4MDFkMmJlBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--d875c49d8589c42352eb7a985924cfa8b83cc4dd;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 9875a6cabc69d2220fb1d4ed0926a0d7
+      X-Runtime:
+      - '0.033057'
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        eyJpZCI6IjUxYTVhNWRjMWU2NmNmYmNhZjAwNDNlOSIsIl9pZCI6IjUxYTVh
-        NWRjMWU2NmNmYmNhZjAwNDNlOSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTI5
-        VDA2OjUzOjE2WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTI5VDA2OjUzOjE2
-        WiIsIl9sYWJlbCI6Ik1pc2UgYSBqb3VyICM2IiwiX3NsdWciOiJnZW5pYWxl
-        LW1pc2UtYS1qb3VyLTYiLCJfcG9zaXRpb24iOjAsImNvbnRlbnRfdHlwZV9z
-        bHVnIjoidXBkYXRlcyIsInRyYW5zbGF0ZWRfaW4iOlsiZW4iLCJmciJdLCJ0
-        aXRsZSI6Ik1pc2UgYSBqb3VyICM2IiwidGV4dCI6InBocmFzZSBGUiIsImNh
-        dGVnb3J5IjoiR8OpbsOpcmFsIiwiY2F0ZWdvcnlfaWQiOiI1MWE1YTVkYTFl
-        NjZjZmNkMzEwMDQzY2MiLCJkYXRlIjoiMTYvMTEvMjAwOSIsImZvcm1hdHRl
-        ZF9kYXRlIjoiMTYvMTEvMjAwOSJ9
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2787f6438c810002aa","_id":"51a87a2787f6438c810002aa","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #4","_slug":"mise-a-jour-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"51a87a2587f6438c8100028b","date":"10/09/2009","formatted_date":"10/09/2009"}'
     http_version: 
-  recorded_at: Wed, 29 May 2013 06:53:29 GMT
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002aa.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"df9ddde019c09b1dfcf11dceb3bf0c7e"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWRiNzcyNDE0ZWE4M2RmZTViY2Y4NjY5YWZiNGQxZjk4BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--bd0211f370fb73f91d1eb6ff5b1bc55d9c85c4eb;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 43f9487bbc149c50690aad445c6b5dbc
+      X-Runtime:
+      - '0.032304'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2787f6438c810002aa","_id":"51a87a2787f6438c810002aa","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #4","_slug":"mise-a-jour-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #4","text":"phrase FR","date":"09/10/2009","formatted_date":"09/10/2009"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002a9.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"7049087f70b22134e5758c07220711ef"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWM2OGE2NmY1ZDk1MTZmYWE0MjA4ODc2ZjBlMjg0YzFmBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--ac810fb2f673be278da8fefb9a244d7910bb8024;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 495d27c43273e78ef6746178058223a4
+      X-Runtime:
+      - '0.033052'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2787f6438c810002a9","_id":"51a87a2787f6438c810002a9","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #5","_slug":"mise-a-jour-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #5","text":"brian posted a new post","category":"General","category_id":"51a87a2587f6438c8100028b","date":"11/02/2009","formatted_date":"11/02/2009"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2787f6438c810002a9.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"22f9498ad23785970bb12f36836cbb4d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTVkNjEwMDY5NDk5OTFjMGU0NDg1NWJiMGZlM2Y5OGI2BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--f76552e41231038119fcdc42ac4c6fe1fc4b09c2;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 5e8b5e20e8bde69147a7dcf945c61bdd
+      X-Runtime:
+      - '0.033291'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2787f6438c810002a9","_id":"51a87a2787f6438c810002a9","created_at":"2013-05-31T10:23:35Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #5","_slug":"mise-a-jour-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #5","text":"phrase FR","date":"02/11/2009","formatted_date":"02/11/2009"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2687f6438c810002a8.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=en
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"03a63abe071f9d31a4ba1f85e071d435"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTZhMDExZGRiNzc4MzAyM2QyYjE0ZjA3MWQ1MzlhZGQ4BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--78d9da6c22931bb13fe3e5f8cfbeb5b40cf3bacc;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 3202bd0844c5beddd3c5436718b7df2e
+      X-Runtime:
+      - '0.032784'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2687f6438c810002a8","_id":"51a87a2687f6438c810002a8","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Update
+        #6","_slug":"geniale-mise-a-jour-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
+        #6","text":"john posted a new post","category":"General","category_id":"51a87a2587f6438c8100028b","date":"11/16/2009","formatted_date":"11/16/2009"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/51a87a2687f6438c810002a8.json?auth_token=65n6d74zSvmKzhkhXTUp&locale=fr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 31 May 2013 10:23:51 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - text/html; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - ! '"149bd6e9c6e786f2fb6c1cec04fe18a8"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTIyMzM1YTNmMmFhM2I1MjY4YzE4Y2I4YjJmZGY1MzU3BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUah56If2Q9HVAAABSSIZQVZMdUxNNnEzdzFRSmJWcXN6c1IGOwBU--8083932c2f358726d88123b43c165e271ae398e0;
+        domain=.example.com; path=/; HttpOnly
+      X-Request-Id:
+      - 99677d3e8b217e54d7dcb7198db2489f
+      X-Runtime:
+      - '0.032184'
+    body:
+      encoding: US-ASCII
+      string: ! '{"id":"51a87a2687f6438c810002a8","_id":"51a87a2687f6438c810002a8","created_at":"2013-05-31T10:23:34Z","updated_at":"2013-05-31T10:23:35Z","_label":"Mise
+        a jour #6","_slug":"geniale-mise-a-jour-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
+        a jour #6","text":"phrase FR","date":"16/11/2009","formatted_date":"16/11/2009"}'
+    http_version: 
+  recorded_at: Fri, 31 May 2013 10:23:51 GMT
 recorded_with: VCR 2.4.0

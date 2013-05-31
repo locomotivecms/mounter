@@ -25,16 +25,11 @@ module Locomotive
             # by default, do not push data (content entries and editable elements)
             self.parameters[:data] ||= false
 
-            self.uri  = self.parameters.delete(:uri)
-            email     = self.parameters.delete(:email)
-            password  = self.parameters.delete(:password)
-
-            if uri.blank? || email.blank? || password.blank?
-              raise Locomotive::Mounter::WriterException.new("one or many API credentials (uri, email, password) are missing")
-            end
+            credentials = self.parameters.select { |k, _| %w(uri email password api_key).include?(k.to_s) }
+            self.uri    = credentials[:uri]
 
             begin
-              Locomotive::Mounter::EngineApi.set_token(uri, email, password)
+              Locomotive::Mounter::EngineApi.set_token(credentials) #uri, email, password)
             rescue Exception => e
               raise Locomotive::Mounter::WriterException.new("unable to get an API token: #{e.message}")
             end

@@ -21,18 +21,6 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
     @reader.run!(credentials).should_not be_nil
   end
 
-  %w(uri email password).each do |name|
-    it "requires #{name} in the credentials" do
-      Locomotive::Mounter::EngineApi.stubs(:set_token).returns(true)
-      @reader.stubs(:build_mounting_point).returns(true)
-      lambda {
-        @credentials = credentials
-        @credentials.delete(name.to_sym)
-        @reader.run!(@credentials)
-      }.should raise_exception(Locomotive::Mounter::ReaderException, 'one or many API credentials (uri, email, password) are missing')
-    end
-  end
-
   describe 'site' do
 
     before(:each) do
