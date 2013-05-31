@@ -26,7 +26,7 @@ module Locomotive
             self.uri    = credentials[:uri]
 
             begin
-              Locomotive::Mounter::EngineApi.set_token(credentials) #uri, email, password)
+              Locomotive::Mounter::EngineApi.set_token(credentials)
             rescue Exception => e
               raise Locomotive::Mounter::ReaderException.new("unable to get an API token: #{e.message}")
             end

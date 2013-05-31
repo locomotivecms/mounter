@@ -117,8 +117,6 @@ module Locomotive
           value = self.localized_dynamic_attribute_value(field)
 
           case field.type
-          when :string, :text, :select, :boolean, :category
-            value
           when :date
             value.is_a?(String) ? Date.parse(value) : value
           when :file
@@ -129,6 +127,9 @@ module Locomotive
             field.klass.find_entries_by(field.inverse_of, [self._label, self._permalink])
           when :many_to_many
             field.klass.find_entries_among(value)
+          else
+            # :string, :text, :select, :boolean, :email, :integer, :float, :tags
+            value
           end
         end
 
