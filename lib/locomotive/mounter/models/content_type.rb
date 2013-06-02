@@ -46,7 +46,7 @@ module Locomotive
         # @return [ Object ] The group_by field
         #
         def group_by_field
-          self.fields.find_field(self.group_by_field_name)
+          self.find_field(self.group_by_field_name)
         end
 
         # Build a content entry and add it to the list of entries of the content type.
@@ -171,6 +171,25 @@ module Locomotive
           params
         end
 
+        # Return a hash with sanitized attributes. It will be used to generate
+        # the corresponding yaml file.
+        #
+        # @return [ Hash ] A hash used by the to_yaml method
+        #
+        def to_hash
+          fields = %w(name slug description label_field_name order_by order_by_direction public_submission_enabled public_submission_accounts raw_item_template)
+
+          _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
+
+          # group by
+          _attributes['group_by'] = self.group_by_field.name if self.group_by_field
+
+          # custom fields
+          _attributes['fields'] = self.fields
+
+          _attributes
+        end
+
         def to_s
           self.name
         end
@@ -205,7 +224,7 @@ module Locomotive
           end
 
           # define group_by_field from group_by_field_id
-          if self.group_by_field_id
+          if self.group_by_field_name.blank? && self.group_by_field_id.present?
             self.group_by_field_name = self.find_field(self.group_by_field_id)
           end
 

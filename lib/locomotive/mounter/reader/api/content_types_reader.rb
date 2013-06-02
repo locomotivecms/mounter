@@ -63,7 +63,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(name slug description order_by order_direction label_field_name group_by_field_id public_submission_accounts entries_custom_fields klass_name created_at updated_at)
+            %w(name slug description order_by order_direction label_field_name group_by_field_name public_submission_accounts entries_custom_fields klass_name created_at updated_at)
           end
 
         end

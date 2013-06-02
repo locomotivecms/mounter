@@ -40,7 +40,7 @@ describe Locomotive::Mounter::Models::ContentField do
 
   end
 
-  describe '#is_relationship?' do
+  describe '.is_relationship?' do
 
     it 'is false for types other than belongs_to, has_many, many_to_many' do
       build_content_field(type: 'date').is_relationship?.should == false
@@ -54,8 +54,43 @@ describe Locomotive::Mounter::Models::ContentField do
 
   end
 
+  describe '.select_options_to_hash' do
+
+    subject {
+      build_content_field(type: 'select', select_options: options).send(:select_options_to_hash)
+    }
+
+    context 'with not localized options' do
+
+      let(:options) { build_options(['IT', 'Business']) }
+      it { should == ['IT', 'Business'] }
+
+    end
+
+    context 'partially localized options' do
+
+      let(:options) { build_options([{ en: 'IT' }, { en: 'Business', fr: 'Business (FR)' }]) }
+      it { should == { 'en' => ['IT', 'Business'], 'fr' => [nil, 'Business (FR)'] } }
+
+    end
+
+    context 'fully localized options' do
+
+      let(:options) { build_options([{ en: 'IT', fr: 'IT (FR)' }, { en: 'Business', fr: 'Business (FR)' }]) }
+      it { should == { 'en' => ['IT', 'Business'], 'fr' => ['IT (FR)', 'Business (FR)'] } }
+
+    end
+
+  end
+
   def build_content_field(attributes = {})
     Locomotive::Mounter::Models::ContentField.new(attributes)
+  end
+
+  def build_options(names)
+    names.map do |name|
+      Locomotive::Mounter::Models::ContentSelectOption.new(name: name)
+    end
   end
 
 end

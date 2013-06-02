@@ -75,16 +75,6 @@ module Locomotive
           self.select_options.detect { |option| option.name.to_s == name_or_id.to_s || option._id == name_or_id }
         end
 
-        # Instead of returning a simple hash, it returns a hash with name as the key and
-        # the remaining attributes as the value.
-        #
-        # @return [ Hash ] A hash of hash
-        #
-        def to_hash
-          hash = super.delete_if { |k, v| %w(name position).include?(k) }
-          { self.name => hash }
-        end
-
         # Return the params used for the API.
         #
         # @return [ Hash ] The params
@@ -112,6 +102,28 @@ module Locomotive
           params
         end
 
+        # Instead of returning a simple hash, it returns a hash with name as the key and
+        # the remaining attributes as the value.
+        #
+        # @return [ Hash ] A hash of hash
+        #
+        def to_hash
+          hash = super.delete_if { |k, v| %w(name position).include?(k) }
+
+          # class_name is chosen over class_slug
+          if self.is_relationship?
+            hash['class_name'] ||= hash['class_slug']
+            hash.delete('class_slug')
+          end
+
+          # select options
+          if self.type == :select
+            hash['select_options'] = self.select_options_to_hash
+          end
+
+          { self.name => hash }
+        end
+
         protected
 
         # Clean up useless properties depending on its type
@@ -121,6 +133,23 @@ module Locomotive
 
           # text_formatting only for the text type
           self.text_formatting = nil unless self.type == :text
+        end
+
+        def select_options_to_hash
+          locales = self.select_options.map { |option| option.translated_in }.flatten.uniq
+          options = self.select_options.sort { |a, b| a.position <=> b.position }
+
+          if locales.size > 1
+            {}.tap do |by_locales|
+              locales.each do |locale|
+                options.each do |option|
+                  (by_locales[locale.to_s] ||= []) << option.name_translations[locale]
+                end
+              end
+            end
+          else
+            options.map(&:name)
+          end
         end
 
       end

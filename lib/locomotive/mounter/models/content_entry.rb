@@ -173,7 +173,7 @@ module Locomotive
           end
         end
 
-        # Returns a hash with the label_field value as the key and the other fields as the value
+        # Return a hash with the label_field value as the key and the other fields as the value
         #
         # @param [ Boolean ] nested True to have a hash of hash (whose key is the label)
         #
