@@ -58,7 +58,7 @@ module Locomotive
           #
           def add(content_type, attributes)
             _attributes = self.filter_attributes(content_type, attributes)
-
+            
             # puts "_attributes = #{_attributes.inspect}" # DEBUG
 
             entry = content_type.build_entry(_attributes)
@@ -83,11 +83,13 @@ module Locomotive
               when
                 original_attributes[field.name]
               when :text
-                self.replace_urls_by_content_assets(original_attributes[field.name])
+                replace_urls_by_content_assets(original_attributes[field.name])
               when :select
                 field.find_select_option(original_attributes[field.name]).try(:name)
               when :date
                 original_attributes["formatted_#{field.name}"]
+              when :file
+                retrieve_file_path original_attributes[field.name] unless original_attributes[field.name].blank? 
               when :belongs_to, :many_to_many
                 # push a relationship in the waiting line in order to be resolved at last
                 target_field_name = field.type == :belongs_to ? "#{field.name}_id" : "#{field.name}_ids"
@@ -133,6 +135,10 @@ module Locomotive
               content.gsub!(path, asset.local_filepath)
             end
             content
+          end
+          
+          def retrieve_file_path(content)
+            "#{Locomotive::Mounter::EngineApi.base_uri.gsub('/locomotive/api', '') unless content =~ /^https?:\/\//}#{content}"
           end
 
         end
