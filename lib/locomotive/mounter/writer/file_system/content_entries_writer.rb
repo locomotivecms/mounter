@@ -15,7 +15,7 @@ module Locomotive
           def write
             self.mounting_point.content_types.each do |filename, content_type|
               file_fields = content_type.fields.select {|f| f.type == :file}
-              entries = content_type.entries.inject([]) { |acc, entry| acc << process_files(file_fields, entry).to_hash }
+              entries = (content_type.entries || []).map {|e| process_files(file_fields, e)}.map(&:to_hash)
              
               self.open_file("data/#{filename}.yml") do |file|
                 file.write(entries.to_yaml)
