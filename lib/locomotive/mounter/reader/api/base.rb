@@ -40,6 +40,14 @@ module Locomotive
             end
           end
 
+          # Build a new content asset from an url and a folder and add it
+          # to the global list of the content assets.
+          #
+          # @param [ String ] url The url of the content asset.
+          # @param [ String ] folder The folder of the content asset (optional).
+          #
+          # @return [ String ] The local path (not absolute) of the content asset.
+          #
           def add_content_asset(url, folder = nil)
             content_assets = self.mounting_point.resources[:content_assets]
 
@@ -47,9 +55,11 @@ module Locomotive
               url = URI.join(self.uri_with_scheme, url)
             end
 
-            Locomotive::Mounter::Models::ContentAsset.new(uri: url, folder: folder).tap do |asset|
-              content_assets[url.to_s] = asset
-            end
+            asset = Locomotive::Mounter::Models::ContentAsset.new(uri: url, folder: folder)
+
+            content_assets[url.to_s] = asset
+
+            asset.local_filepath
           end
 
         end

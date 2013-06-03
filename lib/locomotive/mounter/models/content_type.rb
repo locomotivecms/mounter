@@ -102,6 +102,14 @@ module Locomotive
           self.fields.select { |field| !field.is_relationship? }
         end
 
+        # Return the list of file fields.
+        #
+        # @return [ Array ] The list of file fields.
+        #
+        def file_fields
+          self.fields.select { |field| field.type == :file }
+        end
+
         # Find a field by its name (string or symbol) or its id (API)
         #
         # @param [ String / Symbol] name_or_id Name or Id of the field

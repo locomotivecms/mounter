@@ -58,7 +58,7 @@ module Locomotive
           #
           def add(content_type, attributes)
             _attributes = self.filter_attributes(content_type, attributes)
-            
+
             # puts "_attributes = #{_attributes.inspect}" # DEBUG
 
             entry = content_type.build_entry(_attributes)
@@ -89,7 +89,7 @@ module Locomotive
               when :date
                 original_attributes["formatted_#{field.name}"]
               when :file
-                retrieve_file_path original_attributes[field.name] unless original_attributes[field.name].blank? 
+                retrieve_file_path(content_type, field, original_attributes)
               when :belongs_to, :many_to_many
                 # push a relationship in the waiting line in order to be resolved at last
                 target_field_name = field.type == :belongs_to ? "#{field.name}_id" : "#{field.name}_ids"
@@ -136,9 +136,23 @@ module Locomotive
             end
             content
           end
-          
-          def retrieve_file_path(content)
-            "#{Locomotive::Mounter::EngineApi.base_uri.gsub('/locomotive/api', '') unless content =~ /^https?:\/\//}#{content}"
+
+          def retrieve_file_path(content_type, field, attributes)
+            value = attributes[field.name]
+
+            return nil if value.blank?
+
+            base_folder = File.join('/', 'samples', content_type.slug, attributes['_slug'])
+
+            if value.is_a?(Hash)
+              {}.tap do |translations|
+                value.each do |locale, url|
+                  translations[locale] = self.add_content_asset(url, File.join(base_folder, locale))
+                end
+              end
+            else
+              self.add_content_asset(value, base_folder)
+            end
           end
 
         end

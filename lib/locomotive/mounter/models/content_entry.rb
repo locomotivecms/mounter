@@ -192,10 +192,14 @@ module Locomotive
           # no need of the translation of the field name in the current locale
           label_field = self.content_type.label_field
 
-          if label_field.localized && !hash[label_field.name].empty?
-            hash[label_field.name].delete(Locomotive::Mounter.locale.to_s)
+          if label_field.localized
+            if !hash[label_field.name].empty?
+              hash[label_field.name].delete(Locomotive::Mounter.locale.to_s)
 
-            hash.delete(label_field.name) if hash[label_field.name].empty?
+              hash.delete(label_field.name) if hash[label_field.name].empty?
+            end
+          else
+            hash.delete(label_field.name)
           end
 
           nested ? { self._label => hash } : hash

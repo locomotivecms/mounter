@@ -147,8 +147,7 @@ module Locomotive
               type = attributes['type']
               attributes.keep_if { |k, _| %w(_id block slug content).include?(k) }.tap do |hash|
                 if type == 'EditableFile'
-                  asset = self.add_content_asset(hash['content'], '/samples/pages')
-                  hash['content'] = asset.local_filepath
+                  hash['content'] = self.add_content_asset(hash['content'], '/samples/pages')
                 else
                   self.mounting_point.content_assets.each do |path, asset|
                     hash['content'].gsub!(path, asset.local_filepath)
