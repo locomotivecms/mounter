@@ -51,7 +51,7 @@ module Locomotive
           def add_content_asset(url, folder = nil)
             content_assets = self.mounting_point.resources[:content_assets]
 
-            if (url =~ /^https+:\/\//).nil?
+            if (url =~ /^https?:\/\//).nil?
               url = URI.join(self.uri_with_scheme, url)
             end
 

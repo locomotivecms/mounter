@@ -11,13 +11,13 @@ module Locomotive
           #
           def read
             base_uri = self.runner.uri.split('/').first
-            base_uri = "http://#{base_uri}" unless base_uri =~ /^http:\/\//
+            base_uri = "http://#{base_uri}" unless base_uri =~ /^https?:\/\//
 
             self.get(:content_assets).each do |attributes|
               url = attributes.delete('url')
 
               attributes['folder']  = 'samples/assets'
-              attributes['uri']     = URI(url =~ /https+:\/\// ? url : "#{base_uri}#{url}")
+              attributes['uri']     = URI(url =~ /^https?:\/\// ? url : "#{base_uri}#{url}")
 
               self.items[url] = Locomotive::Mounter::Models::ContentAsset.new(attributes)
             end

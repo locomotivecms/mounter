@@ -16,12 +16,12 @@ module Locomotive
           #
           def read
             base_uri = self.runner.uri.split('/').first
-            base_uri = "http://#{base_uri}" unless base_uri =~ /^http:\/\//
+            base_uri = "http://#{base_uri}" unless base_uri =~ /^https?:\/\//
 
             self.items = self.get(:theme_assets).map do |attributes|
               url = attributes.delete('url')
 
-              attributes['uri'] = URI(url =~ /http:\/\// ? url : "#{base_uri}#{url}")
+              attributes['uri'] = URI(url =~ /^https?:\/\// ? url : "#{base_uri}#{url}")
 
               Locomotive::Mounter::Models::ThemeAsset.new(attributes)
             end
