@@ -14,6 +14,7 @@ module Locomotive
             config.http_path        = '/'
             config.css_dir          = '../tmp/stylesheets'
             config.sass_dir         = 'stylesheets'
+            config.fonts_dir        = 'fonts'
             config.images_dir       = 'images'
             config.javascripts_dir  = 'javascripts'
             config.project_type     = :stand_alone
