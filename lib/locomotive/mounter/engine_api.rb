@@ -1,3 +1,5 @@
+require 'uri'
+
 module Locomotive
   module Mounter
 
@@ -18,7 +20,9 @@ module Locomotive
       def self.set_token(*args)
         _credentials = self.credentials(args)
 
-        self.base_uri _credentials.delete(:uri)
+        uri = URI _credentials.delete(:uri)
+        self.base_uri uri.to_s
+        self.basic_auth uri.user, uri.password if uri.userinfo
 
         response = post('/tokens.json', body: _credentials) #{ email: email, password: password })
 
@@ -32,6 +36,7 @@ module Locomotive
 
       def self.teardown
         Locomotive::Mounter::EngineApi.default_options[:base_uri] = nil
+        Locomotive::Mounter::EngineApi.default_options[:base_auth] = nil
         Locomotive::Mounter::EngineApi.default_options[:default_params] = {}
       end
 
