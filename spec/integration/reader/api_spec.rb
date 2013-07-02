@@ -12,7 +12,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
   end
 
   before(:each) do
-    @reader       = Locomotive::Mounter::Reader::Api.instance
+    @reader = Locomotive::Mounter::Reader::Api.instance
   end
 
   it 'runs it' do
