@@ -12,7 +12,6 @@ module Locomotive
         field :position,  default: 0
         field :required,  default: false
         field :localized, default: false
-        field :class_slug
 
         # text
         field :text_formatting
@@ -21,7 +20,8 @@ module Locomotive
         field :select_options, type: :array, class_name: 'Locomotive::Mounter::Models::ContentSelectOption'
 
         # relationships: belongs_to, has_many, many_to_many
-        field :class_name
+        field :class_slug # out
+        field :class_name # in
         field :inverse_of
         field :order_by
         field :ui_enabled
@@ -61,6 +61,16 @@ module Locomotive
             if klass.nil?
               raise UnknownContentTypeException.new("unknow content type #{self.class_name}")
             end
+          end
+        end
+
+        # Set directly the content type matching the class_name.
+        #
+        # @param [ Object ] The matching Content Type
+        #
+        def klass=(content_type)
+          if self.class_name == content_type.slug
+            @klass = content_type
           end
         end
 
