@@ -19,8 +19,6 @@ module Locomotive
           def read
             self.fetch
 
-            self.resolve_relationships
-
             self.items
           end
 
@@ -59,8 +57,6 @@ module Locomotive
           def add(content_type, attributes)
             _attributes = self.filter_attributes(content_type, attributes)
 
-            # puts "_attributes = #{_attributes.inspect}" # DEBUG
-
             entry = content_type.build_entry(_attributes)
 
             key = File.join(content_type.slug, entry._slug)
@@ -90,10 +86,7 @@ module Locomotive
                 original_attributes["formatted_#{field.name}"]
               when :file
                 retrieve_file_path(content_type, field, original_attributes)
-              when :belongs_to, :many_to_many
-                # push a relationship in the waiting line in order to be resolved at last
-                target_field_name = field.type == :belongs_to ? "#{field.name}_id" : "#{field.name}_ids"
-                self.relationships << { id: attributes['_id'], field: field.name, target_ids: original_attributes[target_field_name] }
+              when :has_many
                 nil
               else
                 # :string, :boolean, :email, :integer, :float, :tags
@@ -104,22 +97,6 @@ module Locomotive
             end
 
             attributes
-          end
-
-          # Some entries have what it is called "relationships" field
-          # which can be only resolved once all the entries have been fetched
-          #
-          def resolve_relationships
-            self.relationships.each do |relationship|
-              source_entry, target_ids = self.ids[relationship[:id]], relationship[:target_ids]
-
-              target_entries = self.ids.select { |k, _| [*target_ids].include?(k) }.values
-
-              # single entry (belongs_to) or an array (many_to_many) ?
-              target_entries = target_entries.first unless target_ids.is_a?(Array)
-
-              source_entry.send(:"#{relationship[:field]}=", target_entries)
-            end
           end
 
           # For a given content, parse it and replace all the urls from content assets

@@ -161,7 +161,7 @@ module Locomotive
             self.mounting_point.content_types
           end
 
-          # Take a content entry and get the params related to that content
+          # Take a content entry and get the params related to that content entry.
           #
           # @param [ Object ] entry The content entry
           #
