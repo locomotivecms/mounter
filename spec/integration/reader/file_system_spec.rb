@@ -260,10 +260,10 @@ describe Locomotive::Mounter::Reader::FileSystem do
         @mounting_point = @reader.run!(path: @path)
       end
 
-      it 'has 2 snippets' do
-        @mounting_point.snippets.size.should == 2
-        @mounting_point.snippets.keys.should == %w(song header)
-        @mounting_point.snippets.values.map(&:slug).should == %w(song header)
+      it 'has 3 snippets' do
+        @mounting_point.snippets.size.should == 3
+        @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
+        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
       end
 
       it 'localizes the template' do

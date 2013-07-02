@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: email=admin%40locomotivecms.com&password=locomotive
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,24 +25,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"8807c84f7f8692792f10069554740fee"'
+      - ! '"f1ca71dc30f91cf3b366bba7be2bcb16"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTA0OGJiZGEyMDZhZjEyMzJkNGNmYTY3YjZmZmZkNDI5BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--c9f62b7629a11ad21ad872ae745c99cfa936f9a0;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=wopEN9bVdw6zi57qeAx05HV0rfo; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 83058851d194e32c521758e954f1312d
+      - 24337d0a6a8574ad8977694a506e65df
       X-Runtime:
-      - '0.025491'
+      - '0.034953'
     body:
       encoding: US-ASCII
-      string: ! '{"token":"ssvLKtqG1RNBB337ByfB"}'
+      string: ! '{"token":"Pvsw6p348ihNqxwswB57"}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,27 +63,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b0ee38c22e942be34310f06b29fa3260"'
+      - ! '"aabcac44ff0169d7bfbc4cdcebcd72fb"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWQxZTU1NjNmNmZjNzhkNWRmMGMxNmQ3MmZhNWNlNjQzBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--35508226e55627199d10c44d4cd7448f1e8aac0b;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=FyWHtOhJO0tVkXKxKhwSdMAHvBM; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - c6f7a9670da6f5ccbc4011166147d9c8
+      - 9aa1c027f97ceab9cfccf6439f83d96a
       X-Runtime:
-      - '0.027667'
+      - '0.035281'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007c","_id":"51a91c2987f6437cba00007c","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:49Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a91c2987f6437cba00007d","_id":"51a91c2987f6437cba00007d","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a91bf287f6434e2c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"51d348ad87f64322a900007d","_id":"51d348ad87f64322a900007d","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:39:57Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51d348ad87f64322a900007e","_id":"51d348ad87f64322a900007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51d3484287f643934c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -94,7 +94,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,27 +104,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"e2be1de9c2b28369210cd5b7cfb0d677"'
+      - ! '"581c6a8bc83414a4499dccc88bc16625"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWI0ZjdkMTk0M2VlOTk4YzM1MzQyNTcwYjgxNDQ1NGNjBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--f7e340e0cffa81f1390349f483046e28726219db;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=GwzAWwGhEQarqnprB7JrhzblrT0; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 53894b3d97f6cd3167d2c30df139f079
+      - 62e2681843f0914f4a94622f2879da1a
       X-Runtime:
-      - '0.026958'
+      - '0.037731'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007c","_id":"51a91c2987f6437cba00007c","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:49Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a91c2987f6437cba00007d","_id":"51a91c2987f6437cba00007d","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"51a91bf287f6434e2c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: ! '{"id":"51d348ad87f64322a900007d","_id":"51d348ad87f64322a900007d","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:39:57Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51d348ad87f64322a900007e","_id":"51d348ad87f64322a900007e","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"51d3484287f643934c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=Pvsw6p348ihNqxwswB57&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -135,7 +135,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,27 +145,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b0ee38c22e942be34310f06b29fa3260"'
+      - ! '"aabcac44ff0169d7bfbc4cdcebcd72fb"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWFlMDA3NzExNjM5YzgzYmQwNGFlYzljZTIwODlhNzA3BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--b1e827c2ccf9ac624db832f8616640da72ddd0ed;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=YG1QvPZTcqH3gUEgVJGB0H2nQ9k; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - acdb12d8ede734225f50fbe3080213b8
+      - a3f52fcb34af12bf36a27689274bd5f6
       X-Runtime:
-      - '0.023884'
+      - '0.031704'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007c","_id":"51a91c2987f6437cba00007c","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:49Z","name":"Sample
-        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51a91c2987f6437cba00007d","_id":"51a91c2987f6437cba00007d","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51a91bf287f6434e2c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: ! '{"id":"51d348ad87f64322a900007d","_id":"51d348ad87f64322a900007d","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:39:57Z","name":"Sample
+        website","locales":["en","fr","nb"],"subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"51d348ad87f64322a900007e","_id":"51d348ad87f64322a900007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"51d3484287f643934c000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: ''
@@ -176,7 +176,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -186,24 +186,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"272944981fa49b8afa90d1e13298cfde"'
+      - ! '"5169e18a703505077221e16c0d04158e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTFiMWE4OTFjM2IwNjdkMmUzNDY0MWUyNmNkOTVjYzQ0BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--a6cf77bd64e3e907412a0ae54db3e30c6a3b014e;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=iZyRNEAcrxoSbOj8s44xl2wUwYk; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 68d5f9fe30404d8d1b34e214327acaeb
+      - 20229363b33d83054142d72d427dd428
       X-Runtime:
-      - '0.028998'
+      - '0.038150'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a91c2d87f6437cba0000c1","_id":"51a91c2d87f6437cba0000c1","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWE5MWMyOTg3ZjY0MzdjYmEwMDAwN2MvYXNzZXRzLzUxYTkxYzJkODdmNjQzN2NiYTAwMDBjMS9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","content_type_text":"image"},{"id":"51a91c2d87f6437cba0000c6","_id":"51a91c2d87f6437cba0000c6","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","content_type":"image","width":602,"height":393,"filename":"photo_2.jpg","full_filename":"photo_2.jpg","short_name":"photo_2.jpg","extname":"jpg","raw_size":165883,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWE5MWMyOTg3ZjY0MzdjYmEwMDAwN2MvYXNzZXRzLzUxYTkxYzJkODdmNjQzN2NiYTAwMDBjNi9waG90b18yLmpwZyJdLFsicCIsInRodW1iIiwiODV4ODUjIl1d/photo_2.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c6/photo_2.jpg","content_type_text":"image"}]'
+      string: ! '[{"id":"51d348b387f64322a90000c3","_id":"51d348b387f64322a90000c3","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:03Z","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWQzNDhhZDg3ZjY0MzIyYTkwMDAwN2QvYXNzZXRzLzUxZDM0OGIzODdmNjQzMjJhOTAwMDBjMy9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","content_type_text":"image"},{"id":"51d348b387f64322a90000c8","_id":"51d348b387f64322a90000c8","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:03Z","content_type":"image","width":602,"height":393,"filename":"photo_2.jpg","full_filename":"photo_2.jpg","short_name":"photo_2.jpg","extname":"jpg","raw_size":165883,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MWQzNDhhZDg3ZjY0MzIyYTkwMDAwN2QvYXNzZXRzLzUxZDM0OGIzODdmNjQzMjJhOTAwMDBjOC9waG90b18yLmpwZyJdLFsicCIsInRodW1iIiwiODV4ODUjIl1d/photo_2.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c8/photo_2.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: ''
@@ -216,7 +216,7 @@ http_interactions:
     headers:
       !binary "RGF0ZQ==":
       - !binary |-
-        RnJpLCAzMSBNYXkgMjAxMyAyMTo1NTowMSBHTVQ=
+        VHVlLCAwMiBKdWwgMjAxMyAyMTo0MDoxMyBHTVQ=
       !binary "U3RhdHVz":
       - !binary |-
         MjAwIE9L
@@ -231,94 +231,88 @@ http_interactions:
         SUU9RWRnZQ==
       !binary "RXRhZw==":
       - !binary |-
-        IjExNGE5NTVmMjk0ODZjNGY1ZTg5ODc5NzNhZWQ5MTc2Ig==
+        IjhjNmNjNzM2YzE3ZmY3YjAyMTgyMTRiNzlkMzdkOWJkIg==
       !binary "Q2FjaGUtQ29udHJvbA==":
       - !binary |-
         bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
       !binary "U2V0LUNvb2tpZQ==":
       - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVEZsWm1NeU5HUmxNR00zTmpkak5Ea3pZVGhpTVRrNU1tRXlaVFV3WkRa
-        akJqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYWtiOG9mMlEwNHNBQUFCU1NJWlpqVlVkVXcwYTBKb1VI
-        bFZZMkZhUWxWblpXSUdPd0JVLS0yNTQ5YTI0MTU1Mzc0MjkxMTQyYThkY2U3
-        ZmZjZDc2MGNmZDFkOTQzOyBkb21haW49LmV4YW1wbGUuY29tOyBwYXRoPS87
-        IEh0dHBPbmx5
+        X2xvY29tb3RpdmVfc2Vzc2lvbj10UUM1ZXdKZGxtMVRWS2RCaGFhYVRzdy1T
+        eGs7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9LzsgSHR0cE9ubHk=
       !binary "WC1SZXF1ZXN0LUlk":
       - !binary |-
-        NGI2YmQ1ZGVkMDRlMjU5MjkzODY2MmM3MjYzMWQ0MjU=
+        NTI2MDNkMWY3Y2YxMTMxNGE5Yjc5MjY2NzEyMzZiODU=
       !binary "WC1SdW50aW1l":
       - !binary |-
-        MC4wNjI5NzM=
+        MC4wNzIxMzc=
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        W3siaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODIiLCJfaWQiOiI1MWE5
-        MWMyYTg3ZjY0MzdjYmEwMDAwODIiLCJjcmVhdGVkX2F0IjoiMjAxMy0wNS0z
-        MVQyMTo1NDo1MFoiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wNS0zMVQyMTo1NDo1
-        MFoiLCJuYW1lIjoiQmFuZHMiLCJzbHVnIjoiYmFuZHMiLCJlbnRyaWVzX2N1
-        c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDgz
-        IiwiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDgzIiwibmFtZSI6Im5h
+        W3siaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODQiLCJfaWQiOiI1MWQz
+        NDhhZTg3ZjY0MzIyYTkwMDAwODQiLCJjcmVhdGVkX2F0IjoiMjAxMy0wNy0w
+        MlQyMTozOTo1OFoiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wNy0wMlQyMTozOTo1
+        OFoiLCJuYW1lIjoiQmFuZHMiLCJzbHVnIjoiYmFuZHMiLCJlbnRyaWVzX2N1
+        c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDg1
+        IiwiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDg1IiwibmFtZSI6Im5h
         bWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQi
         OnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQi
-        OiJOYW1lIG9mIHRoZSBiYW5kIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE5
-        MWMyYTg3ZjY0MzdjYmEwMDAwODQiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0Mzdj
-        YmEwMDAwODQiLCJuYW1lIjoibGVhZGVyIiwibGFiZWwiOiJGdWxsbmFtZSBv
+        OiJOYW1lIG9mIHRoZSBiYW5kIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWQz
+        NDhhZTg3ZjY0MzIyYTkwMDAwODYiLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIy
+        YTkwMDAwODYiLCJuYW1lIjoibGVhZGVyIiwibGFiZWwiOiJGdWxsbmFtZSBv
         ZiB0aGUgbGVhZGVyIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxz
         ZSwibG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24i
-        OjF9LHsiaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODUiLCJfaWQiOiI1
-        MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODUiLCJuYW1lIjoia2luZCIsImxhYmVs
+        OjF9LHsiaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODciLCJfaWQiOiI1
+        MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODciLCJuYW1lIjoia2luZCIsImxhYmVs
         IjoiTXVzaWMga2luZCAoZ3J1bmdlLCByb2NrLCBwb3AsIGNvdW50cnkpIiwi
         dHlwZSI6InNlbGVjdCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpm
         YWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjIsInNlbGVjdF9vcHRp
-        b25zIjpbeyJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODYiLCJuYW1l
-        IjoiZ3J1bmdlIiwicG9zaXRpb24iOjAsImlkIjoiNTFhOTFjMmE4N2Y2NDM3
-        Y2JhMDAwMDg2In0seyJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODci
-        LCJuYW1lIjoicm9jayIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTkxYzJhODdm
-        NjQzN2NiYTAwMDA4NyJ9LHsiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAw
-        MDg4IiwibmFtZSI6ImNvdW50cnkiLCJwb3NpdGlvbiI6MiwiaWQiOiI1MWE5
-        MWMyYTg3ZjY0MzdjYmEwMDAwODgifV0sInJhd19zZWxlY3Rfb3B0aW9ucyI6
-        W3siaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODYiLCJuYW1lIjp7ImVu
-        IjoiZ3J1bmdlIn0sInBvc2l0aW9uIjoyfSx7ImlkIjoiNTFhOTFjMmE4N2Y2
-        NDM3Y2JhMDAwMDg3IiwibmFtZSI6eyJlbiI6InJvY2sifSwicG9zaXRpb24i
-        OjJ9LHsiaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwODgiLCJuYW1lIjp7
-        ImVuIjoiY291bnRyeSJ9LCJwb3NpdGlvbiI6Mn1dfSx7ImlkIjoiNTFhOTFj
-        MmE4N2Y2NDM3Y2JhMDAwMGEyIiwiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2Jh
-        MDAwMGEyIiwibmFtZSI6InNvbmdzIiwibGFiZWwiOiJTb25ncyIsInR5cGUi
+        b25zIjpbeyJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODgiLCJuYW1l
+        IjoiZ3J1bmdlIiwicG9zaXRpb24iOjAsImlkIjoiNTFkMzQ4YWU4N2Y2NDMy
+        MmE5MDAwMDg4In0seyJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODki
+        LCJuYW1lIjoicm9jayIsInBvc2l0aW9uIjoxLCJpZCI6IjUxZDM0OGFlODdm
+        NjQzMjJhOTAwMDA4OSJ9LHsiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAw
+        MDhhIiwibmFtZSI6ImNvdW50cnkiLCJwb3NpdGlvbiI6MiwiaWQiOiI1MWQz
+        NDhhZTg3ZjY0MzIyYTkwMDAwOGEifV0sInJhd19zZWxlY3Rfb3B0aW9ucyI6
+        W3siaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwODgiLCJuYW1lIjp7ImVu
+        IjoiZ3J1bmdlIn0sInBvc2l0aW9uIjoyfSx7ImlkIjoiNTFkMzQ4YWU4N2Y2
+        NDMyMmE5MDAwMDg5IiwibmFtZSI6eyJlbiI6InJvY2sifSwicG9zaXRpb24i
+        OjJ9LHsiaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwOGEiLCJuYW1lIjp7
+        ImVuIjoiY291bnRyeSJ9LCJwb3NpdGlvbiI6Mn1dfSx7ImlkIjoiNTFkMzQ4
+        YWU4N2Y2NDMyMmE5MDAwMGE0IiwiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5
+        MDAwMGE0IiwibmFtZSI6InNvbmdzIiwibGFiZWwiOiJTb25ncyIsInR5cGUi
         OiJoYXNfbWFueSIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpmYWxz
         ZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjMsImNsYXNzX25hbWUiOiJM
-        b2NvbW90aXZlOjpDb250ZW50RW50cnk1MWE5MWMyYTg3ZjY0MzdjYmEwMDAw
-        OTMiLCJpbnZlcnNlX29mIjoiYmFuZCIsInVpX2VuYWJsZWQiOnRydWUsImNs
+        b2NvbW90aXZlOjpDb250ZW50RW50cnk1MWQzNDhhZTg3ZjY0MzIyYTkwMDAw
+        OTUiLCJpbnZlcnNlX29mIjoiYmFuZCIsInVpX2VuYWJsZWQiOnRydWUsImNs
         YXNzX3NsdWciOiJzb25ncyJ9XSwiZGVzY3JpcHRpb24iOiJMaXN0IG9mIGJh
         bmRzIiwibGFiZWxfZmllbGRfbmFtZSI6Im5hbWUiLCJvcmRlcl9ieSI6IjUx
-        YTkxYzJhODdmNjQzN2NiYTAwMDA4MyIsIm9yZGVyX2RpcmVjdGlvbiI6ImFz
+        ZDM0OGFlODdmNjQzMjJhOTAwMDA4NSIsIm9yZGVyX2RpcmVjdGlvbiI6ImFz
         YyIsIm9yZGVyX2J5X2ZpZWxkX25hbWUiOiJuYW1lIiwicHVibGljX3N1Ym1p
         c3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNzaW9uX2FjY291
-        bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA4
-        OSIsIl9pZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA4OSIsImNyZWF0ZWRf
-        YXQiOiIyMDEzLTA1LTMxVDIxOjU0OjUwWiIsInVwZGF0ZWRfYXQiOiIyMDEz
-        LTA1LTMxVDIxOjU0OjUwWiIsIm5hbWUiOiJFdmVudHMiLCJzbHVnIjoiZXZl
-        bnRzIiwiZW50cmllc19jdXN0b21fZmllbGRzIjpbeyJpZCI6IjUxYTkxYzJh
-        ODdmNjQzN2NiYTAwMDA4YSIsIl9pZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAw
-        MDA4YSIsIm5hbWUiOiJwbGFjZSIsImxhYmVsIjoiUGxhY2UiLCJ0eXBlIjoi
+        bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA4
+        YiIsIl9pZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA4YiIsImNyZWF0ZWRf
+        YXQiOiIyMDEzLTA3LTAyVDIxOjM5OjU4WiIsInVwZGF0ZWRfYXQiOiIyMDEz
+        LTA3LTAyVDIxOjM5OjU4WiIsIm5hbWUiOiJFdmVudHMiLCJzbHVnIjoiZXZl
+        bnRzIiwiZW50cmllc19jdXN0b21fZmllbGRzIjpbeyJpZCI6IjUxZDM0OGFl
+        ODdmNjQzMjJhOTAwMDA4YyIsIl9pZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAw
+        MDA4YyIsIm5hbWUiOiJwbGFjZSIsImxhYmVsIjoiUGxhY2UiLCJ0eXBlIjoi
         c3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVu
         aXF1ZSI6ZmFsc2UsImhpbnQiOiJOYW1lIG9mIHRoZSBwbGFjZSIsInBvc2l0
-        aW9uIjowfSx7ImlkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDhiIiwiX2lk
-        IjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDhiIiwibmFtZSI6ImRhdGUiLCJs
+        aW9uIjowfSx7ImlkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDhkIiwiX2lk
+        IjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDhkIiwibmFtZSI6ImRhdGUiLCJs
         YWJlbCI6IkRhdGUiLCJ0eXBlIjoiZGF0ZSIsInJlcXVpcmVkIjpmYWxzZSwi
         bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwiaGludCI6IkRhdGUg
-        b2YgdGhlIGV2ZW50IiwicG9zaXRpb24iOjF9LHsiaWQiOiI1MWE5MWMyYTg3
-        ZjY0MzdjYmEwMDAwOGMiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAw
-        OGMiLCJuYW1lIjoiY2l0eSIsImxhYmVsIjoiQ2l0eSBvZiB0aGUgZXZlbnQi
+        b2YgdGhlIGV2ZW50IiwicG9zaXRpb24iOjF9LHsiaWQiOiI1MWQzNDhhZTg3
+        ZjY0MzIyYTkwMDAwOGUiLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAw
+        OGUiLCJuYW1lIjoiY2l0eSIsImxhYmVsIjoiQ2l0eSBvZiB0aGUgZXZlbnQi
         LCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQi
         OmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUx
-        YTkxYzJhODdmNjQzN2NiYTAwMDA4ZCIsIl9pZCI6IjUxYTkxYzJhODdmNjQz
-        N2NiYTAwMDA4ZCIsIm5hbWUiOiJzdGF0ZSIsImxhYmVsIjoiU3RhdGUgb2Yg
+        ZDM0OGFlODdmNjQzMjJhOTAwMDA4ZiIsIl9pZCI6IjUxZDM0OGFlODdmNjQz
+        MjJhOTAwMDA4ZiIsIm5hbWUiOiJzdGF0ZSIsImxhYmVsIjoiU3RhdGUgb2Yg
         dGhlIGV2ZW50IiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxzZSwi
         bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjN9
-        LHsiaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwOGUiLCJfaWQiOiI1MWE5
-        MWMyYTg3ZjY0MzdjYmEwMDAwOGUiLCJuYW1lIjoibm90ZXMiLCJsYWJlbCI6
+        LHsiaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwOTAiLCJfaWQiOiI1MWQz
+        NDhhZTg3ZjY0MzIyYTkwMDAwOTAiLCJuYW1lIjoibm90ZXMiLCJsYWJlbCI6
         Ik5vdGVzIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2Fs
         aXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjo0LCJ0ZXh0
         X2Zvcm1hdHRpbmciOiIifV0sImRlc2NyaXB0aW9uIjoiTGlzdCBvZiB1cGNv
@@ -326,21 +320,21 @@ http_interactions:
         cl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJlY3Rpb24iOiJhc2MiLCJv
         cmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9hdCIsInB1YmxpY19zdWJt
         aXNzaW9uX2VuYWJsZWQiOmZhbHNlLCJwdWJsaWNfc3VibWlzc2lvbl9hY2Nv
-        dW50X2VtYWlscyI6W119LHsiaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAw
-        OGYiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwOGYiLCJjcmVhdGVk
-        X2F0IjoiMjAxMy0wNS0zMVQyMTo1NDo1MFoiLCJ1cGRhdGVkX2F0IjoiMjAx
-        My0wNS0zMVQyMTo1NDo1MFoiLCJuYW1lIjoiTWVzc2FnZXMiLCJzbHVnIjoi
-        bWVzc2FnZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFh
-        OTFjMmE4N2Y2NDM3Y2JhMDAwMDkwIiwiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3
-        Y2JhMDAwMDkwIiwibmFtZSI6Im5hbWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBl
+        dW50X2VtYWlscyI6W119LHsiaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAw
+        OTEiLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwOTEiLCJjcmVhdGVk
+        X2F0IjoiMjAxMy0wNy0wMlQyMTozOTo1OFoiLCJ1cGRhdGVkX2F0IjoiMjAx
+        My0wNy0wMlQyMTozOTo1OFoiLCJuYW1lIjoiTWVzc2FnZXMiLCJzbHVnIjoi
+        bWVzc2FnZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7ImlkIjoiNTFk
+        MzQ4YWU4N2Y2NDMyMmE5MDAwMDkyIiwiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMy
+        MmE5MDAwMDkyIiwibmFtZSI6Im5hbWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBl
         Ijoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2Us
         InVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJGdWxsIG5hbWUiLCJwb3NpdGlvbiI6
-        MH0seyJpZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5MSIsIl9pZCI6IjUx
-        YTkxYzJhODdmNjQzN2NiYTAwMDA5MSIsIm5hbWUiOiJlbWFpbCIsImxhYmVs
+        MH0seyJpZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5MyIsIl9pZCI6IjUx
+        ZDM0OGFlODdmNjQzMjJhOTAwMDA5MyIsIm5hbWUiOiJlbWFpbCIsImxhYmVs
         IjoiRW1haWwiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxv
         Y2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJFbWFpbCIs
-        InBvc2l0aW9uIjoxfSx7ImlkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDky
-        IiwiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDkyIiwibmFtZSI6Im1l
+        InBvc2l0aW9uIjoxfSx7ImlkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDk0
+        IiwiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDk0IiwibmFtZSI6Im1l
         c3NhZ2UiLCJsYWJlbCI6Ik1lc3NhZ2UiLCJ0eXBlIjoidGV4dCIsInJlcXVp
         cmVkIjp0cnVlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJo
         aW50IjoiQ3VzdG9tZXIgbWVzc2FnZSIsInBvc2l0aW9uIjoyLCJ0ZXh0X2Zv
@@ -349,95 +343,95 @@ http_interactions:
         ZSI6Im5hbWUiLCJvcmRlcl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJl
         Y3Rpb24iOiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9h
         dCIsInB1YmxpY19zdWJtaXNzaW9uX2VuYWJsZWQiOnRydWUsInB1YmxpY19z
-        dWJtaXNzaW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTkxYzJh
-        ODdmNjQzN2NiYTAwMDA5MyIsIl9pZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAw
-        MDA5MyIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTMxVDIxOjU0OjUwWiIsInVw
-        ZGF0ZWRfYXQiOiIyMDEzLTA1LTMxVDIxOjU0OjUwWiIsIm5hbWUiOiJTb25n
+        dWJtaXNzaW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxZDM0OGFl
+        ODdmNjQzMjJhOTAwMDA5NSIsIl9pZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAw
+        MDA5NSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA3LTAyVDIxOjM5OjU4WiIsInVw
+        ZGF0ZWRfYXQiOiIyMDEzLTA3LTAyVDIxOjM5OjU4WiIsIm5hbWUiOiJTb25n
         cyIsInNsdWciOiJzb25ncyIsImVudHJpZXNfY3VzdG9tX2ZpZWxkcyI6W3si
-        aWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwOTQiLCJfaWQiOiI1MWE5MWMy
-        YTg3ZjY0MzdjYmEwMDAwOTQiLCJuYW1lIjoidGl0bGUiLCJsYWJlbCI6IlRp
+        aWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwOTYiLCJfaWQiOiI1MWQzNDhh
+        ZTg3ZjY0MzIyYTkwMDAwOTYiLCJuYW1lIjoidGl0bGUiLCJsYWJlbCI6IlRp
         dGxlIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjp0cnVlLCJsb2NhbGl6
         ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiVGl0bGUgb2YgeW91
-        ciBzb25nIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWE5MWMyYTg3ZjY0Mzdj
-        YmEwMDAwYTMiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwYTMiLCJu
+        ciBzb25nIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MWQzNDhhZTg3ZjY0MzIy
+        YTkwMDAwYTUiLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwYTUiLCJu
         YW1lIjoiYmFuZCIsImxhYmVsIjoiQmFuZCIsInR5cGUiOiJiZWxvbmdzX3Rv
         IiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUi
         OmZhbHNlLCJwb3NpdGlvbiI6MSwiY2xhc3NfbmFtZSI6IkxvY29tb3RpdmU6
-        OkNvbnRlbnRFbnRyeTUxYTkxYzJhODdmNjQzN2NiYTAwMDA4MiIsInVpX2Vu
-        YWJsZWQiOnRydWUsImNsYXNzX3NsdWciOiJiYW5kcyJ9LHsiaWQiOiI1MWE5
-        MWMyYTg3ZjY0MzdjYmEwMDAwOTUiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0Mzdj
-        YmEwMDAwOTUiLCJuYW1lIjoiY292ZXIiLCJsYWJlbCI6IkNvdmVyIiwidHlw
+        OkNvbnRlbnRFbnRyeTUxZDM0OGFlODdmNjQzMjJhOTAwMDA4NCIsInVpX2Vu
+        YWJsZWQiOnRydWUsImNsYXNzX3NsdWciOiJiYW5kcyJ9LHsiaWQiOiI1MWQz
+        NDhhZTg3ZjY0MzIyYTkwMDAwOTciLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIy
+        YTkwMDAwOTciLCJuYW1lIjoiY292ZXIiLCJsYWJlbCI6IkNvdmVyIiwidHlw
         ZSI6ImZpbGUiLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVkIjpmYWxzZSwi
-        dW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjJ9LHsiaWQiOiI1MWE5MWMyYTg3
-        ZjY0MzdjYmEwMDAwOTYiLCJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAw
-        OTYiLCJuYW1lIjoic2hvcnRfZGVzY3JpcHRpb24iLCJsYWJlbCI6IlNob3J0
+        dW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjJ9LHsiaWQiOiI1MWQzNDhhZTg3
+        ZjY0MzIyYTkwMDAwOTgiLCJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAw
+        OTgiLCJuYW1lIjoic2hvcnRfZGVzY3JpcHRpb24iLCJsYWJlbCI6IlNob3J0
         IGRlc2NyaXB0aW9uIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2Us
         ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjoz
-        LCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJpZCI6IjUxYTkxYzJhODdm
-        NjQzN2NiYTAwMDA5NyIsIl9pZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5
-        NyIsIm5hbWUiOiJhdWRpb191cmwiLCJsYWJlbCI6IkF1ZGlvIHVybCIsInR5
+        LCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJpZCI6IjUxZDM0OGFlODdm
+        NjQzMjJhOTAwMDA5OSIsIl9pZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5
+        OSIsIm5hbWUiOiJhdWRpb191cmwiLCJsYWJlbCI6IkF1ZGlvIHVybCIsInR5
         cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2FsaXplZCI6ZmFs
         c2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJVcmwgdG8gYSBzZXJ2aWNlIGxp
         a2UgQmxpcCBmb3IgaW5zdGFuY2UiLCJwb3NpdGlvbiI6NH0seyJpZCI6IjUx
-        YTkxYzJhODdmNjQzN2NiYTAwMDA5OCIsIl9pZCI6IjUxYTkxYzJhODdmNjQz
-        N2NiYTAwMDA5OCIsIm5hbWUiOiJkdXJhdGlvbiIsImxhYmVsIjoiRHVyYXRp
+        ZDM0OGFlODdmNjQzMjJhOTAwMDA5YSIsIl9pZCI6IjUxZDM0OGFlODdmNjQz
+        MjJhOTAwMDA5YSIsIm5hbWUiOiJkdXJhdGlvbiIsImxhYmVsIjoiRHVyYXRp
         b24iLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6
         ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiZm9ybWF0IGxpa2U6
         IG1tOnNzIiwicG9zaXRpb24iOjV9XSwibGFiZWxfZmllbGRfbmFtZSI6InRp
         dGxlIiwib3JkZXJfYnkiOiJfcG9zaXRpb24iLCJvcmRlcl9kaXJlY3Rpb24i
         OiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiX3Bvc2l0aW9uIiwicHVi
         bGljX3N1Ym1pc3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNz
-        aW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxYTkxYzJhODdmNjQz
-        N2NiYTAwMDA5OSIsIl9pZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5OSIs
-        ImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTMxVDIxOjU0OjUwWiIsInVwZGF0ZWRf
-        YXQiOiIyMDEzLTA1LTMxVDIxOjU0OjUwWiIsIm5hbWUiOiJVcGRhdGVzIiwi
+        aW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUxZDM0OGFlODdmNjQz
+        MjJhOTAwMDA5YiIsIl9pZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5YiIs
+        ImNyZWF0ZWRfYXQiOiIyMDEzLTA3LTAyVDIxOjM5OjU4WiIsInVwZGF0ZWRf
+        YXQiOiIyMDEzLTA3LTAyVDIxOjM5OjU4WiIsIm5hbWUiOiJVcGRhdGVzIiwi
         c2x1ZyI6InVwZGF0ZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7Imlk
-        IjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDlhIiwiX2lkIjoiNTFhOTFjMmE4
-        N2Y2NDM3Y2JhMDAwMDlhIiwibmFtZSI6InRpdGxlIiwibGFiZWwiOiJUaXRs
+        IjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDljIiwiX2lkIjoiNTFkMzQ4YWU4
+        N2Y2NDMyMmE5MDAwMDljIiwibmFtZSI6InRpdGxlIiwibGFiZWwiOiJUaXRs
         ZSIsInR5cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVk
         Ijp0cnVlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiTm90IGRpc3BsYXllZCBp
-        biB0aGUgd2Vic2l0ZSIsInBvc2l0aW9uIjowfSx7ImlkIjoiNTFhOTFjMmE4
-        N2Y2NDM3Y2JhMDAwMDliIiwiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAw
-        MDliIiwibmFtZSI6InRleHQiLCJsYWJlbCI6IlRleHQiLCJ0eXBlIjoidGV4
+        biB0aGUgd2Vic2l0ZSIsInBvc2l0aW9uIjowfSx7ImlkIjoiNTFkMzQ4YWU4
+        N2Y2NDMyMmE5MDAwMDlkIiwiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAw
+        MDlkIiwibmFtZSI6InRleHQiLCJsYWJlbCI6IlRleHQiLCJ0eXBlIjoidGV4
         dCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjp0cnVlLCJ1bmlxdWUi
         OmZhbHNlLCJoaW50IjoiVGV4dCBkaXNwbGF5ZWQgaW4gdGhlIGhvbWUgcGFn
         ZSIsInBvc2l0aW9uIjoxLCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJp
-        ZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5YyIsIl9pZCI6IjUxYTkxYzJh
-        ODdmNjQzN2NiYTAwMDA5YyIsIm5hbWUiOiJjYXRlZ29yeSIsImxhYmVsIjoi
+        ZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5ZSIsIl9pZCI6IjUxZDM0OGFl
+        ODdmNjQzMjJhOTAwMDA5ZSIsIm5hbWUiOiJjYXRlZ29yeSIsImxhYmVsIjoi
         Q2F0ZWdvcnkiLCJ0eXBlIjoic2VsZWN0IiwicmVxdWlyZWQiOmZhbHNlLCJs
         b2NhbGl6ZWQiOnRydWUsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJQaWNrIGEg
         Y2F0ZWdvcnkiLCJwb3NpdGlvbiI6Miwic2VsZWN0X29wdGlvbnMiOlt7Il9p
-        ZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5ZSIsIm5hbWUiOiJHZW5lcmFs
-        IiwicG9zaXRpb24iOjAsImlkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDll
-        In0seyJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwOWYiLCJuYW1lIjoi
-        R2lncyIsInBvc2l0aW9uIjoxLCJpZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAw
-        MDA5ZiJ9LHsiX2lkIjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMGEwIiwibmFt
-        ZSI6IkJhbmRzIiwicG9zaXRpb24iOjIsImlkIjoiNTFhOTFjMmE4N2Y2NDM3
-        Y2JhMDAwMGEwIn0seyJfaWQiOiI1MWE5MWMyYTg3ZjY0MzdjYmEwMDAwYTEi
-        LCJuYW1lIjoiQWxidW1zIiwicG9zaXRpb24iOjMsImlkIjoiNTFhOTFjMmE4
-        N2Y2NDM3Y2JhMDAwMGExIn1dLCJyYXdfc2VsZWN0X29wdGlvbnMiOlt7Imlk
-        IjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDllIiwibmFtZSI6eyJlbiI6Ikdl
+        ZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDBhMCIsIm5hbWUiOiJHZW5lcmFs
+        IiwicG9zaXRpb24iOjAsImlkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMGEw
+        In0seyJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwYTEiLCJuYW1lIjoi
+        R2lncyIsInBvc2l0aW9uIjoxLCJpZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAw
+        MDBhMSJ9LHsiX2lkIjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMGEyIiwibmFt
+        ZSI6IkJhbmRzIiwicG9zaXRpb24iOjIsImlkIjoiNTFkMzQ4YWU4N2Y2NDMy
+        MmE5MDAwMGEyIn0seyJfaWQiOiI1MWQzNDhhZTg3ZjY0MzIyYTkwMDAwYTMi
+        LCJuYW1lIjoiQWxidW1zIiwicG9zaXRpb24iOjMsImlkIjoiNTFkMzQ4YWU4
+        N2Y2NDMyMmE5MDAwMGEzIn1dLCJyYXdfc2VsZWN0X29wdGlvbnMiOlt7Imlk
+        IjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMGEwIiwibmFtZSI6eyJlbiI6Ikdl
         bmVyYWwiLCJmciI6IkfDqW7DqXJhbCJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6
-        IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5ZiIsIm5hbWUiOnsiZW4iOiJHaWdz
-        IiwiZnIiOiJDb25jZXJ0cyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTkx
-        YzJhODdmNjQzN2NiYTAwMDBhMCIsIm5hbWUiOnsiZW4iOiJCYW5kcyIsImZy
-        IjoiR3JvdXBlcyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxYTkxYzJhODdm
-        NjQzN2NiYTAwMDBhMSIsIm5hbWUiOnsiZW4iOiJBbGJ1bXMifSwicG9zaXRp
-        b24iOjJ9XX0seyJpZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5ZCIsIl9p
-        ZCI6IjUxYTkxYzJhODdmNjQzN2NiYTAwMDA5ZCIsIm5hbWUiOiJkYXRlIiwi
+        IjUxZDM0OGFlODdmNjQzMjJhOTAwMDBhMSIsIm5hbWUiOnsiZW4iOiJHaWdz
+        IiwiZnIiOiJDb25jZXJ0cyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxZDM0
+        OGFlODdmNjQzMjJhOTAwMDBhMiIsIm5hbWUiOnsiZW4iOiJCYW5kcyIsImZy
+        IjoiR3JvdXBlcyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUxZDM0OGFlODdm
+        NjQzMjJhOTAwMDBhMyIsIm5hbWUiOnsiZW4iOiJBbGJ1bXMifSwicG9zaXRp
+        b24iOjJ9XX0seyJpZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5ZiIsIl9p
+        ZCI6IjUxZDM0OGFlODdmNjQzMjJhOTAwMDA5ZiIsIm5hbWUiOiJkYXRlIiwi
         bGFiZWwiOiJEYXRlIiwidHlwZSI6ImRhdGUiLCJyZXF1aXJlZCI6ZmFsc2Us
         ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJEYXRl
         IG9mIHRoZSB1cGRhdGUiLCJwb3NpdGlvbiI6M31dLCJkZXNjcmlwdGlvbiI6
         Ikxpc3Qgb2YgdXBkYXRlcyIsImxhYmVsX2ZpZWxkX25hbWUiOiJ0aXRsZSIs
-        Im9yZGVyX2J5IjoiNTFhOTFjMmE4N2Y2NDM3Y2JhMDAwMDlkIiwib3JkZXJf
+        Im9yZGVyX2J5IjoiNTFkMzQ4YWU4N2Y2NDMyMmE5MDAwMDlmIiwib3JkZXJf
         ZGlyZWN0aW9uIjoiYXNjIiwib3JkZXJfYnlfZmllbGRfbmFtZSI6ImRhdGUi
         LCJwdWJsaWNfc3VibWlzc2lvbl9lbmFibGVkIjpmYWxzZSwicHVibGljX3N1
         Ym1pc3Npb25fYWNjb3VudF9lbWFpbHMiOltdfV0=
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/pages.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: ''
@@ -448,7 +442,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -458,19 +452,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"71556ca0f243a61f94ef73c8f0f58121"'
+      - ! '"7ad8b7604e4891cb5d90af6d531ae45f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTI5Y2I2Mzg3YTRhYTJmZTA2YzQ2ZTY2MzJhY2Y5YjQxBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--30a4bce2ce2a1769faf7b66a733632f0f6723f78;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=fNi6ysRBMKiNmnDT8-vrG_WavGo; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - bc979a4461fc9c4bb878184426f3cd40
+      - c5dfd39aced707b43258cbd3eb6d1266
       X-Runtime:
-      - '0.086485'
+      - '0.095239'
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"51a91c2987f6437cba00007e","_id":"51a91c2987f6437cba00007e","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:55Z","title":"Home
+      string: ! '[{"id":"51d348ad87f64322a900007f","_id":"51d348ad87f64322a900007f","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:40:06Z","title":"Home
         page","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
@@ -487,7 +481,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        (602px by 397px)'' %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -532,7 +526,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -560,40 +554,40 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c2","_id":"51a91c2d87f6437cba0000c2","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51d348b387f64322a90000c4","_id":"51d348b387f64322a90000c4","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c3","_id":"51a91c2d87f6437cba0000c3","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":false,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000c5","_id":"51d348b387f64322a90000c5","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true}]},{"id":"51a91c2e87f6437cba0000e3","_id":"51a91c2e87f6437cba0000e3","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"A
-        song template","slug":"content-type-template","parent_id":"51a91c2e87f6437cba0000d8","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b587f64322a90000e5","_id":"51d348b587f64322a90000e5","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","title":"A
+        song template","slug":"content-type-template","parent_id":"51d348b487f64322a90000da","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
         extends ''index'' %}\n{% block content %}\n<h3>{{ song.title }}</h3>\n<p>{{
         song.short_description }}</p>\n{% endblock %}\n","escaped_raw_template":"{%
         extends &#x27;index&#x27; %}\n{% block content %}\n&lt;h3&gt;{{ song.title
         }}&lt;/h3&gt;\n&lt;p&gt;{{ song.short_description }}&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"51a91c2e87f6437cba0000e4","_id":"51a91c2e87f6437cba0000e4","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"Page
+        %}\n","editable_elements":[{"id":"51d348b587f64322a90000e6","_id":"51d348b587f64322a90000e6","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:05Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2e87f6437cba0000e5","_id":"51a91c2e87f6437cba0000e5","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b587f64322a90000e7","_id":"51d348b587f64322a90000e7","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:05Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true}]},{"id":"51a91c2e87f6437cba0000e6","_id":"51a91c2e87f6437cba0000e6","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"News","slug":"news","parent_id":"51a91c2e87f6437cba0000da","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51a91c2987f6437cba00007f","_id":"51a91c2987f6437cba00007f","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:55Z","title":"Page
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b587f64322a90000e8","_id":"51d348b587f64322a90000e8","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","title":"News","slug":"news","parent_id":"51d348b487f64322a90000dc","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51d348ad87f64322a9000080","_id":"51d348ad87f64322a9000080","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:40:06Z","title":"Page
         not found","slug":"404","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends index %}\n{% block content %}\n<p class=''error''>page not found</p>\n{%
         endblock %}\n","escaped_raw_template":"{% extends index %}\n{% block content
         %}\n&lt;p class=&#x27;error&#x27;&gt;page not found&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c4","_id":"51a91c2d87f6437cba0000c4","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        %}\n","editable_elements":[{"id":"51d348b387f64322a90000c6","_id":"51d348b387f64322a90000c6","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c5","_id":"51a91c2d87f6437cba0000c5","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000c7","_id":"51d348b387f64322a90000c7","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true}]},{"id":"51a91c2d87f6437cba0000c7","_id":"51a91c2d87f6437cba0000c7","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"About
-        Us","slug":"about-us","parent_id":"51a91c2987f6437cba00007e","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b387f64322a90000c9","_id":"51d348b387f64322a90000c9","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","title":"About
+        Us","slug":"about-us","parent_id":"51d348ad87f64322a900007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -629,10 +623,10 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c8","_id":"51a91c2d87f6437cba0000c8","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"51d348b387f64322a90000ca","_id":"51d348b387f64322a90000ca","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c9","_id":"51a91c2d87f6437cba0000c9","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false},{"id":"51a91c2d87f6437cba0000ca","_id":"51a91c2d87f6437cba0000ca","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000cb","_id":"51d348b387f64322a90000cb","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"51d348b387f64322a90000cc","_id":"51d348b387f64322a90000cc","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -648,11 +642,11 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]},{"id":"51a91c2e87f6437cba0000db","_id":"51a91c2e87f6437cba0000db","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"John-doe","slug":"john-doe","parent_id":"51a91c2d87f6437cba0000c7","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51a91c2e87f6437cba0000dc","_id":"51a91c2e87f6437cba0000dc","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b487f64322a90000dd","_id":"51d348b487f64322a90000dd","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","title":"John-doe","slug":"john-doe","parent_id":"51d348b387f64322a90000c9","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51d348b487f64322a90000de","_id":"51d348b487f64322a90000de","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2e87f6437cba0000dd","_id":"51a91c2e87f6437cba0000dd","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false},{"id":"51a91c2e87f6437cba0000de","_id":"51a91c2e87f6437cba0000de","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":true,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b487f64322a90000df","_id":"51d348b487f64322a90000df","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"51d348b487f64322a90000e0","_id":"51d348b487f64322a90000e0","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -668,7 +662,7 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]},{"id":"51a91c2d87f6437cba0000cb","_id":"51a91c2d87f6437cba0000cb","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"Music","slug":"music","parent_id":"51a91c2987f6437cba00007e","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b487f64322a90000cd","_id":"51d348b487f64322a90000cd","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Music","slug":"music","parent_id":"51d348ad87f64322a900007f","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''introduction''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -695,25 +689,25 @@ http_interactions:
         0 %}\n    {% include &#x27;song&#x27; with song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n&lt;div
         class=&#x27;unit size1of2&#x27;&gt;\n  &lt;ul class=&#x27;songs&#x27;&gt;\n    {%
         for song in contents.songs offset: 4 %}\n    {% include &#x27;song&#x27; with
-        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000cc","_id":"51a91c2d87f6437cba0000cc","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"Page
+        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"51d348b487f64322a90000ce","_id":"51d348b487f64322a90000ce","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000cd","_id":"51a91c2d87f6437cba0000cd","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b487f64322a90000cf","_id":"51d348b487f64322a90000cf","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true},{"id":"51a91c2d87f6437cba0000ce","_id":"51a91c2d87f6437cba0000ce","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n<p>\n  Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"51d348b487f64322a90000d0","_id":"51d348b487f64322a90000d0","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc. Quisque mauris diam, tincidunt in commodo sed, feugiat
         eu nibh. Nulla erat nunc, dapibus vel eleifend et, egestas sed quam. Vestibulum
         mollis eros at dolor vulputate vel sollicitudin enim convallis. Etiam velit
-        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>\n","default_content":true}]},{"id":"51a91c2e87f6437cba0000df","_id":"51a91c2e87f6437cba0000df","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Jane-doe","slug":"jane-doe","parent_id":"51a91c2d87f6437cba0000c7","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51a91c2e87f6437cba0000e0","_id":"51a91c2e87f6437cba0000e0","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"Page
+        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b587f64322a90000e1","_id":"51d348b587f64322a90000e1","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","title":"Jane-doe","slug":"jane-doe","parent_id":"51d348b387f64322a90000c9","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51d348b587f64322a90000e2","_id":"51d348b587f64322a90000e2","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:05Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2e87f6437cba0000e1","_id":"51a91c2e87f6437cba0000e1","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false},{"id":"51a91c2e87f6437cba0000e2","_id":"51a91c2e87f6437cba0000e2","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":true,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b587f64322a90000e3","_id":"51d348b587f64322a90000e3","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:05Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"51d348b587f64322a90000e4","_id":"51d348b587f64322a90000e4","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:05Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -729,8 +723,8 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]},{"id":"51a91c2d87f6437cba0000cf","_id":"51a91c2d87f6437cba0000cf","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"Store","slug":"store","parent_id":"51a91c2987f6437cba00007e","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51a91c2d87f6437cba0000d0","_id":"51a91c2d87f6437cba0000d0","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"Contact
-        Us","slug":"contact","parent_id":"51a91c2987f6437cba00007e","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b487f64322a90000d1","_id":"51d348b487f64322a90000d1","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Store","slug":"store","parent_id":"51d348ad87f64322a900007f","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51d348b487f64322a90000d2","_id":"51d348b487f64322a90000d2","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Contact
+        Us","slug":"contact","parent_id":"51d348ad87f64322a900007f","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends ''parent'' %}\n{% block content %}\n<div class=''text''>\n  {% editable_long_text
         ''text'' %}\n  <p>\n    Ut imperdiet velit eu metus semper tristique. Vivamus
         risus nisi, tincidunt et euismod a, auctor pretium eros. Vestibulum sed magna
@@ -795,14 +789,14 @@ http_interactions:
         {\n          alert(&quot;Thank you ! Your message have been received&quot;);\n        },
         &quot;json&quot;).error(function(response) {\n          alert(&quot;We are
         sorry but we were unable to treat your message. Please try later.&quot;);\n        });\n    });\n  });\n&lt;/script&gt;\n{%
-        endblock %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000d1","_id":"51a91c2d87f6437cba0000d1","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"Page
+        endblock %}\n","editable_elements":[{"id":"51d348b487f64322a90000d3","_id":"51d348b487f64322a90000d3","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000d2","_id":"51a91c2d87f6437cba0000d2","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b487f64322a90000d4","_id":"51d348b487f64322a90000d4","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true},{"id":"51a91c2d87f6437cba0000d3","_id":"51a91c2d87f6437cba0000d3","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:53Z","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n  <p>\n    Ut
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"51d348b487f64322a90000d5","_id":"51d348b487f64322a90000d5","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Ut
         imperdiet velit eu metus semper tristique. Vivamus risus nisi, tincidunt et
         euismod a, auctor pretium eros. Vestibulum sed magna et velit pulvinar euismod.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed velit
@@ -811,7 +805,7 @@ http_interactions:
         mauris orci ullamcorper lectus, nec vulputate turpis mauris sed augue. Maecenas
         faucibus ultricies nisl, non ullamcorper justo bibendum nec. Duis vitae mauris
         condimentum risus commodo mattis vel sed libero. Fusce diam elit, porta id
-        vestibulum ut, aliquet mattis neque.\n  </p>\n  ","default_content":true}]},{"id":"51a91c2e87f6437cba0000d4","_id":"51a91c2e87f6437cba0000d4","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Events","slug":"events","parent_id":"51a91c2987f6437cba00007e","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum ut, aliquet mattis neque.\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b487f64322a90000d6","_id":"51d348b487f64322a90000d6","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Events","slug":"events","parent_id":"51d348ad87f64322a900007f","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n<p>Thank you {{ message.name }} !</p>\n<div
         class=''unit size2of3'' id=''events''>\n  <h2>Upcoming events</h2>\n  <ul
         class=''list''>\n    {% for event in contents.events %}\n    <li>\n      <em>{{
@@ -859,14 +853,14 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan\n  &lt;/p&gt;\n  {% endeditable_long_text
-        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"51a91c2e87f6437cba0000d5","_id":"51a91c2e87f6437cba0000d5","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"Page
+        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"51d348b487f64322a90000d7","_id":"51d348b487f64322a90000d7","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2e87f6437cba0000d6","_id":"51a91c2e87f6437cba0000d6","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b487f64322a90000d8","_id":"51d348b487f64322a90000d8","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true},{"id":"51a91c2e87f6437cba0000d7","_id":"51a91c2e87f6437cba0000d7","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:54Z","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n  <p>\n    Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"51d348b487f64322a90000d9","_id":"51d348b487f64322a90000d9","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:04Z","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -882,16 +876,16 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>\n  ","default_content":true}]},{"id":"51a91c2e87f6437cba0000d8","_id":"51a91c2e87f6437cba0000d8","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Songs","slug":"songs","parent_id":"51a91c2987f6437cba00007e","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51a91c2e87f6437cba0000d9","_id":"51a91c2e87f6437cba0000d9","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Lorem
+        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"51d348b487f64322a90000da","_id":"51d348b487f64322a90000da","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Songs","slug":"songs","parent_id":"51d348ad87f64322a900007f","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"51d348b487f64322a90000db","_id":"51d348b487f64322a90000db","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Lorem
         ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"51a91c2987f6437cba00007e","position":7,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
-        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"51a91c2e87f6437cba0000da","_id":"51a91c2e87f6437cba0000da","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Archives","slug":"archives","parent_id":"51a91c2987f6437cba00007e","position":8,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"51d348ad87f64322a900007f","position":7,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
+        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"51d348b487f64322a90000dc","_id":"51d348b487f64322a90000dc","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Archives","slug":"archives","parent_id":"51d348ad87f64322a900007f","position":8,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2987f6437cba00007e.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348ad87f64322a900007f.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -902,7 +896,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -912,19 +906,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"e8c95e4d16db0ada9fb0ca548b23cdb0"'
+      - ! '"3d12a82bb77e583a2c7cd9488e2e7d6f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWJiNzkyNDhkZWQyY2QxYjg1ZDM1ZmU1MmFjMGMzM2M3BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--4e6b86803486d7e2ab6acf7f8d5e0b9b531b476b;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=Vs-2SxMzQNyfdgm4POOpyCseulA; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 9531cb4b05642488dd79263f318d0841
+      - 5a05483881520640eab769fc3c9c9606
       X-Runtime:
-      - '0.030944'
+      - '0.035589'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007e","_id":"51a91c2987f6437cba00007e","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:55Z","title":"Page
+      string: ! '{"id":"51d348ad87f64322a900007f","_id":"51d348ad87f64322a900007f","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:40:06Z","title":"Page
         d''accueil","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
@@ -941,7 +935,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        (602px by 397px)'' %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -986,7 +980,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -1014,19 +1008,19 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c2","_id":"51a91c2d87f6437cba0000c2","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51d348b387f64322a90000c4","_id":"51d348b387f64322a90000c4","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c3","_id":"51a91c2d87f6437cba0000c3","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":false,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000c5","_id":"51d348b387f64322a90000c5","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true}]}'
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2987f6437cba00007e.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348ad87f64322a900007f.json?auth_token=Pvsw6p348ihNqxwswB57&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -1037,7 +1031,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1047,19 +1041,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"7435d3c3c223bad4b71efe048cc537ef"'
+      - ! '"97825e6b1a56be62bd17660790b32d20"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTY4ODVlNWMyZGQzYTI0NWFiODYwYTYwNWUwMDk0MGRhBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--7005672022bd81bedff63c14cff795eeee9d8511;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=AHH_nzWrBt6eJrxs1T-lESPbi_A; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 4447fdf6a7d990a16792b05f112f21c4
+      - 7cdbaff00345549199a23608f27ced17
       X-Runtime:
-      - '0.031025'
+      - '0.035640'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007e","_id":"51a91c2987f6437cba00007e","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:55Z","title":"Startside","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
+      string: ! '{"id":"51d348ad87f64322a900007f","_id":"51d348ad87f64322a900007f","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:40:06Z","title":"Startside","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
         content=''{{ site.meta_keywords }}'' name=''keywords''>\n    <!-- Le HTML5
@@ -1075,7 +1069,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        (602px by 397px)'' %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -1120,7 +1114,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -1148,19 +1142,19 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c2","_id":"51a91c2d87f6437cba0000c2","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"51d348b387f64322a90000c4","_id":"51d348b387f64322a90000c4","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c3","_id":"51a91c2d87f6437cba0000c3","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":false,"disabled":false,"content":"\n          <h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000c5","_id":"51d348b387f64322a90000c5","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>\n          ","default_content":true}]}'
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2987f6437cba00007f.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348ad87f64322a9000080.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1173,7 +1167,7 @@ http_interactions:
     headers:
       !binary "RGF0ZQ==":
       - !binary |-
-        RnJpLCAzMSBNYXkgMjAxMyAyMTo1NTowMSBHTVQ=
+        VHVlLCAwMiBKdWwgMjAxMyAyMTo0MDoxMyBHTVQ=
       !binary "U3RhdHVz":
       - !binary |-
         MjAwIE9L
@@ -1188,32 +1182,26 @@ http_interactions:
         SUU9RWRnZQ==
       !binary "RXRhZw==":
       - !binary |-
-        IjVlMjRkZDNkYTRlNjUwY2Q5NmQ5MTM2ZWJkMWNkOGRiIg==
+        IjFjNzU4NWY3NzExOGQ0MDBlZWMyNDM4M2ExMWQ1ZDA1Ig==
       !binary "Q2FjaGUtQ29udHJvbA==":
       - !binary |-
         bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
       !binary "U2V0LUNvb2tpZQ==":
       - !binary |-
-        X2R1bW15X3Nlc3Npb249QkFoN0Iwa2lEM05sYzNOcGIyNWZhV1FHT2daRlJr
-        a2lKVEUwTW1RME5HRmlOekptTWprNVptUmtPREV5T1dZMU1HUTRPV0l4TldJ
-        d0Jqc0FWRWtpSjNkaGNtUmxiaTUxYzJWeUxteHZZMjl0YjNScGRtVmZZV05q
-        YjNWdWRDNXJaWGtHT3dCVVd3ZGJCbFU2R2sxdmNHVmtPanBDVTA5T09qcFBZ
-        bXBsWTNSSlpDSVJVYWtiOG9mMlEwNHNBQUFCU1NJWlpqVlVkVXcwYTBKb1VI
-        bFZZMkZhUWxWblpXSUdPd0JVLS1lMTQwMmY2OTk3MmE5OTA4Mzg0NDVlYWM1
-        NDdiMGUzY2E1MjZkNzhjOyBkb21haW49LmV4YW1wbGUuY29tOyBwYXRoPS87
-        IEh0dHBPbmx5
+        X2xvY29tb3RpdmVfc2Vzc2lvbj10aGc3N0IwYWVzR1I1YmVpeEZDbVhfdXpr
+        VjQ7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9LzsgSHR0cE9ubHk=
       !binary "WC1SZXF1ZXN0LUlk":
       - !binary |-
-        ZDJiYmViMGY1MTdhODlkNmJlMTE2MTM0N2QwZGIwMjU=
+        ZWNmNjhlYWFkMTJkZDFjNTg4OWE4Y2FiNjRkN2ZkNDQ=
       !binary "WC1SdW50aW1l":
       - !binary |-
-        MC4wMjgyNTk=
+        MC4wMzQ1Mzk=
     body:
       encoding: ASCII-8BIT
       string: !binary |-
-        eyJpZCI6IjUxYTkxYzI5ODdmNjQzN2NiYTAwMDA3ZiIsIl9pZCI6IjUxYTkx
-        YzI5ODdmNjQzN2NiYTAwMDA3ZiIsImNyZWF0ZWRfYXQiOiIyMDEzLTA1LTMx
-        VDIxOjU0OjQ5WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA1LTMxVDIxOjU0OjU1
+        eyJpZCI6IjUxZDM0OGFkODdmNjQzMjJhOTAwMDA4MCIsIl9pZCI6IjUxZDM0
+        OGFkODdmNjQzMjJhOTAwMDA4MCIsImNyZWF0ZWRfYXQiOiIyMDEzLTA3LTAy
+        VDIxOjM5OjU3WiIsInVwZGF0ZWRfYXQiOiIyMDEzLTA3LTAyVDIxOjQwOjA2
         WiIsInRpdGxlIjoiUGFnZSBub24gdHJvdXbDqWUiLCJzbHVnIjoiNDA0Iiwi
         cG9zaXRpb24iOjEsInJlc3BvbnNlX3R5cGUiOiJ0ZXh0L2h0bWwiLCJjYWNo
         ZV9zdHJhdGVneSI6Im5vbmUiLCJyZWRpcmVjdCI6ZmFsc2UsInJlZGlyZWN0
@@ -1225,10 +1213,10 @@ http_interactions:
         bXBsYXRlIjoiIiwiZXNjYXBlZF9yYXdfdGVtcGxhdGUiOiIiLCJlZGl0YWJs
         ZV9lbGVtZW50cyI6W119
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2987f6437cba00007f.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348ad87f64322a9000080.json?auth_token=Pvsw6p348ihNqxwswB57&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -1239,7 +1227,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1249,25 +1237,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"7b5b908a0d15cc6869d33ddcdb08ef4d"'
+      - ! '"582dac111ed15bb26207c966f58c5d61"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTBlOThkNDliNGFkOWI4Mjk1N2I3ZDE2M2YzZTE4MjBkBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--b2a34bc53af3dca0ca1ca3f8bb6d5263bc936eb7;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=sjY1zvKh76iYAFtGeTn4RIB4N2I; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 145e6d82c12633b56ff7a3b9ef4a2569
+      - 85911b9cff00ce9cf6ddd3b2ec740666
       X-Runtime:
-      - '0.028336'
+      - '0.034378'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2987f6437cba00007f","_id":"51a91c2987f6437cba00007f","created_at":"2013-05-31T21:54:49Z","updated_at":"2013-05-31T21:54:55Z","title":"Siden
+      string: ! '{"id":"51d348ad87f64322a9000080","_id":"51d348ad87f64322a9000080","created_at":"2013-07-02T21:39:57Z","updated_at":"2013-07-02T21:40:06Z","title":"Siden
         finnes ikke","slug":"404","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2d87f6437cba0000c7.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348b387f64322a90000c9.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1278,7 +1266,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1288,20 +1276,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"527e8ee261c3062dc4287485846ca71d"'
+      - ! '"aa272fa10a8d0855d381d7781ddceade"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJWNmNTBiY2UwMmZlZjE0MDY0YmJjY2UzMDVmZTUyMjZiBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--3a54dabfaa33dd04413149e7a5e95653e37affb3;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=jVPIBhYnjfpQk7XSZPQoHI5H4zk; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 61dd2be1382ebf229ba7fdc1d188f4f9
+      - 250aa53b9097b4d80f3af0900c55e2a9
       X-Runtime:
-      - '0.032819'
+      - '0.037037'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2d87f6437cba0000c7","_id":"51a91c2d87f6437cba0000c7","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"A
-        notre sujet","slug":"a-notre-sujet","parent_id":"51a91c2987f6437cba00007e","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+      string: ! '{"id":"51d348b387f64322a90000c9","_id":"51d348b387f64322a90000c9","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","title":"A
+        notre sujet","slug":"a-notre-sujet","parent_id":"51d348ad87f64322a900007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -1337,10 +1325,10 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c8","_id":"51a91c2d87f6437cba0000c8","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"51d348b387f64322a90000ca","_id":"51d348b387f64322a90000ca","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c9","_id":"51a91c2d87f6437cba0000c9","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
-        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":false},{"id":"51a91c2d87f6437cba0000ca","_id":"51a91c2d87f6437cba0000ca","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000cb","_id":"51d348b387f64322a90000cb","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
+        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"51d348b387f64322a90000cc","_id":"51d348b387f64322a90000cc","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1356,12 +1344,12 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]}'
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2d87f6437cba0000c7.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348b387f64322a90000c9.json?auth_token=Pvsw6p348ihNqxwswB57&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -1372,7 +1360,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1382,20 +1370,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"0798cad68da7bcab04e96378ae8b2778"'
+      - ! '"e291cd22a8740828d13278f95719f81b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTllNmYzMDhhNTAxYmY2OGFkODI5NWMyYjAzNzBiMzI0BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--3e7d243d27d15d63cc916efb66488cf9f804cc71;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=rytGjCkJvHXyxDsL2-GJm8AkvG0; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 73afc13708e46a947207357614a94372
+      - 7e11b5e5bd7b44d7877ab4b4d1c5b082
       X-Runtime:
-      - '0.073912'
+      - '0.038207'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2d87f6437cba0000c7","_id":"51a91c2d87f6437cba0000c7","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"Om
-        oss","slug":"om-oss","parent_id":"51a91c2987f6437cba00007e","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"om-oss","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+      string: ! '{"id":"51d348b387f64322a90000c9","_id":"51d348b387f64322a90000c9","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","title":"Om
+        oss","slug":"om-oss","parent_id":"51d348ad87f64322a900007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"om-oss","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -1431,9 +1419,9 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"51a91c2d87f6437cba0000c8","_id":"51a91c2d87f6437cba0000c8","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"51d348b387f64322a90000ca","_id":"51d348b387f64322a90000ca","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2d87f6437cba0000c9","_id":"51a91c2d87f6437cba0000c9","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"","default_content":false},{"id":"51a91c2d87f6437cba0000ca","_id":"51a91c2d87f6437cba0000ca","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":false,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b387f64322a90000cb","_id":"51d348b387f64322a90000cb","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"51d348b387f64322a90000cc","_id":"51d348b387f64322a90000cc","created_at":"2013-07-02T21:40:03Z","updated_at":"2013-07-02T21:40:06Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1449,12 +1437,12 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]}'
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2e87f6437cba0000db.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348b487f64322a90000dd.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1465,7 +1453,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1475,24 +1463,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"70d3ecb111a2101780cca4d6c51e0f95"'
+      - ! '"ca982fdacac7ebc7aaced11fefd28d66"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTkzMWY4ZWIyMjNkMGY4ODg3YzAwNDFkNzY3ODQwNjE2BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--3d08b31227d249972e6f3bd3bade28c869e4c47d;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=B2OT6cMPcoc3oHekYgXv5FqK0Xs; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - db042552e9567f2d8e037ae6ea274702
+      - 2d737d6f074046e624a323e3cba761b7
       X-Runtime:
-      - '0.032214'
+      - '0.035772'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2e87f6437cba0000db","_id":"51a91c2e87f6437cba0000db","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","title":"Jean
-        Personne","slug":"jean-personne","parent_id":"51a91c2d87f6437cba0000c7","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet/jean-personne","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51a91c2e87f6437cba0000dc","_id":"51a91c2e87f6437cba0000dc","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"Page
+      string: ! '{"id":"51d348b487f64322a90000dd","_id":"51d348b487f64322a90000dd","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","title":"Jean
+        Personne","slug":"jean-personne","parent_id":"51d348b387f64322a90000c9","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet/jean-personne","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"51d348b487f64322a90000de","_id":"51d348b487f64322a90000de","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","url":"/sites/51a91c2987f6437cba00007c/assets/51a91c2d87f6437cba0000c1/photo.jpg","filename":"photo.jpg"},{"id":"51a91c2e87f6437cba0000dd","_id":"51a91c2e87f6437cba0000dd","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableLongText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
-        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":true},{"id":"51a91c2e87f6437cba0000de","_id":"51a91c2e87f6437cba0000de","created_at":"2013-05-31T21:54:54Z","updated_at":"2013-05-31T21:54:55Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableLongText","block_name":"Content","from_parent":true,"disabled":false,"content":"\n<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","url":"/sites/51d348ad87f64322a900007d/assets/51d348b387f64322a90000c3/photo.jpg","filename":"photo.jpg"},{"id":"51d348b487f64322a90000df","_id":"51d348b487f64322a90000df","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
+        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"51d348b487f64322a90000e0","_id":"51d348b487f64322a90000e0","created_at":"2013-07-02T21:40:05Z","updated_at":"2013-07-02T21:40:06Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1508,12 +1496,12 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>\n","default_content":true}]}'
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/51a91c2d87f6437cba0000cf.json?auth_token=ssvLKtqG1RNBB337ByfB&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/51d348b487f64322a90000d1.json?auth_token=Pvsw6p348ihNqxwswB57&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1524,7 +1512,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:01 GMT
+      - Tue, 02 Jul 2013 21:40:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -1534,19 +1522,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"085f3093aae567a34344005c7d20f3d2"'
+      - ! '"5152daecebb94d74f7eab664f86a9e05"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTY0YzIxODhhMWI2NGViZWVkOTc0MDIwNTUzYWE4NDA5BjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--6e543d804a33a560441cde5d432e69dc2a336558;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=-rqyjaBP6KOcMj6nx88A-ybWZds; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 40a917bd8af89f80643bef6a3c2ad201
+      - 9ee11907d0b48231923457b882c38457
       X-Runtime:
-      - '0.028420'
+      - '0.031143'
     body:
       encoding: US-ASCII
-      string: ! '{"id":"51a91c2d87f6437cba0000cf","_id":"51a91c2d87f6437cba0000cf","created_at":"2013-05-31T21:54:53Z","updated_at":"2013-05-31T21:54:55Z","title":"Magasin","slug":"magasin","parent_id":"51a91c2987f6437cba00007e","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/fr/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"magasin","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
+      string: ! '{"id":"51d348b487f64322a90000d1","_id":"51d348b487f64322a90000d1","created_at":"2013-07-02T21:40:04Z","updated_at":"2013-07-02T21:40:06Z","title":"Magasin","slug":"magasin","parent_id":"51d348ad87f64322a900007f","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/fr/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"magasin","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:01 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:13 GMT
 recorded_with: VCR 2.4.0

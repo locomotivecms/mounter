@@ -29,7 +29,7 @@ module Locomotive
         field :editable_elements, type: :array, class_name: 'Locomotive::Mounter::Models::EditableElement'
 
         ## other accessors ##
-        attr_accessor :content_type_id, :parent_id, :children
+        attr_accessor :content_type_id, :content_entry, :parent_id, :children
 
         ## aliases ##
         alias :listed?      :listed

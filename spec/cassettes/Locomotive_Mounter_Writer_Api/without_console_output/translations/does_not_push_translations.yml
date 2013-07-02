@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=ssvLKtqG1RNBB337ByfB
+    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=Pvsw6p348ihNqxwswB57
     body:
       encoding: US-ASCII
       string: ''
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Fri, 31 May 2013 21:55:29 GMT
+      - Tue, 02 Jul 2013 21:40:49 GMT
       Status:
       - 200 OK
       Connection:
@@ -27,15 +27,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _dummy_session=BAh7B0kiD3Nlc3Npb25faWQGOgZFRkkiJTExNWRiNWI5YjkyMjdkYzQwNzMyMjZjMzRhNWJhZGYzBjsAVEkiJ3dhcmRlbi51c2VyLmxvY29tb3RpdmVfYWNjb3VudC5rZXkGOwBUWwdbBlU6Gk1vcGVkOjpCU09OOjpPYmplY3RJZCIRUakb8of2Q04sAAABSSIZZjVUdUw0a0JoUHlVY2FaQlVnZWIGOwBU--5e9807e98033b2c918a3e02e67d613aa3888dc61;
-        domain=.example.com; path=/; HttpOnly
+      - _locomotive_session=6rmVnLuFfibaqbzEjzgKBZDOCWo; domain=.example.com; path=/;
+        HttpOnly
       X-Request-Id:
-      - 6a7889fb0cf36e78ae3704e855d91c57
+      - d62d2d6e5a60b3a67fa5d4014d2868ba
       X-Runtime:
-      - '0.038355'
+      - '0.046077'
     body:
       encoding: US-ASCII
       string: ! '[]'
     http_version: 
-  recorded_at: Fri, 31 May 2013 21:55:29 GMT
+  recorded_at: Tue, 02 Jul 2013 21:40:49 GMT
 recorded_with: VCR 2.4.0

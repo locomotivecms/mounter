@@ -171,10 +171,10 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       @mounting_point = @reader.run!(credentials)
     end
 
-    it 'has 2 snippets' do
-      @mounting_point.snippets.size.should == 2
-      @mounting_point.snippets.keys.sort.should == %w(header song)
-      @mounting_point.snippets.values.map(&:slug).sort.should == %w(header song)
+    it 'has 3 snippets' do
+      @mounting_point.snippets.size.should == 3
+      @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
+      @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
     end
 
     it 'localizes the template' do

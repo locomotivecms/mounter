@@ -4,12 +4,12 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
   after(:all) do
     teardown
   end
-  
+
   context "without console output" do
     before do
       setup "writer_api_setup"
     end
-    
+
     describe 'site' do
 
       it 'has been created' do
@@ -45,7 +45,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'snippets' do
 
       it 'creates all the snippets' do
-        Locomotive::Mounter::EngineApi.get('/snippets.json').to_a.size.should == 2
+        Locomotive::Mounter::EngineApi.get('/snippets.json').to_a.size.should == 3
       end
 
     end
@@ -57,32 +57,32 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
       end
 
     end
-    
+
     describe 'translations' do
       it 'does not push translations' do
         Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 0
       end
     end
-    
+
   end
-  
+
   context "forcing translations" do
     before do
-      setup "writer_api_setup_forcing_translations", force_translations: true 
+      setup "writer_api_setup_forcing_translations", force_translations: true
     end
-    
+
     describe 'translations' do
       it 'creates all the translations' do
         Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 1
       end
     end
   end
-  
+
   context "with console output" do
     before do
-      setup "writer_api_setup", console: true 
+      setup "writer_api_setup", console: true
     end
-    
+
     it "does not raise an exception due to a very long page title" do
       Locomotive::Mounter::EngineApi.get('/pages.json').map { |page| page['title'] }.should include("Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo")
     end
