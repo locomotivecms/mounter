@@ -53,6 +53,8 @@ module Locomotive
 
             if (url =~ /^https?:\/\//).nil?
               url = URI.join(self.uri_with_scheme, url)
+            else
+              url = URI(url)
             end
 
             asset = Locomotive::Mounter::Models::ContentAsset.new(uri: url, folder: folder)
