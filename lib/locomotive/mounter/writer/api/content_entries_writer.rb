@@ -171,17 +171,19 @@ module Locomotive
             params = entry.to_params
 
             entry.each_dynamic_field do |field, value|
-              case field.type.to_sym
-              when :string, :text
-                params[field.name] = self.replace_content_assets!(value)
-              when :date, :select, :boolean
-                params[field.name] = value
-              when :file
-                if value =~ %r($http://)
+              unless field.is_relationship?
+                case field.type.to_sym
+                when :string, :text
+                  params[field.name] = self.replace_content_assets!(value)
+                when :file
+                  if value =~ %r($http://)
+                    params[field.name] = value
+                  elsif value && self.mounting_point.path
+                    path = File.join(self.mounting_point.path, 'public', value)
+                    params[field.name] = File.new(path)
+                  end
+                else
                   params[field.name] = value
-                elsif value && self.mounting_point.path
-                  path = File.join(self.mounting_point.path, 'public', value)
-                  params[field.name] = File.new(path)
                 end
               end
             end

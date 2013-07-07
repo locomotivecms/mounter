@@ -43,11 +43,13 @@ module Locomotive
                 Locomotive::Mounter.with_locale(locale) do
                   # get the string, text, file fields...
                   content_entry.content_type.fields.each do |field|
+                    value = content_entry.dynamic_getter(field.name)
+
                     case field.type.to_sym
                     when :string, :text
-                      self.add_assets_from_string(content_entry.dynamic_getter(field.name))
+                      self.add_assets_from_string(value)
                     when :file
-                      self.add_assets_from_string(content_entry.dynamic_getter(field.name)['url'])
+                      self.add_assets_from_string(value['url']) if value
                     end
                   end
                 end

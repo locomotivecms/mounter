@@ -120,7 +120,7 @@ module Locomotive
           when :date
             value.is_a?(String) ? Date.parse(value) : value
           when :file
-            { 'url' => value }
+            value.present? ? { 'url' => value } : nil
           when :belongs_to
             field.klass.find_entry(value)
           when :has_many
