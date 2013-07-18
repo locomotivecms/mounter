@@ -11,6 +11,7 @@ module Locomotive
         field :hint
         field :position,  default: 0
         field :required,  default: false
+        field :unique,    default: false
         field :localized, default: false
 
         # text
