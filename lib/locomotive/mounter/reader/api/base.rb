@@ -7,7 +7,7 @@ module Locomotive
 
           attr_accessor :runner, :items
 
-          delegate :uri, :uri_with_scheme, to: :runner
+          delegate :uri, :uri_with_scheme, :base_uri_with_scheme, to: :runner
           delegate :locales, to: :mounting_point
 
           def initialize(runner)

@@ -98,7 +98,7 @@ module Locomotive
           return @raw if @raw
 
           if self.uri
-            @raw = Net::HTTP.get(self.uri)
+            @raw = HTTParty.get(self.uri.to_s).body
           elsif self.precompiled?
             template = Tilt.new(self.filepath)
             @raw = template.render

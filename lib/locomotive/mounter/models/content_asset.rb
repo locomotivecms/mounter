@@ -34,7 +34,7 @@ module Locomotive
           return @raw if @raw
 
           if self.uri
-            @raw = Net::HTTP.get(self.uri)
+            @raw = HTTParty.get(self.uri.to_s).body
           else
             @raw = File.read(self.filepath)
           end
@@ -42,7 +42,7 @@ module Locomotive
 
         def size
           if self.uri
-            Net::HTTP.get(self.uri).body.size
+            self.content.size
           else
             File.size(self.filepath)
           end
