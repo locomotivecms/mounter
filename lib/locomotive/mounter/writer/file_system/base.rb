@@ -5,6 +5,8 @@ module Locomotive
 
         class Base
 
+          include Locomotive::Mounter::Utils::Output
+
           attr_accessor :mounting_point, :runner
 
           def initialize(mounting_point, runner)
@@ -16,6 +18,7 @@ module Locomotive
           # Writers inheriting from this class can overide it
           #
           def prepare
+            self.output_title(:writing)
           end
 
           # Writers inheriting from this class *must* overide it
@@ -51,6 +54,12 @@ module Locomotive
 
           def target_path
             self.runner.target_path
+          end
+
+          protected
+
+          def resource_message(resource)
+            "    writing #{truncate(resource.to_s)}"
           end
 
         end

@@ -8,6 +8,7 @@ module Locomotive
           # Create the theme assets folders
           #
           def prepare
+            super
             self.create_folder 'public'
           end
 
@@ -15,6 +16,8 @@ module Locomotive
           #
           def write
             self.theme_assets_by_priority.each do |asset|
+              self.output_resource_op asset
+
               self.open_file(self.target_asset_path(asset), 'wb') do |file|
                 content = asset.content
 
@@ -24,6 +27,8 @@ module Locomotive
 
                 file.write(content)
               end
+
+              self.output_resource_op_status asset
             end
           end
 

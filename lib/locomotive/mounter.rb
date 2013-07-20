@@ -19,6 +19,13 @@ require 'compass'
 require 'httmultiparty'
 require 'mime/types'
 
+# Utils
+require 'locomotive/mounter/utils/hash'
+require 'locomotive/mounter/utils/yaml'
+require 'locomotive/mounter/utils/string'
+require 'locomotive/mounter/utils/output'
+
+# Main
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/exceptions'
 require 'locomotive/mounter/config'
@@ -33,11 +40,6 @@ require 'locomotive/mounter/extensions/tilt/template'
 require 'locomotive/mounter/extensions/tilt/css'
 require 'locomotive/mounter/extensions/tilt/haml'
 require 'locomotive/mounter/extensions/tilt/liquid'
-
-# Utils
-require 'locomotive/mounter/utils/hash'
-require 'locomotive/mounter/utils/yaml'
-require 'locomotive/mounter/utils/string'
 
 # Models
 require 'locomotive/mounter/models/base'

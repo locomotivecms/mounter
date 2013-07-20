@@ -7,12 +7,15 @@ module Locomotive
 
           # It creates the snippets folder
           def prepare
+            super
             self.create_folder 'app/views/snippets'
           end
 
           # It writes all the snippets into files
           def write
             self.mounting_point.snippets.each do |filepath, snippet|
+              self.output_resource_op snippet
+
               # Note: we assume the current locale is the default one
               snippet.translated_in.each do |locale|
                 default_locale = locale.to_sym == self.mounting_point.default_locale.to_sym
@@ -21,6 +24,8 @@ module Locomotive
                   self.write_snippet_to_fs(snippet, filepath, default_locale ? nil : locale)
                 end
               end
+
+              self.output_resource_op_status snippet
             end
           end
 

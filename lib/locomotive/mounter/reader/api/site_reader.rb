@@ -6,6 +6,8 @@ module Locomotive
         class SiteReader < Base
 
           def read
+            super
+
             # get the site from the API
             site = self.get(:current_site)
 

@@ -15,6 +15,8 @@ module Locomotive
           # @return [ Array ] The cached list of theme assets
           #
           def read
+            super
+
             self.items = self.get(:theme_assets).map do |attributes|
               url = attributes.delete('url')
 

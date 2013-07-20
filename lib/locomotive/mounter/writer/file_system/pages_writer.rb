@@ -7,6 +7,7 @@ module Locomotive
 
           # It creates the pages folder
           def prepare
+            super
             self.create_folder 'app/views/pages'
           end
 
@@ -26,6 +27,8 @@ module Locomotive
           # @param [ String ] path The parent path
           #
           def write_page(page, path = '')
+            self.output_resource_op page
+
             # Note: we assume the current locale is the default one
             page.translated_in.each do |locale|
               default_locale = locale.to_sym == self.mounting_point.default_locale.to_sym
@@ -38,6 +41,8 @@ module Locomotive
                 self.write_page_to_fs(page, filepath, default_locale ? nil : locale)
               end
             end
+
+            self.output_resource_op_status page
 
             # also write the nested pages
             (page.children || []).each do |child|

@@ -17,6 +17,8 @@ module Locomotive
           # @return [ Hash ] The pages organized as a Hash (using the fullpath as the key)
           #
           def read
+            super
+
             self.fetch
 
             index = self.pages['index']

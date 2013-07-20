@@ -6,6 +6,7 @@ module Locomotive
         class TranslationsWriter < Base
 
           def prepare
+            super
             self.create_folder 'config'
           end
 

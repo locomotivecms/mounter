@@ -5,6 +5,8 @@ module Locomotive
 
         class Base
 
+          include Locomotive::Mounter::Utils::Output
+
           attr_accessor :runner, :items
 
           delegate :uri, :uri_with_scheme, :base_uri_with_scheme, to: :runner
@@ -17,6 +19,10 @@ module Locomotive
 
           def mounting_point
             self.runner.mounting_point
+          end
+
+          def read
+            self.output_title(:pulling)
           end
 
           def get(resource_name, locale = nil, raw = false)
@@ -32,7 +38,6 @@ module Locomotive
             when Hash then response.to_hash.delete_if { |k, _| !self.safe_attributes.include?(k) }
             when Array
               response.map do |row|
-                # puts "#{row.inspect}\n---" # DEBUG
                 row.delete_if { |k, _| !self.safe_attributes.include?(k) }
               end
             else

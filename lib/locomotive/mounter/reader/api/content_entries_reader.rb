@@ -17,6 +17,8 @@ module Locomotive
           # @return [ Array ] The un-ordered list of content types
           #
           def read
+            super
+
             self.fetch
 
             self.items
