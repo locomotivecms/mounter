@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = 'locomotivecms_mounter'
 
   s.add_dependency 'tilt',                            '1.3.3'
-  s.add_dependency 'haml',                            '3.2.0.rc.2'
+  s.add_dependency 'haml',                            '~> 4.0.3'
   s.add_dependency 'sass',                            '~> 3.2.1'
   s.add_dependency 'compass',                         '~> 0.12.1'
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
