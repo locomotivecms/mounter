@@ -118,7 +118,7 @@ module Locomotive
 
           case field.type
           when :date
-            value.is_a?(String) ? Date.parse(value) : value
+            value.is_a?(String) ? Chronic.parse(value) : value
           when :file
             value.present? ? { 'url' => value } : nil
           when :belongs_to

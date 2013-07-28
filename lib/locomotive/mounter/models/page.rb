@@ -207,8 +207,11 @@ module Locomotive
 
           attributes.to_a.each do |_attributes|
             if _attributes.is_a?(Array) # attributes is maybe a Hash
-              block, slug = _attributes.first.split('/')
-              block, slug = nil, block if slug.nil?
+              _splashed   = _attributes.first.split('/')
+
+              block, slug = _splashed[0..-2].join('/'), _splashed.last
+              block       = nil if block.blank?
+
               _attributes = { 'block' => block, 'slug' => slug, 'content' => _attributes.last }
             end
 
@@ -320,7 +323,9 @@ module Locomotive
         def to_yaml
           fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position seo_title meta_description meta_keywords)
 
-          _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
+          _attributes = self.attributes.delete_if do |k, v|
+            !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
+          end.deep_stringify_keys
 
           # useless attributes
           _attributes.delete('redirect_type') if self.redirect_url.blank?

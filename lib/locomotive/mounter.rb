@@ -11,6 +11,7 @@ require 'active_support/core_ext'
 require 'stringex'
 require 'tempfile'
 require 'digest/sha1'
+require 'chronic'
 
 require 'tilt'
 require 'haml'

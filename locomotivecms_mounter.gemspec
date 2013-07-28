@@ -27,6 +27,8 @@ Gem::Specification.new do |s|
   s.add_dependency 'less',                            '~> 2.2.1'
   s.add_dependency 'RedCloth',                        '~> 4.2.3'
 
+  s.add_dependency 'chronic',                         '~> 0.9.1'
+
   s.add_dependency 'activesupport',                   '~> 3.2.5'
   s.add_dependency 'i18n',                            '~> 0.6.0'
   s.add_dependency 'stringex',                        '~> 1.4.0'

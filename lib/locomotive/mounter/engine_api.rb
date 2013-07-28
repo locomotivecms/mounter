@@ -29,6 +29,8 @@ module Locomotive
         if response.code < 400
           self.default_params auth_token: response['token']
           response['token']
+        elsif response.code == 404 # ssl option missing
+          raise WrongCredentials.new("#{uri}/tokens.json does not respond. Perhaps, the ssl option is missing in your config/deploy.yml file")
         else
           raise WrongCredentials.new("#{response['message']} (#{response.code})")
         end
