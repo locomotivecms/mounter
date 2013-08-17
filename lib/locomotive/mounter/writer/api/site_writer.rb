@@ -12,16 +12,6 @@ module Locomotive
             super
 
             self.fetch_site
-
-            # if self.fetch_site.nil?
-            #   Mounter.logger.warn 'The site does not exist. Trying to create it.'
-
-            #   unless self.has_admin_rights?
-            #     raise Mounter::WriterException.new('Your account does not own admin rights.')
-            #   end
-            # else
-            #   self.check_locales
-            # end
           end
 
           # Create the site if it does not exist
@@ -81,7 +71,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(id locales)
+            %w(id locales timezone)
           end
 
           def fetch_site

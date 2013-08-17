@@ -11,6 +11,7 @@ module Locomotive
         field :hint
         field :position,  default: 0
         field :required,  default: false
+        field :unique,    default: false
         field :localized, default: false
 
         # text
@@ -90,7 +91,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(label name type hint position required localized)
+          params = self.filter_attributes %w(label name type hint position required localized unique)
 
           # we set the _id / _destroy attributes for embedded documents
           params[:_id]      = self._id if self.persisted?

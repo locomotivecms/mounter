@@ -36,6 +36,10 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       @mounting_point.site.locales.should == %w(en fr nb)
     end
 
+    it 'has a timezone' do
+      @mounting_point.site.timezone.should == 'Paris'
+    end
+
     it 'has a seo title' do
       @mounting_point.site.seo_title.should == 'A simple LocomotiveCMS website'
     end
