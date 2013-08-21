@@ -14,6 +14,7 @@ require 'digest/sha1'
 require 'chronic'
 
 require 'tilt'
+require 'sprockets'
 require 'haml'
 require 'compass'
 

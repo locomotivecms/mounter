@@ -12,7 +12,7 @@ module Locomotive
 
           attr_accessor :mounting_point, :runner
 
-          delegate :default_locale, :locales, :site, to: :mounting_point
+          delegate :default_locale, :locales, :site, :sprockets, to: :mounting_point
 
           delegate :force?, to: :runner
 

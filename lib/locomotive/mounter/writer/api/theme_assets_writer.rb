@@ -114,7 +114,11 @@ module Locomotive
             FileUtils.mkdir_p(File.dirname(path))
 
             File.open(path, 'w') do |file|
-              file.write(theme_asset.content)
+              if self.sprockets
+                file.write(self.sprockets[theme_asset.path].to_s)
+              else
+                file.write(theme_asset.content)
+              end
             end
 
             File.new(path)
