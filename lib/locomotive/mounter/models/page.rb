@@ -60,15 +60,17 @@ module Locomotive
         # @return [ String ] The safe full path or nil if the page is not translated in the current locale
         #
         def safe_fullpath
-          return nil unless self.translated_in?(Locomotive::Mounter.locale)
-
-          # puts "[safe_fullpath] page = #{self.slug.inspect} / #{self.fullpath.inspect} / #{self.parent.inspect}"
-
           if self.index_or_404?
             self.slug
           else
             base  = self.parent.safe_fullpath
-            _slug = self.templatized? ? '*' : self.slug
+            _slug = if self.templatized?
+              '*'
+            elsif !self.translated_in?(Locomotive::Mounter.locale)
+              self.slug_translations[self.mounting_point.default_locale]
+            else
+              self.slug
+            end
             (base == 'index' ? _slug : File.join(base, _slug)).dasherize
           end
         end
@@ -245,7 +247,7 @@ module Locomotive
         def localize_fullpath(locales = nil)
           locales ||= self.translated_in
           _parent_fullpath  = self.parent.try(:fullpath)
-          _fullpath, _slug  = self.fullpath.try(:clone), self.slug.clone
+          _fullpath, _slug  = self.fullpath.try(:clone), self.slug.to_s.clone
 
           locales.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
