@@ -53,6 +53,10 @@ module Locomotive
         (self.resources || {})[name.to_sym] || super
       end
 
+      def inspect
+        "[MountingPoint] #{(self.resources || {}).keys.inspect}"
+      end
+
     end
   end
 end

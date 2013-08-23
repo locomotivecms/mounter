@@ -167,7 +167,7 @@ module Locomotive
         def to_params(options = nil)
           options = { all_fields: false }.merge(options || {})
 
-          params = self.filter_attributes %w(name slug description label_field_name group_by_field_name order_by order_by_direction public_submission_enabled raw_item_template)
+          params = self.filter_attributes %w(name slug description label_field_name group_by_field_name order_by order_direction public_submission_enabled raw_item_template)
 
           # order by
           params[:order_by] = '_position' if self.order_by == 'manually'
@@ -185,7 +185,7 @@ module Locomotive
         # @return [ Hash ] A hash used by the to_yaml method
         #
         def to_hash
-          fields = %w(name slug description label_field_name order_by order_by_direction public_submission_enabled public_submission_accounts raw_item_template)
+          fields = %w(name slug description label_field_name order_by order_direction public_submission_enabled public_submission_accounts raw_item_template)
 
           _attributes = self.attributes.delete_if { |k, v| !fields.include?(k.to_s) || v.blank? }.deep_stringify_keys
 

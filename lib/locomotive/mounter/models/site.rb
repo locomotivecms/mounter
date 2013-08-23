@@ -13,6 +13,7 @@ module Locomotive
         field :meta_keywords,     localized: true
         field :meta_description,  localized: true
         field :robots_txt
+        field :timezone
 
         ## methods ##
 
