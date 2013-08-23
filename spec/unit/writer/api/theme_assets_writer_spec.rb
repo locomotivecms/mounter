@@ -4,16 +4,17 @@ require 'locomotive/mounter/writer/api/base'
 require 'locomotive/mounter/writer/api/theme_assets_writer'
 
 describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
-
+  
   let(:writer) { build_theme_asset_writer }
 
   describe '#theme_asset_changed?' do
 
-    let(:theme_asset) { build_theme_asset(filepath: filepath ) }
+    let(:theme_asset) { build_theme_asset(filepath: filepath, folder: folder) }
 
     context 'an image' do
 
       let(:filepath) { full_asset_path('images/nav_on.png') }
+      let(:folder) { 'images' }
 
       it 'returns false if same file' do
         writer.checksums[theme_asset._id] = 'edb293028f9c07f2d692d066cd8a458a'
@@ -30,9 +31,10 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     context 'a non compiled javascript file' do
 
       let(:filepath) { full_asset_path('javascripts/common.js') }
+      let(:folder) { 'javascripts' }
 
       it 'returns false if same file' do
-        writer.checksums[theme_asset._id] = 'a3dd9f80d4e861ef29613b9f456175e5'
+        writer.checksums[theme_asset._id] = 'd022b03c74a7b7386072c775861b39e4'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
@@ -44,27 +46,29 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     end
 
     context 'a compiled javascript file' do
-
+    
       let(:filepath) { full_asset_path('javascripts/application.js.coffee') }
-
+      let(:folder) { 'javascripts' }
+    
       it 'returns false if same file' do
         writer.checksums[theme_asset._id] = 'c9c70afc24b19736b0969182f2d04dd3'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
-
+    
       it 'returns true if different file' do
         writer.checksums[theme_asset._id] = 42
         writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
-
+    
     end
 
     context 'a stylesheet file' do
 
       let(:filepath) { full_asset_path('stylesheets/application.css') }
+      let(:folder) { 'stylesheets' }
 
       it 'returns false if same file' do
-        writer.checksums[theme_asset._id] = '1b68068d7097d5c2ebf2a2e41f076efb'
+        writer.checksums[theme_asset._id] = 'b471ce408b8dc334187d09dfa99d49d2'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
@@ -81,6 +85,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     Locomotive::Mounter::Writer::Api::ThemeAssetsWriter.new(nil, nil).tap do |writer|
       writer.remote_base_url = 'http://cdn.locomotivehosting.com/sites/4c2330706f40d50ae2000005/theme'
       writer.checksums = {}
+      writer.stubs(:sprockets).returns(sprockets)
     end
   end
 
@@ -93,6 +98,16 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
 
   def full_asset_path(asset_path)
     File.expand_path(File.join('../../../../fixtures/default/public', asset_path), __FILE__)
+  end
+  
+  def public_path
+    File.expand_path '../../../../fixtures/default/public', __FILE__
+  end
+  
+  def sprockets
+    @sprockets ||= Sprockets::Environment.new.tap do |s|
+      s.append_path public_path
+    end
   end
 
 end

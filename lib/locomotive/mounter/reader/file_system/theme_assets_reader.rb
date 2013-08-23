@@ -43,7 +43,7 @@ module Locomotive
             Dir.glob(File.join(self.root_dir, '**/*')).each do |file|
               next if self.exclude?(file)
 
-              folder = File.dirname(file.gsub(self.root_dir, ''))
+              folder = File.dirname(file.gsub("#{self.root_dir}/", ''))
 
               asset = Locomotive::Mounter::Models::ThemeAsset.new(folder: folder, filepath: file)
 

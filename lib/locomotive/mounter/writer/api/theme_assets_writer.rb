@@ -30,7 +30,7 @@ module Locomotive
 
             # assign an _id to a local content type if possible
             self.get(:theme_assets, nil, true).each do |attributes|
-              remote_path = File.join('/', attributes['folder'], File.basename(attributes['local_path']))
+              remote_path = File.join(attributes['folder'], File.basename(attributes['local_path']))
 
               if theme_asset = self.theme_assets[remote_path]
                 theme_asset._id                 = attributes['id']
@@ -114,7 +114,7 @@ module Locomotive
             FileUtils.mkdir_p(File.dirname(path))
 
             File.open(path, 'w') do |file|
-              if self.sprockets
+              if self.sprockets && theme_asset.stylesheet_or_javascript?
                 file.write(self.sprockets[theme_asset.path].to_s)
               else
                 file.write(theme_asset.content)
@@ -154,8 +154,12 @@ module Locomotive
           # @return [ Boolean ] True if the checksums of the local and remote files are different.
           #
           def theme_asset_changed?(theme_asset)
-            content = theme_asset.content
-
+            if self.sprockets && theme_asset.stylesheet_or_javascript?
+              content = self.sprockets[theme_asset.path].to_s
+            else
+              content = theme_asset.content
+            end
+            
             if theme_asset.stylesheet_or_javascript?
               # we need to compare compiled contents (sass, coffeescript) with the right urls inside
               content = content.gsub(/[("'](\/(stylesheets|javascripts|images|media|others)\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3})[)"']/) do |path|
