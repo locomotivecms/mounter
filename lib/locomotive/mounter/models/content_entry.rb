@@ -117,7 +117,7 @@ module Locomotive
           value = self.localized_dynamic_attribute_value(field)
 
           case field.type
-          when :date
+          when :date, :date_time
             value.is_a?(String) ? Chronic.parse(value) : value
           when :file
             value.present? ? { 'url' => value } : nil
