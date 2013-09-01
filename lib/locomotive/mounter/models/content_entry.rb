@@ -102,7 +102,7 @@ module Locomotive
         #
         def is_dynamic_field?(name)
           name = name.to_s.gsub(/\=$/, '').to_sym
-          !self.content_type.find_field(name).nil?
+          !self.content_type.try(:find_field, name).nil?
         end
 
         # Return the value of a dynamic field and cast it depending
@@ -157,6 +157,27 @@ module Locomotive
             end
           end
         end
+
+        # We also have to deal with dynamic attributes so that
+        # it does not raise an exception when calling the attributes=
+        # method.
+        #
+        # @param [ Hash ] attributes The new attributes
+        #
+        def write_attributes(attributes)
+          _attributes = attributes.select do |name, value|
+            if self.is_dynamic_field?(name)
+              self.dynamic_setter(name, value)
+              false
+            else
+              true
+            end
+          end
+
+          super(_attributes)
+        end
+
+        alias :attributes= :write_attributes
 
         # The magic of dynamic fields happens within this method.
         # It calls the getter/setter of a dynamic field if it is one of them.

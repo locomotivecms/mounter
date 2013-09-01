@@ -29,7 +29,7 @@ module Locomotive
         field :editable_elements, type: :array, class_name: 'Locomotive::Mounter::Models::EditableElement'
 
         ## other accessors ##
-        attr_accessor :content_type_id, :content_entry, :parent_id, :children
+        attr_accessor :content_type_id, :content_entry, :parent_id, :children, :templatized_from_parent
 
         ## aliases ##
         alias :listed?      :listed
@@ -64,7 +64,7 @@ module Locomotive
             self.slug
           else
             base  = self.parent.safe_fullpath
-            _slug = if self.templatized?
+            _slug = if self.templatized? && !self.templatized_from_parent
               '*'
             elsif !self.translated_in?(Locomotive::Mounter.locale)
               self.slug_translations[self.mounting_point.default_locale]
@@ -180,7 +180,8 @@ module Locomotive
           !self.redirect_url.blank?
         end
 
-        # Add a child to the page. It also sets the parent of the child
+        # Add a child to the page. It also sets the parent of the child.
+        # If the parent page is a templatized one, give the same properties to the child.
         #
         # @param [ Object ] page The child page
         #
@@ -188,6 +189,15 @@ module Locomotive
         #
         def add_child(page)
           page.parent = self
+
+          if self.templatized?
+            page.templatized_from_parent = true
+
+            # copy properties from the parent
+            %w(templatized content_type content_type_id).each do |name|
+              page.send(:"#{name}=", self.send(name.to_sym))
+            end
+          end
 
           (self.children ||= []) << page
 
@@ -333,7 +343,7 @@ module Locomotive
           _attributes.delete('redirect_type') if self.redirect_url.blank?
 
           # templatized page
-          _attributes['content_type'] = self.content_type.slug if self.templatized?
+          _attributes['content_type'] = self.content_type.slug if self.templatized? && !self.templatized_from_parent
 
           # editable elements
           _attributes['editable_elements'] = {}
