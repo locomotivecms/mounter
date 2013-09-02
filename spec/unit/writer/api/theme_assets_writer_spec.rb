@@ -4,7 +4,7 @@ require 'locomotive/mounter/writer/api/base'
 require 'locomotive/mounter/writer/api/theme_assets_writer'
 
 describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
-  
+
   let(:writer) { build_theme_asset_writer }
 
   describe '#theme_asset_changed?' do
@@ -46,20 +46,20 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     end
 
     context 'a compiled javascript file' do
-    
+
       let(:filepath) { full_asset_path('javascripts/application.js.coffee') }
       let(:folder) { 'javascripts' }
-    
+
       it 'returns false if same file' do
         writer.checksums[theme_asset._id] = 'c9c70afc24b19736b0969182f2d04dd3'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
-    
+
       it 'returns true if different file' do
         writer.checksums[theme_asset._id] = 42
         writer.send(:theme_asset_changed?, theme_asset).should be_true
       end
-    
+
     end
 
     context 'a stylesheet file' do
@@ -85,6 +85,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     Locomotive::Mounter::Writer::Api::ThemeAssetsWriter.new(nil, nil).tap do |writer|
       writer.remote_base_url = 'http://cdn.locomotivehosting.com/sites/4c2330706f40d50ae2000005/theme'
       writer.checksums = {}
+      writer.cached_compiled_assets = {}
       writer.stubs(:sprockets).returns(sprockets)
     end
   end
@@ -96,18 +97,16 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
     end
   end
 
+  def site_path
+    File.expand_path '../../../../fixtures/default', __FILE__
+  end
+
   def full_asset_path(asset_path)
-    File.expand_path(File.join('../../../../fixtures/default/public', asset_path), __FILE__)
+    File.join(site_path, 'public', asset_path)
   end
-  
-  def public_path
-    File.expand_path '../../../../fixtures/default/public', __FILE__
-  end
-  
+
   def sprockets
-    @sprockets ||= Sprockets::Environment.new.tap do |s|
-      s.append_path public_path
-    end
+    Locomotive::Mounter::Extensions::Sprockets.environment(site_path)
   end
 
 end

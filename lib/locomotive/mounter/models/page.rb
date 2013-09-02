@@ -29,7 +29,7 @@ module Locomotive
         field :editable_elements, type: :array, class_name: 'Locomotive::Mounter::Models::EditableElement'
 
         ## other accessors ##
-        attr_accessor :content_type_id, :content_entry, :parent_id, :children
+        attr_accessor :content_type_id, :content_entry, :parent_id, :children, :templatized_from_parent
 
         ## aliases ##
         alias :listed?      :listed
@@ -60,15 +60,17 @@ module Locomotive
         # @return [ String ] The safe full path or nil if the page is not translated in the current locale
         #
         def safe_fullpath
-          return nil unless self.translated_in?(Locomotive::Mounter.locale)
-
-          # puts "[safe_fullpath] page = #{self.slug.inspect} / #{self.fullpath.inspect} / #{self.parent.inspect}"
-
           if self.index_or_404?
             self.slug
           else
             base  = self.parent.safe_fullpath
-            _slug = self.templatized? ? '*' : self.slug
+            _slug = if self.templatized? && !self.templatized_from_parent
+              '*'
+            elsif !self.translated_in?(Locomotive::Mounter.locale)
+              self.slug_translations[self.mounting_point.default_locale]
+            else
+              self.slug
+            end
             (base == 'index' ? _slug : File.join(base, _slug)).dasherize
           end
         end
@@ -178,7 +180,8 @@ module Locomotive
           !self.redirect_url.blank?
         end
 
-        # Add a child to the page. It also sets the parent of the child
+        # Add a child to the page. It also sets the parent of the child.
+        # If the parent page is a templatized one, give the same properties to the child.
         #
         # @param [ Object ] page The child page
         #
@@ -186,6 +189,15 @@ module Locomotive
         #
         def add_child(page)
           page.parent = self
+
+          if self.templatized?
+            page.templatized_from_parent = true
+
+            # copy properties from the parent
+            %w(templatized content_type content_type_id).each do |name|
+              page.send(:"#{name}=", self.send(name.to_sym))
+            end
+          end
 
           (self.children ||= []) << page
 
@@ -245,7 +257,7 @@ module Locomotive
         def localize_fullpath(locales = nil)
           locales ||= self.translated_in
           _parent_fullpath  = self.parent.try(:fullpath)
-          _fullpath, _slug  = self.fullpath.try(:clone), self.slug.clone
+          _fullpath, _slug  = self.fullpath.try(:clone), self.slug.to_s.clone
 
           locales.each do |locale|
             Locomotive::Mounter.with_locale(locale) do
@@ -331,7 +343,7 @@ module Locomotive
           _attributes.delete('redirect_type') if self.redirect_url.blank?
 
           # templatized page
-          _attributes['content_type'] = self.content_type.slug if self.templatized?
+          _attributes['content_type'] = self.content_type.slug if self.templatized? && !self.templatized_from_parent
 
           # editable elements
           _attributes['editable_elements'] = {}

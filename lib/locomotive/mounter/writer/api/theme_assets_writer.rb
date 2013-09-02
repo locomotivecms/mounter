@@ -20,10 +20,15 @@ module Locomotive
           # the assets stored in the engine have the same base url
           attr_accessor :remote_base_url
 
+          # cache the compiled theme assets to avoid to perform compilation more than once
+          attr_accessor :cached_compiled_assets
+
           def prepare
             super
 
             self.checksums = {}
+
+            self.cached_compiled_assets = {}
 
             # prepare the place where the assets will be stored temporarily.
             self.create_tmp_folder
@@ -114,11 +119,7 @@ module Locomotive
             FileUtils.mkdir_p(File.dirname(path))
 
             File.open(path, 'w') do |file|
-              if self.sprockets && theme_asset.stylesheet_or_javascript?
-                file.write(self.sprockets[theme_asset.path].to_s)
-              else
-                file.write(theme_asset.content)
-              end
+              file.write(self.content_of(theme_asset))
             end
 
             File.new(path)
@@ -154,15 +155,11 @@ module Locomotive
           # @return [ Boolean ] True if the checksums of the local and remote files are different.
           #
           def theme_asset_changed?(theme_asset)
-            if self.sprockets && theme_asset.stylesheet_or_javascript?
-              content = self.sprockets[theme_asset.path].to_s
-            else
-              content = theme_asset.content
-            end
-            
+            content = self.content_of(theme_asset)
+
             if theme_asset.stylesheet_or_javascript?
               # we need to compare compiled contents (sass, coffeescript) with the right urls inside
-              content = content.gsub(/[("'](\/(stylesheets|javascripts|images|media|others)\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3})[)"']/) do |path|
+              content = content.gsub(/[("'](\/(stylesheets|javascripts|fonts|images|media|others)\/(([^;.]+)\/)*([a-zA-Z_\-0-9]+)\.[a-z]{2,3})[)"']/) do |path|
                 sanitized_path = path.gsub(/[("')]/, '').gsub(/^\//, '')
                 sanitized_path = File.join(self.remote_base_url, sanitized_path)
 
@@ -172,6 +169,29 @@ module Locomotive
 
             # compare local checksum with the remote one
             Digest::MD5.hexdigest(content) != self.checksums[theme_asset._id]
+          end
+
+          # Return the content of a theme asset.
+          # If the theme asset is either a stylesheet or javascript file,
+          # it uses Sprockets to compile it.
+          # Otherwise, it returns the raw content of the asset.
+          #
+          # @return [ String ] The content of the theme asset
+          #
+          def content_of(theme_asset)
+            if theme_asset.stylesheet_or_javascript?
+              if self.cached_compiled_assets[theme_asset.path].nil?
+                self.cached_compiled_assets[theme_asset.path] = self.sprockets[theme_asset.short_path].to_s
+              end
+
+              self.cached_compiled_assets[theme_asset.path]
+            else
+              theme_asset.content
+            end
+          end
+
+          def sprockets
+            Locomotive::Mounter::Extensions::Sprockets.environment(self.mounting_point.path)
           end
 
         end

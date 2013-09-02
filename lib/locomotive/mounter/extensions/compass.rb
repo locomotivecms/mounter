@@ -4,7 +4,8 @@ module Locomotive
 
       module Compass
 
-        # Configure Compass for the current site
+        # Configure Compass for the current site.
+        # [DEPRECATED] we use sprockets-sass now
         #
         # @param [ String ] site_path The root directory of the site
         #

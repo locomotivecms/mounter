@@ -21,6 +21,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'tilt',                            '1.3.3'
   s.add_dependency 'sprockets',                       '~> 2.0'
+  s.add_dependency 'sprockets-sass'
   s.add_dependency 'haml',                            '~> 4.0.3'
   s.add_dependency 'sass',                            '~> 3.2.1'
   s.add_dependency 'compass',                         '~> 0.12.1'

@@ -4,11 +4,13 @@ module Locomotive
 
       class ThemeAsset < Base
 
-        PRECOMPILED_CSS_TYPES   = %w(sass scss less)
+        PRECOMPILED_CSS_TYPES     = %w(sass scss less)
 
-        PRECOMPILED_JS_TYPES    = %w(coffee)
+        PRECOMPILED_JS_TYPES      = %w(coffee)
 
-        PRECOMPILED_FILE_TYPES  = PRECOMPILED_CSS_TYPES + PRECOMPILED_JS_TYPES
+        PRECOMPILED_FILE_TYPES    = PRECOMPILED_CSS_TYPES + PRECOMPILED_JS_TYPES
+
+        CSS_JS_SHORT_PATH_REGEXP  = /^(javascripts|stylesheets|fonts)\/(.*)$/
 
         ## fields ##
         field :folder
@@ -40,6 +42,17 @@ module Locomotive
         #
         def path
           File.join(self.folder, self.filename)
+        end
+
+        # Return the path without the leading javascripts, stylesheets, fonts
+        # font. This is needed by Sprockets.
+        # Only relevant for javascripts / stylesshets files.
+        #
+        # @return [ String ] The path of the asset without the first folder
+        #
+        def short_path
+          self.path =~ /^(javascripts|stylesheets|fonts)\/(.*)$/
+          $2
         end
 
         # Return the mime type of the file based on the Mime::Types lib.

@@ -4,14 +4,17 @@ module Locomotive
     class MountingPoint
 
       attr_accessor :resources, :root_page, :path
-      attr_reader :sprockets 
+
+      # attr_reader   :sprockets
 
       # Initializes Sprockets once the path is set
       def path= dir
         @path = dir
-        @sprockets = Sprockets::Environment.new
-        @sprockets.append_path File.join(dir, "public/javascripts")
-        @sprockets.append_path File.join(dir, "public/stylesheets")
+
+        # @sprockets = Locomotive::Mounter::Extensions::Sprockets.environment
+        # %w(fonts stylesheets javascripts).each do |name|
+        #   @sprockets.append_path File.join(dir, 'public', name)
+        # end
       end
 
       # Return all the locales defined by the site related to that mounting point.

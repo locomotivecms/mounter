@@ -15,6 +15,7 @@ require 'chronic'
 
 require 'tilt'
 require 'sprockets'
+require 'sprockets-sass'
 require 'haml'
 require 'compass'
 
@@ -37,6 +38,7 @@ require 'locomotive/mounter/engine_api'
 
 # Extensions
 require 'locomotive/mounter/extensions/httmultiparty'
+require 'locomotive/mounter/extensions/sprockets'
 require 'locomotive/mounter/extensions/compass'
 require 'locomotive/mounter/extensions/tilt/template'
 require 'locomotive/mounter/extensions/tilt/css'
