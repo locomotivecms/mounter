@@ -330,6 +330,71 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
     end # content entries
 
+    describe 'theme_assets' do
+
+      before(:each) do
+        stub_readers(@read, %w{ theme_assets })
+        @mounting_point = @reader.run!(path: @path)
+      end
+
+      subject { @mounting_point.theme_assets }
+
+      its(:count) { should == 17 }
+
+      it "should not return directories" do
+        dir_names = %w{ fonts images javascripts stylesheets }
+        dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
+        subject.each do |asset|
+          asset.to_s.should_not match dir_rx
+        end
+      end
+
+      it "should not return anything from samples" do
+        sample_rx = /samples/
+        subject.each do |asset|
+          asset.to_s.should_not match sample_rx
+        end
+      end
+
+    end # theme assets
+
+  end
+
+  describe 'a symlinked site' do
+
+    before(:each) do
+      @path   = File.join(File.dirname(__FILE__), '..', '..', 'fixtures', 'symlinked')
+      @reader = Locomotive::Mounter::Reader::FileSystem.instance
+    end
+
+    describe 'theme_assets' do
+
+      before(:each) do
+        stub_readers(@read, %w{ theme_assets })
+        @mounting_point = @reader.run!(path: @path)
+      end
+
+      subject { @mounting_point.theme_assets }
+
+      its(:count) { should == 17 }
+
+      it "should not return directories" do
+        dir_names = %w{ fonts images javascripts stylesheets }
+        dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
+        subject.each do |asset|
+          asset.to_s.should_not match dir_rx
+        end
+      end
+
+      it "should not return anything from samples" do
+        sample_rx = /samples/
+        subject.each do |asset|
+          asset.to_s.should_not match sample_rx
+        end
+      end
+
+    end # theme assets
+
   end
 
   def stub_readers(reader, readers = nil)

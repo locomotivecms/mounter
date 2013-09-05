@@ -38,9 +38,19 @@ module Locomotive
 
         def list
           return @list unless @list.nil?
+          assets_symlinked = %w{ fonts images stylesheets javascripts }.inject(true) do |status, a|
+            status and File.symlink?(File.join(self.root_dir, a))
+          end
+
+          if assets_symlinked
+            # Follows symlinks and makes sure subdirectories are handled
+            glob_pattern = '**/*/**/*'
+          else
+            glob_pattern = '**/*'
+          end
 
           @list = [].tap do |list|
-            Dir.glob(File.join(self.root_dir, '**/*')).each do |file|
+            Dir.glob(File.join(self.root_dir, glob_pattern)).each do |file|
               next if self.exclude?(file)
 
               folder = File.dirname(file.gsub(self.root_dir, ''))
