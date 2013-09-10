@@ -38,8 +38,9 @@ module Locomotive
 
         def list
           return @list unless @list.nil?
-          assets_symlinked = %w{ fonts images stylesheets javascripts }.inject(true) do |status, a|
-            status and File.symlink?(File.join(self.root_dir, a))
+          # Mark symlinks detected if at least one of these paths is a symlink
+          assets_symlinked = %w{ fonts images stylesheets javascripts }.inject(false) do |status, a|
+            status or File.symlink?(File.join(self.root_dir, a))
           end
 
           if assets_symlinked
