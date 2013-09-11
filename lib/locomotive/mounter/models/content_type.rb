@@ -49,9 +49,9 @@ module Locomotive
           self.find_field(self.group_by_field_name)
         end
         
-        # Return the group_by field
+        # Return the order_by field
         #
-        # @return [ Object ] The group_by field
+        # @return [ Object ] The order_by field
         #
         def order_by_field
           self.find_field(self.order_by)
