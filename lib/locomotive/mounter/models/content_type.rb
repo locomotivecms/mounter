@@ -48,6 +48,14 @@ module Locomotive
         def group_by_field
           self.find_field(self.group_by_field_name)
         end
+        
+        # Return the group_by field
+        #
+        # @return [ Object ] The group_by field
+        #
+        def order_by_field
+          self.find_field(self.order_by)
+        end
 
         # Build a content entry and add it to the list of entries of the content type.
         # The content type will be referenced into the newly built entry .
@@ -192,6 +200,10 @@ module Locomotive
           # group by
           _attributes['group_by'] = self.group_by_field.name if self.group_by_field
 
+          # order by
+          _attributes['order_by'] = self.order_by_field.name if self.order_by_field
+          _attributes['order_by'] = 'manually' if self.order_by == '_position'
+          
           # custom fields
           _attributes['fields'] = self.fields
 
