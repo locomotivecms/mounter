@@ -34,7 +34,7 @@ module SpecHelpers
     VCR.use_cassette cassette_name do
       teardown
       delete_current_site
-      writer.run!({ mounting_point: mounting_point, console: false, data: true, force: true }.merge!(options).merge!(credentials))
+      writer.run!({ mounting_point: mounting_point, console: false, data: true, translations: false, force: true }.merge!(options).merge!(credentials))
     end
   end
 end

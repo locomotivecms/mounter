@@ -68,7 +68,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
 
   context "forcing translations" do
     before do
-      setup "writer_api_setup_forcing_translations", force_translations: true
+      setup "writer_api_setup_forcing_translations", translations: true
     end
 
     describe 'translations' do

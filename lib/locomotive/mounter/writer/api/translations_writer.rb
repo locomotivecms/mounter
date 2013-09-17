@@ -5,12 +5,9 @@ module Locomotive
 
         # Push translations to a remote LocomotiveCMS engine.
         #
-        # Only pushes if force_translations flag is set
-        #
         class TranslationsWriter < Base
 
           def prepare
-            return unless force_translations?
             super
 
             # set the unique identifier to each local translation
@@ -23,7 +20,6 @@ module Locomotive
 
           # Write all the translations to the remote destination
           def write
-            return unless force_translations?
             self.translations.each do |key, translation|
               self.output_resource_op translation
 
@@ -36,9 +32,6 @@ module Locomotive
 
           protected
 
-          def force_translations?
-            self.runner.parameters[:force_translations] || false
-          end
           # Persist a translation by calling the API. The returned id
           # is then set to the translation itself.
           #
