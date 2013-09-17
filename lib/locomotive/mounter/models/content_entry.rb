@@ -322,8 +322,6 @@ module Locomotive
 
         # Return the value of a dynamic attribute specified by its
         # corresponding content field.
-        # If that attribute is localized and in the current locale
-        # its value is nil, it returns the value in the main locale.
         #
         # @param [ String / Object ] The content field or the name of the field
         #
@@ -343,11 +341,6 @@ module Locomotive
             _value = value[Locomotive::Mounter.locale]
 
             # puts "[#{field.name}] _value = #{value.inspect} / current #{Locomotive::Mounter.locale.inspect} / main #{self.main_locale.inspect}"
-
-            # no value for the current locale, give a try to the main one
-            if _value.nil? && Locomotive::Mounter.locale != self.main_locale
-              _value = value[self.main_locale]
-            end
 
             value = _value
           end
