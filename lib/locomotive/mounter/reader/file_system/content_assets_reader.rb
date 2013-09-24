@@ -28,7 +28,7 @@ module Locomotive
               page.translated_in.each do |locale|
                 Locomotive::Mounter.with_locale(locale) do
                   unless page.template.blank?
-                    self.add_assets_from_string(page.source)
+                    self.add_assets_from_string(page.template.raw_source)
                   end
                 end
               end

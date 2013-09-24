@@ -69,16 +69,12 @@ module Locomotive
 
           # Record pages found in file system
           def fetch
-            folders = []
-
             Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
-              fullpath = self.filepath_to_fullpath(filepath)
+              next unless File.directory?(filepath) || filepath =~ /\.(#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join('|')})$/
 
-              folders.push(fullpath) && next if File.directory?(filepath)
+              page = self.add(filepath)
 
-              next unless filepath =~ /\.(#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join('|')})$/
-
-              page = self.add(fullpath)
+              next if File.directory?(filepath) || page.nil?
 
               if locale = self.filepath_locale(filepath)
                 Locomotive::Mounter.with_locale(locale) do
@@ -88,28 +84,26 @@ module Locomotive
                 Locomotive::Mounter.logger.warn "Unknown locale in the '#{File.basename(filepath)}' file."
               end
             end
-
-            folders.each do |fullpath|
-              next if self.pages.key?(fullpath)
-              self.add(fullpath)
-            end
           end
 
           # Add a new page in the global hash of pages.
-          # If the page exists, then do nothing.
+          # If the page exists, override it.
           #
-          # @param [ String ] fullpath The fullpath used as the key for the hash
+          # @param [ String ] filepath The path of the template
           # @param [ Hash ] attributes The attributes of the new page
           #
           # @return [ Object ] A newly created page or the existing one
           #
-          def add(fullpath, attributes = {})
+          def add(filepath, attributes = {})
+            fullpath = self.filepath_to_fullpath(filepath)
+
             unless self.pages.key?(fullpath)
               attributes[:title]    = File.basename(fullpath).humanize
               attributes[:fullpath] = fullpath
 
               page = Locomotive::Mounter::Models::Page.new(attributes)
               page.mounting_point = self.mounting_point
+              page.filepath       = File.expand_path(filepath)
 
               self.pages[fullpath] = page
             end
@@ -125,16 +119,9 @@ module Locomotive
           # @param [ String ] filepath The path of the template
           #
           def set_attributes_from_header(page, filepath)
-            begin
-              template = Tilt.new(filepath)
-            rescue Haml::SyntaxError => e
-              Locomotive::Mounter.logger.warn "Invalid page template (#{filepath}): #{e.message}"
-              template = e
-            end
+            template = Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(filepath)
 
-            if template.respond_to?(:attributes)
-              return if template.attributes.blank?
-
+            if template.attributes
               attributes = template.attributes.clone
 
               # set the editable elements
@@ -201,7 +188,7 @@ module Locomotive
           def to_s(page = nil)
             page ||= self.pages['index']
 
-            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position})"
+            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position}, template=#{page.template_translations.keys.inspect})"
 
             (page.children || []).each { |child| self.to_s(child) }
           end
