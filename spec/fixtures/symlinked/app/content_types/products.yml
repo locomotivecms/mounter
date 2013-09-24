@@ -1,0 +1,20 @@
+---
+name: Products
+description: My products collection
+slug: products
+label_field_name: name
+order_by: created_at
+order_direction: asc
+fields:
+- name:
+    label: name
+    type: string
+    required: true
+    localized: true
+- description:
+    label: Description
+    type: text
+    localized: true
+- available:
+    label: available
+    type: boolean

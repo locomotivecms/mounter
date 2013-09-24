@@ -39,8 +39,11 @@ module Locomotive
         def list
           return @list unless @list.nil?
 
+          # Follows symlinks and makes sure subdirectories are handled
+          glob_pattern = '**/*/**/*'
+
           @list = [].tap do |list|
-            Dir.glob(File.join(self.root_dir, '**/*')).each do |file|
+            Dir.glob(File.join(self.root_dir, glob_pattern)).each do |file|
               next if self.exclude?(file)
 
               folder = File.dirname(file.gsub("#{self.root_dir}/", ''))
