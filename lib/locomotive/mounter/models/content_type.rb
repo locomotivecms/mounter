@@ -48,7 +48,7 @@ module Locomotive
         def group_by_field
           self.find_field(self.group_by_field_name)
         end
-        
+
         # Return the order_by field
         #
         # @return [ Object ] The order_by field
@@ -76,8 +76,10 @@ module Locomotive
 
                 if field.nil? && v.is_a?(Hash) # not a dynamic field but localized (permalink ?)
                   entry.send(:"#{k}_translations=", v)
-                else
+                elsif field.nil?
                   entry.send(:"#{k}=", v)
+                else
+                  entry.send(:"#{field.name}=", v)
                 end
               rescue NoMethodError => e
                 Mounter.logger.error e.backtrace
@@ -125,7 +127,7 @@ module Locomotive
         # @return [ Object ] The field if it exists or nil
         #
         def find_field(name_or_id)
-          self.fields.detect { |field| field.name.to_s == name_or_id.to_s || field._id == name_or_id }
+          self.fields.detect { |field| field.matches?(name_or_id) }
         end
 
         # Find a content entry by its ids (ie: _permalink or _label)
@@ -203,7 +205,7 @@ module Locomotive
           # order by
           _attributes['order_by'] = self.order_by_field.name if self.order_by_field
           _attributes['order_by'] = 'manually' if self.order_by == '_position'
-          
+
           # custom fields
           _attributes['fields'] = self.fields
 

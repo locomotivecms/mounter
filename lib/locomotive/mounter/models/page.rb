@@ -320,12 +320,6 @@ module Locomotive
           if @source[Locomotive::Mounter.locale]
             @source[Locomotive::Mounter.locale] # memoization
           elsif self.template
-            # if self.template.is_a?(Exception) # comes from the parsing
-            #   # we do not know how to render the page so rethrow the exception
-            #   raise self.template
-            # end
-            # source = self.template.need_for_prerendering? ? self.template.render : self.template.data
-            # @source[Locomotive::Mounter.locale] = source
             @source[Locomotive::Mounter.locale] = self.template.source
           else
             nil
@@ -430,7 +424,6 @@ module Locomotive
         # @return [ Boolean ] True if the template is strictly blank
         #
         def template_blank?(template)
-          # template.nil? || (!template.is_a?(Exception) && template.source.strip.blank?)
           template.nil? || template.raw_source.strip.blank?
         end
 

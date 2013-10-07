@@ -53,7 +53,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'theme assets' do
 
       it 'creates all the theme assets' do
-        Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 16
+        Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 17
       end
 
     end

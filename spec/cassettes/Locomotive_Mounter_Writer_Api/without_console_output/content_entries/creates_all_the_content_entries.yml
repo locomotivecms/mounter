@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 17 Sep 2013 12:39:06 GMT
+      - Mon, 07 Oct 2013 12:43:53 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,42 +23,42 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"c91da22094c85a8052d2ab5a8218f138"'
+      - '"ce06adafee964bde5f211ee58a28b154"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=bK1KjbBo_sWVcOhCt-79E9yKMzo; domain=.example.com; path=/;
+      - _locomotive_session=FS20AC5wRhrz6USqIjUm5ltER98; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 0dc88bd73dad7e0b07bb982a583534e3
+      - 82a2a35ae0aee2c59b644c00af5c2c32
       X-Runtime:
-      - '0.124902'
+      - '0.058545'
     body:
       encoding: UTF-8
-      string: '[{"id":"52384d6187f64353e1000319","_id":"52384d6187f64353e1000319","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"Avogadro''s
+      string: '[{"id":"5252ac8187f643f5c600068c","_id":"5252ac8187f643f5c600068c","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Avogadro''s
         Number","_slug":"avogadro-s-number","_position":0,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
         Number","date":"06/11/2012","formatted_date":"06/11/2012","city":"Fort Collins","state":"Colorado","notes":"<p>Lorem
-        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"52384d6187f64353e100031a","_id":"52384d6187f64353e100031a","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"Quixote''s
+        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"5252ac8187f643f5c600068d","_id":"5252ac8187f643f5c600068d","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Quixote''s
         True Blue","_slug":"quixote-s-true-blue","_position":1,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"52384d6187f64353e100031b","_id":"52384d6187f64353e100031b","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"Kelly''s
+        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"5252ac8187f643f5c600068e","_id":"5252ac8187f643f5c600068e","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Kelly''s
         Westport Inn","_slug":"kelly-s-westport-inn","_position":2,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas
-        City","state":"Missouri"},{"id":"52384d6187f64353e100031c","_id":"52384d6187f64353e100031c","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5252ac8187f643f5c600068f","_id":"5252ac8187f643f5c600068f","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Browne''s
         Market","_slug":"browne-s-market","_position":3,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"52384d6187f64353e100031d","_id":"52384d6187f64353e100031d","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"52384d6187f64353e100031e","_id":"52384d6187f64353e100031e","created_at":"2013-09-17T12:38:57Z","updated_at":"2013-09-17T12:38:57Z","_label":"The
+        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"5252ac8187f643f5c6000690","_id":"5252ac8187f643f5c6000690","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"5252ac8187f643f5c6000691","_id":"5252ac8187f643f5c6000691","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"The
         Belmont","_slug":"the-belmont","_position":5,"_visible":true,"content_type_slug":"events","place":"The
-        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"52384d6287f64353e100031f","_id":"52384d6287f64353e100031f","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"Avogadro''s
+        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"5252ac8187f643f5c6000692","_id":"5252ac8187f643f5c6000692","created_at":"2013-10-07T12:43:45Z","updated_at":"2013-10-07T12:43:45Z","_label":"Avogadro''s
         Number","_slug":"avogadro-s-number-1","_position":6,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
-        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"52384d6287f64353e1000320","_id":"52384d6287f64353e1000320","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"Quixote''s
+        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"5252ac8287f643f5c6000693","_id":"5252ac8287f643f5c6000693","created_at":"2013-10-07T12:43:46Z","updated_at":"2013-10-07T12:43:46Z","_label":"Quixote''s
         True Blue","_slug":"quixote-s-true-blue-1","_position":7,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"52384d6287f64353e1000321","_id":"52384d6287f64353e1000321","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"Kelly''s
+        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"5252ac8287f643f5c6000694","_id":"5252ac8287f643f5c6000694","created_at":"2013-10-07T12:43:46Z","updated_at":"2013-10-07T12:43:46Z","_label":"Kelly''s
         Westport Inn","_slug":"kelly-s-westport-inn-1","_position":8,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas
-        City","state":"Missouri"},{"id":"52384d6287f64353e1000322","_id":"52384d6287f64353e1000322","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5252ac8287f643f5c6000695","_id":"5252ac8287f643f5c6000695","created_at":"2013-10-07T12:43:46Z","updated_at":"2013-10-07T12:43:46Z","_label":"Browne''s
         Market","_slug":"browne-s-market-1","_position":9,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"52384d6287f64353e1000323","_id":"52384d6287f64353e1000323","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"52384d6287f64353e1000324","_id":"52384d6287f64353e1000324","created_at":"2013-09-17T12:38:58Z","updated_at":"2013-09-17T12:38:58Z","_label":"The
+        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"5252ac8287f643f5c6000696","_id":"5252ac8287f643f5c6000696","created_at":"2013-10-07T12:43:46Z","updated_at":"2013-10-07T12:43:46Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"5252ac8287f643f5c6000697","_id":"5252ac8287f643f5c6000697","created_at":"2013-10-07T12:43:46Z","updated_at":"2013-10-07T12:43:46Z","_label":"The
         Belmont","_slug":"the-belmont-1","_position":11,"_visible":true,"content_type_slug":"events","place":"The
         Belmont","date":"06/04/2011","formatted_date":"06/04/2011","city":"Hamtramk","state":"Michigan"}]'
     http_version: 
-  recorded_at: Tue, 17 Sep 2013 12:39:06 GMT
+  recorded_at: Mon, 07 Oct 2013 12:43:53 GMT
 recorded_with: VCR 2.4.0

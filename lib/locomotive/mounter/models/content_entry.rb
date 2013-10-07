@@ -334,15 +334,15 @@ module Locomotive
             field = self.content_type.find_field(field)
           end
 
+          return nil if field.nil?
+
           value = (self.dynamic_attributes || {})[field.name.to_sym]
 
-          # puts "[#{field.name.inspect}] #{value.inspect} / #{field.localized.inspect} / #{value.is_a?(Hash).inspect}"
+          # DEBUG puts "[#{field.name.inspect}] #{value.inspect} / #{field.localized.inspect} / #{value.is_a?(Hash).inspect}"
 
           if !field.is_relationship? && field.localized && value.is_a?(Hash)
             # get the localized value for the current locale
             _value = value[Locomotive::Mounter.locale]
-
-            # puts "[#{field.name}] _value = #{value.inspect} / current #{Locomotive::Mounter.locale.inspect} / main #{self.main_locale.inspect}"
 
             # no value for the current locale, give a try to the main one
             if _value.nil? && Locomotive::Mounter.locale != self.main_locale
@@ -352,7 +352,7 @@ module Locomotive
             value = _value
           end
 
-          value #.tap { |v| puts "[#{field.name}] returning #{v.inspect}" }
+          value # DEBUG .tap { |v| puts "[#{field.name}] returning #{v.inspect}" }
         end
 
       end

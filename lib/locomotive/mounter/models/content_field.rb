@@ -53,6 +53,25 @@ module Locomotive
           %w(belongs_to has_many many_to_many).include?(self.type.to_s)
         end
 
+        # Tell if the id, the name of the field or other property based on
+        # its name (like formatted_<date field>) matches the parameter.
+        #
+        # @param [ String / Symbol] name_or_id Name or Id of the field
+        #
+        # @return [ Boolean ] True if the current field matches the parameter
+        #
+        def matches?(id_or_name)
+          default = [self._id, self.name]
+
+          list = default + (case self.type.to_sym
+          when :date, :date_time then ["formatted_#{self.name}"]
+          else
+            []
+          end)
+
+          list.include?(id_or_name.to_s)
+        end
+
         # Return the content type matching the class_name / target attribute
         #
         # @return [ Object ] The matching Content Type

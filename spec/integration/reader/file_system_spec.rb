@@ -119,11 +119,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
 
           it 'keeps the ordering of the config' do
-            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives']
+            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
           end
 
           it 'assigns titles for all the pages' do
-            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives']
+            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives', 'Songs']
           end
 
           it 'also includes nested children' do
