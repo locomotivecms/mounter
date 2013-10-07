@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Oct 2013 12:43:23 GMT
+      - Mon, 07 Oct 2013 14:36:11 GMT
       Status:
       - 200 OK
       Connection:
@@ -29,17 +29,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=YYkO5IGHC4zxhQt8Pt6bg__oWto; domain=.example.com; path=/;
+      - _locomotive_session=JFhL499oWkehcuRUgboRAArrW80; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e7955f2617fcfea4f07c5182b4da597f
+      - 0f8d4513e3690b3ef64f0209fe18d240
       X-Runtime:
-      - '0.031358'
+      - '0.032933'
     body:
       encoding: UTF-8
       string: '{"token":"iaWvtP5PhmnyKypXpLbM"}'
     http_version: 
-  recorded_at: Mon, 07 Oct 2013 12:43:23 GMT
+  recorded_at: Mon, 07 Oct 2013 14:36:11 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM
@@ -53,7 +53,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Oct 2013 12:43:23 GMT
+      - Mon, 07 Oct 2013 14:36:11 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,24 +63,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"3260b7ae37a7925be68a08fd1b49ccf9"'
+      - '"777b7b4ea4c63fe68bf2c8bdf69c2842"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=oC2Zmd47qtmGabvVdGXsZtD7bZQ; domain=.example.com; path=/;
+      - _locomotive_session=EuDU0VYps6kjglLYTIm0arQIl8Q; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - af4f277ae2255b19c7c0d414e645cfcc
+      - ee9a0e4a804932cd4327ccf206ec6d05
       X-Runtime:
-      - '0.032677'
+      - '0.103768'
     body:
       encoding: UTF-8
-      string: '{"id":"5252ac6387f643f5c60005e3","_id":"5252ac6387f643f5c60005e3","created_at":"2013-10-07T12:43:15Z","updated_at":"2013-10-07T12:43:15Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252ac6387f643f5c60005e4","_id":"5252ac6387f643f5c60005e4","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5252c6d287f643b5a600007e","_id":"5252c6d287f643b5a600007e","created_at":"2013-10-07T16:36:02+02:00","updated_at":"2013-10-07T16:36:02+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252c6d287f643b5a600007f","_id":"5252c6d287f643b5a600007f","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Mon, 07 Oct 2013 12:43:23 GMT
+  recorded_at: Mon, 07 Oct 2013 14:36:11 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
@@ -94,7 +94,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Oct 2013 12:43:23 GMT
+      - Mon, 07 Oct 2013 14:36:11 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,24 +104,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"85e83128af79ece628638d4e4986d122"'
+      - '"c1dbb53c01d3505f3f25dbbaff750c16"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=pZ6iz0XXZYRNLcyqJ2-hPyxiMO8; domain=.example.com; path=/;
+      - _locomotive_session=Ikwbox0uy-Z4hkpTP6rnawaCSPQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - bbc4096965fe6772455e2dd7a4d7ea50
+      - 95155f1e65ec69aff09f594818913e78
       X-Runtime:
-      - '0.029967'
+      - '0.034270'
     body:
       encoding: UTF-8
-      string: '{"id":"5252ac6387f643f5c60005e3","_id":"5252ac6387f643f5c60005e3","created_at":"2013-10-07T12:43:15Z","updated_at":"2013-10-07T12:43:15Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252ac6387f643f5c60005e4","_id":"5252ac6387f643f5c60005e4","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: '{"id":"5252c6d287f643b5a600007e","_id":"5252c6d287f643b5a600007e","created_at":"2013-10-07T16:36:02+02:00","updated_at":"2013-10-07T16:36:02+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252c6d287f643b5a600007f","_id":"5252c6d287f643b5a600007f","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Mon, 07 Oct 2013 12:43:23 GMT
+  recorded_at: Mon, 07 Oct 2013 14:36:11 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=nb
@@ -135,7 +135,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 07 Oct 2013 12:43:23 GMT
+      - Mon, 07 Oct 2013 14:36:11 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,22 +145,22 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"3260b7ae37a7925be68a08fd1b49ccf9"'
+      - '"777b7b4ea4c63fe68bf2c8bdf69c2842"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=IyCRR0lMaf3y4pW2F9xPLatVUbE; domain=.example.com; path=/;
+      - _locomotive_session=Q4JDUsVgwe8DVttuSTr8tTyurME; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 5595342da6d347524b1f7637060b9ec9
+      - a446ae074ec806011014a4126a350364
       X-Runtime:
-      - '0.030602'
+      - '0.033902'
     body:
       encoding: UTF-8
-      string: '{"id":"5252ac6387f643f5c60005e3","_id":"5252ac6387f643f5c60005e3","created_at":"2013-10-07T12:43:15Z","updated_at":"2013-10-07T12:43:15Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252ac6387f643f5c60005e4","_id":"5252ac6387f643f5c60005e4","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5252c6d287f643b5a600007e","_id":"5252c6d287f643b5a600007e","created_at":"2013-10-07T16:36:02+02:00","updated_at":"2013-10-07T16:36:02+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5252c6d287f643b5a600007f","_id":"5252c6d287f643b5a600007f","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Mon, 07 Oct 2013 12:43:23 GMT
+  recorded_at: Mon, 07 Oct 2013 14:36:11 GMT
 recorded_with: VCR 2.4.0
