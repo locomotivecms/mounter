@@ -47,8 +47,10 @@ module Locomotive
 
                 _template = snippet.template_translations[locale]
 
-                if !_template.is_a?(Exception) && _template.blank?
-                  snippet.template_translations[locale] = default_template
+                if _template.blank?
+                  Locomotive::Mounter.with_locale(locale) do
+                    snippet.template = default_template
+                  end
                 end
               end
             end
