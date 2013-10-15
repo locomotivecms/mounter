@@ -53,7 +53,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'theme assets' do
 
       it 'creates all the theme assets' do
-        Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 16
+        Locomotive::Mounter::EngineApi.get('/theme_assets.json').to_a.size.should == 17
       end
 
     end
@@ -68,7 +68,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
 
   context "forcing translations" do
     before do
-      setup "writer_api_setup_forcing_translations", force_translations: true
+      setup "writer_api_setup_forcing_translations", translations: true
     end
 
     describe 'translations' do

@@ -119,11 +119,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
 
           it 'keeps the ordering of the config' do
-            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives']
+            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
           end
 
           it 'assigns titles for all the pages' do
-            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives']
+            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives', 'Songs']
           end
 
           it 'also includes nested children' do
@@ -329,6 +329,71 @@ describe Locomotive::Mounter::Reader::FileSystem do
       end
 
     end # content entries
+
+    describe 'theme_assets' do
+
+      before(:each) do
+        stub_readers(@read, %w{ theme_assets })
+        @mounting_point = @reader.run!(path: @path)
+      end
+
+      subject { @mounting_point.theme_assets }
+
+      its(:count) { should == 17 }
+
+      it "should not return directories" do
+        dir_names = %w{ fonts images javascripts stylesheets }
+        dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
+        subject.each do |asset|
+          asset.to_s.should_not match dir_rx
+        end
+      end
+
+      it "should not return anything from samples" do
+        sample_rx = /samples/
+        subject.each do |asset|
+          asset.to_s.should_not match sample_rx
+        end
+      end
+
+    end # theme assets
+
+  end
+
+  describe 'a symlinked site' do
+
+    before(:each) do
+      @path   = File.join(File.dirname(__FILE__), '..', '..', 'fixtures', 'symlinked')
+      @reader = Locomotive::Mounter::Reader::FileSystem.instance
+    end
+
+    describe 'theme_assets' do
+
+      before(:each) do
+        stub_readers(@read, %w{ theme_assets })
+        @mounting_point = @reader.run!(path: @path)
+      end
+
+      subject { @mounting_point.theme_assets }
+
+      its(:count) { should == 17 }
+
+      it "should not return directories" do
+        dir_names = %w{ fonts images javascripts stylesheets }
+        dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
+        subject.each do |asset|
+          asset.to_s.should_not match dir_rx
+        end
+      end
+
+      it "should not return anything from samples" do
+        sample_rx = /samples/
+        subject.each do |asset|
+          asset.to_s.should_not match sample_rx
+        end
+      end
+
+    end # theme assets
 
   end
 

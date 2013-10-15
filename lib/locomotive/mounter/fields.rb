@@ -88,7 +88,7 @@ module Locomotive
 
               value = value.values.first if value.size == 1
 
-              value = nil if value.empty?
+              value = nil if value.respond_to?(:empty?) && value.empty?
 
               _attributes[name] = value
             else

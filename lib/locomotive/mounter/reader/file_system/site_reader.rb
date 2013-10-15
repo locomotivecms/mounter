@@ -13,7 +13,10 @@ module Locomotive
            # set the default locale first
            Locomotive::Mounter.locale = site['locales'].first.to_sym rescue Locomotive::Mounter.locale
 
-           Locomotive::Mounter::Models::Site.new(site)
+           Locomotive::Mounter::Models::Site.new(site).tap do |_site|
+            # set the time zone for the next Time operations (UTC by default)
+            Time.zone = ActiveSupport::TimeZone.new(_site.timezone || 'UTC')
+           end
          end
 
         end

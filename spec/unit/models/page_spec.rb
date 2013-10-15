@@ -125,7 +125,7 @@ describe Locomotive::Mounter::Models::Page do
     end
 
     it 'is not a layout if the template is empty' do
-      template = Tilt.new(File.join(File.dirname(__FILE__), '../..', 'fixtures', 'empty.liquid.haml'))
+      template = Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(File.join(File.dirname(__FILE__), '../..', 'fixtures', 'empty.liquid.haml'))
       build_page(template: template).is_layout?.should be_false
     end
 

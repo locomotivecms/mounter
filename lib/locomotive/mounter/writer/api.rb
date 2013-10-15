@@ -40,7 +40,18 @@ module Locomotive
           # @return [ Array ] List of classes
           #
           def writers
-            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, PagesWriter, ThemeAssetsWriter, TranslationsWriter]
+            [SiteWriter, SnippetsWriter, ContentTypesWriter, ContentEntriesWriter, TranslationsWriter, PagesWriter, ThemeAssetsWriter].tap do |_writers|
+              # modify the list depending on the parameters
+              if self.parameters
+                if self.parameters[:data] == false && !(self.parameters[:only].try(:include?, 'content_entries'))
+                  _writers.delete(ContentEntriesWriter)
+                end
+
+                if self.parameters[:translations] == false && !(self.parameters[:only].try(:include?, 'translations'))
+                  _writers.delete(TranslationsWriter)
+                end
+              end
+            end
           end
 
           # Get the writer to push content assets
