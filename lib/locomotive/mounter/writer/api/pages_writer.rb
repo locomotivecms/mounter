@@ -227,7 +227,7 @@ module Locomotive
 
               # editable elements
               (params[:editable_elements] || []).each do |element|
-                if element[:content] =~ /$\/samples\//
+                if element[:content] =~ /^\/samples\//
                   element[:source] = self.path_to_file(element.delete(:content))
                 elsif element[:content] =~ %r($http://)
                   element[:source_url] = element.delete(:content)

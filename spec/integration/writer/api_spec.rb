@@ -58,6 +58,14 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
 
     end
 
+    describe 'content assets' do
+
+      it 'creates all the theme assets' do
+        Locomotive::Mounter::EngineApi.get('/content_assets.json').to_a.size.should == 1
+      end
+
+    end
+
     describe 'translations' do
       it 'does not push translations' do
         Locomotive::Mounter::EngineApi.get('/translations.json').to_a.size.should == 0

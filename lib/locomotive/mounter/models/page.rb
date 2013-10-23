@@ -150,7 +150,7 @@ module Locomotive
         # @return [ Integer ] An unique id corresponding to the depth and position
         #
         def depth_and_position
-          self.depth * 100 + (self.position || 100)
+          self.depth * 1000 + (self.position || 199)
         end
 
         # A layout is a page whose the template does
