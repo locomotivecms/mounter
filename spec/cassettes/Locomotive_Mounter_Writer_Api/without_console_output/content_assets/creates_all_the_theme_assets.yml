@@ -1,0 +1,41 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=iaWvtP5PhmnyKypXpLbM
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Oct 2013 13:16:20 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"a9d3252f191c9211ec7a0073af26d352"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=L5FNkb1zkbe9M03KHgn4ebGxsL0; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - c75761473f03d979d2e5ed8eb282c6a1
+      X-Runtime:
+      - '0.069385'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5267cc2087f64318d000023c","_id":"5267cc2087f64318d000023c","created_at":"2013-10-23T15:16:16+02:00","updated_at":"2013-10-23T15:16:16+02:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MjY3Y2MxYjg3ZjY0MzE4ZDAwMDAxZjYvYXNzZXRzLzUyNjdjYzIwODdmNjQzMThkMDAwMDIzYy9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/5267cc1b87f64318d00001f6/assets/5267cc2087f64318d000023c/photo.jpg","content_type_text":"image"}]'
+    http_version: 
+  recorded_at: Wed, 23 Oct 2013 13:16:20 GMT
+recorded_with: VCR 2.4.0
