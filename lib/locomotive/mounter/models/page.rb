@@ -15,6 +15,7 @@ module Locomotive
         field :template,          localized: true
         field :handle
         field :listed,            default: false
+        field :searchable
         field :templatized,       default: false
         field :content_type
         field :published,         default: true
@@ -38,6 +39,7 @@ module Locomotive
         alias :listed?      :listed
         alias :published?   :published
         alias :templatized? :templatized
+        alias :searchable?  :searchable
 
         ## methods ##
 
@@ -331,7 +333,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position seo_title meta_description meta_keywords)
+          fields = %w(title slug redirect_url redirect_type handle published listed searchable cache_strategy response_type position seo_title meta_description meta_keywords)
 
           _attributes = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
@@ -361,7 +363,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published cache_strategy
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published searchable cache_strategy
             response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
@@ -392,7 +394,7 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(title slug listed published handle cache_strategy
+          fields = %w(title slug listed published searchable handle cache_strategy
             redirect_url response_type templatized content_type_id position
             seo_title meta_description meta_keywords)
 
