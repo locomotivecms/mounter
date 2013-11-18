@@ -341,12 +341,10 @@ module Locomotive
           if !field.is_relationship? && field.localized && value.is_a?(Hash)
             # get the localized value for the current locale
             _value = value[Locomotive::Mounter.locale]
-
             # no value for the current locale, give a try to the main one
-            # if _value.nil? && Locomotive::Mounter.locale != self.main_locale
-            #   _value = value[self.main_locale]
-            # end
-
+            #if _value.nil? && Locomotive::Mounter.locale != self.main_locale
+            #  _value = value[self.main_locale]
+            #end
             value = _value
           end
 

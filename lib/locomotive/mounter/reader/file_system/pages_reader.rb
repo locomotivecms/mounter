@@ -69,10 +69,16 @@ module Locomotive
 
           # Record pages found in file system
           def fetch
-            Dir.glob(File.join(self.root_dir, '**/*')).each do |filepath|
+            position, last_dirname = nil, nil
+
+            Dir.glob(File.join(self.root_dir, '**/*')).sort.each do |filepath|
               next unless File.directory?(filepath) || filepath =~ /\.(#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join('|')})$/
 
-              page = self.add(filepath)
+              if last_dirname != File.dirname(filepath)
+                position, last_dirname = 100, File.dirname(filepath)
+              end
+
+              page = self.add(filepath, position: position)
 
               next if File.directory?(filepath) || page.nil?
 
@@ -83,6 +89,8 @@ module Locomotive
               else
                 Locomotive::Mounter.logger.warn "Unknown locale in the '#{File.basename(filepath)}' file."
               end
+
+              position += 1
             end
           end
 
