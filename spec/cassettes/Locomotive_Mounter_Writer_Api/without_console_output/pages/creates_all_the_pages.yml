@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/pages.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:50 GMT
+      - Wed, 23 Oct 2013 22:07:26 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,142 +23,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5dfbf620583ecb82ce3e3e10bd6f43b0"'
+      - '"19719ec6ca107c80eed9ace17977e9f9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=bHYVXxtALbNGxeikk_VlL3JlOPc; domain=.example.com; path=/;
+      - _locomotive_session=KF78Hf-Db59m7_BZFyk0Y0yrGRs; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 5e516f68b41b31bd6db8f9c58befa505
+      - e51197c4436712127a10114b9d57b5c8
       X-Runtime:
-      - '0.157043'
+      - '0.127103'
     body:
-      encoding: US-ASCII
-      string: ! '[{"id":"520fb4a687f64332190000fb","_id":"520fb4a687f64332190000fb","created_at":"2013-08-17T17:36:38Z","updated_at":"2013-08-17T17:36:44Z","title":"Home
-        page","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
-        html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
-        site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
-        content=''{{ site.meta_keywords }}'' name=''keywords''>\n    <!-- Le HTML5
-        shim, for IE6-8 support of HTML elements -->\n    <!--[if lt IE 9]>\n      <script
-        src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>\n    <![endif]-->\n    <link
-        href=\"/fonts/chunkfive.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\"
-        />\n    <!-- Le styles -->\n    {{ ''reboot'' | stylesheet_tag }}\n    {{
-        ''application'' | stylesheet_tag }}\n    <script src=''http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js''
-        type=''text/javascript''></script>\n    {% inline_editor %}\n  </head>\n  <body>\n    <div
-        class=''container''>\n      <div id=''menu''>\n        <div id=''nav''>\n          <li
-        class=\"{% if page.fullpath == ''index'' %}on{% endif %} link\" id=''home''>\n            <a
-        href=''/''>Home</a>\n          </li>\n          {% nav site, no_wrapper: true,
-        exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
-        id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
-        src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg{%
-        endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
-        editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
-        neque. Proin ac ante ante, sit amet egestas purus. Fusce tincidunt mattis
-        sapien eget sodales. Cras aliquet odio eu nisl dapibus placerat.\n            <br>\n            <a
-        href=''/about_us''>read more...</a>\n          </p>\n          {% endeditable_long_text
-        %}\n        </div>\n        {% endblock %}\n        <div class=''clear''></div>\n      </div>\n      <div
-        id=''content''>\n        {% block content %}\n        <div class=''unit size1of2''
-        id=''events''>\n          <h2>Upcoming events</h2>\n          <ul class=''list''>\n            {%
-        for event in contents.events limit: 6 %}\n            <li>\n              <em>{{
-        event.date | localized_date: ''%a, %B %d, %Y'' }}</em>\n              &nbsp;-&nbsp;\n              {{
-        event.place }}, {{ event.city }}, {{ event.state }}\n            </li>\n            {%
-        endfor %}\n          </ul>\n          <p class=''more''>\n            <a href=''/events''>See
-        more events ...</a>\n          </p>\n        </div>\n        <div class=''unit
-        size1of2'' id=''updates''>\n          <h2>Site updates</h2>\n          <ul
-        class=''list''>\n            {% for update in contents.updates %}\n            <li>\n              <em>{{
-        update.date | localized_date: ''%B %d'' }}</em>\n              &nbsp;-&nbsp;\n              {{
-        update.title }}\n            </li>\n            {% endfor %}\n          </ul>\n        </div>\n        {%
-        endblock %}\n        <div class=''clear''></div>\n      </div>\n      <div
-        id=''footer''>\n        <p>{% locale_switcher %}</p>\n        <p>\n          Powered
-        by <a href=\"http://www.locomotivecms.com\">LocomotiveCMS</a>. Designed by
-        <a href=\"http://www.sachagreif.com\">Sacha Greif</a>.\n        </p>\n        <p>\n          All
-        photos are licensed under Creative Commons. (see original ones <a href=''http://www.flickr.com/photos/38687875@N00/3391588262/''>here</a>
-        or <a href=''http://www.flickr.com/photos/cool_dry_place/55454498/''>here</a>).\n        </p>\n      </div>\n    </div>\n    {%
-        google_analytics ''UA-20661758-1'' %}\n  </body>\n</html>\n","escaped_raw_template":"&lt;!DOCTYPE
-        html&gt;\n&lt;html lang=&#x27;en&#x27;&gt;\n  &lt;head&gt;\n    &lt;meta charset=&#x27;utf-8&#x27;&gt;\n    &lt;title&gt;{{
-        site.name }}&lt;/title&gt;\n    &lt;meta content=&#x27;{{ site.meta_description
-        }}&#x27; name=&#x27;description&#x27;&gt;\n    &lt;meta content=&#x27;{{ site.meta_keywords
-        }}&#x27; name=&#x27;keywords&#x27;&gt;\n    &lt;!-- Le HTML5 shim, for IE6-8
-        support of HTML elements --&gt;\n    &lt;!--[if lt IE 9]&gt;\n      &lt;script
-        src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;\n    &lt;![endif]--&gt;\n    &lt;link
-        href=&quot;/fonts/chunkfive.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot;
-        type=&quot;text/css&quot; /&gt;\n    &lt;!-- Le styles --&gt;\n    {{ &#x27;reboot&#x27;
-        | stylesheet_tag }}\n    {{ &#x27;application&#x27; | stylesheet_tag }}\n    &lt;script
-        src=&#x27;http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&#x27;
-        type=&#x27;text/javascript&#x27;&gt;&lt;/script&gt;\n    {% inline_editor
-        %}\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;div class=&#x27;container&#x27;&gt;\n      &lt;div
-        id=&#x27;menu&#x27;&gt;\n        &lt;div id=&#x27;nav&#x27;&gt;\n          &lt;li
-        class=&quot;{% if page.fullpath == &#x27;index&#x27; %}on{% endif %} link&quot;
-        id=&#x27;home&#x27;&gt;\n            &lt;a href=&#x27;/&#x27;&gt;Home&lt;/a&gt;\n          &lt;/li&gt;\n          {%
-        nav site, no_wrapper: true, exclude: &#x27;events&#x27; %}\n        &lt;/div&gt;\n        &lt;div
-        class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
-        id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
-        src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg{%
-        endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
-        editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
-        ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
-        neque. Proin ac ante ante, sit amet egestas purus. Fusce tincidunt mattis
-        sapien eget sodales. Cras aliquet odio eu nisl dapibus placerat.\n            &lt;br&gt;\n            &lt;a
-        href=&#x27;/about_us&#x27;&gt;read more...&lt;/a&gt;\n          &lt;/p&gt;\n          {%
-        endeditable_long_text %}\n        &lt;/div&gt;\n        {% endblock %}\n        &lt;div
-        class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
-        id=&#x27;content&#x27;&gt;\n        {% block content %}\n        &lt;div class=&#x27;unit
-        size1of2&#x27; id=&#x27;events&#x27;&gt;\n          &lt;h2&gt;Upcoming events&lt;/h2&gt;\n          &lt;ul
-        class=&#x27;list&#x27;&gt;\n            {% for event in contents.events limit:
-        6 %}\n            &lt;li&gt;\n              &lt;em&gt;{{ event.date | localized_date:
-        &#x27;%a, %B %d, %Y&#x27; }}&lt;/em&gt;\n              &amp;nbsp;-&amp;nbsp;\n              {{
-        event.place }}, {{ event.city }}, {{ event.state }}\n            &lt;/li&gt;\n            {%
-        endfor %}\n          &lt;/ul&gt;\n          &lt;p class=&#x27;more&#x27;&gt;\n            &lt;a
-        href=&#x27;/events&#x27;&gt;See more events ...&lt;/a&gt;\n          &lt;/p&gt;\n        &lt;/div&gt;\n        &lt;div
-        class=&#x27;unit size1of2&#x27; id=&#x27;updates&#x27;&gt;\n          &lt;h2&gt;Site
-        updates&lt;/h2&gt;\n          &lt;ul class=&#x27;list&#x27;&gt;\n            {%
-        for update in contents.updates %}\n            &lt;li&gt;\n              &lt;em&gt;{{
-        update.date | localized_date: &#x27;%B %d&#x27; }}&lt;/em&gt;\n              &amp;nbsp;-&amp;nbsp;\n              {{
-        update.title }}\n            &lt;/li&gt;\n            {% endfor %}\n          &lt;/ul&gt;\n        &lt;/div&gt;\n        {%
-        endblock %}\n        &lt;div class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
-        id=&#x27;footer&#x27;&gt;\n        &lt;p&gt;{% locale_switcher %}&lt;/p&gt;\n        &lt;p&gt;\n          Powered
-        by &lt;a href=&quot;http://www.locomotivecms.com&quot;&gt;LocomotiveCMS&lt;/a&gt;.
-        Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
-        photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
-        or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"520fb4aa87f6433219000140","_id":"520fb4aa87f6433219000140","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"Page
-        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4aa87f6433219000141","_id":"520fb4aa87f6433219000141","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
-        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
-        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
-        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f6433219000161","_id":"520fb4ab87f6433219000161","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"A
-        song template","slug":"content_type_template","parent_id":"520fb4ab87f6433219000156","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
-        extends ''index'' %}\n{% block content %}\n<h3>{{ song.title }}</h3>\n<p>{{
-        song.short_description }}</p>\n{% endblock %}\n","escaped_raw_template":"{%
-        extends &#x27;index&#x27; %}\n{% block content %}\n&lt;h3&gt;{{ song.title
-        }}&lt;/h3&gt;\n&lt;p&gt;{{ song.short_description }}&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"520fb4ab87f6433219000162","_id":"520fb4ab87f6433219000162","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"Page
-        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4ab87f6433219000163","_id":"520fb4ab87f6433219000163","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
-        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
-        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f6433219000164","_id":"520fb4ab87f6433219000164","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"News","slug":"news","parent_id":"520fb4ab87f6433219000158","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"520fb4a687f64332190000fc","_id":"520fb4a687f64332190000fc","created_at":"2013-08-17T17:36:38Z","updated_at":"2013-08-17T17:36:44Z","title":"Page
-        not found","slug":"404","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"{%
-        extends index %}\n{% block content %}\n<p class=''error''>page not found</p>\n{%
-        endblock %}\n","escaped_raw_template":"{% extends index %}\n{% block content
-        %}\n&lt;p class=&#x27;error&#x27;&gt;page not found&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"520fb4aa87f6433219000142","_id":"520fb4aa87f6433219000142","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"Page
-        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4aa87f6433219000143","_id":"520fb4aa87f6433219000143","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
-        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
-        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
-        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4aa87f6433219000145","_id":"520fb4aa87f6433219000145","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","title":"About
-        Us","slug":"about-us","parent_id":"520fb4a687f64332190000fb","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+      encoding: UTF-8
+      string: '[{"id":"5268488087f64318d0000339","_id":"5268488087f64318d0000339","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"About
+        Us","slug":"about-us","parent_id":"5268487b87f64318d00002f0","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -194,10 +72,10 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"520fb4aa87f6433219000146","_id":"520fb4aa87f6433219000146","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"5268488087f64318d000033a","_id":"5268488087f64318d000033a","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4aa87f6433219000147","_id":"520fb4aa87f6433219000147","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"520fb4aa87f6433219000148","_id":"520fb4aa87f6433219000148","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d000033b","_id":"5268488087f64318d000033b","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d000033c","_id":"5268488087f64318d000033c","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -213,11 +91,11 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f6433219000159","_id":"520fb4ab87f6433219000159","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"John-doe","slug":"john-doe","parent_id":"520fb4aa87f6433219000145","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"520fb4ab87f643321900015a","_id":"520fb4ab87f643321900015a","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","slug":"Page
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d000034d","_id":"5268488087f64318d000034d","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"John-doe","slug":"john-doe","parent_id":"5268488087f64318d0000339","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"5268488087f64318d000034e","_id":"5268488087f64318d000034e","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4ab87f643321900015b","_id":"520fb4ab87f643321900015b","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"520fb4ab87f643321900015c","_id":"520fb4ab87f643321900015c","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d000034f","_id":"5268488087f64318d000034f","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d0000350","_id":"5268488087f64318d0000350","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -233,7 +111,7 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4aa87f6433219000149","_id":"520fb4aa87f6433219000149","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:44Z","title":"Music","slug":"music","parent_id":"520fb4a687f64332190000fb","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d000033d","_id":"5268488087f64318d000033d","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Music","slug":"music","parent_id":"5268487b87f64318d00002f0","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''introduction''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -260,25 +138,25 @@ http_interactions:
         0 %}\n    {% include &#x27;song&#x27; with song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n&lt;div
         class=&#x27;unit size1of2&#x27;&gt;\n  &lt;ul class=&#x27;songs&#x27;&gt;\n    {%
         for song in contents.songs offset: 4 %}\n    {% include &#x27;song&#x27; with
-        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"520fb4aa87f643321900014a","_id":"520fb4aa87f643321900014a","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:42Z","slug":"Page
+        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"5268488087f64318d000033e","_id":"5268488087f64318d000033e","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4aa87f643321900014b","_id":"520fb4aa87f643321900014b","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:42Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d000033f","_id":"5268488087f64318d000033f","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"520fb4aa87f643321900014c","_id":"520fb4aa87f643321900014c","created_at":"2013-08-17T17:36:42Z","updated_at":"2013-08-17T17:36:42Z","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d0000340","_id":"5268488087f64318d0000340","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc. Quisque mauris diam, tincidunt in commodo sed, feugiat
         eu nibh. Nulla erat nunc, dapibus vel eleifend et, egestas sed quam. Vestibulum
         mollis eros at dolor vulputate vel sollicitudin enim convallis. Etiam velit
-        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f643321900015d","_id":"520fb4ab87f643321900015d","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Jane-doe","slug":"jane-doe","parent_id":"520fb4aa87f6433219000145","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"520fb4ab87f643321900015e","_id":"520fb4ab87f643321900015e","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"Page
+        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d0000351","_id":"5268488087f64318d0000351","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"Jane-doe","slug":"jane-doe","parent_id":"5268488087f64318d0000339","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"5268488087f64318d0000352","_id":"5268488087f64318d0000352","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4ab87f643321900015f","_id":"520fb4ab87f643321900015f","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"520fb4ab87f6433219000160","_id":"520fb4ab87f6433219000160","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d0000353","_id":"5268488087f64318d0000353","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d0000354","_id":"5268488087f64318d0000354","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -294,8 +172,8 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f643321900014d","_id":"520fb4ab87f643321900014d","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Store","slug":"store","parent_id":"520fb4a687f64332190000fb","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"520fb4ab87f643321900014e","_id":"520fb4ab87f643321900014e","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Contact
-        Us","slug":"contact","parent_id":"520fb4a687f64332190000fb","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d0000341","_id":"5268488087f64318d0000341","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Store","slug":"store","parent_id":"5268487b87f64318d00002f0","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"5268488087f64318d0000342","_id":"5268488087f64318d0000342","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Contact
+        Us","slug":"contact","parent_id":"5268487b87f64318d00002f0","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends ''parent'' %}\n{% block content %}\n<div class=''text''>\n  {% editable_long_text
         ''text'' %}\n  <p>\n    Ut imperdiet velit eu metus semper tristique. Vivamus
         risus nisi, tincidunt et euismod a, auctor pretium eros. Vestibulum sed magna
@@ -360,14 +238,14 @@ http_interactions:
         {\n          alert(&quot;Thank you ! Your message have been received&quot;);\n        },
         &quot;json&quot;).error(function(response) {\n          alert(&quot;We are
         sorry but we were unable to treat your message. Please try later.&quot;);\n        });\n    });\n  });\n&lt;/script&gt;\n{%
-        endblock %}\n","editable_elements":[{"id":"520fb4ab87f643321900014f","_id":"520fb4ab87f643321900014f","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"Page
+        endblock %}\n","editable_elements":[{"id":"5268488087f64318d0000343","_id":"5268488087f64318d0000343","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4ab87f6433219000150","_id":"520fb4ab87f6433219000150","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d0000344","_id":"5268488087f64318d0000344","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"520fb4ab87f6433219000151","_id":"520fb4ab87f6433219000151","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Ut
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d0000345","_id":"5268488087f64318d0000345","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Ut
         imperdiet velit eu metus semper tristique. Vivamus risus nisi, tincidunt et
         euismod a, auctor pretium eros. Vestibulum sed magna et velit pulvinar euismod.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed velit
@@ -376,7 +254,7 @@ http_interactions:
         mauris orci ullamcorper lectus, nec vulputate turpis mauris sed augue. Maecenas
         faucibus ultricies nisl, non ullamcorper justo bibendum nec. Duis vitae mauris
         condimentum risus commodo mattis vel sed libero. Fusce diam elit, porta id
-        vestibulum ut, aliquet mattis neque.\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f6433219000152","_id":"520fb4ab87f6433219000152","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Events","slug":"events","parent_id":"520fb4a687f64332190000fb","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum ut, aliquet mattis neque.\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d0000346","_id":"5268488087f64318d0000346","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Events","slug":"events","parent_id":"5268487b87f64318d00002f0","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n<p>Thank you {{ message.name }} !</p>\n<div
         class=''unit size2of3'' id=''events''>\n  <h2>Upcoming events</h2>\n  <ul
         class=''list''>\n    {% for event in contents.events %}\n    <li>\n      <em>{{
@@ -424,14 +302,14 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan\n  &lt;/p&gt;\n  {% endeditable_long_text
-        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"520fb4ab87f6433219000153","_id":"520fb4ab87f6433219000153","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"Page
+        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"5268488087f64318d0000347","_id":"5268488087f64318d0000347","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","url":"/sites/520fb4a687f64332190000f9/assets/520fb4aa87f643321900013f/photo.jpg","filename":"photo.jpg"},{"id":"520fb4ab87f6433219000154","_id":"520fb4ab87f6433219000154","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d0000348","_id":"5268488087f64318d0000348","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"520fb4ab87f6433219000155","_id":"520fb4ab87f6433219000155","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:43Z","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"5268488087f64318d0000349","_id":"5268488087f64318d0000349","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -447,11 +325,136 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"520fb4ab87f6433219000156","_id":"520fb4ab87f6433219000156","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Songs","slug":"songs","parent_id":"520fb4a687f64332190000fb","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"520fb4ab87f6433219000157","_id":"520fb4ab87f6433219000157","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Lorem
+        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d000034a","_id":"5268488087f64318d000034a","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Lorem
         ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"520fb4a687f64332190000fb","position":7,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
-        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"520fb4ab87f6433219000158","_id":"520fb4ab87f6433219000158","created_at":"2013-08-17T17:36:43Z","updated_at":"2013-08-17T17:36:44Z","title":"Archives","slug":"archives","parent_id":"520fb4a687f64332190000fb","position":8,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"5268487b87f64318d00002f0","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
+        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"5268487b87f64318d00002f1","_id":"5268487b87f64318d00002f1","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"Page
+        not found","slug":"404","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"{%
+        extends index %}\n{% block content %}\n<p class=''error''>page not found</p>\n{%
+        endblock %}\n","escaped_raw_template":"{% extends index %}\n{% block content
+        %}\n&lt;p class=&#x27;error&#x27;&gt;page not found&lt;/p&gt;\n{% endblock
+        %}\n","editable_elements":[{"id":"5268488087f64318d0000337","_id":"5268488087f64318d0000337","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","slug":"Page
+        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d0000338","_id":"5268488087f64318d0000338","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
+        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
+        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d000034b","_id":"5268488087f64318d000034b","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Archives","slug":"archives","parent_id":"5268487b87f64318d00002f0","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"5268488187f64318d0000356","_id":"5268488187f64318d0000356","created_at":"2013-10-24T00:06:57+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"A
+        song template","slug":"content_type_template","parent_id":"5268488087f64318d000034c","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends ''index'' %}\n{% block content %}\n<h3>{{ song.title }}</h3>\n<p>{{
+        song.short_description }}</p>\n{% endblock %}\n","escaped_raw_template":"{%
+        extends &#x27;index&#x27; %}\n{% block content %}\n&lt;h3&gt;{{ song.title
+        }}&lt;/h3&gt;\n&lt;p&gt;{{ song.short_description }}&lt;/p&gt;\n{% endblock
+        %}\n","editable_elements":[{"id":"5268488187f64318d0000357","_id":"5268488187f64318d0000357","created_at":"2013-10-24T00:06:57+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"Page
+        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488187f64318d0000358","_id":"5268488187f64318d0000358","created_at":"2013-10-24T00:06:57+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
+        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
+        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488187f64318d0000355","_id":"5268488187f64318d0000355","created_at":"2013-10-24T00:06:57+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"News","slug":"news","parent_id":"5268488087f64318d000034b","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends parent %}\n{% block content %}\n<p>News Archives. Lorem ipsum....</p>\n{%
+        endblock %}\n","escaped_raw_template":"{% extends parent %}\n{% block content
+        %}\n&lt;p&gt;News Archives. Lorem ipsum....&lt;/p&gt;\n{% endblock %}\n","editable_elements":[]},{"id":"5268487b87f64318d00002f0","_id":"5268487b87f64318d00002f0","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:57+02:00","title":"Home
+        page","slug":"index","position":102,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
+        html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
+        site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
+        content=''{{ site.meta_keywords }}'' name=''keywords''>\n    <!-- Le HTML5
+        shim, for IE6-8 support of HTML elements -->\n    <!--[if lt IE 9]>\n      <script
+        src=\"http://html5shim.googlecode.com/svn/trunk/html5.js\"></script>\n    <![endif]-->\n    <link
+        href=\"/fonts/chunkfive.css\" media=\"screen\" rel=\"stylesheet\" type=\"text/css\"
+        />\n    <!-- Le styles -->\n    {{ ''reboot'' | stylesheet_tag }}\n    {{
+        ''application'' | stylesheet_tag }}\n    <script src=''http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js''
+        type=''text/javascript''></script>\n    {% inline_editor %}\n  </head>\n  <body>\n    <div
+        class=''container''>\n      <div id=''menu''>\n        <div id=''nav''>\n          <li
+        class=\"{% if page.fullpath == ''index'' %}on{% endif %} link\" id=''home''>\n            <a
+        href=''/''>Home</a>\n          </li>\n          {% nav site, no_wrapper: true,
+        exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
+        id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
+        src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
+        (602px by 397px)'' %}/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg{%
+        endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
+        editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
+        neque. Proin ac ante ante, sit amet egestas purus. Fusce tincidunt mattis
+        sapien eget sodales. Cras aliquet odio eu nisl dapibus placerat.\n            <br>\n            <a
+        href=''/about_us''>read more...</a>\n          </p>\n          {% endeditable_long_text
+        %}\n        </div>\n        {% endblock %}\n        <div class=''clear''></div>\n      </div>\n      <div
+        id=''content''>\n        {% block content %}\n        <div class=''unit size1of2''
+        id=''events''>\n          <h2>Upcoming events</h2>\n          <ul class=''list''>\n            {%
+        for event in contents.events limit: 6 %}\n            <li>\n              <em>{{
+        event.date | localized_date: ''%a, %B %d, %Y'' }}</em>\n              &nbsp;-&nbsp;\n              {{
+        event.place }}, {{ event.city }}, {{ event.state }}\n            </li>\n            {%
+        endfor %}\n          </ul>\n          <p class=''more''>\n            <a href=''/events''>See
+        more events ...</a>\n          </p>\n        </div>\n        <div class=''unit
+        size1of2'' id=''updates''>\n          <h2>Site updates</h2>\n          <ul
+        class=''list''>\n            {% for update in contents.updates %}\n            <li>\n              <em>{{
+        update.date | localized_date: ''%B %d'' }}</em>\n              &nbsp;-&nbsp;\n              {{
+        update.title }}\n            </li>\n            {% endfor %}\n          </ul>\n        </div>\n        {%
+        endblock %}\n        <div class=''clear''></div>\n      </div>\n      <div
+        id=''footer''>\n        <p>{% locale_switcher %}</p>\n        <p>\n          Powered
+        by <a href=\"http://www.locomotivecms.com\">LocomotiveCMS</a>. Designed by
+        <a href=\"http://www.sachagreif.com\">Sacha Greif</a>.\n        </p>\n        <p>\n          All
+        photos are licensed under Creative Commons. (see original ones <a href=''http://www.flickr.com/photos/38687875@N00/3391588262/''>here</a>
+        or <a href=''http://www.flickr.com/photos/cool_dry_place/55454498/''>here</a>).\n        </p>\n      </div>\n    </div>\n    {%
+        google_analytics ''UA-20661758-1'' %}\n  </body>\n</html>\n","escaped_raw_template":"&lt;!DOCTYPE
+        html&gt;\n&lt;html lang=&#x27;en&#x27;&gt;\n  &lt;head&gt;\n    &lt;meta charset=&#x27;utf-8&#x27;&gt;\n    &lt;title&gt;{{
+        site.name }}&lt;/title&gt;\n    &lt;meta content=&#x27;{{ site.meta_description
+        }}&#x27; name=&#x27;description&#x27;&gt;\n    &lt;meta content=&#x27;{{ site.meta_keywords
+        }}&#x27; name=&#x27;keywords&#x27;&gt;\n    &lt;!-- Le HTML5 shim, for IE6-8
+        support of HTML elements --&gt;\n    &lt;!--[if lt IE 9]&gt;\n      &lt;script
+        src=&quot;http://html5shim.googlecode.com/svn/trunk/html5.js&quot;&gt;&lt;/script&gt;\n    &lt;![endif]--&gt;\n    &lt;link
+        href=&quot;/fonts/chunkfive.css&quot; media=&quot;screen&quot; rel=&quot;stylesheet&quot;
+        type=&quot;text/css&quot; /&gt;\n    &lt;!-- Le styles --&gt;\n    {{ &#x27;reboot&#x27;
+        | stylesheet_tag }}\n    {{ &#x27;application&#x27; | stylesheet_tag }}\n    &lt;script
+        src=&#x27;http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js&#x27;
+        type=&#x27;text/javascript&#x27;&gt;&lt;/script&gt;\n    {% inline_editor
+        %}\n  &lt;/head&gt;\n  &lt;body&gt;\n    &lt;div class=&#x27;container&#x27;&gt;\n      &lt;div
+        id=&#x27;menu&#x27;&gt;\n        &lt;div id=&#x27;nav&#x27;&gt;\n          &lt;li
+        class=&quot;{% if page.fullpath == &#x27;index&#x27; %}on{% endif %} link&quot;
+        id=&#x27;home&#x27;&gt;\n            &lt;a href=&#x27;/&#x27;&gt;Home&lt;/a&gt;\n          &lt;/li&gt;\n          {%
+        nav site, no_wrapper: true, exclude: &#x27;events&#x27; %}\n        &lt;/div&gt;\n        &lt;div
+        class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
+        id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
+        src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
+        image in each page (602px by 397px)&#x27; %}/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg{%
+        endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
+        editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
+        ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
+        neque. Proin ac ante ante, sit amet egestas purus. Fusce tincidunt mattis
+        sapien eget sodales. Cras aliquet odio eu nisl dapibus placerat.\n            &lt;br&gt;\n            &lt;a
+        href=&#x27;/about_us&#x27;&gt;read more...&lt;/a&gt;\n          &lt;/p&gt;\n          {%
+        endeditable_long_text %}\n        &lt;/div&gt;\n        {% endblock %}\n        &lt;div
+        class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
+        id=&#x27;content&#x27;&gt;\n        {% block content %}\n        &lt;div class=&#x27;unit
+        size1of2&#x27; id=&#x27;events&#x27;&gt;\n          &lt;h2&gt;Upcoming events&lt;/h2&gt;\n          &lt;ul
+        class=&#x27;list&#x27;&gt;\n            {% for event in contents.events limit:
+        6 %}\n            &lt;li&gt;\n              &lt;em&gt;{{ event.date | localized_date:
+        &#x27;%a, %B %d, %Y&#x27; }}&lt;/em&gt;\n              &amp;nbsp;-&amp;nbsp;\n              {{
+        event.place }}, {{ event.city }}, {{ event.state }}\n            &lt;/li&gt;\n            {%
+        endfor %}\n          &lt;/ul&gt;\n          &lt;p class=&#x27;more&#x27;&gt;\n            &lt;a
+        href=&#x27;/events&#x27;&gt;See more events ...&lt;/a&gt;\n          &lt;/p&gt;\n        &lt;/div&gt;\n        &lt;div
+        class=&#x27;unit size1of2&#x27; id=&#x27;updates&#x27;&gt;\n          &lt;h2&gt;Site
+        updates&lt;/h2&gt;\n          &lt;ul class=&#x27;list&#x27;&gt;\n            {%
+        for update in contents.updates %}\n            &lt;li&gt;\n              &lt;em&gt;{{
+        update.date | localized_date: &#x27;%B %d&#x27; }}&lt;/em&gt;\n              &amp;nbsp;-&amp;nbsp;\n              {{
+        update.title }}\n            &lt;/li&gt;\n            {% endfor %}\n          &lt;/ul&gt;\n        &lt;/div&gt;\n        {%
+        endblock %}\n        &lt;div class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
+        id=&#x27;footer&#x27;&gt;\n        &lt;p&gt;{% locale_switcher %}&lt;/p&gt;\n        &lt;p&gt;\n          Powered
+        by &lt;a href=&quot;http://www.locomotivecms.com&quot;&gt;LocomotiveCMS&lt;/a&gt;.
+        Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
+        photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
+        or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"5268488087f64318d0000335","_id":"5268488087f64318d0000335","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"Page
+        image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","filename":"photo.jpg"},{"id":"5268488087f64318d0000336","_id":"5268488087f64318d0000336","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:57+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
+        Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
+        adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
+        amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
+        odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"5268488087f64318d000034c","_id":"5268488087f64318d000034c","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:58+02:00","title":"Songs","slug":"songs","parent_id":"5268487b87f64318d00002f0","position":106,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:50 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:26 GMT
 recorded_with: VCR 2.4.0

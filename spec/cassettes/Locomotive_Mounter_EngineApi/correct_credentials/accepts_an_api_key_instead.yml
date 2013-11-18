@@ -4,7 +4,7 @@ http_interactions:
     method: post
     uri: http://www.example.com:3000/locomotive/api/tokens.json
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: api_key=d49cd50f6f0d2b163f48fc73cb249f0244c37074
     headers: {}
   response:
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:04 GMT
+      - Wed, 23 Oct 2013 22:07:00 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,19 +25,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b0fba5e3ed77326b65d205488ea9ed76"'
+      - '"d1a90b45e031fb4f87663184c2a67dbd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=WOjGu51L8cMZQP_hw9uBRUuqHHI; domain=.example.com; path=/;
+      - _locomotive_session=mfEap4jOHCwXBvAiV4LOKNYR1MA; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - bd37c43b351cc1075e3276152af39317
+      - a1d9fe35699ea0501396f9d61fc4b19c
       X-Runtime:
-      - '0.032378'
+      - '0.024827'
     body:
-      encoding: US-ASCII
-      string: ! '{"token":"UG1c8xretEydzZ59A8nj"}'
+      encoding: UTF-8
+      string: '{"token":"iaWvtP5PhmnyKypXpLbM"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:04 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:00 GMT
 recorded_with: VCR 2.4.0

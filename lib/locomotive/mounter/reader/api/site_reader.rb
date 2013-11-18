@@ -24,6 +24,9 @@ module Locomotive
                   end
                 end
               end
+
+              # set the time zone for the next Time operations (UTC by default)
+              Time.zone = ActiveSupport::TimeZone.new(site.timezone || 'UTC')
             end
           end
 

@@ -2,9 +2,9 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
-      encoding: US-ASCII
+      encoding: UTF-8
       string: email=admin%40locomotivecms.com&password=locomotive
     headers: {}
   response:
@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,24 +25,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b0fba5e3ed77326b65d205488ea9ed76"'
+      - '"d1a90b45e031fb4f87663184c2a67dbd"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=I5TBHpBkmykdGWrKwmp8d5z41fA; domain=.example.com; path=/;
+      - _locomotive_session=IfApHFWxziao-NU4kflIl-iGsLU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - dd848eb737d1e4392b37b39a70af1a6c
+      - 8e8c03105a5728ea784225d6870b5f75
       X-Runtime:
-      - '0.034951'
+      - '0.034917'
     body:
-      encoding: US-ASCII
-      string: ! '{"token":"UG1c8xretEydzZ59A8nj"}'
+      encoding: UTF-8
+      string: '{"token":"iaWvtP5PhmnyKypXpLbM"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -53,7 +53,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,27 +63,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5887fdcca15af110d3a0621ba3b74151"'
+      - '"9e092c3fc066dd4e9633aa24e74a7625"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=_yKOW4oR3FULb7XdodAP6a7QLjM; domain=.example.com; path=/;
+      - _locomotive_session=WJ7lSNp4O4Nv1K-AdIbGn-jpZz8; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 4c062842ac9e3118fb9b0d2207022617
+      - 52ed091c6dcefb2080d74323008fffc1
       X-Runtime:
-      - '0.030247'
+      - '0.031861'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48487f643321900007d","_id":"520fb48487f643321900007d","created_at":"2013-08-17T17:36:04Z","updated_at":"2013-08-17T17:36:04Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"520fb48487f643321900007e","_id":"520fb48487f643321900007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"520f9b2e87f643edcc000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      encoding: UTF-8
+      string: '{"id":"5268487b87f64318d00002ee","_id":"5268487b87f64318d00002ee","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:51+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5268487b87f64318d00002ef","_id":"5268487b87f64318d00002ef","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -94,7 +94,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,27 +104,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"892cb485df2f2d92fef022d469574f91"'
+      - '"8057f0f092959440a1f9c87800ff7868"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=DyrUjOIII7R_cAhY9JJ3Cqyj5ik; domain=.example.com; path=/;
+      - _locomotive_session=Bfhc-nYdk3akBEPPTUxwGbEoceo; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 9c781613cdaf647e24168d5909a9da5f
+      - 74b46490aca574575ebc372f56b89aee
       X-Runtime:
-      - '0.030344'
+      - '0.031172'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48487f643321900007d","_id":"520fb48487f643321900007d","created_at":"2013-08-17T17:36:04Z","updated_at":"2013-08-17T17:36:04Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"520fb48487f643321900007e","_id":"520fb48487f643321900007e","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"520f9b2e87f643edcc000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      encoding: UTF-8
+      string: '{"id":"5268487b87f64318d00002ee","_id":"5268487b87f64318d00002ee","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:51+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5268487b87f64318d00002ef","_id":"5268487b87f64318d00002ef","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=UG1c8xretEydzZ59A8nj&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -135,7 +135,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,27 +145,27 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5887fdcca15af110d3a0621ba3b74151"'
+      - '"9e092c3fc066dd4e9633aa24e74a7625"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=5aBGF4yLKTVm6Q16sQd7wCOGlbA; domain=.example.com; path=/;
+      - _locomotive_session=wzDXuQD1ZuM6XAp2Pu5eSg9ocGg; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 586a7ed0c15ac6a50c052502338cb722
+      - 446e6e0f0cd308782824d91fa9b8e4cc
       X-Runtime:
-      - '0.036871'
+      - '0.036527'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48487f643321900007d","_id":"520fb48487f643321900007d","created_at":"2013-08-17T17:36:04Z","updated_at":"2013-08-17T17:36:04Z","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"520fb48487f643321900007e","_id":"520fb48487f643321900007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"520f9b2e87f643edcc000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      encoding: UTF-8
+      string: '{"id":"5268487b87f64318d00002ee","_id":"5268487b87f64318d00002ee","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:51+02:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5268487b87f64318d00002ef","_id":"5268487b87f64318d00002ef","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"5238710587f6431df7000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -176,7 +176,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
@@ -186,252 +186,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b6e50d18f1f814a2a19893bd1d041236"'
+      - '"9445791462589d7d7a477a96b447d2b2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=w2uNZ1QoIWePl9ceAS2CPuLeF_M; domain=.example.com; path=/;
+      - _locomotive_session=m15XzMGgfhghUBS6ZGZ8EFu_sOU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 4df8c03c83a0baa51235ac7c22cbbe3f
+      - 772c24e67f21bef2e918aa9a6ae507b8
       X-Runtime:
-      - '0.036342'
+      - '0.035142'
     body:
-      encoding: US-ASCII
-      string: ! '[{"id":"520fb48987f64332190000c3","_id":"520fb48987f64332190000c3","created_at":"2013-08-17T17:36:09Z","updated_at":"2013-08-17T17:36:09Z","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MjBmYjQ4NDg3ZjY0MzMyMTkwMDAwN2QvYXNzZXRzLzUyMGZiNDg5ODdmNjQzMzIxOTAwMDBjMy9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/520fb48487f643321900007d/assets/520fb48987f64332190000c3/photo.jpg","content_type_text":"image"},{"id":"520fb48987f64332190000c8","_id":"520fb48987f64332190000c8","created_at":"2013-08-17T17:36:09Z","updated_at":"2013-08-17T17:36:09Z","content_type":"image","width":602,"height":393,"filename":"photo_2.jpg","full_filename":"photo_2.jpg","short_name":"photo_2.jpg","extname":"jpg","raw_size":165883,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MjBmYjQ4NDg3ZjY0MzMyMTkwMDAwN2QvYXNzZXRzLzUyMGZiNDg5ODdmNjQzMzIxOTAwMDBjOC9waG90b18yLmpwZyJdLFsicCIsInRodW1iIiwiODV4ODUjIl1d/photo_2.jpg","url":"/sites/520fb48487f643321900007d/assets/520fb48987f64332190000c8/photo_2.jpg","content_type_text":"image"}]'
+      encoding: UTF-8
+      string: '[{"id":"5268488087f64318d0000334","_id":"5268488087f64318d0000334","created_at":"2013-10-24T00:06:56+02:00","updated_at":"2013-10-24T00:06:56+02:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MjY4NDg3Yjg3ZjY0MzE4ZDAwMDAyZWUvYXNzZXRzLzUyNjg0ODgwODdmNjQzMThkMDAwMDMzNC9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/5268487b87f64318d00002ee/assets/5268488087f64318d0000334/photo.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=UG1c8xretEydzZ59A8nj
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: !binary |-
-        T0s=
-    headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        U2F0LCAxNyBBdWcgMjAxMyAxNzozNjoyOCBHTVQ=
-      !binary "U3RhdHVz":
-      - !binary |-
-        MjAwIE9L
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        IjdkZDc0ZGJlNzlkZTMwZTY2YjZkNWNjZWIyMGI3NTMyIg==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2xvY29tb3RpdmVfc2Vzc2lvbj1LblBZbFlsM3NHWWtFSnRxaFhiTjFhRmlV
-        OTQ7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9LzsgSHR0cE9ubHk=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        M2Q2NDA5NjY2NDc1Y2M3OTIyNWM3ZTJhMjlmY2MzNTE=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4xMDQ2ODg=
-    body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3siaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODQiLCJfaWQiOiI1MjBm
-        YjQ4NTg3ZjY0MzMyMTkwMDAwODQiLCJjcmVhdGVkX2F0IjoiMjAxMy0wOC0x
-        N1QxNzozNjowNVoiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wOC0xN1QxNzozNjow
-        NloiLCJuYW1lIjoiQmFuZHMiLCJzbHVnIjoiYmFuZHMiLCJlbnRyaWVzX2N1
-        c3RvbV9maWVsZHMiOlt7ImlkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDg1
-        IiwiX2lkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDg1IiwibmFtZSI6Im5h
-        bWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQi
-        OnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQi
-        OiJOYW1lIG9mIHRoZSBiYW5kIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MjBm
-        YjQ4NTg3ZjY0MzMyMTkwMDAwODYiLCJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMy
-        MTkwMDAwODYiLCJuYW1lIjoibGVhZGVyIiwibGFiZWwiOiJGdWxsbmFtZSBv
-        ZiB0aGUgbGVhZGVyIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxz
-        ZSwibG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24i
-        OjF9LHsiaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODciLCJfaWQiOiI1
-        MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODciLCJuYW1lIjoia2luZCIsImxhYmVs
-        IjoiTXVzaWMga2luZCAoZ3J1bmdlLCByb2NrLCBwb3AsIGNvdW50cnkpIiwi
-        dHlwZSI6InNlbGVjdCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpm
-        YWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjIsInNlbGVjdF9vcHRp
-        b25zIjpbeyJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODgiLCJuYW1l
-        IjoiZ3J1bmdlIiwicG9zaXRpb24iOjAsImlkIjoiNTIwZmI0ODU4N2Y2NDMz
-        MjE5MDAwMDg4In0seyJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODki
-        LCJuYW1lIjoicm9jayIsInBvc2l0aW9uIjoxLCJpZCI6IjUyMGZiNDg1ODdm
-        NjQzMzIxOTAwMDA4OSJ9LHsiX2lkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAw
-        MDhhIiwibmFtZSI6ImNvdW50cnkiLCJwb3NpdGlvbiI6MiwiaWQiOiI1MjBm
-        YjQ4NTg3ZjY0MzMyMTkwMDAwOGEifV0sInJhd19zZWxlY3Rfb3B0aW9ucyI6
-        W3siaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwODgiLCJuYW1lIjp7ImVu
-        IjoiZ3J1bmdlIn0sInBvc2l0aW9uIjoyfSx7ImlkIjoiNTIwZmI0ODU4N2Y2
-        NDMzMjE5MDAwMDg5IiwibmFtZSI6eyJlbiI6InJvY2sifSwicG9zaXRpb24i
-        OjJ9LHsiaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwOGEiLCJuYW1lIjp7
-        ImVuIjoiY291bnRyeSJ9LCJwb3NpdGlvbiI6Mn1dfSx7ImlkIjoiNTIwZmI0
-        ODY4N2Y2NDMzMjE5MDAwMGE0IiwiX2lkIjoiNTIwZmI0ODY4N2Y2NDMzMjE5
-        MDAwMGE0IiwibmFtZSI6InNvbmdzIiwibGFiZWwiOiJTb25ncyIsInR5cGUi
-        OiJoYXNfbWFueSIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjpmYWxz
-        ZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjMsImNsYXNzX25hbWUiOiJM
-        b2NvbW90aXZlOjpDb250ZW50RW50cnk1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAw
-        OTUiLCJpbnZlcnNlX29mIjoiYmFuZCIsInVpX2VuYWJsZWQiOnRydWUsImNs
-        YXNzX3NsdWciOiJzb25ncyJ9XSwiZGVzY3JpcHRpb24iOiJMaXN0IG9mIGJh
-        bmRzIiwibGFiZWxfZmllbGRfbmFtZSI6Im5hbWUiLCJvcmRlcl9ieSI6IjUy
-        MGZiNDg1ODdmNjQzMzIxOTAwMDA4NSIsIm9yZGVyX2RpcmVjdGlvbiI6ImFz
-        YyIsIm9yZGVyX2J5X2ZpZWxkX25hbWUiOiJuYW1lIiwicHVibGljX3N1Ym1p
-        c3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNzaW9uX2FjY291
-        bnRfZW1haWxzIjpbXX0seyJpZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA4
-        YiIsIl9pZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA4YiIsImNyZWF0ZWRf
-        YXQiOiIyMDEzLTA4LTE3VDE3OjM2OjA1WiIsInVwZGF0ZWRfYXQiOiIyMDEz
-        LTA4LTE3VDE3OjM2OjA1WiIsIm5hbWUiOiJFdmVudHMiLCJzbHVnIjoiZXZl
-        bnRzIiwiZW50cmllc19jdXN0b21fZmllbGRzIjpbeyJpZCI6IjUyMGZiNDg1
-        ODdmNjQzMzIxOTAwMDA4YyIsIl9pZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAw
-        MDA4YyIsIm5hbWUiOiJwbGFjZSIsImxhYmVsIjoiUGxhY2UiLCJ0eXBlIjoi
-        c3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2UsInVu
-        aXF1ZSI6ZmFsc2UsImhpbnQiOiJOYW1lIG9mIHRoZSBwbGFjZSIsInBvc2l0
-        aW9uIjowfSx7ImlkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDhkIiwiX2lk
-        IjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDhkIiwibmFtZSI6ImRhdGUiLCJs
-        YWJlbCI6IkRhdGUiLCJ0eXBlIjoiZGF0ZSIsInJlcXVpcmVkIjpmYWxzZSwi
-        bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwiaGludCI6IkRhdGUg
-        b2YgdGhlIGV2ZW50IiwicG9zaXRpb24iOjF9LHsiaWQiOiI1MjBmYjQ4NTg3
-        ZjY0MzMyMTkwMDAwOGUiLCJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAw
-        OGUiLCJuYW1lIjoiY2l0eSIsImxhYmVsIjoiQ2l0eSBvZiB0aGUgZXZlbnQi
-        LCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQi
-        OmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUy
-        MGZiNDg1ODdmNjQzMzIxOTAwMDA4ZiIsIl9pZCI6IjUyMGZiNDg1ODdmNjQz
-        MzIxOTAwMDA4ZiIsIm5hbWUiOiJzdGF0ZSIsImxhYmVsIjoiU3RhdGUgb2Yg
-        dGhlIGV2ZW50IiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjpmYWxzZSwi
-        bG9jYWxpemVkIjpmYWxzZSwidW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjN9
-        LHsiaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwOTAiLCJfaWQiOiI1MjBm
-        YjQ4NTg3ZjY0MzMyMTkwMDAwOTAiLCJuYW1lIjoibm90ZXMiLCJsYWJlbCI6
-        Ik5vdGVzIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2Fs
-        aXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjo0LCJ0ZXh0
-        X2Zvcm1hdHRpbmciOiIifV0sImRlc2NyaXB0aW9uIjoiTGlzdCBvZiB1cGNv
-        bWluZyBldmVudHMiLCJsYWJlbF9maWVsZF9uYW1lIjoicGxhY2UiLCJvcmRl
-        cl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJlY3Rpb24iOiJhc2MiLCJv
-        cmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9hdCIsInB1YmxpY19zdWJt
-        aXNzaW9uX2VuYWJsZWQiOmZhbHNlLCJwdWJsaWNfc3VibWlzc2lvbl9hY2Nv
-        dW50X2VtYWlscyI6W119LHsiaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAw
-        OTEiLCJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwOTEiLCJjcmVhdGVk
-        X2F0IjoiMjAxMy0wOC0xN1QxNzozNjowNVoiLCJ1cGRhdGVkX2F0IjoiMjAx
-        My0wOC0xN1QxNzozNjowNVoiLCJuYW1lIjoiTWVzc2FnZXMiLCJzbHVnIjoi
-        bWVzc2FnZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7ImlkIjoiNTIw
-        ZmI0ODU4N2Y2NDMzMjE5MDAwMDkyIiwiX2lkIjoiNTIwZmI0ODU4N2Y2NDMz
-        MjE5MDAwMDkyIiwibmFtZSI6Im5hbWUiLCJsYWJlbCI6Ik5hbWUiLCJ0eXBl
-        Ijoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxvY2FsaXplZCI6ZmFsc2Us
-        InVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJGdWxsIG5hbWUiLCJwb3NpdGlvbiI6
-        MH0seyJpZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5MyIsIl9pZCI6IjUy
-        MGZiNDg1ODdmNjQzMzIxOTAwMDA5MyIsIm5hbWUiOiJlbWFpbCIsImxhYmVs
-        IjoiRW1haWwiLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOnRydWUsImxv
-        Y2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJFbWFpbCIs
-        InBvc2l0aW9uIjoxfSx7ImlkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDk0
-        IiwiX2lkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDk0IiwibmFtZSI6Im1l
-        c3NhZ2UiLCJsYWJlbCI6Ik1lc3NhZ2UiLCJ0eXBlIjoidGV4dCIsInJlcXVp
-        cmVkIjp0cnVlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJo
-        aW50IjoiQ3VzdG9tZXIgbWVzc2FnZSIsInBvc2l0aW9uIjoyLCJ0ZXh0X2Zv
-        cm1hdHRpbmciOiIifV0sImRlc2NyaXB0aW9uIjoiTWVzc2FnZXMgcG9zdGVk
-        IGJ5IG5ldyBwb3RlbnRpYWwgY3VzdG9tZXJzIiwibGFiZWxfZmllbGRfbmFt
-        ZSI6Im5hbWUiLCJvcmRlcl9ieSI6ImNyZWF0ZWRfYXQiLCJvcmRlcl9kaXJl
-        Y3Rpb24iOiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiY3JlYXRlZF9h
-        dCIsInB1YmxpY19zdWJtaXNzaW9uX2VuYWJsZWQiOnRydWUsInB1YmxpY19z
-        dWJtaXNzaW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUyMGZiNDg1
-        ODdmNjQzMzIxOTAwMDA5NSIsIl9pZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAw
-        MDA5NSIsImNyZWF0ZWRfYXQiOiIyMDEzLTA4LTE3VDE3OjM2OjA1WiIsInVw
-        ZGF0ZWRfYXQiOiIyMDEzLTA4LTE3VDE3OjM2OjA2WiIsIm5hbWUiOiJTb25n
-        cyIsInNsdWciOiJzb25ncyIsImVudHJpZXNfY3VzdG9tX2ZpZWxkcyI6W3si
-        aWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwOTYiLCJfaWQiOiI1MjBmYjQ4
-        NTg3ZjY0MzMyMTkwMDAwOTYiLCJuYW1lIjoidGl0bGUiLCJsYWJlbCI6IlRp
-        dGxlIiwidHlwZSI6InN0cmluZyIsInJlcXVpcmVkIjp0cnVlLCJsb2NhbGl6
-        ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiVGl0bGUgb2YgeW91
-        ciBzb25nIiwicG9zaXRpb24iOjB9LHsiaWQiOiI1MjBmYjQ4Njg3ZjY0MzMy
-        MTkwMDAwYTUiLCJfaWQiOiI1MjBmYjQ4Njg3ZjY0MzMyMTkwMDAwYTUiLCJu
-        YW1lIjoiYmFuZCIsImxhYmVsIjoiQmFuZCIsInR5cGUiOiJiZWxvbmdzX3Rv
-        IiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6ZWQiOmZhbHNlLCJ1bmlxdWUi
-        OmZhbHNlLCJwb3NpdGlvbiI6MSwiY2xhc3NfbmFtZSI6IkxvY29tb3RpdmU6
-        OkNvbnRlbnRFbnRyeTUyMGZiNDg1ODdmNjQzMzIxOTAwMDA4NCIsInVpX2Vu
-        YWJsZWQiOnRydWUsImNsYXNzX3NsdWciOiJiYW5kcyJ9LHsiaWQiOiI1MjBm
-        YjQ4NTg3ZjY0MzMyMTkwMDAwOTciLCJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMy
-        MTkwMDAwOTciLCJuYW1lIjoiY292ZXIiLCJsYWJlbCI6IkNvdmVyIiwidHlw
-        ZSI6ImZpbGUiLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVkIjpmYWxzZSwi
-        dW5pcXVlIjpmYWxzZSwicG9zaXRpb24iOjJ9LHsiaWQiOiI1MjBmYjQ4NTg3
-        ZjY0MzMyMTkwMDAwOTgiLCJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAw
-        OTgiLCJuYW1lIjoic2hvcnRfZGVzY3JpcHRpb24iLCJsYWJlbCI6IlNob3J0
-        IGRlc2NyaXB0aW9uIiwidHlwZSI6InRleHQiLCJyZXF1aXJlZCI6ZmFsc2Us
-        ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsInBvc2l0aW9uIjoz
-        LCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJpZCI6IjUyMGZiNDg1ODdm
-        NjQzMzIxOTAwMDA5OSIsIl9pZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5
-        OSIsIm5hbWUiOiJhdWRpb191cmwiLCJsYWJlbCI6IkF1ZGlvIHVybCIsInR5
-        cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6ZmFsc2UsImxvY2FsaXplZCI6ZmFs
-        c2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJVcmwgdG8gYSBzZXJ2aWNlIGxp
-        a2UgQmxpcCBmb3IgaW5zdGFuY2UiLCJwb3NpdGlvbiI6NH0seyJpZCI6IjUy
-        MGZiNDg1ODdmNjQzMzIxOTAwMDA5YSIsIl9pZCI6IjUyMGZiNDg1ODdmNjQz
-        MzIxOTAwMDA5YSIsIm5hbWUiOiJkdXJhdGlvbiIsImxhYmVsIjoiRHVyYXRp
-        b24iLCJ0eXBlIjoic3RyaW5nIiwicmVxdWlyZWQiOmZhbHNlLCJsb2NhbGl6
-        ZWQiOmZhbHNlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiZm9ybWF0IGxpa2U6
-        IG1tOnNzIiwicG9zaXRpb24iOjV9XSwibGFiZWxfZmllbGRfbmFtZSI6InRp
-        dGxlIiwib3JkZXJfYnkiOiJfcG9zaXRpb24iLCJvcmRlcl9kaXJlY3Rpb24i
-        OiJhc2MiLCJvcmRlcl9ieV9maWVsZF9uYW1lIjoiX3Bvc2l0aW9uIiwicHVi
-        bGljX3N1Ym1pc3Npb25fZW5hYmxlZCI6ZmFsc2UsInB1YmxpY19zdWJtaXNz
-        aW9uX2FjY291bnRfZW1haWxzIjpbXX0seyJpZCI6IjUyMGZiNDg1ODdmNjQz
-        MzIxOTAwMDA5YiIsIl9pZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5YiIs
-        ImNyZWF0ZWRfYXQiOiIyMDEzLTA4LTE3VDE3OjM2OjA1WiIsInVwZGF0ZWRf
-        YXQiOiIyMDEzLTA4LTE3VDE3OjM2OjA1WiIsIm5hbWUiOiJVcGRhdGVzIiwi
-        c2x1ZyI6InVwZGF0ZXMiLCJlbnRyaWVzX2N1c3RvbV9maWVsZHMiOlt7Imlk
-        IjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDljIiwiX2lkIjoiNTIwZmI0ODU4
-        N2Y2NDMzMjE5MDAwMDljIiwibmFtZSI6InRpdGxlIiwibGFiZWwiOiJUaXRs
-        ZSIsInR5cGUiOiJzdHJpbmciLCJyZXF1aXJlZCI6dHJ1ZSwibG9jYWxpemVk
-        Ijp0cnVlLCJ1bmlxdWUiOmZhbHNlLCJoaW50IjoiTm90IGRpc3BsYXllZCBp
-        biB0aGUgd2Vic2l0ZSIsInBvc2l0aW9uIjowfSx7ImlkIjoiNTIwZmI0ODU4
-        N2Y2NDMzMjE5MDAwMDlkIiwiX2lkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAw
-        MDlkIiwibmFtZSI6InRleHQiLCJsYWJlbCI6IlRleHQiLCJ0eXBlIjoidGV4
-        dCIsInJlcXVpcmVkIjpmYWxzZSwibG9jYWxpemVkIjp0cnVlLCJ1bmlxdWUi
-        OmZhbHNlLCJoaW50IjoiVGV4dCBkaXNwbGF5ZWQgaW4gdGhlIGhvbWUgcGFn
-        ZSIsInBvc2l0aW9uIjoxLCJ0ZXh0X2Zvcm1hdHRpbmciOiJodG1sIn0seyJp
-        ZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5ZSIsIl9pZCI6IjUyMGZiNDg1
-        ODdmNjQzMzIxOTAwMDA5ZSIsIm5hbWUiOiJjYXRlZ29yeSIsImxhYmVsIjoi
-        Q2F0ZWdvcnkiLCJ0eXBlIjoic2VsZWN0IiwicmVxdWlyZWQiOmZhbHNlLCJs
-        b2NhbGl6ZWQiOnRydWUsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJQaWNrIGEg
-        Y2F0ZWdvcnkiLCJwb3NpdGlvbiI6Miwic2VsZWN0X29wdGlvbnMiOlt7Il9p
-        ZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDBhMCIsIm5hbWUiOiJHZW5lcmFs
-        IiwicG9zaXRpb24iOjAsImlkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMGEw
-        In0seyJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwYTEiLCJuYW1lIjoi
-        R2lncyIsInBvc2l0aW9uIjoxLCJpZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAw
-        MDBhMSJ9LHsiX2lkIjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMGEyIiwibmFt
-        ZSI6IkJhbmRzIiwicG9zaXRpb24iOjIsImlkIjoiNTIwZmI0ODU4N2Y2NDMz
-        MjE5MDAwMGEyIn0seyJfaWQiOiI1MjBmYjQ4NTg3ZjY0MzMyMTkwMDAwYTMi
-        LCJuYW1lIjoiQWxidW1zIiwicG9zaXRpb24iOjMsImlkIjoiNTIwZmI0ODU4
-        N2Y2NDMzMjE5MDAwMGEzIn1dLCJyYXdfc2VsZWN0X29wdGlvbnMiOlt7Imlk
-        IjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMGEwIiwibmFtZSI6eyJlbiI6Ikdl
-        bmVyYWwiLCJmciI6IkfDqW7DqXJhbCJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6
-        IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDBhMSIsIm5hbWUiOnsiZW4iOiJHaWdz
-        IiwiZnIiOiJDb25jZXJ0cyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUyMGZi
-        NDg1ODdmNjQzMzIxOTAwMDBhMiIsIm5hbWUiOnsiZW4iOiJCYW5kcyIsImZy
-        IjoiR3JvdXBlcyJ9LCJwb3NpdGlvbiI6Mn0seyJpZCI6IjUyMGZiNDg1ODdm
-        NjQzMzIxOTAwMDBhMyIsIm5hbWUiOnsiZW4iOiJBbGJ1bXMifSwicG9zaXRp
-        b24iOjJ9XX0seyJpZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5ZiIsIl9p
-        ZCI6IjUyMGZiNDg1ODdmNjQzMzIxOTAwMDA5ZiIsIm5hbWUiOiJkYXRlIiwi
-        bGFiZWwiOiJEYXRlIiwidHlwZSI6ImRhdGUiLCJyZXF1aXJlZCI6ZmFsc2Us
-        ImxvY2FsaXplZCI6ZmFsc2UsInVuaXF1ZSI6ZmFsc2UsImhpbnQiOiJEYXRl
-        IG9mIHRoZSB1cGRhdGUiLCJwb3NpdGlvbiI6M31dLCJkZXNjcmlwdGlvbiI6
-        Ikxpc3Qgb2YgdXBkYXRlcyIsImxhYmVsX2ZpZWxkX25hbWUiOiJ0aXRsZSIs
-        Im9yZGVyX2J5IjoiNTIwZmI0ODU4N2Y2NDMzMjE5MDAwMDlmIiwib3JkZXJf
-        ZGlyZWN0aW9uIjoiYXNjIiwib3JkZXJfYnlfZmllbGRfbmFtZSI6ImRhdGUi
-        LCJwdWJsaWNfc3VibWlzc2lvbl9lbmFibGVkIjpmYWxzZSwicHVibGljX3N1
-        Ym1pc3Npb25fYWNjb3VudF9lbWFpbHMiOltdfV0=
-    http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -442,40 +214,99 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"eedac6f4b312218e5a9affe0032006a1"'
+      - '"7ca2d05aab50ecef19dbe531afe6319f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=hBctHLtRN8b76zxy4cB-ozFsnuI; domain=.example.com; path=/;
+      - _locomotive_session=DkqrPcj-IQKJONZGNdM2Hydo7jk; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 76aa5969d5e4ef65913bcda892836ef0
+      - b1af5a9e4dcbb02eb3f92524ab42acae
       X-Runtime:
-      - '0.155639'
+      - '0.071222'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5268487b87f64318d00002f5","_id":"5268487b87f64318d00002f5","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"5268487b87f64318d00002f6","_id":"5268487b87f64318d00002f6","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the band","position":0},{"id":"5268487b87f64318d00002f7","_id":"5268487b87f64318d00002f7","name":"leader","label":"Fullname
+        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"5268487b87f64318d00002f8","_id":"5268487b87f64318d00002f8","name":"kind","label":"Music
+        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"5268487b87f64318d00002f9","name":"grunge","position":0,"id":"5268487b87f64318d00002f9"},{"_id":"5268487b87f64318d00002fa","name":"rock","position":1,"id":"5268487b87f64318d00002fa"},{"_id":"5268487b87f64318d00002fb","name":"country","position":2,"id":"5268487b87f64318d00002fb"}],"raw_select_options":[{"id":"5268487b87f64318d00002f9","name":{"en":"grunge"},"position":2},{"id":"5268487b87f64318d00002fa","name":{"en":"rock"},"position":2},{"id":"5268487b87f64318d00002fb","name":{"en":"country"},"position":2}]},{"id":"5268487c87f64318d0000315","_id":"5268487c87f64318d0000315","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry5268487c87f64318d0000306","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
+        of bands","label_field_name":"name","order_by":"5268487b87f64318d00002f6","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d00002fc","_id":"5268487c87f64318d00002fc","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"5268487c87f64318d00002fd","_id":"5268487c87f64318d00002fd","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the place","position":0},{"id":"5268487c87f64318d00002fe","_id":"5268487c87f64318d00002fe","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the event","position":1},{"id":"5268487c87f64318d00002ff","_id":"5268487c87f64318d00002ff","name":"city","label":"City
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"5268487c87f64318d0000300","_id":"5268487c87f64318d0000300","name":"state","label":"State
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"5268487c87f64318d0000301","_id":"5268487c87f64318d0000301","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
+        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d0000302","_id":"5268487c87f64318d0000302","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"5268487c87f64318d0000303","_id":"5268487c87f64318d0000303","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
+        name","position":0},{"id":"5268487c87f64318d0000304","_id":"5268487c87f64318d0000304","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"5268487c87f64318d0000305","_id":"5268487c87f64318d0000305","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
+        message","position":2,"text_formatting":""}],"description":"Messages posted
+        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"5268487c87f64318d0000306","_id":"5268487c87f64318d0000306","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"5268487c87f64318d0000307","_id":"5268487c87f64318d0000307","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
+        of your song","position":0},{"id":"5268487c87f64318d0000316","_id":"5268487c87f64318d0000316","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry5268487b87f64318d00002f5","ui_enabled":true,"class_slug":"bands"},{"id":"5268487c87f64318d0000308","_id":"5268487c87f64318d0000308","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"5268487c87f64318d0000309","_id":"5268487c87f64318d0000309","name":"short_description","label":"Short
+        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"5268487c87f64318d000030a","_id":"5268487c87f64318d000030a","name":"audio_url","label":"Audio
+        url","type":"string","required":false,"localized":false,"unique":false,"hint":"Url
+        to a service like Blip for instance","position":4},{"id":"5268487c87f64318d000030b","_id":"5268487c87f64318d000030b","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
+        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d000030c","_id":"5268487c87f64318d000030c","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"5268487c87f64318d000030d","_id":"5268487c87f64318d000030d","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
+        displayed in the website","position":0},{"id":"5268487c87f64318d000030e","_id":"5268487c87f64318d000030e","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
+        displayed in the home page","position":1,"text_formatting":"html"},{"id":"5268487c87f64318d000030f","_id":"5268487c87f64318d000030f","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
+        a category","position":2,"select_options":[{"_id":"5268487c87f64318d0000311","name":"General","position":0,"id":"5268487c87f64318d0000311"},{"_id":"5268487c87f64318d0000312","name":"Gigs","position":1,"id":"5268487c87f64318d0000312"},{"_id":"5268487c87f64318d0000313","name":"Bands","position":2,"id":"5268487c87f64318d0000313"},{"_id":"5268487c87f64318d0000314","name":"Albums","position":3,"id":"5268487c87f64318d0000314"}],"raw_select_options":[{"id":"5268487c87f64318d0000311","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"5268487c87f64318d0000312","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"5268487c87f64318d0000313","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"5268487c87f64318d0000314","name":{"en":"Albums"},"position":2}]},{"id":"5268487c87f64318d0000310","_id":"5268487c87f64318d0000310","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"5268487c87f64318d0000310","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
+    http_version: 
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
-      string: ! '[{"id":"520fb48687f64332190000a7","_id":"520fb48687f64332190000a7","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Alice
+      string: ''
+    headers: {}
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 23 Oct 2013 22:07:14 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"a95cc2a7744a3e501006f990a069a95d"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=osWKGp-H7yf4PXbtkI3u0caZQGs; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - cc33de4881efd581a9068f03ca443bfc
+      X-Runtime:
+      - '0.051329'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5268487d87f64318d0000318","_id":"5268487d87f64318d0000318","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Alice
         in Chains","_slug":"alice-in-chains","_position":1,"_visible":true,"content_type_slug":"bands","name":"Alice
-        in Chains","leader":"Layne","kind":"grunge","kind_id":"520fb48587f6433219000088","songs":[]},{"id":"520fb48687f64332190000a6","_id":"520fb48687f64332190000a6","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Pearl
+        in Chains","leader":"Layne","kind":"grunge","kind_id":"5268487b87f64318d00002f9","songs":[]},{"id":"5268487d87f64318d0000317","_id":"5268487d87f64318d0000317","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Pearl
         Jam","_slug":"pearl-jam","_position":0,"_visible":true,"content_type_slug":"bands","name":"Pearl
-        Jam","leader":"Eddie","kind":"grunge","kind_id":"520fb48587f6433219000088","songs":["song-1","song-2","song-3","song-4"]},{"id":"520fb48687f64332190000a8","_id":"520fb48687f64332190000a8","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"The
+        Jam","leader":"Eddie","kind":"grunge","kind_id":"5268487b87f64318d00002f9","songs":["song-1","song-2","song-3","song-4"]},{"id":"5268487d87f64318d0000319","_id":"5268487d87f64318d0000319","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"The
         who","_slug":"the-who","_position":2,"_visible":true,"content_type_slug":"bands","name":"The
-        who","leader":"Peter","kind":"rock","kind_id":"520fb48587f6433219000089","songs":["song-5","song-6"]}]'
+        who","leader":"Peter","kind":"rock","kind_id":"5268487b87f64318d00002fa","songs":["song-5","song-6"]}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -486,57 +317,57 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:28 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"26de63b76821b8761cc8e8d178178233"'
+      - '"61ea0d0012cc1474d713cac9cac83398"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=JZ2BoHeVbWqFF2WPW8hWC_jPsnw; domain=.example.com; path=/;
+      - _locomotive_session=wb8NF3HzZ9vr_ADIStL43RHo6fo; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - dccdf67ee5cf884502dfc9c41c70cb1d
+      - 62078cca9cc95ec236282905c8159d9c
       X-Runtime:
-      - '0.068736'
+      - '0.059075'
     body:
-      encoding: US-ASCII
-      string: ! '[{"id":"520fb48687f64332190000a9","_id":"520fb48687f64332190000a9","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Avogadro''s
+      encoding: UTF-8
+      string: '[{"id":"5268487d87f64318d000031a","_id":"5268487d87f64318d000031a","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Avogadro''s
         Number","_slug":"avogadro-s-number","_position":0,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
         Number","date":"06/11/2012","formatted_date":"06/11/2012","city":"Fort Collins","state":"Colorado","notes":"<p>Lorem
-        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"520fb48687f64332190000aa","_id":"520fb48687f64332190000aa","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Quixote''s
+        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"5268487d87f64318d000031b","_id":"5268487d87f64318d000031b","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Quixote''s
         True Blue","_slug":"quixote-s-true-blue","_position":1,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"520fb48687f64332190000ab","_id":"520fb48687f64332190000ab","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Kelly''s
+        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"5268487d87f64318d000031c","_id":"5268487d87f64318d000031c","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Kelly''s
         Westport Inn","_slug":"kelly-s-westport-inn","_position":2,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas
-        City","state":"Missouri"},{"id":"520fb48687f64332190000ac","_id":"520fb48687f64332190000ac","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5268487d87f64318d000031d","_id":"5268487d87f64318d000031d","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Browne''s
         Market","_slug":"browne-s-market","_position":3,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"520fb48687f64332190000ad","_id":"520fb48687f64332190000ad","created_at":"2013-08-17T17:36:06Z","updated_at":"2013-08-17T17:36:06Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"520fb48787f64332190000ae","_id":"520fb48787f64332190000ae","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"The
+        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"5268487d87f64318d000031e","_id":"5268487d87f64318d000031e","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Ballydoyle''s","_slug":"ballydoyle-s","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"5268487d87f64318d000031f","_id":"5268487d87f64318d000031f","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"The
         Belmont","_slug":"the-belmont","_position":5,"_visible":true,"content_type_slug":"events","place":"The
-        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"520fb48787f64332190000af","_id":"520fb48787f64332190000af","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Avogadro''s
+        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"5268487d87f64318d0000320","_id":"5268487d87f64318d0000320","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Avogadro''s
         Number","_slug":"avogadro-s-number-1","_position":6,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
-        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"520fb48787f64332190000b0","_id":"520fb48787f64332190000b0","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Quixote''s
+        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"5268487d87f64318d0000321","_id":"5268487d87f64318d0000321","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Quixote''s
         True Blue","_slug":"quixote-s-true-blue-1","_position":7,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"520fb48787f64332190000b1","_id":"520fb48787f64332190000b1","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Kelly''s
+        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"5268487d87f64318d0000322","_id":"5268487d87f64318d0000322","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Kelly''s
         Westport Inn","_slug":"kelly-s-westport-inn-1","_position":8,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas
-        City","state":"Missouri"},{"id":"520fb48787f64332190000b2","_id":"520fb48787f64332190000b2","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5268487d87f64318d0000323","_id":"5268487d87f64318d0000323","created_at":"2013-10-24T00:06:53+02:00","updated_at":"2013-10-24T00:06:53+02:00","_label":"Browne''s
         Market","_slug":"browne-s-market-1","_position":9,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"520fb48787f64332190000b3","_id":"520fb48787f64332190000b3","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"520fb48787f64332190000b4","_id":"520fb48787f64332190000b4","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"The
+        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"5268487e87f64318d0000324","_id":"5268487e87f64318d0000324","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:54+02:00","_label":"Ballydoyle''s","_slug":"ballydoyle-s-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"5268487e87f64318d0000325","_id":"5268487e87f64318d0000325","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:54+02:00","_label":"The
         Belmont","_slug":"the-belmont-1","_position":11,"_visible":true,"content_type_slug":"events","place":"The
         Belmont","date":"06/04/2011","formatted_date":"06/04/2011","city":"Hamtramk","state":"Michigan"}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:28 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -547,34 +378,34 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"d751713988987e9331980363e24189ce"'
+      - '"d751713988987e9331980363e24189ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=yz087jOCBXbaYoVyB4piUWuiJvM; domain=.example.com; path=/;
+      - _locomotive_session=MAhIl0p9qFj3y_KKHHqCavs2r2I; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 76a323d4f3c1fcc19d62b9a3e4766e57
+      - a60ab2197f142eb6efec3c5f5b12c528
       X-Runtime:
-      - '0.042496'
+      - '0.034877'
     body:
-      encoding: US-ASCII
-      string: ! '[]'
+      encoding: UTF-8
+      string: '[]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -585,82 +416,82 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"475e5f1d3b0085192b264835decf959c"'
+      - '"d66db10ec1ec4875ecf804da93f016bf"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=tK9hq5w5-BVJXUgupFtKOGvHbAA; domain=.example.com; path=/;
+      - _locomotive_session=ql-5yEQYyEW1JbM7AM4p2S4vtGg; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e84333cd8a9d9baa1e0cef13c6fff872
+      - 32932cf351adb3e2a52cf9984238e6f6
       X-Runtime:
-      - '0.066115'
+      - '0.061251'
     body:
-      encoding: US-ASCII
-      string: ! '[{"id":"520fb48787f64332190000b5","_id":"520fb48787f64332190000b5","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:08Z","_label":"Song
+      encoding: UTF-8
+      string: '[{"id":"5268487e87f64318d0000326","_id":"5268487e87f64318d0000326","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #1","_slug":"song-1","_position":0,"_visible":true,"content_type_slug":"songs","title":"Song
-        #1","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b5/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b5/files/cover.jpg","short_description":"Lorem
+        #1","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000326/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000326/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"520fb48787f64332190000b6","_id":"520fb48787f64332190000b6","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:08Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5268487e87f64318d0000327","_id":"5268487e87f64318d0000327","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #2","_slug":"song-2","_position":1,"_visible":true,"content_type_slug":"songs","title":"Song
-        #2","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b6/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b6/files/cover.jpg","short_description":"Lorem
+        #2","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000327/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000327/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"520fb48787f64332190000b7","_id":"520fb48787f64332190000b7","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:09Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5268487e87f64318d0000328","_id":"5268487e87f64318d0000328","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #3","_slug":"song-3","_position":2,"_visible":true,"content_type_slug":"songs","title":"Song
-        #3","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b7/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b7/files/cover.jpg","short_description":"Lorem
+        #3","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000328/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000328/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"520fb48787f64332190000b8","_id":"520fb48787f64332190000b8","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:09Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5268487e87f64318d0000329","_id":"5268487e87f64318d0000329","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #4","_slug":"song-4","_position":3,"_visible":true,"content_type_slug":"songs","title":"Song
-        #4","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b8/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b8/files/cover.jpg","short_description":"Lorem
+        #4","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000329/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d0000329/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"520fb48787f64332190000b9","_id":"520fb48787f64332190000b9","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:09Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5268487e87f64318d000032a","_id":"5268487e87f64318d000032a","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #5","_slug":"song-5","_position":4,"_visible":true,"content_type_slug":"songs","title":"Song
-        #5","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b9/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000b9/files/cover.jpg","short_description":"Lorem
+        #5","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032a/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032a/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"520fb48787f64332190000ba","_id":"520fb48787f64332190000ba","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:09Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"5268487e87f64318d000032b","_id":"5268487e87f64318d000032b","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Song
         #6","_slug":"song-6","_position":5,"_visible":true,"content_type_slug":"songs","title":"Song
-        #6","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000ba/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000ba/files/cover.jpg","short_description":"Lorem
+        #6","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032b/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032b/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"520fb48787f64332190000bb","_id":"520fb48787f64332190000bb","created_at":"2013-08-17T17:36:07Z","updated_at":"2013-08-17T17:36:07Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"5268487e87f64318d000032c","_id":"5268487e87f64318d000032c","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:54+02:00","_label":"Song
         #7","_slug":"song-7","_position":6,"_visible":true,"content_type_slug":"songs","title":"Song
-        #7","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000bb/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48787f64332190000bb/files/cover.jpg","short_description":"Lorem
+        #7","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032c/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032c/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"520fb48887f64332190000bc","_id":"520fb48887f64332190000bc","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"5268487e87f64318d000032d","_id":"5268487e87f64318d000032d","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:54+02:00","_label":"Song
         #8","_slug":"song-8","_position":7,"_visible":true,"content_type_slug":"songs","title":"Song
-        #8","cover":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48887f64332190000bc/files/cover.jpg","cover_url":"/sites/520fb48487f643321900007d/content_entry520fb48587f6433219000095/520fb48887f64332190000bc/files/cover.jpg","short_description":"Lorem
+        #8","cover":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032d/files/cover.jpg","cover_url":"/sites/5268487b87f64318d00002ee/content_entry5268487c87f64318d0000306/5268487e87f64318d000032d/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -671,46 +502,46 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"3a45cdc0440d3a53b5458afb61578c5b"'
+      - '"6dae0b338025515e304befe788d2fbfe"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=ktnj7S5ssiiDOsnBgir1aXd05hk; domain=.example.com; path=/;
+      - _locomotive_session=sIhYES-0pbAH3Pro_ujeB0sjrM4; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 720a540c041cfcdbf7937e4f110b2731
+      - dd600c03491385035985611c0c699918
       X-Runtime:
-      - '0.053383'
+      - '0.050498'
     body:
-      encoding: US-ASCII
-      string: ! '[{"id":"520fb48887f64332190000c2","_id":"520fb48887f64332190000c2","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '[{"id":"5268487f87f64318d0000333","_id":"5268487f87f64318d0000333","created_at":"2013-10-24T00:06:55+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #1","_slug":"update-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"520fb48587f64332190000a0","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"520fb48887f64332190000c1","_id":"520fb48887f64332190000c1","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+        #1","text":"added some free stuff","category":"General","category_id":"5268487c87f64318d0000311","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"5268487e87f64318d0000332","_id":"5268487e87f64318d0000332","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #2","_slug":"update-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"520fb48587f64332190000a0","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"520fb48887f64332190000c0","_id":"520fb48887f64332190000c0","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+        #2","text":"added a chatroom","category":"General","category_id":"5268487c87f64318d0000311","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"5268487e87f64318d0000331","_id":"5268487e87f64318d0000331","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #3","_slug":"update-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"520fb48587f64332190000a0","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"520fb48887f64332190000bf","_id":"520fb48887f64332190000bf","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+        #3","text":"site redesign","category":"General","category_id":"5268487c87f64318d0000311","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"5268487e87f64318d0000330","_id":"5268487e87f64318d0000330","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #4","_slug":"update-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"520fb48587f64332190000a0","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"520fb48887f64332190000be","_id":"520fb48887f64332190000be","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"5268487c87f64318d0000311","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"5268487e87f64318d000032f","_id":"5268487e87f64318d000032f","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #5","_slug":"update-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"520fb48587f64332190000a0","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"520fb48887f64332190000bd","_id":"520fb48887f64332190000bd","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+        #5","text":"brian posted a new post","category":"General","category_id":"5268487c87f64318d0000311","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"5268487e87f64318d000032e","_id":"5268487e87f64318d000032e","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #6","_slug":"awesome-update-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"520fb48587f64332190000a0","date":"11/16/2009","formatted_date":"11/16/2009"}]'
+        #6","text":"john posted a new post","category":"General","category_id":"5268487c87f64318d0000311","date":"11/16/2009","formatted_date":"11/16/2009"}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c2.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487f87f64318d0000333.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -721,36 +552,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"070ff460c2c39a1fb7a50b6636aa15f0"'
+      - '"ecf7117c873845d998dfcc85a81d7240"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=FhinrXPNmx3_vxDOqNe72u4zezI; domain=.example.com; path=/;
+      - _locomotive_session=sTqXrkI3NIILmtVtVRAGtw2zAHE; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 86ac909d395b5f1be119f2a886f1d090
+      - db4386022596bae63f8b10e753e5443b
       X-Runtime:
-      - '0.046610'
+      - '0.133324'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c2","_id":"520fb48887f64332190000c2","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487f87f64318d0000333","_id":"5268487f87f64318d0000333","created_at":"2013-10-24T00:06:55+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #1","_slug":"update-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"520fb48587f64332190000a0","date":"05/12/2009","formatted_date":"05/12/2009"}'
+        #1","text":"added some free stuff","category":"General","category_id":"5268487c87f64318d0000311","date":"05/12/2009","formatted_date":"05/12/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c2.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487f87f64318d0000333.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -761,36 +592,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"7a3ac40fe38d5dd714f457ec076981cb"'
+      - '"927747f37ebf41885b4e701ef36e92bb"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=uHDQLalvut_PUScH8QDd_la1csk; domain=.example.com; path=/;
+      - _locomotive_session=rB46oCN-2nLzCBzNHMSwU-HIvws; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 4bc07fa09f29c2ac670c4570941c9308
+      - 207399c43f0d56e9380265b97992e72d
       X-Runtime:
-      - '0.038476'
+      - '0.038623'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c2","_id":"520fb48887f64332190000c2","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487f87f64318d0000333","_id":"5268487f87f64318d0000333","created_at":"2013-10-24T00:06:55+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #1","_slug":"mise-a-jour-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #1","text":"phrase FR","date":"12/05/2009","formatted_date":"12/05/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c1.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000332.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -801,36 +632,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"79906e637eaa1877b0dae3174ec2c172"'
+      - '"29bb21378d41ae26637b07f3603cff3d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=10NIDTvThBEgrj74wj4YUW1A5pM; domain=.example.com; path=/;
+      - _locomotive_session=3cOJ1h96_N99F07E3jPunXGAK8g; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 50a9a7580cf7007587b8b2f84fe3b22c
+      - 879a2e746f02f72232488d1f155389fa
       X-Runtime:
-      - '0.042527'
+      - '0.039639'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c1","_id":"520fb48887f64332190000c1","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000332","_id":"5268487e87f64318d0000332","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #2","_slug":"update-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"520fb48587f64332190000a0","date":"05/23/2009","formatted_date":"05/23/2009"}'
+        #2","text":"added a chatroom","category":"General","category_id":"5268487c87f64318d0000311","date":"05/23/2009","formatted_date":"05/23/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c1.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000332.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -841,36 +672,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"134839e7e53778e292d6804895238a3b"'
+      - '"acfc33647ff85c88fa1458ce542208fa"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=iWqnsA1R40OrUpQ7m7YU3f-vtEw; domain=.example.com; path=/;
+      - _locomotive_session=l11XZNqWTOZ7SlPWIAtxidUTpDI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e34001e4dc6a056929b592553cba5b82
+      - bcef20fe236814e0a9843b503079a857
       X-Runtime:
-      - '0.045110'
+      - '0.037324'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c1","_id":"520fb48887f64332190000c1","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000332","_id":"5268487e87f64318d0000332","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #2","_slug":"mise-a-jour-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #2","text":"phrase FR","date":"23/05/2009","formatted_date":"23/05/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c0.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000331.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -881,36 +712,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"46e3ad9fadf3bd48741642fcf1187cc7"'
+      - '"2a25c04fccca9947d02ee366910079d9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=6Y_jq3tEoWeSUK6LKczZYPE58gw; domain=.example.com; path=/;
+      - _locomotive_session=xbLceH00zPDLUBMaj2cPpKR44pg; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - ef1bcf9898e4521c518256b6fe4f3f16
+      - d293af1ef562c45fc3ab72aebec90b79
       X-Runtime:
-      - '0.042811'
+      - '0.038041'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c0","_id":"520fb48887f64332190000c0","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000331","_id":"5268487e87f64318d0000331","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #3","_slug":"update-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"520fb48587f64332190000a0","date":"06/29/2009","formatted_date":"06/29/2009"}'
+        #3","text":"site redesign","category":"General","category_id":"5268487c87f64318d0000311","date":"06/29/2009","formatted_date":"06/29/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000c0.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000331.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -921,36 +752,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"d33470bed1b7605a9b74524b607ec941"'
+      - '"05013675b6a20b6bedc16d9f537b7d55"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=YZL7WfL7UUvN4woFtB1YjfxNUsY; domain=.example.com; path=/;
+      - _locomotive_session=tbFCOWVAaD2teDsQ8-KLbC2lFcw; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - d5c98403f6172b0d5986cd5c89b0b2cc
+      - f4536830ff80ee5f9ab94bf342fdac26
       X-Runtime:
-      - '0.038835'
+      - '0.038050'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000c0","_id":"520fb48887f64332190000c0","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000331","_id":"5268487e87f64318d0000331","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #3","_slug":"mise-a-jour-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #3","text":"phrase FR","date":"29/06/2009","formatted_date":"29/06/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000bf.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000330.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -961,36 +792,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:14 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"8a20682bde542cd72c7a71d630a5bbba"'
+      - '"a8b0299e2a07fae5026f9ce20bad6993"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=iaorv1s8bepEoZs24xNLZY5QVNY; domain=.example.com; path=/;
+      - _locomotive_session=CNgWugzp6GCEQJvO_4i2NmxnlYI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - bfe5a08e9d77ab1a3ac056ce63fcf2e1
+      - ad77f5f7a0eaabc8f2fdb2587b3dcf45
       X-Runtime:
-      - '0.040565'
+      - '0.040423'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000bf","_id":"520fb48887f64332190000bf","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000330","_id":"5268487e87f64318d0000330","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #4","_slug":"update-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"520fb48587f64332190000a0","date":"10/09/2009","formatted_date":"10/09/2009"}'
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"5268487c87f64318d0000311","date":"10/09/2009","formatted_date":"10/09/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:14 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000bf.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d0000330.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1001,36 +832,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:15 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"5ad2c74cae3a185bbc347dfc70364397"'
+      - '"459856417ac64a593c14b79b3c1da57a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=_TYZTX3fBmqrflplCPggZfz4k1c; domain=.example.com; path=/;
+      - _locomotive_session=d5AaG45ynUllZsqLBBYG1IZXhZI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 5bd8a781510e14596cc628ea9d099bbb
+      - 5e65889b268c22753165664ab33ede18
       X-Runtime:
-      - '0.043559'
+      - '0.043890'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000bf","_id":"520fb48887f64332190000bf","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d0000330","_id":"5268487e87f64318d0000330","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #4","_slug":"mise-a-jour-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #4","text":"phrase FR","date":"09/10/2009","formatted_date":"09/10/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:15 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000be.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d000032f.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -1041,36 +872,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:15 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"2fd9ce242fe3d88d197318ec8e5a8cdc"'
+      - '"cfbb0a3443d7070e5a2545e84f8d0b6b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=ugtZqA760ICywBPL-qXAVaVdnG0; domain=.example.com; path=/;
+      - _locomotive_session=nB3jnRJbdpNxEgfcivGWF8RsrkM; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 45c5178736b4fd0468a6a079b3c386aa
+      - 8436b50901806f54f2d01dc691f3a71a
       X-Runtime:
-      - '0.041244'
+      - '0.044208'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000be","_id":"520fb48887f64332190000be","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d000032f","_id":"5268487e87f64318d000032f","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #5","_slug":"update-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"520fb48587f64332190000a0","date":"11/02/2009","formatted_date":"11/02/2009"}'
+        #5","text":"brian posted a new post","category":"General","category_id":"5268487c87f64318d0000311","date":"11/02/2009","formatted_date":"11/02/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:15 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000be.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d000032f.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1081,36 +912,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:15 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"b7b18dcbdedfab9da2ceae9865390ad7"'
+      - '"49e22d604c74833e6f4e4005e0b342b2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=Z3kUnWPkBEwZJ8mQfQznawjl1g0; domain=.example.com; path=/;
+      - _locomotive_session=lume3uw-InWajAVMnNuktUzyYoA; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - f63e52256b651f62621bbab8a44ac475
+      - aba6774f7e500f6de1ca6dda39e3d2c3
       X-Runtime:
-      - '0.053675'
+      - '0.038701'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000be","_id":"520fb48887f64332190000be","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d000032f","_id":"5268487e87f64318d000032f","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #5","_slug":"mise-a-jour-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #5","text":"phrase FR","date":"02/11/2009","formatted_date":"02/11/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:15 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000bd.json?auth_token=UG1c8xretEydzZ59A8nj&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d000032e.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=en
     body:
       encoding: US-ASCII
       string: ''
@@ -1121,36 +952,36 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:15 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"198adb1d6e58b6635a6a8b37fc64ccdd"'
+      - '"d673943bae3180dd6d6a78749ece795d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=fsL6eGNCREhli-m50Jlia6SPjt0; domain=.example.com; path=/;
+      - _locomotive_session=z-Fiv25EKtZAksz1Uouv72ZlECo; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 4a3c143ca3508db411abb7c986221c86
+      - d1f4d87c0dbc4233b555b623796b895b
       X-Runtime:
-      - '0.073385'
+      - '0.039605'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000bd","_id":"520fb48887f64332190000bd","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Update
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d000032e","_id":"5268487e87f64318d000032e","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Update
         #6","_slug":"awesome-update-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"520fb48587f64332190000a0","date":"11/16/2009","formatted_date":"11/16/2009"}'
+        #6","text":"john posted a new post","category":"General","category_id":"5268487c87f64318d0000311","date":"11/16/2009","formatted_date":"11/16/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:15 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/520fb48887f64332190000bd.json?auth_token=UG1c8xretEydzZ59A8nj&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5268487e87f64318d000032e.json?auth_token=iaWvtP5PhmnyKypXpLbM&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1161,31 +992,31 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Sat, 17 Aug 2013 17:36:29 GMT
+      - Wed, 23 Oct 2013 22:07:15 GMT
       Status:
       - 200 OK
       Connection:
       - close
       Content-Type:
-      - text/html; charset=utf-8
+      - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - ! '"6295b771cd49720a61963a841cc9aa88"'
+      - '"361cc57e96b00ce5cdf72a7f575da5fc"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=rK_uP3qONKYO1Z43Xbm9hl-DCeM; domain=.example.com; path=/;
+      - _locomotive_session=_meLxjoAXHrMFrk5gglDSPLKEGw; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 95c4345548698991a27c01898113ebb3
+      - 3bc4b658aac90dcdc9471177b3e98cbe
       X-Runtime:
-      - '0.073386'
+      - '0.040367'
     body:
-      encoding: US-ASCII
-      string: ! '{"id":"520fb48887f64332190000bd","_id":"520fb48887f64332190000bd","created_at":"2013-08-17T17:36:08Z","updated_at":"2013-08-17T17:36:08Z","_label":"Mise
+      encoding: UTF-8
+      string: '{"id":"5268487e87f64318d000032e","_id":"5268487e87f64318d000032e","created_at":"2013-10-24T00:06:54+02:00","updated_at":"2013-10-24T00:06:55+02:00","_label":"Mise
         a jour #6","_slug":"geniale-mise-a-jour-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #6","text":"phrase FR","date":"16/11/2009","formatted_date":"16/11/2009"}'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:36:29 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:15 GMT
 recorded_with: VCR 2.4.0

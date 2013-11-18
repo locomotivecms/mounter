@@ -15,6 +15,7 @@ module Locomotive
         field :template,          localized: true
         field :handle
         field :listed,            default: false
+        field :searchable
         field :templatized,       default: false
         field :content_type
         field :published,         default: true
@@ -31,10 +32,14 @@ module Locomotive
         ## other accessors ##
         attr_accessor :content_type_id, :content_entry, :parent_id, :children, :templatized_from_parent
 
+        ## path to the file of the template (if mounted from a FS) ##
+        attr_accessor :filepath
+
         ## aliases ##
         alias :listed?      :listed
         alias :published?   :published
         alias :templatized? :templatized
+        alias :searchable?  :searchable
 
         ## methods ##
 
@@ -147,10 +152,10 @@ module Locomotive
         # @return [ Integer ] An unique id corresponding to the depth and position
         #
         def depth_and_position
-          self.depth * 100 + (self.position || 100)
+          self.depth * 1000 + (self.position || 199)
         end
 
-        # A layout is a page which the template does
+        # A layout is a page whose the template does
         # not include the extend keyword.
         # If the template is blank then, it is not considered as a layout
         #
@@ -317,12 +322,7 @@ module Locomotive
           if @source[Locomotive::Mounter.locale]
             @source[Locomotive::Mounter.locale] # memoization
           elsif self.template
-            if self.template.is_a?(Exception) # comes from the parsing
-              # we do not know how to render the page so rethrow the exception
-              raise self.template
-            end
-            source = self.template.need_for_prerendering? ? self.template.render : self.template.data
-            @source[Locomotive::Mounter.locale] = source
+            @source[Locomotive::Mounter.locale] = self.template.source
           else
             nil
           end
@@ -333,7 +333,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url redirect_type handle published listed cache_strategy response_type position seo_title meta_description meta_keywords)
+          fields = %w(title slug redirect_url redirect_type handle published listed searchable cache_strategy response_type position seo_title meta_description meta_keywords)
 
           _attributes = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
@@ -363,7 +363,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published cache_strategy
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published searchable cache_strategy
             response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
@@ -394,7 +394,7 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(title slug listed published handle cache_strategy
+          fields = %w(title slug listed published searchable handle cache_strategy
             redirect_url response_type templatized content_type_id position
             seo_title meta_description meta_keywords)
 
@@ -421,12 +421,12 @@ module Locomotive
         # If a template is invalid, it is not considered as a
         # blank one.
         #
-        # @param [ Object ] template The template to test (Tilt)
+        # @param [ PageTemplate ] template The template to test
         #
         # @return [ Boolean ] True if the template is strictly blank
         #
         def template_blank?(template)
-          template.nil? || (!template.is_a?(Exception) && template.data.strip.blank?)
+          template.nil? || template.raw_source.strip.blank?
         end
 
       end

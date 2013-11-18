@@ -88,7 +88,7 @@ module Locomotive
 
               value = value.values.first if value.size == 1
 
-              value = nil if value.empty?
+              value = nil if value.respond_to?(:empty?) && value.empty?
 
               _attributes[name] = value
             else
@@ -139,7 +139,7 @@ module Locomotive
       def to_hash(translations = true)
         hash = translations ? self.attributes_with_translations : self.attributes
 
-        hash.delete_if { |k, v| v.blank? }
+        hash.delete_if { |k, v| (!v.is_a?(FalseClass) && v.blank?) }
 
         hash.each { |k, v| hash[k] = v.to_s if v.is_a?(Symbol) }
 

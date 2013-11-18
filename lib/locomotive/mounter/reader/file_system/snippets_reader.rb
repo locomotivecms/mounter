@@ -40,7 +40,7 @@ module Locomotive
             self.items.values.each do |snippet|
               default_template = snippet.template
 
-              next if !default_template.is_a?(Exception) && default_template.blank?
+              next if default_template.blank?
 
               self.locales.map(&:to_sym).each do |locale|
                 next if locale == self.default_locale
@@ -104,11 +104,7 @@ module Locomotive
           # @return [ Object ] The Tilt template or the exception itself if the template is invalid
           #
           def fetch_template(filepath)
-            begin
-              Tilt.new(filepath)
-            rescue Haml::SyntaxError => e
-              e
-            end
+            Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(filepath)
           end
 
         end

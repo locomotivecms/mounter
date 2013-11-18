@@ -90,11 +90,11 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'songs', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives']
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Songs', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives']
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives', 'Songs']
         end
 
         it 'also includes nested children' do
@@ -160,8 +160,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
     describe 'content assets' do
 
-      it 'has 3 assets' do
-        @mounting_point.content_assets.size.should == 3
+      it 'has 1 asset' do
+        @mounting_point.content_assets.size.should == 1
       end
 
     end # content assets
@@ -244,8 +244,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       @mounting_point = @reader.run!(credentials)
     end
 
-    it 'has 16 assets' do
-      @mounting_point.theme_assets.size.should == 16
+    it 'has 17 assets' do
+      @mounting_point.theme_assets.size.should == 17
     end
 
   end # theme assets

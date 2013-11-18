@@ -27,6 +27,7 @@ require 'locomotive/mounter/utils/hash'
 require 'locomotive/mounter/utils/yaml'
 require 'locomotive/mounter/utils/string'
 require 'locomotive/mounter/utils/output'
+require 'locomotive/mounter/utils/yaml_front_matters_template'
 
 # Main
 require 'locomotive/mounter/version'
@@ -40,10 +41,7 @@ require 'locomotive/mounter/engine_api'
 require 'locomotive/mounter/extensions/httmultiparty'
 require 'locomotive/mounter/extensions/sprockets'
 require 'locomotive/mounter/extensions/compass'
-require 'locomotive/mounter/extensions/tilt/template'
 require 'locomotive/mounter/extensions/tilt/css'
-require 'locomotive/mounter/extensions/tilt/haml'
-require 'locomotive/mounter/extensions/tilt/liquid'
 
 # Models
 require 'locomotive/mounter/models/base'

@@ -64,7 +64,7 @@ module Locomotive
 
             asset = Locomotive::Mounter::Models::ContentAsset.new(uri: url, folder: folder)
 
-            content_assets[url.to_s] = asset
+            content_assets[url.path] = asset
 
             asset.local_filepath
           end

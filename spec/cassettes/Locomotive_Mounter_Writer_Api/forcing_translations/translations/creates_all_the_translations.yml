@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=UG1c8xretEydzZ59A8nj
+    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=iaWvtP5PhmnyKypXpLbM
     body:
       encoding: US-ASCII
       string: ''
@@ -10,48 +10,33 @@ http_interactions:
   response:
     status:
       code: 200
-      message: !binary |-
-        T0s=
+      message: OK
     headers:
-      !binary "RGF0ZQ==":
-      - !binary |-
-        U2F0LCAxNyBBdWcgMjAxMyAxNzozNzowNiBHTVQ=
-      !binary "U3RhdHVz":
-      - !binary |-
-        MjAwIE9L
-      !binary "Q29ubmVjdGlvbg==":
-      - !binary |-
-        Y2xvc2U=
-      !binary "Q29udGVudC1UeXBl":
-      - !binary |-
-        YXBwbGljYXRpb24vanNvbjsgY2hhcnNldD11dGYtOA==
-      !binary "WC1VYS1Db21wYXRpYmxl":
-      - !binary |-
-        SUU9RWRnZQ==
-      !binary "RXRhZw==":
-      - !binary |-
-        ImU3MWUyZjY4ZGVmZDVlZDEyZGFhMmJmNmM5M2FiNjI5Ig==
-      !binary "Q2FjaGUtQ29udHJvbA==":
-      - !binary |-
-        bWF4LWFnZT0wLCBwcml2YXRlLCBtdXN0LXJldmFsaWRhdGU=
-      !binary "U2V0LUNvb2tpZQ==":
-      - !binary |-
-        X2xvY29tb3RpdmVfc2Vzc2lvbj1kaGRrWVRNNjhySTctaFZzUkUxblJJTmIy
-        cTQ7IGRvbWFpbj0uZXhhbXBsZS5jb207IHBhdGg9LzsgSHR0cE9ubHk=
-      !binary "WC1SZXF1ZXN0LUlk":
-      - !binary |-
-        MzZiMzRkOGFmNDFiYTgxNThiNmQxNzBhMzBhYjBjOTU=
-      !binary "WC1SdW50aW1l":
-      - !binary |-
-        MC4wNDk4NTg=
+      Date:
+      - Wed, 23 Oct 2013 22:07:37 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"7ea29645e984c69cebddc212ea64fe87"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=cqLvCseRS9VR4S_70NK4xMGl0WI; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - 51ead1d7ffad6d65461b0e4c56096cb5
+      X-Runtime:
+      - '0.046746'
     body:
-      encoding: ASCII-8BIT
-      string: !binary |-
-        W3siaWQiOiI1MjBmYjRjMjg3ZjY0MzMyMTkwMDAxZjEiLCJfaWQiOiI1MjBm
-        YjRjMjg3ZjY0MzMyMTkwMDAxZjEiLCJjcmVhdGVkX2F0IjoiMjAxMy0wOC0x
-        N1QxNzozNzowNloiLCJ1cGRhdGVkX2F0IjoiMjAxMy0wOC0xN1QxNzozNzow
-        NloiLCJrZXkiOiJwb3dlcmVkX2J5IiwidmFsdWVzIjp7ImVuIjoiUG93ZXJl
-        ZCBieSIsImZyIjoiUHJvcHVsc8OpIHBhciJ9fV0=
+      encoding: UTF-8
+      string: '[{"id":"526848a587f64318d00003b0","_id":"526848a587f64318d00003b0","created_at":"2013-10-24T00:07:33+02:00","updated_at":"2013-10-24T00:07:33+02:00","key":"powered_by","values":{"en":"Powered
+        by","fr":"Propuls\u00e9 par"}}]'
     http_version: 
-  recorded_at: Sat, 17 Aug 2013 17:37:06 GMT
+  recorded_at: Wed, 23 Oct 2013 22:07:37 GMT
 recorded_with: VCR 2.4.0

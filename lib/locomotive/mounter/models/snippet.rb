@@ -13,19 +13,16 @@ module Locomotive
         ## methods ##
 
         # Return the Liquid template based on the template_filepath property
-        # of the snippet. If the template is HAML or SLIM, then a pre-rendering to Liquid is done.
+        # of the snippet. If the template is HAML, then a pre-rendering to Liquid is done.
         #
         # @return [ String ] The liquid template
         #
         def source
           @source ||= {}
 
-          source = if self.template.respond_to?(:need_for_prerendering?)
-            # must be a tilt template with or without prerendering
-            self.template.need_for_prerendering? ? self.template.render : self.template.data
-          elsif self.template.is_a?(Exception) # comes from the parsing
-            # we do not know how to render the page so rethrow the exception
-            raise self.template
+          source = if self.template.respond_to?(:source)
+            # liquid or haml file
+            self.template.source
           else
             # simple string
             self.template
