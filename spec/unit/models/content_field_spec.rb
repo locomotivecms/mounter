@@ -38,6 +38,10 @@ describe Locomotive::Mounter::Models::ContentField do
       build_content_field(type: 'date').type.should == :date
     end
 
+    it 'has searchable which should default to false' do
+      build_content_field.searchable.should == false
+    end
+
   end
 
   describe '.is_relationship?' do
