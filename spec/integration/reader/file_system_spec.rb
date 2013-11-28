@@ -262,8 +262,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       it 'has 3 snippets' do
         @mounting_point.snippets.size.should == 3
-        @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
-        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
+        @mounting_point.snippets.keys.sort.should == %w(a-long-one header song)
+        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a-long-one header song)
       end
 
       it 'localizes the template' do
@@ -289,7 +289,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a single content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries['events/avogadro-s-number']
+          @content_entry = @mounting_point.content_entries['events/avogadros-number']
         end
 
         it 'has a label' do
@@ -297,7 +297,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
         end
 
         it 'has a slug' do
-          @content_entry._slug.should == "avogadro-s-number"
+          @content_entry._slug.should == "avogadros-number"
         end
 
         it 'can access dynamic field' do
@@ -313,7 +313,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a localized content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries['updates/update-1']
+          @content_entry = @mounting_point.content_entries['updates/update-number-1']
         end
 
         it 'has a label' do
