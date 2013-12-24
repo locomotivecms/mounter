@@ -63,7 +63,7 @@ module Locomotive
 
     TEMPLATE_EXTENSIONS = %w(liquid haml)
 
-    @@logger = Logger.new(STDOUT).tap { |log| log.level = Logger::DEBUG }
+    @@logger = ::Logger.new(STDOUT).tap { |log| log.level = ::Logger::DEBUG }
 
     @@mount_point = nil
 

@@ -91,7 +91,7 @@ module Locomotive
           # @return [ String ] The slug
           #
           def filepath_to_slug(filepath)
-            File.basename(filepath).split('.').first.permalink(true)
+            File.basename(filepath).split('.').first.permalink
           end
 
           # From a filepath, parse the template inside.
