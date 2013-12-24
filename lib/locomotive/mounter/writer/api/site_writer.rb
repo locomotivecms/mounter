@@ -19,7 +19,9 @@ module Locomotive
             if self.site.persisted?
               self.check_locales! unless self.force? # requirements
 
-              self.update_site
+              if self.force?
+                self.update_site
+              end
             else
               self.create_site
             end
@@ -71,7 +73,7 @@ module Locomotive
           end
 
           def safe_attributes
-            %w(id locales timezone)
+            %w(id name locales timezone)
           end
 
           def fetch_site
