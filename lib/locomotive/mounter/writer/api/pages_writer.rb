@@ -13,6 +13,8 @@ module Locomotive
         #
         class PagesWriter < Base
 
+          MAX_ATTEMPTS = 5
+
           attr_accessor :new_pages
           attr_accessor :remote_translations
 
@@ -43,15 +45,45 @@ module Locomotive
             self.each_locale do |locale|
               self.output_locale
 
-              # first write the pages which are layouts for others
-              self.layouts.each { |page| self.write_page(page) }
+              done, attempts = {}, 0
+              while done.size < pages.length - 1 && attempts < MAX_ATTEMPTS
+                _write(pages['index'], done, done.size > 0)
 
-              # and proceed the others
-              self.other_than_layouts.each { |page| self.write_page(page) }
+                # keep track of the attempts because we don't want to get an infinite loop.
+                attempts += 1
+              end
+
+              write_page(pages['404'])
+
+              if done.size < pages.length - 1
+                self.log %{Warning: NOT all the pages were pushed.\n\tCheck that the pages inheritance was done right OR that you translated all your pages.\n}.colorize(color: :red)
+              end
             end
           end
 
           protected
+
+          def _write(page, done, already_done = false)
+            if self.safely_translated?(page)
+              write_page(page) unless already_done
+            else
+              self.output_resource_op page
+              self.output_resource_op_status page, :not_translated
+            end
+
+            # mark it as done
+            done[page.fullpath] = true
+
+            # loop over its children
+            (page.children || []).sort_by(&:depth_and_position).each do |child|
+              layout = child.layout
+              layout = page.fullpath if layout && layout == 'parent'
+
+              if done[child.fullpath].nil? && (!layout || done[layout])
+                _write(child, done)
+              end
+            end
+          end
 
           def write_page(page)
             locale = Locomotive::Mounter.locale
@@ -121,39 +153,39 @@ module Locomotive
             self.mounting_point.pages
           end
 
-          # Return the pages which are layouts for others.
-          # They are sorted by the depth.
-          #
-          # @return [ Array ] The list of layouts
-          #
-          def layouts
-            self.pages.values.find_all do |page|
-              self.safely_translated?(page) && self.is_layout?(page)
-            end.sort { |a, b| a.depth <=> b.depth }
-          end
+          # # Return the pages which are layouts for others.
+          # # They are sorted by the depth.
+          # #
+          # # @return [ Array ] The list of layouts
+          # #
+          # def layouts
+          #   self.pages.values.find_all do |page|
+          #     self.safely_translated?(page) && self.is_layout?(page)
+          #   end.sort { |a, b| a.depth <=> b.depth }
+          # end
 
-          # Return the pages wich are not layouts for others.
-          # They are sorted by both the depth and the position.
-          #
-          # @return [ Array ] The list of non-layout pages
-          #
-          def other_than_layouts
-            list = (self.pages.values - self.layouts)
+          # # Return the pages wich are not layouts for others.
+          # # They are sorted by both the depth and the position.
+          # #
+          # # @return [ Array ] The list of non-layout pages
+          # #
+          # def other_than_layouts
+          #   list = (self.pages.values - self.layouts)
 
-            # get only the translated ones in the current locale
-            list.delete_if do |page|
-              # if (!page.parent.nil? && !page.translated_in?(self.mounting_point.default_locale)) ||
-              #   !page.translated_in?(Locomotive::Mounter.locale)
-              if !self.safely_translated?(page)
-                self.output_resource_op page
-                self.output_resource_op_status page, :not_translated
-                true
-              end
-            end
+          #   # get only the translated ones in the current locale
+          #   list.delete_if do |page|
+          #     # if (!page.parent.nil? && !page.translated_in?(self.mounting_point.default_locale)) ||
+          #     #   !page.translated_in?(Locomotive::Mounter.locale)
+          #     if !self.safely_translated?(page)
+          #       self.output_resource_op page
+          #       self.output_resource_op_status page, :not_translated
+          #       true
+          #     end
+          #   end
 
-            # sort them
-            list.sort { |a, b| a.depth_and_position <=> b.depth_and_position }
-          end
+          #   # sort them
+          #   list.sort { |a, b| a.depth_and_position <=> b.depth_and_position }
+          # end
 
           # Tell if the page passed in parameter has already been
           # translated on the remote engine for the locale passed
@@ -186,26 +218,26 @@ module Locomotive
             end
           end
 
-          # Tell if the page is a real layout, which means no extends tag inside
-          # and that at least one of the other pages reference it as a parent template.
-          #
-          # @param [ Object ] page The page
-          #
-          # @return [ Boolean] True if it is a real layout.
-          #
-          def is_layout?(page)
-            if page.is_layout?
-              # has child(ren) extending the page itself ?
-              return true if (page.children || []).any? { |child| child.layout == 'parent' }
+          # # Tell if the page is a real layout, which means no extends tag inside
+          # # and that at least one of the other pages reference it as a parent template.
+          # #
+          # # @param [ Object ] page The page
+          # #
+          # # @return [ Boolean] True if it is a real layout.
+          # #
+          # def is_layout?(page)
+          #   if page.is_layout?
+          #     # has child(ren) extending the page itself ?
+          #     return true if (page.children || []).any? { |child| child.layout == 'parent' }
 
-              fullpath = page.fullpath_in_default_locale
+          #     fullpath = page.fullpath_in_default_locale
 
-              # among all the pages, is there a page extending the page itself ?
-              self.pages.values.any? { |_page| _page.fullpath_in_default_locale != fullpath && _page.layout == fullpath }
-            else
-              false # extends not present
-            end
-          end
+          #     # among all the pages, is there a page extending the page itself ?
+          #     self.pages.values.any? { |_page| _page.fullpath_in_default_locale != fullpath && _page.layout == fullpath }
+          #   else
+          #     false # extends not present
+          #   end
+          # end
 
           # Return the parameters of a page sent by the API.
           # It includes the editable_elements if the data option is enabled or

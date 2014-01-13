@@ -177,8 +177,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
     it 'has 3 snippets' do
       @mounting_point.snippets.size.should == 3
-      @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
-      @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
+      @mounting_point.snippets.keys.sort.should == %w(a-long-one header song)
+      @mounting_point.snippets.values.map(&:slug).sort.should == %w(a-long-one header song)
     end
 
     it 'localizes the template' do
@@ -213,7 +213,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       end
 
       it 'has a slug' do
-        @content_entry._slug.should == "avogadro-s-number"
+        @content_entry._slug.should == "avogadros-number"
       end
 
       it 'can access dynamic field' do

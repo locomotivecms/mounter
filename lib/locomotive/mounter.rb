@@ -3,6 +3,10 @@ $:.unshift File.expand_path(File.dirname(__FILE__))
 # Force encoding to UTF-8
 Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
+# Remove I18n warnings
+require 'i18n'
+I18n.config.enforce_available_locales = true
+
 require 'logger'
 require 'colorize'
 
