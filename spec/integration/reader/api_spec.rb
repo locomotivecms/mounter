@@ -127,6 +127,18 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
       end
 
+      describe '#content_assets' do
+
+        it 'should fix path' do
+          page = @mounting_point.pages['about-us']
+          page.editable_elements.each do |element|
+            if element.slug == 'content'
+              element.content.should_not match /http:\/\/sample.example.com:3000/
+            end
+          end
+        end
+      end
+
     end # pages
 
     describe 'content types' do

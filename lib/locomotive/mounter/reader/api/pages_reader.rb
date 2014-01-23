@@ -153,7 +153,7 @@ module Locomotive
                     hash['content'] = self.add_content_asset(hash['content'], '/samples/pages')
                   else
                     self.mounting_point.content_assets.each do |path, asset|
-                      hash['content'].gsub!(path, asset.local_filepath)
+                      hash['content'].gsub!(/(http:\/\/[^\/]*)?#{path}/, asset.local_filepath)
                     end
                   end
                 end
