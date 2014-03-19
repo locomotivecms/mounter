@@ -176,7 +176,7 @@ module Locomotive
                 when :string, :text
                   params[field.name] = self.replace_content_assets!(value)
                 when :file
-                  if value =~ %r($http://)
+                  if value =~ %r(^http://)
                     params[field.name] = value
                   elsif value && self.mounting_point.path
                     path = File.join(self.mounting_point.path, 'public', value)
