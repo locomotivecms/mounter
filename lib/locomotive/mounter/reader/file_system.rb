@@ -23,6 +23,7 @@ module Locomotive
              raise Locomotive::Mounter::ReaderException.new('path is required and must exist')
            end
 
+           # TODO: Steam should deal with that
            Locomotive::Mounter::Extensions::Compass.configure(self.path)
          end
 
