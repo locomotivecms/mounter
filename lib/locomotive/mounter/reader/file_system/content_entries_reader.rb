@@ -10,24 +10,32 @@ module Locomotive
           # @return [ Array ] The un-ordered list of content types
           #
           def read
+            self.items = Collection.new
+
             self.fetch_from_filesystem
 
-            self.items
+            self.items.extends ItemBuilder
           end
 
           protected
 
           def fetch_from_filesystem
             Dir.glob(File.join(self.root_dir, '*.yml')).each do |filepath|
-              attributes = self.read_yaml(filepath)
+              self.items.data_path = filepath
+
+              # attributes = self.read_yaml(filepath)
 
               content_type = self.get_content_type(File.basename(filepath, '.yml'))
 
-              content_type.entries.try(:clear)
+              # content_type.entries = FileSystemCollection.new do |_attributes, index|
+              #   this.add(content_type, _attributes, index)
+              # end
 
-              attributes.each_with_index do |_attributes, index|
-                self.add(content_type, _attributes, index)
-              end
+              # content_type.entries.try(:clear) # TODO
+
+              # attributes.each_with_index do |_attributes, index|
+              #   self.add(content_type, _attributes, index)
+              # end
             end
           end
 

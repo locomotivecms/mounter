@@ -10,8 +10,7 @@ module Locomotive
           delegate :default_locale, :locales, to: :mounting_point
 
           def initialize(runner)
-            self.runner  = runner
-            self.items   = {}
+            self.runner = runner
           end
 
           def mounting_point

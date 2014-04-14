@@ -18,14 +18,14 @@ module Locomotive
 
         field :fields, type: :array, class_name: 'Locomotive::Mounter::Models::ContentField'
 
-        field :entries, association: true
+        # field :entries, association: true
 
         ## callbacks ##
         set_callback :initialize, :after, :sanitize
         set_callback :initialize, :after, :assign_mounting_point_to_fields
 
         ## other accessors ##
-        attr_accessor :klass_name, :group_by_field_id
+        attr_accessor :klass_name, :group_by_field_id, :entries
 
         ## aliases ##
         alias_method :group_by_field_name, :group_by
@@ -90,7 +90,7 @@ module Locomotive
             # force the slug to be defined from its label and in all the locales
             entry.send :set_slug
 
-            (self.entries ||= []) << entry
+            # (self.entries ||= []) << entry
           end
         end
 
