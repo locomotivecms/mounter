@@ -46,7 +46,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'logger'
 
   s.add_development_dependency 'rake',                '0.9.2'
-  s.add_development_dependency 'rspec',               '~> 2.6.0'
+  s.add_development_dependency 'rspec',               '~> 2.14.1'
   s.add_development_dependency 'mocha',               '0.9.12'
   s.add_development_dependency 'rack-test',           '~> 0.6.1'
   s.add_development_dependency 'ruby-debug-wrapper',  '~> 0.0.1'
