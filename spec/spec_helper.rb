@@ -4,8 +4,8 @@ require 'rubygems'
 require 'bundler'
 Bundler.setup
 Bundler.require
-
 require 'rspec'
+
 
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 $LOAD_PATH.unshift(File.join(File.dirname(__FILE__), "..", "lib"))
@@ -27,6 +27,8 @@ VCR.configure do |c|
 end
 
 RSpec.configure do |c|
+  c.filter_run focused: true
+  c.run_all_when_everything_filtered = true
 
   # so we can use :vcr rather than :vcr => true;
   # in RSpec 3 this will no longer be necessary.
