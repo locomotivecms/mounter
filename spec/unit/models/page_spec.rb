@@ -25,14 +25,14 @@ describe Locomotive::Mounter::Models::Page do
     it 'sets a localized attribute' do
       page = build_page(title: 'Hello world')
       page.localized_field?(:title).should be_true
-      page.title.should == 'Hello world'
+      page.title.should eq 'Hello world'
       Locomotive::Mounter.with_locale(:fr) { page.title.should be_nil }
 
     end
 
     it 'sets a complete translation of a localized attribute' do
       page = build_page(title: { en: 'Hello world', fr: 'Salut le monde' })
-      page.title.should == 'Hello world'
+      page.title.should eq 'Hello world'
       Locomotive::Mounter.with_locale(:fr) { page.title.should == 'Salut le monde' }
     end
 
@@ -220,7 +220,7 @@ describe Locomotive::Mounter::Models::Page do
   describe 'deprecated methods' do
 
     it 'responds to the model setter' do
-      Locomotive::Mounter.logger.expects(:warn).with('The model attribute is deprecated. Use content_type instead.')
+      Locomotive::Mounter.logger.should_receive(:warn).with('The model attribute is deprecated. Use content_type instead.')
       page = build_page(model: 'something')
       page.content_type.should == 'something'
     end
