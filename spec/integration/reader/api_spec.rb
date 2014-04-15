@@ -16,8 +16,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
   end
 
   it 'runs it' do
-    @reader.stubs(:prepare).returns(true)
-    @reader.stubs(:build_mounting_point).returns(true)
+    @reader.stub(prepare: true)
+    @reader.stub(build_mounting_point: true)
     @reader.run!(credentials).should_not be_nil
   end
 
@@ -255,7 +255,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       "Locomotive::Mounter::Reader::Api::#{name.camelize}Reader".constantize
     end
 
-    reader.stubs(:readers).returns(klasses)
+    reader.stub(readers: klasses)
   end
 
 end

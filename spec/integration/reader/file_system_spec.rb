@@ -60,7 +60,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     end
 
     it 'runs it' do
-      @reader.stubs(:build_mounting_point).returns(true)
+      @reader.stub(build_mounting_point: true)
       @reader.run!(path: @path).should_not be_nil
     end
 
@@ -333,7 +333,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     describe 'theme_assets' do
 
       before(:each) do
-        stub_readers(@read, %w{ theme_assets })
+        stub_readers(@reader, %w{ theme_assets })
         @mounting_point = @reader.run!(path: @path)
       end
 
@@ -370,7 +370,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     describe 'theme_assets' do
 
       before(:each) do
-        stub_readers(@read, %w{ theme_assets })
+        stub_readers(@reader, %w{ theme_assets })
         @mounting_point = @reader.run!(path: @path)
       end
 
@@ -402,7 +402,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Reader".constantize
     end
 
-    reader.stubs(:readers).returns(klasses)
+    reader.stub(readers: klasses)
   end
 
 end

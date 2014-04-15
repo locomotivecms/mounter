@@ -10,8 +10,8 @@ describe 'Locomotive::Mounter::Reader::FileSystem::PagesReader' do
   describe '#filepath_locale' do
 
     before(:each) do
-      @reader.stubs(:locales).returns(['en', 'fr'])
-      @reader.stubs(:default_locale).returns('en')
+      @reader.stub(locales: ['en', 'fr'])
+      @reader.stub(default_locale: 'en')
     end
 
     it 'returns the default locale if no locale information in the filepath' do
