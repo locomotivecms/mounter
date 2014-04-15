@@ -1,3 +1,8 @@
+begin
+  require 'pry'
+rescue LoadError
+end
+
 $:.unshift File.expand_path(File.dirname(__FILE__))
 
 # Force encoding to UTF-8
