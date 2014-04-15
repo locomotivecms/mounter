@@ -10,37 +10,45 @@ module Locomotive
           # @return [ Array ] The un-ordered list of snippets
           #
           def read
-            self.fetch_from_filesystem
+            self.items = Collection.new self
+          end
 
-            self.set_default_template_for_each_locale
+          # Returns a snippet from its slug.
+          #
+          # @param [ String ] filepath The path to the file
+          #
+          # @return [ Object ] A newly created snippet or the existing one
+          #
+          def fetch_one(slug)
+            Locomotive::Mounter::Models::Snippet.new({
+              name:     slug.humanize,
+              slug:     slug,
+            }).tap do |snippet|
+              templates_for(slug).each do |filepath|
+                Locomotive::Mounter.with_locale(filepath_locale(filepath)) do
+                  snippet.template = fetch_template(filepath)
+                end
+              end
+              set_default_template_for_each_locale snippet
+            end
+          end
 
-            self.items
+          def all_slugs
+            Dir.glob(File.join(self.root_dir, "*.{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}"))
+              .map( &method(:filepath_to_slug) )
+              .uniq
           end
 
           protected
-
-          # Record snippets found in file system
-          def fetch_from_filesystem
-            Dir.glob(File.join(self.root_dir, "*.{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}")).each do |filepath|
-              fullpath = File.basename(filepath)
-
-              snippet = self.add(filepath)
-
-              Locomotive::Mounter.with_locale(self.filepath_locale(filepath)) do
-                snippet.template = self.fetch_template(filepath)
-              end
-            end
-          end
 
           # Set a default template (coming from the default locale)
           # for each snippet which does not have a translated version
           # of the template in each locale.
           #
-          def set_default_template_for_each_locale
-            self.items.values.each do |snippet|
-              default_template = snippet.template
+          def set_default_template_for_each_locale snippet
+            default_template = snippet.template
 
-              next if default_template.blank?
+            unless default_template.blank?
 
               self.locales.map(&:to_sym).each do |locale|
                 next if locale == self.default_locale
@@ -63,36 +71,6 @@ module Locomotive
             File.join(self.runner.path, 'app', 'views', 'snippets')
           end
 
-          # Add a new snippet in the global hash of snippets.
-          # If the snippet exists, it returns it.
-          #
-          # @param [ String ] filepath The path to the file
-          #
-          # @return [ Object ] A newly created snippet or the existing one
-          #
-          def add(filepath)
-            slug = self.filepath_to_slug(filepath)
-
-            unless self.items.key?(slug)
-              self.items[slug] = Locomotive::Mounter::Models::Snippet.new({
-                name:     slug.humanize,
-                slug:     slug,
-                template: self.fetch_template(filepath)
-              })
-            end
-
-            self.items[slug]
-          end
-
-          # Convert a filepath to a slug
-          #
-          # @param [ String ] filepath The path to the file
-          #
-          # @return [ String ] The slug
-          #
-          def filepath_to_slug(filepath)
-            File.basename(filepath).split('.').first.permalink
-          end
 
           # From a filepath, parse the template inside.
           # and return the related Tilt instance.
@@ -103,12 +81,10 @@ module Locomotive
           #
           # @return [ Object ] The Tilt template or the exception itself if the template is invalid
           #
-          def fetch_template(filepath)
+          def fetch_template (filepath)
             Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(filepath)
           end
-
         end
-
       end
     end
   end

@@ -45,9 +45,9 @@ module Locomotive
       def register_resource(name, elements)
         self.resources ||= {}
 
-        (elements.respond_to?(:values) ? elements.values : [*elements]).each do |element|
-          element.mounting_point = self
-        end
+      #  (elements.respond_to?(:values) ? elements.values : [*elements]).each do |element|
+      #    element.mounting_point = self
+      #  end
 
         self.resources[name.to_sym] = elements
       end

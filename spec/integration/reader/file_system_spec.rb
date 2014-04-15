@@ -127,7 +127,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
 
           it 'also includes nested children' do
-            @index.children.first.children.size.should == 2
+            @index.children.first.children.size.should eq 2
             @index.children.first.children.map(&:fullpath).should == ['about-us/john-doe', 'about-us/jane-doe']
           end
 
@@ -157,7 +157,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
           it 'localizes a editable text' do
             element = @about_us.find_editable_element('banner', 'pitch')
-            element.content.should == '<h2>About us</h2><p>Lorem ipsum...</p>'
+            element.content.should eq '<h2>About us</h2><p>Lorem ipsum...</p>'
             Locomotive::Mounter.with_locale(:fr) do
               element.content.should == '<h2>A notre sujet</h2><p>Lorem ipsum...(FR)</p>'
             end
@@ -165,7 +165,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
           it 'localizes a editable file' do
             element = @about_us.find_editable_element('banner', 'page_image')
-            element.content.should == '/samples/photo_2.jpg'
+            element.content.should eq '/samples/photo_2.jpg'
             Locomotive::Mounter.with_locale(:fr) do
               element.content.should == '/samples/photo.jpg'
             end
@@ -186,15 +186,15 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       describe 'content types' do
 
-        # before(:each) do
-        #   stub_readers(@reader, %w(content_types))
-        #   @mounting_point = @reader.run!(path: @path)
-        # end
+        before(:each) do
+          stub_readers(@reader, %w(content_types))
+          @mounting_point = @reader.run!(path: @path)
+        end
 
         it 'has 5 content types' do
-          @mounting_point.content_types.size.should == 5
-          @mounting_point.content_types.keys.should match_array %w(bands events messages songs updates)
-          @mounting_point.content_types.values.map(&:slug).should match_array %w(bands events messages songs updates)
+          @mounting_point.content_types.size.should eq 5
+          @mounting_point.content_types.all.keys.should match_array %w(bands events messages songs updates)
+          @mounting_point.content_types.all.values.map(&:slug).should match_array %w(bands events messages songs updates)
         end
 
         describe 'a single content type' do
@@ -204,14 +204,14 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
 
           it 'has basic properties: name, slug' do
-            @content_type.name.should == 'Events'
-            @content_type.slug.should == 'events'
+            @content_type.name.should eq 'Events'
+            @content_type.slug.should eq 'events'
           end
 
           it 'has fields' do
-            @content_type.fields.size.should == 5
-            @content_type.fields.map(&:name).should == %w(place date city state notes)
-            @content_type.fields.map(&:type).should == [:string, :date, :string, :string, :text]
+            @content_type.fields.size.should eq 5
+            @content_type.fields.map(&:name).should eq %w(place date city state notes)
+            @content_type.fields.map(&:type).should eq [:string, :date, :string, :string, :text]
           end
 
         end
@@ -261,17 +261,21 @@ describe Locomotive::Mounter::Reader::FileSystem do
       end
 
       it 'has 3 snippets' do
-        @mounting_point.snippets.size.should == 3
-        @mounting_point.snippets.keys.sort.should == %w(a-long-one header song)
-        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a-long-one header song)
+
+        @mounting_point.snippets.size.should eq 3
+
+        @mounting_point.snippets.all.keys.sort.should eq %w(a-long-one header song)
+        @mounting_point.snippets.all.values.map(&:slug).sort.should eq %w(a-long-one header song)
       end
 
       it 'localizes the template' do
-        @mounting_point.snippets.values.first.source.should match /&rarr; Listen/
+        @mounting_point.snippets['song'].source.should match(/&rarr; Listen/)
         Locomotive::Mounter.with_locale(:fr) do
-          @mounting_point.snippets.values.first.source.should match /&rarr; écouter/
+          @mounting_point.snippets['song'].source.should match(/&rarr; écouter/)
         end
       end
+
+      it ''
 
     end # snippets
 
@@ -342,7 +346,6 @@ describe Locomotive::Mounter::Reader::FileSystem do
       its(:count) { should == 17 }
 
       it "should not return directories" do
-        dir_names = %w{ fonts images javascripts stylesheets }
         dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
         subject.each do |asset|
           asset.to_s.should_not match dir_rx
@@ -379,7 +382,6 @@ describe Locomotive::Mounter::Reader::FileSystem do
       its(:count) { should == 17 }
 
       it "should not return directories" do
-        dir_names = %w{ fonts images javascripts stylesheets }
         dir_rx = Regexp.new %w{ fonts images stylesheets javascripts }.join("\/?$|").concat("\/?$")
         subject.each do |asset|
           asset.to_s.should_not match dir_rx

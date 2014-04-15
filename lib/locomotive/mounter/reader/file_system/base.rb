@@ -19,6 +19,16 @@ module Locomotive
 
           protected
 
+          # Convert a filepath to a slug
+          #
+          # @param [ String ] filepath The path to the file
+          #
+          # @return [ String ] The slug
+          #
+          def filepath_to_slug(filepath)
+            File.basename(filepath).split('.').first.permalink
+          end
+
           # Return the locale of a file based on its extension.
           #
           # Ex:
@@ -44,6 +54,10 @@ module Locomotive
             else
               self.default_locale
             end
+          end
+
+          def templates_for(slug)
+            Dir.glob(File.join(self.root_dir, "#{slug}.*{#{Locomotive::Mounter::TEMPLATE_EXTENSIONS.join(',')}}"))
           end
 
           # Open a YAML file and returns the content of the file

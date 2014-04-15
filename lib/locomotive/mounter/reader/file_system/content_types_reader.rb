@@ -20,6 +20,10 @@ module Locomotive
             self.read_yaml File.join(self.root_dir, "#{slug}.yml")
           end
 
+          def all_slugs
+            Dir.glob(File.join(self.root_dir, '*.yml')).map(&method(:filepath_to_slug))
+          end
+
           # Add a new content type in the global hash of content types.
           # If the content type exists, it returns it.
           #

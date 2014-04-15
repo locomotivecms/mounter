@@ -10,11 +10,13 @@ module Locomotive
           # @return [ Array ] The un-ordered list of content types
           #
           def read
-            self.items = Collection.new
+            self.items = Collection.new(self)
+          end
 
-            self.fetch_from_filesystem
+          def fetch_one slug
+          end
 
-            self.items.extends ItemBuilder
+          def all_slugs
           end
 
           protected

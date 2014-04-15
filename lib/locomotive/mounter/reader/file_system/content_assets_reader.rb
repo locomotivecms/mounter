@@ -38,7 +38,7 @@ module Locomotive
           # Fetch the files from the content entries
           #
           def fetch_from_content_entries
-            self.mounting_point.content_entries.values.each do |content_entry|
+            self.mounting_point.content_entries.all.each do |content_entry|
               content_entry.translated_in.each do |locale|
                 Locomotive::Mounter.with_locale(locale) do
                   # get the string, text, file fields...
