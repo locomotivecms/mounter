@@ -10,34 +10,32 @@ module Locomotive
           # @return [ Array ] The un-ordered list of content types
           #
           def read
+
             self.items = Collection.new(self)
           end
 
-          def fetch_one slug
+          def all_slugs
+            raise 'TODO'
           end
 
-          def all_slugs
+          def fetch_one slug
+            content_type, entry_slug = get_content_type(slug.first), slug.last
+            entries[content_type][entry_slug]
           end
 
           protected
 
-          def fetch_from_filesystem
-            Dir.glob(File.join(self.root_dir, '*.yml')).each do |filepath|
-              self.items.data_path = filepath
-
-              # attributes = self.read_yaml(filepath)
-
-              content_type = self.get_content_type(File.basename(filepath, '.yml'))
-
-              # content_type.entries = FileSystemCollection.new do |_attributes, index|
-              #   this.add(content_type, _attributes, index)
-              # end
-
-              # content_type.entries.try(:clear) # TODO
-
-              # attributes.each_with_index do |_attributes, index|
-              #   self.add(content_type, _attributes, index)
-              # end
+          def entries
+            @entries ||= Hash.new do |hsh, content_type|
+              hsh[content_type] = {}.tap do |entries_hsh|
+                begin
+                  attributes = read_yaml File.join(self.root_dir, "#{content_type.slug}.yml")
+                  attributes.each_with_index do |_attributes, index|
+                    entry = build_entry(content_type, _attributes, index)
+                    entries_hsh[entry._slug] = entry
+                  end
+                rescue Errno::ENOENT; end
+              end
             end
           end
 
@@ -63,7 +61,7 @@ module Locomotive
           # @param [ Hash ] attributes The attributes of the content entry
           # @param [ Integer ] position The position of the entry in the list
           #
-          def add(content_type, attributes, position)
+          def build_entry(content_type, attributes, position)
             if attributes.is_a?(String)
               label, _attributes = attributes, {}
             else
@@ -80,14 +78,7 @@ module Locomotive
             end
 
             _attributes[:_position] = position
-
-            # build the content entry
-            entry = content_type.build_entry(_attributes)
-
-            # and store it
-            key = File.join(content_type.slug, entry._slug)
-
-            self.items[key] = entry
+            content_type.build_entry _attributes
           end
 
           # Return the directory where all the entries

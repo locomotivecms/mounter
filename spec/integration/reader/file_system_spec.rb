@@ -292,24 +292,22 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       describe 'a single content entry' do
 
-        before(:each) do
-          @content_entry = @mounting_point.content_entries['events/avogadros-number']
-        end
+        let(:content_entry) { @mounting_point.content_entries[['events','avogadros-number']] }
 
         it 'has a label' do
-          @content_entry._label.should == "Avogadro's Number"
+          content_entry._label.should == "Avogadro's Number"
         end
 
         it 'has a slug' do
-          @content_entry._slug.should == "avogadros-number"
+          content_entry._slug.should == "avogadros-number"
         end
 
         it 'can access dynamic field' do
-          @content_entry.city = 'Fort Collins'
+          content_entry.city = 'Fort Collins'
         end
 
         it 'can access casted value of a dynamic field' do
-          @content_entry.date = Date.parse('2012/06/11')
+          content_entry.date = Date.parse('2012/06/11')
         end
 
       end
@@ -317,7 +315,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a localized content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries['updates/update-number-1']
+          @content_entry = @mounting_point.content_entries[['updates','update-number-1']]
         end
 
         it 'has a label' do

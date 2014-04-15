@@ -7,11 +7,11 @@ module Locomotive
 
           def initialize(reader)
             @items = Hash.new { |hash, key| hash[key] = reader.fetch_one(key) }
-            @slugs = reader.all_slugs
+            @reader = reader
           end
 
           def all
-            @slugs.each { |slug| @items[slug] }
+            @reader.all_slugs.each { |slug| @items[slug] }
             @items
           end
 
@@ -20,7 +20,7 @@ module Locomotive
           end
 
           def size
-            @slugs.size
+            all.size
           end
 
           def [](slug)
