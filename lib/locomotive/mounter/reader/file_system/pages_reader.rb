@@ -140,7 +140,7 @@ module Locomotive
               # set the content type
               if content_type_slug = attributes.delete('content_type')
                 attributes['templatized']   = true
-                attributes['content_type']  = self.mounting_point.content_types.values.find { |ct| ct.slug == content_type_slug }
+                attributes['content_type']  = self.mounting_point.content_types[content_type_slug]
               end
 
               page.attributes = attributes
