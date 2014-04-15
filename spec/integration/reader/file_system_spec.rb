@@ -191,16 +191,16 @@ describe Locomotive::Mounter::Reader::FileSystem do
         #   @mounting_point = @reader.run!(path: @path)
         # end
 
-        it 'has 4 content types' do
+        it 'has 5 content types' do
           @mounting_point.content_types.size.should == 5
-          @mounting_point.content_types.keys.should == %w(bands events messages songs updates)
-          @mounting_point.content_types.values.map(&:slug).should == %w(bands events messages songs updates)
+          @mounting_point.content_types.keys.should match_array %w(bands events messages songs updates)
+          @mounting_point.content_types.values.map(&:slug).should match_array %w(bands events messages songs updates)
         end
 
         describe 'a single content type' do
 
           before(:each) do
-            @content_type = @mounting_point.content_types.values[1]
+            @content_type = @mounting_point.content_types['events']
           end
 
           it 'has basic properties: name, slug' do
