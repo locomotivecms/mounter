@@ -2,14 +2,23 @@ require 'spec_helper'
 
 describe Locomotive::Mounter::Reader::FileSystem do
 
-  before(:each) do
-    @reader = Locomotive::Mounter::Reader::FileSystem.instance
-  end
+  describe '#run!' do
+    let(:reader) { Locomotive::Mounter::Reader::FileSystem.instance }
+    subject { reader.run!(path: path) }
+    context 'if the path does not exist' do
+      let(:path) { nil }
+      it 'raises' do
+        expect {
+          subject
+        }.to raise_exception(Locomotive::Mounter::ReaderException, 'path is required and must exist')
+      end
+    end
 
-  it 'returns nil if the path does not exist' do
-    lambda {
-      @reader.run!
-    }.should raise_exception(Locomotive::Mounter::ReaderException, 'path is required and must exist')
+    context 'if the path exist' do
+      let(:path) { site_path }
+      it 'does not raise' do
+        expect { subject }.not_to raise_error
+      end
+    end
   end
-
 end

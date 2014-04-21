@@ -15,8 +15,13 @@ module Locomotive
           end
 
           def all_slugs
-            raise 'TODO'
+            [].tap do |slugs|
+              runner.mounting_point.content_types.each do |type|
+                slugs << entries[type].values.map { |entry| [type.slug, entry._slug] }.flatten
+              end
+            end
           end
+
 
           def fetch_one slug
             content_type, entry_slug = get_content_type(slug.first), slug.last
