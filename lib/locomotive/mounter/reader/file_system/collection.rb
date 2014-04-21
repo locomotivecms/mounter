@@ -23,6 +23,10 @@ module Locomotive
             all.size
           end
 
+          def each
+            yield all.values.each.next
+          end
+
           def [](slug)
             @items[slug]
           end
