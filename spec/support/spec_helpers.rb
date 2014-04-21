@@ -4,8 +4,8 @@ module SpecHelpers
     Locomotive::Mounter::EngineApi.delete('/current_site.json')
   end
 
-  def site_path
-    File.join(File.dirname(__FILE__), '..', 'fixtures', 'default')
+  def site_path(flavour = 'default')
+    File.join(File.dirname(__FILE__), '..', 'fixtures', flavour)
   end
 
   def credentials
@@ -36,6 +36,14 @@ module SpecHelpers
       delete_current_site
       writer.run!({ mounting_point: mounting_point, console: false, data: true, translations: false, force: true }.merge!(options).merge!(credentials))
     end
+  end
+
+  def stub_readers(reader, readers = nil)
+    klasses = (readers ||= []).insert(0, 'site').map do |name|
+      "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Reader".constantize
+    end
+
+    reader.stub(readers: klasses)
   end
 end
 

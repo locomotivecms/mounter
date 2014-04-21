@@ -397,12 +397,4 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
   end
 
-  def stub_readers(reader, readers = nil)
-    klasses = (readers ||= []).insert(0, 'site').map do |name|
-      "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Reader".constantize
-    end
-
-    reader.stub(readers: klasses)
-  end
-
 end
