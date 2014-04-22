@@ -286,8 +286,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
         @mounting_point = @reader.run!(path: @path)
       end
 
-      it 'has 23 entries for the 4 content types' do
-        @mounting_point.content_entries.size.should == 23
+      it 'has 29 entries for the 4 content types', focused: true  do
+        @mounting_point.content_entries.size.should == 29
       end
 
       describe 'a single content entry' do
