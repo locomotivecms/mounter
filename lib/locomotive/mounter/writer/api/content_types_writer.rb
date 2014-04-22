@@ -37,7 +37,7 @@ module Locomotive
             end
 
             # then update the others
-            self.content_types.values.each do |content_type|
+            self.content_types.each do |content_type|
               next unless done[content_type.slug].nil?
 
               self.update_content_type(content_type)
@@ -100,7 +100,7 @@ module Locomotive
           # @return [ Array ] The list of non persisted content types.
           #
           def not_persisted
-            self.content_types.values.find_all { |content_type| !content_type.persisted? }
+            self.content_types.find_all { |content_type| !content_type.persisted? }
           end
 
           # Enhance the content type with the information returned by an API call.

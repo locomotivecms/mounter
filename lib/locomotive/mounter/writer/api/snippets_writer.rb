@@ -25,7 +25,7 @@ module Locomotive
             self.each_locale do |locale|
               self.output_locale
 
-              self.snippets.values.each { |snippet| self.write_snippet(snippet) }
+              self.snippets.each { |snippet| self.write_snippet(snippet) }
             end
           end
 
