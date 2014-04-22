@@ -193,8 +193,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
         it 'has 5 content types' do
           @mounting_point.content_types.size.should eq 5
-          @mounting_point.content_types.all.keys.should match_array %w(bands events messages songs updates)
-          @mounting_point.content_types.all.values.map(&:slug).should match_array %w(bands events messages songs updates)
+#          @mounting_point.content_types.all.keys.should match_array %w(bands events messages songs updates)
+          @mounting_point.content_types.all.map(&:slug).should match_array %w(bands events messages songs updates)
         end
 
         describe 'a single content type' do
@@ -264,8 +264,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
         @mounting_point.snippets.size.should eq 3
 
-        @mounting_point.snippets.all.keys.sort.should eq %w(a-long-one header song)
-        @mounting_point.snippets.all.values.map(&:slug).sort.should eq %w(a-long-one header song)
+#        @mounting_point.snippets.all.keys.sort.should eq %w(a-long-one header song)
+        @mounting_point.snippets.all.map(&:slug).sort.should eq %w(a-long-one header song)
       end
 
       it 'localizes the template' do
@@ -286,8 +286,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
         @mounting_point = @reader.run!(path: @path)
       end
 
-      it 'has 26 entries for the 4 content types' do
-        @mounting_point.content_entries.size.should == 29
+      it 'has 23 entries for the 4 content types' do
+        @mounting_point.content_entries.size.should == 23
       end
 
       describe 'a single content entry' do

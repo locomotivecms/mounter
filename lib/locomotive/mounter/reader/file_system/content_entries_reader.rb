@@ -15,28 +15,28 @@ module Locomotive
           end
 
           def all_slugs
-            [].tap do |slugs|
-              runner.mounting_point.content_types.each do |type|
-                slugs << entries[type].values.map { |entry| [type.slug, entry._slug] }.flatten
-              end
+
+            @all_slugs ||= runner.mounting_point.content_types.all.inject([]) do |slugs, type|
+              slugs += entries[type.slug].values.map { |entry| [type.slug, entry._slug] }
+              slugs
             end
           end
 
 
           def fetch_one slug
-            content_type, entry_slug = get_content_type(slug.first), slug.last
+            content_type, entry_slug = slug.first, slug.last
             entries[content_type][entry_slug]
           end
 
           protected
 
           def entries
-            @entries ||= Hash.new do |hsh, content_type|
-              hsh[content_type] = {}.tap do |entries_hsh|
+            @entries ||= Hash.new do |hsh, type_slug|
+              hsh[type_slug] = {}.tap do |entries_hsh|
                 begin
-                  attributes = read_yaml File.join(self.root_dir, "#{content_type.slug}.yml")
+                  attributes = read_yaml File.join(self.root_dir, "#{type_slug}.yml")
                   attributes.each_with_index do |_attributes, index|
-                    entry = build_entry(content_type, _attributes, index)
+                    entry = build_entry(runner.mounting_point.content_types[type_slug], _attributes, index)
                     entries_hsh[entry._slug] = entry
                   end
                 rescue Errno::ENOENT; end
