@@ -10,7 +10,10 @@ module Locomotive
           # @return [ Array ] The un-ordered list of snippets
           #
           def read
-            self.items = Collection.new self
+            self.items = Locomotive::Mounter::Collection.new
+            all_slugs.each_with_object(items) do |slug, memo|
+              memo[slug] = fetch_one(slug)
+            end
           end
 
           # Returns a snippet from its slug.

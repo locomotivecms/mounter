@@ -1,20 +1,7 @@
 require 'spec_helper'
-require 'locomotive/mounter/reader/file_system/collection'
+require 'locomotive/mounter/collection'
 
-describe Locomotive::Mounter::Reader::FileSystem::Collection do
-
-  context 'fetching item' do
-    subject { Locomotive::Mounter::Reader::FileSystem::Collection.new(reader) }
-    let(:reader) do
-      double.tap do |reader|
-        allow(reader).to receive(:fetch_one).with(an_instance_of(String)) { |slug| "new_#{slug}" }
-      end
-    end
-
-    it "fetches non existing items" do
-      subject['test_slug'].should eq 'new_test_slug'
-    end
-  end
+describe Locomotive::Mounter::Collection do
 
   context 'filtering items' do
     let(:john) {
@@ -36,8 +23,7 @@ describe Locomotive::Mounter::Reader::FileSystem::Collection do
         'jane-doe' => jane
       }
     end
-    subject { Locomotive::Mounter::Reader::FileSystem::Collection.new(nil) }
-    before { subject.stub(all: base_items.values) }
+    subject { Locomotive::Mounter::Collection.new(base_items) }
 
     context '#where' do
       it 'simple key value pair' do

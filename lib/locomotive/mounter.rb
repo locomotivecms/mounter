@@ -41,6 +41,7 @@ require 'locomotive/mounter/utils/yaml_front_matters_template'
 # Main
 require 'locomotive/mounter/version'
 require 'locomotive/mounter/exceptions'
+require 'locomotive/mounter/collection'
 require 'locomotive/mounter/config'
 require 'locomotive/mounter/fields'
 require 'locomotive/mounter/mounting_point'

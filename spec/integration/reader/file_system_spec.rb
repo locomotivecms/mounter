@@ -263,7 +263,6 @@ describe Locomotive::Mounter::Reader::FileSystem do
       it 'has 3 snippets' do
 
         @mounting_point.snippets.size.should eq 3
-
 #        @mounting_point.snippets.all.keys.sort.should eq %w(a-long-one header song)
         @mounting_point.snippets.all.map(&:slug).sort.should eq %w(a-long-one header song)
       end
@@ -286,13 +285,13 @@ describe Locomotive::Mounter::Reader::FileSystem do
         @mounting_point = @reader.run!(path: @path)
       end
 
-      it 'has 29 entries for the 4 content types', focused: true  do
+      it 'has 29 entries for the 4 content types' do
         @mounting_point.content_entries.size.should == 29
       end
 
       describe 'a single content entry' do
 
-        let(:content_entry) { @mounting_point.content_entries[['events','avogadros-number']] }
+        let(:content_entry) { @mounting_point.content_entries['events/avogadros-number'] }
 
         it 'has a label' do
           content_entry._label.should == "Avogadro's Number"
@@ -315,7 +314,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a localized content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries[['updates','update-number-1']]
+          @content_entry = @mounting_point.content_entries['updates/update-number-1']
         end
 
         it 'has a label' do

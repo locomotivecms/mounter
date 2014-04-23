@@ -10,18 +10,19 @@ module Locomotive
           # @return [ Array ] The un-ordered list of content types
           #
           def read
-
-            self.items = Collection.new self
-
+            self.items = Locomotive::Mounter::Collection.new
+            fetch_from_filesystem
+            items
           end
 
+          protected
 
-          def read_one slug
-            self.read_yaml File.join(self.root_dir, "#{slug}.yml")
-          end
+          def fetch_from_filesystem
+            Dir.glob(File.join(self.root_dir, '*.yml')).each do |filepath|
+              attributes = self.read_yaml(filepath)
 
-          def all_slugs
-            Dir.glob(File.join(self.root_dir, '*.yml')).map(&method(:filepath_to_slug))
+              self.add(attributes)
+            end
           end
 
           # Add a new content type in the global hash of content types.
@@ -31,9 +32,11 @@ module Locomotive
           #
           # @return [ Object ] A newly created content type or the existing one
           #
-          def fetch_one(slug)
+          def add(attributes)
+            slug = attributes['slug']
+
             # TODO: raise an error if no fields
-            attributes = read_one(slug)
+
             attributes.delete('fields').each_with_index do |_attributes, index|
               hash = { name: _attributes.keys.first, position: index }.merge(_attributes.values.first)
 
@@ -46,10 +49,12 @@ module Locomotive
 
             attributes[:mounting_point] = self.mounting_point
 
-            Locomotive::Mounter::Models::ContentType.new(attributes)
-          end
+            unless self.items.key?(slug)
+              self.items[slug] = Locomotive::Mounter::Models::ContentType.new(attributes)
+            end
 
-          protected
+            self.items[slug]
+          end
 
           # Take the list of options described in the YAML file
           # and convert it into a nice array of hashes

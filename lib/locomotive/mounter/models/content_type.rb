@@ -25,7 +25,7 @@ module Locomotive
         set_callback :initialize, :after, :assign_mounting_point_to_fields
 
         ## other accessors ##
-        attr_accessor :klass_name, :group_by_field_id, :entries
+        attr_accessor :klass_name, :group_by_field_id
 
         ## aliases ##
         alias_method :group_by_field_name, :group_by
@@ -90,8 +90,12 @@ module Locomotive
             # force the slug to be defined from its label and in all the locales
             entry.send :set_slug
 
-            # (self.entries ||= []) << entry
+            self.entries[entry._slug]= entry
           end
+        end
+
+        def entries
+          @entries ||= Locomotive::Mounter::Collection.new
         end
 
         # Tell if the content type owns a field which defines
@@ -137,7 +141,7 @@ module Locomotive
         # @return [ Object ] The content entry if it exists or nil
         #
         def find_entry(id)
-          (self.entries || []).detect { |entry| [entry._permalink, entry._label].include?(id) }
+          self.entries.all.detect { |entry| [entry._permalink, entry._label].include?(id) }
         end
 
         # Find all the entries whose their _permalink or _label is among the ids
