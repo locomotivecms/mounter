@@ -8,7 +8,7 @@ module Locomotive
           attr_accessor :pages
 
           def initialize(runner)
-            self.pages = {}
+            self.pages = Locomotive::Mounter::Collection.new
             super
           end
 
@@ -41,7 +41,7 @@ module Locomotive
           #
           def pages_to_list
             # sort by fullpath first
-            list = self.pages.values.sort { |a, b| a.fullpath <=> b.fullpath }
+            list = self.pages.order_by('fullpath ASC')
             # sort finally by depth
             list.sort { |a, b| a.depth <=> b.depth }
           end

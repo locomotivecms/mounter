@@ -43,6 +43,7 @@ module Locomotive
 
       def where(conditions)
         _conditions = conditions.clone.delete_if { |k, _| %w(order_by per_page page).include?(k) }
+        _order = conditions['order_by']
 
         # build the chains of conditions
         conditions_hash = _conditions.map { |name, value| Condition.new(name, value) }
@@ -60,7 +61,7 @@ module Locomotive
 
           accepted
         end
-        Collection.new(_entries)
+        order_by(_entries, _order)
       end
 
       def each
@@ -73,6 +74,22 @@ module Locomotive
       def []=(slug, item)
         @items[slug] = item
       end
+
+      private
+
+      def order_by(entries, order_pairs)
+        return entries if order_pairs.blank?
+
+        name, direction = order_pairs.split.map(&:to_sym)
+
+        if direction == :asc || direction.nil?
+          entries.sort { |a, b| a.send(name) <=> b.send(name) }
+        else
+          entries.sort { |a, b| b.send(name) <=> a.send(name) }
+        end
+
+      end
+
     end
 
     class Condition

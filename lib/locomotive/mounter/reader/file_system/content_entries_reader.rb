@@ -77,7 +77,9 @@ module Locomotive
             # and store it
             key = File.join(content_type.slug, entry._slug)
 
-            self.items[key] = entry
+            content_type.entries[key]= entry
+
+            self.items[key]= entry
           end
 
           # Return the directory where all the entries

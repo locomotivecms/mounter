@@ -89,8 +89,6 @@ module Locomotive
 
             # force the slug to be defined from its label and in all the locales
             entry.send :set_slug
-
-            self.entries[entry._slug]= entry
           end
         end
 
