@@ -1,17 +1,53 @@
 module Locomotive
   module Mounter
     class Collection
+      attr_reader :items
 
       def initialize(base_items = nil)
         @items = base_items || {}
       end
 
-      def all
-        @items.values
+      def method_missing(method, *args)
+        Query.new(self).__send__(method, *args)
+      end
+
+      def clear
+        @items = {}
+      end
+
+      def []=(slug, item)
+        @items[slug] = item
       end
 
       def find_all(&block)
         all.find_all(&block)
+      end
+
+    end
+
+    class Query
+
+      def initialize(collection)
+        @collection = collection
+        @conditions = []
+        @orders = nil
+        @limit = nil
+        @offset = 0
+      end
+
+      def where(conditions)
+        @conditions += build_conditions(conditions)
+        self
+      end
+
+
+      def order_by(order_pairs)
+        @orders = order_pairs.split.map(&:to_sym) unless order_pairs.blank?
+        self
+      end
+
+      def all
+        filtered
       end
 
       def any
@@ -31,28 +67,44 @@ module Locomotive
       end
 
       def key? key
-        @items.key? key
+        all.key? key
       end
 
-      def clear
-        @items = {}
+      def ==(other)
+        if other.kind_of? Array
+          all == other
+        else
+          super
+        end
       end
 
       alias :length :size
       alias :count :size
 
-      def where(conditions)
+      def each
+        yield all.each.next
+      end
+
+      def [](slug)
+        filtered[slug]
+      end
+
+      private
+
+      def build_conditions(conditions)
         _conditions = conditions.clone.delete_if { |k, _| %w(order_by per_page page).include?(k) }
         _order = conditions['order_by']
 
         # build the chains of conditions
-        conditions_hash = _conditions.map { |name, value| Condition.new(name, value) }
+        _conditions.map { |name, value| Condition.new(name, value) }
+      end
 
+      def filtered
         # get only the entries matching ALL the conditions
-        _entries = find_all do |content|
+        _entries = @collection.items.values.find_all do |content|
           accepted = true
 
-          conditions_hash.each do |_condition|
+          @conditions.each do |_condition|
             unless _condition.matches?(content)
               accepted = false
               break # no to go further
@@ -61,37 +113,21 @@ module Locomotive
 
           accepted
         end
-        order_by(_entries, _order)
+        ordered(_entries)
       end
 
-      def each
-        yield all.each.next
-      end
+      def ordered(entries)
+        return entries if @orders.blank?
 
-      def [](slug)
-        @items[slug]
-      end
-      def []=(slug, item)
-        @items[slug] = item
-      end
-
-      private
-
-      def order_by(entries, order_pairs)
-        return entries if order_pairs.blank?
-
-        name, direction = order_pairs.split.map(&:to_sym)
-
-        if direction == :asc || direction.nil?
+        name, direction  = @orders.first, (@orders.last || :asc)
+        if direction == :asc
           entries.sort { |a, b| a.send(name) <=> b.send(name) }
         else
           entries.sort { |a, b| b.send(name) <=> a.send(name) }
         end
-
       end
 
     end
-
     class Condition
 
       OPERATORS = %w(all gt gte in lt lte ne nin size)

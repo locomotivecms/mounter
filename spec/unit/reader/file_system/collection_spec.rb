@@ -63,11 +63,11 @@ describe Locomotive::Mounter::Collection do
       end
 
       it 'ordering' do
-        subject.where('order_by' => 'firstname asc').first.should eq alex
+        subject.order_by('firstname asc').first.should eq alex
       end
 
       it 'ordering DESC' do
-        subject.where('order_by' => 'firstname desc').first.should eq john
+        subject.order_by('firstname desc').first.should eq john
       end
     end
   end
