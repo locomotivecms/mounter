@@ -27,7 +27,7 @@ module Locomotive
 
               attributes.each_with_index do |_attributes, index|
                 self.add(content_type, _attributes, index)
-              end
+              end unless attributes == false
             end
           end
 
