@@ -255,6 +255,8 @@ module Locomotive
 
               if self.data? || self.new_pages.include?(page._id)
                 params[:editable_elements] = (page.editable_elements || []).map(&:to_params)
+              else
+                params.delete(:editable_elements)
               end
 
               # editable elements
