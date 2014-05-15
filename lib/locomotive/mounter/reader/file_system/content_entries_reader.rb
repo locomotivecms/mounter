@@ -57,7 +57,7 @@ module Locomotive
             if attributes.is_a?(String)
               label, _attributes = attributes, {}
             else
-              label, _attributes = attributes.keys.first, attributes.values.first
+              label, _attributes = attributes.keys.first, attributes.values.first || {}
             end
 
             # check if the label_field is localized or not
