@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'tilt',                            '1.4.1'
   s.add_dependency 'sprockets',                       '~> 2.0'
   s.add_dependency 'sprockets-sass'
-  s.add_dependency 'haml',                            '~> 4.0.3'
+  s.add_dependency 'haml',                            '~> 4.0.5'
   s.add_dependency 'sass',                            '~> 3.2.12'
   s.add_dependency 'compass',                         '~> 0.12.2'
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
@@ -32,11 +32,11 @@ Gem::Specification.new do |s|
   s.add_dependency 'tzinfo',                          '~> 0.3.29'
   s.add_dependency 'chronic',                         '~> 0.10.2'
 
-  s.add_dependency 'activesupport',                   '~> 3.2.15'
+  s.add_dependency 'activesupport',                   '~> 3.2.18'
   s.add_dependency 'i18n',                            '~> 0.6.0'
   s.add_dependency 'stringex',                        '~> 2.0.3'
 
-  s.add_dependency 'multi_json',                      '~> 1.7.3'
+  s.add_dependency 'multi_json',                      '~> 1.8.4' # 1.7.3
   s.add_dependency 'httmultiparty',                   '0.3.10'
   s.add_dependency 'json',                            '~> 1.8.0'
   s.add_dependency 'mime-types',                      '~> 1.19'
