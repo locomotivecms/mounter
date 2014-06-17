@@ -1,5 +1,4 @@
 #!/usr/bin/env gem build
-# encoding: utf-8
 
 lib = File.expand_path('../lib/', __FILE__)
 $:.unshift lib unless $:.include?(lib)
@@ -20,8 +19,8 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = 'locomotivecms_mounter'
 
   s.add_dependency 'tilt',                           '1.4.1'
-  s.add_dependency 'sprockets',                      '~> 2.0'
-  s.add_dependency 'sprockets-sass'
+  s.add_dependency 'sprockets',                      '~> 2.12.1'
+  s.add_dependency 'sprockets-sass',                 '~> 1.1.0'
   s.add_dependency 'haml',                           '~> 4.0.5'
   s.add_dependency 'sass',                           '>= 3.2'
   s.add_dependency 'compass',                        '>= 0.12'
