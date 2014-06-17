@@ -23,7 +23,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'sprockets',                       '~> 2.0'
   s.add_dependency 'sprockets-sass'
   s.add_dependency 'haml',                            '~> 4.0.5'
-  s.add_dependency 'sass',                            '~> 3.2.12'
+  s.add_dependency 'sass',                            '>= 3.2'
   s.add_dependency 'compass',                         '~> 0.12.2'
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
   s.add_dependency 'less',                            '~> 2.2.1'
