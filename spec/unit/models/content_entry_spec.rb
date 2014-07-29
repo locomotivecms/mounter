@@ -3,21 +3,21 @@ require 'spec_helper'
 describe Locomotive::Mounter::Models::ContentEntry do
 
   let(:content_type) do
-    content_type = mock
-    content_field = stub('TitleField', name: :title, type: :string, is_relationship?: false, localized: false)
-    content_type.stubs(:label_field).returns(content_field)
-    content_type.stubs(:label_field_name).returns(:title)
-    content_type.stubs(:find_field).with(:title).returns(content_field)
-    content_type.stubs(:label_to_slug).returns('base')
-    content_type.stubs(:find_entry).returns(nil)
-    content_type.stubs(:mounting_point).returns(mounting_point)
+    content_type = double
+    content_field = double('TitleField', name: :title, type: :string, is_relationship?: false, localized: false)
+    content_type.stub(label_field: content_field)
+    content_type.stub(label_field_name: :title)
+    content_type.stub(:find_field).with(:title).and_return(content_field)
+    content_type.stub(label_to_slug: 'base')
+    content_type.stub(find_entry: nil)
+    content_type.stub(mounting_point: mounting_point)
 
     content_type
   end
 
   let(:content_entry) { build_content_entry }
 
-  let(:mounting_point) { stub('MountingPoint', default_locale: :en, locales: [:en, :fr]) }
+  let(:mounting_point) { double('MountingPoint', default_locale: :en, locales: [:en, :fr]) }
 
   describe 'setting default attributes' do
 
@@ -32,8 +32,8 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
     it 'sets a localized attribute' do
       content_entry.seo_title = 'Hello world'
-      content_entry.seo_title.should == 'Hello world'
-      content_entry.seo_title_translations[:en].should == 'Hello world'
+      content_entry.seo_title.should eq 'Hello world'
+      content_entry.seo_title_translations[:en].should eq 'Hello world'
     end
 
   end
@@ -47,7 +47,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
     end
 
     it 'returns false if it is not a dynamic field' do
-      content_type.stubs(:find_field).with(:text).returns(nil)
+      content_type.stub(:find_field).with(:text).and_return(nil)
       content_entry.is_dynamic_field?(:text).should be_false
     end
 
@@ -57,11 +57,11 @@ describe Locomotive::Mounter::Models::ContentEntry do
 
     describe 'when defined' do
 
-      let(:content_field) { stub(name: :text, type: :text, is_relationship?: false, localized: true, required: true) }
+      let(:content_field) { double(name: :text, type: :text, is_relationship?: false, localized: true, required: true) }
 
       before(:each) do
-        content_type.stubs(:find_field).with(:text).returns(content_field)
-        content_type.stubs(:fields).returns([content_field])
+        content_type.stub(:find_field).with(:text).and_return(content_field)
+        content_type.stub(fields: [content_field])
       end
 
       it 'returns nil if not set' do
@@ -79,7 +79,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
       end
 
       it 'returns the value of the label bound to a dynamic field' do
-        content_entry._label.should == nil
+        content_entry._label.should be_nil
         content_entry.title = 'Hello world'
         content_entry._label.should == 'Hello world'
       end
@@ -116,9 +116,9 @@ describe Locomotive::Mounter::Models::ContentEntry do
         end
 
         it 'is does not use a localized value for relationship kind field' do
-          (target_content_type = mock).stubs(:find_entry).with('john-doe').returns('john-doe')
-          _field = stub('AuthorField', name: :author, type: :belongs_to, 'is_relationship?' => true, klass: target_content_type)
-          content_type.expects(:find_field).with(:author).at_least(1).returns(_field)
+          (target_content_type = double).stub(:find_entry).with('john-doe').and_return('john-doe')
+          _field = double('AuthorField', name: :author, type: :belongs_to, 'is_relationship?' => true, klass: target_content_type)
+          content_type.should_receive(:find_field).with(:author).at_least(1).and_return(_field)
 
           content_entry.author = 'john-doe'
           Locomotive::Mounter.with_locale(:fr) do
@@ -144,7 +144,7 @@ describe Locomotive::Mounter::Models::ContentEntry do
           it 'can loop over the dynamic fields' do
             attributes = {}
             content_entry.each_dynamic_field { |f, v| attributes[f.name.to_s] = v }
-            attributes.should == { 'title' => 'Hello world', 'text' => 'Lorem ipsum' }
+            attributes.should eq 'title' => 'Hello world', 'text' => 'Lorem ipsum'
 
             Locomotive::Mounter.with_locale(:fr) do
               content_entry.each_dynamic_field { |f, v| attributes[f.name.to_s] = v }

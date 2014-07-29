@@ -51,12 +51,12 @@ describe Locomotive::Mounter::Models::ContentType do
     end
 
     it 'generates an indexed but unique slug' do
-      content_type.stubs(:entries).returns([mock_content_entry('hello-world')])
+      content_type.stub(entries: [mock_content_entry('hello-world')])
       content_type.send(:label_to_slug, 'hello-world').should == 'hello-world-1'
     end
 
     it 'increments correctly the index' do
-      content_type.stubs(:entries).returns([mock_content_entry('hello-world'), mock_content_entry('hello-world-1')])
+      content_type.stub(entries: [mock_content_entry('hello-world'), mock_content_entry('hello-world-1')])
       content_type.send(:label_to_slug, 'hello-world').should == 'hello-world-2'
     end
 
@@ -67,9 +67,9 @@ describe Locomotive::Mounter::Models::ContentType do
   end
 
   def mock_content_entry(permalink)
-    mock.tap do |entry|
-      entry.stubs(_permalink: permalink)
-      entry.stubs(_label: permalink)
+    double.tap do |entry|
+      entry.stub(_permalink: permalink)
+      entry.stub(_label: permalink)
     end
   end
 

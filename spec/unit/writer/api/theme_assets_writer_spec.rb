@@ -86,7 +86,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
       writer.remote_base_url = 'http://cdn.locomotivehosting.com/sites/4c2330706f40d50ae2000005/theme'
       writer.checksums = {}
       writer.cached_compiled_assets = {}
-      writer.stubs(:sprockets).returns(sprockets)
+      writer.stub(sprockets: sprockets)
     end
   end
 
