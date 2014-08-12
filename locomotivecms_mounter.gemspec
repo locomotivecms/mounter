@@ -33,7 +33,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'chronic',                         '~> 0.10.2'
 
   s.add_dependency 'activesupport',                   '~> 3.2.18'
-  s.add_dependency 'i18n',                            '~> 0.6.0'
+  s.add_dependency 'i18n',                            '~> 0.6.6'
   s.add_dependency 'stringex',                        '~> 2.0.3'
 
   s.add_dependency 'multi_json',                      '~> 1.8.4'
