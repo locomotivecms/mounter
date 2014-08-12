@@ -1,3 +1,5 @@
+require 'yui/compressor'
+
 module Locomotive
   module Mounter
     module Extensions
@@ -17,6 +19,10 @@ module Locomotive
 
           @@path  = site_path
           @@env   = ::Sprockets::Environment.new.tap do |env|
+            # minify javascripts and stylesheets
+            env.js_compressor  = YUI::JavaScriptCompressor.new
+            env.css_compressor = YUI::CssCompressor.new
+
             %w(fonts stylesheets javascripts).each do |name|
               env.append_path File.join(site_path, 'public', name)
             end

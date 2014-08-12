@@ -34,7 +34,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
       let(:folder) { 'javascripts' }
 
       it 'returns false if same file' do
-        writer.checksums[theme_asset._id] = 'd022b03c74a7b7386072c775861b39e4'
+        writer.checksums[theme_asset._id] = 'd05d02ecb331afbe373db79b0a88ef36'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
@@ -51,7 +51,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
       let(:folder) { 'javascripts' }
 
       it 'returns false if same file' do
-        writer.checksums[theme_asset._id] = 'c9c70afc24b19736b0969182f2d04dd3'
+        writer.checksums[theme_asset._id] = 'dafcc4a2f059c53e47bf8d7ea4dd1e11'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 
@@ -68,7 +68,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
       let(:folder) { 'stylesheets' }
 
       it 'returns false if same file' do
-        writer.checksums[theme_asset._id] = 'b471ce408b8dc334187d09dfa99d49d2'
+        writer.checksums[theme_asset._id] = '6535b5a8a298e6ae9cacb0737943bee2'
         writer.send(:theme_asset_changed?, theme_asset).should be_false
       end
 

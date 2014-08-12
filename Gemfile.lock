@@ -7,7 +7,7 @@ PATH
       chronic (~> 0.10.2)
       coffee-script (~> 2.2.0)
       colorize (~> 0.5.8)
-      compass (~> 0.12.2)
+      compass (~> 0.12.6)
       haml (~> 4.0.5)
       httmultiparty (= 0.3.10)
       i18n (~> 0.6.0)
@@ -16,19 +16,19 @@ PATH
       logger
       mime-types (~> 1.19)
       multi_json (~> 1.8.4)
-      sass (~> 3.2.12)
-      sprockets (~> 2.0)
-      sprockets-sass
+      sass (~> 3.2.19)
+      sprockets-sass (~> 1.2.0)
       stringex (~> 2.0.3)
       tilt (= 1.4.1)
       tzinfo (~> 0.3.29)
+      yui-compressor (~> 0.12.0)
       zip (~> 2.0.2)
 
 GEM
   remote: http://rubygems.org/
   specs:
     RedCloth (4.2.9)
-    activesupport (3.2.18)
+    activesupport (3.2.19)
       i18n (~> 0.6, >= 0.6.4)
       multi_json (~> 1.0)
     addressable (2.3.5)
@@ -37,17 +37,17 @@ GEM
     coffee-script (2.2.0)
       coffee-script-source
       execjs
-    coffee-script-source (1.7.0)
+    coffee-script-source (1.7.1)
     colorize (0.5.8)
     commonjs (0.2.7)
-    compass (0.12.6)
+    compass (0.12.7)
       chunky_png (~> 1.2)
       fssm (>= 0.2.7)
       sass (~> 3.2.19)
     crack (0.4.1)
       safe_yaml (~> 0.9.0)
     diff-lcs (1.2.5)
-    execjs (2.0.2)
+    execjs (2.2.1)
     fssm (0.2.10)
     haml (4.0.5)
       tilt
@@ -58,7 +58,7 @@ GEM
     httparty (0.13.1)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
-    i18n (0.6.9)
+    i18n (0.6.11)
     json (1.8.1)
     less (2.2.2)
       commonjs (~> 0.2.6)
@@ -89,7 +89,7 @@ GEM
       multi_json (~> 1.0)
       rack (~> 1.0)
       tilt (~> 1.1, != 1.3.0)
-    sprockets-sass (1.1.0)
+    sprockets-sass (1.2.0)
       sprockets (~> 2.0)
       tilt (~> 1.1)
     stringex (2.0.11)
@@ -97,11 +97,12 @@ GEM
       libv8 (~> 3.11.8.12)
       ref
     tilt (1.4.1)
-    tzinfo (0.3.39)
+    tzinfo (0.3.41)
     vcr (2.4.0)
     webmock (1.9.3)
       addressable (>= 2.2.7)
       crack (>= 0.3.2)
+    yui-compressor (0.12.0)
     zip (2.0.2)
 
 PLATFORMS

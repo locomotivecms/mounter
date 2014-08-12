@@ -20,11 +20,11 @@ Gem::Specification.new do |s|
   s.rubyforge_project         = 'locomotivecms_mounter'
 
   s.add_dependency 'tilt',                            '1.4.1'
-  s.add_dependency 'sprockets',                       '~> 2.0'
-  s.add_dependency 'sprockets-sass'
+  s.add_dependency 'sprockets-sass',                  '~> 1.2.0'
+  s.add_dependency 'yui-compressor',                  '~> 0.12.0'
   s.add_dependency 'haml',                            '~> 4.0.5'
-  s.add_dependency 'sass',                            '~> 3.2.12'
-  s.add_dependency 'compass',                         '~> 0.12.2'
+  s.add_dependency 'sass',                            '~> 3.2.19'
+  s.add_dependency 'compass',                         '~> 0.12.6'
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
   s.add_dependency 'less',                            '~> 2.2.1'
   s.add_dependency 'RedCloth',                        '~> 4.2.3'
@@ -36,7 +36,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'i18n',                            '~> 0.6.0'
   s.add_dependency 'stringex',                        '~> 2.0.3'
 
-  s.add_dependency 'multi_json',                      '~> 1.8.4' # 1.7.3
+  s.add_dependency 'multi_json',                      '~> 1.8.4'
   s.add_dependency 'httmultiparty',                   '0.3.10'
   s.add_dependency 'json',                            '~> 1.8.0'
   s.add_dependency 'mime-types',                      '~> 1.19'
