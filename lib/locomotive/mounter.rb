@@ -5,7 +5,7 @@ Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
 # Remove I18n warnings
 require 'i18n'
-I18n.config.enforce_available_locales = true
+I18n.config.enforce_available_locales = false
 
 require 'logger'
 require 'colorize'
