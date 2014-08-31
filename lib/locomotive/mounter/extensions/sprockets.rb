@@ -34,11 +34,11 @@ module Locomotive
         def self.asset_paths site_path
           paths = Array.new
           %w(fonts stylesheets javascripts).each do |asset_type|
+            paths << File.join(site_path, 'public', asset_type)
             rubygem_paths.each do |gem_path|
               gem_assets_path = File.join(gem_path, 'vendor/assets', asset_type)
               paths << gem_assets_path if File.directory?(gem_assets_path)
             end
-            paths << File.join(site_path, 'public', asset_type)
           end
           return paths
         end
