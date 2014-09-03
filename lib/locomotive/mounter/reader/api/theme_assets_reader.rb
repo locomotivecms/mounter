@@ -19,6 +19,7 @@ module Locomotive
 
             self.items = self.get(:theme_assets).map do |attributes|
               url = attributes.delete('url')
+              url.gsub!(/^\/\//, "https://")
 
               attributes['uri'] = URI(url =~ /^https?:\/\// ? url : "#{self.base_uri_with_scheme}#{url}")
 
