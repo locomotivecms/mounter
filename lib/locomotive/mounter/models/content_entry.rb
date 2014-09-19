@@ -47,6 +47,8 @@ module Locomotive
 
           if field.type == :belongs_to
             value.try(:_label)
+          elsif field.type == :file
+            value['url']
           else
             value
           end

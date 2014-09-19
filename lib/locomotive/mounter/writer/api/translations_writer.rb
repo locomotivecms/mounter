@@ -23,9 +23,9 @@ module Locomotive
             self.translations.each do |key, translation|
               self.output_resource_op translation
 
-              success = translation.persisted? ? self.update_translation(translation) : self.create_translation(translation)
+              status = translation.persisted? ? self.update_translation(translation) : self.create_translation(translation)
 
-              self.output_resource_op_status translation, success ? :success : :error
+              self.output_resource_op_status translation, status
               self.flush_log_buffer
             end
           end
@@ -48,7 +48,7 @@ module Locomotive
 
             translation._id = response['id'] if response
 
-            !response.nil?
+            !response.nil? ? :success : :error
           end
 
           # Update a translation by calling the API.
@@ -60,10 +60,14 @@ module Locomotive
           def update_translation(translation)
             params = self.buffer_log { translation.to_params }
 
-            # make a call to the API for the update
-            response = self.put :translations, translation._id, params
+            if self.data?
+              # make a call to the API for the update
+              response = self.put :translations, translation._id, params
 
-            !response.nil?
+              !response.nil? ? :success : :error
+            else
+              :skipped
+            end
           end
 
           # Shortcut to get all the local translations.

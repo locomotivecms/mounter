@@ -19,7 +19,7 @@ module Locomotive
         end
 
         def to_s
-          "Translation {#{self.key}: #{self.values}}"
+          "Translation #{self.key} (#{self.values.keys.join(', ')})"
         end
 
       end
