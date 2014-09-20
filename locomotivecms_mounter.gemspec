@@ -16,6 +16,8 @@ Gem::Specification.new do |s|
   s.summary     = 'LocomotiveCMS Mounter'
   s.description = 'Mount any LocomotiveCMS site, from a template on the filesystem, a zip file or even an online engine'
 
+  s.files         = `git ls-files`.split("\n").delete_if { |n| n.start_with?('spec') }
+  s.require_path = 'lib'
   s.required_rubygems_version = '>= 1.3.6'
   s.rubyforge_project         = 'locomotivecms_mounter'
 
@@ -24,7 +26,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'yui-compressor',                  '~> 0.12.0'
   s.add_dependency 'haml',                            '~> 4.0.5'
   s.add_dependency 'sass',                            '~> 3.4.4'
-  s.add_dependency 'compass',                         '>= 0.12'
+  s.add_dependency 'compass',                         '>= 0.12', '~> 1.0.1'
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
   s.add_dependency 'less',                            '~> 2.2.1'
   s.add_dependency 'RedCloth',                        '~> 4.2.3'
@@ -57,9 +59,5 @@ Gem::Specification.new do |s|
   # s.add_development_dependency 'bson_ext'
   # s.add_development_dependency 'typhoeus', '0.5.0'
   # s.add_development_dependency 'faraday' #,             '1.9.3'
-
-  s.require_path = 'lib'
-
-  s.files        = Dir.glob('lib/**/*')
 end
 
