@@ -181,6 +181,14 @@ module Locomotive
 
         alias :attributes= :write_attributes
 
+        def [](name)
+          if is_dynamic_field?(name)
+            self.dynamic_getter(name.to_sym)
+          else
+            super
+          end
+        end
+
         # The magic of dynamic fields happens within this method.
         # It calls the getter/setter of a dynamic field if it is one of them.
         def method_missing(name, *args, &block)

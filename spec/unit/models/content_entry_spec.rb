@@ -84,6 +84,11 @@ describe Locomotive::Mounter::Models::ContentEntry do
         content_entry._label.should == 'Hello world'
       end
 
+      it 'uses the Hash syntax to get the value of an attribute' do
+        content_entry.text = 'Hash syntax'
+        content_entry[:text].should eq 'Hash syntax'
+      end
+
       describe 'and localized' do
 
         before(:each) do
