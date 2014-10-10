@@ -1,4 +1,5 @@
 require 'yui/compressor'
+require 'json'
 
 module Locomotive
   module Mounter
@@ -25,6 +26,14 @@ module Locomotive
 
             %w(fonts stylesheets javascripts).each do |name|
               env.append_path File.join(site_path, 'public', name)
+            end
+            bower_file_path = "#{site_path}/.bowerrc"
+
+            if File.exist?(bower_file_path)
+              bower_config = JSON.parse(IO.read("#{site_path}/.bowerrc"))
+              bower_folder = bower_config["directory"]
+
+              env.append_path File.join(site_path, bower_folder) if bower_folder
             end
           end
         end
