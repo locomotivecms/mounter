@@ -37,7 +37,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'pages' do
 
       it 'creates all the pages' do
-        Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 14
+        Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 17
       end
 
     end

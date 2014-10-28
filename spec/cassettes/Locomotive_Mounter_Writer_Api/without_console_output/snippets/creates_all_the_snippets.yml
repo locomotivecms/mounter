@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:58 GMT
+      - Tue, 28 Oct 2014 11:42:56 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,28 +23,28 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"baf6687dfb04cfa514f57faaab3cff5b"'
+      - '"3cbaa4fd914f33e2e982d2988af568ec"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=ZXlcFQtZYi-6xXReA5_oPSkp25E; domain=.example.com; path=/;
+      - _locomotive_session=v5DKFv92Mlc7lgOB2n-htzFoq7w; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 2c0fec775a193a42700ef9c4d925189a
+      - 9e8620a274fcf0c9c4d1f868aa7e74b3
       X-Runtime:
-      - '0.047678'
+      - '0.034422'
     body:
       encoding: UTF-8
-      string: '[{"id":"535fb323247580fcb40000fe","_id":"535fb323247580fcb40000fe","created_at":"2014-04-29T16:11:47+02:00","updated_at":"29
-        Apr 16:11","name":"A-long-one","slug":"a-long-one","template":"<p>A long one
-        indeed</p>\n"},{"id":"535fb323247580fcb40000ff","_id":"535fb323247580fcb40000ff","created_at":"2014-04-29T16:11:47+02:00","updated_at":"29
-        Apr 16:11","name":"Header","slug":"header","template":"<h1>{{ site.name }}</h1>\n"},{"id":"535fb323247580fcb40000fd","_id":"535fb323247580fcb40000fd","created_at":"2014-04-29T16:11:47+02:00","updated_at":"29
-        Apr 16:11","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
+      string: '[{"id":"544f81364fe0634fa90003d6","_id":"544f81364fe0634fa90003d6","created_at":"2014-10-28T12:42:46+01:00","updated_at":"28
+        Oct 12:42","name":"A-long-one","slug":"a-long-one","template":"<p>A long one
+        indeed</p>\n"},{"id":"544f81364fe0634fa90003d7","_id":"544f81364fe0634fa90003d7","created_at":"2014-10-28T12:42:46+01:00","updated_at":"28
+        Oct 12:42","name":"Header","slug":"header","template":"<h1>{{ site.name }}</h1>\n"},{"id":"544f81364fe0634fa90003d5","_id":"544f81364fe0634fa90003d5","created_at":"2014-10-28T12:42:46+01:00","updated_at":"28
+        Oct 12:42","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
         song._permalink }}\">{{ song.title }}</a></h3>\n  <div class=\"cover\">{{
         song.cover.url | image_tag }}</div>\n  <div class=\"info\">\n    {{ song.short_description
         }}\n    <p class=\"listen\">\n      <a href=\"{{ song.audio_url }}\">&rarr;
         Listen ({{ song.duration }} min)</a>\n    </p>\n    <p>\u00e9couter en Francais</p>\n  </div>\n  <div
         class=\"clear\"></div>\n</li>"}]'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:58 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:56 GMT
 recorded_with: VCR 2.4.0

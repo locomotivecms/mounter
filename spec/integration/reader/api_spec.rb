@@ -79,22 +79,22 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
         @song_template  = @mounting_point.pages['songs/content_type_template']
       end
 
-      it 'has 13 pages' do
-        @mounting_point.pages.size.should == 14
+      it 'has 17 pages' do
+        @mounting_point.pages.size.should == 17
       end
 
       describe '#tree' do
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 8
+          @index.children.size.should == 9
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs', 'layouts']
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives', 'Songs']
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives', 'Songs', 'Layouts']
         end
 
         it 'also includes nested children' do
@@ -112,7 +112,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
         it 'localizes titles' do
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil]
+            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil, nil]
           end
         end
 

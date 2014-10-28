@@ -13,7 +13,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:23 GMT
       Status:
       - 200 OK
       Connection:
@@ -29,17 +29,17 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=jBBpdJ3nJCbOwoH3SUJc9VFbXtQ; domain=.example.com; path=/;
+      - _locomotive_session=N14I5nj4NEmTXL87q095feXgzIQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - b4b926d175b53d4f96491339ec655ed8
+      - aa825f6c3ab48550b1097149b9e2779b
       X-Runtime:
-      - '0.029128'
+      - '0.031122'
     body:
       encoding: UTF-8
       string: '{"token":"sdgp9LsjJPGxDSpi6RAs"}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:23 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs
@@ -53,7 +53,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,24 +63,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"61b42379018bf165f74e0c07ec460876"'
+      - '"41a9e59d48585940e09554e27a95d752"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=jd29uqvGDmX0-CR0AvPia54TFSQ; domain=.example.com; path=/;
+      - _locomotive_session=vmvl1uCzSrRMlRD8X8xr1W6hTkc; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 77c56c2d68425ff3d6847cb52c1fbe3b
+      - bfeb55f855f06c2e13ae9868867f5bdb
       X-Runtime:
-      - '0.035329'
+      - '0.029747'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb400007d","_id":"535fb303247580fcb400007d","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:15+02:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"535fb303247580fcb400007e","_id":"535fb303247580fcb400007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
@@ -94,7 +94,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,24 +104,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"cc9fa50145a42ab2b07df42cf9d27db0"'
+      - '"907482c7c9e2090516dc6d94c78ed93e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=nwWWDMXNcGkQuHT8k_wvkmyVPQw; domain=.example.com; path=/;
+      - _locomotive_session=up9exDpF9TKElucbeJP_5zIAwlI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - aa4cf6bae5364d093942edc20a63c563
+      - 48ee44672bd874527c273028b4a139de
       X-Runtime:
-      - '0.026040'
+      - '0.030420'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb400007d","_id":"535fb303247580fcb400007d","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:15+02:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"535fb303247580fcb400007e","_id":"535fb303247580fcb400007e","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
@@ -135,7 +135,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,24 +145,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"61b42379018bf165f74e0c07ec460876"'
+      - '"41a9e59d48585940e09554e27a95d752"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=70KaSb4547p40FJIWbqVmzrfFLU; domain=.example.com; path=/;
+      - _locomotive_session=-6tAdUgOldb8StBu1-5PiJdXb54; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - c1ec47045936dfb49979eb87a982f25a
+      - 6528fc1d67439c563592c9fa48144ce0
       X-Runtime:
-      - '0.028956'
+      - '0.038214'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb400007d","_id":"535fb303247580fcb400007d","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:15+02:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"535fb303247580fcb400007e","_id":"535fb303247580fcb400007e","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=sdgp9LsjJPGxDSpi6RAs
@@ -176,7 +176,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -186,21 +186,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"4b937179e07eff0f8614629b3f889f70"'
+      - '"8be320f6ee975a7e74dcf7e0b3d754d1"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=pn4C__JIZy-X2FBgP3wJURwyYvI; domain=.example.com; path=/;
+      - _locomotive_session=TB1GqEh5nmp9kzMB9MLB5XmiL50; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - a2ec04e63f400f18c03159843411a9fd
+      - 3021dbdabb1ac8fce6739d9bdbcb4eff
       X-Runtime:
-      - '0.035756'
+      - '0.039674'
     body:
       encoding: UTF-8
-      string: '[{"id":"535fb307247580fcb40000c3","_id":"535fb307247580fcb40000c3","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MzVmYjMwMzI0NzU4MGZjYjQwMDAwN2QvYXNzZXRzLzUzNWZiMzA3MjQ3NTgwZmNiNDAwMDBjMy9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg?sha=defcf69f","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","content_type_text":"image"}]'
+      string: '[{"id":"544f811b4fe0634fa900039b","_id":"544f811b4fe0634fa900039b","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81NDRmODExNzRmZTA2MzRmYTkwMDAzNTIvYXNzZXRzLzU0NGY4MTFiNGZlMDYzNGZhOTAwMDM5Yi9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg?sha=a22c127ed99fcadc","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=sdgp9LsjJPGxDSpi6RAs
@@ -214,7 +214,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:23 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -224,42 +224,42 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"8cf0e69da6233431d781b13b889913fe"'
+      - '"537a4a2b3d420ab8159d67f21ffa7509"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=FRTiLYC_D3hBCZMYiZUjRGGFC2M; domain=.example.com; path=/;
+      - _locomotive_session=rurNfq0lc7VrK8LrliLoWqri6sc; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 534dca9a8ad275610ec03bda1aa71baa
+      - 04aa717eeb09eb602a43406993e2e1f9
       X-Runtime:
-      - '0.063893'
+      - '0.068405'
     body:
       encoding: UTF-8
-      string: '[{"id":"535fb303247580fcb4000084","_id":"535fb303247580fcb4000084","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:16+02:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"535fb303247580fcb4000085","_id":"535fb303247580fcb4000085","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the band","position":0},{"id":"535fb303247580fcb4000086","_id":"535fb303247580fcb4000086","name":"leader","label":"Fullname
-        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"535fb303247580fcb4000087","_id":"535fb303247580fcb4000087","name":"kind","label":"Music
-        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"535fb303247580fcb4000088","name":"grunge","position":0,"id":"535fb303247580fcb4000088"},{"_id":"535fb303247580fcb4000089","name":"rock","position":1,"id":"535fb303247580fcb4000089"},{"_id":"535fb303247580fcb400008a","name":"country","position":2,"id":"535fb303247580fcb400008a"}],"raw_select_options":[{"id":"535fb303247580fcb4000088","name":{"en":"grunge"},"position":2},{"id":"535fb303247580fcb4000089","name":{"en":"rock"},"position":2},{"id":"535fb303247580fcb400008a","name":{"en":"country"},"position":2}]},{"id":"535fb304247580fcb40000a4","_id":"535fb304247580fcb40000a4","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry535fb303247580fcb4000095","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
-        of bands","label_field_name":"name","order_by":"535fb303247580fcb4000085","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"535fb303247580fcb400008b","_id":"535fb303247580fcb400008b","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:15+02:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"535fb303247580fcb400008c","_id":"535fb303247580fcb400008c","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the place","position":0},{"id":"535fb303247580fcb400008d","_id":"535fb303247580fcb400008d","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the event","position":1},{"id":"535fb303247580fcb400008e","_id":"535fb303247580fcb400008e","name":"city","label":"City
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"535fb303247580fcb400008f","_id":"535fb303247580fcb400008f","name":"state","label":"State
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"535fb303247580fcb4000090","_id":"535fb303247580fcb4000090","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
-        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"535fb303247580fcb4000091","_id":"535fb303247580fcb4000091","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:15+02:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"535fb303247580fcb4000092","_id":"535fb303247580fcb4000092","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
-        name","position":0},{"id":"535fb303247580fcb4000093","_id":"535fb303247580fcb4000093","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"535fb303247580fcb4000094","_id":"535fb303247580fcb4000094","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
+      string: '[{"id":"544f81174fe0634fa9000359","_id":"544f81174fe0634fa9000359","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"544f81174fe0634fa900035a","_id":"544f81174fe0634fa900035a","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the band","position":0},{"id":"544f81174fe0634fa900035b","_id":"544f81174fe0634fa900035b","name":"leader","label":"Fullname
+        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"544f81174fe0634fa900035c","_id":"544f81174fe0634fa900035c","name":"kind","label":"Music
+        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"544f81174fe0634fa900035d","name":"grunge","position":0,"id":"544f81174fe0634fa900035d"},{"_id":"544f81174fe0634fa900035e","name":"rock","position":1,"id":"544f81174fe0634fa900035e"},{"_id":"544f81174fe0634fa900035f","name":"country","position":2,"id":"544f81174fe0634fa900035f"}],"raw_select_options":[{"id":"544f81174fe0634fa900035d","name":{"en":"grunge"},"position":2},{"id":"544f81174fe0634fa900035e","name":{"en":"rock"},"position":2},{"id":"544f81174fe0634fa900035f","name":{"en":"country"},"position":2}]},{"id":"544f81184fe0634fa9000379","_id":"544f81184fe0634fa9000379","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry544f81174fe0634fa900036a","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
+        of bands","label_field_name":"name","order_by":"544f81174fe0634fa900035a","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa9000360","_id":"544f81174fe0634fa9000360","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"544f81174fe0634fa9000361","_id":"544f81174fe0634fa9000361","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the place","position":0},{"id":"544f81174fe0634fa9000362","_id":"544f81174fe0634fa9000362","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the event","position":1},{"id":"544f81174fe0634fa9000363","_id":"544f81174fe0634fa9000363","name":"city","label":"City
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"544f81174fe0634fa9000364","_id":"544f81174fe0634fa9000364","name":"state","label":"State
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"544f81174fe0634fa9000365","_id":"544f81174fe0634fa9000365","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
+        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa9000366","_id":"544f81174fe0634fa9000366","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"544f81174fe0634fa9000367","_id":"544f81174fe0634fa9000367","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
+        name","position":0},{"id":"544f81174fe0634fa9000368","_id":"544f81174fe0634fa9000368","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"544f81174fe0634fa9000369","_id":"544f81174fe0634fa9000369","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
         message","position":2,"text_formatting":""}],"description":"Messages posted
-        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"535fb303247580fcb4000095","_id":"535fb303247580fcb4000095","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:16+02:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"535fb303247580fcb4000096","_id":"535fb303247580fcb4000096","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
-        of your song","position":0},{"id":"535fb304247580fcb40000a5","_id":"535fb304247580fcb40000a5","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry535fb303247580fcb4000084","ui_enabled":true,"class_slug":"bands"},{"id":"535fb303247580fcb4000097","_id":"535fb303247580fcb4000097","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"535fb303247580fcb4000098","_id":"535fb303247580fcb4000098","name":"short_description","label":"Short
-        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"535fb303247580fcb4000099","_id":"535fb303247580fcb4000099","name":"audio_url","label":"Audio
+        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa900036a","_id":"544f81174fe0634fa900036a","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"544f81174fe0634fa900036b","_id":"544f81174fe0634fa900036b","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
+        of your song","position":0},{"id":"544f81184fe0634fa900037a","_id":"544f81184fe0634fa900037a","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry544f81174fe0634fa9000359","ui_enabled":true,"class_slug":"bands"},{"id":"544f81174fe0634fa900036c","_id":"544f81174fe0634fa900036c","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"544f81174fe0634fa900036d","_id":"544f81174fe0634fa900036d","name":"short_description","label":"Short
+        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"544f81174fe0634fa900036e","_id":"544f81174fe0634fa900036e","name":"audio_url","label":"Audio
         url","type":"string","required":false,"localized":false,"unique":false,"hint":"Url
-        to a service like Blip for instance","position":4},{"id":"535fb303247580fcb400009a","_id":"535fb303247580fcb400009a","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
-        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"535fb303247580fcb400009b","_id":"535fb303247580fcb400009b","created_at":"2014-04-29T16:11:16+02:00","updated_at":"2014-04-29T16:11:16+02:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"535fb304247580fcb400009c","_id":"535fb304247580fcb400009c","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
-        displayed in the website","position":0},{"id":"535fb304247580fcb400009d","_id":"535fb304247580fcb400009d","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
-        displayed in the home page","position":1,"text_formatting":"html"},{"id":"535fb304247580fcb400009e","_id":"535fb304247580fcb400009e","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
-        a category","position":2,"select_options":[{"_id":"535fb304247580fcb40000a0","name":"General","position":0,"id":"535fb304247580fcb40000a0"},{"_id":"535fb304247580fcb40000a1","name":"Gigs","position":1,"id":"535fb304247580fcb40000a1"},{"_id":"535fb304247580fcb40000a2","name":"Bands","position":2,"id":"535fb304247580fcb40000a2"},{"_id":"535fb304247580fcb40000a3","name":"Albums","position":3,"id":"535fb304247580fcb40000a3"}],"raw_select_options":[{"id":"535fb304247580fcb40000a0","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"535fb304247580fcb40000a1","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"535fb304247580fcb40000a2","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"535fb304247580fcb40000a3","name":{"en":"Albums"},"position":2}]},{"id":"535fb304247580fcb400009f","_id":"535fb304247580fcb400009f","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"535fb304247580fcb400009f","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
+        to a service like Blip for instance","position":4},{"id":"544f81174fe0634fa900036f","_id":"544f81174fe0634fa900036f","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
+        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81184fe0634fa9000370","_id":"544f81184fe0634fa9000370","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"544f81184fe0634fa9000371","_id":"544f81184fe0634fa9000371","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
+        displayed in the website","position":0},{"id":"544f81184fe0634fa9000372","_id":"544f81184fe0634fa9000372","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
+        displayed in the home page","position":1,"text_formatting":"html"},{"id":"544f81184fe0634fa9000373","_id":"544f81184fe0634fa9000373","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
+        a category","position":2,"select_options":[{"_id":"544f81184fe0634fa9000375","name":"General","position":0,"id":"544f81184fe0634fa9000375"},{"_id":"544f81184fe0634fa9000376","name":"Gigs","position":1,"id":"544f81184fe0634fa9000376"},{"_id":"544f81184fe0634fa9000377","name":"Bands","position":2,"id":"544f81184fe0634fa9000377"},{"_id":"544f81184fe0634fa9000378","name":"Albums","position":3,"id":"544f81184fe0634fa9000378"}],"raw_select_options":[{"id":"544f81184fe0634fa9000375","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"544f81184fe0634fa9000376","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"544f81184fe0634fa9000377","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"544f81184fe0634fa9000378","name":{"en":"Albums"},"position":2}]},{"id":"544f81184fe0634fa9000374","_id":"544f81184fe0634fa9000374","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"544f81184fe0634fa9000374","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:23 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
     uri: http://sample.example.com:3000/locomotive/api/pages.json?auth_token=sdgp9LsjJPGxDSpi6RAs
@@ -273,7 +273,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -283,19 +283,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"33a2b2e2ff57ef9f9cdf1f58d2cd37f5"'
+      - '"af44172155aa42dd054a9eea99f022a9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=8EtQYHOxswrF6fwnPx2ShhrQBjQ; domain=.example.com; path=/;
+      - _locomotive_session=IfpAabRPP01n0jqitKR4U6_ug8o; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - a8fb40121ad5be5f3a586ae9da6274af
+      - 860223ae9e0cff0a3a277f32f93efc3a
       X-Runtime:
-      - '0.107156'
+      - '0.185991'
     body:
       encoding: UTF-8
-      string: '[{"id":"535fb303247580fcb400007f","_id":"535fb303247580fcb400007f","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Home
+      string: '[{"id":"544f81174fe0634fa9000354","_id":"544f81174fe0634fa9000354","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:20+01:00","title":"Home
         page","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
@@ -312,7 +312,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        (602px by 397px)'' %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -357,7 +357,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -385,15 +385,15 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"535fb307247580fcb40000c4","_id":"535fb307247580fcb40000c4","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"544f811b4fe0634fa900039c","_id":"544f811b4fe0634fa900039c","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c5","_id":"535fb307247580fcb40000c5","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa900039d","_id":"544f811b4fe0634fa900039d","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000c6","_id":"535fb307247580fcb40000c6","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"About
-        Us","slug":"about-us","parent_id":"535fb303247580fcb400007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa900039e","_id":"544f811b4fe0634fa900039e","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"About
+        Us","slug":"about-us","parent_id":"544f81174fe0634fa9000354","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -429,10 +429,10 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000c7","_id":"535fb307247580fcb40000c7","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa900039f","_id":"544f811b4fe0634fa900039f","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c8","_id":"535fb307247580fcb40000c8","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000c9","_id":"535fb307247580fcb40000c9","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a0","_id":"544f811b4fe0634fa90003a0","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a1","_id":"544f811b4fe0634fa90003a1","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -448,11 +448,11 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000ca","_id":"535fb307247580fcb40000ca","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"John-doe","slug":"john-doe","parent_id":"535fb307247580fcb40000c6","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"535fb307247580fcb40000cb","_id":"535fb307247580fcb40000cb","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003a2","_id":"544f811b4fe0634fa90003a2","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"John-doe","slug":"john-doe","parent_id":"544f811b4fe0634fa900039e","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/john-doe","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003a3","_id":"544f811b4fe0634fa90003a3","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000cc","_id":"535fb307247580fcb40000cc","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000cd","_id":"535fb307247580fcb40000cd","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a4","_id":"544f811b4fe0634fa90003a4","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a5","_id":"544f811b4fe0634fa90003a5","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -468,7 +468,7 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000d2","_id":"535fb307247580fcb40000d2","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Music","slug":"music","parent_id":"535fb303247580fcb400007f","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003aa","_id":"544f811b4fe0634fa90003aa","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","title":"Music","slug":"music","parent_id":"544f81174fe0634fa9000354","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"music","localized_fullpaths":{"en":"music","fr":"fr/music","nb":"nb/music"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''introduction''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -495,25 +495,25 @@ http_interactions:
         0 %}\n    {% include &#x27;song&#x27; with song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n&lt;div
         class=&#x27;unit size1of2&#x27;&gt;\n  &lt;ul class=&#x27;songs&#x27;&gt;\n    {%
         for song in contents.songs offset: 4 %}\n    {% include &#x27;song&#x27; with
-        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000d3","_id":"535fb307247580fcb40000d3","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"Page
+        song %}\n    {% endfor %}\n  &lt;/ul&gt;\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003ab","_id":"544f811b4fe0634fa90003ab","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000d4","_id":"535fb307247580fcb40000d4","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003ac","_id":"544f811b4fe0634fa90003ac","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000d5","_id":"535fb307247580fcb40000d5","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003ad","_id":"544f811b4fe0634fa90003ad","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"introduction","block":"content","hint":null,"priority":0,"label":"Introduction","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc. Quisque mauris diam, tincidunt in commodo sed, feugiat
         eu nibh. Nulla erat nunc, dapibus vel eleifend et, egestas sed quam. Vestibulum
         mollis eros at dolor vulputate vel sollicitudin enim convallis. Etiam velit
-        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000ce","_id":"535fb307247580fcb40000ce","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Jane-doe","slug":"jane-doe","parent_id":"535fb307247580fcb40000c6","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"535fb307247580fcb40000cf","_id":"535fb307247580fcb40000cf","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"Page
+        nisi, rutrum vel sagittis facilisis, pretium id lorem.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003a6","_id":"544f811b4fe0634fa90003a6","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Jane-doe","slug":"jane-doe","parent_id":"544f811b4fe0634fa900039e","position":2,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"about-us/jane-doe","localized_fullpaths":{"en":"about-us/jane-doe","fr":"fr/a-notre-sujet/jane-doe","nb":"nb/om-oss/jane-doe"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003a7","_id":"544f811b4fe0634fa90003a7","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000d0","_id":"535fb307247580fcb40000d0","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
-        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000d1","_id":"535fb307247580fcb40000d1","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a8","_id":"544f811b4fe0634fa90003a8","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        us</h2><p>Lorem ipsum...</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a9","_id":"544f811b4fe0634fa90003a9","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -529,8 +529,8 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000d6","_id":"535fb307247580fcb40000d6","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Store","slug":"store","parent_id":"535fb303247580fcb400007f","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"535fb307247580fcb40000d7","_id":"535fb307247580fcb40000d7","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Contact
-        Us","slug":"contact","parent_id":"535fb303247580fcb400007f","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003ae","_id":"544f811b4fe0634fa90003ae","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Store","slug":"store","parent_id":"544f81174fe0634fa9000354","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/en/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"store","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"544f811b4fe0634fa90003af","_id":"544f811b4fe0634fa90003af","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Contact
+        Us","slug":"contact","parent_id":"544f81174fe0634fa9000354","position":4,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"contact","localized_fullpaths":{"en":"contact","fr":"fr/contact","nb":"nb/contact"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends ''parent'' %}\n{% block content %}\n<div class=''text''>\n  {% editable_long_text
         ''text'' %}\n  <p>\n    Ut imperdiet velit eu metus semper tristique. Vivamus
         risus nisi, tincidunt et euismod a, auctor pretium eros. Vestibulum sed magna
@@ -595,14 +595,14 @@ http_interactions:
         {\n          alert(&quot;Thank you ! Your message have been received&quot;);\n        },
         &quot;json&quot;).error(function(response) {\n          alert(&quot;We are
         sorry but we were unable to treat your message. Please try later.&quot;);\n        });\n    });\n  });\n&lt;/script&gt;\n{%
-        endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000d8","_id":"535fb307247580fcb40000d8","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"Page
+        endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003b0","_id":"544f811b4fe0634fa90003b0","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000d9","_id":"535fb307247580fcb40000d9","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003b1","_id":"544f811b4fe0634fa90003b1","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000da","_id":"535fb307247580fcb40000da","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Ut
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003b2","_id":"544f811b4fe0634fa90003b2","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"text","block":"content","hint":null,"priority":0,"label":"Text","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Ut
         imperdiet velit eu metus semper tristique. Vivamus risus nisi, tincidunt et
         euismod a, auctor pretium eros. Vestibulum sed magna et velit pulvinar euismod.
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean sed velit
@@ -611,7 +611,7 @@ http_interactions:
         mauris orci ullamcorper lectus, nec vulputate turpis mauris sed augue. Maecenas
         faucibus ultricies nisl, non ullamcorper justo bibendum nec. Duis vitae mauris
         condimentum risus commodo mattis vel sed libero. Fusce diam elit, porta id
-        vestibulum ut, aliquet mattis neque.\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000db","_id":"535fb307247580fcb40000db","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Events","slug":"events","parent_id":"535fb303247580fcb400007f","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
+        vestibulum ut, aliquet mattis neque.\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003b3","_id":"544f811b4fe0634fa90003b3","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Events","slug":"events","parent_id":"544f81174fe0634fa9000354","position":5,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"events","localized_fullpaths":{"en":"events","fr":"fr/events","nb":"nb/events"},"depth":1,"translated_in":["en"],"raw_template":"{%
         extends parent %}\n{% block content %}\n<p>Thank you {{ message.name }} !</p>\n<div
         class=''unit size2of3'' id=''events''>\n  <h2>Upcoming events</h2>\n  <ul
         class=''list''>\n    {% for event in contents.events %}\n    <li>\n      <em>{{
@@ -659,14 +659,14 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan\n  &lt;/p&gt;\n  {% endeditable_long_text
-        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000dc","_id":"535fb307247580fcb40000dc","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"Page
+        %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003b4","_id":"544f811b4fe0634fa90003b4","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000dd","_id":"535fb307247580fcb40000dd","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003b5","_id":"544f811b4fe0634fa90003b5","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000de","_id":"535fb307247580fcb40000de","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:19+02:00","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Lorem
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003b6","_id":"544f811b4fe0634fa90003b6","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","slug":"sidebar","block":"content","hint":null,"priority":0,"label":"Sidebar","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n    Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -682,44 +682,61 @@ http_interactions:
         eu suscipit velit varius. Sed ornare eleifend sem, vitae pharetra dolor sodales
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
-        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000df","_id":"535fb307247580fcb40000df","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Lorem
+        vestibulum. Vestibulum tincidunt pulvinar accumsan\n  </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003b7","_id":"544f811b4fe0634fa90003b7","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Lorem
         ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
         incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"535fb303247580fcb400007f","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
-        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"535fb303247580fcb4000080","_id":"535fb303247580fcb4000080","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Page
+        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo","slug":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","parent_id":"544f81174fe0634fa9000354","position":6,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","localized_fullpaths":{"en":"lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","fr":"fr/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua","nb":"nb/lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua"},"depth":1,"translated_in":["en"],"raw_template":"Content
+        of the very long page","escaped_raw_template":"Content of the very long page","editable_elements":[]},{"id":"544f81174fe0634fa9000355","_id":"544f81174fe0634fa9000355","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Page
         not found","slug":"404","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends index %}\n{% block content %}\n<p class=''error''>page not found</p>\n{%
         endblock %}\n","escaped_raw_template":"{% extends index %}\n{% block content
         %}\n&lt;p class=&#x27;error&#x27;&gt;page not found&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"535fb308247580fcb40000e6","_id":"535fb308247580fcb40000e6","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"Page
+        %}\n","editable_elements":[{"id":"544f811c4fe0634fa90003be","_id":"544f811c4fe0634fa90003be","created_at":"2014-10-28T12:42:20+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb308247580fcb40000e7","_id":"535fb308247580fcb40000e7","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811c4fe0634fa90003bf","_id":"544f811c4fe0634fa90003bf","created_at":"2014-10-28T12:42:20+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000e0","_id":"535fb307247580fcb40000e0","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Archives","slug":"archives","parent_id":"535fb303247580fcb400007f","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"535fb308247580fcb40000e3","_id":"535fb308247580fcb40000e3","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"A
-        song template","slug":"content_type_template","parent_id":"535fb308247580fcb40000e2","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811b4fe0634fa90003b8","_id":"544f811b4fe0634fa90003b8","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Archives","slug":"archives","parent_id":"544f81174fe0634fa9000354","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives","localized_fullpaths":{"en":"archives","fr":"fr/archives","nb":"nb/archives"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"544f811b4fe0634fa90003b9","_id":"544f811b4fe0634fa90003b9","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"News","slug":"news","parent_id":"544f811b4fe0634fa90003b8","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends parent %}\n{% block content %}\n<p>News Archives. Lorem ipsum....</p>\n{%
+        endblock %}\n","escaped_raw_template":"{% extends parent %}\n{% block content
+        %}\n&lt;p&gt;News Archives. Lorem ipsum....&lt;/p&gt;\n{% endblock %}\n","editable_elements":[]},{"id":"544f811a4fe0634fa900039a","_id":"544f811a4fe0634fa900039a","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Layout
+        with 2 columns","slug":"columns","parent_id":"544f811a4fe0634fa9000398","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"layouts/columns","localized_fullpaths":{"en":"layouts/columns","fr":"fr/layouts/columns","nb":"nb/layouts/columns"},"depth":2,"translated_in":["en"],"raw_template":"{%
+        extends layouts/default %}\n{% block main %}\n<div class=''sidebar''>\n  {%
+        block sidebar %}\n  {% endblock %}\n</div>\n<div class=''content''>\n  {%
+        block content %}\n  {% endblock %}\n</div>\n{% endblock %}\n","escaped_raw_template":"{%
+        extends layouts/default %}\n{% block main %}\n&lt;div class=&#x27;sidebar&#x27;&gt;\n  {%
+        block sidebar %}\n  {% endblock %}\n&lt;/div&gt;\n&lt;div class=&#x27;content&#x27;&gt;\n  {%
+        block content %}\n  {% endblock %}\n&lt;/div&gt;\n{% endblock %}\n","editable_elements":[]},{"id":"544f811c4fe0634fa90003bb","_id":"544f811c4fe0634fa90003bb","created_at":"2014-10-28T12:42:20+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"A
+        song template","slug":"content_type_template","parent_id":"544f811b4fe0634fa90003ba","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":true,"templatized_from_parent":false,"target_klass_slug":"songs","fullpath":"songs/content_type_template","localized_fullpaths":{"en":"songs/content_type_template","fr":"fr/songs/content_type_template","nb":"nb/songs/content_type_template"},"depth":2,"translated_in":["en"],"raw_template":"{%
         extends ''index'' %}\n{% block content %}\n<h3>{{ song.title }}</h3>\n<p>{{
         song.short_description }}</p>\n{% endblock %}\n","escaped_raw_template":"{%
         extends &#x27;index&#x27; %}\n{% block content %}\n&lt;h3&gt;{{ song.title
         }}&lt;/h3&gt;\n&lt;p&gt;{{ song.short_description }}&lt;/p&gt;\n{% endblock
-        %}\n","editable_elements":[{"id":"535fb308247580fcb40000e4","_id":"535fb308247580fcb40000e4","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+        %}\n","editable_elements":[{"id":"544f811c4fe0634fa90003bc","_id":"544f811c4fe0634fa90003bc","created_at":"2014-10-28T12:42:20+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb308247580fcb40000e5","_id":"535fb308247580fcb40000e5","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811c4fe0634fa90003bd","_id":"544f811c4fe0634fa90003bd","created_at":"2014-10-28T12:42:20+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
-        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"535fb307247580fcb40000e1","_id":"535fb307247580fcb40000e1","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"News","slug":"news","parent_id":"535fb307247580fcb40000e0","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"archives/news","localized_fullpaths":{"en":"archives/news","fr":"fr/archives/news","nb":"nb/archives/news"},"depth":2,"translated_in":["en"],"raw_template":"{%
-        extends parent %}\n{% block content %}\n<p>News Archives. Lorem ipsum....</p>\n{%
-        endblock %}\n","escaped_raw_template":"{% extends parent %}\n{% block content
-        %}\n&lt;p&gt;News Archives. Lorem ipsum....&lt;/p&gt;\n{% endblock %}\n","editable_elements":[]},{"id":"535fb308247580fcb40000e2","_id":"535fb308247580fcb40000e2","created_at":"2014-04-29T16:11:20+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Songs","slug":"songs","parent_id":"535fb303247580fcb400007f","position":106,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
+        more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]},{"id":"544f811a4fe0634fa9000399","_id":"544f811a4fe0634fa9000399","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Default
+        layout","slug":"default","parent_id":"544f811a4fe0634fa9000398","position":101,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"layouts/default","localized_fullpaths":{"en":"layouts/default","fr":"fr/layouts/default","nb":"nb/layouts/default"},"depth":2,"translated_in":["en"],"raw_template":"<!DOCTYPE
+        html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
+        site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
+        content=''{{ site.meta_keywords }}'' name=''keywords''>\n  </head>\n  <body>\n    {%
+        block main %}\n    {% endblock %}\n  </body>\n</html>\n","escaped_raw_template":"&lt;!DOCTYPE
+        html&gt;\n&lt;html lang=&#x27;en&#x27;&gt;\n  &lt;head&gt;\n    &lt;meta charset=&#x27;utf-8&#x27;&gt;\n    &lt;title&gt;{{
+        site.name }}&lt;/title&gt;\n    &lt;meta content=&#x27;{{ site.meta_description
+        }}&#x27; name=&#x27;description&#x27;&gt;\n    &lt;meta content=&#x27;{{ site.meta_keywords
+        }}&#x27; name=&#x27;keywords&#x27;&gt;\n  &lt;/head&gt;\n  &lt;body&gt;\n    {%
+        block main %}\n    {% endblock %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[]},{"id":"544f811b4fe0634fa90003ba","_id":"544f811b4fe0634fa90003ba","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Songs","slug":"songs","parent_id":"544f81174fe0634fa9000354","position":102,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"songs","localized_fullpaths":{"en":"songs","fr":"fr/songs","nb":"nb/songs"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]},{"id":"544f811a4fe0634fa9000398","_id":"544f811a4fe0634fa9000398","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Layouts","slug":"layouts","parent_id":"544f81174fe0634fa9000354","position":104,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"layouts","localized_fullpaths":{"en":"layouts","fr":"fr/layouts","nb":"nb/layouts"},"depth":1,"translated_in":["en"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}]'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb303247580fcb400007f.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f81174fe0634fa9000354.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -730,7 +747,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -740,19 +757,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"222ba8b645ada159ae85201e5f68a50c"'
+      - '"d478c80855e9b3ab3a263fb3dca27038"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=QkdRfTqLM4NSYDkhm39qOoELJSg; domain=.example.com; path=/;
+      - _locomotive_session=Hy1-oDelQMdU8vAoPFCRE2-2e8A; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - d08cd56174846f1cf7f6a3d03893cfb7
+      - ee9d1b7c37a46f83baf42d1add0d8f0b
       X-Runtime:
-      - '0.036236'
+      - '0.045047'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb400007f","_id":"535fb303247580fcb400007f","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Page
+      string: '{"id":"544f81174fe0634fa9000354","_id":"544f81174fe0634fa9000354","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:20+01:00","title":"Page
         d''accueil","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
@@ -769,7 +786,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        (602px by 397px)'' %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -814,7 +831,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -842,19 +859,19 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"535fb307247580fcb40000c4","_id":"535fb307247580fcb40000c4","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"544f811b4fe0634fa900039c","_id":"544f811b4fe0634fa900039c","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c5","_id":"535fb307247580fcb40000c5","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa900039d","_id":"544f811b4fe0634fa900039d","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
         more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb303247580fcb400007f.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f81174fe0634fa9000354.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -865,7 +882,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -875,19 +892,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"ebfc2a4e3e4832832d33e65283633456"'
+      - '"c92d8dff8cefaa5d65f5b4674f2c4afe"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=fuIDITCNujmZSevRKr_Uxyw8r6c; domain=.example.com; path=/;
+      - _locomotive_session=qwaBDgqPWvYMv2hx2B9otQVWugU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e3a83b390f4da3b48a8b73f6da5eaa40
+      - ee6f4a4f4604e4745e3df5529e2a847d
       X-Runtime:
-      - '0.038370'
+      - '0.040484'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb400007f","_id":"535fb303247580fcb400007f","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Startside","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
+      string: '{"id":"544f81174fe0634fa9000354","_id":"544f81174fe0634fa9000354","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:20+01:00","title":"Startside","slug":"index","position":0,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"index","localized_fullpaths":{"en":"","fr":"fr","nb":"nb"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"<!DOCTYPE
         html>\n<html lang=''en''>\n  <head>\n    <meta charset=''utf-8''>\n    <title>{{
         site.name }}</title>\n    <meta content=''{{ site.meta_description }}'' name=''description''>\n    <meta
         content=''{{ site.meta_keywords }}'' name=''keywords''>\n    <!-- Le HTML5
@@ -903,7 +920,7 @@ http_interactions:
         exclude: ''events'' %}\n        </div>\n        <div class=''clear''></div>\n      </div>\n      <div
         id=''banner''>\n        {% block banner %}\n        <div class=''photo''>\n          <img
         src=\"{% editable_file ''Page image'', hint: ''Top banner image in each page
-        (602px by 397px)'' %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        (602px by 397px)'' %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}\">\n        </div>\n        <div class=''text''>\n          {%
         editable_long_text ''pitch'' %}\n          <h2>About Us</h2>\n          <p>\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -948,7 +965,7 @@ http_interactions:
         class=&#x27;clear&#x27;&gt;&lt;/div&gt;\n      &lt;/div&gt;\n      &lt;div
         id=&#x27;banner&#x27;&gt;\n        {% block banner %}\n        &lt;div class=&#x27;photo&#x27;&gt;\n          &lt;img
         src=&quot;{% editable_file &#x27;Page image&#x27;, hint: &#x27;Top banner
-        image in each page (602px by 397px)&#x27; %}/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg{%
+        image in each page (602px by 397px)&#x27; %}/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg{%
         endeditable_file %}&quot;&gt;\n        &lt;/div&gt;\n        &lt;div class=&#x27;text&#x27;&gt;\n          {%
         editable_long_text &#x27;pitch&#x27; %}\n          &lt;h2&gt;About Us&lt;/h2&gt;\n          &lt;p&gt;\n            Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse vitae egestas
@@ -976,19 +993,19 @@ http_interactions:
         Designed by &lt;a href=&quot;http://www.sachagreif.com&quot;&gt;Sacha Greif&lt;/a&gt;.\n        &lt;/p&gt;\n        &lt;p&gt;\n          All
         photos are licensed under Creative Commons. (see original ones &lt;a href=&#x27;http://www.flickr.com/photos/38687875@N00/3391588262/&#x27;&gt;here&lt;/a&gt;
         or &lt;a href=&#x27;http://www.flickr.com/photos/cool_dry_place/55454498/&#x27;&gt;here&lt;/a&gt;).\n        &lt;/p&gt;\n      &lt;/div&gt;\n    &lt;/div&gt;\n    {%
-        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"535fb307247580fcb40000c4","_id":"535fb307247580fcb40000c4","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+        google_analytics &#x27;UA-20661758-1&#x27; %}\n  &lt;/body&gt;\n&lt;/html&gt;\n","editable_elements":[{"id":"544f811b4fe0634fa900039c","_id":"544f811b4fe0634fa900039c","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c5","_id":"535fb307247580fcb40000c5","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
+        image","type":"EditableFile","block_name":"Banner","from_parent":false,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa900039d","_id":"544f811b4fe0634fa900039d","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":false,"disabled":false,"content":"<h2>About
         Us</h2>\n          <p>\n            Lorem ipsum dolor sit amet, consectetur
         adipiscing elit. Suspendisse vitae egestas neque. Proin ac ante ante, sit
         amet egestas purus. Fusce tincidunt mattis sapien eget sodales. Cras aliquet
         odio eu nisl dapibus placerat.\n            <br>\n            <a href=''/about_us''>read
         more...</a>\n          </p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb307247580fcb40000c6.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f811b4fe0634fa900039e.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -999,7 +1016,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1009,20 +1026,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"4500b3b7f7bfbb6146572993bacf371b"'
+      - '"f88ee060fcec3c642740e2c0944a0f51"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=7leJfZgSPQhML8XjwR92SwO7HI4; domain=.example.com; path=/;
+      - _locomotive_session=BsTCFUSnyTiH6cgvcElwttt5YfQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - ea4521e9027554f30e03e1fa6a3a6fdf
+      - c0beded9d2b174f5fa1086a7aa0ba6fe
       X-Runtime:
-      - '0.038198'
+      - '0.042028'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb307247580fcb40000c6","_id":"535fb307247580fcb40000c6","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"A
-        notre sujet","slug":"a-notre-sujet","parent_id":"535fb303247580fcb400007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+      string: '{"id":"544f811b4fe0634fa900039e","_id":"544f811b4fe0634fa900039e","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"A
+        notre sujet","slug":"a-notre-sujet","parent_id":"544f81174fe0634fa9000354","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -1058,10 +1075,10 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000c7","_id":"535fb307247580fcb40000c7","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa900039f","_id":"544f811b4fe0634fa900039f","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c8","_id":"535fb307247580fcb40000c8","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
-        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000c9","_id":"535fb307247580fcb40000c9","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a0","_id":"544f811b4fe0634fa90003a0","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
+        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a1","_id":"544f811b4fe0634fa90003a1","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1079,10 +1096,10 @@ http_interactions:
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb307247580fcb40000c6.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f811b4fe0634fa900039e.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -1093,7 +1110,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1103,20 +1120,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"9f0ccaaa20b850a2986524423f6b39a5"'
+      - '"83f6998170f12c919f51799d7ff859ce"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=3KlP_If6NXcWOwcF49o5mCV3WV0; domain=.example.com; path=/;
+      - _locomotive_session=_p8xgTEYgwfOAm55cNQWAKjh5Zo; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - aa72b2f979a64b5603f8d36c5b4e2689
+      - 89c7ee342494d360c34e686f14f197a6
       X-Runtime:
-      - '0.040484'
+      - '0.041297'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb307247580fcb40000c6","_id":"535fb307247580fcb40000c6","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Om
-        oss","slug":"om-oss","parent_id":"535fb303247580fcb400007f","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"om-oss","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
+      string: '{"id":"544f811b4fe0634fa900039e","_id":"544f811b4fe0634fa900039e","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Om
+        oss","slug":"om-oss","parent_id":"544f81174fe0634fa9000354","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"om-oss","localized_fullpaths":{"en":"about-us","fr":"fr/a-notre-sujet","nb":"nb/om-oss"},"depth":1,"translated_in":["en","fr","nb"],"raw_template":"{%
         extends parent %}\n{% block content %}\n{% editable_long_text ''content''
         %}\n<p>\n  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
         vitae tincidunt urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla
@@ -1152,9 +1169,9 @@ http_interactions:
         egestas. Mauris lobortis hendrerit odio, vitae porttitor urna rutrum at. Ut
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n&lt;/p&gt;\n{% endeditable_long_text
-        %}\n{% endblock %}\n","editable_elements":[{"id":"535fb307247580fcb40000c7","_id":"535fb307247580fcb40000c7","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"Page
+        %}\n{% endblock %}\n","editable_elements":[{"id":"544f811b4fe0634fa900039f","_id":"544f811b4fe0634fa900039f","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000c8","_id":"535fb307247580fcb40000c8","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000c9","_id":"535fb307247580fcb40000c9","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a0","_id":"544f811b4fe0634fa90003a0","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"","default_content":false,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a1","_id":"544f811b4fe0634fa90003a1","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":false,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1172,10 +1189,10 @@ http_interactions:
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb307247580fcb40000ca.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f811b4fe0634fa90003a2.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1186,7 +1203,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1196,24 +1213,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"ee8f472659d4e703a03264e5375ee95c"'
+      - '"ef987b77648bb8bae661a7f0a65742eb"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=BF6RhBRj8PorsSFCw8YOA95dxQ8; domain=.example.com; path=/;
+      - _locomotive_session=RnqxMNpqQ-O6y9PDhCamzon6P5k; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - a21d7509062d3daed59bccdbedbc569b
+      - 79d680cd240af346fdc778d4a2282147
       X-Runtime:
-      - '0.043027'
+      - '0.039642'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb307247580fcb40000ca","_id":"535fb307247580fcb40000ca","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Jean
-        Personne","slug":"jean-personne","parent_id":"535fb307247580fcb40000c6","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet/jean-personne","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
-        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"535fb307247580fcb40000cb","_id":"535fb307247580fcb40000cb","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"Page
+      string: '{"id":"544f811b4fe0634fa90003a2","_id":"544f811b4fe0634fa90003a2","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Jean
+        Personne","slug":"jean-personne","parent_id":"544f811b4fe0634fa900039e","position":1,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"a-notre-sujet/jean-personne","localized_fullpaths":{"en":"about-us/john-doe","fr":"fr/a-notre-sujet/jean-personne","nb":"nb/om-oss/john-doe"},"depth":2,"translated_in":["en","fr"],"raw_template":"{%
+        extends parent %}\n","escaped_raw_template":"{% extends parent %}\n","editable_elements":[{"id":"544f811b4fe0634fa90003a3","_id":"544f811b4fe0634fa90003a3","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"Page
         image","block":"banner","hint":"Top banner image in each page (602px by 397px)","priority":0,"label":"Page
-        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","url":"/sites/535fb303247580fcb400007d/assets/535fb307247580fcb40000c3/photo.jpg","filename":"photo.jpg"},{"id":"535fb307247580fcb40000cc","_id":"535fb307247580fcb40000cc","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
-        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"535fb307247580fcb40000cd","_id":"535fb307247580fcb40000cd","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
+        image","type":"EditableFile","block_name":"Banner","from_parent":true,"disabled":false,"content":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","filename":"photo.jpg"},{"id":"544f811b4fe0634fa90003a4","_id":"544f811b4fe0634fa90003a4","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"pitch","block":"banner","hint":null,"priority":0,"label":"Pitch","type":"EditableText","block_name":"Banner","from_parent":true,"disabled":false,"content":"<h2>A
+        notre sujet</h2><p>Lorem ipsum...(FR)</p>","default_content":true,"format":"html","line_break":true,"rows":15},{"id":"544f811b4fe0634fa90003a5","_id":"544f811b4fe0634fa90003a5","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:20+01:00","slug":"content","block":"content","hint":null,"priority":0,"label":"Content","type":"EditableText","block_name":"Content","from_parent":true,"disabled":false,"content":"<p>\n  Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
@@ -1231,10 +1248,10 @@ http_interactions:
         at lectus erat, nec dictum dolor. Praesent in sapien interdum nibh euismod
         vestibulum. Vestibulum tincidunt pulvinar accumsan.\n</p>","default_content":true,"format":"html","line_break":true,"rows":15}]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb307247580fcb40000d6.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f811b4fe0634fa90003ae.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1245,7 +1262,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1255,24 +1272,24 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"52ecdd276d99cf37ba2fb6c3c585ed36"'
+      - '"9f54046bce4e6d02abd34f58daacd31f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=d6DGBxGtzqhUpG2FlwGzpv7zqow; domain=.example.com; path=/;
+      - _locomotive_session=kjJ9dxU5EZpZsNEWhrNlluzkPkQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 7da7e8fd8f0bc584573833ebcded1bc8
+      - 6ecf2ef84b556671468e83c0726b99ec
       X-Runtime:
-      - '0.059877'
+      - '0.032070'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb307247580fcb40000d6","_id":"535fb307247580fcb40000d6","created_at":"2014-04-29T16:11:19+02:00","updated_at":"2014-04-29T16:11:20+02:00","title":"Magasin","slug":"magasin","parent_id":"535fb303247580fcb400007f","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/fr/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"magasin","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
+      string: '{"id":"544f811b4fe0634fa90003ae","_id":"544f811b4fe0634fa90003ae","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Magasin","slug":"magasin","parent_id":"544f81174fe0634fa9000354","position":3,"response_type":"text/html","cache_strategy":"none","redirect":true,"redirect_url":"http://www.apple.com/fr/itunes/","redirect_type":301,"listed":true,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"magasin","localized_fullpaths":{"en":"store","fr":"fr/magasin","nb":"nb/store"},"depth":1,"translated_in":["en","fr"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb303247580fcb4000080.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f81174fe0634fa9000355.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
     body:
       encoding: US-ASCII
       string: ''
@@ -1283,7 +1300,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1293,25 +1310,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"c8a397de1347ec77197c37042c12b2fa"'
+      - '"9400447e4119c0f14c03cb77e9f603f4"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=GisU8AjXy18RealHWyJ_S4_koYY; domain=.example.com; path=/;
+      - _locomotive_session=ZJDjiKqVAd5sghHcF8uOGwutZpI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 6160af617aaa8d902445aa04aa9cb203
+      - 70f805ac942b0f3f57501eae9112ca9e
       X-Runtime:
-      - '0.047108'
+      - '0.035775'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb4000080","_id":"535fb303247580fcb4000080","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Page
+      string: '{"id":"544f81174fe0634fa9000355","_id":"544f81174fe0634fa9000355","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Page
         non trouv\u00e9e","slug":"404","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/pages/535fb303247580fcb4000080.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/pages/544f81174fe0634fa9000355.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
     body:
       encoding: US-ASCII
       string: ''
@@ -1322,7 +1339,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Tue, 29 Apr 2014 14:11:24 GMT
+      - Tue, 28 Oct 2014 11:42:24 GMT
       Status:
       - 200 OK
       Connection:
@@ -1332,20 +1349,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"a3b79f61ccb15cbf047212d811657fbb"'
+      - '"d8d8e0dd402a203b67d4dbc64642ce5c"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=fJfxYCFsXfPbDN3r6OSEEK4uL40; domain=.example.com; path=/;
+      - _locomotive_session=tdNpPYft7scC45Nnlyllj5Z6DkM; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 1de9042130f53870dfc9a3a99c2ee4a7
+      - aa01c65474ab61da8f6e986c369951d1
       X-Runtime:
-      - '0.055049'
+      - '0.032742'
     body:
       encoding: UTF-8
-      string: '{"id":"535fb303247580fcb4000080","_id":"535fb303247580fcb4000080","created_at":"2014-04-29T16:11:15+02:00","updated_at":"2014-04-29T16:11:21+02:00","title":"Siden
+      string: '{"id":"544f81174fe0634fa9000355","_id":"544f81174fe0634fa9000355","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:21+01:00","title":"Siden
         finnes ikke","slug":"404","position":100,"response_type":"text/html","cache_strategy":"none","redirect":false,"redirect_type":301,"listed":false,"published":true,"templatized":false,"templatized_from_parent":false,"fullpath":"404","localized_fullpaths":{"en":"404","fr":"fr/404","nb":"nb/404"},"depth":0,"translated_in":["en","fr","nb"],"raw_template":"","escaped_raw_template":"","editable_elements":[]}'
     http_version: 
-  recorded_at: Tue, 29 Apr 2014 14:11:24 GMT
+  recorded_at: Tue, 28 Oct 2014 11:42:24 GMT
 recorded_with: VCR 2.4.0

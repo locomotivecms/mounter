@@ -46,8 +46,12 @@ module Locomotive
               self.output_locale
 
               done, attempts = {}, 0
+
+              # begin by the layouts (pages inside the layouts folder)
+              _write_layouts(pages, done)
+
               while done.size < pages.length - 1 && attempts < MAX_ATTEMPTS
-                _write(pages['index'], done, done.size > 0)
+                _write(pages['index'], done, attempts > 0)
 
                 # keep track of the attempts because we don't want to get an infinite loop.
                 attempts += 1
@@ -63,7 +67,22 @@ module Locomotive
 
           protected
 
-          def _write(page, done, already_done = false)
+          def _write_layouts(pages, done)
+            if pages['layouts']
+              _write(pages['layouts'], done, false, false)
+
+              layouts = pages.values.find_all { |page| page.fullpath =~ /^layouts\// }
+
+              # make sure the layouts are first in the list
+              layouts.sort! { |a, b| (a.is_layout? ? 0 : 1) <=> (b.is_layout? ? 0 : 1) }
+
+              layouts.each do |page|
+                _write(page, done, false, false)
+              end
+            end
+          end
+
+          def _write(page, done, already_done = false, with_children = true)
             if self.safely_translated?(page)
               write_page(page) unless already_done
             else
@@ -75,12 +94,14 @@ module Locomotive
             done[page.fullpath] = true
 
             # loop over its children
-            (page.children || []).sort_by(&:depth_and_position).each do |child|
-              layout = child.layout
-              layout = page.fullpath if layout && layout == 'parent'
+            if with_children
+              (page.children || []).sort_by(&:depth_and_position).each do |child|
+                layout = child.layout
+                layout = page.fullpath if layout && layout == 'parent'
 
-              if done[child.fullpath].nil? && (!layout || done[layout])
-                _write(child, done)
+                if done[child.fullpath].nil? && (!layout || done[layout])
+                  _write(child, done)
+                end
               end
             end
           end
@@ -263,7 +284,7 @@ module Locomotive
               (params[:editable_elements] || []).each do |element|
                 if element[:content] =~ /^\/samples\//
                   element[:source] = self.path_to_file(element.delete(:content))
-                elsif element[:content] =~ %r($http://)
+                elsif element[:content] =~ %r(^http://)
                   element[:source_url] = element.delete(:content)
                 else
                   # string / text elements
