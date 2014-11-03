@@ -119,7 +119,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
           end
 
           it 'keeps the ordering of the config' do
-            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs', 'layouts']
+            @index.children.map(&:fullpath).should == ['about-us', 'music', 'online-store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs', 'layouts']
           end
 
           it 'assigns titles for all the pages' do

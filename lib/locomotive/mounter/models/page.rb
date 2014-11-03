@@ -62,15 +62,17 @@ module Locomotive
         # Return the fullpath dasherized and with the "*" character
         # for the slug of templatized page.
         #
+        # @param [ Boolean ] wildcard If true, replace the slug of a templatized page by the "*" character (default: true)
+        #
         # @return [ String ] The safe full path or nil if the page is not translated in the current locale
         #
-        def safe_fullpath
+        def safe_fullpath(wildcard = true)
           if self.index_or_404?
             self.slug
           else
-            base  = self.parent.safe_fullpath
+            base  = self.parent.safe_fullpath(wildcard)
             _slug = if self.templatized? && !self.templatized_from_parent
-              '*'
+              wildcard ? '*' : self.slug
             elsif !self.translated_in?(Locomotive::Mounter.locale)
               self.slug_translations[self.mounting_point.default_locale]
             else
