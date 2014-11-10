@@ -106,7 +106,7 @@ describe Locomotive::Mounter::Writer::Api::ThemeAssetsWriter do
   end
 
   def sprockets
-    Locomotive::Mounter::Extensions::Sprockets.environment(site_path)
+    Locomotive::Mounter::Extensions::Sprockets.environment(site_path, true)
   end
 
 end
