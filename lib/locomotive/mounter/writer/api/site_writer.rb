@@ -84,7 +84,7 @@ module Locomotive
                   self.site._id     = _site['id']
                 end
               end
-            rescue WriterException => e
+            rescue WriterException, ApiReadException => e
               nil
             end
           end

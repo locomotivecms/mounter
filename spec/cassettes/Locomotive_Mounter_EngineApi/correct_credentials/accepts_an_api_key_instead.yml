@@ -6,14 +6,20 @@ http_interactions:
     body:
       encoding: UTF-8
       string: api_key=d49cd50f6f0d2b163f48fc73cb249f0244c37074
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:14 GMT
+      - Sat, 22 Nov 2014 13:41:23 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,19 +31,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"4ea3c712738ee050c48cfde081be4948"'
+      - '"8e97f1fd77647e509718189192e4f857"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=pWVLGFfN-0D49V5OTM1yk-5Beaw; domain=.example.com; path=/;
+      - _locomotive_session=fST5tCvWmH1dU3MqhQ4ZM82s96A; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 6b15d22f08b9cdca28f4c25691ef5d62
+      - de1cf45fde3663fda3c376bfcd17c71d
       X-Runtime:
-      - '0.023263'
+      - '0.024499'
     body:
       encoding: UTF-8
-      string: '{"token":"sdgp9LsjJPGxDSpi6RAs"}'
+      string: '{"token":"4ayhuNvzJq6reTPBnshb"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:14 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:23 GMT
 recorded_with: VCR 2.4.0

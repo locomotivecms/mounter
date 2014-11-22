@@ -22,7 +22,9 @@ module Locomotive
 
             # assign an _id to a local content entry if possible
             self.content_types.each do |slug, content_type|
-              self.get("content_types/#{slug}/entries", nil, true).each do |attributes|
+              entries = self.get("content_types/#{slug}/entries", nil, true)
+
+              entries.each do |attributes|
                 content_entry = content_type.find_entry(attributes['_slug'])
 
                 if content_entry

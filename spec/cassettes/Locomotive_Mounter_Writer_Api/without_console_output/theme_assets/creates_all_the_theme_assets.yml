@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/theme_assets.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/theme_assets.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:57 GMT
+      - Sat, 22 Nov 2014 13:42:04 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,53 +29,53 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"0ecc16d1d3795e2d4e07f012dcff7500"'
+      - '"83f9ba91c54ef4174d0ab22cd953f2c6"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=Pq8H6793KJP5Wu6VQueBUPkr2E8; domain=.example.com; path=/;
+      - _locomotive_session=NAiiCiJ1d7rai7kSLugzHom1aBU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 47e05c9994a427deaaaf7d44ae8c5e08
+      - f60bf2064ad1b3c6d76f493e37b92cc3
       X-Runtime:
-      - '0.071965'
+      - '0.057878'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f813c4fe0634fa900043f","_id":"544f813c4fe0634fa900043f","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"font","folder":"fonts","checksum":"6080441fde50c4839c23c79b937f0194","local_path":"chunkfive-webfont.eot","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive-webfont.eot","size":"37.5
-        KB","raw_size":38434,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000440","_id":"544f813c4fe0634fa9000440","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"font","folder":"fonts","checksum":"57d0f66913a8c0e172ae3fe78ce36e43","local_path":"chunkfive-webfont.svg","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive-webfont.svg","size":"49.4
-        KB","raw_size":50602,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000441","_id":"544f813c4fe0634fa9000441","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"font","folder":"fonts","checksum":"439633444f9d32a30a4449da967853d2","local_path":"chunkfive-webfont.ttf","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive-webfont.ttf","size":"37.3
-        KB","raw_size":38156,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000442","_id":"544f813c4fe0634fa9000442","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"font","folder":"fonts","checksum":"8174fa67890a6af9c0b05432d21afdbd","local_path":"chunkfive-webfont.woff","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive-webfont.woff","size":"21.9
-        KB","raw_size":22384,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000449","_id":"544f813c4fe0634fa9000449","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"stylesheet","folder":"fonts","checksum":"b3ad3bfa2aff9de913bf42f84ad1fecf","local_path":"chunkfive.css","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive.css","size":"279
-        Bytes","raw_size":279,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000444","_id":"544f813c4fe0634fa9000444","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"font","folder":"fonts","checksum":"473f634053172a656b38f4d791d294c8","local_path":"chunkfive.otf","url":"/sites/544f81364fe0634fa90003d1/theme/fonts/chunkfive.otf","size":"10.7
-        KB","raw_size":10916,"can_be_deleted":true},{"id":"544f813c4fe0634fa9000445","_id":"544f813c4fe0634fa9000445","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"image","folder":"images","checksum":"edb293028f9c07f2d692d066cd8a458a","local_path":"nav_on.png","url":"/sites/544f81364fe0634fa90003d1/theme/images/nav_on.png","size":"115
-        Bytes","raw_size":115,"dimensions":"1px x 40px","can_be_deleted":true},{"id":"544f813c4fe0634fa9000446","_id":"544f813c4fe0634fa9000446","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"image","folder":"images","checksum":"93c2911287a5754bed65a028c6aa4a7c","local_path":"photo_frame.png","url":"/sites/544f81364fe0634fa90003d1/theme/images/photo_frame.png","size":"7.6
-        KB","raw_size":7780,"dimensions":"668px x 462px","can_be_deleted":true},{"id":"544f813c4fe0634fa9000448","_id":"544f813c4fe0634fa9000448","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"image","folder":"images","checksum":"89e0275185e661639fb14130410843b6","local_path":"sep.png","url":"/sites/544f81364fe0634fa90003d1/theme/images/sep.png","size":"1.18
-        KB","raw_size":1213,"dimensions":"950px x 1px","can_be_deleted":true},{"id":"544f813c4fe0634fa9000447","_id":"544f813c4fe0634fa9000447","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"image","folder":"images/sub_dir","checksum":"3f6a15f2ce89235092ae25b125084dd7","local_path":"sub_dir/top.jpg","url":"/sites/544f81364fe0634fa90003d1/theme/images/sub_dir/top.jpg","size":"12.4
-        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"544f813c4fe0634fa9000443","_id":"544f813c4fe0634fa9000443","created_at":"2014-10-28T12:42:52+01:00","updated_at":"28
-        Oct 12:42","content_type":"image","folder":"images","checksum":"3f6a15f2ce89235092ae25b125084dd7","local_path":"top.jpg","url":"/sites/544f81364fe0634fa90003d1/theme/images/top.jpg","size":"12.4
-        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"544f813d4fe0634fa900044a","_id":"544f813d4fe0634fa900044a","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"javascript","folder":"javascripts","checksum":"dafcc4a2f059c53e47bf8d7ea4dd1e11","local_path":"application.js","url":"/sites/544f81364fe0634fa90003d1/theme/javascripts/application.js","size":"84
-        Bytes","raw_size":84,"can_be_deleted":true},{"id":"544f813d4fe0634fa900044b","_id":"544f813d4fe0634fa900044b","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"javascript","folder":"javascripts","checksum":"d05d02ecb331afbe373db79b0a88ef36","local_path":"common.js","url":"/sites/544f81364fe0634fa90003d1/theme/javascripts/common.js","size":"27
-        Bytes","raw_size":27,"can_be_deleted":true},{"id":"544f813d4fe0634fa900044c","_id":"544f813d4fe0634fa900044c","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"stylesheet","folder":"stylesheets","checksum":"dcc8a11f89a0a8084cb31ae0f960b47d","local_path":"application.css","url":"/sites/544f81364fe0634fa90003d1/theme/stylesheets/application.css","size":"2.51
-        KB","raw_size":2573,"can_be_deleted":true},{"id":"544f813d4fe0634fa900044d","_id":"544f813d4fe0634fa900044d","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"stylesheet","folder":"stylesheets/other","checksum":"15d3d9555deface69d6ab9e7fd972638","local_path":"other/extra.css","url":"/sites/544f81364fe0634fa90003d1/theme/stylesheets/other/extra.css","size":"39
-        Bytes","raw_size":39,"can_be_deleted":true},{"id":"544f813d4fe0634fa900044e","_id":"544f813d4fe0634fa900044e","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"stylesheet","folder":"stylesheets/other","checksum":"ad2e36fdbc6b9ea164f875e19af0c90e","local_path":"other/style.css","url":"/sites/544f81364fe0634fa90003d1/theme/stylesheets/other/style.css","size":"1.42
-        KB","raw_size":1452,"can_be_deleted":true},{"id":"544f813d4fe0634fa900044f","_id":"544f813d4fe0634fa900044f","created_at":"2014-10-28T12:42:53+01:00","updated_at":"28
-        Oct 12:42","content_type":"stylesheet","folder":"stylesheets","checksum":"9c8d599c19ffda3aa2e157b7a1d1ebce","local_path":"reboot.css","url":"/sites/544f81364fe0634fa90003d1/theme/stylesheets/reboot.css","size":"1.99
+      string: '[{"id":"547092a787f643b6db001bff","_id":"547092a787f643b6db001bff","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"font","folder":"fonts","checksum":"6080441fde50c4839c23c79b937f0194","local_path":"chunkfive-webfont.eot","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive-webfont.eot","size":"37.5
+        KB","raw_size":38434,"can_be_deleted":true},{"id":"547092a787f643b6db001c00","_id":"547092a787f643b6db001c00","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"font","folder":"fonts","checksum":"57d0f66913a8c0e172ae3fe78ce36e43","local_path":"chunkfive-webfont.svg","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive-webfont.svg","size":"49.4
+        KB","raw_size":50602,"can_be_deleted":true},{"id":"547092a787f643b6db001c01","_id":"547092a787f643b6db001c01","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"font","folder":"fonts","checksum":"439633444f9d32a30a4449da967853d2","local_path":"chunkfive-webfont.ttf","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive-webfont.ttf","size":"37.3
+        KB","raw_size":38156,"can_be_deleted":true},{"id":"547092a787f643b6db001c02","_id":"547092a787f643b6db001c02","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"font","folder":"fonts","checksum":"8174fa67890a6af9c0b05432d21afdbd","local_path":"chunkfive-webfont.woff","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive-webfont.woff","size":"21.9
+        KB","raw_size":22384,"can_be_deleted":true},{"id":"547092a887f643b6db001c09","_id":"547092a887f643b6db001c09","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"stylesheet","folder":"fonts","checksum":"b3ad3bfa2aff9de913bf42f84ad1fecf","local_path":"chunkfive.css","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive.css","size":"279
+        Bytes","raw_size":279,"can_be_deleted":true},{"id":"547092a787f643b6db001c04","_id":"547092a787f643b6db001c04","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"font","folder":"fonts","checksum":"473f634053172a656b38f4d791d294c8","local_path":"chunkfive.otf","url":"/sites/547092a287f643b6db001b91/theme/fonts/chunkfive.otf","size":"10.7
+        KB","raw_size":10916,"can_be_deleted":true},{"id":"547092a787f643b6db001c05","_id":"547092a787f643b6db001c05","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"image","folder":"images","checksum":"edb293028f9c07f2d692d066cd8a458a","local_path":"nav_on.png","url":"/sites/547092a287f643b6db001b91/theme/images/nav_on.png","size":"115
+        Bytes","raw_size":115,"dimensions":"1px x 40px","can_be_deleted":true},{"id":"547092a887f643b6db001c06","_id":"547092a887f643b6db001c06","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"image","folder":"images","checksum":"93c2911287a5754bed65a028c6aa4a7c","local_path":"photo_frame.png","url":"/sites/547092a287f643b6db001b91/theme/images/photo_frame.png","size":"7.6
+        KB","raw_size":7780,"dimensions":"668px x 462px","can_be_deleted":true},{"id":"547092a887f643b6db001c08","_id":"547092a887f643b6db001c08","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"image","folder":"images","checksum":"89e0275185e661639fb14130410843b6","local_path":"sep.png","url":"/sites/547092a287f643b6db001b91/theme/images/sep.png","size":"1.18
+        KB","raw_size":1213,"dimensions":"950px x 1px","can_be_deleted":true},{"id":"547092a887f643b6db001c07","_id":"547092a887f643b6db001c07","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"image","folder":"images/sub_dir","checksum":"3f6a15f2ce89235092ae25b125084dd7","local_path":"sub_dir/top.jpg","url":"/sites/547092a287f643b6db001b91/theme/images/sub_dir/top.jpg","size":"12.4
+        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"547092a787f643b6db001c03","_id":"547092a787f643b6db001c03","created_at":"2014-11-22T14:41:59+01:00","updated_at":"22
+        Dec 14:41","content_type":"image","folder":"images","checksum":"3f6a15f2ce89235092ae25b125084dd7","local_path":"top.jpg","url":"/sites/547092a287f643b6db001b91/theme/images/top.jpg","size":"12.4
+        KB","raw_size":12697,"dimensions":"1200px x 180px","can_be_deleted":true},{"id":"547092a887f643b6db001c0a","_id":"547092a887f643b6db001c0a","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"javascript","folder":"javascripts","checksum":"dafcc4a2f059c53e47bf8d7ea4dd1e11","local_path":"application.js","url":"/sites/547092a287f643b6db001b91/theme/javascripts/application.js","size":"84
+        Bytes","raw_size":84,"can_be_deleted":true},{"id":"547092a887f643b6db001c0b","_id":"547092a887f643b6db001c0b","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"javascript","folder":"javascripts","checksum":"d05d02ecb331afbe373db79b0a88ef36","local_path":"common.js","url":"/sites/547092a287f643b6db001b91/theme/javascripts/common.js","size":"27
+        Bytes","raw_size":27,"can_be_deleted":true},{"id":"547092a887f643b6db001c0c","_id":"547092a887f643b6db001c0c","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"stylesheet","folder":"stylesheets","checksum":"9e5b32bf296f4e1cb3906cca2a9eb9a9","local_path":"application.css","url":"/sites/547092a287f643b6db001b91/theme/stylesheets/application.css","size":"2.51
+        KB","raw_size":2573,"can_be_deleted":true},{"id":"547092a887f643b6db001c0d","_id":"547092a887f643b6db001c0d","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"stylesheet","folder":"stylesheets/other","checksum":"15d3d9555deface69d6ab9e7fd972638","local_path":"other/extra.css","url":"/sites/547092a287f643b6db001b91/theme/stylesheets/other/extra.css","size":"39
+        Bytes","raw_size":39,"can_be_deleted":true},{"id":"547092a887f643b6db001c0e","_id":"547092a887f643b6db001c0e","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"stylesheet","folder":"stylesheets/other","checksum":"ad2e36fdbc6b9ea164f875e19af0c90e","local_path":"other/style.css","url":"/sites/547092a287f643b6db001b91/theme/stylesheets/other/style.css","size":"1.42
+        KB","raw_size":1452,"can_be_deleted":true},{"id":"547092a887f643b6db001c0f","_id":"547092a887f643b6db001c0f","created_at":"2014-11-22T14:42:00+01:00","updated_at":"22
+        Dec 14:42","content_type":"stylesheet","folder":"stylesheets","checksum":"9c8d599c19ffda3aa2e157b7a1d1ebce","local_path":"reboot.css","url":"/sites/547092a287f643b6db001b91/theme/stylesheets/reboot.css","size":"1.99
         KB","raw_size":2041,"can_be_deleted":true}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:57 GMT
+  recorded_at: Sat, 22 Nov 2014 13:42:04 GMT
 recorded_with: VCR 2.4.0

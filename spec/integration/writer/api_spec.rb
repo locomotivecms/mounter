@@ -29,7 +29,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'content entries' do
 
       it 'creates all the content entries' do
-        Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
+        Locomotive::Mounter::EngineApi.fetch('content_types/events/entries').size.should == 12
       end
 
     end

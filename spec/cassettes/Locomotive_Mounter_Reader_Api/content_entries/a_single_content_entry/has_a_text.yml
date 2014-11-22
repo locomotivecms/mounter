@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: UTF-8
       string: email=admin%40locomotivecms.com&password=locomotive
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:41 GMT
+      - Sat, 22 Nov 2014 13:41:49 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,35 +31,41 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"4ea3c712738ee050c48cfde081be4948"'
+      - '"8e97f1fd77647e509718189192e4f857"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=9oIogtsCXyD6swp26y0zQu38EF0; domain=.example.com; path=/;
+      - _locomotive_session=2wj-1Fk0yzO9O0O1DqNG4A6AL3I; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 29fa813cc22b3aeb653f5b33211a622e
+      - 63f993953dc9c3965a3045a8d2de138c
       X-Runtime:
-      - '0.036496'
+      - '0.029538'
     body:
       encoding: UTF-8
-      string: '{"token":"sdgp9LsjJPGxDSpi6RAs"}'
+      string: '{"token":"4ayhuNvzJq6reTPBnshb"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:41 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:49 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:49 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,38 +75,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"41a9e59d48585940e09554e27a95d752"'
+      - '"bad7f51a7e0b22f00581a42022655870"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=1abvR5Lc3fR_x-1W0LBsIxEMNnY; domain=.example.com; path=/;
+      - _locomotive_session=GOYERV-c9PbJuMLXEuHYE8hTFVw; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 8ea9640d4d6af4ff6c2ba274f8c0dd8c
+      - 6e7363fbd19383d13d4bdec1f8e9f51a
       X-Runtime:
-      - '0.045910'
+      - '0.031113'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:49 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:49 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,38 +122,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"907482c7c9e2090516dc6d94c78ed93e"'
+      - '"a3c83e1ed2bb8be5ad5065a60ae81e9e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=HSQXSyhjqopc2bA1IYinZc5OPn0; domain=.example.com; path=/;
+      - _locomotive_session=_TqSeZNJFhJBPw7nR1RkiSgvrfU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 1cec982e9a7a93394cee51298a0f4e10
+      - bdf04e81f74306a33f78449e0025c4f7
       X-Runtime:
-      - '0.029966'
+      - '0.029187'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:49 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=nb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:49 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,38 +169,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"41a9e59d48585940e09554e27a95d752"'
+      - '"bad7f51a7e0b22f00581a42022655870"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=D_I1ldokkvAdIgpAyApE_1XzNoY; domain=.example.com; path=/;
+      - _locomotive_session=2EhbfTEX1f9xMSCBLHY84mzZjXQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - ead8f9e3ebd2663b3367224149333b1f
+      - 29a17fad1c0dd4c7e51d2954c08233da
       X-Runtime:
-      - '0.028453'
+      - '0.030923'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:49 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -186,35 +216,41 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"8be320f6ee975a7e74dcf7e0b3d754d1"'
+      - '"22f51ce32c1648d07a4a8e8d9fb28c80"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=5MDlk1OX_8ZC4lfAgMt5V3qIcpc; domain=.example.com; path=/;
+      - _locomotive_session=roSGf31q9u5FxBx09mZAu8vLhaM; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 244ff612e87e4778039ff922d65c36cb
+      - 2f81e8d046b38a53e794a23bb970d261
       X-Runtime:
-      - '0.033572'
+      - '0.030316'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f811b4fe0634fa900039b","_id":"544f811b4fe0634fa900039b","created_at":"2014-10-28T12:42:19+01:00","updated_at":"2014-10-28T12:42:19+01:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81NDRmODExNzRmZTA2MzRmYTkwMDAzNTIvYXNzZXRzLzU0NGY4MTFiNGZlMDYzNGZhOTAwMDM5Yi9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg?sha=a22c127ed99fcadc","url":"/sites/544f81174fe0634fa9000352/assets/544f811b4fe0634fa900039b/photo.jpg","content_type_text":"image"}]'
+      string: '[{"id":"5470928787f643b6db001b5b","_id":"5470928787f643b6db001b5b","created_at":"2014-11-22T14:41:27+01:00","updated_at":"2014-11-22T14:41:27+01:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81NDcwOTI4NDg3ZjY0M2I2ZGIwMDFiMTIvYXNzZXRzLzU0NzA5Mjg3ODdmNjQzYjZkYjAwMWI1Yi9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg?sha=464381fc825fa394","url":"/sites/5470928487f643b6db001b12/assets/5470928787f643b6db001b5b/photo.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -224,165 +260,322 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"537a4a2b3d420ab8159d67f21ffa7509"'
+      - '"7e88b451b5e922f647f181f8b03a9948"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=fClVclhA-YSeSGzJcbef_89p9kg; domain=.example.com; path=/;
+      - _locomotive_session=voeqZq0N0WhaPT71JYwg67Ii_NY; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - c2f0ff8124d53d1373e9f0285092fa4b
+      - c596f8301949b0082f4b21003f8ae4e8
       X-Runtime:
-      - '0.095016'
+      - '0.057056'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f81174fe0634fa9000359","_id":"544f81174fe0634fa9000359","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"544f81174fe0634fa900035a","_id":"544f81174fe0634fa900035a","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the band","position":0},{"id":"544f81174fe0634fa900035b","_id":"544f81174fe0634fa900035b","name":"leader","label":"Fullname
-        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"544f81174fe0634fa900035c","_id":"544f81174fe0634fa900035c","name":"kind","label":"Music
-        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"544f81174fe0634fa900035d","name":"grunge","position":0,"id":"544f81174fe0634fa900035d"},{"_id":"544f81174fe0634fa900035e","name":"rock","position":1,"id":"544f81174fe0634fa900035e"},{"_id":"544f81174fe0634fa900035f","name":"country","position":2,"id":"544f81174fe0634fa900035f"}],"raw_select_options":[{"id":"544f81174fe0634fa900035d","name":{"en":"grunge"},"position":2},{"id":"544f81174fe0634fa900035e","name":{"en":"rock"},"position":2},{"id":"544f81174fe0634fa900035f","name":{"en":"country"},"position":2}]},{"id":"544f81184fe0634fa9000379","_id":"544f81184fe0634fa9000379","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry544f81174fe0634fa900036a","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
-        of bands","label_field_name":"name","order_by":"544f81174fe0634fa900035a","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa9000360","_id":"544f81174fe0634fa9000360","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"544f81174fe0634fa9000361","_id":"544f81174fe0634fa9000361","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the place","position":0},{"id":"544f81174fe0634fa9000362","_id":"544f81174fe0634fa9000362","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the event","position":1},{"id":"544f81174fe0634fa9000363","_id":"544f81174fe0634fa9000363","name":"city","label":"City
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"544f81174fe0634fa9000364","_id":"544f81174fe0634fa9000364","name":"state","label":"State
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"544f81174fe0634fa9000365","_id":"544f81174fe0634fa9000365","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
-        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa9000366","_id":"544f81174fe0634fa9000366","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"544f81174fe0634fa9000367","_id":"544f81174fe0634fa9000367","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
-        name","position":0},{"id":"544f81174fe0634fa9000368","_id":"544f81174fe0634fa9000368","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"544f81174fe0634fa9000369","_id":"544f81174fe0634fa9000369","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
+      string: '[{"id":"5470928487f643b6db001b19","_id":"5470928487f643b6db001b19","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:25+01:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"5470928487f643b6db001b1a","_id":"5470928487f643b6db001b1a","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the band","position":0},{"id":"5470928487f643b6db001b1b","_id":"5470928487f643b6db001b1b","name":"leader","label":"Fullname
+        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"5470928487f643b6db001b1c","_id":"5470928487f643b6db001b1c","name":"kind","label":"Music
+        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"5470928487f643b6db001b1d","name":"grunge","position":0,"id":"5470928487f643b6db001b1d"},{"_id":"5470928487f643b6db001b1e","name":"rock","position":1,"id":"5470928487f643b6db001b1e"},{"_id":"5470928487f643b6db001b1f","name":"country","position":2,"id":"5470928487f643b6db001b1f"}],"raw_select_options":[{"id":"5470928487f643b6db001b1d","name":{"en":"grunge"},"position":2},{"id":"5470928487f643b6db001b1e","name":{"en":"rock"},"position":2},{"id":"5470928487f643b6db001b1f","name":{"en":"country"},"position":2}]},{"id":"5470928487f643b6db001b39","_id":"5470928487f643b6db001b39","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry5470928487f643b6db001b2a","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
+        of bands","label_field_name":"name","order_by":"5470928487f643b6db001b1a","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5470928487f643b6db001b20","_id":"5470928487f643b6db001b20","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"5470928487f643b6db001b21","_id":"5470928487f643b6db001b21","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the place","position":0},{"id":"5470928487f643b6db001b22","_id":"5470928487f643b6db001b22","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the event","position":1},{"id":"5470928487f643b6db001b23","_id":"5470928487f643b6db001b23","name":"city","label":"City
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"5470928487f643b6db001b24","_id":"5470928487f643b6db001b24","name":"state","label":"State
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"5470928487f643b6db001b25","_id":"5470928487f643b6db001b25","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
+        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5470928487f643b6db001b26","_id":"5470928487f643b6db001b26","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"5470928487f643b6db001b27","_id":"5470928487f643b6db001b27","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
+        name","position":0},{"id":"5470928487f643b6db001b28","_id":"5470928487f643b6db001b28","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"5470928487f643b6db001b29","_id":"5470928487f643b6db001b29","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
         message","position":2,"text_formatting":""}],"description":"Messages posted
-        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"544f81174fe0634fa900036a","_id":"544f81174fe0634fa900036a","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"544f81174fe0634fa900036b","_id":"544f81174fe0634fa900036b","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
-        of your song","position":0},{"id":"544f81184fe0634fa900037a","_id":"544f81184fe0634fa900037a","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry544f81174fe0634fa9000359","ui_enabled":true,"class_slug":"bands"},{"id":"544f81174fe0634fa900036c","_id":"544f81174fe0634fa900036c","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"544f81174fe0634fa900036d","_id":"544f81174fe0634fa900036d","name":"short_description","label":"Short
-        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"544f81174fe0634fa900036e","_id":"544f81174fe0634fa900036e","name":"audio_url","label":"Audio
+        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"5470928487f643b6db001b2a","_id":"5470928487f643b6db001b2a","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:25+01:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"5470928487f643b6db001b2b","_id":"5470928487f643b6db001b2b","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
+        of your song","position":0},{"id":"5470928587f643b6db001b3a","_id":"5470928587f643b6db001b3a","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry5470928487f643b6db001b19","ui_enabled":true,"class_slug":"bands"},{"id":"5470928487f643b6db001b2c","_id":"5470928487f643b6db001b2c","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"5470928487f643b6db001b2d","_id":"5470928487f643b6db001b2d","name":"short_description","label":"Short
+        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"5470928487f643b6db001b2e","_id":"5470928487f643b6db001b2e","name":"audio_url","label":"Audio
         url","type":"string","required":false,"localized":false,"unique":false,"hint":"Url
-        to a service like Blip for instance","position":4},{"id":"544f81174fe0634fa900036f","_id":"544f81174fe0634fa900036f","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
-        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"544f81184fe0634fa9000370","_id":"544f81184fe0634fa9000370","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"544f81184fe0634fa9000371","_id":"544f81184fe0634fa9000371","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
-        displayed in the website","position":0},{"id":"544f81184fe0634fa9000372","_id":"544f81184fe0634fa9000372","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
-        displayed in the home page","position":1,"text_formatting":"html"},{"id":"544f81184fe0634fa9000373","_id":"544f81184fe0634fa9000373","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
-        a category","position":2,"select_options":[{"_id":"544f81184fe0634fa9000375","name":"General","position":0,"id":"544f81184fe0634fa9000375"},{"_id":"544f81184fe0634fa9000376","name":"Gigs","position":1,"id":"544f81184fe0634fa9000376"},{"_id":"544f81184fe0634fa9000377","name":"Bands","position":2,"id":"544f81184fe0634fa9000377"},{"_id":"544f81184fe0634fa9000378","name":"Albums","position":3,"id":"544f81184fe0634fa9000378"}],"raw_select_options":[{"id":"544f81184fe0634fa9000375","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"544f81184fe0634fa9000376","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"544f81184fe0634fa9000377","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"544f81184fe0634fa9000378","name":{"en":"Albums"},"position":2}]},{"id":"544f81184fe0634fa9000374","_id":"544f81184fe0634fa9000374","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"544f81184fe0634fa9000374","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
+        to a service like Blip for instance","position":4},{"id":"5470928487f643b6db001b2f","_id":"5470928487f643b6db001b2f","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
+        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5470928487f643b6db001b30","_id":"5470928487f643b6db001b30","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"5470928487f643b6db001b31","_id":"5470928487f643b6db001b31","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
+        displayed in the website","position":0},{"id":"5470928487f643b6db001b32","_id":"5470928487f643b6db001b32","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
+        displayed in the home page","position":1,"text_formatting":"html"},{"id":"5470928487f643b6db001b33","_id":"5470928487f643b6db001b33","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
+        a category","position":2,"select_options":[{"_id":"5470928487f643b6db001b35","name":"General","position":0,"id":"5470928487f643b6db001b35"},{"_id":"5470928487f643b6db001b36","name":"Gigs","position":1,"id":"5470928487f643b6db001b36"},{"_id":"5470928487f643b6db001b37","name":"Bands","position":2,"id":"5470928487f643b6db001b37"},{"_id":"5470928487f643b6db001b38","name":"Albums","position":3,"id":"5470928487f643b6db001b38"}],"raw_select_options":[{"id":"5470928487f643b6db001b35","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"5470928487f643b6db001b36","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"5470928487f643b6db001b37","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"5470928487f643b6db001b38","name":{"en":"Albums"},"position":2}]},{"id":"5470928487f643b6db001b34","_id":"5470928487f643b6db001b34","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"5470928487f643b6db001b34","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/bands/entries.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
       - close
+      X-Total-Pages:
+      - '1'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '3'
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"2fc9f0e1f877aebd8f324bacd5f1e26e"'
+      - '"d55f2dc8055b855677c2f82853b7276d"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=NYjd0AWLmFbQYiYFKV8VWgVf35o; domain=.example.com; path=/;
+      - _locomotive_session=g5ZjvV61zeQdxoNjjqosC4-VAJU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - ba3bc0f71d9d86235fd5c9a560049fbd
+      - 7437ca78a3a61507060fd289fa8be5c4
       X-Runtime:
-      - '0.077906'
+      - '0.046481'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f81184fe0634fa900037c","_id":"544f81184fe0634fa900037c","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Alice
+      string: '[{"id":"5470928587f643b6db001b3c","_id":"5470928587f643b6db001b3c","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Alice
         in Chains","_slug":"alice-in-chains","_position":1,"_visible":true,"content_type_slug":"bands","name":"Alice
-        in Chains","leader":"Layne","kind":"grunge","kind_id":"544f81174fe0634fa900035d","songs":[]},{"id":"544f81184fe0634fa900037b","_id":"544f81184fe0634fa900037b","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Pearl
+        in Chains","leader":"Layne","kind":"grunge","kind_id":"5470928487f643b6db001b1d","songs":[]},{"id":"5470928587f643b6db001b3b","_id":"5470928587f643b6db001b3b","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Pearl
         Jam","_slug":"pearl-jam","_position":0,"_visible":true,"content_type_slug":"bands","name":"Pearl
-        Jam","leader":"Eddie","kind":"grunge","kind_id":"544f81174fe0634fa900035d","songs":["song-number-1","song-number-2","song-number-3","song-number-4"]},{"id":"544f81184fe0634fa900037d","_id":"544f81184fe0634fa900037d","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"The
+        Jam","leader":"Eddie","kind":"grunge","kind_id":"5470928487f643b6db001b1d","songs":["song-number-1","song-number-2","song-number-3","song-number-4"]},{"id":"5470928587f643b6db001b3d","_id":"5470928587f643b6db001b3d","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"The
         who","_slug":"the-who","_position":2,"_visible":true,"content_type_slug":"bands","name":"The
-        who","leader":"Peter","kind":"rock","kind_id":"544f81174fe0634fa900035e","songs":["song-number-5","song-number-6"]}]'
+        who","leader":"Peter","kind":"rock","kind_id":"5470928487f643b6db001b1e","songs":["song-number-5","song-number-6"]}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
       - close
+      X-Total-Pages:
+      - '2'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '12'
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"8b026f30e1ca80d55fe0d0bf514f63d2"'
+      - '"04e8ed5b7319e27c1d4495ff29dab98a"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=7Nv637bwqumabX_yjDKNQsYosow; domain=.example.com; path=/;
+      - _locomotive_session=z-XOhST8q-FjDhq0eIEIMP281CY; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 49292f6f2ab14b0db44b36148f6e16c3
+      - e3b63b4c74390c6e22db1fa314fe1db9
       X-Runtime:
-      - '0.084521'
+      - '0.050927'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f81184fe0634fa900037e","_id":"544f81184fe0634fa900037e","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Avogadro''s
+      string: '[{"id":"5470928587f643b6db001b3e","_id":"5470928587f643b6db001b3e","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Avogadro''s
         Number","_slug":"avogadros-number","_position":0,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
         Number","date":"06/11/2012","formatted_date":"06/11/2012","city":"Fort Collins","state":"Colorado","notes":"<p>Lorem
-        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"544f81184fe0634fa900037f","_id":"544f81184fe0634fa900037f","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Quixote''s
+        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"5470928587f643b6db001b3f","_id":"5470928587f643b6db001b3f","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Quixote''s
         True Blue","_slug":"quixotes-true-blue","_position":1,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"544f81184fe0634fa9000380","_id":"544f81184fe0634fa9000380","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Kelly''s
+        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"5470928587f643b6db001b40","_id":"5470928587f643b6db001b40","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Kelly''s
         Westport Inn","_slug":"kellys-westport-inn","_position":2,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas
-        City","state":"Missouri"},{"id":"544f81184fe0634fa9000381","_id":"544f81184fe0634fa9000381","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5470928587f643b6db001b41","_id":"5470928587f643b6db001b41","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Browne''s
         Market","_slug":"brownes-market","_position":3,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"544f81184fe0634fa9000382","_id":"544f81184fe0634fa9000382","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Ballydoyle''s","_slug":"ballydoyles","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"544f81184fe0634fa9000383","_id":"544f81184fe0634fa9000383","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"The
+        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"5470928587f643b6db001b42","_id":"5470928587f643b6db001b42","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Ballydoyle''s","_slug":"ballydoyles","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"5470928587f643b6db001b43","_id":"5470928587f643b6db001b43","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"The
         Belmont","_slug":"the-belmont","_position":5,"_visible":true,"content_type_slug":"events","place":"The
-        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"544f81184fe0634fa9000384","_id":"544f81184fe0634fa9000384","created_at":"2014-10-28T12:42:16+01:00","updated_at":"2014-10-28T12:42:16+01:00","_label":"Avogadro''s
+        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"5470928587f643b6db001b44","_id":"5470928587f643b6db001b44","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Avogadro''s
         Number","_slug":"avogadros-number-1","_position":6,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
-        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"544f81194fe0634fa9000385","_id":"544f81194fe0634fa9000385","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Quixote''s
+        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"5470928587f643b6db001b45","_id":"5470928587f643b6db001b45","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Quixote''s
         True Blue","_slug":"quixotes-true-blue-1","_position":7,"_visible":true,"content_type_slug":"events","place":"Quixote''s
-        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"544f81194fe0634fa9000386","_id":"544f81194fe0634fa9000386","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Kelly''s
+        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"5470928687f643b6db001b46","_id":"5470928687f643b6db001b46","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Kelly''s
         Westport Inn","_slug":"kellys-westport-inn-1","_position":8,"_visible":true,"content_type_slug":"events","place":"Kelly''s
         Westport Inn","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas
-        City","state":"Missouri"},{"id":"544f81194fe0634fa9000387","_id":"544f81194fe0634fa9000387","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Browne''s
+        City","state":"Missouri"},{"id":"5470928687f643b6db001b47","_id":"5470928687f643b6db001b47","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Browne''s
         Market","_slug":"brownes-market-1","_position":9,"_visible":true,"content_type_slug":"events","place":"Browne''s
-        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"},{"id":"544f81194fe0634fa9000388","_id":"544f81194fe0634fa9000388","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Ballydoyle''s","_slug":"ballydoyles-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"544f81194fe0634fa9000389","_id":"544f81194fe0634fa9000389","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"The
+        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"}]'
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=4ayhuNvzJq6reTPBnshb&page=1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Nov 2014 13:41:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Total-Pages:
+      - '2'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '12'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"04e8ed5b7319e27c1d4495ff29dab98a"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=yyDizW1c5CFbpu5sHr1YUfNjvhA; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - 6b4ea537b5ba53f1d8d5bba6f8a025df
+      X-Runtime:
+      - '0.051352'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5470928587f643b6db001b3e","_id":"5470928587f643b6db001b3e","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Avogadro''s
+        Number","_slug":"avogadros-number","_position":0,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
+        Number","date":"06/11/2012","formatted_date":"06/11/2012","city":"Fort Collins","state":"Colorado","notes":"<p>Lorem
+        ipsum<img src=\"/samples/assets/\" alt=\"\" /></p>"},{"id":"5470928587f643b6db001b3f","_id":"5470928587f643b6db001b3f","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Quixote''s
+        True Blue","_slug":"quixotes-true-blue","_position":1,"_visible":true,"content_type_slug":"events","place":"Quixote''s
+        True Blue","date":"06/10/2012","formatted_date":"06/10/2012","city":"Denver","state":"Colorado"},{"id":"5470928587f643b6db001b40","_id":"5470928587f643b6db001b40","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Kelly''s
+        Westport Inn","_slug":"kellys-westport-inn","_position":2,"_visible":true,"content_type_slug":"events","place":"Kelly''s
+        Westport Inn","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas
+        City","state":"Missouri"},{"id":"5470928587f643b6db001b41","_id":"5470928587f643b6db001b41","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Browne''s
+        Market","_slug":"brownes-market","_position":3,"_visible":true,"content_type_slug":"events","place":"Browne''s
+        Market","date":"06/06/2012","formatted_date":"06/06/2012","city":"Kansas City","state":"Missouri"},{"id":"5470928587f643b6db001b42","_id":"5470928587f643b6db001b42","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Ballydoyle''s","_slug":"ballydoyles","_position":4,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2012","formatted_date":"06/05/2012","city":"Aurora","state":"Illinois"},{"id":"5470928587f643b6db001b43","_id":"5470928587f643b6db001b43","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"The
+        Belmont","_slug":"the-belmont","_position":5,"_visible":true,"content_type_slug":"events","place":"The
+        Belmont","date":"06/04/2012","formatted_date":"06/04/2012","city":"Hamtramk","state":"Michigan"},{"id":"5470928587f643b6db001b44","_id":"5470928587f643b6db001b44","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Avogadro''s
+        Number","_slug":"avogadros-number-1","_position":6,"_visible":true,"content_type_slug":"events","place":"Avogadro''s
+        Number","date":"06/11/2011","formatted_date":"06/11/2011","city":"Fort Collins","state":"Colorado"},{"id":"5470928587f643b6db001b45","_id":"5470928587f643b6db001b45","created_at":"2014-11-22T14:41:25+01:00","updated_at":"2014-11-22T14:41:25+01:00","_label":"Quixote''s
+        True Blue","_slug":"quixotes-true-blue-1","_position":7,"_visible":true,"content_type_slug":"events","place":"Quixote''s
+        True Blue","date":"06/10/2011","formatted_date":"06/10/2011","city":"Denver","state":"Colorado"},{"id":"5470928687f643b6db001b46","_id":"5470928687f643b6db001b46","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Kelly''s
+        Westport Inn","_slug":"kellys-westport-inn-1","_position":8,"_visible":true,"content_type_slug":"events","place":"Kelly''s
+        Westport Inn","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas
+        City","state":"Missouri"},{"id":"5470928687f643b6db001b47","_id":"5470928687f643b6db001b47","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Browne''s
+        Market","_slug":"brownes-market-1","_position":9,"_visible":true,"content_type_slug":"events","place":"Browne''s
+        Market","date":"06/06/2011","formatted_date":"06/06/2011","city":"Kansas City","state":"Missouri"}]'
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/events/entries.json?auth_token=4ayhuNvzJq6reTPBnshb&page=2
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Nov 2014 13:41:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Total-Pages:
+      - '2'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '12'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"a939bc277571c084fb629cc5e880cc76"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=uHMQnq6Vj7Hk7CNW6M22fJrfecg; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - 1113d48987aba063eb39e408a0e61b29
+      X-Runtime:
+      - '0.038571'
+    body:
+      encoding: UTF-8
+      string: '[{"id":"5470928687f643b6db001b48","_id":"5470928687f643b6db001b48","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Ballydoyle''s","_slug":"ballydoyles-1","_position":10,"_visible":true,"content_type_slug":"events","place":"Ballydoyle''s","date":"06/05/2011","formatted_date":"06/05/2011","city":"Aurora","state":"Illinois"},{"id":"5470928687f643b6db001b49","_id":"5470928687f643b6db001b49","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"The
         Belmont","_slug":"the-belmont-1","_position":11,"_visible":true,"content_type_slug":"events","place":"The
         Belmont","date":"06/04/2011","formatted_date":"06/04/2011","city":"Hamtramk","state":"Michigan"}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
       - close
+      X-Total-Pages:
+      - '0'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '0'
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
@@ -392,31 +585,87 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=0BTiB8o6HwoSHCXm6s6MBzn937U; domain=.example.com; path=/;
+      - _locomotive_session=ouOT4K1j66nT4QRF-DFZ7x7_yvA; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 02cd2dda86281449c102ddad3da3c6e7
+      - df2d9621462dc0c0f84ea194689f77c4
       X-Runtime:
-      - '0.034719'
+      - '0.034581'
     body:
       encoding: UTF-8
       string: "[]"
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/messages/entries.json?auth_token=4ayhuNvzJq6reTPBnshb&page=1
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      X-Total-Pages:
+      - '0'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '0'
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"d751713988987e9331980363e24189ce"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=C-hTeeAqjggCaSBq4Z39oq1EyqM; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - 2959cc4bcd9c046e8a2b8a0fadce162d
+      X-Runtime:
+      - '0.033525'
+    body:
+      encoding: UTF-8
+      string: "[]"
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/content_types/songs/entries.json?auth_token=4ayhuNvzJq6reTPBnshb
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -426,133 +675,151 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"c18fb25ac8f18317e1261ec32280712b"'
+      - '"91f494fd44d73456172a0e4653065ba8"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=qOlxSsaofE-wOUsC-MyGCi3bnqM; domain=.example.com; path=/;
+      - _locomotive_session=hHLXS654Q9_oYyGmvXad36Iefk0; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 9f0436016e72d8da826ad60056ef48a8
+      - f0f15c3eb67f6be73904fb01be232d65
       X-Runtime:
-      - '0.057882'
+      - '0.054151'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f81194fe0634fa900038a","_id":"544f81194fe0634fa900038a","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+      string: '[{"id":"5470928687f643b6db001b4a","_id":"5470928687f643b6db001b4a","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #1","_slug":"song-number-1","_position":0,"_visible":true,"content_type_slug":"songs","title":"Song
-        #1","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038a/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038a/files/cover.jpg","short_description":"Lorem
+        #1","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4a/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4a/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"544f81194fe0634fa900038b","_id":"544f81194fe0634fa900038b","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5470928687f643b6db001b4b","_id":"5470928687f643b6db001b4b","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #2","_slug":"song-number-2","_position":1,"_visible":true,"content_type_slug":"songs","title":"Song
-        #2","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038b/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038b/files/cover.jpg","short_description":"Lorem
+        #2","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4b/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4b/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"544f81194fe0634fa900038c","_id":"544f81194fe0634fa900038c","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5470928687f643b6db001b4c","_id":"5470928687f643b6db001b4c","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #3","_slug":"song-number-3","_position":2,"_visible":true,"content_type_slug":"songs","title":"Song
-        #3","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038c/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038c/files/cover.jpg","short_description":"Lorem
+        #3","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4c/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4c/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"544f81194fe0634fa900038d","_id":"544f81194fe0634fa900038d","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5470928687f643b6db001b4d","_id":"5470928687f643b6db001b4d","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #4","_slug":"song-number-4","_position":3,"_visible":true,"content_type_slug":"songs","title":"Song
-        #4","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038d/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038d/files/cover.jpg","short_description":"Lorem
+        #4","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4d/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4d/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"544f81194fe0634fa900038e","_id":"544f81194fe0634fa900038e","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"pearl-jam"},{"id":"5470928687f643b6db001b4e","_id":"5470928687f643b6db001b4e","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #5","_slug":"song-number-5","_position":4,"_visible":true,"content_type_slug":"songs","title":"Song
-        #5","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038e/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038e/files/cover.jpg","short_description":"Lorem
+        #5","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4e/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4e/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"544f81194fe0634fa900038f","_id":"544f81194fe0634fa900038f","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"5470928687f643b6db001b4f","_id":"5470928687f643b6db001b4f","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Song
         #6","_slug":"song-number-6","_position":5,"_visible":true,"content_type_slug":"songs","title":"Song
-        #6","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038f/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa900038f/files/cover.jpg","short_description":"Lorem
+        #6","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4f/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b4f/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"544f81194fe0634fa9000390","_id":"544f81194fe0634fa9000390","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28","band":"the-who"},{"id":"5470928687f643b6db001b50","_id":"5470928687f643b6db001b50","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Song
         #7","_slug":"song-number-7","_position":6,"_visible":true,"content_type_slug":"songs","title":"Song
-        #7","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa9000390/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa9000390/files/cover.jpg","short_description":"Lorem
+        #7","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b50/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b50/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
-        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"544f81194fe0634fa9000391","_id":"544f81194fe0634fa9000391","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:17+01:00","_label":"Song
+        dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"},{"id":"5470928687f643b6db001b51","_id":"5470928687f643b6db001b51","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:26+01:00","_label":"Song
         #8","_slug":"song-number-8","_position":7,"_visible":true,"content_type_slug":"songs","title":"Song
-        #8","cover":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa9000391/files/cover.jpg","cover_url":"/sites/544f81174fe0634fa9000352/content_entry544f81174fe0634fa900036a/544f81194fe0634fa9000391/files/cover.jpg","short_description":"Lorem
+        #8","cover":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b51/files/cover.jpg","cover_url":"/sites/5470928487f643b6db001b12/content_entry5470928487f643b6db001b2a/5470928687f643b6db001b51/files/cover.jpg","short_description":"Lorem
         ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vitae tincidunt
         urna. Nunc felis purus, ultricies et venenatis bibendum, fringilla eu lectus.
         Sed cursus, sem at blandit mattis, libero quam egestas tortor, eget cursus
         dolor tellus id nunc.","audio_url":"http://blip.tv/file/get/NicolasRaynier-Milk617.flv","duration":"6:28"}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
       - close
+      X-Total-Pages:
+      - '1'
+      X-Per-Page:
+      - '10'
+      X-Total-Entries:
+      - '6'
       Content-Type:
       - application/json; charset=utf-8
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"e8bebf8bf4cc96c4b0023f5e87e109bf"'
+      - '"1a3714cbd971e11e9146cf2d01931acf"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=5luiwTQWTP2_ZQWKlsafBJ3MEbo; domain=.example.com; path=/;
+      - _locomotive_session=4ROk8Fm-ZoyWEfYjsazRSPyd71A; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - fc6044e0c9ebd81f2a2886f708e36524
+      - d2a5e59401ff798a79f0ddd8d28ea2b7
       X-Runtime:
-      - '0.052811'
+      - '0.048641'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f811a4fe0634fa9000397","_id":"544f811a4fe0634fa9000397","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '[{"id":"5470928687f643b6db001b57","_id":"5470928687f643b6db001b57","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #1","_slug":"update-number-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"544f81184fe0634fa9000375","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"544f81194fe0634fa9000396","_id":"544f81194fe0634fa9000396","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+        #1","text":"added some free stuff","category":"General","category_id":"5470928487f643b6db001b35","date":"05/12/2009","formatted_date":"05/12/2009"},{"id":"5470928687f643b6db001b56","_id":"5470928687f643b6db001b56","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #2","_slug":"update-number-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"544f81184fe0634fa9000375","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"544f81194fe0634fa9000395","_id":"544f81194fe0634fa9000395","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+        #2","text":"added a chatroom","category":"General","category_id":"5470928487f643b6db001b35","date":"05/23/2009","formatted_date":"05/23/2009"},{"id":"5470928687f643b6db001b55","_id":"5470928687f643b6db001b55","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #3","_slug":"update-number-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"544f81184fe0634fa9000375","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"544f81194fe0634fa9000394","_id":"544f81194fe0634fa9000394","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+        #3","text":"site redesign","category":"General","category_id":"5470928487f643b6db001b35","date":"06/29/2009","formatted_date":"06/29/2009"},{"id":"5470928687f643b6db001b54","_id":"5470928687f643b6db001b54","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #4","_slug":"update-number-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"544f81184fe0634fa9000375","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"544f81194fe0634fa9000393","_id":"544f81194fe0634fa9000393","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"5470928487f643b6db001b35","date":"10/09/2009","formatted_date":"10/09/2009"},{"id":"5470928687f643b6db001b53","_id":"5470928687f643b6db001b53","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #5","_slug":"update-number-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"544f81184fe0634fa9000375","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"544f81194fe0634fa9000392","_id":"544f81194fe0634fa9000392","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+        #5","text":"brian posted a new post","category":"General","category_id":"5470928487f643b6db001b35","date":"11/02/2009","formatted_date":"11/02/2009"},{"id":"5470928687f643b6db001b52","_id":"5470928687f643b6db001b52","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #6","_slug":"awesome-update-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"544f81184fe0634fa9000375","date":"11/16/2009","formatted_date":"11/16/2009"}]'
+        #6","text":"john posted a new post","category":"General","category_id":"5470928487f643b6db001b35","date":"11/16/2009","formatted_date":"11/16/2009"}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f811a4fe0634fa9000397.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b57.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -562,37 +829,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"daa513bb54576e2e8830334d9a32fc02"'
+      - '"a871941101a563f4f97047b7ce600af9"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=OlM6q4-dR5hIIThO0KnY21nsfF4; domain=.example.com; path=/;
+      - _locomotive_session=dxZ4WmIGb-av4G6UpbDGuhApoIs; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 8293fb2eb6d2238ba607c34459e46bb3
+      - c65ca619015248f2efca7c81a886bec6
       X-Runtime:
-      - '0.041563'
+      - '0.035026'
     body:
       encoding: UTF-8
-      string: '{"id":"544f811a4fe0634fa9000397","_id":"544f811a4fe0634fa9000397","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b57","_id":"5470928687f643b6db001b57","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #1","_slug":"update-number-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #1","text":"added some free stuff","category":"General","category_id":"544f81184fe0634fa9000375","date":"05/12/2009","formatted_date":"05/12/2009"}'
+        #1","text":"added some free stuff","category":"General","category_id":"5470928487f643b6db001b35","date":"05/12/2009","formatted_date":"05/12/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f811a4fe0634fa9000397.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b57.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -602,37 +875,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"c73036349f3d147976e5e1ac3bfc9524"'
+      - '"f8e93ff44d3ca142d1facb0e6c1ff347"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=ATOhbNspxUytH4kJK5ZTxBAo_9k; domain=.example.com; path=/;
+      - _locomotive_session=8uxkBh76_bUvaRUflCDxXv3jI3g; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 3c652a7559d3e03b4dd29e03c3aee7b0
+      - fe95a6a6d210143e63d367b9dc3e0b2b
       X-Runtime:
-      - '0.036553'
+      - '0.034570'
     body:
       encoding: UTF-8
-      string: '{"id":"544f811a4fe0634fa9000397","_id":"544f811a4fe0634fa9000397","created_at":"2014-10-28T12:42:18+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b57","_id":"5470928687f643b6db001b57","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #1","_slug":"mise-a-jour-number-1","_position":5,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #1","text":"phrase FR","date":"12/05/2009","formatted_date":"12/05/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000396.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b56.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -642,37 +921,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"48a7ce6b8e7bed987815063776d7d090"'
+      - '"31613e0f2f57349c23c0a035fdebbc05"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=bNfsPb_yBprTBzuQ0JSvtXNeXXk; domain=.example.com; path=/;
+      - _locomotive_session=Q4TvP29xbts3CdbIKYj6DHBlGoQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - a84a9ae4488f9a50f14d7f11d072dbba
+      - 964466c66ae31fe309c3b0f03169b780
       X-Runtime:
-      - '0.038829'
+      - '0.035121'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000396","_id":"544f81194fe0634fa9000396","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b56","_id":"5470928687f643b6db001b56","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #2","_slug":"update-number-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #2","text":"added a chatroom","category":"General","category_id":"544f81184fe0634fa9000375","date":"05/23/2009","formatted_date":"05/23/2009"}'
+        #2","text":"added a chatroom","category":"General","category_id":"5470928487f643b6db001b35","date":"05/23/2009","formatted_date":"05/23/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000396.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b56.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -682,37 +967,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"fe4ff8721c3ecebf88ae1ac6a08ab26b"'
+      - '"f072c3ef4679b08af814ad03d0a0b52b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=kwpXn0qyZIVZtsAFYIllTdbEt1I; domain=.example.com; path=/;
+      - _locomotive_session=cYYP-nfFOZZVLEDZWxGLue0L7FU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 976354b940a21b6c4fcbf058c4779c7c
+      - 4ba9d418795ae65e53ff9f44248e6b23
       X-Runtime:
-      - '0.034082'
+      - '0.083243'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000396","_id":"544f81194fe0634fa9000396","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b56","_id":"5470928687f643b6db001b56","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #2","_slug":"mise-a-jour-number-2","_position":4,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #2","text":"phrase FR","date":"23/05/2009","formatted_date":"23/05/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000395.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b55.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -722,37 +1013,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"f9d69c08f0c1e98f90c384334e4972ff"'
+      - '"a728397ac8eb6f1a54174bec2d1fbdc1"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=PVEUD7QxfBiSMZtILWgcgsPRsXs; domain=.example.com; path=/;
+      - _locomotive_session=cs-r2oKsTnRe6-Ddxr_Zm4vsE0E; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - c46c796dfac597d8cf0500ce2b0e0ac5
+      - 04072897a3284cb77281a1c5cac19519
       X-Runtime:
-      - '0.042153'
+      - '0.034543'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000395","_id":"544f81194fe0634fa9000395","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b55","_id":"5470928687f643b6db001b55","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #3","_slug":"update-number-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #3","text":"site redesign","category":"General","category_id":"544f81184fe0634fa9000375","date":"06/29/2009","formatted_date":"06/29/2009"}'
+        #3","text":"site redesign","category":"General","category_id":"5470928487f643b6db001b35","date":"06/29/2009","formatted_date":"06/29/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000395.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b55.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:42 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -762,37 +1059,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"131a317ddce51b8caf24feea5f4ca590"'
+      - '"06450f527a624a06ef2bc1e32501b20f"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=brCbIPVfiS6EWpE7uQ0Ank3SkHU; domain=.example.com; path=/;
+      - _locomotive_session=c4zV9e-CVYai7Hm5cMjhjUHtw-A; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 777e696f3ef70b8791fd2abef01a8f56
+      - e53c97a4a9c430c522e3e00b18bcb37a
       X-Runtime:
-      - '0.056641'
+      - '0.034503'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000395","_id":"544f81194fe0634fa9000395","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b55","_id":"5470928687f643b6db001b55","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #3","_slug":"mise-a-jour-number-3","_position":3,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #3","text":"phrase FR","date":"29/06/2009","formatted_date":"29/06/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:42 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000394.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b54.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -802,37 +1105,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"2e714f5c29c27e0b8e19bea21afbc8ab"'
+      - '"093fb8f401bd21b3bee30da8b7660580"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=O_bi0yPxiBaKf2a2VxR8kOL0iI8; domain=.example.com; path=/;
+      - _locomotive_session=IajYkJNwof30s3snMSCyX8Z3DnA; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e87e1d219ca2f9bdfe7cb5b547d125b9
+      - 9a9a9afa7c438c4bd6e2cad4bbe8cea0
       X-Runtime:
-      - '0.059742'
+      - '0.033910'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000394","_id":"544f81194fe0634fa9000394","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b54","_id":"5470928687f643b6db001b54","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #4","_slug":"update-number-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"544f81184fe0634fa9000375","date":"10/09/2009","formatted_date":"10/09/2009"}'
+        #4","text":"NEW ALBUM FINISHED!!","category":"General","category_id":"5470928487f643b6db001b35","date":"10/09/2009","formatted_date":"10/09/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000394.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b54.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -842,37 +1151,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"6c61160a0759a71de3baf0f02f98e951"'
+      - '"56aee183d6c5c375b831448121db8fe2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=l_Utc05vYvyLZZLtv4WHwS031bs; domain=.example.com; path=/;
+      - _locomotive_session=StUZGAEbSc3I8NJ9EElu6PdBQfM; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 0b2e85a61904eef88989d95f2165588b
+      - bd6392f962d954ccbea928e85c44cd08
       X-Runtime:
-      - '0.039337'
+      - '0.036450'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000394","_id":"544f81194fe0634fa9000394","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b54","_id":"5470928687f643b6db001b54","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #4","_slug":"mise-a-jour-number-4","_position":2,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #4","text":"phrase FR","date":"09/10/2009","formatted_date":"09/10/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000393.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b53.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -882,37 +1197,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"e94961e1a4ddb6aba528b97a5516d4d1"'
+      - '"c63b4751dc34befa99152e2f7e453b34"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=ITRIizlKOy954vNeE0_WzmmN3is; domain=.example.com; path=/;
+      - _locomotive_session=dHvSZX7vr8ANj_6OXN6dDGHKuwk; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 426d902cd669cae3082885c334a18837
+      - c7d41bd2d7a5c4cf2cddca78d1cfd90a
       X-Runtime:
-      - '0.037354'
+      - '0.034439'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000393","_id":"544f81194fe0634fa9000393","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b53","_id":"5470928687f643b6db001b53","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #5","_slug":"update-number-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #5","text":"brian posted a new post","category":"General","category_id":"544f81184fe0634fa9000375","date":"11/02/2009","formatted_date":"11/02/2009"}'
+        #5","text":"brian posted a new post","category":"General","category_id":"5470928487f643b6db001b35","date":"11/02/2009","formatted_date":"11/02/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000393.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b53.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:50 GMT
       Status:
       - 200 OK
       Connection:
@@ -922,37 +1243,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"0e6e90b5af3c850a3b7b9a13785610bd"'
+      - '"fac23b70ae031b685fa6245ea77aed3b"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=DZaveJEIijqf1YqU-FSpRNhY8wY; domain=.example.com; path=/;
+      - _locomotive_session=O00dPD4fdkAwtvCWJuYOEtQmuig; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 688829b928f80ef0b733864168f19e16
+      - e32c135c0aba152f53d27514a5e5fd42
       X-Runtime:
-      - '0.039029'
+      - '0.034625'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000393","_id":"544f81194fe0634fa9000393","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b53","_id":"5470928687f643b6db001b53","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #5","_slug":"mise-a-jour-number-5","_position":1,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #5","text":"phrase FR","date":"02/11/2009","formatted_date":"02/11/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:50 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000392.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=en
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b52.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=en
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:51 GMT
       Status:
       - 200 OK
       Connection:
@@ -962,37 +1289,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"df2b31de56dfc0a7d6b99f566aef62b8"'
+      - '"052c227c07edd5d8357baf9d61874904"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=bMz12jHnhm9fm-13DpkBzZZiz-M; domain=.example.com; path=/;
+      - _locomotive_session=OvjZnIloaS7KTMvLZBc1w0dyi90; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 57091fdec32486db53a3fbd4d1eca7c0
+      - c1d73756370f462dfab828cde38c0d84
       X-Runtime:
-      - '0.036526'
+      - '0.038647'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000392","_id":"544f81194fe0634fa9000392","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Update
+      string: '{"id":"5470928687f643b6db001b52","_id":"5470928687f643b6db001b52","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Update
         #6","_slug":"awesome-update-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Update
-        #6","text":"john posted a new post","category":"General","category_id":"544f81184fe0634fa9000375","date":"11/16/2009","formatted_date":"11/16/2009"}'
+        #6","text":"john posted a new post","category":"General","category_id":"5470928487f643b6db001b35","date":"11/16/2009","formatted_date":"11/16/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:51 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/544f81194fe0634fa9000392.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/content_types/updates/entries/5470928687f643b6db001b52.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:43 GMT
+      - Sat, 22 Nov 2014 13:41:51 GMT
       Status:
       - 200 OK
       Connection:
@@ -1002,21 +1335,21 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"5114893dbca07a8e26891a7be3826259"'
+      - '"ebbc6af2e0cb2be4f6089ca62ce07fa3"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=kcqF1PL0ya-yOaX2z4dxhXK7j5Y; domain=.example.com; path=/;
+      - _locomotive_session=-jNOIo35ncsCrnX9TD3wGmQxhOM; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 41be239a46d8202752b0009797100255
+      - 2f113476b127168299318765dceeb9a5
       X-Runtime:
-      - '0.037753'
+      - '0.034462'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81194fe0634fa9000392","_id":"544f81194fe0634fa9000392","created_at":"2014-10-28T12:42:17+01:00","updated_at":"2014-10-28T12:42:18+01:00","_label":"Mise
+      string: '{"id":"5470928687f643b6db001b52","_id":"5470928687f643b6db001b52","created_at":"2014-11-22T14:41:26+01:00","updated_at":"2014-11-22T14:41:27+01:00","_label":"Mise
         a jour #6","_slug":"geniale-mise-a-jour-6","_position":0,"_visible":true,"content_type_slug":"updates","translated_in":["en","fr"],"title":"Mise
         a jour #6","text":"phrase FR","date":"16/11/2009","formatted_date":"16/11/2009"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:43 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:51 GMT
 recorded_with: VCR 2.4.0

@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: post
-    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/tokens.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: UTF-8
       string: email=admin%40locomotivecms.com&password=locomotive
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -25,35 +31,41 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"4ea3c712738ee050c48cfde081be4948"'
+      - '"8e97f1fd77647e509718189192e4f857"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=RtQpJPk8EwCG56aImYKPsBjHuX4; domain=.example.com; path=/;
+      - _locomotive_session=FZUtEM2apCYyXqnN4YR7mhZ5sNQ; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 443d0929b09fd918ba4a3c1638c32fa7
+      - 120fb87e7240542ddfcc2ae7cd10be02
       X-Runtime:
-      - '0.027915'
+      - '0.027402'
     body:
       encoding: UTF-8
-      string: '{"token":"sdgp9LsjJPGxDSpi6RAs"}'
+      string: '{"token":"4ayhuNvzJq6reTPBnshb"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -63,38 +75,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"41a9e59d48585940e09554e27a95d752"'
+      - '"bad7f51a7e0b22f00581a42022655870"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=KLLd9rDrBIAtQ8EPvxaOyq_ittc; domain=.example.com; path=/;
+      - _locomotive_session=QfQ5LOlN147z8KvCD9EfCeqXVJU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 0e79a21d2a073c2f46bdd296a33a5477
+      - f5b22d4a32c9cc140c5631ddca31be48
       X-Runtime:
-      - '0.031649'
+      - '0.035913'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -104,38 +122,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"907482c7c9e2090516dc6d94c78ed93e"'
+      - '"a3c83e1ed2bb8be5ad5065a60ae81e9e"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=nFOqayNVc2RAIcDBJ8KKfWAEBLg; domain=.example.com; path=/;
+      - _locomotive_session=SRQNguwevktDTSx2BKqC7z7Ds28; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - e6f748c9326051df7cfcd2d537e5bd79
+      - 4f71423a846f9f73dfc2a0a920a8f6d7
       X-Runtime:
-      - '0.028843'
+      - '0.028506'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrateur","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"Un
         simple LocomotiveCMS site web","meta_keywords":"quelques mots cles","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/current_site.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=nb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -145,38 +169,44 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"41a9e59d48585940e09554e27a95d752"'
+      - '"bad7f51a7e0b22f00581a42022655870"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=kzPylCf_fLZzBVUQsydbP2bsz4c; domain=.example.com; path=/;
+      - _locomotive_session=Fhwyin_PIKR_zJ3G6PVdNMfYiEU; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - f9b8bb51ecb8fe36edbd1a99ab5ab316
+      - 77222552452e126f85991cb94e363c79
       X-Runtime:
-      - '0.028116'
+      - '0.027307'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000352","_id":"544f81174fe0634fa9000352","created_at":"2014-10-28T12:42:15+01:00","updated_at":"2014-10-28T12:42:15+01:00","name":"Sample
-        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com","sample.lvh.me"],"domains_without_subdomain":["sample.example.com"],"domain_name":"lvh.me","memberships":[{"id":"544f81174fe0634fa9000353","_id":"544f81174fe0634fa9000353","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"535fb2af247580694d000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
+      string: '{"id":"5470928487f643b6db001b12","_id":"5470928487f643b6db001b12","created_at":"2014-11-22T14:41:24+01:00","updated_at":"2014-11-22T14:41:24+01:00","name":"Sample
+        website","locales":["en","fr","nb"],"timezone":"Paris","subdomain":"sample","domains":["sample.example.com"],"domains_without_subdomain":[],"domain_name":"example.com","memberships":[{"id":"5470928487f643b6db001b13","_id":"5470928487f643b6db001b13","role":"admin","role_name":"Administrator","can_update":false,"grant_admin":true,"account_id":"546dce1787f643b6db000001","name":"Admin","email":"admin@locomotivecms.com"}],"seo_title":"A
         simple LocomotiveCMS website","meta_keywords":"some meta keywords","meta_description":"some
         meta description"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets.json?auth_token=sdgp9LsjJPGxDSpi6RAs
+    uri: http://sample.example.com:3000/locomotive/api/snippets.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -186,44 +216,50 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"7403030047f475920c10076a06cb2e96"'
+      - '"b4e0d1300c934758a34a66041fb99f57"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=z_QYx-CfzJtR07bZoLgARC_YZgk; domain=.example.com; path=/;
+      - _locomotive_session=3F3nDY4pgFjkOiFByX5OWWhBhAI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 846dc176426c6093295e47ec4ecbe648
+      - 75196c888989a24865cd0a22d02e58f7
       X-Runtime:
-      - '0.036226'
+      - '0.034979'
     body:
       encoding: UTF-8
-      string: '[{"id":"544f81174fe0634fa9000357","_id":"544f81174fe0634fa9000357","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        Oct 12:42","name":"A-long-one","slug":"a-long-one","template":"<p>A long one
-        indeed</p>\n"},{"id":"544f81174fe0634fa9000358","_id":"544f81174fe0634fa9000358","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        Oct 12:42","name":"Header","slug":"header","template":"<h1>{{ site.name }}</h1>\n"},{"id":"544f81174fe0634fa9000356","_id":"544f81174fe0634fa9000356","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        Oct 12:42","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
+      string: '[{"id":"5470928487f643b6db001b17","_id":"5470928487f643b6db001b17","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        Dec 14:41","name":"A-long-one","slug":"a-long-one","template":"<p>A long one
+        indeed</p>\n"},{"id":"5470928487f643b6db001b18","_id":"5470928487f643b6db001b18","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        Dec 14:41","name":"Header","slug":"header","template":"<h1>{{ site.name }}</h1>\n"},{"id":"5470928487f643b6db001b16","_id":"5470928487f643b6db001b16","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        Dec 14:41","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
         song._permalink }}\">{{ song.title }}</a></h3>\n  <div class=\"cover\">{{
         song.cover.url | image_tag }}</div>\n  <div class=\"info\">\n    {{ song.short_description
         }}\n    <p class=\"listen\">\n      <a href=\"{{ song.audio_url }}\">&rarr;
         Listen ({{ song.duration }} min)</a>\n    </p>\n    <p>\u00e9couter en Francais</p>\n  </div>\n  <div
         class=\"clear\"></div>\n</li>"}]'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000357.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b17.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -233,37 +269,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"119b277a384184305eed710d8ed5b482"'
+      - '"eff52b26ca74e200e042dd7d21cd60ab"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=G0DXJF6XxMAHGO4q1y1Yr0F7AkI; domain=.example.com; path=/;
+      - _locomotive_session=Cfq_8mK7SLzVwSrCkezASGzfHpE; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 5807217fb252d90b38f231fe04d331de
+      - 194075c2294222ec39d527f48b22e30f
       X-Runtime:
-      - '0.028923'
+      - '0.030915'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000357","_id":"544f81174fe0634fa9000357","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        oct. 12:42","name":"A-long-one","slug":"a-long-one","template":"<p>A long
-        one indeed</p>\n"}'
+      string: '{"id":"5470928487f643b6db001b17","_id":"5470928487f643b6db001b17","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        d\u00e9c. 14:41","name":"A-long-one","slug":"a-long-one","template":"<p>A
+        long one indeed</p>\n"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000357.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b17.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=nb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -273,37 +315,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"364cc6d2cbcaaf13b0d67c7510dc57d1"'
+      - '"e6daf77ab386a95b8c03e6cad4544bc2"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=r53cDHyf1TI8wUFwJfknJvDMbjw; domain=.example.com; path=/;
+      - _locomotive_session=xSig7fKMwoHr5uOCG141ccO3Pe8; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 0e6f6306c0e2b24aa212a4bf19f9f9b3
+      - 9c4bc9ad0d82391000ba684b49db46da
       X-Runtime:
-      - '0.034003'
+      - '0.031063'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000357","_id":"544f81174fe0634fa9000357","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28.
-        oktober, 12:42","name":"A-long-one","slug":"a-long-one","template":"<p>A long
-        one indeed</p>\n"}'
+      string: '{"id":"5470928487f643b6db001b17","_id":"5470928487f643b6db001b17","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22.
+        desember, 14:41","name":"A-long-one","slug":"a-long-one","template":"<p>A
+        long one indeed</p>\n"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000358.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b18.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -313,76 +361,43 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"3d638d4712c5e82d3d80322f5ad9e4f5"'
+      - '"f5b141951d5c61e998a1b4685a4515d6"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=Vnb7MGG7spLaYW9heCvdrgUO6zA; domain=.example.com; path=/;
+      - _locomotive_session=zJNfDsA6zmRLpdWPx6ADZuN1kR0; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 4939b2d84f2fb673f5539694bf7673df
+      - 92228acee7c9104355a6fcd3942e3537
       X-Runtime:
-      - '0.034311'
+      - '0.030760'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000358","_id":"544f81174fe0634fa9000358","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        oct. 12:42","name":"Header","slug":"header","template":"<h1>{{ site.name }}</h1>\n"}'
-    http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
-- request:
-    method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000358.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers: {}
-  response:
-    status:
-      code: 200
-      message: OK
-    headers:
-      Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
-      Status:
-      - 200 OK
-      Connection:
-      - close
-      Content-Type:
-      - application/json; charset=utf-8
-      X-Ua-Compatible:
-      - IE=Edge
-      Etag:
-      - '"bb309e47376278061613c17fbd3d1e0f"'
-      Cache-Control:
-      - max-age=0, private, must-revalidate
-      Set-Cookie:
-      - _locomotive_session=wzBGgK7luMCY-PeYGyNWE5dMDQ4; domain=.example.com; path=/;
-        HttpOnly
-      X-Request-Id:
-      - 56ecbc185a28fbc66181d5ad06a98fc8
-      X-Runtime:
-      - '0.032568'
-    body:
-      encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000358","_id":"544f81174fe0634fa9000358","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28.
-        oktober, 12:42","name":"Header","slug":"header","template":"<h1>{{ site.name
+      string: '{"id":"5470928487f643b6db001b18","_id":"5470928487f643b6db001b18","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        d\u00e9c. 14:41","name":"Header","slug":"header","template":"<h1>{{ site.name
         }}</h1>\n"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000356.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=fr
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b18.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=nb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -392,40 +407,92 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"80ea1518f095a6521e28f817f0fb7a0a"'
+      - '"ab49cb36b9e407dc888b45db61f73395"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=3q9PhcyiaF2EeW2Ye4qYIRccTqQ; domain=.example.com; path=/;
+      - _locomotive_session=gFecog3ZhVnnNFMs1YewpuZxEpg; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - ecf7aecbf1dca5a250435503751fc282
+      - 56c5b4088ed9c7cbb4e82b582d4d82c1
       X-Runtime:
-      - '0.035035'
+      - '0.029570'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000356","_id":"544f81174fe0634fa9000356","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28
-        oct. 12:42","name":"Song","slug":"song","template":"<li>\n  <h3>{{ song.title
+      string: '{"id":"5470928487f643b6db001b18","_id":"5470928487f643b6db001b18","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22.
+        desember, 14:41","name":"Header","slug":"header","template":"<h1>{{ site.name
+        }}</h1>\n"}'
+    http_version: 
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
+- request:
+    method: get
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b16.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=fr
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sat, 22 Nov 2014 13:41:42 GMT
+      Status:
+      - 200 OK
+      Connection:
+      - close
+      Content-Type:
+      - application/json; charset=utf-8
+      X-Ua-Compatible:
+      - IE=Edge
+      Etag:
+      - '"122ddb18ff6b11cc1b5a56dcf6419fcd"'
+      Cache-Control:
+      - max-age=0, private, must-revalidate
+      Set-Cookie:
+      - _locomotive_session=Z13mncWht3fOTiZwhSRXCu4-wkA; domain=.example.com; path=/;
+        HttpOnly
+      X-Request-Id:
+      - a12fb407e21413a28c47be029b6110e2
+      X-Runtime:
+      - '0.029000'
+    body:
+      encoding: UTF-8
+      string: '{"id":"5470928487f643b6db001b16","_id":"5470928487f643b6db001b16","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22
+        d\u00e9c. 14:41","name":"Song","slug":"song","template":"<li>\n  <h3>{{ song.title
         }}</h3>\n  <div class=''cover''>{{ song.cover.url | image_tag }}</div>\n  <div
         class=''info''>\n    {{ song.short_description }}\n    <p class=''listen''>\n      <a
         href=''{{ song.audio_url }}''>&rarr; \u00e9couter ({{ song.duration }} min)</a>\n    </p>\n  </div>\n  <div
         class=''clear''></div>\n</li>\n"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/snippets/544f81174fe0634fa9000356.json?auth_token=sdgp9LsjJPGxDSpi6RAs&locale=nb
+    uri: http://sample.example.com:3000/locomotive/api/snippets/5470928487f643b6db001b16.json?auth_token=4ayhuNvzJq6reTPBnshb&locale=nb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Tue, 28 Oct 2014 11:42:34 GMT
+      - Sat, 22 Nov 2014 13:41:42 GMT
       Status:
       - 200 OK
       Connection:
@@ -435,25 +502,25 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"33cc4e3f126612991b8bcec3dbbed790"'
+      - '"313668af6b3b2901f8cefd041d2da425"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=8q1VE0rkasXTMVh_9yQqyhvmMZM; domain=.example.com; path=/;
+      - _locomotive_session=_Ha_ox_kHTWhr_Ur0QPNxdRdTZ4; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 87a3fcb2f4898e063fb1c527653867f3
+      - b17bf350940eda4c6dfe2325797dd0ae
       X-Runtime:
-      - '0.044546'
+      - '0.029614'
     body:
       encoding: UTF-8
-      string: '{"id":"544f81174fe0634fa9000356","_id":"544f81174fe0634fa9000356","created_at":"2014-10-28T12:42:15+01:00","updated_at":"28.
-        oktober, 12:42","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
+      string: '{"id":"5470928487f643b6db001b16","_id":"5470928487f643b6db001b16","created_at":"2014-11-22T14:41:24+01:00","updated_at":"22.
+        desember, 14:41","name":"Song","slug":"song","template":"<li>\n  <h3><a href=\"/songs/{{
         song._permalink }}\">{{ song.title }}</a></h3>\n  <div class=\"cover\">{{
         song.cover.url | image_tag }}</div>\n  <div class=\"info\">\n    {{ song.short_description
         }}\n    <p class=\"listen\">\n      <a href=\"{{ song.audio_url }}\">&rarr;
         Listen ({{ song.duration }} min)</a>\n    </p>\n    <p>\u00e9couter en Francais</p>\n  </div>\n  <div
         class=\"clear\"></div>\n</li>"}'
     http_version: 
-  recorded_at: Tue, 28 Oct 2014 11:42:34 GMT
+  recorded_at: Sat, 22 Nov 2014 13:41:42 GMT
 recorded_with: VCR 2.4.0

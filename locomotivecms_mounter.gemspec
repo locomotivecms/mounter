@@ -34,7 +34,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'tzinfo',                          '~> 0.3.29'
   s.add_dependency 'chronic',                         '~> 0.10.2'
 
-  s.add_dependency 'activesupport',                   '~> 3.2.18'
+  s.add_dependency 'activesupport',                   '~> 3.2.21'
   s.add_dependency 'i18n',                            '~> 0.6.11'
   s.add_dependency 'stringex',                        '~> 2.0.3'
 

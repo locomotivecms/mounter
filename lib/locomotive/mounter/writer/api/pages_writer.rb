@@ -75,8 +75,8 @@ module Locomotive
 
               layouts = pages.values.find_all { |page| page.fullpath =~ /^layouts\// }
 
-              # make sure the layouts are first in the list
-              layouts.sort! { |a, b| (a.is_layout? ? 0 : 1) <=> (b.is_layout? ? 0 : 1) }
+              # make sure the templates without the extends tag are first in the list
+              layouts.sort! { |a, b| (a.extends_template? ? 1 : 0) <=> (b.extends_template? ? 1 : 0) }
 
               layouts.each do |page|
                 _write(page, done, false, false)
@@ -98,10 +98,10 @@ module Locomotive
             # loop over its children
             if with_children
               (page.children || []).sort_by(&:depth_and_position).each do |child|
-                layout = child.layout
-                layout = page.fullpath if layout && layout == 'parent'
+                template_fullpath = child.template_fullpath
+                template_fullpath = page.fullpath if template_fullpath && template_fullpath == 'parent'
 
-                if done[child.fullpath].nil? && (!layout || done[layout])
+                if done[child.fullpath].nil? && (!template_fullpath || done[template_fullpath])
                   _write(child, done)
                 end
               end
@@ -176,40 +176,6 @@ module Locomotive
             self.mounting_point.pages
           end
 
-          # # Return the pages which are layouts for others.
-          # # They are sorted by the depth.
-          # #
-          # # @return [ Array ] The list of layouts
-          # #
-          # def layouts
-          #   self.pages.values.find_all do |page|
-          #     self.safely_translated?(page) && self.is_layout?(page)
-          #   end.sort { |a, b| a.depth <=> b.depth }
-          # end
-
-          # # Return the pages wich are not layouts for others.
-          # # They are sorted by both the depth and the position.
-          # #
-          # # @return [ Array ] The list of non-layout pages
-          # #
-          # def other_than_layouts
-          #   list = (self.pages.values - self.layouts)
-
-          #   # get only the translated ones in the current locale
-          #   list.delete_if do |page|
-          #     # if (!page.parent.nil? && !page.translated_in?(self.mounting_point.default_locale)) ||
-          #     #   !page.translated_in?(Locomotive::Mounter.locale)
-          #     if !self.safely_translated?(page)
-          #       self.output_resource_op page
-          #       self.output_resource_op_status page, :not_translated
-          #       true
-          #     end
-          #   end
-
-          #   # sort them
-          #   list.sort { |a, b| a.depth_and_position <=> b.depth_and_position }
-          # end
-
           # Tell if the page passed in parameter has already been
           # translated on the remote engine for the locale passed
           # as the second parameter.
@@ -240,27 +206,6 @@ module Locomotive
               page.translated_in?(Locomotive::Mounter.locale)
             end
           end
-
-          # # Tell if the page is a real layout, which means no extends tag inside
-          # # and that at least one of the other pages reference it as a parent template.
-          # #
-          # # @param [ Object ] page The page
-          # #
-          # # @return [ Boolean] True if it is a real layout.
-          # #
-          # def is_layout?(page)
-          #   if page.is_layout?
-          #     # has child(ren) extending the page itself ?
-          #     return true if (page.children || []).any? { |child| child.layout == 'parent' }
-
-          #     fullpath = page.fullpath_in_default_locale
-
-          #     # among all the pages, is there a page extending the page itself ?
-          #     self.pages.values.any? { |_page| _page.fullpath_in_default_locale != fullpath && _page.layout == fullpath }
-          #   else
-          #     false # extends not present
-          #   end
-          # end
 
           # Return the parameters of a page sent by the API.
           # It includes the editable_elements if the data option is enabled or

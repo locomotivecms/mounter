@@ -27,7 +27,6 @@ describe Locomotive::Mounter::Models::Page do
       page.localized_field?(:title).should be_true
       page.title.should eq 'Hello world'
       Locomotive::Mounter.with_locale(:fr) { page.title.should be_nil }
-
     end
 
     it 'sets a complete translation of a localized attribute' do
@@ -110,31 +109,45 @@ describe Locomotive::Mounter::Models::Page do
 
   describe 'layout' do
 
-    it 'is a layout if it includes the extends keyword' do
-      page = build_page(raw_template: 'Lorem ipsum')
-      page.is_layout?.should be_true
-    end
-
-    it 'is not a layout because it does not include the extends keyword' do
-      page = build_page(raw_template: "   \n\t{% extends index %} Lorem ipsum")
+    it 'is not a layout by default' do
+      page = build_page
       page.is_layout?.should be_false
     end
 
-    it 'is not a layout if the template is nil' do
-      build_page.is_layout?.should be_false
+    it 'is a layout if it says so' do
+      page = build_page(is_layout: true)
+      page.is_layout?.should be_true
     end
 
-    it 'is not a layout if the template is empty' do
-      template = Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(File.join(File.dirname(__FILE__), '../..', 'fixtures', 'empty.liquid.haml'))
-      build_page(template: template).is_layout?.should be_false
-    end
+  end
 
-    it 'returns the fullpath to the layout' do
+  describe 'extending a template' do
+
+    it 'extends an template if the raw template includes the extends liquid tag' do
       page = build_page(raw_template: "   \n\t{% extends index %} Lorem ipsum")
-      page.layout.should == 'index'
+      page.extends_template?.should be_true
+    end
+
+    it 'does not extend a template because the raw template does not include the extends liquid tag' do
+      page = build_page(raw_template: 'Lorem ipsum')
+      page.extends_template?.should be_false
+    end
+
+    it 'does not extend a template if the raw template is nil' do
+      build_page.extends_template?.should be_false
+    end
+
+    it 'does not extend a template if the raw template is empty' do
+      template = Locomotive::Mounter::Utils::YAMLFrontMattersTemplate.new(File.join(File.dirname(__FILE__), '../..', 'fixtures', 'empty.liquid.haml'))
+      build_page(template: template).extends_template?.should be_false
+    end
+
+    it 'returns the fullpath to the template' do
+      page = build_page(raw_template: "   \n\t{% extends index %} Lorem ipsum")
+      page.template_fullpath.should == 'index'
 
       page = build_page(raw_template: "   \n\t{% extends 'parent' %} Lorem ipsum")
-      page.layout.should == 'parent'
+      page.template_fullpath.should == 'parent'
     end
 
   end
