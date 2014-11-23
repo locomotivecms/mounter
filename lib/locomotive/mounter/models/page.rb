@@ -337,7 +337,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url redirect_type handle published listed searchable cache_strategy response_type position seo_title meta_description meta_keywords)
+          fields = %w(title slug redirect_url redirect_type handle published listed is_layout searchable cache_strategy response_type position seo_title meta_description meta_keywords)
 
           _attributes = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
@@ -367,7 +367,7 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published searchable cache_strategy
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed is_layout published searchable cache_strategy
             response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
