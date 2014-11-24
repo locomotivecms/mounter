@@ -11,6 +11,7 @@ module Locomotive
         field :slug,              localized: true
         field :fullpath,          localized: true
         field :is_layout,         default: false
+        field :allow_layout,      default: false
         field :redirect_url,      localized: true
         field :redirect_type,     default: 301
         field :template,          localized: true
@@ -367,7 +368,8 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed is_layout published searchable cache_strategy
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed is_layout
+            allow_layout published searchable cache_strategy
             response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
@@ -398,7 +400,7 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(title slug listed is_layout published searchable handle cache_strategy
+          fields = %w(title slug listed is_layout allow_layout published searchable handle cache_strategy
             redirect_url response_type templatized content_type_id position
             seo_title meta_description meta_keywords)
 
