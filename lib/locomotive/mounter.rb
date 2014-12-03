@@ -3,6 +3,10 @@ $:.unshift File.expand_path(File.dirname(__FILE__))
 # Force encoding to UTF-8
 Encoding.default_internal = Encoding.default_external = 'UTF-8'
 
+# Remove I18n warnings
+require 'i18n'
+I18n.config.enforce_available_locales = false
+
 require 'logger'
 require 'colorize'
 
@@ -63,7 +67,7 @@ module Locomotive
 
     TEMPLATE_EXTENSIONS = %w(liquid haml)
 
-    @@logger = Logger.new(STDOUT).tap { |log| log.level = Logger::DEBUG }
+    @@logger = ::Logger.new(STDOUT).tap { |log| log.level = ::Logger::DEBUG }
 
     @@mount_point = nil
 

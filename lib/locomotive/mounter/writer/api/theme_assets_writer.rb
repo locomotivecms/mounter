@@ -191,7 +191,7 @@ module Locomotive
           end
 
           def sprockets
-            Locomotive::Mounter::Extensions::Sprockets.environment(self.mounting_point.path)
+            Locomotive::Mounter::Extensions::Sprockets.environment(self.mounting_point.path, true)
           end
 
         end

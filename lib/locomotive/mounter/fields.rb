@@ -74,6 +74,10 @@ module Locomotive
         end
       end
 
+      def [](name)
+        self.attributes[name.to_sym]
+      end
+
       # Return the fields with their values and their translations
       #
       # @return [ Hash ] The attributes

@@ -1,0 +1,18 @@
+---
+title: Default layout
+position: 1
+---
+!!! XML
+!!!
+%html{ lang: "en" }
+  %head
+    %meta{ charset: "utf-8" }
+
+    %title {{ site.name }}
+
+    %meta{ content: "{{ site.meta_description }}", name: "description" }
+    %meta{ content: "{{ site.meta_keywords }}", name: "keywords" }
+
+  %body
+    {% block main %}
+    {% endblock %}

@@ -25,23 +25,13 @@ module Locomotive
             self.output_title(:pulling)
           end
 
-          def get(resource_name, locale = nil, raw = false)
-            params = { query: {} }
+          def get(resource_name, locale = nil, dont_filter_attributes = false)
+            attribute_names = dont_filter_attributes ? nil : self.safe_attributes
 
-            params[:query][:locale] = locale if locale
-
-            response = Locomotive::Mounter::EngineApi.get("/#{resource_name}.json", params).parsed_response
-
-            return response if raw
-
-            case response
-            when Hash then response.to_hash.delete_if { |k, _| !self.safe_attributes.include?(k) }
-            when Array
-              response.map do |row|
-                row.delete_if { |k, _| !self.safe_attributes.include?(k) }
-              end
-            else
-              response
+            begin
+              Locomotive::Mounter::EngineApi.fetch(resource_name, {}, locale, attribute_names)
+            rescue ApiReadException => e
+              raise ReaderException.new(e.message)
             end
           end
 

@@ -3,7 +3,7 @@ require 'spec_helper'
 describe Locomotive::Mounter do
 
   before(:each) do
-    @reader = stub(:run! => 'Hello world')
+    @reader = double(:run! => 'Hello world')
     Locomotive::Mounter::Config.register(reader: @reader)
   end
 

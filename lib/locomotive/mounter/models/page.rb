@@ -10,6 +10,8 @@ module Locomotive
         field :title,             localized: true
         field :slug,              localized: true
         field :fullpath,          localized: true
+        field :is_layout,         default: false
+        field :allow_layout,      default: false
         field :redirect_url,      localized: true
         field :redirect_type,     default: 301
         field :template,          localized: true
@@ -40,6 +42,7 @@ module Locomotive
         alias :published?   :published
         alias :templatized? :templatized
         alias :searchable?  :searchable
+        alias :is_layout?   :is_layout
 
         ## methods ##
 
@@ -62,15 +65,17 @@ module Locomotive
         # Return the fullpath dasherized and with the "*" character
         # for the slug of templatized page.
         #
+        # @param [ Boolean ] wildcard If true, replace the slug of a templatized page by the "*" character (default: true)
+        #
         # @return [ String ] The safe full path or nil if the page is not translated in the current locale
         #
-        def safe_fullpath
+        def safe_fullpath(wildcard = true)
           if self.index_or_404?
             self.slug
           else
-            base  = self.parent.safe_fullpath
+            base  = self.parent.safe_fullpath(wildcard)
             _slug = if self.templatized? && !self.templatized_from_parent
-              '*'
+              wildcard ? '*' : self.slug
             elsif !self.translated_in?(Locomotive::Mounter.locale)
               self.slug_translations[self.mounting_point.default_locale]
             else
@@ -155,23 +160,23 @@ module Locomotive
           self.depth * 1000 + (self.position || 199)
         end
 
-        # A layout is a page whose the template does
-        # not include the extend keyword.
-        # If the template is blank then, it is not considered as a layout
+        # Tell if the page extends the template of another page.
+        # Basically, we check if the template of the page includes
+        # the "extends" liquid tag.
         #
         # @return [ Boolean ] True if the template can be a layout.
         #
-        def is_layout?
-          self.layout.nil?
+        def extends_template?
+          !self.template_fullpath.nil?
         end
 
-        # Return the fullpath of the page which is used
-        # as a layout for the current page.
+        # Return the fullpath of the page whose template is extended
+        # in the current template.
         #
-        # @return [ String ] The fullpath to the layout
+        # @return [ String ] The fullpath of the "extended" page or nil if no extends tag
         #
-        def layout
-          return false if self.source.nil? || self.source.strip.blank?
+        def template_fullpath
+          return nil if self.source.nil? || self.source.strip.blank?
 
           self.source =~ /\{%\s*extends\s+\'?([[\w|\-|\_]|\/]+)\'?\s*%\}/
           $1
@@ -333,7 +338,7 @@ module Locomotive
         # @return [ String ] The YAML version of the page
         #
         def to_yaml
-          fields = %w(title slug redirect_url redirect_type handle published listed searchable cache_strategy response_type position seo_title meta_description meta_keywords)
+          fields = %w(title slug redirect_url redirect_type handle published listed is_layout searchable cache_strategy response_type position seo_title meta_description meta_keywords)
 
           _attributes = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
@@ -363,7 +368,8 @@ module Locomotive
         # @return [ Hash ] The params
         #
         def to_params
-          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed published searchable cache_strategy
+          params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed is_layout
+            allow_layout published searchable cache_strategy
             response_type position templatized seo_title meta_description meta_keywords)
 
           # slug
@@ -394,7 +400,7 @@ module Locomotive
         # @return [ Hash ] The safe params
         #
         def to_safe_params
-          fields = %w(title slug listed published searchable handle cache_strategy
+          fields = %w(title slug listed is_layout allow_layout published searchable handle cache_strategy
             redirect_url response_type templatized content_type_id position
             seo_title meta_description meta_keywords)
 

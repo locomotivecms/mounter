@@ -60,7 +60,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     end
 
     it 'runs it' do
-      @reader.stubs(:build_mounting_point).returns(true)
+      @reader.stub(build_mounting_point: true)
       @reader.run!(path: @path).should_not be_nil
     end
 
@@ -108,22 +108,22 @@ describe Locomotive::Mounter::Reader::FileSystem do
           @song_template  = @mounting_point.pages['songs/template']
         end
 
-        it 'has 13 pages' do
-          @mounting_point.pages.size.should == 14
+        it 'has 17 pages' do
+          @mounting_point.pages.size.should == 17
         end
 
         describe '#tree' do
 
           it 'puts pages under the index page' do
-            @index.children.size.should == 8
+            @index.children.size.should == 9
           end
 
           it 'keeps the ordering of the config' do
-            @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
+            @index.children.map(&:fullpath).should == ['about-us', 'music', 'online-store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs', 'layouts']
           end
 
           it 'assigns titles for all the pages' do
-            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives', 'Songs']
+            @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo", 'Archives', 'Songs', 'Layouts']
           end
 
           it 'also includes nested children' do
@@ -139,11 +139,11 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
           it 'localizes titles' do
             Locomotive::Mounter.with_locale(:fr) do
-              @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil]
+              @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil, nil]
             end
 
             Locomotive::Mounter.with_locale(:nb) do
-              @index.children.map(&:title).should == ['Om oss', nil, nil, nil, nil, nil, nil, nil]
+              @index.children.map(&:title).should == ['Om oss', nil, nil, nil, nil, nil, nil, nil, nil]
             end
           end
 
@@ -191,16 +191,16 @@ describe Locomotive::Mounter::Reader::FileSystem do
         #   @mounting_point = @reader.run!(path: @path)
         # end
 
-        it 'has 4 content types' do
+        it 'has 5 content types' do
           @mounting_point.content_types.size.should == 5
-          @mounting_point.content_types.keys.should == %w(bands events messages songs updates)
-          @mounting_point.content_types.values.map(&:slug).should == %w(bands events messages songs updates)
+          @mounting_point.content_types.keys.should match_array %w(bands events messages songs updates)
+          @mounting_point.content_types.values.map(&:slug).should match_array %w(bands events messages songs updates)
         end
 
         describe 'a single content type' do
 
           before(:each) do
-            @content_type = @mounting_point.content_types.values[1]
+            @content_type = @mounting_point.content_types['events']
           end
 
           it 'has basic properties: name, slug' do
@@ -262,8 +262,8 @@ describe Locomotive::Mounter::Reader::FileSystem do
 
       it 'has 3 snippets' do
         @mounting_point.snippets.size.should == 3
-        @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
-        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
+        @mounting_point.snippets.keys.sort.should == %w(a-long-one header song)
+        @mounting_point.snippets.values.map(&:slug).sort.should == %w(a-long-one header song)
       end
 
       it 'localizes the template' do
@@ -289,7 +289,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a single content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries['events/avogadro-s-number']
+          @content_entry = @mounting_point.content_entries['events/avogadros-number']
         end
 
         it 'has a label' do
@@ -297,7 +297,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
         end
 
         it 'has a slug' do
-          @content_entry._slug.should == "avogadro-s-number"
+          @content_entry._slug.should == "avogadros-number"
         end
 
         it 'can access dynamic field' do
@@ -313,7 +313,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       describe 'a localized content entry' do
 
         before(:each) do
-          @content_entry = @mounting_point.content_entries['updates/update-1']
+          @content_entry = @mounting_point.content_entries['updates/update-number-1']
         end
 
         it 'has a label' do
@@ -333,7 +333,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     describe 'theme_assets' do
 
       before(:each) do
-        stub_readers(@read, %w{ theme_assets })
+        stub_readers(@reader, %w{ theme_assets })
         @mounting_point = @reader.run!(path: @path)
       end
 
@@ -370,7 +370,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
     describe 'theme_assets' do
 
       before(:each) do
-        stub_readers(@read, %w{ theme_assets })
+        stub_readers(@reader, %w{ theme_assets })
         @mounting_point = @reader.run!(path: @path)
       end
 
@@ -402,7 +402,7 @@ describe Locomotive::Mounter::Reader::FileSystem do
       "Locomotive::Mounter::Reader::FileSystem::#{name.camelize}Reader".constantize
     end
 
-    reader.stubs(:readers).returns(klasses)
+    reader.stub(readers: klasses)
   end
 
 end

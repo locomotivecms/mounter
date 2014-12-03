@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=iaWvtP5PhmnyKypXpLbM
+    uri: http://sample.example.com:3000/locomotive/api/content_types.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 23 Oct 2013 22:07:24 GMT
+      - Sat, 22 Nov 2014 13:42:01 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,40 +29,40 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"7ca2d05aab50ecef19dbe531afe6319f"'
+      - '"81a7b42b2c7298301f36f2fdad5d32de"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=B-uQjgckRhSH_d5EdAPmLoUkgbU; domain=.example.com; path=/;
+      - _locomotive_session=5Gu_o-CnbXZQIMUtCzhBpJknfAs; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - c5aa3f886037ccdf8042df9f67a20e62
+      - c34dcc855c04abe9164ca9243c11036c
       X-Runtime:
-      - '0.077323'
+      - '0.062630'
     body:
       encoding: UTF-8
-      string: '[{"id":"5268487b87f64318d00002f5","_id":"5268487b87f64318d00002f5","created_at":"2013-10-24T00:06:51+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"5268487b87f64318d00002f6","_id":"5268487b87f64318d00002f6","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the band","position":0},{"id":"5268487b87f64318d00002f7","_id":"5268487b87f64318d00002f7","name":"leader","label":"Fullname
-        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"5268487b87f64318d00002f8","_id":"5268487b87f64318d00002f8","name":"kind","label":"Music
-        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"5268487b87f64318d00002f9","name":"grunge","position":0,"id":"5268487b87f64318d00002f9"},{"_id":"5268487b87f64318d00002fa","name":"rock","position":1,"id":"5268487b87f64318d00002fa"},{"_id":"5268487b87f64318d00002fb","name":"country","position":2,"id":"5268487b87f64318d00002fb"}],"raw_select_options":[{"id":"5268487b87f64318d00002f9","name":{"en":"grunge"},"position":2},{"id":"5268487b87f64318d00002fa","name":{"en":"rock"},"position":2},{"id":"5268487b87f64318d00002fb","name":{"en":"country"},"position":2}]},{"id":"5268487c87f64318d0000315","_id":"5268487c87f64318d0000315","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry5268487c87f64318d0000306","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
-        of bands","label_field_name":"name","order_by":"5268487b87f64318d00002f6","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d00002fc","_id":"5268487c87f64318d00002fc","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"5268487c87f64318d00002fd","_id":"5268487c87f64318d00002fd","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
-        of the place","position":0},{"id":"5268487c87f64318d00002fe","_id":"5268487c87f64318d00002fe","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the event","position":1},{"id":"5268487c87f64318d00002ff","_id":"5268487c87f64318d00002ff","name":"city","label":"City
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"5268487c87f64318d0000300","_id":"5268487c87f64318d0000300","name":"state","label":"State
-        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"5268487c87f64318d0000301","_id":"5268487c87f64318d0000301","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
-        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d0000302","_id":"5268487c87f64318d0000302","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"5268487c87f64318d0000303","_id":"5268487c87f64318d0000303","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
-        name","position":0},{"id":"5268487c87f64318d0000304","_id":"5268487c87f64318d0000304","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"5268487c87f64318d0000305","_id":"5268487c87f64318d0000305","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
+      string: '[{"id":"547092a287f643b6db001b98","_id":"547092a287f643b6db001b98","created_at":"2014-11-22T14:41:54+01:00","updated_at":"2014-11-22T14:41:54+01:00","name":"Bands","slug":"bands","entries_custom_fields":[{"id":"547092a287f643b6db001b99","_id":"547092a287f643b6db001b99","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the band","position":0},{"id":"547092a287f643b6db001b9a","_id":"547092a287f643b6db001b9a","name":"leader","label":"Fullname
+        of the leader","type":"string","required":false,"localized":false,"unique":false,"position":1},{"id":"547092a287f643b6db001b9b","_id":"547092a287f643b6db001b9b","name":"kind","label":"Music
+        kind (grunge, rock, pop, country)","type":"select","required":false,"localized":false,"unique":false,"position":2,"select_options":[{"_id":"547092a287f643b6db001b9c","name":"grunge","position":0,"id":"547092a287f643b6db001b9c"},{"_id":"547092a287f643b6db001b9d","name":"rock","position":1,"id":"547092a287f643b6db001b9d"},{"_id":"547092a287f643b6db001b9e","name":"country","position":2,"id":"547092a287f643b6db001b9e"}],"raw_select_options":[{"id":"547092a287f643b6db001b9c","name":{"en":"grunge"},"position":2},{"id":"547092a287f643b6db001b9d","name":{"en":"rock"},"position":2},{"id":"547092a287f643b6db001b9e","name":{"en":"country"},"position":2}]},{"id":"547092a287f643b6db001bb8","_id":"547092a287f643b6db001bb8","name":"songs","label":"Songs","type":"has_many","required":false,"localized":false,"unique":false,"position":3,"class_name":"Locomotive::ContentEntry547092a287f643b6db001ba9","inverse_of":"band","ui_enabled":true,"class_slug":"songs"}],"description":"List
+        of bands","label_field_name":"name","order_by":"547092a287f643b6db001b99","order_direction":"asc","order_by_field_name":"name","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"547092a287f643b6db001b9f","_id":"547092a287f643b6db001b9f","created_at":"2014-11-22T14:41:54+01:00","updated_at":"2014-11-22T14:41:54+01:00","name":"Events","slug":"events","entries_custom_fields":[{"id":"547092a287f643b6db001ba0","_id":"547092a287f643b6db001ba0","name":"place","label":"Place","type":"string","required":true,"localized":false,"unique":false,"hint":"Name
+        of the place","position":0},{"id":"547092a287f643b6db001ba1","_id":"547092a287f643b6db001ba1","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the event","position":1},{"id":"547092a287f643b6db001ba2","_id":"547092a287f643b6db001ba2","name":"city","label":"City
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":2},{"id":"547092a287f643b6db001ba3","_id":"547092a287f643b6db001ba3","name":"state","label":"State
+        of the event","type":"string","required":false,"localized":false,"unique":false,"position":3},{"id":"547092a287f643b6db001ba4","_id":"547092a287f643b6db001ba4","name":"notes","label":"Notes","type":"text","required":false,"localized":false,"unique":false,"position":4,"text_formatting":""}],"description":"List
+        of upcoming events","label_field_name":"place","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"547092a287f643b6db001ba5","_id":"547092a287f643b6db001ba5","created_at":"2014-11-22T14:41:54+01:00","updated_at":"2014-11-22T14:41:54+01:00","name":"Messages","slug":"messages","entries_custom_fields":[{"id":"547092a287f643b6db001ba6","_id":"547092a287f643b6db001ba6","name":"name","label":"Name","type":"string","required":true,"localized":false,"unique":false,"hint":"Full
+        name","position":0},{"id":"547092a287f643b6db001ba7","_id":"547092a287f643b6db001ba7","name":"email","label":"Email","type":"string","required":true,"localized":false,"unique":false,"hint":"Email","position":1},{"id":"547092a287f643b6db001ba8","_id":"547092a287f643b6db001ba8","name":"message","label":"Message","type":"text","required":true,"localized":false,"unique":false,"hint":"Customer
         message","position":2,"text_formatting":""}],"description":"Messages posted
-        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"5268487c87f64318d0000306","_id":"5268487c87f64318d0000306","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"5268487c87f64318d0000307","_id":"5268487c87f64318d0000307","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
-        of your song","position":0},{"id":"5268487c87f64318d0000316","_id":"5268487c87f64318d0000316","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry5268487b87f64318d00002f5","ui_enabled":true,"class_slug":"bands"},{"id":"5268487c87f64318d0000308","_id":"5268487c87f64318d0000308","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"5268487c87f64318d0000309","_id":"5268487c87f64318d0000309","name":"short_description","label":"Short
-        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"5268487c87f64318d000030a","_id":"5268487c87f64318d000030a","name":"audio_url","label":"Audio
+        by new potential customers","label_field_name":"name","order_by":"created_at","order_direction":"asc","order_by_field_name":"created_at","public_submission_enabled":true,"public_submission_account_emails":[]},{"id":"547092a287f643b6db001ba9","_id":"547092a287f643b6db001ba9","created_at":"2014-11-22T14:41:54+01:00","updated_at":"2014-11-22T14:41:54+01:00","name":"Songs","slug":"songs","entries_custom_fields":[{"id":"547092a287f643b6db001baa","_id":"547092a287f643b6db001baa","name":"title","label":"Title","type":"string","required":true,"localized":false,"unique":false,"hint":"Title
+        of your song","position":0},{"id":"547092a287f643b6db001bb9","_id":"547092a287f643b6db001bb9","name":"band","label":"Band","type":"belongs_to","required":false,"localized":false,"unique":false,"position":1,"class_name":"Locomotive::ContentEntry547092a287f643b6db001b98","ui_enabled":true,"class_slug":"bands"},{"id":"547092a287f643b6db001bab","_id":"547092a287f643b6db001bab","name":"cover","label":"Cover","type":"file","required":true,"localized":false,"unique":false,"position":2},{"id":"547092a287f643b6db001bac","_id":"547092a287f643b6db001bac","name":"short_description","label":"Short
+        description","type":"text","required":false,"localized":false,"unique":false,"position":3,"text_formatting":"html"},{"id":"547092a287f643b6db001bad","_id":"547092a287f643b6db001bad","name":"audio_url","label":"Audio
         url","type":"string","required":false,"localized":false,"unique":false,"hint":"Url
-        to a service like Blip for instance","position":4},{"id":"5268487c87f64318d000030b","_id":"5268487c87f64318d000030b","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
-        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"5268487c87f64318d000030c","_id":"5268487c87f64318d000030c","created_at":"2013-10-24T00:06:52+02:00","updated_at":"2013-10-24T00:06:52+02:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"5268487c87f64318d000030d","_id":"5268487c87f64318d000030d","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
-        displayed in the website","position":0},{"id":"5268487c87f64318d000030e","_id":"5268487c87f64318d000030e","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
-        displayed in the home page","position":1,"text_formatting":"html"},{"id":"5268487c87f64318d000030f","_id":"5268487c87f64318d000030f","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
-        a category","position":2,"select_options":[{"_id":"5268487c87f64318d0000311","name":"General","position":0,"id":"5268487c87f64318d0000311"},{"_id":"5268487c87f64318d0000312","name":"Gigs","position":1,"id":"5268487c87f64318d0000312"},{"_id":"5268487c87f64318d0000313","name":"Bands","position":2,"id":"5268487c87f64318d0000313"},{"_id":"5268487c87f64318d0000314","name":"Albums","position":3,"id":"5268487c87f64318d0000314"}],"raw_select_options":[{"id":"5268487c87f64318d0000311","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"5268487c87f64318d0000312","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"5268487c87f64318d0000313","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"5268487c87f64318d0000314","name":{"en":"Albums"},"position":2}]},{"id":"5268487c87f64318d0000310","_id":"5268487c87f64318d0000310","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
-        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"5268487c87f64318d0000310","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
+        to a service like Blip for instance","position":4},{"id":"547092a287f643b6db001bae","_id":"547092a287f643b6db001bae","name":"duration","label":"Duration","type":"string","required":false,"localized":false,"unique":false,"hint":"format
+        like: mm:ss","position":5}],"label_field_name":"title","order_by":"_position","order_direction":"asc","order_by_field_name":"_position","public_submission_enabled":false,"public_submission_account_emails":[]},{"id":"547092a287f643b6db001baf","_id":"547092a287f643b6db001baf","created_at":"2014-11-22T14:41:54+01:00","updated_at":"2014-11-22T14:41:54+01:00","name":"Updates","slug":"updates","entries_custom_fields":[{"id":"547092a287f643b6db001bb0","_id":"547092a287f643b6db001bb0","name":"title","label":"Title","type":"string","required":true,"localized":true,"unique":false,"hint":"Not
+        displayed in the website","position":0},{"id":"547092a287f643b6db001bb1","_id":"547092a287f643b6db001bb1","name":"text","label":"Text","type":"text","required":false,"localized":true,"unique":false,"hint":"Text
+        displayed in the home page","position":1,"text_formatting":"html"},{"id":"547092a287f643b6db001bb2","_id":"547092a287f643b6db001bb2","name":"category","label":"Category","type":"select","required":false,"localized":true,"unique":false,"hint":"Pick
+        a category","position":2,"select_options":[{"_id":"547092a287f643b6db001bb4","name":"General","position":0,"id":"547092a287f643b6db001bb4"},{"_id":"547092a287f643b6db001bb5","name":"Gigs","position":1,"id":"547092a287f643b6db001bb5"},{"_id":"547092a287f643b6db001bb6","name":"Bands","position":2,"id":"547092a287f643b6db001bb6"},{"_id":"547092a287f643b6db001bb7","name":"Albums","position":3,"id":"547092a287f643b6db001bb7"}],"raw_select_options":[{"id":"547092a287f643b6db001bb4","name":{"en":"General","fr":"G\u00e9n\u00e9ral"},"position":2},{"id":"547092a287f643b6db001bb5","name":{"en":"Gigs","fr":"Concerts"},"position":2},{"id":"547092a287f643b6db001bb6","name":{"en":"Bands","fr":"Groupes"},"position":2},{"id":"547092a287f643b6db001bb7","name":{"en":"Albums"},"position":2}]},{"id":"547092a287f643b6db001bb3","_id":"547092a287f643b6db001bb3","name":"date","label":"Date","type":"date","required":false,"localized":false,"unique":false,"hint":"Date
+        of the update","position":3}],"description":"List of updates","label_field_name":"title","order_by":"547092a287f643b6db001bb3","order_direction":"asc","order_by_field_name":"date","public_submission_enabled":false,"public_submission_account_emails":[]}]'
     http_version: 
-  recorded_at: Wed, 23 Oct 2013 22:07:24 GMT
+  recorded_at: Sat, 22 Nov 2014 13:42:01 GMT
 recorded_with: VCR 2.4.0

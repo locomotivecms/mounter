@@ -47,6 +47,8 @@ module Locomotive
 
           if field.type == :belongs_to
             value.try(:_label)
+          elsif field.type == :file
+            value['url']
           else
             value
           end
@@ -178,6 +180,14 @@ module Locomotive
         end
 
         alias :attributes= :write_attributes
+
+        def [](name)
+          if is_dynamic_field?(name)
+            self.dynamic_getter(name.to_sym)
+          else
+            super
+          end
+        end
 
         # The magic of dynamic fields happens within this method.
         # It calls the getter/setter of a dynamic field if it is one of them.

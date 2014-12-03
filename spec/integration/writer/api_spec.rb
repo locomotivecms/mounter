@@ -29,7 +29,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'content entries' do
 
       it 'creates all the content entries' do
-        Locomotive::Mounter::EngineApi.get('/content_types/events/entries.json').to_a.size.should == 12
+        Locomotive::Mounter::EngineApi.fetch('content_types/events/entries').size.should == 12
       end
 
     end
@@ -37,7 +37,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     describe 'pages' do
 
       it 'creates all the pages' do
-        Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 14
+        Locomotive::Mounter::EngineApi.get('/pages.json').to_a.size.should == 17
       end
 
     end
@@ -86,7 +86,7 @@ describe Locomotive::Mounter::Writer::Api, :vcr do
     end
   end
 
-  context "with console output" do
+  context "with console output", pending: 'missing VCR cassette' do
     before do
       setup "writer_api_setup", console: true
     end

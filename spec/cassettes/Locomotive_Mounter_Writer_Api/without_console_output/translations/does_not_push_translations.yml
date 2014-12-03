@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=iaWvtP5PhmnyKypXpLbM
+    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 23 Oct 2013 22:07:29 GMT
+      - Sat, 22 Nov 2014 13:42:06 GMT
       Status:
       - 200 OK
       Connection:
@@ -27,15 +33,15 @@ http_interactions:
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=prav6I_tjA2fZPrBe5kbag9aJDA; domain=.example.com; path=/;
+      - _locomotive_session=ypVrzQo2ktWfreiS3OJAdlPQqOw; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - d31bcdde9365e440df74a880e153fc9a
+      - 2b9fd7f1459bb50d54759c5dd0e48455
       X-Runtime:
-      - '0.031543'
+      - '0.030071'
     body:
       encoding: UTF-8
-      string: '[]'
+      string: "[]"
     http_version: 
-  recorded_at: Wed, 23 Oct 2013 22:07:29 GMT
+  recorded_at: Sat, 22 Nov 2014 13:42:06 GMT
 recorded_with: VCR 2.4.0

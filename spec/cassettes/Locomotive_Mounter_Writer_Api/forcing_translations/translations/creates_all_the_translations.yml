@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=iaWvtP5PhmnyKypXpLbM
+    uri: http://sample.example.com:3000/locomotive/api/translations.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 23 Oct 2013 22:07:37 GMT
+      - Sat, 22 Nov 2014 13:42:13 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,20 +29,20 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"7ea29645e984c69cebddc212ea64fe87"'
+      - '"c56c8ed9b48b9dd29f29a339e6a75e12"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=cqLvCseRS9VR4S_70NK4xMGl0WI; domain=.example.com; path=/;
+      - _locomotive_session=VB7zpcsx6tlcA68a54akck56ohE; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - 51ead1d7ffad6d65461b0e4c56096cb5
+      - 28236d6853f4b6b7711fce01eedaa72e
       X-Runtime:
-      - '0.046746'
+      - '0.035492'
     body:
       encoding: UTF-8
-      string: '[{"id":"526848a587f64318d00003b0","_id":"526848a587f64318d00003b0","created_at":"2013-10-24T00:07:33+02:00","updated_at":"2013-10-24T00:07:33+02:00","key":"powered_by","values":{"en":"Powered
+      string: '[{"id":"547092b287f643b6db001c56","_id":"547092b287f643b6db001c56","created_at":"2014-11-22T14:42:10+01:00","updated_at":"2014-11-22T14:42:10+01:00","key":"powered_by","values":{"en":"Powered
         by","fr":"Propuls\u00e9 par"}}]'
     http_version: 
-  recorded_at: Wed, 23 Oct 2013 22:07:37 GMT
+  recorded_at: Sat, 22 Nov 2014 13:42:13 GMT
 recorded_with: VCR 2.4.0

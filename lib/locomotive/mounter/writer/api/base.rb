@@ -37,101 +37,71 @@ module Locomotive
             self.runner.parameters[:data] || false
           end
 
-          # Get remote resource(s) by the API
+          # Get remote resource(s) from the API
           #
           # @param [ String ] resource_name The path to the resource (usually, the resource name)
           # @param [ String ] locale The locale for the request
-          # @param [ Boolean ] raw True if the result has to be converted into object.
+          # @param [ Boolean ] dont_filter_attributes False if the we want to only keep the attributes defined by the safe_attributes method
           #
           # @return [ Object] The object or a collection of objects.
           #
-          def get(resource_name, locale = nil, raw = false)
-            params = { query: {} }
+          def get(resource_name, locale = nil, dont_filter_attributes = false)
+            attribute_names = dont_filter_attributes ? nil : self.safe_attributes
 
-            params[:query][:locale] = locale if locale
-
-            response  = Locomotive::Mounter::EngineApi.get("/#{resource_name}.json", params)
-            data      = response.parsed_response
-
-            if response.success?
-              return data if raw
-              self.raw_data_to_object(data)
-            else
-              raise WriterException.new(data['error'])
+            begin
+              Locomotive::Mounter::EngineApi.fetch(resource_name, {}, locale, attribute_names)
+            rescue ApiReadException => e
+              raise WriterException.new(e.message)
             end
           end
 
-          # Create a resource by the API.
+          # Create a resource from the API.
           #
           # @param [ String ] resource_name The path to the resource (usually, the resource name)
-          # @param [ Hash ] params The attributes of the resource
+          # @param [ Hash ] attributes The attributes of the resource
           # @param [ String ] locale The locale for the request
-          # @param [ Boolean ] raw True if the result has to be converted into object.
+          # @param [ Boolean ] raw True if the result has to be filtered in order to keep only the attributes defined by the safe_attributes method
           #
           # @return [ Object] The response of the API or nil if an error occurs
           #
-          def post(resource_name, params, locale = nil, raw = false)
-            params_name = resource_name.to_s.split('/').last.singularize
+          def post(resource_name, attributes, locale = nil, dont_filter_attributes = false)
+            attribute_names = dont_filter_attributes ? nil : self.safe_attributes
 
-            query = { query: { params_name => params } }
-
-            query[:query][:locale] = locale if locale
-
-            response  = Locomotive::Mounter::EngineApi.post("/#{resource_name}.json", query)
-            data      = response.parsed_response
-
-            if response.success?
-              return data if raw
-              self.raw_data_to_object(data)
-            else
-              message = data
-
-              message = data.map do |attribute, errors|
+            begin
+              Locomotive::Mounter::EngineApi.create(resource_name, attributes, locale, attribute_names)
+            rescue ApiWriteException => e
+              message = e.message
+              message = message.map do |attribute, errors|
                 "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
-              end.join("\n") if data.respond_to?(:keys)
+              end.join("\n") if message.respond_to?(:keys)
+
+              raise WriterException.new(message)
+            end
+          end
+
+          # Update a resource from the API.
+          #
+          # @param [ String ] resource_name The path to the resource (usually, the resource name)
+          # @param [ Hash ] attributes The attributes of the resource
+          # @param [ Hash ] params The attributes of the resource
+          # @param [ String ] locale The locale for the request
+          #
+          # @return [ Object] The response of the API
+          #
+          def put(resource_name, id, attributes, locale = nil)
+            begin
+              Locomotive::Mounter::EngineApi.update(resource_name, id, attributes, locale, self.safe_attributes)
+            rescue ApiWriteException => e
+              message = e.message
+              message = message.map do |attribute, errors|
+                "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
+              end.join("\n") if message.respond_to?(:keys)
 
               raise WriterException.new(message)
 
               # self.log "\n"
               # data.each do |attribute, errors|
               #   self.log "      #{attribute} => #{[*errors].join(', ')}\n".colorize(color: :red)
-              # end if data.respond_to?(:keys)
-              # nil # DEBUG
-            end
-          end
-
-          # Update a resource by the API.
-          #
-          # @param [ String ] resource_name The path to the resource (usually, the resource name)
-          # @param [ String ] id The unique identifier of the resource
-          # @param [ Hash ] params The attributes of the resource
-          # @param [ String ] locale The locale for the request
-          #
-          # @return [ Object] The response of the API or nil if an error occurs
-          #
-          def put(resource_name, id, params, locale = nil)
-            params_name = resource_name.to_s.split('/').last.singularize
-
-            query = { query: { params_name => params } }
-
-            query[:query][:locale] = locale if locale
-
-            response  = Locomotive::Mounter::EngineApi.put("/#{resource_name}/#{id}.json", query)
-            data      = response.parsed_response
-
-            if response.success?
-              self.raw_data_to_object(data)
-            else
-              message = data
-
-              message = data.map do |attribute, errors|
-                "      #{attribute} => #{[*errors].join(', ')}" #.colorize(color: :red)
-              end.join("\n") if data.respond_to?(:keys)
-
-              raise WriterException.new(message)
-
-              # data.each do |attribute, errors|
-              #   self.log "\t\t #{attribute} => #{[*errors].join(', ')}".colorize(color: :red)
               # end if data.respond_to?(:keys)
               # nil # DEBUG
             end
@@ -192,25 +162,6 @@ module Locomotive
 
           def response_to_status(response)
             response ? :success : :error
-          end
-
-          # Convert raw data into the corresponding object (Page, Site, ...etc)
-          #
-          # @param [ Hash ] data The attributes of the object
-          #
-          # @return [ Object ] A new instance of the object
-          #
-          def raw_data_to_object(data)
-            case data
-            when Hash then data.to_hash.delete_if { |k, _| !self.safe_attributes.include?(k) }
-            when Array
-              data.map do |row|
-                # puts "#{row.inspect}\n---" # DEBUG
-                row.delete_if { |k, _| !self.safe_attributes.include?(k) }
-              end
-            else
-              data
-            end
           end
 
         end

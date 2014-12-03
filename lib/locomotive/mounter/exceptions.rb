@@ -34,5 +34,11 @@ module Locomotive
     class WrongCredentials < DefaultException
     end
 
+    class ApiReadException < DefaultException
+    end
+
+    class ApiWriteException < DefaultException
+    end
+
   end
 end

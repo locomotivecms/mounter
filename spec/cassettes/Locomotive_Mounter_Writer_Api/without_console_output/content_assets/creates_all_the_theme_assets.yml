@@ -2,18 +2,24 @@
 http_interactions:
 - request:
     method: get
-    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=iaWvtP5PhmnyKypXpLbM
+    uri: http://sample.example.com:3000/locomotive/api/content_assets.json?auth_token=4ayhuNvzJq6reTPBnshb
     body:
       encoding: US-ASCII
       string: ''
-    headers: {}
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
   response:
     status:
       code: 200
       message: OK
     headers:
       Date:
-      - Wed, 23 Oct 2013 13:16:20 GMT
+      - Sat, 22 Nov 2014 13:42:05 GMT
       Status:
       - 200 OK
       Connection:
@@ -23,19 +29,19 @@ http_interactions:
       X-Ua-Compatible:
       - IE=Edge
       Etag:
-      - '"a9d3252f191c9211ec7a0073af26d352"'
+      - '"2c7aa12cd0058a20a1ebf1af2208e547"'
       Cache-Control:
       - max-age=0, private, must-revalidate
       Set-Cookie:
-      - _locomotive_session=L5FNkb1zkbe9M03KHgn4ebGxsL0; domain=.example.com; path=/;
+      - _locomotive_session=7prHk_5NmqRduSc5Y2Xc54MNWJI; domain=.example.com; path=/;
         HttpOnly
       X-Request-Id:
-      - c75761473f03d979d2e5ed8eb282c6a1
+      - 68cb2496b56cb6c061635cb084aef43a
       X-Runtime:
-      - '0.069385'
+      - '0.038539'
     body:
       encoding: UTF-8
-      string: '[{"id":"5267cc2087f64318d000023c","_id":"5267cc2087f64318d000023c","created_at":"2013-10-23T15:16:16+02:00","updated_at":"2013-10-23T15:16:16+02:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81MjY3Y2MxYjg3ZjY0MzE4ZDAwMDAxZjYvYXNzZXRzLzUyNjdjYzIwODdmNjQzMThkMDAwMDIzYy9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg","url":"/sites/5267cc1b87f64318d00001f6/assets/5267cc2087f64318d000023c/photo.jpg","content_type_text":"image"}]'
+      string: '[{"id":"547092a587f643b6db001bda","_id":"547092a587f643b6db001bda","created_at":"2014-11-22T14:41:57+01:00","updated_at":"2014-11-22T14:41:57+01:00","content_type":"image","width":602,"height":397,"filename":"photo.jpg","full_filename":"photo.jpg","short_name":"photo.jpg","extname":"jpg","raw_size":163476,"vignette_url":"/images/dynamic/W1siZmYiLCIvVXNlcnMvZGlkaWVyL0RvY3VtZW50cy9Mb2NvbW90aXZlQ01TL2VuZ2luZS9zcGVjL2R1bW15L3B1YmxpYy9zaXRlcy81NDcwOTJhMjg3ZjY0M2I2ZGIwMDFiOTEvYXNzZXRzLzU0NzA5MmE1ODdmNjQzYjZkYjAwMWJkYS9waG90by5qcGciXSxbInAiLCJ0aHVtYiIsIjg1eDg1IyJdXQ/photo.jpg?sha=a02c1f82ee973001","url":"/sites/547092a287f643b6db001b91/assets/547092a587f643b6db001bda/photo.jpg","content_type_text":"image"}]'
     http_version: 
-  recorded_at: Wed, 23 Oct 2013 13:16:20 GMT
+  recorded_at: Sat, 22 Nov 2014 13:42:05 GMT
 recorded_with: VCR 2.4.0

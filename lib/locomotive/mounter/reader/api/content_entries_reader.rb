@@ -74,7 +74,7 @@ module Locomotive
           # @return [ Object] The attributes understandable by the content entry
           #
           def filter_attributes(content_type, original_attributes)
-            attributes = original_attributes.clone.keep_if { |k, v| %w(_id _slug seo_title meta_keywords meta_description _position created_at updated_at).include?(k) }
+            attributes = original_attributes.clone.keep_if { |k, v| %w(_id _slug seo_title meta_keywords meta_description _position _visible created_at updated_at).include?(k) }
 
             content_type.fields.each do |field|
               value = (case field.type

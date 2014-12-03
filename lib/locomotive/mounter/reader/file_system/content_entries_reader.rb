@@ -27,7 +27,7 @@ module Locomotive
 
               attributes.each_with_index do |_attributes, index|
                 self.add(content_type, _attributes, index)
-              end
+              end unless attributes == false
             end
           end
 
@@ -57,7 +57,7 @@ module Locomotive
             if attributes.is_a?(String)
               label, _attributes = attributes, {}
             else
-              label, _attributes = attributes.keys.first, attributes.values.first
+              label, _attributes = attributes.keys.first, attributes.values.first || {}
             end
 
             # check if the label_field is localized or not

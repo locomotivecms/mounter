@@ -16,8 +16,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
   end
 
   it 'runs it' do
-    @reader.stubs(:prepare).returns(true)
-    @reader.stubs(:build_mounting_point).returns(true)
+    @reader.stub(prepare: true)
+    @reader.stub(build_mounting_point: true)
     @reader.run!(credentials).should_not be_nil
   end
 
@@ -79,22 +79,22 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
         @song_template  = @mounting_point.pages['songs/content_type_template']
       end
 
-      it 'has 13 pages' do
-        @mounting_point.pages.size.should == 14
+      it 'has 17 pages' do
+        @mounting_point.pages.size.should == 17
       end
 
       describe '#tree' do
 
         it 'puts pages under the index page' do
-          @index.children.size.should == 8
+          @index.children.size.should == 9
         end
 
         it 'keeps the ordering of the config' do
-          @index.children.map(&:fullpath).should == ['about-us', 'music', 'store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs']
+          @index.children.map(&:fullpath).should == ['about-us', 'music', 'online-store', 'contact', 'events', 'lorem-ipsum-dolor-sit-amet-consectetur-adipisicing-elit-sed-do-eiusmod-tempor-incididunt-ut-labore-et-dolore-magna-aliqua', 'archives', 'songs', 'layouts']
         end
 
         it 'assigns titles for all the pages' do
-          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives', 'Songs']
+          @index.children.map(&:title).should == ['About Us', 'Music', 'Store', 'Contact Us', 'Events', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo', 'Archives', 'Songs', 'Layouts']
         end
 
         it 'also includes nested children' do
@@ -112,7 +112,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
         it 'localizes titles' do
           Locomotive::Mounter.with_locale(:fr) do
-            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil]
+            @index.children.map(&:title).should == ['A notre sujet', nil, 'Magasin', nil, nil, nil, nil, nil, nil]
           end
         end
 
@@ -125,6 +125,18 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
           @song_template.content_type.slug.should == 'songs'
         end
 
+      end
+
+      describe '#content_assets' do
+
+        it 'should fix path' do
+          page = @mounting_point.pages['about-us']
+          page.editable_elements.each do |element|
+            if element.slug == 'content'
+              element.content.should_not match /http:\/\/sample.example.com:3000/
+            end
+          end
+        end
       end
 
     end # pages
@@ -177,8 +189,8 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
 
     it 'has 3 snippets' do
       @mounting_point.snippets.size.should == 3
-      @mounting_point.snippets.keys.sort.should == %w(a_long_one header song)
-      @mounting_point.snippets.values.map(&:slug).sort.should == %w(a_long_one header song)
+      @mounting_point.snippets.keys.sort.should == %w(a-long-one header song)
+      @mounting_point.snippets.values.map(&:slug).sort.should == %w(a-long-one header song)
     end
 
     it 'localizes the template' do
@@ -213,7 +225,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       end
 
       it 'has a slug' do
-        @content_entry._slug.should == "avogadro-s-number"
+        @content_entry._slug.should == "avogadros-number"
       end
 
       it 'can access dynamic field' do
@@ -255,7 +267,7 @@ describe Locomotive::Mounter::Reader::Api, :vcr do
       "Locomotive::Mounter::Reader::Api::#{name.camelize}Reader".constantize
     end
 
-    reader.stubs(:readers).returns(klasses)
+    reader.stub(readers: klasses)
   end
 
 end
