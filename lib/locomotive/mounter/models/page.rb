@@ -18,6 +18,7 @@ module Locomotive
         field :handle
         field :listed,            default: false
         field :searchable
+        field :extendable,        default: false
         field :templatized,       default: false
         field :content_type
         field :published,         default: true
@@ -370,7 +371,7 @@ module Locomotive
         def to_params
           params = self.filter_attributes %w(title parent_id slug redirect_url redirect_type handle listed is_layout
             allow_layout published searchable cache_strategy
-            response_type position templatized seo_title meta_description meta_keywords)
+            response_type position templatized seo_title meta_description meta_keywords extendable)
 
           # slug
           params.delete(:slug) if self.depth == 0
@@ -402,7 +403,7 @@ module Locomotive
         def to_safe_params
           fields = %w(title slug listed is_layout allow_layout published searchable handle cache_strategy
             redirect_url response_type templatized content_type_id position
-            seo_title meta_description meta_keywords)
+            seo_title meta_description meta_keywords extendable)
 
           params = self.attributes.delete_if do |k, v|
             !fields.include?(k.to_s) || (!v.is_a?(FalseClass) && v.blank?)
