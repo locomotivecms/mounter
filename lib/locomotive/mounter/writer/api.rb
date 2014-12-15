@@ -26,9 +26,11 @@ module Locomotive
             self.parameters[:data] ||= false
 
             credentials = self.parameters.select { |k, _| %w(uri email password api_key).include?(k.to_s) }
+            ssl_version = self.parameters[:ssl_version].to_sym || :SSLv3
             self.uri    = credentials[:uri]
 
             begin
+              Locomotive::Mounter::EngineApi.ssl_version(ssl_version)
               Locomotive::Mounter::EngineApi.set_token(credentials)
             rescue Exception => e
               raise Locomotive::Mounter::WriterException.new("unable to get an API token: #{e.message}")
