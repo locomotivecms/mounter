@@ -179,6 +179,9 @@ module Locomotive
 
           params = self.filter_attributes %w(name slug description label_field_name group_by_field_name order_by order_direction public_submission_enabled raw_item_template)
 
+          # group by
+          params[:group_by_field_name] = self.group_by_field.name if self.group_by_field
+
           # order by
           params[:order_by] = '_position' if self.order_by == 'manually'
 
