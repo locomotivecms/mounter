@@ -26,7 +26,7 @@ module Locomotive
             self.parameters[:data] ||= false
 
             credentials = self.parameters.select { |k, _| %w(uri email password api_key).include?(k.to_s) }
-            ssl_version = self.parameters[:ssl_version] ? self.parameters[:ssl_version].to_sym : :SSLv3
+            ssl_version = self.parameters[:ssl_version] ? self.parameters[:ssl_version].to_sym : :TLSv1_2
             self.uri    = credentials[:uri]
 
             begin
