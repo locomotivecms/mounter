@@ -167,7 +167,7 @@ module Locomotive
             published listed templatized editable_elements
             redirect_url cache_strategy response_type position
             seo_title meta_keywords meta_description raw_template
-            created_at updated_at)
+            created_at updated_at is_layout allow_layout)
           end
 
           # Output simply the tree structure of the pages.
