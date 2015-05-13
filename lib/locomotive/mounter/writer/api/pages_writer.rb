@@ -76,8 +76,9 @@ module Locomotive
               layouts = pages.values.find_all { |page| page.fullpath =~ /^layouts\// }
 
               # make sure the templates without the extends tag are first in the list
-              layouts.sort! { |a, b| (a.extends_template? ? 1 : 0) <=> (b.extends_template? ? 1 : 0) }
-
+              layouts.sort! do |a, b|
+                (a.depth_and_position + (a.extends_template? ? 1000 : 0)) <=> (b.depth_and_position + (b.extends_template? ? 1000 : 0))
+              end
               layouts.each do |page|
                 _write(page, done, false, false)
               end
