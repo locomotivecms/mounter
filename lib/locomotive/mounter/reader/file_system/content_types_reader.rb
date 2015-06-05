@@ -65,8 +65,20 @@ module Locomotive
           #
           def sanitize_select_options(options)
             [].tap do |array|
-              options.each_with_index do |object, position|
-                array << { name: object, position: position }
+              if options.is_a?(Hash)
+                options.each do |locale, values|
+                  values.each_with_index do |value, position|
+                    if _option = array[position]
+                      _option[:name][locale] = value
+                    else
+                      array << { name: { locale => value }, position: position }
+                    end
+                  end
+                end
+              else
+                options.each_with_index do |object, position|
+                  array << { name: object, position: position }
+                end
               end
             end
           end
