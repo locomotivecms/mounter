@@ -31,6 +31,8 @@ module Locomotive
 
             # first new content types
             self.not_persisted.each do |content_type|
+              next if filtered?(content_type.slug)
+
               self.create_content_type(content_type)
 
               done[content_type.slug] = content_type.with_relationships? ? :todo : :done
@@ -39,6 +41,8 @@ module Locomotive
             # then update the others
             self.content_types.values.each do |content_type|
               next unless done[content_type.slug].nil?
+
+              next if filtered?(content_type.slug)
 
               self.update_content_type(content_type)
             end

@@ -114,6 +114,8 @@ module Locomotive
 
             return unless page.translated_in?(locale)
 
+            return if filtered?(page.fullpath, page.handle)
+
             self.output_resource_op page
 
             success = page.persisted? ? self.update_page(page) : self.create_page(page)

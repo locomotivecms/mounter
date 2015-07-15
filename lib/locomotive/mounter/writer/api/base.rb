@@ -164,6 +164,14 @@ module Locomotive
             response ? :success : :error
           end
 
+          def filtered?(*identifiers)
+            return false if runner.parameters[:only_resource].blank?
+
+            !identifiers.any? do |identifier|
+              runner.parameters[:only_resource].include?(identifier.to_s)
+            end
+          end
+
         end
 
       end

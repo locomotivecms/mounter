@@ -40,6 +40,8 @@ module Locomotive
 
             return unless snippet.translated_in?(locale)
 
+            return if filtered?(snippet.slug)
+
             self.output_resource_op snippet
 
             success = snippet.persisted? ? self.update_snippet(snippet) : self.create_snippet(snippet)
