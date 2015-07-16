@@ -39,8 +39,60 @@ module Locomotive
 
             self.each_locale do |locale|
               self.output_locale
+              print "=====Preorder=======\n"
 
+              content_types_sorted = {}
+              dependencies = {}
               self.content_types.each do |slug, content_type|
+                print "--[#{slug}]--\n"
+                if content_type.with_relationships?
+                  content_type.fields.each do |field|
+                    next unless field.is_relationship? || field.type == :has_many
+                    if field.type == :belongs_to
+                      dependencies[slug] ? dependencies[slug] << field.class_name : dependencies[slug] = [field.class_name]
+                    else
+                      content_types_sorted[slug] = content_types[slug]
+                    end
+                    print "    field #{field.class_name}"
+                    print "      type: #{field.type.to_s}\n"
+                  end
+                else
+                  content_types_sorted[slug] = content_types[slug]
+                end
+              end
+
+              print "#{dependencies}\n"
+
+              while !dependencies.empty?
+                print "Sorted content_types: \n"
+                content_types_sorted.each do |slug, content_type|
+                  print '  ' + content_type.name + "\n"
+                end
+
+                print "#{dependencies}\n"
+
+                dependencies.each do |dependant, depends|
+                  dependencies[dependant] = depends.select do |dependency|
+                    !content_types_sorted[dependency]
+                  end
+                  if depends.empty?
+                    dependencies.delete(dependant)
+                    content_types_sorted[dependant] = content_types[dependant]
+                  end
+                end
+              end
+
+              print "Sorted content_types: \n"
+
+
+
+              content_types_sorted.values.each do |content_type|
+                print '  ' + content_type.name + "\n"
+              end
+
+              print "=====Preorder=======\n"
+
+              content_types_sorted.each do |slug, content_type|
                 (content_type.entries || []).each do |entry|
                   next unless entry.translated_in?(locale)
 
