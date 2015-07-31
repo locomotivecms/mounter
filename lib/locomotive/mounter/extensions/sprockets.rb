@@ -35,7 +35,7 @@ module Locomotive
               env.append_path File.join(site_path, 'public', name)
             end
           end
-          AutoprefixerRails.install(@@env, browsers: ['last 2 versions', 'ie 9'])
+          AutoprefixerRails.install(@@env, browsers: ['last 2 versions', '> 5%'])
         end
 
         def self.is_java_installed?
