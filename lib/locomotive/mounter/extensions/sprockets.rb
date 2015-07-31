@@ -1,4 +1,5 @@
 require 'yui/compressor'
+require 'autoprefixer-rails'
 
 module Locomotive
   module Mounter
@@ -15,6 +16,7 @@ module Locomotive
         # @param [ String ] site_path The root directory of the site
         # @param [ Boolean ] minify Minify the js and css assets (default: false)
         #
+
         def self.environment(site_path, minify = false)
           return @@env if @@env && @@path == site_path
 
@@ -33,6 +35,7 @@ module Locomotive
               env.append_path File.join(site_path, 'public', name)
             end
           end
+          AutoprefixerRails.install(@@env)
         end
 
         def self.is_java_installed?
