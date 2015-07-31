@@ -30,6 +30,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'coffee-script',                   '~> 2.2.0'
   s.add_dependency 'less',                            '~> 2.2.1'
   s.add_dependency 'RedCloth',                        '~> 4.2.3'
+  s.add_dependency 'autoprefixer-rails',              '~> 5.2.1.1'
 
   s.add_dependency 'tzinfo',                          '~> 0.3.29'
   s.add_dependency 'chronic',                         '~> 0.10.2'
