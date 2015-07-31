@@ -16,7 +16,6 @@ module Locomotive
         # @param [ String ] site_path The root directory of the site
         # @param [ Boolean ] minify Minify the js and css assets (default: false)
         #
-
         def self.environment(site_path, minify = false)
           return @@env if @@env && @@path == site_path
 
