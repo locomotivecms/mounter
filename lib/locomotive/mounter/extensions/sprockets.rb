@@ -36,6 +36,7 @@ module Locomotive
             end
           end
           AutoprefixerRails.install(@@env, browsers: ['last 2 versions', '> 5%'])
+          return @@env
         end
 
         def self.is_java_installed?
