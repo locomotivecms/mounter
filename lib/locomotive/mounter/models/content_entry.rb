@@ -122,7 +122,7 @@ module Locomotive
           when :date, :date_time
             value.is_a?(String) ? Chronic.parse(value) : value
           when :file
-            value.present? ? { 'url' => value } : nil
+            value.present? ? { 'url' => value, 'filename' => File.basename(value) } : nil
           when :belongs_to
             field.klass.find_entry(value)
           when :has_many
