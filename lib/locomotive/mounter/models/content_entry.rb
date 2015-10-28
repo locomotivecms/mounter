@@ -187,6 +187,7 @@ module Locomotive
         #
         def write_attributes(attributes)
           _attributes = attributes.select do |name, value|
+            name = find_dynamic_name(name)
             if self.is_dynamic_field?(name)
               self.dynamic_setter(name, value)
               false
