@@ -103,8 +103,27 @@ module Locomotive
         # @return [ Boolean ] True if it is a dynamic field
         #
         def is_dynamic_field?(name)
-          name = name.to_s.gsub(/\=$/, '').to_sym
+          name = find_dynamic_name(name)
           !self.content_type.try(:find_field, name).nil?
+        end
+
+        # Find the name of a dynamic field from a String
+        #
+        # Examples:
+        #   "name" references the name field
+        #   "name=" references the name field
+        #   "author_id" references the author field (belongs_to)
+        #   "article_ids" references the articles field (many_to_many)
+        #
+        def find_dynamic_name(name)
+          name = name.to_s.gsub(/\=$/, '')
+
+          # _id or _ids (belongs_to or many_to_many)
+          if name =~ /(.+)_ids\Z/
+            name = $1.pluralize
+          end
+
+          name.to_sym
         end
 
         # Return the value of a dynamic field and cast it depending
@@ -194,7 +213,7 @@ module Locomotive
         def method_missing(name, *args, &block)
           if self.is_dynamic_field?(name)
             if name.to_s.ends_with?('=')
-              name = name.to_s.gsub(/\=$/, '').to_sym
+              name = find_dynamic_name(name)
               self.dynamic_setter(name, args.first)
             else
               self.dynamic_getter(name)
