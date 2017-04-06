@@ -51,7 +51,8 @@ module Locomotive
             parent.set_default_template_for_each_locale(self.default_locale)
 
             list.dup.each do |page|
-              next unless self.is_subpage_of?(page.fullpath, parent.fullpath)
+              # comparing filepath to find out the ascendant/descendant relationship
+              next unless self.is_subpage_of?(filepath_to_fullpath(page.filepath), filepath_to_fullpath(parent.filepath))
 
               # attach the page to the parent (order by position), also set the parent
               parent.add_child(page)
@@ -166,7 +167,10 @@ module Locomotive
           # @return [ String ] The fullpath of the page
           #
           def filepath_to_fullpath(filepath)
-            fullpath = filepath.gsub(File.join(self.root_dir, '/'), '')
+            _filepath = File.expand_path(filepath)
+            _rootpath = File.expand_path(self.root_dir)
+
+            fullpath = _filepath.gsub(File.join(_rootpath, '/'), '')
 
             fullpath.gsub!(/^\.\//, '')
 
