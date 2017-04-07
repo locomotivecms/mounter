@@ -10,18 +10,7 @@ module Locomotive
           # @return [ Array ] The cached list of theme assets
           #
           def read
-            ThemeAssetsArray.new(self.root_dir)
-          end
-
-          protected
-
-          # Return the directory where all the theme assets
-          # are stored in the filesystem.
-          #
-          # @return [ String ] The theme assets directory
-          #
-          def root_dir
-            File.join(self.runner.path, 'public')
+            ThemeAssetsArray.new(self.runner.path)
           end
 
         end
@@ -29,28 +18,53 @@ module Locomotive
       end
 
       class ThemeAssetsArray
+        DEFAULT_IGNORED_FOLDER = ['samples']
+        ASSETS_FODLERS = {
+          bower: 'bower_components',
+          public: 'public'
+        }
 
-        attr_accessor :root_dir
+        attr_accessor :root_dir, :ignored_folders
 
         def initialize(root_dir)
           self.root_dir = root_dir
+          @ignored_folders = DEFAULT_IGNORED_FOLDER.map{ |folder| File.join(self.root_dir, folder) }
         end
 
         def list
           return @list unless @list.nil?
 
+          @list = []
+          load_bower_assets
+          load_public_assets
+          @list
+        end
+
+        def load_public_assets
           # Follows symlinks and makes sure subdirectories are handled
           glob_pattern = '**/*/**/*'
 
-          @list = [].tap do |list|
-            Dir.glob(File.join(self.root_dir, glob_pattern)).each do |file|
+          Dir.glob(File.join(self.root_dir, 'public', glob_pattern)).each_with_object(@list) do |file, array|
+            next if self.exclude?(file)
+
+            folder = File.dirname(file.gsub("#{self.root_dir}/public/", ''))
+
+            array.push Locomotive::Mounter::Models::ThemeAsset.new(folder: folder, filepath: file)
+          end
+        end
+
+        def load_bower_assets
+          bower_files_pattern = '**/bower.json'
+
+          Dir.glob(File.join(self.root_dir, 'bower_components',  bower_files_pattern)).each_with_object(@list) do |bower_file, array|
+            bower_project_folder, _ = bower_file.split("/bower.json")
+
+            [*JSON.parse(IO.read(bower_file))["main"]].each do |relative_file_path|
+              file = File.join(bower_project_folder, relative_file_path)
               next if self.exclude?(file)
 
               folder = File.dirname(file.gsub("#{self.root_dir}/", ''))
-
-              asset = Locomotive::Mounter::Models::ThemeAsset.new(folder: folder, filepath: file)
-
-              list << asset
+              array.push Locomotive::Mounter::Models::ThemeAsset.new(folder: folder, filepath: file)
             end
           end
         end
@@ -68,16 +82,18 @@ module Locomotive
         #
         def exclude?(file)
           File.directory?(file) ||
-          file.starts_with?(File.join(self.root_dir, 'samples')) ||
-          File.basename(file).starts_with?('_')
+            File.basename(file).starts_with?('_') ||
+            ignored_folders.any? {|dir| file.starts_with? dir }
         end
 
         # This class acts a proxy of an array
         def method_missing(name, *args, &block)
+          super unless self.list.respond_to?(name.to_sym)
           self.list.send(name.to_sym, *args, &block)
         end
 
       end
+
     end
   end
 end

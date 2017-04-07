@@ -65,7 +65,7 @@ module Locomotive
           def add_assets_from_string(source)
             return if source.blank?
 
-            source.to_s.match(/\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
+            source.to_s.match(/.*\/samples\/.*\.[a-zA-Z0-9]+/) do |match|
               filepath  = File.join(self.root_dir, match.to_s)
               folder    = File.dirname(match.to_s)
               self.items[source] = Locomotive::Mounter::Models::ContentAsset.new(filepath: filepath, folder: folder)
