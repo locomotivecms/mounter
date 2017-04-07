@@ -47,7 +47,7 @@ module Locomotive
           end
 
           def build_relationships(parent, list)
-            # do not use an empty template for other locales than the default one
+            # do not use an empty template for other locales other than the default one
             parent.set_default_template_for_each_locale(self.default_locale)
 
             list.dup.each do |page|
@@ -202,7 +202,7 @@ module Locomotive
           def to_s(page = nil)
             page ||= self.pages['index']
 
-            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position}, template=#{page.template_translations.keys.inspect})"
+            puts "#{"  " * (page.try(:depth) + 1)} #{page.fullpath.inspect} (#{page.title}, position=#{page.position}, template=#{page.template_translations.keys.inspect}, depth_n_position=#{page.depth_and_position})"
 
             (page.children || []).each { |child| self.to_s(child) }
           end
